@@ -1,0 +1,135 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_showSpinner}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <template if:true={_isShowPreview}>
+            <section role="dialog"  class="slds-modal slds-fade-in-open" style="z-index: 250000;">
+            
+                <div class="modal-background change-status-modal-background" onclick={closePreview}>
+                    <div class="modal" onclick={clickIgnore}>
+                        <div class="content-header-bar" style="margin-bottom: 0">
+                            <div class="slds-grid slds-wrap full-width">
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                    <h2>View {_previewName}</h2>
+                                </div>
+                            </div>
+                            <div
+                                class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                <a id="close-preview" class="close-btn" onclick={closePreview}>&times;</a>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="preview" style="font-family: sans-serif; padding: 1em 0; max-width: 600px; margin: auto">
+                                <c-portal_-newsletter-detail
+                                    newsletter-id={_previewNewsletterId}
+                                ></c-portal_-newsletter-detail>
+                            </div>
+
+                            <div class="bottom-border"></div>
+                            <div class="button-list">
+                                <a class="button secondary" onclick={closePreview}>Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </section>
+        </template>
+
+        <div class="panel">
+            <div class="container large">
+                <div class="section-body-content">
+                    <div class="flex-grid-3">
+                        <div class="grid-item" style="padding-top: 0.2em">
+                            <c-portal_-input
+                                        placeholder="Search Newsletters"
+                                        value={_searchTextInInput}
+                                        handle-input={handleSearchInputChange}
+                                        min-length={_minimumSearchLength}>
+                            </c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <div class="button-list">
+                                <a class="button small primary full-mobile" onclick={handleSearch}>Search</a>
+                                <a class="button small secondary full-mobile" onclick={handleClearSearch}>Clear</a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="button-list right">
+                                <a onclick={openCreateNewsletter} class="button secondary small full-mobile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595">
+                                        <path d="M0 0h24v24H0V0z" fill="none"></path><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 10h-3v3c0 .55-.45 1-1 1s-1-.45-1-1v-3H8c-.55 0-1-.45-1-1s.45-1 1-1h3V8c0-.55.45-1 1-1s1 .45 1 1v3h3c.55 0 1 .45 1 1s-.45 1-1 1z"></path></svg>
+                                        Create Newsletter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <template if:true={_isCallbackDone}>
+                    <div class="show-on-phone">
+                        <template if:true={_isLoaded}>
+                            <h3 class="no-newsletters-message" if:false={_hasNewsletters}>{noNewslettersMessage}</h3>
+                        </template>
+                        <template for:each={_visibleData} for:item="newsletter" for:index="index" if:true={_hasNewsletters}>
+                            <div class="registration-table" key={newsletter.Id}>
+                                <div class="row bottom-border">
+                                    <div class="container">
+                                        <h4>{_frontEndDataMap.subject.label}</h4>
+                                        <p>{newsletter.Subject_Line__c}</p>
+                                        <h4>{_frontEndDataMap.status.label}</h4>
+                                        <p>{newsletter.Status__c}</p>
+                                        <div class="button-list">
+                                            <a class="button small secondary full-mobile disabled" disabled={newsletter.disabled} onclick={openEditNewsletter} data-index={index} data-c="false" if:true={newsletter.disabled}>Edit</a>
+                                            <a class="button small secondary full-mobile" onclick={openEditNewsletter} data-index={index} data-c="false" if:false={newsletter.disabled}>Edit</a>
+                                            <a class="button small secondary full-mobile" onclick={openEditNewsletter} data-index={index} data-c="true">Clone</a>
+                                            <a class="button small secondary full-mobile" onclick={displayPreview} data-index={index}>View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+        
+                    <div class="hide-on-phone">
+                        <template if:true={_isLoaded}>
+                            <h3 class="no-newsletters-message" if:false={_hasNewsletters}>{noNewslettersMessage}</h3>
+                        </template>
+                        <div class="registration-table" if:true={_hasNewsletters}>
+                            <div class="column name">
+                                <div class="headerEqualHeight"><p>{_frontEndDataMap.subject.label}</p></div>
+                                <template for:each={_visibleData} for:item="newsletter" for:index="index">
+                                    <div class="equalHeight" key={newsletter.Id}>
+                                        <p>{newsletter.Subject_Line__c}</p>
+                                        <div class="button-list">
+                                            <button class="button small secondary disabled" disabled={newsletter.disabled} onclick={openEditNewsletter} data-index={index} data-c="false" if:true={newsletter.disabled}>Edit</button>
+                                            <button class="button small secondary" disabled={newsletter.disabled} onclick={openEditNewsletter} data-index={index} data-c="false" if:false={newsletter.disabled}>Edit</button>
+                                            <button class="button small secondary" onclick={openEditNewsletter} data-index={index} data-c="true">Clone</button>
+                                            <button class="button small secondary" onclick={displayPreview} data-index={index}>View</button>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column">
+                                <div class="headerEqualHeight"><p>{_frontEndDataMap.status.label}</p></div>
+                                <template for:each={_visibleData} for:item="newsletter" for:index="index">
+                                    <div class="equalHeight" key={newsletter.Id}><p>{newsletter.Status__c}</p></div>
+                                </template>
+                            </div>
+                            </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <c-portal_util_-pagination
+            records-per-page={recordsPerPage}
+            queried-data={_newsletterList}
+            current-page-number={_currentPage}
+            query-more={handleQueryMore}
+            handle-page-change={handlePageChange}
+            total-number-of-items={_totalItems}
+        ></c-portal_util_-pagination>
+    </div>
+</template>

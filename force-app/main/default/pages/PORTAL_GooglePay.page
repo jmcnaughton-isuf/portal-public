@@ -1,0 +1,139 @@
+<apex:page showHeader="false" sidebar="false" controller="PORTAL_GooglePayController"
+    lightningStyleSheets="true">
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <script src="https://pay.google.com/gp/p/js/pay.js"></script>
+        </head>
+        <style>
+            body button:hover, body .btn:hover, body .btnCancel:hover, body .menuButton .menuButtonButton:hover {
+                background-position: center center;
+            }
+        </style>
+        <body>
+            <div id="container">
+            </div>
+        </body>
+
+        <script type="application/javascript">
+            const googlePayOrigin = "{!lexOrigin}";
+            const googlePayMerchantName = "{!merchantName}";
+            const googlePayMerchantId = "{!merchantId}";
+
+            const environmentType = googlePayMerchantId == '12345678901234567890' ? 'TEST' : 'PRODUCTION';
+            const paymentsClient = new google.payments.api.PaymentsClient({environment: environmentType});
+            
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === googlePayOrigin && eventData.type === "initialize" && eventData.googlePayOptions) {
+                    if (!googlePayMerchantId) {
+                        return;
+                    }
+
+                    let amount = eventData.displayOptions.amount;
+                    let gateway = eventData.googlePayOptions.gateway;
+                    let gatewayMerchantId = eventData.googlePayOptions.gatewayMerchantId;
+
+                    const baseRequest = getBaseRequest();
+                    const baseCardPaymentMethod = getBaseCardPaymentMethod();
+
+                    const cardPaymentMethod = getCardPaymentMethod(baseCardPaymentMethod, gateway, gatewayMerchantId)
+                    const isReadyToPayRequest = getIsReadyToPayRequest(baseRequest, baseCardPaymentMethod);
+
+                    paymentsClient.isReadyToPay(isReadyToPayRequest)
+                    .then(function(response) {
+                        if (!response.result) { 
+                            return;
+                        }
+                        
+                        // add a Google Pay payment button
+                        const button = paymentsClient.createButton({
+                            buttonColor: 'black',
+                            buttonType: 'pay',
+                            buttonSizeMode: 'fill',
+                            onClick: () => {
+                                const paymentDataRequest = Object.assign({}, baseRequest);
+                                paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
+                                paymentDataRequest.transactionInfo = {
+                                    totalPriceStatus: 'FINAL',
+                                    totalPriceLabel: 'Total Price',
+                                    totalPrice: amount,
+                                    currencyCode: 'USD',
+                                    countryCode: 'US',
+                                    checkoutOption: 'COMPLETE_IMMEDIATE_PURCHASE'
+                                };
+
+                                paymentDataRequest.merchantInfo = {
+                                    merchantName: googlePayMerchantName,
+                                    merchantId: googlePayMerchantId
+                                };
+
+                                paymentsClient.loadPaymentData(paymentDataRequest).then(function(paymentData){
+                                    // if using gateway tokenization, pass this token without modification
+                                    let paymentToken = paymentData.paymentMethodData.tokenizationData.token;
+
+                                    window.parent.postMessage({ type: "googlePayComplete", token: paymentToken }, googlePayOrigin);
+                                    }).catch(function(err){
+                                    // show error in developer console for debugging
+                                    console.error(err);
+                                });
+                            }, allowedPaymentMethods: [cardPaymentMethod]}); // make sure to provide an allowed payment method
+                        document.getElementById('container').appendChild(button);
+                        
+                    })
+                    .catch(function(err) {
+                        // show error in developer console for debugging
+                        console.error(err);
+                    });
+                }
+            });
+
+            /* HELPER FUNCTIONS */
+
+            function getBaseRequest() {
+                return {
+                    apiVersion: 2,
+                    apiVersionMinor: 0
+                };
+            }
+
+            function getBaseCardPaymentMethod() {
+                const allowedCardNetworks = ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "MIR", "VISA"];
+                const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+
+                return {
+                    type: 'CARD',
+                    parameters: {
+                        allowedAuthMethods: allowedCardAuthMethods,
+                        allowedCardNetworks: allowedCardNetworks
+                    }
+                };
+            }
+
+            function getCardPaymentMethod(baseCardPaymentMethod, gateway, gatewayMerchantId) {
+                const tokenizationSpecification = {
+                    type: 'PAYMENT_GATEWAY',
+                    parameters: {
+                        'gateway': gateway,
+                        'gatewayMerchantId': gatewayMerchantId
+                    }
+                };
+
+                return Object.assign(
+                    {tokenizationSpecification: tokenizationSpecification},
+                    baseCardPaymentMethod
+                );
+            }
+
+            function getIsReadyToPayRequest(baseRequest, baseCardPaymentMethod) {
+                let isReadyToPayRequest = Object.assign({}, baseRequest);
+                isReadyToPayRequest.allowedPaymentMethods = [baseCardPaymentMethod];
+
+                return isReadyToPayRequest;
+            }
+        </script>
+    </html>
+</apex:page>

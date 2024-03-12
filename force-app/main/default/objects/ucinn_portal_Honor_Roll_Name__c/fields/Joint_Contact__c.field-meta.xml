@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Joint_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Joint Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Honor Roll Names (Joint Contact)</relationshipLabel>
+    <relationshipName>ucinn_portal_Honor_Roll_Names_Joint</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

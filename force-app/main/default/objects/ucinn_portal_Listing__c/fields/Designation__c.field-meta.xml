@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designation__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The designation to assign the ticket gift amount to. This designation will apply for all related ticket types, unless the ticket type&apos;s designation field is populated.</description>
+    <externalId>false</externalId>
+    <label>Designation</label>
+    <referenceTo>ucinn_ascendv2__Designation__c</referenceTo>
+    <relationshipLabel>Listings</relationshipLabel>
+    <relationshipName>ucinn_portal_Listings_Designation</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

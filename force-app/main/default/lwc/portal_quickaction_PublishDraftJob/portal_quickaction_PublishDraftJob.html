@@ -1,0 +1,15 @@
+<template>
+    <div if:true={_showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Publish Draft</h2>
+    </header>
+    <lightning-quick-action-panel title="Publish Draft?">
+        Are you sure you want to publish this draft record?
+        <div slot="footer">
+            <lightning-button class="slds-m-around_xx-small" variant="neutral" label="Cancel" onclick={handleCancel}></lightning-button>
+            <lightning-button class="slds-m-around_xx-small" variant="brand" label="Publish" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

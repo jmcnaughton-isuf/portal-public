@@ -1,0 +1,25 @@
+<template>
+    
+    <button onclick={handleDeleteAllEventTickets} 
+            class="button secondary small full-mobile"
+            disabled={disableButtons}>Remove from Cart</button>
+    <button onclick={handleModifyEventRegistrationClick} 
+            class="button secondary small full-mobile" 
+            disabled={disableButtons}>Modify Registration</button>
+    <!-- <lightning-button 
+        variant="destructive" 
+        label="Delete All Tickets"
+        disabled={disableButtons}
+        onclick={handleDeleteAllEventTickets}
+    ></lightning-button>
+    <lightning-button
+        class="modify-button"
+        variant="brand-outline"
+        label="Modify Registration"
+        disabled={disableButtons}
+        onclick={handleModifyEventRegistrationClick}
+    ></lightning-button> -->
+    <div if:true={showSpinner}>
+        <lightning-spinner variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+    </div>
+</template>

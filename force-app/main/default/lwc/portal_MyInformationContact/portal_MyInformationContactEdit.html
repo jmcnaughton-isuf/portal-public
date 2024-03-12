@@ -1,0 +1,1052 @@
+<template>
+    <div data-ascend-portal>
+        <c-portal-_-my-information-update-modal if:true={_openModal}
+            information-map={informationMap}
+            field={_modalField}
+            update-type={_modalUpdateType}
+            field-type={_modalFieldType}
+            field-value={_modalFieldValue}
+            sobject-name={_modalSObjectName}
+            field-name={_modalFieldName}
+            handle-close={handleCloseModal}
+        >
+        </c-portal-_-my-information-update-modal>
+
+        <div class="container">
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li style="list-style-type: none;"><a href="my-information">Back to My Information</a></li>
+                </ul>
+            </div>
+            <h2 style="margin-bottom: .5em">Contact Information</h2>
+
+            <template if:true={informationMap.frontEndData.name.display}>
+            <h3>{informationMap.frontEndData.name.label}</h3>
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.firstName.display}>
+                        <label for="name">{informationMap.frontEndData.firstName.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={firstName}
+                            is-disabled={informationMap.frontEndData.firstName.disable}
+                            field-type="firstName"
+                            input-type={informationMap.frontEndData.firstName.fieldType}
+                            change-set-value="Personal_Information"
+                            is-required={informationMap.frontEndData.firstName.isRequired}
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.middleName.label}>
+                        <label for="name">{informationMap.frontEndData.middleName.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={middleName}
+                            is-disabled={informationMap.frontEndData.middleName.disable}
+                            field-type="middleName"
+                            input-type={informationMap.frontEndData.middleName.fieldType}
+                            is-required={informationMap.frontEndData.middleName.isRequired}
+                            change-set-value="Personal_Information"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.lastName.display}>
+                        <label for="name">{informationMap.frontEndData.lastName.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={lastName}
+                            is-disabled={informationMap.frontEndData.lastName.disable}
+                            field-type="lastName"
+                            input-type={informationMap.frontEndData.lastName.fieldType}
+                            is-required={informationMap.frontEndData.lastName.isRequired}
+                            change-set-value="Personal_Information"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.prefix.display}>
+                        <label for="">{informationMap.frontEndData.prefix.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={title}
+                            is-disabled={informationMap.frontEndData.prefix.disable}
+                            is-picklist="true"
+                            picklist-values={informationMap.picklists.prefix}
+                            field-type="title"
+                            input-type={informationMap.frontEndData.prefix.fieldType}
+                            change-set-value="Personal_Information"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.suffix.display}>
+                        <label for="">{informationMap.frontEndData.suffix.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={suffix}
+                            is-disabled={informationMap.frontEndData.suffix.disable}
+                            is-picklist="true"
+                            picklist-values={informationMap.picklists.suffix}
+                            field-type="suffix"
+                            input-type={informationMap.frontEndData.suffix.fieldType}
+                            change-set-value="Personal_Information"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.businessTitle.display}>
+                        <label for="">{informationMap.frontEndData.businessTitle.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={businessTitle}
+                            is-disabled={informationMap.frontEndData.businessTitle.disable}
+                            is-picklist="true"
+                            picklist-values={informationMap.picklists.businessTitle}
+                            field-type="businessTitle"
+                            input-type={informationMap.frontEndData.businessTitle.fieldType}
+                            change-set-value="Personal_Information"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                </div>
+            </div>
+            </template>
+        </div>
+        <div class="line-break"></div>
+
+        <div class="container" if:true={informationMap.frontEndData.alsoKnownAs.display}>
+            <h2 style="margin-bottom: .5em">{informationMap.frontEndData.alsoKnownAs.label}</h2>
+            <h3 style="display: inline-block; margin-bottom: 1em">Former Name</h3>
+            <div class="labelled-toggle-switch" if:true={informationMap.frontEndData.alsoKnownAs.togglePerRecord}>
+                <span class="hide-input">Hide</span>
+                <label class="switch">
+                    <input type="checkbox" oninput={setFormerNameToggle} checked={formerNameToggle}>
+                    <span class="slider round"></span>
+                </label>
+                <span class="show-input">Show</span>
+            </div>
+            
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.maidenFirstName.display}>
+                        <label for="name">{informationMap.frontEndData.maidenFirstName.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={maidenFirstName}
+                            is-disabled={informationMap.frontEndData.maidenFirstName.disable}
+                            field-type="maidenFirstName"
+                            input-type={informationMap.frontEndData.maidenFirstName.fieldType}
+                            is-required={informationMap.frontEndData.maidenFirstName.isRequired}
+                            change-set-value="Also_Known_As"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.maidenMiddleName.display}>
+                        <label for="name">{informationMap.frontEndData.maidenMiddleName.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={maidenMiddleName}
+                            is-disabled={informationMap.frontEndData.maidenMiddleName.disable}
+                            field-type="maidenMiddleName"
+                            input-type={informationMap.frontEndData.maidenMiddleName.fieldType}
+                            is-required={informationMap.frontEndData.maidenMiddleName.isRequired}
+                            change-set-value="Also_Known_As"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.maidenLastName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.maidenLastName.label}
+                            value={maidenLastName}
+                            is-disabled={informationMap.frontEndData.maidenLastName.disable}
+                            field-type="maidenLastName"
+                            input-type={informationMap.frontEndData.maidenLastName.fieldType}
+                            is-required={informationMap.frontEndData.maidenLastName.isRequired}
+                            change-set-value="Also_Known_As"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="display: inline-block; margin-bottom: 1em">{informationMap.frontEndData.alsoKnownAs.label}</h3>
+            <div class="labelled-toggle-switch" if:true={informationMap.frontEndData.alsoKnownAs.togglePerRecord}>
+                <span class="hide-input">Hide</span>
+                <label class="switch">
+                    <input type="checkbox" checked={alsoKnownAsToggle} oninput={setAlsoKnownAsToggle}>
+                    <span class="slider round"></span>
+                </label>
+                <span class="show-input">Show</span>
+            </div>
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.nicknameFirstName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.nicknameFirstName.label}
+                            value={nicknameFirstName}
+                            is-disabled={informationMap.frontEndData.nicknameFirstName.disable}
+                            field-type="nicknameFirstName"
+                            input-type={informationMap.frontEndData.nicknameFirstName.fieldType}
+                            is-required={informationMap.frontEndData.nicknameFirstName.isRequired}
+                            change-set-value="Also_Known_As"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.nicknameLastName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.nicknameLastName.label}
+                            value={nicknameLastName}
+                            is-disabled={informationMap.frontEndData.nicknameLastName.disable}
+                            field-type="nicknameLastName"
+                            input-type={informationMap.frontEndData.nicknameLastName.fieldType}
+                            is-required={informationMap.frontEndData.nicknameLastName.isRequired}
+                            change-set-value="Also_Known_As"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container" if:true={informationMap.frontEndData.directoryName.display}>
+            <h2 style="display: inline-block; margin-bottom: 0.5em">{informationMap.frontEndData.directoryName.label}</h2>
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.directoryFirstName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.directoryFirstName.label}
+                            value={directoryFirstName}
+                            is-disabled={informationMap.frontEndData.directoryFirstName.disable}
+                            field-type="directoryFirstName"
+                            input-type={informationMap.frontEndData.directoryFirstName.fieldType}
+                            is-required={informationMap.frontEndData.directoryFirstName.isRequired}
+                            change-set-value="Directory_Display_Name"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.directoryLastName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.directoryLastName.label}
+                            value={directoryLastName}
+                            is-disabled={informationMap.frontEndData.directoryLastName.disable}
+                            field-type="directoryLastName"
+                            input-type={informationMap.frontEndData.directoryLastName.fieldType}
+                            is-required={informationMap.frontEndData.directoryLastName.isRequired}
+                            change-set-value="Directory_Display_Name"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line-break"></div>
+
+        <div class="container" if:true={informationMap.frontEndData.additionalDetails.display}>
+            <h2 style="margin-bottom: .5em">{informationMap.frontEndData.additionalDetails.label}</h2>
+            
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.gender.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.gender.label}
+                            value={gender}
+                            is-toggled={informationMap.frontEndData.gender.toggle}
+                            is-disabled={informationMap.frontEndData.gender.disable}
+                            is-picklist="true"
+                            picklist-values={informationMap.picklists.gender}
+                            field-type="gender"
+                            input-type={informationMap.frontEndData.gender.fieldType}
+                            toggle-value={genderToggle}
+                            toggle-field="isShowGender"
+                            change-set-value="Additional_Details"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+
+                    <div class="grid-item" if:true={informationMap.frontEndData.pronoun.display}>
+                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.pronoun.label}
+                            value={pronoun}
+                            is-toggled={informationMap.frontEndData.pronoun.toggle}
+                            is-disabled={informationMap.frontEndData.pronoun.disable}
+                            is-picklist="true"
+                            picklist-values={informationMap.picklists.pronoun}
+                            field-type="pronoun"
+                            input-type={informationMap.frontEndData.pronoun.fieldType}
+                            toggle-value={pronounToggle}
+                            toggle-field="isShowPronouns"
+                            change-set-value="Additional_Details"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.birthdate.display}>
+                        <label for="name">{informationMap.frontEndData.birthdate.label}</label>
+                        <div class="edit-entry-list" if:true={informationMap.frontEndData.birthdate.reportUpdateLink}>
+                            <a onclick={reportUpdate} data-field='birthdate' data-fieldvalue={birthdate} data-fieldname="birthdate" data-fieldtype="date" data-type='fieldUpdate' data-sobjectname="interims" if:true={reportBirthdate}>Request Update</a>
+                            <a onclick={reportUpdate} data-field='birthdate' data-fieldvalue={pendingBirthdate} data-fieldname="birthdate" data-fieldtype="date" data-type='fieldUpdate' data-sobjectname="interims" if:false={reportBirthdate}>Pending</a>
+                        </div>
+                        <c-portal_-My-Information-Edit-Field 
+                            value={birthdate}
+                            is-disabled={informationMap.frontEndData.birthdate.disable}
+                            field-type="birthdate"
+                            input-type={informationMap.frontEndData.birthdate.fieldType}
+                            change-set-value="Additional_Details"
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.maritalStatus.display}>
+                        <label for="">{informationMap.frontEndData.maritalStatus.label}</label>
+                        <c-portal_-My-Information-Edit-Field
+                            value={maritalStatus}
+                            is-disabled={informationMap.frontEndData.maritalStatus.disable}
+                            is-picklist="true"
+                            picklist-values={informationMap.picklists.maritalStatus}
+                            field-type="maritalStatus"
+                            input-type={informationMap.frontEndData.maritalStatus.fieldType}
+                            change-set-value="Additional_Details"
+                            handle-change={handleChange}
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.spouseFirstName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.spouseFirstName.label}
+                            value={spouseFirstName}
+                            is-disabled={isSpouseFirstNameDisabled}
+                            field-type="spouseFirstName"
+                            data-field-type="spouseFirstName"
+                            input-type={informationMap.frontEndData.spouseFirstName.fieldType}
+                            is-required={isSpouseFirstNameRequired}
+                            change-set-value="Additional_Details"
+                            handle-change={handleChange}
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.spouseLastName.display}>
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.spouseLastName.label}
+                            value={spouseLastName}
+                            is-disabled={isSpouseLastNameDisabled}
+                            field-type="spouseLastName"
+                            data-field-type="spouseLastName"
+                            input-type={informationMap.frontEndData.spouseLastName.fieldType}
+                            is-required={isSpouseLastNameRequired}
+                            change-set-value="Additional_Details"
+                            handle-change={handleChange}
+                        >
+                        </c-portal_-My-Information-Edit-Field>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" if:true={informationMap.frontEndData.emails.display}>
+            <h3>{informationMap.frontEndData.emails.label}</h3>
+            <template for:each={_interimEmail} for:item="email" for:index="index">
+                <template if:false={email.isHide}>
+                    <div class="entry-heading" key={email.index}>
+                        <div class="edit-entry-list">
+                            <template if:false={informationMap.frontEndData.emails.disable}>
+                                <a data-index={index} data-type="interim" onclick={deleteEmail}><img src={deleteIcon}>Delete</a>
+                            </template>
+                        </div>
+                        <div class="entry-form">
+                            <div class="flex-grid-4">
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailAddress.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.emailAddress.label}
+                                        value={email.emailAddress}
+                                        field-type="interimEmail"
+                                        index={index}
+                                        field-name="emailAddress"
+                                        change-set-value="Emails"
+                                        input-type="email"
+                                        is-disabled={informationMap.frontEndData.emailAddress.disable}
+                                        is-required={informationMap.frontEndData.emailAddress.isRequired}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailType.display}>
+                                    <label for="">{informationMap.frontEndData.emailType.label}</label>
+                                    <c-portal_-My-Information-Edit-Field
+                                        is-picklist="true"
+                                        value={email.emailType}
+                                        picklist-values={email.picklistValues}
+                                        field-type="interimEmail"
+                                        index={index}
+                                        field-name="emailType"
+                                        input-type={informationMap.frontEndData.emailType.fieldType}
+                                        change-set-value="Emails"
+                                        is-disabled={emailDisabled}
+                                        handle-change={handleChange}
+                                        is-null-option-disabled="true"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.emailIsPreferred.label}
+                                                value={email.emailIsPreferred}
+                                                field-type="interimEmail"
+                                                index={index}
+                                                field-name="emailIsPreferred"
+                                                input-type={informationMap.frontEndData.emailIsPreferred.fieldType}
+                                                change-set-value="Emails"
+                                                handle-change={handleChange}
+                                                data-target='interimEmailPreferred'
+                                                is-disabled={informationMap.frontEndData.emailIsPreferred.disable}
+                                            >
+                                            </c-portal_-My-Information-Edit-Field>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emails.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input type="checkbox" class="radio" checked={email.emailShowOnDirectory} value={email.emailShowOnDirectory} data-changesetvalue="emails" oninput={updateDirectorySetting} data-index={index} data-type="interimEmail">
+                                            <label for="" if:true={informationMap.frontEndData.emailShowOnDirectory.label}>{informationMap.frontEndData.emailShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template for:each={_informationMap.records.Emails.records} for:item="email" for:index="index">
+                <template if:false={email.isHide}>
+                    <div class="entry-heading" key={email.index}>
+                        <div class="edit-entry-list">
+                            <template if:false={informationMap.frontEndData.emails.disable}>
+                                <a data-index={index} data-type="email" onclick={deleteEmail}><img src={deleteIcon}>Delete</a>
+                            </template>
+                        </div>
+                        <div class="entry-form">
+                            <div class="flex-grid-4">
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailAddress.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.emailAddress.label}
+                                        value={email.emailAddress}
+                                        field-type="email"
+                                        index={index}
+                                        field-name="emailAddress"
+                                        change-set-value="Emails"
+                                        input-type="email"
+                                        is-disabled={informationMap.frontEndData.emailAddress.disable}
+                                        is-required={informationMap.frontEndData.emailAddress.isRequired}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailType.display}>
+                                    <label for="">{informationMap.frontEndData.emailType.label}</label>
+                                    <c-portal_-My-Information-Edit-Field
+                                        is-picklist="true"
+                                        value={email.emailType}
+                                        picklist-values={email.picklistValues}
+                                        field-type="email"
+                                        index={index}
+                                        field-name="emailType"
+                                        input-type={informationMap.frontEndData.emailType.fieldType}
+                                        change-set-value="Emails"
+                                        is-disabled={emailDisabled}
+                                        handle-change={handleChange}
+                                        is-null-option-disabled="true"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.emailIsPreferred.label}
+                                        value={email.emailIsPreferred}
+                                        field-type="email"
+                                        index={index}
+                                        field-name="emailIsPreferred"
+                                        input-type={informationMap.frontEndData.emailIsPreferred.fieldType}
+                                        change-set-value="Emails"
+                                        handle-change={handleChange}
+                                        data-target='emailPreferred'
+                                        is-disabled={informationMap.frontEndData.emailIsPreferred.disable}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emails.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input type="checkbox" class="radio" checked={email.emailShowOnDirectory} value={email.emailShowOnDirectory} data-changesetvalue="Emails" oninput={updateDirectorySetting} data-index={index} data-type="email">
+                                            <label for="" if:true={informationMap.frontEndData.emailShowOnDirectory.label}>{informationMap.frontEndData.emailShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <div class="button-list" if:false={informationMap.frontEndData.emails.disable}>
+                <a onclick={addEmails} class="button secondary small" if:true={isAddEmailDisplay}>Add Email</a>
+            </div>
+        </div>
+
+        <div class="line-break"></div>
+        
+        <div class="bottom-border container" if:true={informationMap.frontEndData.phones.display}>
+            <h3>{informationMap.frontEndData.phones.label}</h3>
+            <template for:each={_interimPhones} for:item="phone" for:index="index">
+                <template if:false={phone.isHide}>
+                    <div class="entry-heading" key={phone.index}>
+                        <div class="edit-entry-list" if:false={informationMap.frontEndData.phones.disable}>
+                            <a data-index={index} data-type="interim" onclick={deletePhone}><img src={deleteIcon}>Delete</a>
+                        </div>
+                        <div class="entry-form">
+                            <div class="flex-grid-4">
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneNumber.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.phoneNumber.label}
+                                        value={phone.phoneNumber}
+                                        field-type="interimPhone"
+                                        index={index}
+                                        field-name="phoneNumber"
+                                        change-set-value="Phones"
+                                        input-type={informationMap.frontEndData.phoneNumber.fieldType}
+                                        is-disabled={informationMap.frontEndData.phoneNumber.disable}
+                                        is-required={informationMap.frontEndData.phoneNumber.isRequired}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneType.display}>
+                                    <label for="">{informationMap.frontEndData.phoneType.label}</label>
+                                    <c-portal_-My-Information-Edit-Field
+                                        is-picklist="true"
+                                        picklist-values={phone.picklistValues}
+                                        value={phone.phoneType}
+                                        field-type="interimPhone"
+                                        index={index}
+                                        field-name="phoneType"
+                                        input-type={informationMap.frontEndData.phoneType.fieldType}
+                                        change-set-value="Phones"
+                                        is-disabled={phoneDisabled}
+                                        handle-change={handleChange}
+                                        is-null-option-disabled="true"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneIsPreferred.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.phoneIsPreferred.label}
+                                        value={phone.phoneIsPreferred}
+                                        field-type="interimPhone"
+                                        index={index}
+                                        field-name="phoneIsPreferred"
+                                        change-set-value="Phones"
+                                        input-type={informationMap.frontEndData.phoneIsPreferred.fieldType}
+                                        data-target="interimPhonePreferred"
+                                        handle-change={handleChange}
+                                        is-disabled={informationMap.frontEndData.phoneIsPreferred.disable}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phones.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input type="checkbox" class="radio" checked={phone.phoneShowOnDirectory} value={phone.phoneShowOnDirectory} data-changesetvalue="phones" oninput={updateDirectorySetting} data-index={index} data-type="interimPhone">
+                                            <label for="" if:true={informationMap.frontEndData.phoneShowOnDirectory.label}>{informationMap.frontEndData.phoneShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template for:each={_informationMap.records.Phones.records} for:item="phone" for:index="index">
+                <template if:false={phone.isHide}>
+                    <div class="entry-heading" key={phone.index}>
+                        <div class="edit-entry-list" if:false={informationMap.frontEndData.phones.disable}>
+                            <a data-index={index} data-type="phone" onclick={deletePhone}><img src={deleteIcon}>Delete</a>
+                        </div>
+                        <div class="entry-form">
+                            <div class="flex-grid-4">
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneNumber.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.phoneNumber.label}
+                                        value={phone.phoneNumber}
+                                        field-type="phone"
+                                        index={index}
+                                        field-name="phoneNumber"
+                                        change-set-value="Phones"
+                                        input-type={informationMap.frontEndData.phoneNumber.fieldType}
+                                        is-disabled={informationMap.frontEndData.phoneNumber.disable}
+                                        is-required={informationMap.frontEndData.phoneNumber.isRequired}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneType.display}>
+                                    <label for="">{informationMap.frontEndData.phoneType.label}</label>
+                                    <c-portal_-My-Information-Edit-Field
+                                        is-picklist="true"
+                                        picklist-values={phone.picklistValues}
+                                        value={phone.phoneType}
+                                        field-type="phone"
+                                        index={index}
+                                        field-name="phoneType"
+                                        input-type={informationMap.frontEndData.phoneType.fieldType}
+                                        change-set-value="Phones"
+                                        is-disabled={phoneDisabled}
+                                        handle-change={handleChange}
+                                        is-null-option-disabled="true"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneIsPreferred.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.phoneIsPreferred.label}
+                                        value={phone.phoneIsPreferred}
+                                        field-type="phone"
+                                        index={index}
+                                        field-name="phoneIsPreferred"
+                                        change-set-value="Phones"
+                                        input-type={informationMap.frontEndData.phoneIsPreferred.fieldType}
+                                        data-target="phonePreferred"
+                                        handle-change={handleChange}
+                                        is-disabled={informationMap.frontEndData.phoneIsPreferred.disable}
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phones.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input type="checkbox" class="radio" checked={phone.phoneShowOnDirectory} value={phone.phoneShowOnDirectory} data-changesetvalue="Phones" oninput={updateDirectorySetting} data-index={index}>
+                                            <label for="" if:true={informationMap.frontEndData.phoneShowOnDirectory.label}>{informationMap.frontEndData.phoneShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <div class="button-list" if:false={informationMap.frontEndData.phones.disable}>
+                <a onclick={addPhones} class="button secondary small" if:true={isAddPhoneDisplay}>Add Phone</a>
+            </div>
+        </div>
+
+        <div class="line-break"></div>
+                
+        <div class="bottom-border container" if:true={informationMap.frontEndData.addresses.display}>
+            <h3>{informationMap.frontEndData.addresses.label}</h3>
+            <template for:each={_interimAddresses} for:item="address" for:index="index">
+                <template if:false={address.isHide}>
+                    <div class="entry-heading" key={address.index}>
+                        <div class="edit-entry-list" if:false={informationMap.frontEndData.addresses.disable}>
+                            <a data-index={index} data-type="interim" onclick={deleteAddress}><img src={deleteIcon}>Delete</a>
+                        </div>
+                    
+                        <div class="entry-form">
+                            <div class="address-box" style="margin-top: 15px;" if:true={informationMap.frontEndData.isShowAddressLines.toggle}>
+                                <div style="display:flex;">
+                                    <div style="font-size: 1.25em;">Street Address</div>
+                                    <div style="bottom:.625em; position:relative;">
+                                        <div class="labelled-toggle-switch">
+                                            <span class="hide-input" style="bottom:7px;position:relative;">Hide</span>
+                                            <label class="switch">
+                                                <input type="checkbox" oninput={setAddressStreetToggle} checked={address.isShowAddressLines} data-type="interim" data-index={index}>
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span class="show-input" style="bottom:7px; position:relative;">Show</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grid-3">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine1.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine1.label}
+                                            value={address.addressLine1}
+                                            field-type="interimAddress"
+                                            index={index}
+                                            field-name="addressLine1"
+                                            is-disabled={informationMap.frontEndData.addressLine1.disable}
+                                            input-type={informationMap.frontEndData.addressLine1.fieldType}
+                                            is-required={informationMap.frontEndData.addressLine1.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine2.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine2.label}
+                                            value={address.addressLine2}  
+                                            field-type="interimAddress"
+                                            index={index}
+                                            field-name="addressLine2"
+                                            input-type={informationMap.frontEndData.addressLine2.fieldType}
+                                            is-disabled={informationMap.frontEndData.addressLine2.disable}
+                                            is-required={informationMap.frontEndData.addressLine2.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine3.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine3.label}
+                                            value={address.addressLine3}
+                                            field-type="interimAddress"
+                                            index={index}
+                                            field-name="addressLine3"
+                                            input-type={informationMap.frontEndData.addressLine3.fieldType}
+                                            is-disabled={informationMap.frontEndData.addressLine3.disable}
+                                            is-required={informationMap.frontEndData.addressLine3.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-grid-3" style="padding:5px" if:false={informationMap.frontEndData.isShowAddressLines.toggle}>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressLine1.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine1.label}
+                                        value={address.addressLine1}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressLine1"
+                                        is-disabled={informationMap.frontEndData.addressLine1.disable}
+                                        input-type={informationMap.frontEndData.addressLine1.fieldType}
+                                        is-required={informationMap.frontEndData.addressLine1.isRequired}
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressLine2.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine2.label}
+                                        value={address.addressLine2}  
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressLine2"
+                                        input-type={informationMap.frontEndData.addressLine2.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressLine2.disable}
+                                        is-required={informationMap.frontEndData.addressLine2.isRequired}
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressLine3.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine3.label}
+                                        value={address.addressLine3}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressLine3"
+                                        input-type={informationMap.frontEndData.addressLine3.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressLine3.disable}
+                                        is-required={informationMap.frontEndData.addressLine3.isRequired}
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                            </div>
+                            <div class="flex-grid-3" style="padding:5px">
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressCity.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressCity.label}
+                                        value={address.addressCity}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressCity"
+                                        input-type={informationMap.frontEndData.addressCity.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressCity.disable}
+                                        is-toggled={informationMap.frontEndData.addressCity.toggle}
+                                        is-required={informationMap.frontEndData.addressCity.isRequired}
+                                        toggle-value={address.isShowCity}
+                                        toggle-field="isShowCity"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressState.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressState.label}
+                                        value={address.addressState}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressState"
+                                        input-type={informationMap.frontEndData.addressState.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressState.disable}
+                                        is-toggled={informationMap.frontEndData.addressState.toggle}
+                                        is-required={informationMap.frontEndData.addressState.isRequired}
+                                        toggle-value={address.isShowState}
+                                        toggle-field="isShowState"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressCountry.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressCountry.label}
+                                        value={address.addressCountry}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressCountry"
+                                        input-type={informationMap.frontEndData.addressCountry.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressCountry.disable}
+                                        is-toggled={informationMap.frontEndData.addressCountry.toggle}
+                                        is-required={informationMap.frontEndData.addressCountry.isRequired}
+                                        toggle-value={address.isShowCountry}
+                                        toggle-field="isShowCountry"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                            </div>
+                            <div class="flex-grid-4" style="padding:5px">
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressPostalCode.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressPostalCode.label}
+                                        value={address.addressPostalCode}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressPostalCode"
+                                        input-type={informationMap.frontEndData.addressPostalCode.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressPostalCode.disable}
+                                        is-toggled={informationMap.frontEndData.addressPostalCode.toggle}
+                                        is-required={informationMap.frontEndData.addressPostalCode.isRequired}
+                                        toggle-value={address.isShowPostalCode}
+                                        toggle-field="isShowPostalCode"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressType.display}>
+                                    <label for="">{informationMap.frontEndData.addressType.label}</label>
+                                    <c-portal_-My-Information-Edit-Field
+                                        is-picklist="true"
+                                        picklist-values={address.picklistValues}
+                                        value={address.addressType}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressType"
+                                        input-type={informationMap.frontEndData.addressType.fieldType}
+                                        is-disabled={addressDisabled}
+                                        change-set-value="Addresses"
+                                        handle-change={handleChange}
+                                        is-null-option-disabled="true"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressIsPreferred.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressIsPreferred.label}
+                                        value={address.addressIsPreferred}
+                                        field-type="interimAddress"
+                                        index={index}
+                                        field-name="addressIsPreferred"
+                                        input-type={informationMap.frontEndData.addressIsPreferred.fieldType}
+                                        data-target="interimAddressPreferred"
+                                        handle-change={handleChange}
+                                        is-disabled={informationMap.frontEndData.addressIsPreferred.disable}
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addresses.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input type="checkbox" class="radio" checked={address.addressShowOnDirectory} data-changesetvalue="Addresses" oninput={updateDirectorySetting} data-index={index} data-type="interimAddress">
+                                            <label for="" if:true={informationMap.frontEndData.addressShowOnDirectory.label}>{informationMap.frontEndData.addressShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template for:each={_informationMap.records.Addresses.records} for:item="address" for:index="index">
+                <template if:false={address.isHide}>
+                    <div class="entry-heading" key={address.index}>
+                        <div class="edit-entry-list">
+                            <a data-index={index} onclick={deleteAddress}><img src={deleteIcon}>Delete</a>
+                        </div>
+                        <div class="entry-form">
+                            <div class="address-box" style="margin-top: 15px;" if:true={informationMap.frontEndData.isShowAddressLines.toggle}>
+                                <div style="display:flex;">
+                                    <div style="font-size: 1.25em;">Street Address</div>
+                                    <div style="bottom:.625em; position:relative;">
+                                        <div class="labelled-toggle-switch">
+                                            <span class="hide-input" style="bottom:7px;position:relative;">Hide</span>
+                                            <label class="switch">
+                                                <input type="checkbox" oninput={setAddressStreetToggle} checked={address.isShowAddressLines} data-type="addresses" data-index={index}>
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span class="show-input" style="bottom:7px; position:relative;">Show</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grid-3">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine1.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine1.label}
+                                            value={address.addressLine1}
+                                            field-type="address"
+                                            index={index}
+                                            field-name="addressLine1"
+                                            is-disabled={informationMap.frontEndData.addressLine1.disable}
+                                            input-type={informationMap.frontEndData.addressLine1.fieldType}
+                                            is-required={informationMap.frontEndData.addressLine1.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine2.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine2.label}
+                                            value={address.addressLine2}  
+                                            field-type="address"
+                                            index={index}
+                                            field-name="addressLine2"
+                                            input-type={informationMap.frontEndData.addressLine2.fieldType}
+                                            is-disabled={informationMap.frontEndData.addressLine2.disable}
+                                            is-required={informationMap.frontEndData.addressLine2.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine3.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine3.label}
+                                            value={address.addressLine3}
+                                            field-type="address"
+                                            index={index}
+                                            field-name="addressLine3"
+                                            input-type={informationMap.frontEndData.addressLine3.fieldType}
+                                            is-disabled={informationMap.frontEndData.addressLine3.disable}
+                                            is-required={informationMap.frontEndData.addressLine3.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-grid-3" style="padding:5px" if:false={informationMap.frontEndData.isShowAddressLines.toggle}>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine1.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine1.label}
+                                            value={address.addressLine1}
+                                            field-type="address"
+                                            index={index}
+                                            field-name="addressLine1"
+                                            is-disabled={informationMap.frontEndData.addressLine1.disable}
+                                            input-type={informationMap.frontEndData.addressLine1.fieldType}
+                                            is-required={informationMap.frontEndData.addressLine1.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine2.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine2.label}
+                                            value={address.addressLine2}  
+                                            field-type="address"
+                                            index={index}
+                                            field-name="addressLine2"
+                                            input-type={informationMap.frontEndData.addressLine2.fieldType}
+                                            is-disabled={informationMap.frontEndData.addressLine2.disable}
+                                            is-required={informationMap.frontEndData.addressLine2.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressLine3.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressLine3.label}
+                                            value={address.addressLine3}
+                                            field-type="address"
+                                            index={index}
+                                            field-name="addressLine3"
+                                            input-type={informationMap.frontEndData.addressLine3.fieldType}
+                                            is-disabled={informationMap.frontEndData.addressLine3.disable}
+                                            is-required={informationMap.frontEndData.addressLine3.isRequired}
+                                            change-set-value="Addresses"
+                                        >
+                                        </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                </div>
+                            <div class="flex-grid-3" style="padding:5px">
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressCity.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressCity.label}
+                                        value={address.addressCity}
+                                        field-type="address"
+                                        index={index}
+                                        field-name="addressCity"
+                                        input-type={informationMap.frontEndData.addressCity.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressCity.disable}
+                                        is-toggled={informationMap.frontEndData.addressCity.toggle}
+                                        is-required={informationMap.frontEndData.addressCity.isRequired}
+                                        toggle-value={address.isShowCity}
+                                        toggle-field="isShowCity"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressState.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressState.label}
+                                        value={address.addressState}
+                                        field-type="address"
+                                        index={index}
+                                        field-name="addressState"
+                                        input-type={informationMap.frontEndData.addressState.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressState.disable}
+                                        is-toggled={informationMap.frontEndData.addressState.toggle}
+                                        is-required={informationMap.frontEndData.addressState.isRequired}
+                                        toggle-value={address.isShowState}
+                                        toggle-field="isShowState"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressCountry.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressCountry.label}
+                                        value={address.addressCountry}
+                                        field-type="address"
+                                        index={index}
+                                        field-name="addressCountry"
+                                        input-type={informationMap.frontEndData.addressCountry.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressCountry.disable}
+                                        is-toggled={informationMap.frontEndData.addressCountry.toggle}
+                                        is-required={informationMap.frontEndData.addressCountry.isRequired}
+                                        toggle-value={address.isShowCountry}
+                                        toggle-field="isShowCountry"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                            </div>
+                            <div class="flex-grid-4" style="padding:5px">
+                                <div class="grid-item"  if:true={informationMap.frontEndData.addressPostalCode.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressPostalCode.label}
+                                        value={address.addressPostalCode}
+                                        field-type="address"
+                                        index={index}
+                                        field-name="addressPostalCode"
+                                        input-type={informationMap.frontEndData.addressPostalCode.fieldType}
+                                        is-disabled={informationMap.frontEndData.addressPostalCode.disable}
+                                        is-toggled={informationMap.frontEndData.addressPostalCode.toggle}
+                                        is-required={informationMap.frontEndData.addressPostalCode.isRequired}
+                                        toggle-value={address.isShowPostalCode}
+                                        toggle-field="isShowPostalCode"
+                                        change-set-value="Addresses"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressType.display}>
+                                    <label for="">{informationMap.frontEndData.addressType.label}</label>
+                                    <c-portal_-My-Information-Edit-Field
+                                        is-picklist="true"
+                                        picklist-values={address.picklistValues}
+                                        value={address.addressType}
+                                        field-type="address"
+                                        index={index}
+                                        field-name="addressType"
+                                        input-type={informationMap.frontEndData.addressType.fieldType}
+                                        is-disabled={addressDisabled}
+                                        change-set-value="Addresses"
+                                        handle-change={handleChange}
+                                        is-null-option-disabled="true"
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressIsPreferred.display}>
+                                    <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.addressIsPreferred.label}
+                                        value={address.addressIsPreferred}
+                                        field-type="address"
+                                        index={index}
+                                        field-name="addressIsPreferred"
+                                        input-type={informationMap.frontEndData.addressIsPreferred.fieldType}
+                                        data-target="addressPreferred"
+                                        handle-change={handleChange}
+                                        is-disabled={informationMap.frontEndData.addressIsPreferred.disable}
+                                        change-set-value="Addresses"
+                                        
+                                    >
+                                    </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addresses.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input type="checkbox" class="radio" checked={address.addressShowOnDirectory} data-changesetvalue="Addresses" oninput={updateDirectorySetting} data-index={index}>
+                                            <label for="" if:true={informationMap.frontEndData.addressShowOnDirectory.label}>{informationMap.frontEndData.addressShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <div class="button-list" if:false={informationMap.frontEndData.addresses.disable}>
+                <a class="button secondary small" onclick={addAddresses} disabled={addressDisabled} if:true={isAddAddressDisplay}>Add Address</a>
+            </div>
+        </div>
+    </div>
+</template>

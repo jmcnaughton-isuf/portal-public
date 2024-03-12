@@ -1,0 +1,307 @@
+<apex:page renderAs="pdf"
+            controller="PORTAL_VF_GiftReceiptController"
+            apiVersion="40.0"
+            applyBodyTag="false"
+            doctype="html-5.0">
+
+    <head>
+        <style type="text/css">
+            body {
+                font-family: Arial Unicode MS;
+            }
+
+            @Page {
+                margin: 25px 27px 80px;
+            }
+
+            @Page {
+                @bottom-center {
+                    font-size: 12px;
+                    font-weight: 900;
+                    font-family: Arial Unicode MS;
+                    content: "{!staticContentInfo[CONTENT_MODULE_FOTTER_TEXT_KEY]}";
+                }
+            }
+
+            table {
+                table-layout: fixed;
+                border-collapse: collapse;
+            }
+
+            .align-text {
+                text-align: center;
+            }
+
+            .footer {
+                position: fixed;
+                text-align: center;
+                bottom: 0px;
+                width: 100%;
+            }
+
+            td {
+                overflow: hidden;
+            }
+
+            .text {
+                padding: 10px 40px 10px;
+                text-align: left;
+                line-height: 90%;
+            }
+
+            span {
+                font-size: 14px;
+            }
+
+            .giftDataStyle {
+                font-size: 16px;
+            }
+
+            .border td,
+            th {
+                border: 1px solid black;
+            }
+
+            .borderBottomRight {
+                border-right: solid;
+                border-bottom: solid;
+                border-width: 0.5px;
+                border-color: #800000;
+            }
+
+            .borderBottom {
+                border-bottom: solid;
+                border-width: 0.5px !important;
+                border-color: #800000;
+            }
+
+            .borderRight {
+                border-right: solid;
+                border-width: 0.5px;
+                border-color: #800000;
+            }
+
+            .borderTop {
+                border-top: solid;
+                border-width: 0.5px;
+                border-color: #800000;
+            }
+
+            .container {
+                position: relative;
+                text-align: center;
+                color: white;
+                font-size: 38px;
+            }
+
+            .centered {
+                position: absolute;
+                top: 68px;
+                left: 78px; 
+            }
+            
+
+            .centered2 {
+                position: absolute;
+                top: 105px;
+                left: 78px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!--- Title -->
+        <apex:outputPanel rendered="{!staticContentInfo[CONTENT_MODULE_TITLE_HTML_KEY] != null}" layout="none">
+            <apex:outputText value="{!staticContentInfo[CONTENT_MODULE_TITLE_HTML_KEY]}" escape="false"/>
+        </apex:outputPanel>
+
+        <!-- Banner Image --> 
+        <apex:image url="{!$Resource[bannerResourceName]}" alt="{!staticContentInfo[CONTENT_MODULE_BANNER_IMAGE_ALT_TEXT_KEY]}"/>
+
+
+        <!--- Post banner html -->
+        <apex:outputPanel rendered="{!staticContentInfo[CONTENT_MODULE_POST_BANNER_HTML_KEY] != null}" layout="none">
+            <apex:outputText value="{!staticContentInfo[CONTENT_MODULE_POST_BANNER_HTML_KEY]}" escape="false"/>
+        </apex:outputPanel>
+
+        <!-- Gift Info -->
+        <table>
+            <tr>
+                <td>
+                    <table width='100%'>
+
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_CREDIT_DATE_KEY].display}" layout="none">
+                            <tr width='100%'>
+                                <td width='25%'>
+                                    {!paymentPermissionInfo[PAGE_SECTION_CREDIT_DATE_KEY].label}
+                                </td>
+                                <td width='75%'>
+                                    <apex:outputText styleClass="giftDataStyle" value="{0,date,MM-dd-yy}" >
+                                        <apex:param value="{!paymentInfo[PAGE_SECTION_CREDIT_DATE_KEY]}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_PAYMENT_AMOUNT_KEY].display}" layout="none">
+                            <tr width='100%'>
+                                <td width='25%'>
+                                    {!paymentPermissionInfo[PAGE_SECTION_PAYMENT_AMOUNT_KEY].label}
+                                </td>
+                                <td width='75%'>
+                                    <apex:outputText styleClass="giftDataStyle" value="{0, number, Currency}" > <!--rendered="{!NOT(isSecurities)}" -->
+                                        <apex:param value="{!paymentInfo[PAGE_SECTION_PAYMENT_AMOUNT_KEY]}" />
+                                    </apex:outputText>
+                                    <!--<apex:outputText styleClass="giftDataStyle" value="{!securitiesWrapper[PAGE_SECTION_NUMBER_OF_SHARES_KEY]} shares" rendered="{!AND(isSecurities, securitiesWrapper != null)}"/>-->
+                                </td>
+                            </tr>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_DESIGNATION_KEY].display}" layout="none">
+                            <tr width='100%'>
+                                <td width='25%'>
+                                    {!paymentPermissionInfo[PAGE_SECTION_DESIGNATION_KEY].label}
+                                </td>
+                                <td width='75%'>
+                                    <apex:outputText styleClass="giftDataStyle" value="{!paymentInfo[PAGE_SECTION_DESIGNATION_KEY]}" />
+                                </td>
+                            </tr>
+                        </apex:outputPanel>
+                        
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <br/>
+
+        <!-- Contact Info -->
+        <table width='100%'>
+            <tr width='100%'>
+
+                <td width='60%' style='padding-left:40px;'>
+                    <apex:panelGrid columns="1" styleClass="infobox">
+                        <apex:outputText styleClass="giftDataStyle" value="{!constituentWrapper.name}" rendered="{!constituentWrapper.name != null}"/>
+                        <apex:outputText value="{!constituentWrapper.addressHTML}" escape="false" rendered="{!constituentWrapper.addressHTML != null}"/>
+                        <apex:outputPanel layout="none">
+                            <apex:outputText styleClass="giftDataStyle" value="{!constituentWrapper.city}"/>{!IF(OR(constituentWrapper.state == '', constituentWrapper.postalCode == ''), '', ',')}<apex:outputText styleClass="giftDataStyle" value=" {!constituentWrapper.state}"/><apex:outputText styleClass="giftDataStyle" value=" {!constituentWrapper.postalCode}"/>
+                        </apex:outputPanel>
+                    </apex:panelGrid>
+                </td>  
+
+                <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_RECEIPT_NUMBER_KEY].display}" layout="none">
+                    <td width='40%'  style="vertical-align: bottom;">
+                        <table width='100%'>
+                            <tr width='100%'>
+                                <td width='100%'>
+                                    {!paymentPermissionInfo[PAGE_SECTION_RECEIPT_NUMBER_KEY].label}
+                                </td>
+                            </tr>
+                            <tr width='100%'>
+                                <td width='100%'>
+                                    <apex:outputText styleClass="giftDataStyle" value="{!paymentInfo[PAGE_SECTION_RECEIPT_NUMBER_KEY]}" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </apex:outputPanel>
+            </tr>
+        </table>
+
+        <!-- Secuirites Page -->
+        <apex:pageBlock rendered="{!AND(isSecurities, securitiesWrapper != null)}">
+            <div style="page-break-after:always;"/>
+            
+            <!-- securities paragraph text -->
+            <apex:outputPanel rendered="{!staticContentInfo[CONTENT_MODULE_SECURITIES_TOP_HTML] != null}" layout="none">
+                <apex:outputText value="{!staticContentInfo[CONTENT_MODULE_SECURITIES_TOP_HTML]}" escape="false"/>
+            </apex:outputPanel>
+            
+            <!-- Securities table -->
+            <table width='100%'>
+
+                <!-- Securities table columns -->
+                <tr width='100%'>
+                    <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_STOCK_TICKER_SYMBOL].display}" layout="none">
+                        <td width='14%' style='text-align:center'>
+                            {!paymentPermissionInfo[PAGE_SECTION_STOCK_TICKER_SYMBOL].label}
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_LOW_SHARE_PRICE_KEY].display}" layout="none">
+                        <td width='14%' style='text-align:center'>
+                            {!paymentPermissionInfo[PAGE_SECTION_LOW_SHARE_PRICE_KEY].label}
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_HIGH_SHARE_PRICE_KEY].display}" layout="none">
+                        <td width='14%' style='text-align:center'>
+                            {!paymentPermissionInfo[PAGE_SECTION_HIGH_SHARE_PRICE_KEY].label}
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_MEAN_SHARE_PRICE_KEY].display}" layout="none">
+                        <td width='14%' style='text-align:center'>
+                            {!paymentPermissionInfo[PAGE_SECTION_MEAN_SHARE_PRICE_KEY].label}
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_NUMBER_OF_SHARES_KEY].display}" layout="none">
+                        <td width='14%' style='text-align:center'>
+                            {!paymentPermissionInfo[PAGE_SECTION_NUMBER_OF_SHARES_KEY].label}
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_STOCK_AMOUNT_KEY].display}" layout="none">
+                        <td width='14%' style='text-align:center'>
+                            {!paymentPermissionInfo[PAGE_SECTION_STOCK_AMOUNT_KEY].label}
+                        </td>
+                    </apex:outputPanel>
+                </tr>
+
+                <!-- Securities table rows -->
+                <apex:repeat value="{!securitiesWrapper}" var="securitiesRow">
+                    <tr width='100%'>
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_STOCK_TICKER_SYMBOL].display}" layout="none">
+                            <td width='14%' style='text-align:center'> 
+                                {!securitiesRow[PAGE_SECTION_STOCK_TICKER_SYMBOL]}
+                            </td>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_LOW_SHARE_PRICE_KEY].display}" layout="none">
+                            <td width='14%' style='text-align:center'>
+                                <apex:outputText styleClass="giftDataStyle" value="{0, number, Currency}">
+                                    <apex:param value="{!securitiesRow[PAGE_SECTION_LOW_SHARE_PRICE_KEY]}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_HIGH_SHARE_PRICE_KEY].display}" layout="none">
+                            <td width='14%' style='text-align:center'>
+                                <apex:outputText styleClass="giftDataStyle" value="{0, number, Currency}">
+                                    <apex:param value="{!securitiesRow[PAGE_SECTION_HIGH_SHARE_PRICE_KEY]}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_MEAN_SHARE_PRICE_KEY].display}" layout="none">
+                            <td width='14%' style='text-align:center'>
+                                <apex:outputText styleClass="giftDataStyle" value="{0, number, Currency}">
+                                    <apex:param value="{!securitiesRow[PAGE_SECTION_MEAN_SHARE_PRICE_KEY]}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_NUMBER_OF_SHARES_KEY].display}" layout="none">
+                            <td width='14%' style='text-align:center'>
+                                <apex:outputText styleClass="giftDataStyle" value="{0, number, ###,###,###}">
+                                    <apex:param value="{!securitiesRow[PAGE_SECTION_NUMBER_OF_SHARES_KEY]}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!paymentPermissionInfo[PAGE_SECTION_STOCK_AMOUNT_KEY].display}" layout="none">
+                            <td width='14%' style='text-align:center'>
+                                <apex:outputText styleClass="giftDataStyle" value="{0, number, Currency}">
+                                    <apex:param value="{!securitiesRow[PAGE_SECTION_STOCK_AMOUNT_KEY]}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputPanel>
+                    </tr>
+                </apex:repeat>
+            </table>
+
+        </apex:pageBlock>
+
+    </body>
+</apex:page>

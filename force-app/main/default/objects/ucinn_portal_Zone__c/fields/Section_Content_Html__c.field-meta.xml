@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Section_Content_Html__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Applies to each grouping of newsletter sections. use {sectionTitle} for the title of the section and {newsletterSections} for the content from the listing sections, and {backgroundColor} for background color.</inlineHelpText>
+    <label>Section Content Html</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

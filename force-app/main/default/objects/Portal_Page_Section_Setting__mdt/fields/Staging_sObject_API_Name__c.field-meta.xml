@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staging_sObject_API_Name__c</fullName>
+    <description>The sobject api name of the staging record that we want to store the new data in</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The sobject api name of the staging record that we want to store the new data in</inlineHelpText>
+    <label>Staging sObject API Name</label>
+    <length>50</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

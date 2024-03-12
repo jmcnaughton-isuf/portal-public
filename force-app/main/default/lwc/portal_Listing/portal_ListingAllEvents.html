@@ -1,0 +1,69 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div class={allEventsContainer} if:true={showComponent}>
+            <h3 if:true={isDisplayNoResultsMessage} class="slds-text-align_center" style="padding-top: 2rem">{_noResultsText}</h3>
+            <template if:true={_listingListToDisplay} for:each={_listingListToDisplay} for:item="listing">
+                <div class="event" key={listing.Id}>
+                    <div class="slds-grid slds-wrap">
+                        <div class="event-thumb slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                            <template if:true={listing.thumbnailImage}>
+                                <lightning-formatted-rich-text value={listing.thumbnailImage} if:true={frontEndDataMap.thumbnailImage.display}></lightning-formatted-rich-text>
+                            </template>
+                            <template if:false={listing.thumbnailImage}>
+                                <template if:true={listing.headerImage}>
+                                    <lightning-formatted-rich-text value={listing.headerImage} if:true={frontEndDataMap.headerImage.display}></lightning-formatted-rich-text>
+                                </template>
+                            </template>
+                        </div>
+                        <div class="slds-p-around_medium slds-max-x-small-size_12-of-12 slds-x-small-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                            <template if:true={frontEndDataMap.isFeatured.display}><div if:true={listing.isFeatured} class="eyebrow">Featured</div></template>
+                            <p class="date"><strong>{listing.formattedDate}</strong></p>
+                            <a href={listing.listingUrl} target={listing.listingUrlTarget} if:true={frontEndDataMap.name.display}><h2 class="listing-name">{listing.name}</h2></a>
+                            <p class="header-content" if:true={frontEndDataMap.headerContent.display}>{listing.headerContent}</p>
+                            <div class="button-list" if:true={_buttonTextMap.data}>
+                                <a href={listing.listingUrl} target={listing.listingUrlTarget} class="button secondary full-mobile">
+                                    {_buttonTextMap.data.Event_View_Event_Text}
+                                </a>
+                                <template if:true={listing.isSoldOut}>
+                                    <template if:false={listing.isRegisteredForEvent}>
+                                        <template if:false={listing.isAllowWaitlistingForEvent}>
+                                            <a class="button primary full-mobile disabled" if:true={frontEndDataMap.isAllowWaitlistingForEvent.display}>
+                                                {_buttonTextMap.data.Event_Sold_Out_Text}
+                                            </a>
+                                        </template>
+                                    </template>
+                                </template>
+                                <template if:false={listing.isSoldOut}>
+                                    <template if:false={listing.isRegisteredForEvent}>
+                                        <a href={listing.registrationUrl} target={listing.registrationUrlTarget} class="button primary full-mobile" if:true={frontEndDataMap.registrationUrl.display}>
+                                            {_buttonTextMap.data.Event_Register_Text}
+                                        </a>
+                                    </template>
+                                </template>
+                                <template if:true={listing.isSoldOut}>
+                                    <template if:false={listing.isRegisteredForEvent}>
+                                        <template if:true={listing.isAllowWaitlistingForEvent}>
+                                            <a href={listing.registrationUrl} target={listing.registrationUrlTarget} class="button primary full-mobile" if:true={frontEndDataMap.registrationUrl.display}> 
+                                                {_buttonTextMap.data.Event_Register_Text}
+                                            </a>
+                                        </template>
+                                    </template>
+                                </template>
+                                <template if:true={listing.isRegisteredForEvent}>
+                                    <a href={listing.registrationUrl} target={listing.registrationUrlTarget} class="button primary full-mobile" if:true={frontEndDataMap.registrationUrl.display}>
+                                        {_buttonTextMap.data.Event_Modify_Registration_Text}
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <c-portal_util_-pagination queried-data={_listingList}
+                                    records-per-page={_itemsPerPage}
+                                    handle-page-change={handlePageChange}>
+            </c-portal_util_-pagination>
+        </div>
+    </div>
+</template>

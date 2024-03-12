@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>portal_LargeCTABlocks</label>
+    <protected>false</protected>
+    <values>
+        <field>LWC_Name__c</field>
+        <value xsi:type="xsd:string">portal_LargeCTABlocks</value>
+    </values>
+    <values>
+        <field>Metadata_Template__c</field>
+        <value xsi:type="xsd:string">{
+&quot;ctaBlocks&quot;: [{&quot;heading&quot;: &quot;heading&quot;, &quot;eyebrow&quot;: &quot;eyebrow&quot;, &quot;description&quot;: &quot;description&quot;, &quot;image&quot;: {&quot;imageUrl&quot;: &quot;Image URL&quot;, &quot;altText&quot; : &quot;Image Alt Text&quot;}, &quot;button&quot;: {&quot;label&quot;: &quot;Button Label&quot;, &quot;link&quot;: &quot;Button Link&quot;, &quot;target&quot;: &quot;_blank&quot;}, &quot;imagePosition&quot;: &quot;left/right&quot;}]
+}</value>
+    </values>
+</CustomMetadata>

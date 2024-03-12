@@ -1,0 +1,35 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_honorRollRecord}>
+            <div class="copy">
+                <a
+                    data-contactidvalue={_honorRollRecord.contactId}
+                    data-jointcontactidvalue={_honorRollRecord.jointContactId}
+                    onclick={viewHonorRollNameDetails}
+                >
+                    {_honorRollRecord.honorRollName}
+                </a>
+
+                <!-- Popover When Clicking on Link -->
+                <div class="popover-container" if:true={displayHonorRollDetail}>
+                    <section class="slds-popover slds-nubbin_top-left popup-extra" aria-describedby="dialog-body-id-2" role="dialog" aria-label="Dialog Title" data-aura-rendered-by="21:274;a">
+                        <div class="content-header-bar">
+                            <h5>{_honorRollRecord.honorRollName}</h5>
+                            <a class="close-btn" onclick={handleCloseDialog}>×</a>
+                        </div>
+                        
+                        <div class="slds-popover__body">
+                            <template for:each={honorRollNameDetails} for:item="detail">
+                                <p key={detail.Id} class="giving-society-body">
+                                    <b>{detail.givingSociety}</b>
+                                    <br />
+                                    {detail.membershipLevel}
+                                </p>
+                            </template>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

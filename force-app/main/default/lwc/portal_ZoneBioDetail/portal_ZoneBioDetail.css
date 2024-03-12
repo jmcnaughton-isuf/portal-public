@@ -1,0 +1,23 @@
+.zone-bio-detail {
+    display : flex;
+    flex-direction: row;
+    padding-bottom: 90px;
+    padding-top: 90px;
+}
+
+.picture {
+    flex-basis : 33.33%;
+    text-align : center;
+}
+
+.description {
+    flex-basis: 66.66%;
+    margin: auto;
+}
+
+@media (max-width: 480px) {
+    .section-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

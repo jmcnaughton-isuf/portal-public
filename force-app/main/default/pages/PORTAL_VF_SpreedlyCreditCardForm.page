@@ -1,0 +1,400 @@
+<apex:page controller="PORTAL_SpreedlyCreditCardFormController" showHeader="false" sidebar="false"
+    lightningStyleSheets="true">
+    <html>
+
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input:focus[type=text] {
+            outline: none;
+        }
+
+        label {
+            display:block !important;
+            font-family: 'Noah-Bold';
+        }
+
+        .formbody {
+            display:block;
+            text-align:center;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        form {
+            background-color: #f7f7f7;
+            margin: auto;
+            text-align:left;
+            display:inline-block;
+            /* padding: 1rem; */
+        }
+
+
+        @font-face {
+        font-family: 'Noah-Bold';
+        src: url({!URLFOR($Resource.PORTAL_Fonts, '/Noah/NoahBold/font.woff')}) format('woff');
+        }
+        /* line 883, src/sass/style.scss */
+        .button-list {
+        padding: .4rem 0;
+        margin: 1rem 0 0;
+        font-size: 1.1em; }
+        /* line 888, src/sass/style.scss */
+        .button-list img {
+            width: 19px; }
+            /* line 891, src/sass/style.scss */
+            .button-list img svg {
+            width: 100%; }
+        /* line 894, src/sass/style.scss */
+        .button-list.center {
+            width: 100%;
+            text-align: center;
+            justify-content: center; }
+            /* line 899, src/sass/style.scss */
+            .button-list.center .button {
+            margin-right: 0; }
+        /* line 902, src/sass/style.scss */
+        .button-list.text {
+            margin-top: 6px; }
+            /* line 905, src/sass/style.scss */
+            .button-list.text a {
+            display: flex;
+            align-items: center; }
+            /* line 906, src/sass/style.scss */
+            .button-list.text a:first-of-type {
+                margin-right: 10px; }
+        /* line 912, src/sass/style.scss */
+        .button-list .button {
+            margin-right: 8px; }
+            /* line 916, src/sass/style.scss */
+            .button-list .button.has-icon:hover {
+            background-color: white;
+            color: #005595; }
+            /* line 922, src/sass/style.scss */
+            .button-list .button.full-mobile {
+            margin-right: 0;
+            margin-bottom: .7rem; }
+            /* line 926, src/sass/style.scss */
+            .button-list .button.full-mobile:last-of-type {
+                margin-bottom: 0; }
+            /* line 931, src/sass/style.scss */
+            .button-list .button.disabled {
+            opacity: .5;
+            pointer-events: none; }
+        /* line 937, src/sass/style.scss */
+        .button-list.controls .button {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            flex: 1 1 100%;
+            text-align: center;
+            display: block; }
+
+        .button {
+            font-family: 'Noah-Bold' !important;
+            background-color: #005595 !important;
+            color: white !important;
+            padding: .5em 1.1em !important;
+            border-radius: 3px !important;
+            font-weight: bold !important;
+            font-size: 1.1em !important;
+            transition: background-color 300ms, color 300ms !important;
+            border: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            background-image: initial !important;
+            background-repeat: initial !important;
+            background-position: initial !important;
+            margin: 1px !important;
+        /*  img {
+                width: 18px;
+                height: 18px;
+                position: relative;
+                top: -2px;
+                left: -5px;
+            }
+        */ }
+        /* line 971, src/sass/style.scss */
+        .button.slds-button_icon {
+            padding: .5em !important; }
+        /* line 975, src/sass/style.scss */
+        .button.primary {
+            background-color: #005595;
+            color: white;
+            border: 1px solid #005595; }
+            /* line 980, src/sass/style.scss */
+            .button.primary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 985, src/sass/style.scss */
+            .button.primary:hover svg .outline {
+                fill: white; }
+            /* line 988, src/sass/style.scss */
+            .button.primary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -2px;
+            right: 0px; }
+            /* line 995, src/sass/style.scss */
+            .button.primary svg .outline {
+                fill: white; }
+        /* line 1001, src/sass/style.scss */
+        .button.secondary {
+            background-color: white;
+            border: 1px solid #cdcfd8;
+            color: #005595; }
+            /* line 1006, src/sass/style.scss */
+            .button.secondary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 1012, src/sass/style.scss */
+            .button.secondary:hover svg {
+                fill: white; }
+            /* line 1014, src/sass/style.scss */
+            .button.secondary:hover svg .outline {
+                fill: white; }
+            /* line 1017, src/sass/style.scss */
+            .button.secondary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -1px;
+            right: 0px; }
+            /* line 1024, src/sass/style.scss */
+            .button.secondary svg .outline {
+                fill: #005595; }
+        /* line 1032, src/sass/style.scss */
+        .button.tertiary.light {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white; }
+            /* line 1037, src/sass/style.scss */
+            .button.tertiary.light:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1045, src/sass/style.scss */
+        .button.tertiary.dark {
+            background-color: transparent;
+            color: #005595;
+            border: 1px solid #005595; }
+            /* line 1050, src/sass/style.scss */
+            .button.tertiary.dark:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1058, src/sass/style.scss */
+        .button.tertiary.bare {
+            position: relative;
+            color: #005595;
+            padding: 0;
+            border: none;
+            background: transparent; }
+            /* line 1065, src/sass/style.scss */
+            .button.tertiary.bare:after {
+            content: '\003E';
+            position: absolute;
+            left: 110%;
+            top: 2px; }
+            /* line 1072, src/sass/style.scss */
+            .button.tertiary.bare:hover {
+            background-color: transparent;
+            border: none;
+            color: #00c0f3 !important;
+            text-decoration: none; }
+            /* line 1078, src/sass/style.scss */
+            .button.tertiary.bare:hover:after {
+                color: #00c0f3; }
+        /* line 1085, src/sass/style.scss */
+        .button.small {
+            font-size: .9rem;
+            padding: .5rem .7rem; }
+        /* line 1090, src/sass/style.scss */
+        .button.full-width {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: .6em; }
+            /* line 1097, src/sass/style.scss */
+            .button.full-width:last-of-type {
+            margin-bottom: 0; }
+        /* line 1103, src/sass/style.scss */
+        .button.full-mobile {
+            width: 100%;
+            text-align: center; }
+        /* line 1108, src/sass/style.scss */
+        .button:active, .button:focus {
+            color: white !important;
+            text-decoration: none !important;
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3; }
+
+    </style>
+
+    <head>
+        <script src="https://core.spreedly.com/iframe/iframe-v1.min.js"></script>
+        <apex:slds />
+    </head>
+
+    <!--
+        This form comes bundled with zero formatting,
+        but can be styled according to a designer's wishes.
+        Spreedly iFrames live inside the spreedly-number and spreedly-cvv divs.
+        -->
+
+    <body class="slds-scope" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div class="formbody">
+            <form id="payment-form" style="width: 100%" onsubmit='return false;'>
+                <div style="padding-bottom: 10px">
+                    <apex:include pageName="PORTAL_GooglePay"></apex:include>
+                </div>
+                <div style="padding-bottom: 10px">
+                    <apex:include pageName="PORTAL_ApplePay"></apex:include>
+                </div>
+                <apex:panelGrid columns="1">
+                    <apex:panelGroup >
+                        <div>
+                            <label id="cardholder_name_label" for="full_name">Cardholder Name</label>
+                            <input type="text" id="full_name" name="full_name" />
+                        </div>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <label id="card_number_label">Card Number</label>
+                        <!-- <div class="spreedly-iframe" id="spreedly-number" style="width:225px; height:35px; border: 2px solid"></div> -->
+                        <div id="spreedly-number" style="width: 100%; height:43.6px; border: 1px solid #ccc; border-radius: 3px; background-color: white; margin-bottom: 20px"></div>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <label id="cvv_label">CVV</label>
+                        <div id="spreedly-cvv" style="width: 100%;  height:43.6px; border: 1px solid #ccc; border-radius: 3px; background-color: white; margin-bottom: 20px"></div>
+                    </apex:panelGroup>
+                </apex:panelGrid>
+                <apex:panelGrid >
+                    <apex:panelGroup >
+                        <h2></h2>
+                        <div>
+                            <label id="month_label" for="month">Expiration Month (MM)</label>
+                            <input type="text" id="month" name="month" maxlength="2" />
+                            <label id="year_label" for="year">Expiration Year (YYYY)</label>
+                            <input type="text" id="year" name="year" maxlength="4" />
+                        </div>
+                    </apex:panelGroup>
+                </apex:panelGrid>
+                <div class="slds-align_absolute-center">
+                    <div class="button-list">
+                        <button class="button secondary" id="cancel-button" type="button">Previous</button>
+                        <button class="button secondary" id="submit-button" type="button" onclick="submitPaymentForm()">Submit Payment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script type="application/javascript">
+            let lexOrigin = "{!lexOrigin}";
+            const cancelButton = document.getElementById("cancel-button");
+            let paymentMethodParams = {};
+
+            cancelButton.addEventListener('click', () => {
+                window.parent.postMessage({type:"previous"}, lexOrigin);
+            });
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                    var previousButton = document.querySelector('#cancel-button');
+                    if (previousButton) {
+                        previousButton.remove();
+                    }
+
+                    var submitButton = document.querySelector('#submit-button');
+                    if (submitButton) {
+                        submitButton.textContent = 'Update';
+                    }
+                }
+                else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                    const opts = eventData;
+                    paymentMethodParams = eventData.paymentMethodParams;
+
+                    Spreedly.init(
+                        opts.environment_key,
+                        {
+                            "numberEl": "spreedly-number",
+                            "cvvEl": "spreedly-cvv"
+                        }
+                    );
+                    
+                    const submitButton = document.getElementById("submit-button");
+                    submitButton.disabled = true;
+
+
+                    Spreedly.on("ready", () => {
+
+                        submitButton.disabled = false;
+                        Spreedly.setStyle('cvv', "width: 100%; height: 18px; padding: 12px; padding-bottom: 14px; text-align: start; vertical-align: middle; font-size: .8125rem;");
+                        Spreedly.setStyle('number', "width: 100%; height: 18px; padding: 12px; padding-bottom: 14px; text-align: start; vertical-align: middle; font-size: .8125rem;");
+                        Spreedly.setFieldType("number", "tel");
+                        Spreedly.setNumberFormat("prettyFormat");
+                    });
+
+                    Spreedly.on("paymentMethod", (token, pmData) => {
+                        window.parent.postMessage({
+                            type: "payment_method",
+                            token: token,
+                            paymentMethod: pmData,
+                            additionalPaymentDataMap: {}
+                        }, lexOrigin);
+                    });
+
+                    Spreedly.on('errors', (errors) => {
+                        console.log(errors);
+                        window.parent.postMessage({
+                            type: "form_errors",
+                            errors: errors
+                        }, lexOrigin);
+                    });
+
+                    const displayOptions = opts.displayOptions;
+                    if (displayOptions) {
+                        if (displayOptions.full_name) {
+                            document.getElementById("full_name").value = displayOptions.full_name;
+                        }
+                    }
+                }
+            });
+
+            window.parent.postMessage({ type: "ready" }, lexOrigin);
+
+            function submitPaymentForm() {
+                const requiredFields = {...paymentMethodParams};
+
+                // Get required, non-sensitive, values from host page
+                requiredFields["full_name"] = document.getElementById("full_name").value;
+                requiredFields["month"] = document.getElementById("month").value;
+                requiredFields["year"] = document.getElementById("year").value;
+
+                Spreedly.tokenizeCreditCard(requiredFields);
+            }
+        </script>
+    </body>
+
+    </html>
+</apex:page>

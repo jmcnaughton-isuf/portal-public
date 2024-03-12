@@ -1,0 +1,15 @@
+<template>
+    <div if:true={_isShowSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Count Recipients</h2>
+    </header>
+    <div class="slds-modal__content slds-p-around_large">
+        <c-portal_-input input-name="email" handle-input={setRecordValue} value={_email} label='Please enter the email of the user that you wish to alert.' classes="slds-input" label-class="slds-form-element__label"></c-portal_-input>
+    </div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={handleSave}>Submit</button>
+    </footer>
+</template>

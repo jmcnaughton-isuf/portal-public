@@ -1,0 +1,47 @@
+<template>
+    <lightning-spinner alternative-text="Loading" style="z-index: 10003; position: fixed;" if:true={_showSpinner}></lightning-spinner>
+
+    <div class="sf-modal" style="display: block">
+        <div class="modal-background">
+            <div class="modal small">
+                <!-- Header -->
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_11-of-12 slds-grid">
+                            <div class="slds-col">
+                                <h2>Send a Message</h2> 
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-12">
+                            <span class="close-btn" title="Close" onclick={closeModal}>
+                                ×
+                                <span class="slds-assistive-text">Close</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="section-wrapper" style="overflow-y: auto">
+                    <!-- Text fields -->
+                    <div class="entry-form bottom-border" style="padding-bottom: 1.5em">
+                        <label class="slds-form-element__label">Subject <span class="required">*</span></label>
+                        <c-portal_-input classes="slds-input" handle-input={onSubjectChange}></c-portal_-input>
+                        <label class="slds-form-element__label" style="margin-top: 5px">Body <span class="required">*</span></label>
+                        <textarea class="slds-textarea" oninput={onBodyChange} style="margin-top: 5px"></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                        <div class="slds-grid slds-wrap slds-grid_align-end">
+                            <div class="button-list">
+                                <button class="button secondary" onclick={closeModal} title="Cancel">Cancel</button>
+                                <button class="button primary" onclick={onSend} title="Send">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,80 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={showSpinner}>
+            <lightning-spinner variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+        <template if:true={_showPaymentsPage}>
+            <template if:false={showConfirmation}>
+                <div class="container large" style="margin-bottom: 0; margin-top: 2em">
+                    <div class="heading">
+                        <div class="content-wrapper">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_7-of-12 slds-large-size_8-of-12">
+                                    <h1 style="margin-bottom: 8px">Complete your registration</h1>
+                                    <h4 if:true={isShowRegistrationSubmitMessage}>Review your registration details, then hit "Submit" to confirm.</h4>
+                                </div>
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_5-of-12 slds-large-size_4-of-12" if:true={sessionExpirationDate}>
+                                    <c-portal_-shopping-cart-timer session-expiration-date={sessionExpirationDate}
+                                                                oneventexpired={handleDisablePayment}>
+                                    </c-portal_-shopping-cart-timer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <template if:false={showCreditCardComponent}>
+                    <c-portal_-event-payment-ticket-table if:true={eventList}
+                                                        ticket-list={ticketList}
+                                                        total-price={totalPrice}>
+                    </c-portal_-event-payment-ticket-table>
+
+                    <c-portal_-event-payment-form primary-registrant={registrantInformation}
+                                                handle-input={handleRegistrantPaymentInput}
+                                                address-required={addressRequired}
+                                                is-show-billing-information={isNonZeroAmount}>
+                    </c-portal_-event-payment-form>
+
+                    <div style="padding-bottom: 5px; margin-bottom: -15px;" class="container large" if:true={isDisplayRecaptchaForFreeTickets}>
+                        <div class="content-wrapper">
+                            <c-portal_-Recaptcha>
+                            </c-portal_-Recaptcha>
+                        </div>
+                    </div>
+                    
+                    <div class="container large">
+                        <div class="content-wrapper">
+                            <div class="button-list">
+                                <a onclick={handleCancel} disabled={disablePaymentForm} class="button secondary full-mobile">Cancel</a>
+                                <a onclick={validateRegistrantInformation} class="button primary full-mobile">{nextPageButtonText}</a>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>    
+
+            <div if:true={showCreditCardComponent} class="credit-card">
+                <div style="padding-left: 1.2em; padding-right: 1.2em;">
+                    <c-portal_-payment-form
+                        payment-method={paymentMethod}
+                        payment-type={_giftType}
+                        amount={amountString}
+                        external-gateway-name={externalGatewayName}
+                        billing-information={_billingInformation}
+                        handle-payment-confirmation={handlePaymentConfirmation}
+                        handle-previous-click={handlePreviousButtonClick}
+                        additional-metadata={additionalMetadata} 
+                        payment-origin={paymentOrigin}
+                        is-recaptcha-enabled={_isRecaptchaEnabled}>
+                    </c-portal_-payment-form>
+                </div>
+            </div>
+
+            <div if:true={showConfirmation}>
+                <c-portal_-event-payment-confirmation
+                    event-list={eventList}
+                ></c-portal_-event-payment-confirmation>
+            </div>
+        </template>
+    </div>
+</template>

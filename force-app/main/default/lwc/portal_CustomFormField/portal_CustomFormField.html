@@ -1,0 +1,39 @@
+<template>
+    <fieldset style="margin-bottom: 1em;" if:true={isCheckbox}>
+        <div class="field-wrapper">
+            <input class="radio" type="checkbox" style="display: inline-block; width: auto;" required={isRequired} checked={_checked} disabled={disabled} onchange={valueChanged} data-index={index}>
+            <label for="">{label}</label>
+        </div>
+    </fieldset>
+    <label class={_labelClass} if:true={isShowLabel}>
+        <abbr class="slds-required" title="required" if:true={isRequired}>* </abbr>
+        {label}
+    </label>
+    <!-- <lightning-input type="checkbox" required={isRequired} checked={_checked} disabled={disabled} if:true={isCheckbox} onchange={valueChanged} data-index={index}></lightning-input> -->
+
+    <input type="text" 
+           required={isRequired} 
+           disabled={disabled}
+           value={_value} 
+           oninput={valueChanged}
+           data-index={index}
+           if:true={isText}/>
+    <c-portal_-select default-value={_value}
+                      option-list={picklistValues}
+                      handle-change={valueChanged}
+                      disabled={disabled}
+                      required={isRequired}
+                      classes=""
+                      input-name={index}
+                      if:true={isPicklist}>
+    </c-portal_-select>
+    <!-- <lightning-combobox required={isRequired} disabled={disabled} value={_value} variant={variant} options={picklistValues} if:true={isPicklist} onchange={valueChanged}  data-index={index}></lightning-combobox> -->
+    <lightning-dual-listbox source-label="Available"
+                            options={picklistValues}
+                            required={isRequired}
+                            value={_value}
+                            disabled={disabled}
+                            variant={variant}
+                            onchange={valueChanged}
+                            selected-label="Selected" if:true={isMultiPicklist}  data-index={index}></lightning-dual-listbox>
+</template>

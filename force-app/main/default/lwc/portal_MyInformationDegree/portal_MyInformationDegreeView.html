@@ -1,0 +1,276 @@
+<template>
+    <div class="show-on-phone">
+        <h2>Degree Information</h2>
+        <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Degree Information</a>
+
+        <div class="registration-table" if:true={informationMap.frontEndData.schoolDegrees.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.schoolDegrees.display}>
+                        <h3>{informationMap.frontEndData.schoolDegrees.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimSchoolDegrees} for:item="degree">
+                                <template if:false={degree.isHide}>
+                                    <template if:true={informationMap.frontEndData.schoolDegreeDegree.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeDegree.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeDegree}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeYear.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeYear.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeYear}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeMajor.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeMajor.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeMajor}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeMinor.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeMinor.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeMinor}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeAcademicOrg.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeAcademicOrg}</p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                                <template if:false={degree.isHide}>
+                                    <template if:true={informationMap.frontEndData.schoolDegreeDegree.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeDegree.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeDegree}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeYear.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeYear.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeYear}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeMajor.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeMajor.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeMajor}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeMinor.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeMinor.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeMinor}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.schoolDegreeAcademicOrg.label}</h4>
+                                        <p key={degree.Id}>{degree.schoolDegreeAcademicOrg}</p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="registration-table" if:true={informationMap.frontEndData.nonSchoolDegrees.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.nonSchoolDegrees.display}>
+                        <h3>{informationMap.frontEndData.nonSchoolDegrees.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimDegrees} for:item="degree">
+                                <template if:false={degree.isHide}>
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeInstitution.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeInstitution}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeDegree.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeDegree}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeYear.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeYear}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeMajor.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeMajor}</p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree">
+                                <template if:false={degree.isHide}>
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeInstitution.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeInstitution}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeDegree.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeDegree}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeYear.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeYear}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}>
+                                        <h4 key={degree.Id}>{informationMap.frontEndData.nonSchoolDegreeMajor.label}</h4>
+                                        <p key={degree.Id}>{degree.nonSchoolDegreeMajor}</p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hide-on-phone">
+        <div class="container">
+            <div class="bottom-border">
+                <h2>Degree Information</h2>
+                <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Degree Information</a>
+            </div>
+
+            <template if:true={informationMap.frontEndData.schoolDegrees.display}>
+                <h3>{informationMap.frontEndData.schoolDegrees.label}</h3>
+                <div class="registration-table">
+                    <div class="column no-controls" if:true={informationMap.frontEndData.schoolDegreeDegree.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.schoolDegreeDegree.label}</p></div>
+
+                        <template for:each={_interimSchoolDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeDegree}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeDegree}</p></div>
+                            </template>
+                        </template>
+                        
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.schoolDegreeYear.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.schoolDegreeYear.label}</p></div>
+                        <template for:each={_interimSchoolDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeYear}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeYear}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.schoolDegreeMajor.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.schoolDegreeMajor.label}</p></div>
+                        <template for:each={_interimSchoolDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeMajor}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeMajor}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.schoolDegreeMinor.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.schoolDegreeMinor.label}</p></div>
+                        <template for:each={_interimSchoolDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeMinor}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeMinor}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.schoolDegreeAcademicOrg.label}</p></div>
+                        <template for:each={_interimSchoolDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeAcademicOrg}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.schoolDegreeAcademicOrg}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </template>
+
+            <div class="line-break"></div>
+
+            <template if:true={informationMap.frontEndData.nonSchoolDegrees.display}>
+                <h3>{informationMap.frontEndData.nonSchoolDegrees.label}</h3>
+                <div class="registration-table">
+                    <div class="column no-controls" if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.nonSchoolDegreeInstitution.label}</p></div>
+                        <template for:each={_interimDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeInstitution}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeInstitution}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.nonSchoolDegreeDegree.label}</p></div>
+                        <template for:each={_interimDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeDegree}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeDegree}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.nonSchoolDegreeYear.label}</p></div>
+                        <template for:each={_interimDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeYear}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeYear}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.nonSchoolDegreeMajor.label}</p></div>
+                        <template for:each={_interimDegrees} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeMajor}</p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree">
+                            <template if:false={degree.isHide}>
+                                <div class="equalHeight" key={degree.Id}><p>{degree.nonSchoolDegreeMajor}</p></div>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

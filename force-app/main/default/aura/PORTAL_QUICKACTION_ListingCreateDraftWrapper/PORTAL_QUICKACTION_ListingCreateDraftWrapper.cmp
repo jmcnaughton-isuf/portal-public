@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <c:portal_quickaction_ListingCreateDraft recordId="{!v.recordId}"/>
+</aura:component>

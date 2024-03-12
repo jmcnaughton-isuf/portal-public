@@ -1,0 +1,105 @@
+<template>
+    <template if:false={_loaded}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <template if:true={_loaded}>
+        <lightning-button label="Back" onclick={handleBack}></lightning-button>
+        <template if:true={isFull}>
+
+            <lightning-button label="Select This Company" onclick={handleCompanySelected}></lightning-button>
+        </template>
+        <div class="slds-p-around_medium lgc-bg">
+            <ul class="slds-has-dividers_bottom-space">
+                <template if:false={isFull}>
+                    <li class="slds-item">
+                        <h1>Selected Company:</h1>
+                    </li>
+
+                    <li class="slds-item">
+                        <lightning-card title={_company.name} icon-name="standard:account">
+                            <ul class="slds-card__body slds-card__body_inner">
+                                <li>Foundation ID: {_company.id}</li>
+                                <li>Foundation Name: {_company.foundationName}</li>
+                            </ul>
+                        </lightning-card>
+                    </li>
+                </template>
+
+                <template if:true={isFull}>
+                                <li class="slds-item">
+                                    <lightning-card title={_company.name} icon-name="standard:account">
+                            <ul class="slds-card__body slds-card__body_inner">
+                                <li>Foundation ID: {_company.id}</li>
+                                <li>Company Name: {_company.name}</li>
+                                <li>Foundation Name: {_company.foundationName}</li>
+                                <template if:true={hasAddress}>
+                                    <li>
+                                        <lightning-formatted-address street={_address.street} city={_address.city} province={_address.state}
+                                            postal-code={_address.zip}>
+                                        </lightning-formatted-address>
+                                    </li>
+                                </template>
+                            </ul>
+                        </lightning-card>
+                    </li>
+
+                    <li class="slds-item">
+                        <lightning-card title="Contact" icon-name="standard:contact">
+                            <ul class="slds-card__body slds-card__body_inner">
+                                <li>{_contact.name}</li>
+                                <template if:true={_contact.phone}>
+                                    <li>
+                                        <ul class="slds-list_horizontal">
+                                            <li class="slds-item">
+                                                <lightning-icon icon-name="utility:incoming_call" size="xx-small">
+                                                </lightning-icon>
+                                            </li>
+                                            <li class="slds-item">
+                                                <lightning-formatted-phone value={_contact.phone}></lightning-formatted-phone>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </template>
+                                <li>
+                                    <lightning-formatted-email value={_contact.email}></lightning-formatted-email>
+                                </li>
+                            </ul>
+                        </lightning-card>
+                    </li>
+
+                    <li class="slds-item">
+                        <lightning-card title="Matching" icon-name="standard:thanks">
+                            <ul class="slds-card__body slds-card__body_inner">
+                                <template if:true={hasOnlineForm}>
+                                    <li class="slds-item">Matching Gift Form: <lightning-formatted-url
+                                            value={_onlineForm.url}>
+                                        </lightning-formatted-url>
+                                    </li>
+                                </template>
+                                <template if:true={hasGiftRatiosInfo}>
+                                    <li class="slds-item">Minimum Match: <lightning-formatted-number
+                                            value={_matchDetails.min} format-style="currency" currency-code="USD">
+                                        </lightning-formatted-number>
+                                    </li>
+                                    <li class="slds-item">Maximum Match: <lightning-formatted-number
+                                            value={_matchDetails.max} format-style="currency" currency-code="USD">
+                                        </lightning-formatted-number>
+                                    </li>
+                                    <li class="slds-item">Gift ratio: {_matchDetails.ratioLabel}</li>
+                                    <li class="slds-item">Total per employee: <lightning-formatted-number
+                                            value={_matchDetails.maxPerEmployee} format-style="currency" currency-code="USD">
+                                        </lightning-formatted-number>
+                                    </li>
+                                    <li class="slds-item">Comments: {_comments}</li>
+                                    <template if:true={hasProcedure}>
+                                        <li class="slds-item">Procedure: {_procedure}</li>
+                                    </template>
+                                </template>
+                            </ul>
+                        </lightning-card>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</template>

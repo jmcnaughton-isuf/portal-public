@@ -1,0 +1,103 @@
+<template>    
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container">
+        	<div class="bottom-border">
+	            <h2>Degree Information</h2>
+	            <a href="?mode=edit&tab=degree" class="view-all-news button secondary small" style="top: 10px">Edit Degree Information</a>
+	        </div>
+	        <template if:true={isDisplaySchoolDegrees}>
+	            <div class="info-card">
+	                <h3>{sectionConfiguration.schoolDegrees.label}</h3>
+	                <div class="flex-grid-5">
+	                    <div class="table-header">
+	                        <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.isDisplay}>
+	                            <p>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.isDisplay}>
+	                            <p>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.isDisplay}>
+	                            <p>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.isDisplay}>
+	                            <p>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.isDisplay}>
+	                            <p>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.label}</p>
+	                        </div>
+	                    </div>
+	                    <template for:each={schoolDegrees} for:item="schoolDegree">
+	                        <div class="table-row" key={schoolDegree.Id}>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.isDisplay}>
+	                                <h4>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.label}</h4>
+	                                <p>{schoolDegree.schoolDegreeDegree}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.isDisplay}>
+	                                <h4>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.label}</h4>
+	                                <p>{schoolDegree.schoolDegreeYear}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.isDisplay}>
+	                                <h4>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.label}</h4>
+	                                <p>{schoolDegree.schoolDegreeMajor}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.isDisplay}>
+	                                <h4>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.label}</h4>
+	                                <p>{schoolDegree.schoolDegreeMinor}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.isDisplay}>
+	                                <h4>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.label}</h4>
+	                                <p>{schoolDegree.schoolDegreeAcademicOrg}</p>
+	                            </div>
+	                        </div>
+	                    </template>
+	                </div>
+	            </div>
+	            <div class="line-break"></div>
+	        </template>
+	        
+	        <template if:true={isDisplayNonSchoolDegrees}>
+	            <div class="info-card">
+	                <h3>{sectionConfiguration.nonSchoolDegrees.label}</h3>
+	                <div class="flex-grid-4">
+	                    <div class="table-header">
+	                        <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.isDisplay}>
+	                            <p>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.isDisplay}>
+	                            <p>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.isDisplay}>
+	                            <p>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.isDisplay}>
+	                            <p>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.label}</p>
+	                        </div>
+	                    </div>
+	                    <template for:each={nonSchoolDegrees} for:item="nonSchoolDegree">
+	                        <div class="table-row" key={nonSchoolDegree.Id}>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.isDisplay}>
+	                                <h4>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.label}</h4>
+	                                <p>{nonSchoolDegree.nonSchoolDegreeInstitution}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.isDisplay}>
+	                                <h4>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.label}</h4>
+	                                <p>{nonSchoolDegree.nonSchoolDegreeDegree}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.isDisplay}>
+	                                <h4>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.label}</h4>
+	                                <p>{nonSchoolDegree.nonSchoolDegreeYear}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.isDisplay}>
+	                                <h4>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.label}</h4>
+	                                <p>{nonSchoolDegree.nonSchoolDegreeMajor}</p>
+	                            </div>
+	                        </div>
+	                    </template>
+	                </div>
+	            </div>
+	            <div class="line-break"></div>
+	        </template>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <table if:true={_isCallbackDone} style='background-color:white;'>
+        <tr class="slds-p-around_x-small slds-align_absolute-center slds-border_bottom"  style='background-color:grey;'>
+          <th>Merge Field</th>
+        </tr>
+        <template for:each={_data} for:item="mergeField">
+            <tr class="slds-p-around_x-small slds-align_absolute-center slds-border_bottom" key={mergeField.mergeField} onclick={getSelectedMergeField} data-id={mergeField.mergeField}>
+                <td>{mergeField.mergeField}</td>
+            </tr>
+        </template>
+    </table>
+    <div class="slds-p-around_small" style='background-color:white;'><p>Currently Selected Text: <input data-name="text"></input></p></div>
+</template>

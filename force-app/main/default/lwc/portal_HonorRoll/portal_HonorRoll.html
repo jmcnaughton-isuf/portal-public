@@ -1,0 +1,71 @@
+<template>
+    <!-- spinner  -->
+    <div data-ascend-portal>
+        <div if:true={showSpinner}>
+            <lightning-spinner
+                variant="brand"
+                size="large">
+            </lightning-spinner>
+        </div>
+
+        <div class="panel" style="margin-bottom: 2em">
+            <!-- Add filter component right here -->
+            <c-portal_-honor-roll-filters
+                list-of-fiscal-years={listOfFiscalYears}
+                selected-fiscal-year={selectedFiscalYear}
+                giving-societies-names={givingSocietiesNameList}
+                selected-giving-society={selectedGivingSociety}
+                class-years={classYearList}
+                selected-class-year={selectedClassYear}
+                list-of-divisions-and-schools={divisionsAndSchoolList}
+                selected-division-or-school={selectedDivisionOrSchool}
+                honor-roll-name-search-string={honorRollNameSearchString}
+
+                honor-year-label={honorYearLabel}
+                giving-society-label={givingSocietyLabel}
+                division-or-school-label={divisionOrSchoolLabel}
+                class-year-label={classYearLabel}
+
+                show-honor-roll-year-filter={showHonorRollYearFilter}
+                show-giving-society-filter={showGivingSocietyFilter}
+                show-division-or-school-filter={showDivisionOrSchoolFilter}
+                show-class-year-label={showClassYearLabel}
+
+                handle-fiscal-year-input={handleHonorRollYearChange}
+                handle-search-input={handleNameSearch}
+                handle-giving-society-input={handleGivingSocietyChange}
+                handle-class-year-input={handleClassYearChange}
+                handle-apply-filter-click={handleApplyFilter}
+                handle-division-and-school-input={handleDivisionAndSchoolChange}
+                handle-clear-input={handleClearInput}
+            ></c-portal_-honor-roll-filters>
+
+        </div>
+
+        <br>
+        <!-- add table for honor roll right here -->
+        <template if:true={dataLoaded}>
+            <template if:true={visibleData}>
+                <c-portal_-honor-roll-table
+                    honor-roll-name-list={visibleData}
+                    honor-roll-year={selectedFiscalYear}
+                    handle-honor-roll-name-click={handleHonorRollNameClick}
+                ></c-portal_-honor-roll-table>
+            </template>
+
+            <div if:true={honorRollNameList}>
+                <c-portal_util_-pagination
+                    records-per-page={itemsPerPage}
+                    queried-data={honorRollNameList}
+                    current-page-number={currentPage}
+                    query-more={handleQueryMore}
+                    handle-page-change={handlePageChange}
+                    total-number-of-items={totalItems}
+                ></c-portal_util_-pagination>
+            </div>
+        </template>
+        <template if:false={dataLoaded}>
+            <p>No results fit your search. Try removing filters to broaden your search.</p>
+        </template>
+    </div>
+</template>

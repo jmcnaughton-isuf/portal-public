@@ -1,0 +1,16 @@
+header .menu .item.has-submenu a:after {
+    background: transparent url("../resource/Portal_Expand_More_White") center no-repeat;
+    transition: transform 300ms ease-in-out;
+}
+
+header .menu .item.submenu-active a:after {
+    transform: rotate(180deg);
+}
+
+.logo-custom {
+    max-width: 215px;
+    padding: 7.5px 10px 7.5px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

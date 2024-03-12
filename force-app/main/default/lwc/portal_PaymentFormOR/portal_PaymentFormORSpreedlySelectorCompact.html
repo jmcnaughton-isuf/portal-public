@@ -1,0 +1,39 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+    <div class="container xsmall" if:true={_isShowComponent}>
+        <div class="section-wrapper">
+            
+            <div class="ticket-options full-width">
+                <div class="container" style="padding-left: 0; padding-right: 0;">
+                    <div class="method-selection-container">
+                        <button class={ccButtonClass} onclick={handleCardChoice}>{creditCardTitle}</button>
+                        <button class={achButtonClass} onclick={handleACHChoice}>{achTitle}</button>
+                    </div>
+                    <div class="selection-info" style="display: block; padding-left: 0; padding-right: 0;">
+                        <!-- Spreedly Credit Card Form -->
+                        <iframe 
+                            class="slds-align_absolute-center" 
+                            src="/apex/PORTAL_VF_SpreedlyCreditCardFormCompact" 
+                            style="width: 100%; max-width: 326px; height: 520px; border-style: none;" 
+                            if:true={isPayWithCreditCard}>
+                        </iframe>
+
+                        <!-- Spreedly ACH Form -->
+                        <iframe 
+                            class="slds-align_absolute-center" 
+                            src="/apex/PORTAL_VF_SpreedlyACHFormCompact" 
+                            style="width: 100%; max-width: 326px; height: 505px; border-style: none;" 
+                            if:true={isPayWithACH}>
+                        </iframe>
+
+                        <!-- reCAPTCHA -->
+                        <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                            recaptcha-option={_recaptchaOption}
+                            is-center-recaptcha="true">
+                        </c-portal_-Recaptcha>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

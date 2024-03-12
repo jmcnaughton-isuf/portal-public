@@ -1,0 +1,40 @@
+.participationTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+.participationTable thead tr {
+    background-color: #000d58;
+    color: #ffffff;
+    text-align: left;
+}
+
+.participationTable th,
+.participationTable td {
+    padding: 12px 15px;
+}
+
+.participationTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.participationTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.participationTable tbody tr:last-of-type {
+    border-bottom: 2px solid #000d58;
+}
+
+.button-right-margin {
+    margin-right: 0.3em;
+}
+
+@media (max-width: 959px) {
+    .extend-button {
+        width: 100% !important;
+    }
+}

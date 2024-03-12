@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="componentLabel" label="Section Label" type="String"/>
+            <property name="defaultGivingAmounts" label="Default Giving Amounts" description="A comma separated list of numbers, if it is left blank a freeform input field will show instead." type="String"/>
+            <property name="baseButtonColor" label="Base Button Color" type="Color"/>
+            <property name="selectedButtonColor" label="Selected Button Color" type="Color"/>
+            <property name="textColor" label="Header Text Color" type="Color"/>
+            <property name="pageName" label="Online Giving Page Name" type="String"/>
+            <property name="maxAmount" label="Max Amount" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

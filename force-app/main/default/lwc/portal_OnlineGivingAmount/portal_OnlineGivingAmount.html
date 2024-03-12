@@ -1,0 +1,75 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin">
+                <div class="section-body-content">
+                    <div class="container">
+                        <div class="ticket-options full-width">
+                            <h2 style={headerStyle}>{componentLabel}</h2>
+                            <div class="entry-form">
+                                <input type="number" 
+                                        format="currency" 
+                                        step="any" 
+                                        value={amount} 
+                                        onblur={handleAmountChange}
+                                        min="0.01" 
+                                        max={maxAmount}
+                                        required 
+                                        if:false={defaultGivingAmounts}>
+                                <div class={flexgridClass} if:true={defaultGivingAmounts}>
+                                    <template for:each={_defaultGivingAmountList} for:item="amount">
+                                        <div class="grid-item" key={amount.amount}>
+                                            <label data-amount={amount.amount}
+                                                onmouseenter={handleAmountEnter}
+                                                onmouseleave={handleAmountLeave}>
+                                                <input type="radio" class="radio" data-amount={amount.amount} onclick={handleAmountClick}>
+                                                <span class="not-available"><a>{amount.label}</a></span>
+                                            </label>
+                                        </div>
+                                    </template>
+                                    <div class="grid-item">
+                                        <div class="ticket-options entry-button">
+                                            <label data-amount="Other"
+                                                onmouseenter={handleAmountEnter}
+                                                onmouseleave={handleAmountLeave}>
+                                                <input type="radio" class="radio" data-amount="Other" onclick={handleAmountClick}>
+                                                <span><a>Other</a></span>
+                                                <input type="number" 
+                                                    if:true={_showOther} 
+                                                    required 
+                                                    formatter="currency" 
+                                                    step="any" 
+                                                    onchange={handleAmountChange} 
+                                                    oninput={handleAmountInput} 
+                                                    value={amount} 
+                                                    min="0.01"
+                                                    max={maxAmount}>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line-break"></div>
+                    </div>
+                </div>
+            </div>
+    <!--         
+            <h2 style={headerStyle}>{componentLabel}</h2>
+            <lightning-input type="number" format="currency" step=".01" label="Giving Amount" value={amount} onblur={updateGivingAmount} message-when-value-missing="Please enter a giving amount." min="0.01" message-when-range-underflow="Amount must be greater than 0." required="true" variant="label-hidden" if:false={defaultGivingAmounts}></lightning-input>
+            <lightning-layout if:true={defaultGivingAmounts} multiple-rows="true">
+                <template for:each={_defaultGivingAmountList} for:item="amount">
+                    <lightning-layout-item padding="around-small" size="12" large-device-size={_size} medium-device-size={_size} small-device-size="12" key={amount.amount}>
+                        <button style="border-style:solid; width: 100%; font-size:1.5rem;" data-amount={amount.amount} onclick={handleAmountClick}>{amount.label}</button>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item size="12" large-device-size={_size} medium-device-size={_size} small-device-size="12" padding="around-small">
+                    <button style="border-style:solid; width: 100%; font-size:1.5rem;"  data-amount="Other" onclick={handleAmountClick}>Other</button>
+                </lightning-layout-item>
+                <lightning-layout-item  size="12" large-device-size={_size} medium-device-size={_size} small-device-size="12" padding="around-small" if:true={_showOther}>
+                    <lightning-input style="font-size:1.5rem;" type="number" formatter="currency" step=".01" label="Giving Amount" onblur={updateGivingAmount} onchange={onChangeAmount} value={amount} message-when-value-missing="Please enter a giving amount." min="0.01" message-when-range-underflow="Amount must be greater than 0." required="true" variant="label-hidden"></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout> -->
+        </template>
+    </div>
+</template>

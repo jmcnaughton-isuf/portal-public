@@ -1,0 +1,9 @@
+.helptext-padding {
+    padding-right: 4px;
+}
+
+@media (max-width: 767px) {
+    lightning-helptext {
+        padding: 4px 0;
+    }
+}

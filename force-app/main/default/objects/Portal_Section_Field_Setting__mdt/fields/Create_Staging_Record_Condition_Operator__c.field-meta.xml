@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Staging_Record_Condition_Operator__c</fullName>
+    <description>If you wish to create a staging record if this field setting record has a specific value, then this operator tells us how we want to compare the field setting record value to the value specified on this custom metadata record.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If you wish to create a staging record if this field setting record has a specific value, then this operator tells us how we want to compare the field setting record value to the value specified on this custom metadata record.</inlineHelpText>
+    <label>Create Staging Record Condition Operator</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>!=</fullName>
+                <default>true</default>
+                <label>!=</label>
+            </value>
+            <value>
+                <fullName>==</fullName>
+                <default>false</default>
+                <label>==</label>
+            </value>
+            <value>
+                <fullName>LIKE</fullName>
+                <default>false</default>
+                <label>LIKE</label>
+            </value>
+            <value>
+                <fullName>NOT LIKE</fullName>
+                <default>false</default>
+                <label>NOT LIKE</label>
+            </value>
+            <value>
+                <fullName>IN</fullName>
+                <default>false</default>
+                <label>IN</label>
+            </value>
+            <value>
+                <fullName>NOT IN</fullName>
+                <default>false</default>
+                <label>NOT IN</label>
+            </value>
+            <value>
+                <fullName>INCLUDES</fullName>
+                <default>false</default>
+                <label>INCLUDES</label>
+            </value>
+            <value>
+                <fullName>EXCLUDES</fullName>
+                <default>false</default>
+                <label>EXCLUDES</label>
+            </value>
+            <value>
+                <fullName>&lt;</fullName>
+                <default>false</default>
+                <label>&lt;</label>
+            </value>
+            <value>
+                <fullName>&gt;</fullName>
+                <default>false</default>
+                <label>&gt;</label>
+            </value>
+            <value>
+                <fullName>&lt;=</fullName>
+                <default>false</default>
+                <label>&lt;=</label>
+            </value>
+            <value>
+                <fullName>&gt;=</fullName>
+                <default>false</default>
+                <label>&gt;=</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

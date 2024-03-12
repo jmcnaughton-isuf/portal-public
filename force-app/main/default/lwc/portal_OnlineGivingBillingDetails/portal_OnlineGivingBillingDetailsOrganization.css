@@ -1,0 +1,5 @@
+@media (min-width: 700px) {
+    .flex-grid-3 .autocomplete {
+        padding-top: 19px;
+    }
+}

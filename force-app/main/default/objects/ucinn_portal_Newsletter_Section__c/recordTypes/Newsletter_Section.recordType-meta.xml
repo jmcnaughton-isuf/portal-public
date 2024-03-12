@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Newsletter_Section</fullName>
+    <active>true</active>
+    <label>Newsletter Section</label>
+    <picklistValues>
+        <picklist>Selected_Module__c</picklist>
+        <values>
+            <fullName>Module 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module 5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

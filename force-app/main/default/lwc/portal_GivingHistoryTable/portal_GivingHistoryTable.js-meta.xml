@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="helperTextHTML" label="Helper Text" type="String" description ="Helper text that will display ontop of the table. The helper text can be in HTML."/>
+            <property name="itemsPerPage" label="Items per page" type="Integer" description="The number of rows to display on the table per page." required="true" default="10"/>
+            <property name="hideReceipt" label="Hide Receipt" type="Boolean" default="false"/>
+            <property name="receiptColumnLabel" label="Receipt column label" type="String" default="Receipt"/>
+            <property name="receiptRowText" label="Receipt row text" description="Text to show when a receipt is available for a row." type="String" default="View Receipt"/>
+            <property name="noReceiptRowText" label="No receipt row text" description="Text to show when a receipt is NOT available for a row." type="String" default="No receipt available"/>
+            <property name="receiptBaseURL" label="Receipt Base URL" description="URL for the gift receipt" type="String" default="PORTAL_GiftReceiptPage"/>
+            <property name="receiptContentPageName" label="Receipt Content Page Name" description="Content page name where static receipt info is held" type="String" default="Gift Receipt Page"/>
+            <property name="noTableDataTextHTML" label="No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

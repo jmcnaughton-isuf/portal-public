@@ -1,0 +1,45 @@
+.listing-name {
+    word-break: break-word;
+}
+
+.header-content {
+    word-break: break-word;
+}
+
+.container {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.slds-rich-text-editor__textarea h1, .slds-rich-text-editor__textarea h2, .slds-rich-text-editor__textarea h3, .slds-rich-text-editor__textarea h4, .slds-rich-text-editor__textarea h5, .slds-rich-text-editor__textarea h6, .slds-rich-text-editor__textarea ul, .slds-rich-text-editor__textarea ol, .slds-rich-text-editor__textarea dl, .slds-rich-text-editor__textarea img, .slds-rich-text-editor__output h1, .slds-rich-text-editor__output h2, .slds-rich-text-editor__output h3, .slds-rich-text-editor__output h4, .slds-rich-text-editor__output h5, .slds-rich-text-editor__output h6, .slds-rich-text-editor__output ul, .slds-rich-text-editor__output ol, .slds-rich-text-editor__output dl, .slds-rich-text-editor__output img {
+    margin-bottom: 0;
+}
+
+.pagination-container {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: rgb(0, 153, 222);
+    color: white;
+}
+
+.all-events {
+    margin-top: 3em;
+}
+
+[data-ascend-portal] .event-list .event:last-of-type {
+    border-bottom: 1px solid #e0e0e0;
+}

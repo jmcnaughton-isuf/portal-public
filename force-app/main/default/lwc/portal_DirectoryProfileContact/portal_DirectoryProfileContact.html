@@ -1,0 +1,926 @@
+<template>
+    <div class="container" style="margin-top: 1.5em">
+        <div class="bottom-border">
+            <h1>Personal Information</h1>
+        </div>
+        <h2 if:true={informationMap.frontEndData.name.display} style="margin-bottom: 0.5em">{informationMap.frontEndData.name.label}</h2>
+        <div class="flex-grid-3" if:true={informationMap.frontEndData.name.display}>
+            <div class="grid-item" if:true={informationMap.frontEndData.firstName.display}>
+                <h4>{informationMap.frontEndData.firstName.label}</h4>
+                {firstName}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.middleName.display}>
+                <h4>{informationMap.frontEndData.middleName.label}</h4>
+                {middleName}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.lastName.display}>
+                <h4>{informationMap.frontEndData.lastName.label}</h4>
+                {lastName}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.prefix.display}>
+                <h4>{informationMap.frontEndData.prefix.label}</h4>
+                {title}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.suffix.display}>
+                <h4>{informationMap.frontEndData.suffix.label}</h4>
+                {suffix}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.businessTitle.display}>
+                <h4>{informationMap.frontEndData.businessTitle.label}</h4>
+                {businessTitle}
+            </div>
+        </div>
+        <template if:true={isDisplayAlsoKnownAsHeader}><h2 if:true={informationMap.frontEndData.alsoKnownAs.display} style="margin-bottom: 0.5em">{informationMap.frontEndData.alsoKnownAs.label}</h2></template>
+        <div class="flex-grid-3" if:true={informationMap.frontEndData.alsoKnownAs.display}>
+            <template if:true={isDisplayMaidenName}>
+                <div class="grid-item" if:true={informationMap.frontEndData.maidenFirstName.display}>
+                    <h4>{informationMap.frontEndData.maidenFirstName.label}</h4>
+                    {maidenFirstName}
+                </div>
+                <div class="grid-item" if:true={informationMap.frontEndData.maidenMiddleName.display}>
+                    <h4>{informationMap.frontEndData.maidenMiddleName.label}</h4>
+                    {maidenMiddleName}
+                </div>
+                <div class="grid-item" if:true={informationMap.frontEndData.maidenLastName.display}>
+                    <h4>{informationMap.frontEndData.maidenLastName.label}</h4>
+                    {maidenLastName}
+                </div>
+            </template>
+            <template if:true={isDisplayNickname}>
+                <div class="grid-item" if:true={informationMap.frontEndData.nicknameFirstName.display}>
+                    <h4>{informationMap.frontEndData.nicknameFirstName.label}</h4>
+                    {nicknameFirstName}
+                </div>
+                <div class="grid-item" if:true={informationMap.frontEndData.nicknameLastName.display}>
+                    <h4>{informationMap.frontEndData.nicknameLastName.label}</h4>
+                    {nicknameLastName}
+                </div>
+            </template>
+        </div>
+        <h2 if:true={informationMap.frontEndData.directoryName.display} style="margin-bottom: 0.5em">{informationMap.frontEndData.directoryName.label}</h2>
+        <div class="flex-grid-2" if:true={informationMap.frontEndData.directoryName.display}>
+            <div class="grid-item" if:true={informationMap.frontEndData.directoryFirstName.display}>
+                <h4>{informationMap.frontEndData.directoryFirstName.label}</h4>
+                {directoryFirstName}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.directoryLastName.display}>
+                <h4>{informationMap.frontEndData.directoryLastName.label}</h4>
+                {directoryLastName}
+            </div>
+        </div>
+        <h2 if:true={informationMap.frontEndData.additionalDetails.display} style="margin-bottom: 0.5em">{informationMap.frontEndData.additionalDetails.label}</h2>
+        <div class="flex-grid-2" if:true={informationMap.frontEndData.additionalDetails.display}>
+            <template if:true={isDisplayGender}>
+                <div class="grid-item" if:true={informationMap.frontEndData.gender.display}>
+                    <h4>{informationMap.frontEndData.gender.label}</h4>
+                    {gender}
+                </div>
+            </template>
+            <template if:true={isDisplayPronouns}>
+                <div class="grid-item" if:true={informationMap.frontEndData.pronoun.display}>
+                    <h4>{informationMap.frontEndData.pronoun.label}</h4>
+                    {pronoun}
+                </div>
+            </template>
+            <div class="grid-item" if:true={informationMap.frontEndData.birthdate.display}>
+                <h4>{informationMap.frontEndData.birthdate.label}</h4>
+                {birthdate}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.maritalStatus.display}>
+                <h4>{informationMap.frontEndData.maritalStatus.label}</h4>
+                {maritalStatus}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.spouseFirstName.display}>
+                <h4>{informationMap.frontEndData.spouseFirstName.label}</h4>
+                {spouseFirstName}
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.spouseLastName.display}>
+                <h4>{informationMap.frontEndData.spouseLastName.label}</h4>
+                {spouseLastName}
+            </div>
+        </div>
+    </div>
+    <!-- <lightning-layout multiple-rows="true">
+        <lightning-layout-item 
+            size="12"
+            small-device-size="12" 
+            medium-device-size="4" 
+            large-device-size="4" 
+            padding="around-small">
+            <h2 class="header">Personal Information</h2>
+        </lightning-layout-item>
+        <lightning-layout-item if:true={informationMap.frontEndData.name.display} 
+            size="12"
+            small-device-size="12"
+            medium-device-size="8"
+            large-device-size="8"
+            padding="around-small">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item 
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="12" 
+                    large-device-size="12" 
+                    class="layoutItem">
+                    <h2 class="subheader">{informationMap.frontEndData.name.label} </h2>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.frontEndData.firstName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.firstName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={firstName}
+                    >
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.frontEndData.middleName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.middleName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={middleName}
+                    >
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.frontEndData.lastName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.lastName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={lastName}
+                    >
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.frontEndData.prefix.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.prefix.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={title}
+                    >
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.frontEndData.suffix.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.suffix.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={suffix}
+                    >
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item  if:true={informationMap.frontEndData.businessTitle.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.businessTitle.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={businessTitle}
+                    >
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-layout-item size="12" if:true={informationMap.frontEndData.alsoKnownAs.display}>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="12" 
+                large-device-size="12" 
+                class="layoutItem">
+                <h2 class="subheader">{informationMap.frontEndData.alsoKnownAs.label}</h2>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.maidenFirstName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.maidenFirstName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={maidenFirstName}
+                    >
+                    </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.maidenMiddleName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.maidenMiddleName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={maidenMiddleName}
+                    >
+                    </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.maidenLastName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.maidenLastName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={maidenLastName}
+                    >
+                    </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item size="12"></lightning-layout-item>
+            <lightning-layout-item if:true={informationMap.frontEndData.nicknameFirstName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.nicknameFirstName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={nicknameFirstName}
+                    >
+                    </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.nicknameLastName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.nicknameLastName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={nicknameLastName}
+                    >
+                    </lightning-formatted-text>
+            </lightning-layout-item> 
+        </lightning-layout>
+    </lightning-layout-item>
+    <lightning-layout-item size="12">
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item if:true={informationMap.frontEndData.directoryName.display}
+                size="12"
+                small-device-size="12" 
+                medium-device-size="12" 
+                large-device-size="12" 
+                class="layoutItem">
+                <h2 class="subheader">{informationMap.frontEndData.directoryName.label}</h2>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.directoryFirstName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                            class="label"
+                            value={informationMap.frontEndData.directoryFirstName.label}>
+                        </lightning-formatted-text>
+                        <br/>
+                        <lightning-formatted-text 
+                            class="value"
+                            value={directoryFirstName}
+                        >
+                        </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.directoryLastName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                    <lightning-formatted-text 
+                        class="label"
+                        value={informationMap.frontEndData.directoryLastName.label}>
+                    </lightning-formatted-text>
+                    <br/>
+                    <lightning-formatted-text 
+                        class="value"
+                        value={directoryLastName}
+                    >
+                    </lightning-formatted-text>
+            </lightning-layout-item> 
+            </lightning-layout>
+    </lightning-layout-item>
+    <lightning-layout-item size="12" if:true={informationMap.frontEndData.additionalDetails.display}>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="12" 
+                large-device-size="12" 
+                class="layoutItem">
+                <h2 class="subheader">{informationMap.frontEndData.additionalDetails.label}</h2>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.gender.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                <lightning-formatted-text 
+                    class="label"
+                    value={informationMap.frontEndData.gender.label}>
+                </lightning-formatted-text>
+                <br/>
+                <lightning-formatted-text 
+                    class="value"
+                    value={gender}
+                >
+                </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.pronoun.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                <lightning-formatted-text 
+                    class="label"
+                    value={informationMap.frontEndData.pronoun.label}>
+                </lightning-formatted-text>
+                <br/>
+                <lightning-formatted-text 
+                    class="value"
+                    value={pronoun}
+                >
+                </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.birthdate.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                <lightning-formatted-text 
+                    class="label"
+                    value={informationMap.frontEndData.birthdate.label}>
+                </lightning-formatted-text>
+                <br/>
+                <lightning-formatted-date-time
+                    class="value"
+                    value={birthdate}
+                    day="numeric"
+                    month="short"
+                    year="numeric"
+                >
+                </lightning-formatted-date-time>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.maritalStatus.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                <lightning-formatted-text 
+                    class="label"
+                    value={informationMap.frontEndData.maritalStatus.label}>
+                </lightning-formatted-text>
+                <br/>
+                <lightning-formatted-text 
+                    class="value"
+                    value={maritalStatus}
+                >
+                </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.spouseFirstName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                <lightning-formatted-text 
+                    class="label"
+                    value={informationMap.frontEndData.spouseFirstName.label}>
+                </lightning-formatted-text>
+                <br/>
+                <lightning-formatted-text 
+                    class="value"
+                    value={spouseFirstName}
+                >
+                </lightning-formatted-text>
+            </lightning-layout-item> 
+            <lightning-layout-item if:true={informationMap.frontEndData.spouseLastName.display}
+                    size="12"
+                    small-device-size="12" 
+                    medium-device-size="4" 
+                    large-device-size="4" 
+                    class="layoutItem">
+                <lightning-formatted-text 
+                    class="label"
+                    value={informationMap.frontEndData.spouseLastName.label}>
+                </lightning-formatted-text>
+                <br/>
+                <lightning-formatted-text 
+                    class="value"
+                    value={spouseLastName}
+                >
+                </lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-layout-item>
+    <lightning-layout-item size="12" if:true={informationMap.frontEndData.emails.display}>
+        <lightning-layout multiple-rows="true" if:true={isShowEmails}>
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="12" 
+                large-device-size="12" 
+                class="layoutItem">
+                <h2 class="subheader">{informationMap.frontEndData.emails.label}</h2>
+            </lightning-layout-item> 
+            <lightning-layout-item size="12" class="layoutItem">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.emailAddress.display}
+                        large-device-size="5"
+                        medium-device-size="5"
+                        small-device-size="5"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.emailAddress.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.emailType.display}
+                        large-device-size="5"
+                        medium-device-size="5"
+                        small-device-size="5"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.emailType.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" 
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value="Is Preferred"
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                        size="12"
+                        class="layoutItem">
+                        <div style="height:1px; background-color: black;"></div>
+                    </lightning-layout-item>
+                    <template for:each={informationMap.records.Emails.records} for:item="email">
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.emailAddress.display}
+                            large-device-size="5"
+                            medium-device-size="5"
+                            small-device-size="5"
+                            class="layoutItem"
+                            key={email.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={email.ucinn_ascendv2__Email_Address__c}
+                            >
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.emailType.display}
+                            large-device-size="5"
+                            medium-device-size="5"
+                            small-device-size="5"
+                            class="layoutItem" 
+                            key={email.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={email.ucinn_ascendv2__Type__c}
+                            >
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" 
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem" 
+                            key={email.Id}>
+                            <lightning-input checked={email.ucinn_ascendv2__Is_Preferred__c} type="checkbox" disabled></lightning-input>
+                        </lightning-layout-item>
+
+                    </template>
+                </lightning-layout>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-layout-item> 
+    <lightning-layout-item size="12" if:true={informationMap.frontEndData.phones.display}>
+        <lightning-layout multiple-rows="true" if:true={isShowPhones}>
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="12" 
+                large-device-size="12" 
+                class="layoutItem">
+                <h2 class="subheader">{informationMap.frontEndData.phones.label}</h2>
+            </lightning-layout-item> 
+            <lightning-layout-item size="12" class="layoutItem">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.phoneNumber.display}
+                        large-device-size="5"
+                        medium-device-size="5"
+                        small-device-size="5"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.phoneNumber.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.phoneType.display}
+                        large-device-size="5"
+                        medium-device-size="5"
+                        small-device-size="5"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.phoneType.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value="Is Preferred"
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                        size="12"
+                        class="layoutItem">
+                        <div style="height:1px; background-color: black;"></div>
+                    </lightning-layout-item>
+                    <template for:each={informationMap.records.Phones.records} for:item="phone">
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.phoneNumber.display}
+                            large-device-size="5"
+                            medium-device-size="5"
+                            small-device-size="5"
+                            class="layoutItem"
+                            key={phone.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={phone.ucinn_ascendv2__Phone_Number__c}
+                            >
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.phoneType.display}
+                            large-device-size="5"
+                            medium-device-size="5"
+                            small-device-size="5"
+                            class="layoutItem" 
+                            key={phone.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={phone.ucinn_ascendv2__Type__c}
+                            >
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12"
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem" 
+                            key={phone.Id}>
+                            <lightning-input type="checkbox" checked={phone.ucinn_ascendv2__Is_Preferred__c} disabled></lightning-input>
+                        </lightning-layout-item>
+
+                    </template>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-layout-item> 
+    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addresses.display}>
+        <lightning-layout multiple-rows="true" if:true={isShowAddresses}>
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="12" 
+                large-device-size="12" 
+                class="layoutItem">
+                <h2 class="subheader">{informationMap.frontEndData.addresses.label}</h2>
+            </lightning-layout-item> 
+            <lightning-layout-item size="12" class="layoutItem">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" if:true={areStreetsVisible}
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value="Street"
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressCity.display}
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.addressCity.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressState.display}
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.addressState.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressPostalCode.display}
+                        large-device-size="1"
+                        medium-device-size="1"
+                        small-device-size="1"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.addressPostalCode.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressCountry.display}
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.addressCountry.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressType.display}
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.addressType.label}
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressIsPreferred.display}
+                        large-device-size="1"
+                        medium-device-size="1"
+                        small-device-size="1"
+                        class="layoutItem">
+                        <lightning-formatted-text
+                            class="label"
+                            value="Is Preferred"
+                        >
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                        size="12"
+                        class="layoutItem">
+                        <div style="height:1px; background-color: black;"></div>
+                    </lightning-layout-item>
+                    <template for:each={informationMap.records.Addresses.records} for:item="address">
+                        <lightning-layout-item size="12" if:true={areStreetsVisible}
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem"
+                            key={address.Id}>
+                            <template if:true={address.ucinn_portal_Is_Show_Address_Lines__c}>
+                                <lightning-formatted-text if:true={informationMap.frontEndData.addressLine1.display}
+                                    class="value"
+                                    value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Address_Line_1__c}
+                                    >
+                                </lightning-formatted-text>
+                                <br if:true={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Address_Line_2__c}/>
+                                <lightning-formatted-text if:true={informationMap.frontEndData.addressLine2.display}
+                                    class="value"
+                                    value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Address_Line_2__c}
+                                >
+                                </lightning-formatted-text>
+                                <br if:true={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Address_Line_3__c}/>
+                                <lightning-formatted-text if:true={informationMap.frontEndData.addressLine3.display}
+                                    class="value"
+                                    value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Address_Line_3__c}
+                                >
+                                </lightning-formatted-text>
+                            </template>
+                            <lightning-formatted-text if:false={address.ucinn_portal_Is_Show_Address_Lines__c}
+                                class="value"
+                                value="-"
+                            ></lightning-formatted-text>
+                        </lightning-layout-item> 
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressCity.display}
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem" 
+                            key={address.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__City__c}
+                                if:true={address.ucinn_portal_Is_Show_City__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={address.ucinn_portal_Is_Show_City__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressState.display}
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem" 
+                            key={address.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__State__c}
+                                if:true={address.ucinn_portal_Is_Show_State__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={address.ucinn_portal_Is_Show_State__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressPostalCode.display}
+                            large-device-size="1"
+                            medium-device-size="1"
+                            small-device-size="1"
+                            class="layoutItem" 
+                            key={address.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Postal_Code__c}
+                                if:true={address.ucinn_portal_Is_Show_Postal_Code__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={address.ucinn_portal_Is_Show_Postal_Code__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressCountry.display}
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem" 
+                            key={address.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={address.ucinn_ascendv2__Address__r.ucinn_ascendv2__Country__c}
+                                if:true={address.ucinn_portal_Is_Show_Country__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={address.ucinn_portal_Is_Show_Country__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" if:true={informationMap.frontEndData.addressType.display}
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem" 
+                            key={address.Id}>
+                            <lightning-formatted-text
+                                class="value"
+                                value={address.ucinn_ascendv2__Type__c}
+                            >
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12"
+                            large-device-size="1"
+                            medium-device-size="1"
+                            small-device-size="1"
+                            class="layoutItem" 
+                            key={address.Id}>
+                            <lightning-input
+                                type="checkbox"
+                                checked={address.ucinn_ascendv2__Is_Preferred__c}
+                                disabled
+                            >
+                            </lightning-input>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-layout-item>  -->
+
+    <template if:true={isShowEmails}>
+        <div class="container" style="margin-top: 1.5em" if:true={informationMap.frontEndData.emails.display}> 
+            <c-portal_-table title={informationMap.frontEndData.emails.label}
+                                        rows-per-page="4"
+                                        column-mappings={emailColumnMapping}
+                                        records={emailsToDisplay}>
+            </c-portal_-table>
+        </div>
+    </template>
+    <template if:true={isShowPhones}>
+        <div class="container" style="margin-top: 1.5em" if:true={informationMap.frontEndData.phones.display}> 
+            <c-portal_-table title={informationMap.frontEndData.phones.label}
+                                        rows-per-page="4"
+                                        column-mappings={phoneColumnMapping}
+                                        records={phonesToDisplay}>
+            </c-portal_-table>
+        </div>
+    </template>
+    <template if:true={isShowAddresses}>
+        <div class="container" style="margin-top: 1.5em" if:true={informationMap.frontEndData.addresses.display}> 
+            <c-portal_-table title={informationMap.frontEndData.addresses.label}
+                                        rows-per-page="4"
+                                        column-mappings={addressColumnMapping}
+                                        records={addressesToDisplay}>
+            </c-portal_-table>
+        </div>
+    </template>
+
+
+</template>

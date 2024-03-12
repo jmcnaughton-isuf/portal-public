@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.selectable {
+    cursor: pointer;
+    border: 2px solid black;
+    width: 600px;
+    height: 100%;
+    margin-bottom: 2rem;
+ }
+
+.selectable:hover {
+    background-color: #ccc;
+}

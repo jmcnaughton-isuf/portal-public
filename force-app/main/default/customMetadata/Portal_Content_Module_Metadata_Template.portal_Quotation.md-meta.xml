@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>portal_Quotation</label>
+    <protected>false</protected>
+    <values>
+        <field>LWC_Name__c</field>
+        <value xsi:type="xsd:string">portal_Quotation</value>
+    </values>
+    <values>
+        <field>Metadata_Template__c</field>
+        <value xsi:type="xsd:string">{
+&quot;quote&quot;: &quot;Insert Quote Here&quot;,
+&quot;citation&quot;: &quot;Citation&quot;,
+&quot;image&quot;: {&quot;imageUrl&quot;: &quot;Image URL&quot;, &quot;altText&quot;: &quot;Alt Text&quot;}
+}</value>
+    </values>
+</CustomMetadata>

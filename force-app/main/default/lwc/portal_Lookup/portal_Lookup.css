@@ -1,0 +1,22 @@
+ul.drop-down {
+    list-style-type: none !important;
+    margin-left: initial !important;
+    margin-bottom: initial !important;
+    padding: 0;
+    position: absolute;
+    left: 0px;
+    top: 43px;
+    z-index: 1;
+}
+
+ul li {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 0em;
+    padding: 4px 16px 4px 12px;
+}
+
+ul li:hover {
+    color: white;
+    background-color: #1e90ff;
+}

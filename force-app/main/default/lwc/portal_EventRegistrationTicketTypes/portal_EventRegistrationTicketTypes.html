@@ -1,0 +1,30 @@
+<template>
+    <template for:each={ticketTypeList} for:item="ticketType" if:true={ticketTypeList}>
+        <lightning-layout multiple-rows="true" key={ticketType.Id}>
+                <div class="ticket-type-container">
+                    <lightning-layout-item size="4">
+                        {ticketType.Name}
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        {ticketType.Description__c}
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2">
+                        <template if:true={ticketType.Total_Tickets_Available__c}>
+                        </template>
+                        <template if:false={ticketType.Total_Tickets_Available__c}>
+                            <template if:true={allowWaitlisting}>
+                                <button class="slds-button slds-button_brand" 
+                                        data-id={ticketType.Id}
+                                        onclick={handleWaitlistClick}>
+                                    Join Waitlist
+                                </button>
+                            </template>
+                            <template if:false={allowWaitlisting}>
+                                SOLD OUT
+                            </template>
+                        </template>
+                    </lightning-layout-item>
+                </div>
+        </lightning-layout>
+    </template>
+</template>

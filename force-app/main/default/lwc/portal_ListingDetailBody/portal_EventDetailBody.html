@@ -1,0 +1,27 @@
+<template>
+    <div data-ascend-portal if:false={isFrontEndDataMapEmpty}>
+        <div if:true={_isShowSpinner} style="position: relative; z-index: 9000">
+            <div class="slds-spinner_container slds-is-fixed">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="event-body" if:true={isShowComponent}>
+            <div class="container large">
+                <template if:true={frontEndDataMap.name.display}>
+                    <c-portal_-time-tracker record-name={_listing.name}></c-portal_-time-tracker>
+                </template>
+                <div class="content">
+                    <lightning-formatted-rich-text value={_richText} if:true={frontEndDataMap.bodyContent.display}></lightning-formatted-rich-text>
+                </div>
+                <div class="contentPlainText" if:true={frontEndDataMap.bodyContentPlainText.display}>
+                    <lightning-formatted-rich-text value={_plainText}></lightning-formatted-rich-text>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

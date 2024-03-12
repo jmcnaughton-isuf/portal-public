@@ -1,0 +1,33 @@
+<template>
+    <template if:true={isText}>
+        {entryValue}
+    </template>
+    <lightning-formatted-number value={entryValue}
+                                format-style="currency"
+                                currency-code="USD"
+                                if:true={isCurrency}>
+    </lightning-formatted-number>
+    <lightning-formatted-rich-text value={entryValue}
+                                   if:true={isHtml}>
+    </lightning-formatted-rich-text>
+    <lightning-formatted-date-time value={entryValue} 
+                                   if:true={isDate}>
+    </lightning-formatted-date-time>
+    <template if:true={isExpandDataButton}>
+        <a class="expand-row" onclick={handleExpandDataClicked} 
+                              if:false={record.isShowExpandedData}>
+            {columnData.expandText}
+        </a>
+        <a class="expand-row expanded" onclick={handleExpandDataClicked} 
+                                       if:true={record.isShowExpandedData}>
+            {columnData.hideText}
+        </a>
+    </template>
+    <fieldset if:true={isCheckbox}>
+        <div class="field-wrapper">
+            <input data-inputtype="radio" data-id={record.Id} type="checkbox" checked={entryValue} class="radio" oninput={handleCheckboxClicked}>
+        </div>
+    </fieldset>
+
+    <a if:true={isLink} href={linkValue}>{entryValue}</a>
+</template>

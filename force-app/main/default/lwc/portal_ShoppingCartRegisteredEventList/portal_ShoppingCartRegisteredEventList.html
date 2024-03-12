@@ -1,0 +1,115 @@
+<template>
+    <!-- <div class="event-name" if:true={event.eventName}>
+            <h1>{event.eventName}</h1>
+        </div>
+
+        <br>
+
+        <template for:each={event.participationsPerEvent} for:item="participation">
+
+            <div key={participation.Id} class="name-header" if:true={participation.fullName}>
+                {participation.fullName}
+            </div>
+
+            <br key={participation.Id}>
+
+            <div key={participation.Id} class="col-header slds-grid slds-border_bottom">
+                <div class="slds-col slds-size_1-of-4">
+                    Ticket
+                </div>
+
+                <div class="slds-col slds-size_1-of-4">
+                    Quantity
+                </div>
+
+                <div class="slds-col slds-size_1-of-4">
+                    Price
+                </div>
+            </div>
+
+            <template for:each={participation.ticketList} for:item="ticket">
+                <div key={ticket.Id} class="slds-grid ticket-info">
+                    <div class="slds-col slds-size_1-of-4">
+                        {ticket.ticketType}
+                    </div>
+    
+                    <div class="slds-col slds-size_1-of-4">
+                        {ticket.numberOfTickets}
+                    </div>
+    
+                    <div class="slds-col slds-size_1-of-4">
+                        {ticket.pricePerTicketString}
+                    </div>
+                </div>
+
+            </template>
+            
+
+            <br key={participation.Id}>
+        </template> -->
+    <template for:each={eventList} for:item="event">
+        <div class="event" key={event.Id}>
+            <div class="container large">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_12-of-12">
+                        <!-- <p class="date"><strong>October 7, 2021</strong> | 12:00 p.m.-12:30 p.m. (EDT)</p> -->
+                        <h2 class="page-header">{event.eventName}</h2>
+                    </div>
+                </div>
+                <template for:each={event.participationsPerEvent} for:item="participation">
+                    <div class="section-wrapper" key={participation.Id}>
+                        <h3 style="font-weight: bold; margin-bottom: 10px;">{participation.fullName}</h3>
+                        <c-portal_-table column-mappings={columnData}
+                                                 records={participation.ticketList}>
+                        </c-portal_-table>
+                    </div>
+                </template>
+                <div class="button-list">
+                    <c-portal_-shopping-cart-event-modification-buttons
+                        session-id={sessionId}
+                        event={event}
+                        disable-buttons={disableButtons}
+                        modification-for-event={modificationForEvent}
+                        delete-registration-for-event={deleteRegistrationForEvent}>
+                    </c-portal_-shopping-cart-event-modification-buttons>
+                </div>
+            </div>
+        </div>
+    </template>
+<!-- <div class="slds-grid_vertical">
+
+    <template for:each={eventList} for:item="event">
+
+        <div class="item" key={event.Id}>
+        <c-portal_-shopping-cart-item
+            key={event.Id}
+            event={event}
+            show-modification-buttons={showModificationButtons}
+        >
+        </c-portal_-shopping-cart-item>
+        </div>
+
+        <div class="modification-buttons" key={event.Id} if:true={showModificationButtons}>
+            <c-portal_-shopping-cart-event-modification-buttons
+                session-id={sessionId}
+                event={event}
+                disable-buttons={disableButtons}
+                modification-for-event={modificationForEvent}
+                delete-registration-for-event={deleteRegistrationForEvent}
+            ></c-portal_-shopping-cart-event-modification-buttons>
+        </div>
+    </template>
+
+</div>
+
+<div class="slds-grid total-price">
+    <div class="slds-col slds-size_1-of-4">
+        Total Price
+    </div>
+    <div class="slds-col slds-size_1-of-4">
+    </div>
+    <div class="slds-col slds-size_1-of-4">
+        {totalPrice}
+    </div>
+</div> -->
+</template>

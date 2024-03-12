@@ -1,0 +1,100 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+        <template if:true={isRenderPaymentForm}>
+            <div class="container" style="margin-top: 2em">
+                <c-portal_-payment-form-o-r
+                        payment-method={paymentMethod}
+                        payment-type={_giftType}
+                        amount={paymentAmount}
+                        number-of-installments={_numberOfInstallments}
+                        frequency={_frequency}
+                        start-date={_startDate}
+                        end-date={_endDate}
+                        designation-list={_designations}
+                        external-gateway-name={externalGatewayName}
+                        billing-information={_constituentBillingInformation}
+                        organization-billing-information={_organizationBillingInformation}
+                        is-giving-as-org={_isGivingAsOrg}
+                        handle-payment-confirmation={paymentConfirmationHandler}
+                        handle-previous-click={handlePreviousButtonClick}
+                        additional-metadata={_additionalMetadata}
+                        payment-origin={paymentOrigin}
+                        is-create-pledge-subscription={_isCreatePledgeSubscription}
+                        is-recaptcha-enabled={_isRecaptchaEnabled}>
+                </c-portal_-payment-form-o-r>
+            </div>
+
+            <!-- <div class="container" style="margin-top: 2em;">
+                <div class="container large">
+                    <p> Review Your Gift </p>
+                    <div class="flex-grid-4" style="background-color: grey;">
+                        <div class="" style="display: block;">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                    <h4>Fund</h4>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                    <h4>Amount</h4>
+                                </div>
+                            </div>
+                            <template for:each={_designations} for:item="designation" for:index="index">
+                                <div class="slds-grid slds-wrap" key={designation.Id}>
+                                    <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12" if:false={designation.showOther}>
+                                        <p>{designation.Name}</p>
+                                    </div>
+                                    <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12" if:false={designation.showOther}>
+                                        <p>{designation.amount}</p>
+                                    </div>
+                                </div>
+                            </template>
+                            <p class="slds-border_top slds-p-top_small">Total Amount: {_amount}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-top: 2em;">
+                <div class="container large">
+                    <p> Review Your Contact Information </p>
+                    <div class="flex-grid-4" style="background-color: grey;">
+                        <div class="grid-item">
+                            <p> Name : </p>
+                        <p> {_billingInformation.name} </p>
+                        </div>
+                        <div class="grid-item">
+                            <p> Email : </p>
+                            <p> {_billingInformation.email}</p>
+                        </div>
+                        <div class="grid-item">
+                            <p> Address : </p>
+                            <p> {_billingInformation.address.line1}</p>
+                            <p> {_billingInformation.address.line2}</p>
+                            <p> {_billingInformation.address.city}</p>
+                            <p> {_billingInformation.address.state}</p>
+                            <p> {_billingInformation.address.country}</p>
+                            <p> {_billingInformation.address.postal_code}</p>
+                        </div>
+                        <div class="grid-item">
+                            <p> Phone: </p>
+                            <p> {_billingInformation.phone}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" style="margin-top: 2em;">
+                <div class="container large">
+                    <div class="flex-grid-4">
+                        <div class="grid-item"></div>
+                        <div class="grid-item">
+                            <button class="button primary full-width" onclick={handlePreviousButtonClick}>Previous</button>
+                        </div>
+                        <div class="grid-item">
+                            <button class="button primary full-width" onclick={handlePaymentSubmitButton}>Submit Payment</button>
+                        </div>
+                        <div class="grid-item"></div>
+                    </div>
+                </div>
+            </div>-->
+        </template>
+    </div>
+</template>

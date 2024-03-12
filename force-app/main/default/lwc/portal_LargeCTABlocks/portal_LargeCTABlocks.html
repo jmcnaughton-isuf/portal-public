@@ -1,0 +1,77 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={_contentModuleMetadata}>
+            <template for:each={_contentModuleMetadata.ctaBlocks} for:item="ctaBlock" if:true={_contentModuleMetadata}>
+                <div class={ctaBlock.class} key={ctaBlock.key} style={ctaBlock.style}>
+                    <div class="container large">
+                        <div class="image" if:true={ctaBlock.image}>
+                            <img src={ctaBlock.image.imageUrl} alt={ctaBlock.image.altText}/>
+                        </div>
+                        <div class="contentContainer">
+                            <div class="eyebrow" if:true={ctaBlock.eyebrow}>{ctaBlock.eyebrow}</div>
+                            <h1>
+                                <lightning-formatted-rich-text value={ctaBlock.heading}></lightning-formatted-rich-text>
+                            </h1>
+                            <p class="lead">
+                                <lightning-formatted-rich-text value={ctaBlock.description}></lightning-formatted-rich-text>
+                            </p>
+                            <a class="button primary full-mobile" 
+                            aria-label={ctaBlock.button.label} 
+                            href={ctaBlock.button.link}
+                            target={ctaBlock.button.target}
+                            if:true={ctaBlock.button}>
+                                    {ctaBlock.button.label}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="cta-block odd" key={ctaBlock.heading} if:true={ctaBlock.isOdd}>
+                    <div class="hero-left">
+                        <h3 class="heading">
+                            <lightning-formatted-rich-text value={ctaBlock.supplementalText}></lightning-formatted-rich-text>
+                        </h3>
+                        <p class="description">
+                            <lightning-formatted-rich-text value={ctaBlock.description}></lightning-formatted-rich-text>
+                        </p>
+                        <template if:true={ctaBlock.button}>
+                            <div class="main-button">
+                                <a class="slds-button slds-button_brand" 
+                                    aria-label={ctaBlock.button.label} 
+                                    href={ctaBlock.button.link}
+                                    target={ctaBlock.button.target}>
+                                    {ctaBlock.button.label}
+                                </a>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="hero-right" if:true={ctaBlock.image}>
+                        <img src={ctaBlock.image.imageUrl} alt={ctaBlock.image.altText}/>
+                    </div>
+                </div>  
+                <div class="cta-block even" key={ctaBlock.heading} if:false={ctaBlock.isOdd}>
+                    <div class="hero-left" if:true={ctaBlock.image}>
+                        <img src={ctaBlock.image.imageUrl} alt={ctaBlock.image.altText}/>
+                    </div>
+                    <div class="hero-right">
+                        <h3 class="heading">
+                            <lightning-formatted-rich-text value={ctaBlock.supplementalText}></lightning-formatted-rich-text>
+                        </h3>
+                        <p class="description">
+                            <lightning-formatted-rich-text value={ctaBlock.description}></lightning-formatted-rich-text>
+                        </p>
+                        <template if:true={ctaBlock.button}>
+                            <div class="main-button">
+                                <a class="slds-button slds-button_brand" 
+                                    aria-label={ctaBlock.button.label} 
+                                    href={ctaBlock.button.link}
+                                    target={ctaBlock.button.target}>
+                                    {ctaBlock.button.label}
+                                </a>
+                            </div>
+                        </template>
+                    </div>
+                </div> -->
+            </template>
+        </div>
+    </div>
+</template>

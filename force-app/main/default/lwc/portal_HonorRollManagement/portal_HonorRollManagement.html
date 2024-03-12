@@ -1,0 +1,81 @@
+<template>
+    <div class="honor-roll-management" if:true={honorRollJointPreference}>
+        <h2 if:true={honorRollManagementTitle}>{honorRollManagementTitle}</h2>
+
+        <div class="entry-form bottom-border">
+            <div class="slds-grid align-left">
+                <div class="grid-item">
+                    <fieldset>
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" name="general" checked={honorRollOptOutValue} class="radio opt-out-btn" onchange={onOptOutChange}>
+                            <label for="general">{optOutLabel}</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="flex-grid-2">
+                <div class="grid-item">
+                    <c-portal_-input classes="slds-input" 
+                                    type="text"
+                                    label="Current Honor Roll Name"
+                                    value={honorRollName}
+                                    input-name="honorRollName" 
+                                    handle-input={onHonorRollNameInput}></c-portal_-input>
+                        <p if:true={hasPendingNameChange} class="pendingText">You have a name change request pending approval.</p>
+                </div>
+                
+                <div class="grid-item">
+                    <c-portal_-select
+                        label="Current Honor Roll Joint Preference"
+                        input-name="preference"
+                        default-value={honorRollJointPreference}
+                        option-list={jointPreferenceOptions}
+                        handle-change={onJointPreferenceChange}>
+                    </c-portal_-select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-list">
+            <a onclick={handleSubmitModalOpen} class="button primary">Submit Changes</a>
+        </div>
+    </div>
+
+    <div class="sf-modal" if:true={showModal}>
+        <div class="modal-background" >
+            <div class="modal">
+                <div class="content-header-bar" style="margin-bottom: 0">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                            <h2 class="modal-title">Submit Changes</h2>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                            <a class="close-btn" onclick={handleSubmitModalClose}>&times;</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div style="padding: 2em 0" class="border-bottom">
+                        <div class="content-wrapper">
+                        <p>Opt Out of Honor Roll changes will occur immediately. Any changes make to honor roll name and/or honor roll joint preference must first be approved before taking effect.</p>
+                        </div>
+                    </div>
+                    <slot interop-layout_layout="" class="slds-slot">
+                        <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                            <div class="slds-grid slds-wrap slds-grid_align-end">
+                                <div class="button-list">
+                                    <button class="button secondary" onclick={handleSubmitModalClose}>Cancel</button>
+                                    <button class="button primary" onclick={handleSubmitChangeButtonClick}>Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </slot>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</template>

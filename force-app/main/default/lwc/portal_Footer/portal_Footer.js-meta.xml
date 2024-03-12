@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="logoUrl" label="Logo URL" type="String"/>
+            <property name="socialMediaLinks" label="Social Media Links" type="String"/>
+            <property name="navigationLinks" label="Navigation Links" type="String"/>
+            <property name="copyrightText" label="Copyright Text" type="String"/>
+            <property name="backgroundColor" label="Background Color" type="Color"/>
+            <property name="buttonLink" label="Button Link (Deprecated)" type="String"/>
+            <property name="buttonLabel" label="Button Label (Deprecated)" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

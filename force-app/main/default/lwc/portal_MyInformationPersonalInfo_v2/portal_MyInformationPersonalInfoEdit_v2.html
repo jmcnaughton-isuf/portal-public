@@ -1,0 +1,375 @@
+<template>
+    <div data-ascend-portal if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type='field'
+            configuration={_selfReportConfiguration}
+            field-id={_selfReportFieldId}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container">
+            <template if:true={isDisplayName}>
+                <h3>{sectionConfiguration.name.label}</h3>
+                <div class="entry-form">
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.firstName.isDisplay}>
+                            <label>{sectionConfiguration.name.fieldConfigurationMap.firstName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={name.firstName}
+                                field-id="firstName"
+                                section-id="name"
+                                input-type={sectionConfiguration.name.fieldConfigurationMap.firstName.fieldType}
+                                is-disabled={sectionConfiguration.name.fieldConfigurationMap.firstName.isDisable}
+                                is-required={sectionConfiguration.name.fieldConfigurationMap.firstName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.name.fieldConfigurationMap.firstName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNameChanges.firstName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.middleName.isDisplay}>
+                            <label>{sectionConfiguration.name.fieldConfigurationMap.middleName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={name.middleName}
+                                field-id="middleName"
+                                section-id="name"
+                                input-type={sectionConfiguration.name.fieldConfigurationMap.middleName.fieldType}
+                                is-disabled={sectionConfiguration.name.fieldConfigurationMap.middleName.isDisable}
+                                is-required={sectionConfiguration.name.fieldConfigurationMap.middleName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.name.fieldConfigurationMap.middleName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNameChanges.middleName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.lastName.isDisplay}>
+                            <label>{sectionConfiguration.name.fieldConfigurationMap.lastName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={name.lastName}
+                                field-id="lastName"
+                                section-id="name"
+                                input-type={sectionConfiguration.name.fieldConfigurationMap.lastName.fieldType}
+                                is-disabled={sectionConfiguration.name.fieldConfigurationMap.lastName.isDisable}
+                                is-required={sectionConfiguration.name.fieldConfigurationMap.lastName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.name.fieldConfigurationMap.lastName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNameChanges.lastName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.prefix.isDisplay}>
+                            <label>{sectionConfiguration.name.fieldConfigurationMap.prefix.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={name.prefix}
+                                field-id="prefix"
+                                section-id="name"
+                                input-type={sectionConfiguration.name.fieldConfigurationMap.prefix.fieldType}
+                                is-disabled={sectionConfiguration.name.fieldConfigurationMap.prefix.isDisable}
+                                is-required={sectionConfiguration.name.fieldConfigurationMap.prefix.isRequired}
+                                handle-change-callback={handleChange}
+                                picklist-values={sectionConfiguration.name.fieldConfigurationMap.prefix.picklistValues}
+                                has-self-report-link={sectionConfiguration.name.fieldConfigurationMap.prefix.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNameChanges.prefix}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.suffix.isDisplay}>
+                            <label>{sectionConfiguration.name.fieldConfigurationMap.suffix.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={name.suffix}
+                                field-id="suffix"
+                                section-id="name"
+                                input-type={sectionConfiguration.name.fieldConfigurationMap.suffix.fieldType}
+                                is-disabled={sectionConfiguration.name.fieldConfigurationMap.suffix.isDisable}
+                                is-required={sectionConfiguration.name.fieldConfigurationMap.suffix.isRequired}
+                                handle-change-callback={handleChange}
+                                picklist-values={sectionConfiguration.name.fieldConfigurationMap.suffix.picklistValues}
+                                has-self-report-link={sectionConfiguration.name.fieldConfigurationMap.suffix.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNameChanges.suffix}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.businessTitle.isDisplay}>
+                            <label>{sectionConfiguration.name.fieldConfigurationMap.businessTitle.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={name.businessTitle}
+                                field-id="businessTitle"
+                                section-id="name"
+                                input-type={sectionConfiguration.name.fieldConfigurationMap.businessTitle.fieldType}
+                                is-disabled={sectionConfiguration.name.fieldConfigurationMap.businessTitle.isDisable}
+                                is-required={sectionConfiguration.name.fieldConfigurationMap.businessTitle.isRequired}
+                                handle-change-callback={handleChange}
+                                picklist-values={sectionConfiguration.name.fieldConfigurationMap.businessTitle.picklistValues}
+                                has-self-report-link={sectionConfiguration.name.fieldConfigurationMap.businessTitle.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNameChanges.businessTitle}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="line-break"></div>
+
+        <div class="container" if:true={isDisplayAlsoKnownAs}>
+            <h2 style="margin-bottom: .5em" if:true={sectionConfiguration.nickname}>{sectionConfiguration.nickname.label}</h2>
+
+            <template if:true={isDisplayMaidenName}>
+                <h3 style="display: inline-block; margin-bottom: 1em">Former Name</h3>
+                <div class="labelled-toggle-switch" if:true={sectionConfiguration.maidenName.isTogglePerRecord}>
+                    <span class="hide-input">Hide</span>
+                    <label class="switch">
+                        <input type="checkbox" checked={isShowMaidenNameToggleValue} oninput={handleToggleChange} data-field-id="directorySetting.isShowMaidenName">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="show-input">Show</span>
+                </div>
+                
+                <div class="entry-form">
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.isDisplay}>
+                            <label>{sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={maidenName.maidenFirstName}
+                                field-id="maidenFirstName"
+                                section-id="maidenName"
+                                input-type={sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.fieldType}
+                                is-disabled={sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.isDisable}
+                                is-required={sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportMaidenNameChanges.maidenFirstName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.isDisplay}>
+                            <label>{sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={maidenName.maidenMiddleName}
+                                field-id="maidenMiddleName"
+                                section-id="maidenName"
+                                input-type={sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.fieldType}
+                                is-disabled={sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.isDisable}
+                                is-required={sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportMaidenNameChanges.maidenMiddleName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.isDisplay}>
+                            <label>{sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={maidenName.maidenLastName}
+                                field-id="maidenLastName"
+                                section-id="maidenName"
+                                input-type={sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.fieldType}
+                                is-disabled={sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.isDisable}
+                                is-required={sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportMaidenNameChanges.maidenLastName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            
+            <template if:true={isDisplayNickname}>
+                <h3 style="display: inline-block; margin-bottom: 1em">{sectionConfiguration.nickname.label}</h3>
+                <div class="labelled-toggle-switch" if:true={sectionConfiguration.nickname.isTogglePerRecord}>
+                    <span class="hide-input">Hide</span>
+                    <label class="switch">
+                        <input type="checkbox" checked={isShowNicknameToggleValue} oninput={handleToggleChange} data-field-id="directorySetting.isShowNickname">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="show-input">Show</span>
+                </div>
+                <div class="entry-form">
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.isDisplay}>
+                            <label>{sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2
+                                value={nickName.nicknameFirstName}
+                                field-id="nicknameFirstName"
+                                section-id="nickname"
+                                input-type={sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.fieldType}
+                                is-disabled={sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.isDisable}
+                                is-required={sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNicknameChanges.nicknameFirstName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.isDisplay}>
+                            <label>{sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.label}</label>
+                            <c-portal_-My-Information-Edit-Field_v2 
+                                value={nickName.nicknameLastName}
+                                field-id="nicknameLastName"
+                                section-id="nickname"
+                                input-type={sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.fieldType}
+                                is-disabled={sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.isDisable}
+                                is-required={sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.isRequired}
+                                handle-change-callback={handleChange}
+                                has-self-report-link={sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.hasReportUpdateLink}
+                                has-previous-self-report={selfReportNicknameChanges.nicknameLastName}
+                                handle-self-report={handleSelfReport}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+        <div class="container" if:true={isDisplayDirectoryName}>
+            <h2 style="display: inline-block; margin-bottom: 0.5em">{sectionConfiguration.directoryName.label}</h2>
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.isDisplay}>
+                        <label>{sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.label}</label>
+                        <c-portal_-My-Information-Edit-Field_v2
+                            value={directoryName.directoryFirstName}
+                            field-id="directoryFirstName"
+                            section-id="directoryName"
+                            input-type={sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.fieldType}
+                            is-disabled={sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.isDisable}
+                            is-required={sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.isRequired}
+                            handle-change-callback={handleChange}
+                            has-self-report-link={sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.hasReportUpdateLink}
+                            has-previous-self-report={selfReportDirectoryNameChanges.directoryFirstName}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.isDisplay}>
+                        <label>{sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.label}</label>
+                        <c-portal_-My-Information-Edit-Field_v2
+                            value={directoryName.directoryLastName}
+                            field-id="directoryLastName"
+                            section-id="directoryName"
+                            input-type={sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.fieldType}
+                            is-disabled={sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.isDisable}
+                            is-required={sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.isRequired}
+                            handle-change-callback={handleChange}
+                            has-self-report-link={sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.hasReportUpdateLink}
+                            has-previous-self-report={selfReportDirectoryNameChanges.directoryLastName}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line-break"></div>
+
+        <div class="container" if:true={isDisplayAdditionalDetails}>
+            <h2 style="margin-bottom: .5em">{sectionConfiguration.additionalDetails.label}</h2>            
+            <div class="entry-form">
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.isDisplay}>
+                        <c-portal_-My-Information-Edit-Field_v2 label={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.label}
+                            value={additionalDetails.gender}
+                            field-id="gender"
+                            section-id="additionalDetails"
+                            input-type={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.fieldType}
+                            is-disabled={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.isDisable}
+                            is-required={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.isRequired}
+                            handle-change-callback={handleChange}
+                            has-toggle={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.hasToggle}
+                            toggle-value={isShowGenderToggleValue}
+                            toggle-field="directorySetting.isShowGender"
+                            picklist-values={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.picklistValues}
+                            has-self-report-link={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.hasReportUpdateLink}
+                            has-previous-self-report={selfReportAdditionalDetailsChanges.gender}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.isDisplay}>
+                        <c-portal_-My-Information-Edit-Field_v2 label={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.label}
+                            value={additionalDetails.pronoun}
+                            field-id="pronoun"
+                            section-id="additionalDetails"
+                            input-type={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.fieldType}
+                            is-disabled={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.isDisable}
+                            is-required={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.isRequired}
+                            handle-change-callback={handleChange}
+                            has-toggle={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.hasToggle}
+                            toggle-value={isShowPronounsToggleValue}
+                            toggle-field="directorySetting.isShowPronouns"
+                            picklist-values={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.picklistValues}
+                            has-self-report-link={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.hasReportUpdateLink}
+                            has-previous-self-report={selfReportAdditionalDetailsChanges.pronoun}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.isDisplay}>
+                        <label>{sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.label}</label>
+                        <c-portal_-My-Information-Edit-Field_v2 
+                            value={birthdate}
+                            field-id="birthdate"
+                            section-id="additionalDetails"
+                            input-type={sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.fieldType}
+                            is-disabled={sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.isDisable}
+                            is-required={sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.isRequired}
+                            handle-change-callback={handleChange}
+                            has-self-report-link={sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.hasReportUpdateLink}
+                            has-previous-self-report={selfReportAdditionalDetailsChanges.birthdate}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.isDisplay}>
+                        <label>{sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.label}</label>
+                        <c-portal_-My-Information-Edit-Field_v2
+                            value={additionalDetails.maritalStatus}
+                            field-id="maritalStatus"
+                            section-id="additionalDetails"
+                            input-type={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.fieldType}
+                            is-disabled={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.isDisable}
+                            is-required={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.isRequired}
+                            handle-change-callback={handleChange}
+                            picklist-values={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.picklistValues}
+                            has-self-report-link={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.hasReportUpdateLink}
+                            has-previous-self-report={selfReportAdditionalDetailsChanges.maritalStatus}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.isDisplay}>
+                        <label>{sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.label}</label>
+                        <c-portal_-My-Information-Edit-Field_v2
+                            value={additionalDetails.spouseFirstName}
+                            field-id="spouseFirstName"
+                            section-id="additionalDetails"
+                            input-type={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.fieldType}
+                            is-disabled={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.isDisable}
+                            is-required={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.isRequired}
+                            handle-change-callback={handleChange}
+                            has-self-report-link={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.hasReportUpdateLink}
+                            has-previous-self-report={selfReportAdditionalDetailsChanges.spouseFirstName}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.isDisplay}>
+                        <label>{sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.label}</label>
+                        <c-portal_-My-Information-Edit-Field_v2
+                            value={additionalDetails.spouseLastName}
+                            field-id="spouseLastName"
+                            section-id="additionalDetails"
+                            input-type={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.fieldType}
+                            is-disabled={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.isDisable}
+                            is-required={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.isRequired}
+                            handle-change-callback={handleChange}
+                            has-self-report-link={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.hasReportUpdateLink}
+                            has-previous-self-report={selfReportAdditionalDetailsChanges.spouseLastName}
+                            handle-self-report={handleSelfReport}>
+                        </c-portal_-My-Information-Edit-Field_v2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

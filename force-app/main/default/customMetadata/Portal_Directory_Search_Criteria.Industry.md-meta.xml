@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Industry</label>
+    <protected>false</protected>
+    <values>
+        <field>Cache_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Cache_Logic_Field_On_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Default_Value__c</field>
+        <value xsi:type="xsd:string">Select an Industry</value>
+    </values>
+    <values>
+        <field>Directory_Location__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Display_Order__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Field_Logic__c</field>
+        <value xsi:type="xsd:string">1 AND 2</value>
+    </values>
+    <values>
+        <field>Geolocation_Address_Input__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Is_Display_On_Portal__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Portal_Directory_Search_Category__c</field>
+        <value xsi:type="xsd:string">Employment</value>
+    </values>
+    <values>
+        <field>Search_Criteria_Name__c</field>
+        <value xsi:type="xsd:string">Industry</value>
+    </values>
+    <values>
+        <field>Search_Input_Type__c</field>
+        <value xsi:type="xsd:string">Picklist</value>
+    </values>
+</CustomMetadata>

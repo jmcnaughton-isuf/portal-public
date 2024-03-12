@@ -1,0 +1,53 @@
+<template>
+    <div data-ascend-portal>
+        <div class="container large" if:true={_contentModuleMetadata}>
+            <div class="accordion white">
+                <h2 class="heading">{_contentModuleMetadata.heading}</h2>
+                <template iterator:it={_contentModuleMetadata.items}>
+                    <div class={it.value.class} key={it.value.topicName}>
+                        <a class="topic" data-index={it.index} onclick={handleClick}>
+                            {it.value.topicName}
+                        </a>
+                        <!-- <a class="topic">Topic Name</a> -->
+                        <div class="accordion-content">
+                            <p>
+                                {it.value.text}
+                            </p>
+                        </div>
+                    </div>
+                </template>
+                <!-- <div class="accordion-item">
+                    <a class="topic">Topic Name</a>
+                    <div class="accordion-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis hendrerit dolor magna eget est lorem ipsum dolor. Purus gravida quis blandit turpis. Integer malesuada nunc vel risus commodo viverra.</p></div>
+                </div>
+                <div class="accordion-item">
+                    <a class="topic">Topic Name</a>
+                    <div class="accordion-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis hendrerit dolor magna eget est lorem ipsum dolor. Purus gravida quis blandit turpis. Integer malesuada nunc vel risus commodo viverra.</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="accordion" if:true={_contentModuleMetadata}>
+        <h2 class="heading">{_contentModuleMetadata.heading}</h2>
+        <template iterator:it={_contentModuleMetadata.items}>
+            <div key={it.value.topicName} class="accordian-item">
+                <h3 class="topic">
+                    <a class="symbol" data-index={it.index} onclick={handleClick}>
+                        <template if:true={it.value.isOpen}>
+                            -
+                        </template>
+                        <template if:false={it.value.isOpen}>
+                            +
+                        </template>
+                    </a>
+                    <a data-index={it.index} onclick={handleClick}>{it.value.topicName}</a>
+                </h3>
+                <div class={it.value.class}>
+                    {it.value.text}
+                </div>
+            </div>
+        </template>
+    </div> -->
+</template>

@@ -1,0 +1,48 @@
+<template>
+    <div if:true={isLoading}>
+        <lightning-spinner
+            alternative-text="Loading..." variant="brand" size="large">
+        </lightning-spinner>
+    </div>
+    <template if:true={isPicklistInputType}>
+        <div>
+            <c-portal_-select default-value={inputText} 
+                              option-list={filterOptions} 
+                              handle-change={handlePicklistSelection}
+                              label={label}>
+            </c-portal_-select>
+        </div>
+    </template>
+    <template if:true={isTextInputType}>
+        <div>
+            <div class="slds-is-relative">
+                <c-portal_-input classes="slds-input"
+                                 type="text" 
+                                 value={inputText} 
+                                 handle-input={handleInputTextChange} 
+                                 handle-key-up={handleKeyUp}
+                                 label={label}
+                                 handle-clear={handleClear}></c-portal_-input>
+            </div>
+            <p if:false={manuallyApplyValues}>
+                <a onclick={handleApply} role="button">Apply</a>
+            </p>
+        </div>
+    </template>
+    <template if:true={isLookupInputType}>
+        <div>
+            <template if:true={hasLabel}>
+                <label>
+                    {label}
+                </label>
+            </template>
+            <c-portal_-lookup all-lookup-options={filterOptions}
+                              is-hide-options-on-blur
+                              input-value={inputText}
+                              handle-key-up={handleInputTextChange}
+                              custom-metadata-api-name="Portal_Directory_Search_Display_Setting__mdt"
+                              display-setting-list={currentSearchSetting.displaySettingList}
+                              handle-lookup-option-selected={handleLookupOptionSelected}></c-portal_-lookup>
+        </div>
+    </template> 
+</template>

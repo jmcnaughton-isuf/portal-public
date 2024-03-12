@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="contentPage" label="Content Page" type="String" description="Name of content page record" required="true" default="Zone Leadership Page"></property>
+            <property name="contentModule" label="Content Module" type="String" description="Name of content Module" required="true" default="Related Links"></property>
+            <property name="jsonRelatedLinksKey" label="Related Links key" type="String" description="JSON key where the related links are stored within the content module." required="true" default="relatedLinks"></property>
+            <property name="jsonTitleKey" label="Title key" type="String" description="JSON key whrere the title text is stored within the content module." default="title"></property>
+            <property name="urlParamKey" label="URL Param Key" type="String" description="Use the URL param to match against sub name on content page." default="zname"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,131 @@
+<template>
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <template if:true={isDisplayName}>
+            <div class="info-card">
+                <h3 class="slds-border_bottom">{sectionConfiguration.name.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.firstName.isDisplay}>
+                        <h4>{sectionConfiguration.name.fieldConfigurationMap.firstName.label}</h4>
+                        {name.firstName}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.middleName.isDisplay}>
+                        <h4>{sectionConfiguration.name.fieldConfigurationMap.middleName.label}</h4>
+                        {name.middleName}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.lastName.isDisplay}>
+                        <h4>{sectionConfiguration.name.fieldConfigurationMap.lastName.label}</h4>
+                        {name.lastName}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.prefix.isDisplay}>
+                        <h4>{sectionConfiguration.name.fieldConfigurationMap.prefix.label}</h4>
+                        {name.prefix}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.suffix.isDisplay}>
+                        <h4>{sectionConfiguration.name.fieldConfigurationMap.suffix.label}</h4>
+                        {name.suffix}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.name.fieldConfigurationMap.businessTitle.isDisplay}>
+                        <h4>{sectionConfiguration.name.fieldConfigurationMap.businessTitle.label}</h4>
+                        {name.businessTitle}
+                    </div>
+                </div>
+            </div>
+            <div class="line-break"></div>
+        </template>
+    
+        <template if:true={isDisplayAlsoKnownAs}>
+            <div class="info-card">
+                <h3 class="slds-border_bottom" if:true={sectionConfiguration.nickname}>{sectionConfiguration.nickname.label}</h3>
+
+                <div class="flex-grid-3">
+                    <template if:true={isDisplayMaidenName}>  
+                        <div class="grid-item" if:true={sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.isDisplay}>
+                            <h4>{sectionConfiguration.maidenName.fieldConfigurationMap.maidenFirstName.label}</h4>
+                            {maidenName.maidenFirstName}
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.isDisplay}>
+                            <h4>{sectionConfiguration.maidenName.fieldConfigurationMap.maidenMiddleName.label}</h4>
+                            {maidenName.maidenMiddleName}
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.isDisplay}>
+                            <h4>{sectionConfiguration.maidenName.fieldConfigurationMap.maidenLastName.label}</h4>
+                            {maidenName.maidenLastName}
+                        </div>
+                    </template>
+
+                    <template if:true={isDisplayNickname}>
+                        <div class="grid-item" if:true={sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.isDisplay}>
+                            <h4>{sectionConfiguration.nickname.fieldConfigurationMap.nicknameFirstName.label}</h4>
+                            {nickName.nicknameFirstName}
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.isDisplay}>
+                            <h4>{sectionConfiguration.nickname.fieldConfigurationMap.nicknameLastName.label}</h4>
+                            {nickName.nicknameLastName}
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="line-break"></div>
+        </template>
+    
+        <template if:true={isDisplayDirectoryName}>
+            <div class="info-card">
+                <h3 class="slds-border_bottom">{sectionConfiguration.directoryName.label}</h3>
+                <div class="flex-grid-2">
+                    <div class="grid-item" if:true={sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.isDisplay}>
+                        <h4>{sectionConfiguration.directoryName.fieldConfigurationMap.directoryFirstName.label}</h4>
+                        {directoryName.directoryFirstName}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.isDisplay}>
+                        <h4>{sectionConfiguration.directoryName.fieldConfigurationMap.directoryLastName.label}</h4>
+                        {directoryName.directoryLastName}
+                    </div>
+                </div>
+            </div>
+            <div class="line-break"></div>
+        </template>
+    
+        <template if:true={isDisplayAdditionalDetails}>
+            <div class="info-card">
+                <h3 class="slds-border_bottom">{sectionConfiguration.additionalDetails.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.isDisplay}>
+                        <h4>{sectionConfiguration.additionalDetails.fieldConfigurationMap.gender.label}</h4>
+                        {additionalDetails.gender}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.isDisplay}>
+                        <h4>{sectionConfiguration.additionalDetails.fieldConfigurationMap.pronoun.label}</h4>
+                        {additionalDetails.pronoun}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.isDisplay}>
+                        <h4>{sectionConfiguration.additionalDetails.fieldConfigurationMap.birthdate.label}</h4>
+                        <lightning-formatted-date-time
+                                class="value"
+                                value={birthdate}
+                                day="numeric"
+                                month="short"
+                                year="numeric"
+                                time-zone="UTC"
+                                variant="label-hidden"
+                            >
+                        </lightning-formatted-date-time>
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.isDisplay}>
+                        <h4>{sectionConfiguration.additionalDetails.fieldConfigurationMap.maritalStatus.label}</h4>
+                        {additionalDetails.maritalStatus}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.isDisplay}>
+                        <h4>{sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseFirstName.label}</h4>
+                        {additionalDetails.spouseFirstName}
+                    </div>
+                    <div class="grid-item" if:true={sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.isDisplay}>
+                        <h4>{sectionConfiguration.additionalDetails.fieldConfigurationMap.spouseLastName.label}</h4>
+                        {additionalDetails.spouseLastName}
+                    </div>
+                </div>
+            </div>
+            <div class="line-break"></div>
+        </template>
+    </template>
+</template>

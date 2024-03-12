@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Current Employer Account</label>
+    <protected>false</protected>
+    <values>
+        <field>Field_API_Name__c</field>
+        <value xsi:type="xsd:string">ucinn_ascendv2__Account__c</value>
+    </values>
+    <values>
+        <field>Is_Negate_Logic__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Operation__c</field>
+        <value xsi:type="xsd:string">IN</value>
+    </values>
+    <values>
+        <field>Order_Number__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Portal_Directory_Search_Criteria__c</field>
+        <value xsi:type="xsd:string">Current_Employer</value>
+    </values>
+    <values>
+        <field>Static_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

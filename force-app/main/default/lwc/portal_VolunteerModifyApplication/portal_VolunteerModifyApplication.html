@@ -1,0 +1,61 @@
+<template>
+  <!--one modal for all cases-->
+  <div id="modify-modal" class="sf-modal" style="display: block">
+    <div class="modal-background" id="modify-modal-background">
+      <div class="modal large">
+        <!--Header Section-->  
+        <div class="content-header-bar">
+          <div class="slds-grid slds-wrap full-width">
+            <div class="slds-size_11-of-12 slds-grid">
+              <div if:true={isShowListBackButton} class="slds-size_1-of-12 slds-m-right_small">
+                <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Back" onclick={handleBackClickToCalendar}>
+                  <lightning-icon icon-name="utility:back"
+                        alternative-text="go back to calendar"
+                        variant="inverse"
+                        size="small">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">Back to calendar</span>
+                </button>
+              </div>
+              <div class="slds-col">
+                <h2>Modify Job Sign Up{plural}</h2>
+              </div>
+            </div>
+            <div class="slds-size_1-of-12">
+              <span id="signup-modal-close" class="close-btn" onclick={handleCloseModal}>×</span>
+            </div>
+          </div>
+        </div>
+        <!--Body Section-->  
+        <div class="section-wrapper">
+          <lightning-spinner if:true={_isShowSpinner} class="modal-spinner" alternative-text="Loading" size="large"></lightning-spinner>
+          <c-portal_-table if:true={_isFresh}
+                           table-style="border-bottom: 1px solid #e0e0e0"
+                           records={_displayData}
+                           column-mappings={_headerList}
+                           rows-per-page={rowsPerPage}>
+          </c-portal_-table>
+          <div if:true={invalidRecord}>
+            <p>The Volunteer Shift you are trying to modify does not exist.</p>
+            <p>For assistance please contact an administrator.</p>
+          </div>
+
+          <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+            <c-portal_-Recaptcha>
+            </c-portal_-Recaptcha>
+          </div>
+          <!--Footer Buttons-->
+          <div if:false={invalidRecord} class="slds-size_12-of-12 slds-max-medium-size_12-of-12 slds-m-top_large">
+            <div class="slds-grid slds-wrap">
+              <div class="button-list">
+                <button class="button secondary" onclick={handleCloseModal} title="Cancel">Cancel</button>
+                <button class="button primary" onclick={handleVolunteerModifySave} title="Submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

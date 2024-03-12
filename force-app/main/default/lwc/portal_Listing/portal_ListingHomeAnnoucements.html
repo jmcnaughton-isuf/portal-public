@@ -1,0 +1,41 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container large" style="padding-top: 0; margin-top: 0; padding-bottom: 0; margin-bottom: 0;">
+            <div if:true={showComponent} class="container">
+                <div class="section-body-content" style="margin-bottom: 3em">
+                    <h2 style="margin-bottom: .5em; border-bottom: 1px solid #d1d5d8">Announcements</h2>
+                    <a href={allAnnouncementsLink} class="view-all-news button secondary small">View all Announcements</a>
+                    <h3 if:true={isDisplayNoResultsMessage} class="slds-text-align_center" style="padding-top: 1rem">{_noResultsText}</h3>
+                    <div class="event-list" style="margin-top: 1em">
+                        <template for:each={listingListToDisplay} for:item="listing">
+                            <div class="event" key={listing.Id}>
+                                <div class="slds-grid slds-wrap">
+                                    <div class="event-thumb slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <template if:true={listing.thumbnailImage}>
+                                            <lightning-formatted-rich-text value={listing.thumbnailImage} if:true={frontEndDataMap.thumbnailImage.display}></lightning-formatted-rich-text>
+                                        </template>
+                                        <template if:false={listing.thumbnailImage}>
+                                            <template if:true={listing.headerImage}>
+                                                <lightning-formatted-rich-text value={listing.headerImage} if:true={frontEndDataMap.headerImage.display}></lightning-formatted-rich-text>
+                                            </template>
+                                        </template>
+                                    </div>
+                                    <div class="slds-p-around_medium slds-max-x-small-size_12-of-12 slds-x-small-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                                        <template if:true={frontEndDataMap.isFeatured.display}><div if:true={listing.isFeatured} class="eyebrow">Featured</div></template>
+                                        <p class="date" if:true={isDisplayEventDate}><strong>{listing.formattedDate}</strong></p>
+                                        <a href={listing.listingUrl} target={listing.listingUrlTarget} if:true={frontEndDataMap.name.display}><h2 class="listing-name">{listing.name}</h2></a>
+                                        <lightning-formatted-rich-text value={listing.headerContent} if:true={frontEndDataMap.headerContent.display}></lightning-formatted-rich-text>
+                                        <div class="button-list">
+                                            <a href={listing.listingUrl} target={listing.listingUrlTarget} class="button secondary full-mobile small">View Announcement</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

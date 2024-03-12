@@ -1,0 +1,77 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container" style="padding-top: 1.5em">
+            <div class="section-body-content">
+                <div class="slds-m-vertical_medium" style="pointer-events:none; margin-bottom: 2.5rem">
+                    <lightning-progress-indicator current-step={_currentStep} type="path" variant="base">
+                        <template for:each={steps} for:item="step">
+                            <lightning-progress-step label={step.label} value={step.value} key={step.key}></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator>
+                </div>
+                <template if:true={isShowMembershipOptions}>
+                    <c-portal_-membership-radio-buttons membership-options={membershipOptions}
+                                                        membership-description={_membershipDescription}
+                                                        handle-radio-button-change={handleMembershipOptionChange}
+                                                        handle-next-click={handleNextClick}>
+                    </c-portal_-membership-radio-buttons>
+                </template>
+                <template if:true={isShowMembershipInfo}>
+                    <div class="bottom-border" style="margin-bottom: 1.8em" if:true={_subSectionLabel}>
+                        <p style="margin-bottom: 0 !important">
+                            <strong>Selected:</strong> {_subSectionLabel}
+                        </p>
+                    </div>
+                    <c-portal_-membership-info-form field-list={_fieldList}
+                                                    is-hide-back-button={_isRenewal}
+                                                    is-disable-next-button={_isDisableNextClick}
+                                                    handle-value-change={handleValueChange}
+                                                    handle-back-click={handlePreviousClick}
+                                                    handle-next-click={handleNextClick}
+                                                    membership-benefits-table-name={membershipBenefitTableName}
+                                                    membership-benefits-data={_membershipBenefits}
+                                                    membership-benefits-columns={conciseColumnData}
+                                                    total-amount={amountToPay}
+                                                    total-non-gift-amount={nonGiftAmount}
+                                                    total-gift-amount={giftAmount}
+                                                    membership-benefits-front-end-data-map={_membershipBenefitsFrontEndDataMap}>
+                    </c-portal_-membership-info-form>
+                </template>
+                <template if:true={isShowPaymentInfo}>
+                    <div class="bottom-border" style="margin-bottom: 1.8em" if:true={_subSectionLabel}>
+                        <p style="margin-bottom: 0 !important">
+                            <strong>Selected:</strong> {_subSectionLabel} <template if:true={_membershipInformation}>| {_membershipInformation.membershipPrice}</template>
+                        </p>
+                    </div>
+                    <c-portal_-payment-form if:true={isShowCreditCardComponent}
+                                    payment-method={paymentMethod}
+                                    payment-type={paymentType}
+                                    amount={amountToPay}
+                                    external-gateway-name={externalGatewayName}
+                                    billing-information={paymentBillingInformation}
+                                    handle-payment-confirmation={handlePaymentConfirmation}
+                                    handle-previous-click={handlePreviousClick}
+                                    additional-metadata={additionalMetadata}
+                                    payment-origin={paymentOrigin}
+                                    is-recaptcha-enabled={_isRecaptchaEnabled}>
+                    </c-portal_-payment-form>
+                </template>
+                <template if:true={isShowConfirmation}>
+                    <div class="box">
+                        <h1>Success!</h1>
+                        <h2 style="color: #005595; margin-bottom: .7em">Your membership has been confirmed</h2>
+                        <div class="event-list" style="border-top: none">
+                            <div class="event-listing" style="border-bottom: none">
+                                <h3>Membership Type: {_subSectionLabel}</h3>
+                                <lightning-formatted-rich-text value={_dataMap.confirmationText}></lightning-formatted-rich-text>
+                                <a class="button primary" href="memberships">See My Memberships</a>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+</template>

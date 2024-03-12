@@ -1,0 +1,31 @@
+@media (min-width: 768px) {
+    .container.xsmall, .container.small, .container.medium, .container.large, .container.xlarge {
+        margin-bottom: 1rem;
+        padding: .5em 1em;
+        width: 100%;
+    }
+}
+
+.section-wrapper h2 {
+    padding: 14px 0 0;
+}
+h2 {
+    font-size: 2.6em;
+    font-family: "Noah-Bold";
+    color: #404040;
+}
+
+.break-word {
+    word-break: break-word;
+}
+
+div[class^='flex-grid'] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 700px) {
+    .flex-grid-3 .grid-item {
+        flex: 0 1 33.3% !important;
+    }
+}

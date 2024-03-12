@@ -1,0 +1,16 @@
+<template>
+    <div data-ascend-portal>
+        <div class="related-links">
+            <div class="container large" style="margin-top: 1.5em">
+                <div class="container">
+                    <h3 style="margin-bottom: .5em; border-bottom: 1px solid #d1d5d8">{title}</h3>
+                    <div class="button-list">
+                        <template for:each={relatedLinksList} for:item="relatedLink">
+                            <a href={relatedLink.link} class="button primary small full-mobile" key={relatedLink.link}>{relatedLink.label}</a>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,177 @@
+<template>
+    <div data-ascend-portal class="wrapper-container" style="max-width: 700px !important;">
+        <div class="gift-containe">
+            <template if:true={isShowComponent}>
+                <template if:true={isMoreButton}>
+                    <div class="grid-item gift-container">
+                        <a class="add-gift-button" onclick={handleAddMoreContinueClicked}>Add an Additional Gift</a>
+                    </div>
+                </template>
+                <!-- Search Functionality Start-->
+                <template if:true={isShowDesignations}>
+                    <div class="container large no-margin giving-designations-wrapper">
+                        <div class="section-wrapper bottom-border">
+                            <div class="ticket-options full-width">
+                                <h2 style={headerStyle}>{componentLabel}</h2>
+                                <div class="flex-grid-or slds-grid slds-grid_align-center slds-wrap">
+                                    <!--<template for:each={_featuredDesignationsList} for:item="designation">
+                                        <div class="grid-item" key={designation.Id}>
+                                            <label data-name={designation.Name}
+                                                   onmouseenter={handleDesignationEnter}
+                                                   onmouseleave={handleDesignationLeave}>
+                                                <input type="radio" name="designation" class="radio" data-name={designation.ucinn_ascendv2__Designation_Name__c} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} onclick={handleDesignationClicked}>
+                                                <span class="not-available"><a>{designation.Name}</a></span>
+                                            </label>
+                                        </div>
+                                    </template>-->
+                                    <template for:each={_featuredDesignationsList} for:item="designation">
+                                        <div class="grid-item designation-mobile-margin slds-col slds-size_4-of-12" key={designation.Id}>
+                                            <label data-name={designation.Name}
+                                                   onmouseenter={handleDesignationEnter}
+                                                   onmouseleave={handleDesignationLeave}>
+                                                <input type="radio" class="radio" data-name={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} onclick={handleDesignationClicked}>
+                                                <span class="not-available"><a>{designation.ISUF_Name}</a></span>
+                                            </label>
+                                        </div>
+                                    </template>
+                                    <div class="grid-item"  if:true={showMoreButton}>
+                                        <label data-name="showMore"
+                                               onmouseenter={handleDesignationEnter}
+                                               onmouseleave={handleDesignationLeave}>
+                                            <input type="radio" class="radio" data-name="showMore" onclick={handleShowMoreClicked}>
+                                            <span class="not-available">
+                                                <a><img class="search-fund-logo" src={searchBarLogo}> <img class="search-fund-logo-hover" src={searchBarLogo}>Search for a Fund</a></span>
+                                        </label>
+                                    </div>
+                                    <div class="grid-item" if:true={_showLookup}>
+                                        <c-portal_-lookup classes="" handle-lookup-option-selected={handleLookup} input-value="" clear-list={_clearList} handle-change={handleLookupChange} label={label} display-setting-list={_displaySettingList} custom-metadata-api-name={customMetadataApiName}></c-portal_-lookup>
+                                    </div>
+                                </div>
+                                <p class="orSelect">
+                                    Or browse for a fund using the form below
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Search Functionality End-->
+                    <!-- <template if:true={isShowDesignations}> -->
+                    <div class="container large no-margin giving-designations-form">
+                        <div class="section-wrapper">
+                            <div class="flex-grid-1">
+                                <div class="grid-item full-width">
+                                    <lightning-combobox name="Type" label="Select a unit or college*" placeholder="Select a unit or college*" options={_comboboxOptionList}
+                                                        onchange={handleCategoryParentClicked} value={_categorySelected}></lightning-combobox>
+                                    <div if:false={showOtherInput}>
+                                        <lightning-combobox name="Type" label="Select a fund" placeholder="Select a fund" options={_categoryfundDesignations}
+                                                            onchange={handleCategoryFundClicked} value={_categoryFundSelected}></lightning-combobox>
+                                    </div>
+                                    <div  if:true={showOtherInput}>
+                                         <input type="text"  class="fund-other-input" placeholder="Enter a Fund" oninput= {handleCategoryFundClicked} value={_categoryFundSelected}>
+                                         <!-- <lightning-input class="fund-other-input" name="input" label="Enter a fund" placeholder="Enter a fund" onchange={handleCategoryFundClicked} value={_categoryFundSelected}></lightning-input> -->
+                                    </div>
+                                    <c-portal_-online-giving-amount-o-r onamountchanged={handleAmountClick} component-label="Choose an Amount" default-giving-amounts={defaultGivingAmounts}  base-button-color={baseButtonColor} selected-button-color={selectedButtonColor} page-name="giving"  max-amount={maxAmount} ></c-portal_-online-giving-amount-o-r>
+                                </div>
+                            </div>
+                            <div if:true={_showFinishButton}>
+                                <p style="font-weight: bold;">When Finished Adding Gifts, Please Select "Finish adding gifts"</p>
+                            </div>
+                            <div class="container large no-margin add-gift-wrapper">
+                                <div class="section-wrapper">
+                                    <div class="flex-grid">
+                                         <div class="grid-item" if:false={_addButtonDisabled}>
+                                            <a class="button primary add-gift" style="width: fit-content;" onclick={handleAddAdditionalGiftClicked}>+Add an Additional Gift</a>
+                                        </div>
+                                        <div class="grid-item" if:true={_showFinishButton}>
+                                            <a class="button primary" onclick={handleFinsishAdditionalGiftClicked} disabled={_addButtonDisabled}>Finish adding gifts</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </template> -->
+                   <!--  <div class="field-wrapper">
+                        <a class="field-wrapper" onclick={handleAddContinueClicked} disabled={_addButtonDisabled}>Save Funds</a>
+                         <a class="field-wrapper" onclick={handleFinishContinueClicked} disabled={_addMoreButtonDisabled}>+Add More Funds</a>
+                    </div> -->
+
+                    <!-- Search Designations Modal -->
+                    <div id={modalId} class="sf-modal" style="display: block" if:true={_showModal}>
+                        <template if:true={_showSpinner}>
+                            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                        </template>
+                        <div class="modal-background" id="view-waitlist-background">
+                            <div class="modal">
+                                <div class="content-header-bar">
+                                    <div class="slds-grid slds-wrap full-width">
+                                        <!-- <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_10-of-12 slds-large-size_10-of-12">
+                                            <h2>{modalTitle}</h2>
+                                        </div> -->
+                                        <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                            <span id="waitlist-modal-close" class="close-btn" onclick={closeModal}>×</span>
+                                        </div>
+                                        <!-- <h4 style="margin-bottom: .5em !important">Search for your fund:</h4>
+                                        <div class="search">
+                                            <input type="text" value={_keyword} data-name="keyword" oninput={setKeyword} onkeypress={searchOnKeyPress}>
+                                            <span class="search-icon"></span>
+                                        </div>
+                                        <a class="button primary slds-m-vertical_small" onclick={searchDesignations}>Search</a> -->
+                                    </div>
+                                </div>
+                                <div class="container">
+                                        <div class="section-wrapper">
+                                            <template if:true={useSearch}>
+                                                 <h4 style="margin-bottom: .5em !important">Search for your fund:</h4>
+                                                <div class="search">
+                                                    <input type="text" value={_keyword} data-name="keyword" oninput={setKeyword} onkeypress={searchOnKeyPress}>
+                                                    <span class="search-icon"></span>
+                                                </div>
+                                                <a class="button primary slds-m-vertical_small" onclick={searchDesignations}>Search</a>
+                                                <div if:true={_searchDesignationList}>
+                                                    <h4 style="margin-left: -.5em !important;" class="slds-m-vertical_small">Number of results: {_searchDesignationSize}</h4>
+                                                    <div class="slds-modal__content slds-p-around_small slds-scrollable"  style="height: 25rem; width: fit-content;margin-left: -1.5em;" id="modal-content-id-1">
+                                                        <template for:each={_searchDesignationList} for:item="designation" for:index="index">
+                                                                <fieldset style="margin-bottom: 1em;" key={designation.Id}>
+                                                                    <div class="field-wrapper">
+                                                                        <label for="">{designation.displayName}</label>
+                                                                        <!--<input style="display: inline-block; width: auto"
+                                                                               type="submit"
+                                                                               class="slds-icon-action-submit-for-approval"
+                                                                               data-name={designation.Name}
+                                                                               data-id={designation.Id}
+                                                                               data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c}
+                                                                               data-index={index}
+                                                                               key={designation.Id}
+                                                                               onclick={handleMultiDesignationClicked}
+                                                                               checked={designation.checked}> -->
+                                                                        <a class="button small" style="text-align: center;float: right;margin-right: 0;margin-left:auto; display:block;" data-target-id={designation.Id} onclick={handleContinueClicked}>Select</a>
+                                                                    </div>
+                                                                </fieldset>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                    </div>
+                                    <!-- <lightning-combobox name="Type" label="" placeholder="Select a unit or College" options={getcategoryComboBoxOptionList}
+                                                        onchange={handleCategoryParentClicked} value={_categorySelected}></lightning-combobox>
+                                    <lightning-combobox name="Type" label="" placeholder="Select a Fund" options={_categoryfundDesignations}
+                                                        onchange={handleCategoryFundClicked} value={_categoryFundSelected}></lightning-combobox> -->
+                                     <!--<div class="section-wrapper bottom-border">
+                                        <div class="slds-p-around_small slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                                            <div class="slds-grid slds-wrap slds-grid_align-end">
+                                                <div class="button-list">
+                                                    <a class="button secondary" onclick={closeModal}>Cancel</a>
+                                                    <a class="button primary" onclick={handleContinueClicked}>Save</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

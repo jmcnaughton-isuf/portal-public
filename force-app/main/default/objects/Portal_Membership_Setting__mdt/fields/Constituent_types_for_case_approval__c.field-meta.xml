@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constituent_types_for_case_approval__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Comma separated list of constituent type values for case insertion. This will allow you to specify certain constituent types for case insertion while &apos;Membership record insertion&apos; is set to direct insertion.</inlineHelpText>
+    <label>Constituent types for case approval</label>
+    <length>1000</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

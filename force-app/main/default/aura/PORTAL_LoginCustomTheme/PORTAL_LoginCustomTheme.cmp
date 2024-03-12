@@ -1,0 +1,20 @@
+<aura:component implements="forceCommunity:themeLayout" controller="PORTAL_LWC_StaticContentController">
+    <aura:attribute name="navigation" type="Aura.Component[]"/>
+    <aura:attribute name="login" type="Aura.Component[]"/>
+    <aura:attribute name="preview" type="Aura.Component[]"/>
+    <aura:attribute name="footer" type="Aura.Component[]"/>
+    <aura:attribute name="bannerUrl" type="String"/>
+    <aura:attribute name="pageName" type="String"/>
+
+    <ltng:require styles="{!$Resource.Portal_Global_CSS}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <body class="noHero" style="background: rgb(0 63 103) url(/ascendportal/resource/Portal_LoginBackground) bottom left no-repeat; background-size: 100%; min-height: 100vh;">
+        <div class="siteforceStarterBody">
+            <div class="siteforceContentArea login" style="max-width: 960px !important;">
+                {!v.body}
+            </div>
+        </div>
+    </body>
+</aura:component>

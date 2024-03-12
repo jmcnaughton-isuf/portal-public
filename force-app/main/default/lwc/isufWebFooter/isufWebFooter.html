@@ -1,0 +1,67 @@
+<template>
+    <div class="footer-container">
+        <div class="footer">
+            <div class="footer-main page-container">
+                <div class="footer-logo">
+                    <img data-src="home" onclick = {handleRedirect} src={imageLink} alt="LOGO">
+                </div>
+                <div class="footer-social">
+                    <a data-src={instagramLink} onclick = {handleRedirect}>
+                        <svg class="svg-inline--fa fa-iastate22-instagram" aria-hidden="true" focusable="false" data-prefix="fak" data-icon="iastate22-instagram" role="img" viewBox="0 0 640 512" data-fa-i2svg="">
+                            <path fill="currentColor" d="M340.48.32h16.704c25.248 0 37.888.288 50.24.736l4.928.192 13.248.672a188.448 188.448 0 0162.016 11.904 125.216 125.216 0 0145.088 29.44 120.032 120.032 0 0129.28 45.44 187.616 187.616 0 0111.904 62.016c1.056 24.352 1.408 33.888 1.472 85.088v40.608q0 31.776-.64 63.552l-.32 8.832-.512 12.8a187.808 187.808 0 01-11.904 62.048 130.72 130.72 0 01-74.72 74.752 187.616 187.616 0 01-62.016 11.904c-24.384 1.056-33.888 1.408-85.088 1.472h-40.48q-32.16 0-64.32-.704l-4.96-.32-15.744-.64a186.848 186.848 0 01-62.048-11.904 125.248 125.248 0 01-45.248-29.536 124.416 124.416 0 01-29.536-45.28 185.856 185.856 0 01-11.904-62.016c-.256-5.344-.416-9.952-.608-14.496l-.256-6.784q-.64-23.52-.576-47.04v-74.112c0-36.96.48-46.912 1.44-68.384a186.848 186.848 0 0111.904-62.048 125.248 125.248 0 0129.536-45.248 124.8 124.8 0 0145.408-29.536 186.048 186.048 0 0162.048-11.904C236.224.864 246.208.48 283.104.384h16.768zM320.192 124.8a131.2 131.2 0 000 262.688 131.2 131.2 0 100-262.688zm136.512-35.872a30.688 30.688 0 1030.688 30.688 30.656 30.656 0 00-30.688-30.688z"></path>
+                        </svg>
+                    </a>
+                    <a data-src={facebookLink} onclick = {handleRedirect}>
+                        <svg class="svg-inline--fa fa-facebook" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" viewBox="0 0 512 512" data-fa-i2svg="">
+                            <path fill="currentColor" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"></path>
+                        </svg>
+                    </a>
+                    <a data-src={linkedinLink} onclick = {handleRedirect}>
+                        <svg fill="#f1bf48" version="1.1" id="Capa_1" viewBox="0 0 32 32" xml:space="preserve"><path d="M17.303,14.365c0.012-0.015,0.023-0.031,0.031-0.048v0.048H17.303z M32,0v32H0V0H32L32,0z M9.925,12.285H5.153v14.354 h4.772V12.285z M10.237,7.847c-0.03-1.41-1.035-2.482-2.668-2.482c-1.631,0-2.698,1.072-2.698,2.482 c0,1.375,1.035,2.479,2.636,2.479h0.031C9.202,10.326,10.237,9.222,10.237,7.847z M27.129,18.408c0-4.408-2.355-6.459-5.494-6.459 c-2.531,0-3.664,1.391-4.301,2.368v-2.032h-4.77c0.061,1.346,0,14.354,0,14.354h4.77v-8.016c0-0.434,0.031-0.855,0.157-1.164 c0.346-0.854,1.132-1.746,2.448-1.746c1.729,0,2.418,1.314,2.418,3.246v7.68h4.771L27.129,18.408L27.129,18.408z"></path></svg>
+                    </a>
+                    <a data-src={youtubeLink} onclick = {handleRedirect}>
+                        <svg class="svg-inline--fa fa-youtube" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" viewBox="0 0 576 512" data-fa-i2svg="">
+                            <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <p>Quick Links</p>
+                    <a data-src={quickLink1} onclick = {handleRedirect}>
+                        {quickLink1Text}
+                        <!-- Our Staff -->
+                    </a>
+                    <a data-src={quickLink2} onclick = {handleRedirect}>
+                        {quickLink2Text}
+                        <!-- Careers -->
+                    </a>
+                    <a data-src={quickLink3} onclick = {handleRedirect}>
+                        {quickLink3Text}
+                        <!-- Forward Magazine -->
+                    </a>
+                    <a data-src={quickLink4} onclick = {handleRedirect}>
+                        {quickLink4Text}
+                        <!-- Donate -->
+                    </a>
+                </div>
+                <div class="footer-info">
+                    <p>Iowa State University Foundation</p>
+                    <div>
+                        <p>2505 University Boulevard</p>
+                        <a onclick = {handleRedirect} data-src={emailAddress} data-type="EMAIL">{emailAddress}</a>
+                        <p>P.O. Box 2230</p>
+                        <p onclick = {handleRedirect} data-src={phoneNumber} data-type="PHONE" class="cursor-pointer">Phone: {phoneNumber}</p>
+                        <p>Ames, Iowa 50010-2230</p>
+                        <p onclick = {handleRedirect} data-src={tollFreeNumber} data-type="PHONE" class="cursor-pointer">Toll Free: {tollFreeNumber}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-container">
+                <div class="footer-bottom page-container">
+                    <p>© Iowa State University Foundation 2023</p>
+                    <p>Privacy Policy  Non-discrimination Policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

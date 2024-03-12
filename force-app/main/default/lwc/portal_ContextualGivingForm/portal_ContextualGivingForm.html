@@ -1,0 +1,222 @@
+<template>
+    <div class="giving-card slds-is-relative" if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={isShowSpinner}></lightning-spinner>
+        <div class="giving-card-title">
+            <h3>{currentPageTitle}</h3>
+        </div>
+        <div class="giving-card-body">
+            <!-- (1) Gift Details -->
+            <div class="giving-card-form" if:true={isDisplayGiftDetails}>
+                <div class="giving-card-input">
+                    <label>GIFT TYPE:</label>
+                    <c-portal_-select
+                        input-name="giftType"
+                        handle-change={handleChange}
+                        option-list={giftTypes}
+                        default-value={giftType}
+                        classes="select-v2"
+                    ></c-portal_-select>
+                </div>
+                <template if:true={isAutomaticPaymentGiftType}>
+                    <div class="giving-card-input row justify-between">
+                        <div style="width: 48%;" if:true={isPledgeGiftType}>
+                            <label>INSTALLMENTS:</label>
+                            <input onchange={handleChange} type="number" min="1" value={numberOfInstallments} name="numberOfInstallments" disabled={isFixedInstallments}/>
+                        </div>
+                        <div style={startDateStyle}>
+                            <label>START DATE:</label>
+                            <input onchange={handleChange} type="date" min={minimumStartDate} max={maximumEndDate} value={startDate} name="startDate" />
+                        </div>
+                        <div style="width: 48%;" if:true={isEndDateEnabled}>
+                            <label>END DATE:</label>
+                            <input onchange={handleChange} type="date" value={endDate} min={minimumRecurringEndDate} max={maximumEndDate} name="endDate" />
+                        </div>
+                    </div>
+                    <div class="giving-card-input">
+                        <label>FREQUENCY:</label>
+                        <c-portal_-select
+                            input-name="frequency"
+                            handle-change={handleChange}
+                            option-list={giftFrequencies}
+                            default-value={frequency}
+                            classes="select-v2"
+                        ></c-portal_-select>
+                    </div>
+                </template>
+                <div class="giving-card-input">
+                    <label>AMOUNT:</label>
+                    <div class="amount-input">
+                        <input onchange={handleChange} type="number" step="1" value={giftAmount} name="giftAmount" disabled={isFixedAmount}/>
+                        <span>$</span>
+                    </div>
+                </div>
+                <div class="giving-card-input">
+                    <label>GIVE TO:</label>
+                    <c-portal_-select
+                        input-name="designation"
+                        handle-change={handleChange}
+                        option-list={designationList}
+                        default-value={designation}
+                        classes="select-v2"
+                    ></c-portal_-select>
+                </div>
+            </div>
+
+            <!-- (2) Billing Details -->
+            <div class="giving-card-form edit-grid" if:true={isDisplayBillingDetails}>
+                <div class="billing-details-edit-row-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                    </svg>
+                    <div class="edit-input">
+                        <input value={firstName} onchange={handleChange} name="firstName" />
+                        <label for="firstName">First Name <span>*</span></label>
+                    </div>
+                    <div class="edit-input">
+                        <input value={lastName} onchange={handleChange} name="lastName" />
+                        <label for="lastName">Last Name <span>*</span></label>
+                    </div>
+                </div>
+                <div class="billing-details-edit-row-2 picklist-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                    <div class="edit-input">
+                        <input value={emailAddress} onchange={handleChange} name="emailAddress" />
+                        <label for="emailAddress">Email Address <span>*</span></label>
+                    </div>
+                    <div class="edit-input">
+                        <c-portal_-select
+                            input-name="emailType"
+                            handle-change={handleChange}
+                            option-list={emailTypes}
+                            is-show-null-option="true"
+                            default-value={emailType}
+                            classes="select-v2 no-border border-bottom no-padding"
+                        ></c-portal_-select>
+                        <label for="emailType">Type <span>*</span></label>
+                    </div>
+                </div>
+                <div class="billing-details-edit-row-2 picklist-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    <div class="edit-input">
+                        <input value={phoneNumber} onchange={handleChange} name="phoneNumber" />
+                        <label for="phoneNumber">Phone Number <span>*</span></label>
+                    </div>
+                    <div class="edit-input">
+                        <c-portal_-select
+                            input-name="phoneType"
+                            handle-change={handleChange}
+                            option-list={phoneTypes}
+                            is-show-null-option="true"
+                            default-value={phoneType}
+                            classes="select-v2 no-border border-bottom no-padding"
+                        ></c-portal_-select>
+                        <label for="phoneType">Type <span>*</span></label>
+                    </div>
+                </div>
+                <div class="billing-details-edit-row-2 picklist-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                    </svg>
+                    <div class="edit-input">
+                        <input value={addressCountry} onchange={handleChange} name="addressCountry" />
+                        <label for="addressCountry">Country <span>*</span></label>
+                    </div>
+                    <div class="edit-input">
+                        <c-portal_-select
+                            input-name="addressType"
+                            handle-change={handleChange}
+                            option-list={addressTypes}
+                            is-show-null-option="true"
+                            default-value={addressType}
+                            classes="select-v2 no-border border-bottom no-padding"
+                        ></c-portal_-select>
+                        <label for="addressType">Type <span>*</span></label>
+                    </div>
+                    <div></div>
+                    <div class="edit-input" style="grid-column: span 2">
+                        <input value={addressLine1} onchange={handleChange} name="addressLine1" />
+                        <label for="addressLine1">Street Address Line 1 <span>*</span></label>
+                    </div>
+                    <div></div>
+                    <div class="edit-input" style="grid-column: span 2">
+                        <input value={addressLine2} onchange={handleChange} name="addressLine2" />
+                        <label for="addressLine2">Street Address Line 2</label>
+                    </div>
+                    <div></div>
+                    <div class="edit-input">
+                        <input value={addressCity} onchange={handleChange} name="addressCity" />
+                        <label for="addressCity">City <span>*</span></label>
+                    </div>
+                    <div class="edit-input">
+                        <input value={addressState} onchange={handleChange} name="addressState" />
+                        <label for="addressState">State <span>*</span></label>
+                    </div>
+                    <div></div>
+                    <div class="edit-input">
+                        <input value={addressPostalCode} onchange={handleChange} name="addressPostalCode" />
+                        <label for="addressPostalCode">Postal Code <span>*</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- (3) Payment Form -->
+            <template if:true={isDisplayPaymentForm}>
+                <div class="gift-summary">
+                    <div style="font-weight: bold; font-size: 17px;">
+                        {designationName}
+                    </div>
+                    <div>
+                        {giftTypeLabel}: ${giftAmount}
+                    </div>
+                    <div if:true={isAutomaticPaymentGiftType}>
+                        {frequency}
+                    </div>
+                </div>
+                <c-portal_-payment-form
+                    payment-method={paymentProcessor}
+                    external-gateway-name={externalGatewayName}
+                    payment-type={giftType}
+                    amount={giftAmount}
+                    billing-information={paymentBillingInformation}
+                    handle-payment-confirmation={handlePaymentConfirmation}
+                    handle-previous-click={handleBack}
+                    additional-metadata={additionalMetadata}
+                    payment-origin="contextualGivingForm"
+                    is-recaptcha-enabled={_isRecaptchaEnabled}
+                    is-compact="true">
+                </c-portal_-payment-form>
+            </template>
+
+            <!-- (4) Confirmation -->
+            <div class="giving-card-form" if:true={isDisplayConfirmation}>
+                <lightning-formatted-rich-text value={confirmationText}></lightning-formatted-rich-text>
+            </div>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="giving-card-buttons" if:true={isDisplayButtons}>
+            <button onclick={handleBack} if:true={isDisplayBackButton}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 7px;">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+                {giftDetailsLabel}
+            </button>
+            <button style="margin-left: auto;" onclick={handleNext} if:true={isDisplayNextButton}>
+                Next 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" style="margin-left: 7px;">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </button>
+            <button style="margin-left: auto" onclick={handleReset} if:true={isDisplayConfirmation}>
+                Give Again
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" style="margin-left: 7px;">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</template>

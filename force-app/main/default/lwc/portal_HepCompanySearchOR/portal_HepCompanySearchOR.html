@@ -1,0 +1,42 @@
+<template>
+    <div onchange={handleTextChange}>
+        <!-- <div class="text-entry-gift">
+                <div class="flex-grid-1">
+                    <div class="grid-item">
+                        <h2 for="pledge-input">{matchingCompanyLabel}</h2>
+                        <input is-loading  type="search" name="employer-search" label="Employer Name" value={query} />
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-Hep-Company-Picker current-query={query} onhep_companypicked={handleCompanyPicked}>
+                        </c-portal_-Hep-Company-Picker>
+                    </div>
+                </div>
+
+        </div> -->
+         <lightning-layout multiple-rows="true">
+            <lightning-layout-item padding="around-small" size = "6">
+                 <!-- <h2 style="text-transform: uppercase; font-size: 1rem; color: #00c0f3;font-weight: bold;">{matchingCompanyLabel}</h2> -->
+                 <h2 for="pledge-input">{matchingCompanyLabel}</h2>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size = "12">
+                <!-- <input style="border: none !important; border-bottom: 1px solid;" class="slds-input" type="search" id="input-65"  name="employer-search" value={query} is-loading> -->
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                        <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon>
+                        <input style="border: none !important; border-bottom: 1px solid;" type="text" id="input-65"  name="employer-search" value={query} is-loading>
+                    </div>
+                </div>
+                <!-- <lightning-input style="border: none !important; " name="employer-search" variant="label-hidden" label="Employer Name" value={query} is-loading type="search">
+                </lightning-input> -->
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                <c-portal_-Hep-Company-Picker-o-r current-query={query} onhep_companypicked={handleCompanyPicked}>
+                </c-portal_-Hep-Company-Picker-o-r>
+                <!-- <c-portal_-Hep-Company-Picker current-query={query} onhep_companypicked={handleCompanyPicked}>
+                </c-portal_-Hep-Company-Picker> -->
+            </lightning-layout-item>
+        </lightning-layout>
+        
+        
+    </div>
+</template>

@@ -1,0 +1,360 @@
+<template>
+    <template if:true={isShowSection}>
+        <div class="container" style="margin-top: 1.5em" if:true={isShowSchoolDegrees}>
+            <c-portal_-table title={informationMap.frontEndData.schoolDegrees.label}
+                                     rows-per-page="4"
+                                     column-mappings={degreeColumnMapping}
+                                     records={degreesToDisplay}
+                                     if:true={informationMap.frontEndData.schoolDegrees.display}>
+            </c-portal_-table>
+        </div>
+        <div class="container" style="margin-top: 1.5em" if:true={isShowSchoolDegrees}>
+            <c-portal_-table title={informationMap.frontEndData.nonSchoolDegrees.label}
+                                     rows-per-page="4"
+                                     column-mappings={nonSchoolDegreeColumnMapping}
+                                     records={nonSchoolDegreesToDisplay}
+                                     if:true={informationMap.frontEndData.nonSchoolDegrees.display}>
+            </c-portal_-table>
+        </div>
+        <!-- <lightning-layout-item size="12">
+            <div style="height:2px;background-color:black"></div>
+        </lightning-layout-item>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item
+                size="12"
+                small-device-size="12"
+                medium-device-size="10"
+                large-device-size="10"
+                >
+                <h2 class='mainNavigation'>Degree Information</h2>
+            </lightning-layout-item>
+        </lightning-layout>
+        <hr if:true={isShowSchoolDegrees}>
+        <lightning-layout multiple-rows="true" if:true={isShowSchoolDegrees}>
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="4" 
+                large-device-size="4" 
+                padding="around-small">
+                <h2 class="header">{informationMap.frontEndData.schoolDegrees.label}</h2>
+            </lightning-layout-item>
+            <lightning-layout-item if:true={informationMap.frontEndData.schoolDegrees.display} 
+                size="12"
+                small-device-size="12"
+                medium-device-size="8"
+                large-device-size="8"
+                padding="around-small">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeDegree.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.schoolDegreeDegree.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.schoolDegreeAcademicOrg.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeYear.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.schoolDegreeYear.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeMajor.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.schoolDegreeMajor.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeMinor.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.schoolDegreeMinor.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                        size="12"
+                        class="layoutItem">
+                        <div style="height:1px; background-color: black;"></div>
+                    </lightning-layout-item>
+                    <template for:each={informationMap.records.Degrees.School_Degree_Information} for:item="degree">
+                        <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeDegree.display}
+                            size="12"
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Degree__c}
+                                if:true={degree.ucinn_portal_Is_Show_Degree__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Degree__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}
+                            size="12"
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__School_1_Formula__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeYear.display}
+                            size="12"
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Conferred_Degree_Year__c}
+                                if:true={degree.ucinn_portal_Is_Show_Degree_Year__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Degree_Year__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeMajor.display}
+                            size="12"
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Major_Formula__c}
+                                if:true={degree.ucinn_portal_Is_Show_Major__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Major__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.schoolDegreeMinor.display}
+                            size="12"
+                            large-device-size="2"
+                            medium-device-size="2"
+                            small-device-size="2"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Minor_Formula__c}
+                                if:true={degree.ucinn_portal_Is_Show_Minor__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Minor__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+        <hr if:true={isShowNonSchoolDegrees}>
+        <lightning-layout multiple-rows="true" if:true={isShowNonSchoolDegrees}>
+            <lightning-layout-item 
+                size="12"
+                small-device-size="12" 
+                medium-device-size="4" 
+                large-device-size="4" 
+                padding="around-small">
+                <h2 class="header">{informationMap.frontEndData.nonSchoolDegrees.label}</h2>
+            </lightning-layout-item>
+            <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegrees.display} 
+                size="12"
+                small-device-size="12"
+                medium-device-size="8"
+                large-device-size="8"
+                padding="around-small">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.nonSchoolDegreeInstitution.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item> 
+                    <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.nonSchoolDegreeDegree.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.nonSchoolDegreeYear.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.nonSchoolDegreeMajor.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                        size="12"
+                        class="layoutItem">
+                        <div style="height:1px; background-color: black;"></div>
+                    </lightning-layout-item>
+                    <template for:each={informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree">
+                        <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                        key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Degree_Institution__r.Name}
+                                if:true={degree.ucinn_portal_Is_Show_Institution__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Institution__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}
+                            size="12"
+                            large-device-size="3"
+                            medium-device-size="3"
+                            small-device-size="3"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Degree__c}
+                                if:true={degree.ucinn_portal_Is_Show_Degree__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Degree__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}
+                            size="12"
+                            large-device-size="3"
+                            medium-device-size="3"
+                            small-device-size="3"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Conferred_Degree_Year__c}
+                                if:true={degree.ucinn_portal_Is_Show_Degree_Year__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Degree_Year__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}
+                            size="12"
+                            large-device-size="3"
+                            medium-device-size="3"
+                            small-device-size="3"
+                            class="layoutItem"
+                            key={degree.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={degree.ucinn_ascendv2__Non_School_Major__c}
+                                if:true={degree.ucinn_portal_Is_Show_Major__c}>
+                            </lightning-formatted-text>
+                            <lightning-formatted-text
+                                class="value"
+                                value="-"
+                                if:false={degree.ucinn_portal_Is_Show_Major__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout> -->
+    </template>
+</template>

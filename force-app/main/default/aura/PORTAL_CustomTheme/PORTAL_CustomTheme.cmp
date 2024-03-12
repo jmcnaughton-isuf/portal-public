@@ -1,0 +1,17 @@
+<aura:component implements="forceCommunity:themeLayout" controller="PORTAL_LWC_StaticContentController">
+    <aura:attribute name="navigation" type="Aura.Component[]"/>
+    <aura:attribute name="footer" type="Aura.Component[]"/>
+    <aura:attribute name="banner" type="Aura.Component[]"/>
+    <aura:attribute name="bodyClass" type="String" required="false" default="siteforceStarterBody"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    {!v.navigation}
+    <div>
+        {!v.banner}
+    </div>
+    <div class="{!v.bodyClass}">
+        {!v.body}
+    </div>
+    {!v.footer}
+</aura:component>

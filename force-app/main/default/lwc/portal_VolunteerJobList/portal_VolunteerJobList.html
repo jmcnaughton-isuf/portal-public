@@ -1,0 +1,167 @@
+<template>
+    <div data-ascend-portal>
+        <div class="event-tabs tabs">
+            <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading" size="large" ></lightning-spinner>
+            <form>
+                <div class="entry-form">
+                    <div class="flex-grid-2">
+                        <div class="grid-item">
+                            <c-portal_-input type="text"
+                                            value={_volunteerJobNameSearchString}
+                                            input-name="_volunteerJobNameSearchString"
+                                            label="Job Name Search"
+                                            classes="slds-input short-text"
+                                            autocomplete="off"
+                                            handle-input={handleInput}>
+                            </c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <c-portal_-input type="text"
+                                            value={_city}
+                                            input-name="_city"
+                                            label="City"
+                                            classes="slds-input short-text"
+                                            autocomplete="off"
+                                            handle-input={handleInput}>
+                            </c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <c-portal_-input type="text"
+                                            value={_state}
+                                            input-name="_state"
+                                            label="State"
+                                            classes="slds-input short-text"
+                                            autocomplete="off"
+                                            handle-input={handleInput}>
+                            </c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <c-portal_-input type="text"
+                                            value={_zipCode}
+                                            input-name="_zipCode"
+                                            label="Zip"
+                                            classes="slds-input short-text"
+                                            autocomplete="off"
+                                            handle-input={handleInput}>
+                            </c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <c-portal_-input type="text"
+                                            value={_country}
+                                            input-name="_country"
+                                            label="Country"
+                                            classes="slds-input short-text"
+                                            autocomplete="off"
+                                            handle-input={handleInput}>
+                            </c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <c-portal_-input type="text"
+                                            value={_radius}
+                                            input-name="_radius"
+                                            label="Radius (Miles)"
+                                            classes="slds-input short-text"
+                                            autocomplete="off"
+                                            handle-input={handleInput}>
+                            </c-portal_-input>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="button-list">
+                <button class="button primary full-mobile" onclick={handleSearch} title="Search">Search</button>
+                <button class="button secondary full-mobile" onclick={handleClear} title="Clear">Clear</button>
+            </div>
+
+            <div class="event-list">
+                <template for:each={_visibleData} for:item="volunteerJob">
+                    <!--for each event:-->
+                    <div key={volunteerJob.id} class="event">
+                        <div class="slds-grid slds-wrap">
+                            <!--image thumbnail-->
+                            <div if:true={_frontEndDataMap.volunteerJobImage.display}
+                                class="event-thumb slds-p-around_medium 
+                                        slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                <lightning-formatted-rich-text value={volunteerJob.volunteerJobImage}>
+                                </lightning-formatted-rich-text>
+                            </div>
+                            <!--main panel info-->
+                            <div class="slds-p-around_medium 
+                                        slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                                <!--Is Signed Up Notice-->
+                                <div if:true={volunteerJob.isSignedUp} class="highlight">
+                                    <p>You or your guest(s) are currently signed up for this event.</p>
+                                </div>
+                                <!--Location-->
+                                <div if:true={_frontEndDataMap.volunteerJobLocation.display} class="slds-m-bottom_xx-small">
+                                    <p class="date">
+                                        <strong>{volunteerJob.volunteerJobLocation}</strong>
+                                    </p>
+                                </div>
+                                <!--title/names-->
+                                <div class="slds-m-bottom_small">
+                                    <h2>
+                                        <template if:true={_frontEndDataMap.volunteerEventName.display}>
+                                            <span if:true={volunteerJob.volunteerEventName}>{volunteerJob.volunteerEventName}: </span>
+                                        </template>
+                                        <span if:true={_frontEndDataMap.volunteerJobName.display}>{volunteerJob.volunteerJobName}</span>
+                                    </h2>
+                                </div>
+                                <!--description-->
+                                <lightning-formatted-rich-text if:true={_frontEndDataMap.volunteerJobDescription.display}
+                                    value={volunteerJob.volunteerJobDescription}>
+                                </lightning-formatted-rich-text>
+                                <!--iterate through shifts-->
+                                <template if:true={_frontEndDataMap.volunteerJobListShifts.display}>
+                                    <div if:false={volunteerJob.isShiftsEmpty} 
+                                        class="accordion-block">
+                                        <div class="accordion full-width">
+                                            <h3>Shifts</h3>
+                                            <template for:each={volunteerJob.volunteerShifts} for:item="volunteerShift">
+                                                <div key={volunteerShift.volunteerShiftId} class="shift-item">
+                                                    <c-portal_-volunteer-shift
+                                                        key={volunteerShift.volunteerShiftId}
+                                                        front-end-data-map={_frontEndDataMap}
+                                                        shift={volunteerShift}
+                                                        handle-sign-up={handleShiftSignUp}>
+                                                    </c-portal_-volunteer-shift>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <template if:true={_isShowSignUpForm}>
+            <c-portal_-volunteer-sign-up 
+                volunteer-shift={_shiftModalObject}
+                sign-up-type={_signUpType}
+                handle-close-sign-up-modal={handleCloseSignUpModal}
+                is-show-modal={_isShowSignUpForm}>
+            </c-portal_-volunteer-sign-up>
+        </template>
+
+        <template if:true={_isShowModifyModal}>
+            <c-portal_-volunteer-modify-application
+                volunteer-shift={_shiftModalObject}
+                handle-close-modify-modal={handleCloseModifyModal}>
+            </c-portal_-volunteer-modify-application>
+        </template>
+
+        <c-portal_util_-pagination
+            records-per-page={recordsPerPage}
+            queried-data={_volunteerJobRecordsList}
+            current-page-number={_currentPage}
+            query-more={handleQueryMore}
+            handle-page-change={handlePageChange}
+            total-number-of-items={_totalItems}>
+        </c-portal_util_-pagination>
+    </div>
+    
+</template>

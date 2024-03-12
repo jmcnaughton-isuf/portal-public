@@ -1,0 +1,29 @@
+<template>
+    <div data-ascend-portal>
+        <div if:false={callbackDone} class="event-tabs tabs" style="padding: 30px">
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </div>
+        <template if:true={callbackDone}>
+            <div class="event-tabs tabs">
+                <!-- Helper text-->
+                <template if:true={helperTextHTML}>
+                    <div class="helper-text">
+                        <lightning-formatted-rich-text value={helperTextHTML}></lightning-formatted-rich-text>
+                    </div>
+                </template>
+
+                <template if:true={noTableData}>
+                    <lightning-formatted-rich-text value={noTableDataTextHTML}></lightning-formatted-rich-text>
+                </template>
+
+                    <c-portal_-table title={permissionMap.matchingGiftTable.label}
+                                            records={tableData}
+                                            column-mappings={columnDataList}
+                                            rows-per-page={itemsPerPage}
+                                            query-more={getTableData}
+                                            if:false={noTableData}>
+                    </c-portal_-table>
+            </div>
+        </template>
+    </div>
+</template>

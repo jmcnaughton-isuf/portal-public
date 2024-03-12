@@ -1,0 +1,28 @@
+<template>
+    <div if:true={_showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Edit Metadata</h2>
+    </header>
+    <div class="slds-modal__content" id="modal-content-id-1">
+        <div if:true={_renderComponent} class="slds-p-around_medium" style="max-height: 60vh;overflow-y: auto;">
+            <label>LWC Name</label>
+            <c-portal_-select option-list={_templateList} 
+                              default-value={_template}
+                              handle-change={handleTemplateChange}>
+            </c-portal_-select>
+            <template if:true={_metadataToDisplay}>
+                <hr>
+                <c-portal_-content-module-metadata metadata-template={_metadataToDisplay}
+                                                   metadata={_metadata} 
+                                                   metadata-change={handleMetadataChange}>
+                </c-portal_-content-module-metadata>
+            </template>
+        </div>
+    </div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+    </footer>
+</template>

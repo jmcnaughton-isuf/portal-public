@@ -1,0 +1,77 @@
+<template>
+    <div class="event-header" if:true={listing}>
+        <div class="container large">
+            <div class="slds-grid slds-wrap">
+                <div class="event-thumb slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12" if:true={listing.Header_Image__c}>
+                    <lightning-formatted-rich-text value={listing.Header_Image__c}></lightning-formatted-rich-text>
+                </div>
+                <div class="slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                    <p class="date"><strong>{formattedDate}</strong></p>
+                    <h1 class="page-header">{listing.Name}</h1>
+                    <p><lightning-formatted-rich-text value={listing.Header_Content__c}></lightning-formatted-rich-text></p>
+                </div>
+            </div>
+        </div>
+        
+        <template if:false={listing.Is_Non_Ticketed_Event__c}>
+            <div class="container large" if:true={ticketTypeDisplayList.length}>
+                <div class="section-wrapper">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-p-around_medium slds-size_12-of-12">
+                            <div class="form-element heading">
+                                <h2>Ticket Options</h2>
+                            </div>
+                            <div class="registration-table">
+                                <div class="hide-on-phone">
+                                    <div class="row table-heading">
+                                        <div><p>Ticket</p></div>
+                                        <div><p>Description</p></div>
+                                        <div><p>Price</p></div>
+                                        <div><p>Max Per Registrant</p></div>
+                                    </div>
+
+                                    <template for:each={ticketTypeDisplayList} for:item="ticketType">
+                                        <div class="row table-row" key={ticketType.id} if:false={ticketType.isSoldOut}>
+                                            <div>
+                                                <p>{ticketType.name}</p>
+                                            </div>
+                                            <div>
+                                                <p>{ticketType.description}</p>
+                                            </div>
+                                            <div>
+                                                <lightning-formatted-number value={ticketType.originalPrice}
+                                                                            format-style="currency"
+                                                                            currency-code="USD">
+                                                </lightning-formatted-number>
+                                            </div>
+                                            <div>
+                                                <p>{ticketType.maxTickets}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row table-row sold-out" key={ticketType.id} if:true={ticketType.isSoldOut}>
+                                            <div>
+                                                <p>{ticketType.name} (Sold Out)</p>
+                                            </div>
+                                            <div>
+                                                <p>{ticketType.description}</p>
+                                            </div>
+                                            <div>
+                                                <lightning-formatted-number value={ticketType.originalPrice}
+                                                                            format-style="currency"
+                                                                            currency-code="USD">
+                                                </lightning-formatted-number>
+                                            </div>
+                                            <div>
+                                                <p>{ticketType.maxTickets}</p>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div> 
+</template>

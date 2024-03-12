@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="logoUrl" label="Logo URL" type="String"/>
+            <property name="firstRowNavigation" label="First Row Navigation Items" type="String" default='[{"label": "My Account", "submenu": [{"label": "My Information", "link": "my-information", "needsLoggedInUser":true}, {"label": "Giving History", "link": "giving-history", "needsLoggedInUser":true}, {"label": "My Membership", "link": "memberships", "needsLoggedInUser":true}, {"label": "My Giving Societies", "link": "society-memberships", "needsLoggedInUser":true}],"needsLoggedInUser":true}, {"label": "Giving", "submenu": [{"label": "Give", "link": "give" , "needsLoggedInUser":false}, {"label": "Membership Purchase", "link": "membership-purchase", "needsLoggedInUser":true}]}, {"label": "Directory", "link": "alumni-directory", "needsLoggedInUser":true}, {"label": "Societies", "submenu": [{"label": "Giving Societies", "link": "giving-societies" , "needsLoggedInUser":false}, {"label": "Honor Rolls", "link": "giving-honor-rolls", "needsLoggedInUser":false}]}, {"label": "Activities", "submenu" : [{"label": "Events", "link": "events", "needsLoggedInUser":false}]}]'/>
+            <property name="secondRowNavigation" label="Second Row Navigation Items (Deprecated)" type="String"/>
+            <property name="backgroundColor" label="Background Color" type="Color"/>
+            <property name="isHideLogin" label="Hide Login/Logout Buttons?" type="Boolean" default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

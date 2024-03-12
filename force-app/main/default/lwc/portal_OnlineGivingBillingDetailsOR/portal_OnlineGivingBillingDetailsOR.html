@@ -1,0 +1,179 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+    <template if:true={isShowComponent}>
+        <div class="container large no-margin gift-container">
+            <div class="container small">
+                <div class="ticket-options full-width">
+                    <template if:false={_isGuestUser}>
+                        <div class="button-large">
+                            <label data-name="showMore">
+                                <input type="radio" class="radio" data-name="showMore" onclick={handleDonorSearchClicked}>
+                                <span class="not-available"><a>Search Donor</a></span>
+                            </label>
+                        </div>
+                    </template>
+                </div>
+                <div class="sf-modal" style="display: block" if:true={_showModal}>
+                        <template if:true={_showSpinner}>
+                            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                        </template>
+                        <div class="modal-background" id="view-waitlist-background">
+                            <div class="modal">
+                                <div class="content-header-bar">
+                                    <div class="slds-grid slds-wrap full-width">
+                                        <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                            <h2>Donor Search</h2>
+                                        </div>
+                                        <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                            <span id="waitlist-modal-close" class="close-btn" onclick={closeModal}>×</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="section-wrapper">
+                                        <template if:true={_showModal}>
+                                            <h4 style="margin-bottom: .5em !important">Search Donor Information with DonorId.</h4>
+                                            <div class="search">
+                                                <input type="text" value={_keyword} data-name="keyword" oninput={setKeyword}>
+                                                <span class="search-icon"></span>
+                                            </div>
+                                            <a class="button primary slds-m-vertical_small" onclick={searchDonors}>Search</a>
+                                            <template for:each={_searchDonorList} for:item="con" for:index="index">
+                                                <fieldset style="margin-bottom: 1em;background:#f0f0f0;" key={con.Id}>
+                                                    <div class="field-wrapper">
+                                                        <label for="">{con.Name}</label>
+                                                        <a class="button small" style="text-align: center;float: right;margin-right: 0;margin-left:auto; display:block;" data-target-id={con.Id} onclick={handleSelectDonorClicked}>Select</a>
+                                                    </div>
+                                                </fieldset>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="section-wrapper bottom-border">
+                    <div class="entry-form" if:true={_callbackDone}>
+                        <div class="flex-grid-3">
+                            <div class="grid-item" if:true={informationMap.frontEndData.firstName.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.firstName.isRequired}>*</span>{informationMap.frontEndData.firstName.label}</label>
+                                <input type="text" value={firstName} name="firstName" oninput={setRecordValue} required={informationMap.frontEndData.firstName.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.middleName.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.middleName.isRequired}>*</span>{informationMap.frontEndData.middleName.label}</label>
+                                <input type="text" value={middleName} name="middleName" oninput={setRecordValue} required={informationMap.frontEndData.middleName.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.lastName.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.lastName.isRequired}>*</span>{informationMap.frontEndData.lastName.label}</label>
+                                <input type="text" value={lastName} name="lastName" oninput={setRecordValue} required={informationMap.frontEndData.lastName.isRequired}/>
+                            </div>
+
+                        </div>
+
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressCountry.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressCountry.isRequired}>*</span>{informationMap.frontEndData.addressCountry.label}</label>
+                                  <c-portal_-select default-value={addressCountry}
+                                                   option-list={countryOptions}
+                                                   handle-change={setRecordValue}
+                                                   classes=""
+                                                   input-name='addressCountry'
+                                                   required={informationMap.frontEndData.addressCountry.isRequired}>
+                                 </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.emailAddress.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.emailAddress.isRequired}>*</span>{informationMap.frontEndData.emailAddress.label}</label>
+                                <input type="email" value={emailAddress} name="emailAddress" oninput={setRecordValue} required={informationMap.frontEndData.emailAddress.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.emailType.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.emailType.isRequired}>*</span>{informationMap.frontEndData.emailType.label}</label>
+                                <c-portal_-select default-value={emailType}
+                                                  option-list={emailTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='emailType'
+                                                  required={informationMap.frontEndData.emailType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressType.display}>
+                                <i class="gg-chevron-down"></i>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressType.isRequired}>*</span>{informationMap.frontEndData.addressType.label}</label>
+                                <c-portal_-select default-value={addressType}
+                                                  option-list={addressTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='addressType'
+                                                  required={informationMap.frontEndData.addressType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+
+                        <div class="flex-grid-2">
+
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressLine1.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressLine1.isRequired}>*</span>{informationMap.frontEndData.addressLine1.label}</label>
+                                <input type="text" value={addressLine1} name="addressLine1" oninput={setRecordValue} required={informationMap.frontEndData.addressLine1.isRequired}>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressLine2.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressLine2.isRequired}>*</span>{informationMap.frontEndData.addressLine2.label}</label>
+                                <input type="text" value={addressLine2} name="addressLine2" oninput={setRecordValue} required={informationMap.frontEndData.addressLine2.isRequired}>
+                            </div>
+                        </div>
+                        <div class="flex-grid-3">
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressCity.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressCity.isRequired}>*</span>{informationMap.frontEndData.addressCity.label}</label>
+                                <input type="text" value={addressCity} name="addressCity" oninput={setRecordValue} required={informationMap.frontEndData.addressCity.isRequired}>
+                            </div>
+
+                            
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressState.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressState.isRequired}>*</span>{informationMap.frontEndData.addressState.label}</label>
+                                <div if:false={contactCountryInput}>
+                                    <input type="text" value={addressState} name="addressState" oninput={setRecordValue} required={informationMap.frontEndData.addressState.isRequired}>
+                                </div>
+                                <div if:true={contactCountryInput}>
+                                    <c-portal_-select default-value={addressState}
+                                                      option-list={MainStates}
+                                                      handle-change={setRecordValue}
+                                                      classes=""
+                                                      input-name='addressState'
+                                                      required={informationMap.frontEndData.addressState.isRequired}>
+                                    </c-portal_-select>
+                                </div>
+
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.addressPostalCode.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.addressPostalCode.isRequired}>*</span>{informationMap.frontEndData.addressPostalCode.label}</label>
+                                <input type="text" value={addressPostalCode} name="addressPostalCode" oninput={setRecordValue} required={informationMap.frontEndData.addressPostalCode.isRequired}>
+                            </div>
+                                <!--  -->
+
+                            <div class="grid-item" if:true={informationMap.frontEndData.phoneNumber.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.phoneNumber.isRequired}>*</span>{informationMap.frontEndData.phoneNumber.label}</label>
+                                <input type="text" value={phoneNumberFormat} name="phoneNumber" oninput={setRecordValue} required={informationMap.frontEndData.phoneNumber.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.phoneNumber.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.phoneNumber.isRequired}></span>Ext:</label>
+                                <input type="text"  name="Ext" oninput={setRecordValue}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.phoneType.display}>
+                                <i class="gg-chevron-down1"></i>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.phoneType.isRequired}>*</span>{informationMap.frontEndData.phoneType.label}</label>
+                                <c-portal_-select default-value={phoneType}
+                                                  option-list={phoneTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='phoneType'
+                                                  required={informationMap.frontEndData.phoneType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    </div>
+    
+</template>

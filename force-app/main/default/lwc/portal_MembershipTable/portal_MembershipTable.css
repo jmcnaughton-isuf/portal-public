@@ -1,0 +1,10 @@
+.no-memberships-container{
+    background-color: #eff1f3; 
+    position: relative;
+}
+
+.no-memberships-message{
+    text-align: center; 
+    padding: 25px 40px; 
+    font-size: 1rem;
+}

@@ -1,0 +1,30 @@
+<template>
+    <div class="sf-modal" style="display: block;">
+        <div class="modal-background">
+            <div class="modal small">
+                <div if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+                <!-- Modal header-->
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>Cancel Gift</h2>
+                        </div> 
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                            <span class="close-btn" onclick={closeModal}>×</span>
+                        </div>
+                    </div>
+                </div>
+                <!--Modal body for confirmation-->
+                <div class="section-wrapper">
+                    <p>Are you sure you want to cancel this gift?</p>
+                    <div class="button-list">
+                        <button class="button primary full-mobile" onclick={closeModal} title="Search">No</button>
+                        <button class="button secondary full-mobile" onclick={handleConfirmCancelSubscription} title="Clear">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

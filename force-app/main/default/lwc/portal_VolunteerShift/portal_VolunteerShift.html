@@ -1,0 +1,84 @@
+<template>
+  <div if:true={isReady} class="accordion-item">
+    <a class="topic" onclick={toggleAccordion}>{shiftLabel}</a>
+    <div class="accordion-content">
+      <div if:true={frontEndDataMap.volunteerJobShiftDescription.display}>
+        <lightning-formatted-rich-text if:true={shift.volunteerJobShiftDescription} value={shift.volunteerJobShiftDescription}></lightning-formatted-rich-text>
+      </div>
+      <!--name-->
+      <div class="slds-p-bottom_small" if:true={frontEndDataMap.volunteerJobShiftName.display}>
+        <lightning-icon size="xx-small" icon-name="utility:connected_apps" alternative-text="Connected" title="Connected"></lightning-icon>
+        <span class="slds-p-left_xx-small shift-info">{shift.volunteerJobShiftName}</span>
+      </div>
+
+      <!--Date range-->
+      <div class="slds-p-bottom_small" if:true={showDateRange}>
+        <lightning-icon size="xx-small" icon-name="utility:dayview" alternative-text="Date" title="Date"></lightning-icon>
+
+        <span class="slds-p-bottom_xx-small shift-info">
+          <lightning-formatted-date-time if:true={frontEndDataMap.volunteerJobShiftStartDateTime.display}
+            class="slds-p-left_xx-small"
+            value={startDateTime}
+            year="numeric"
+            month="numeric"
+            day="numeric"
+            hour="2-digit"
+            minute="2-digit">
+          </lightning-formatted-date-time> 
+          <template if:true={frontEndDataMap.volunteerJobShiftStartDateTime.display}>
+            <template if:true={frontEndDataMap.volunteerJobShiftEndDateTime.display}>
+              &nbsp;-&nbsp;  
+            </template>
+          </template>
+          <lightning-formatted-date-time if:true={frontEndDataMap.volunteerJobShiftEndDateTime.display}
+            value={endDateTime}
+            year="numeric"
+            month="numeric"
+            day="numeric"
+            hour="2-digit"
+            minute="2-digit">
+          </lightning-formatted-date-time>
+        </span>
+      </div>
+
+      <!--time zone-->
+      <template if:true={frontEndDataMap.volunteerShiftTimeZone.display}>
+        <div class="slds-p-bottom_small" if:true={shift.volunteerShiftTimeZone}>
+          <lightning-icon size="xx-small" icon-name="utility:date_time" alternative-text="TimeZone" title="TimeZone"></lightning-icon>
+          <span class="slds-p-left_xx-small shift-info">{shift.volunteerShiftTimeZone}</span>
+        </div>
+      </template>
+
+      <!--available positions-->
+      <div class="slds-p-bottom_small" if:true={frontEndDataMap.availablePositions.display}>
+        <lightning-icon size="xx-small" icon-name="utility:number_input" alternative-text="Positions" title="Positions"></lightning-icon>
+        <span class="slds-p-left_xx-small shift-info">{availablePositionsString} Available</span>
+      </div>
+
+      <!--Case: Registered-->
+      <div class="button-list" if:true={shift.isRegisteredForShift}>
+        <button title="Secondary action" onclick={handleModifyApplication} class="button secondary small full-mobile">
+          Modify my Application(s)
+        </button>
+        <button if:true={availablePositions} title="Primary action" onclick={handleGuestSignUp} class="button primary small full-mobile">
+          Sign up for a Guest
+        </button>
+        <button if:false={availablePositions} disabled title="Primary action" class="button primary small full-mobile disabled">
+          Sign up for a Guest
+        </button>
+      </div>
+
+      <!--Case: Not registered-->
+      <div class="button-list" if:false={shift.isRegisteredForShift}>
+        <button if:true={availablePositions} title="Primary action"
+                onclick={handleVolunteerShiftSignUp} class="button primary small full-mobile">
+          Sign Up
+        </button>
+        <button if:false={availablePositions} disabled title="Primary action" 
+                class="button primary small full-mobile disabled">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

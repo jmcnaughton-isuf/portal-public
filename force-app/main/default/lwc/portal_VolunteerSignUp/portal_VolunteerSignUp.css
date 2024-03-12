@@ -1,0 +1,32 @@
+.shift-spinner {
+    position: fixed;
+}
+
+.modal {
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .flex-grid-2 {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .flex-grid-2 .grid-item {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .flex-grid-2 {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .flex-grid-2 .grid-item {
+        margin-bottom: 1rem;
+    }
+}

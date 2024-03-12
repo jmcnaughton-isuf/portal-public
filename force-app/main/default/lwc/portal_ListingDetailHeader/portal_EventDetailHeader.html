@@ -1,0 +1,57 @@
+<template>
+    <div data-ascend-portal if:false={isFrontEndDataMapEmpty}>
+        <div class="event-header" style="padding-bottom: 1rem">
+            <div class="container large">
+                <div class="slds-grid slds-wrap">
+                    <div class="event-thumb slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                        <img src={_image} if:true={frontEndDataMap.headerImage.display}>
+                        <p><lightning-formatted-rich-text value={_caption} if:true={frontEndDataMap.headerCaption.display}></lightning-formatted-rich-text></p>
+                    </div>
+                    <div class="slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                        <p class="date"><strong>{_dateString}</strong></p>
+                        <h1 class="page-header" if:true={frontEndDataMap.name.display}>{_name}</h1>
+                        <lightning-formatted-rich-text value={_content} if:true={frontEndDataMap.headerContent.display}></lightning-formatted-rich-text>
+                        
+                        <div class="button-list" if:true={isDisplayButtons}>
+                            <template if:true={_listing.isSoldOut}>
+                                <template if:false={_listing.isRegisteredForEvent}>
+                                    <template if:false={_listing.isAllowWaitlistingForEvent}>
+                                        <button class="button primary disabled" disabled>
+                                            {_buttonTextMap.data.Event_Sold_Out_Text}
+                                        </button>
+                                    </template>
+                                </template>
+                            </template>
+                            <template if:true={_listing.isSoldOut}>
+                                <template if:false={_listing.isRegisteredForEvent}>
+                                    <template if:true={_listing.isAllowWaitlistingForEvent}>
+                                        <a class="button primary" href={_registrationUrl} if:true={frontEndDataMap.isAllowWaitlistingForEvent.display}>
+                                            {_buttonTextMap.data.Event_Register_Text}
+                                        </a>
+                                    </template>
+                                </template>
+                            </template>
+                            <template if:false={_listing.isSoldOut}>
+                                <template if:false={_listing.isRegisteredForEvent}>
+                                    <a class="button primary" href={_registrationUrl} if:true={frontEndDataMap.registrationUrl.display}>
+                                        {_buttonTextMap.data.Event_Register_Text}
+                                    </a>
+                                </template>
+                            </template>
+                            <template if:true={_listing.isRegisteredForEvent}>
+                                <a class="button primary" href={_registrationUrl} if:true={frontEndDataMap.registrationUrl.display}>
+                                    {_buttonTextMap.data.Event_Modify_Registration_Text}
+                                </a>
+                            </template>
+                            <template if:true={isDisplayLookWhosComing}>
+                                <a class="button primary" target="_blank" href={eventParticipationListURL}>
+                                    {_buttonTextMap.data.Event_Look_Whos_Coming_Text}
+                                </a>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

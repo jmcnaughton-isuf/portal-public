@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="tableTitle" label="Table Title (DEPRECATED)" type="String" default="Society Memberships"/>
+            <property name="annualMembershipRenewGivingSettingsName" label="Annual Membership Renew Giving Settings URL CMD Name" type="String" default="Internal Giving Page"/>
+            <property name="annualMembershipRenewGivingSettingsfilter" label="Annual Membership Renew Giving Settings URL CMD Filter" type="String" default=''/>
+            <property name="annualMembershipElevateGivingSettingsName" label="Annual Membership Elevate Giving Settings URL CMD Name" type="String" default="Internal Giving Page"/>
+            <property name="annualMembershipElevateGivingSettingsfilter" label="Annual Membership Elevate Giving Settings URL CMD Filter" type="String" default=''/>
+            <property name="lifetimeMembershipGivingSettingsName" label="Lifetime Membership Giving Settings URL CMD Name" type="String" default="Internal Giving Page"/>
+            <property name="lifetimeMembershipGivingSettingsfilter" label="Lifetime Membership Giving Settings URL CMD Filter" type="String" default=''/>
+            <property name="inactiveMembershipGivingSettingsName" label="Inactive Membership Giving Settings URL CMD Name" type="String" default="Internal Giving Page"/>
+            <property name="inactiveMembershipGivingSettingsfilter" label="Inactive Membership Giving Settings URL CMD Filter" type="String" default=''/>
+            <property name="lifetimeEarliestJoinDateColumnTitle" label="Lifetime Join Date Column Text" type="String" default="Join Date"/>
+            <property name="showLifetimeJoinDateColumn" label="Show Lifetime Join Date Column" type="Boolean" default="True"/>
+            <property name="annualEarliestJoinDateColumnTitle" label="Annual Join Date Column Text" type="String" default="Join Date"/>
+            <property name="showAnnualJoinDateColumn" label="Show Annual Join Date Column" type="Boolean" default="True"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

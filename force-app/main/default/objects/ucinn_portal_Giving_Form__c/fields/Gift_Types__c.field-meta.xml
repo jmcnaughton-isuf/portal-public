@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gift_Types__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Selected gift types will appear on the front end of this form.</inlineHelpText>
+    <label>Gift Types</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>outright</fullName>
+                <default>false</default>
+                <label>One-Time</label>
+            </value>
+            <value>
+                <fullName>pledge</fullName>
+                <default>false</default>
+                <label>Auto-Pledge</label>
+            </value>
+            <value>
+                <fullName>recurring</fullName>
+                <default>false</default>
+                <label>Recurring</label>
+            </value>
+            <value>
+                <fullName>test</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>test</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

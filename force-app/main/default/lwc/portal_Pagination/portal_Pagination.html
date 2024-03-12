@@ -1,0 +1,18 @@
+<template>
+    <template if:true={showPagination}>
+        <div class="pagination-container">
+            <div class="pagination">
+                <a onclick={handlePrev}>«</a>
+                <template for:each={paginationInfo} for:item="pageInfo">
+                    <a class={pageInfo.class} key={pageInfo.label} data-active={pageInfo.active} data-page={pageInfo.label} onclick={onClickChangePage}>{pageInfo.label}</a>
+                </template>
+                <a onclick={handleNext}>»</a>
+            </div>
+        </div>
+        <!-- <div class="pagination">
+            <template for:each={paginationInfo} for:item="pageInfo">
+                <a class="page-number" key={pageInfo.label} data-active={pageInfo.active} data-page={pageInfo.label} onclick={onClickChangePage}>{pageInfo.label}</a>
+            </template>
+        </div> -->
+    </template>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <template if:true={showPagination}>
+        <div class="pagination-container">
+            <div class="pagination">
+                <a onclick={handlePreviousClick}>«</a>
+                <template for:each={_pageList} for:item="page">
+                    <a key={page.key} class={page.class} data-pagenumber={page.number} onclick={handlePageNumberClick}>{page.number}</a>
+                </template>
+                <a onclick={handleNextClick}>»</a>
+            </div>
+        </div>
+    </template>
+</template>

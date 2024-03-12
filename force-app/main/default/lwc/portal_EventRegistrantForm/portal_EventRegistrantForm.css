@@ -1,0 +1,42 @@
+.strike-through {
+    text-decoration: line-through;
+}
+
+.discount-price {
+    color: red;
+}
+
+.discount-price {
+    display: inline-block;
+}
+
+.ticket-options .grid-item label span.disabled{
+    background-color: #00c0f3 !important;
+    border: 1px solid #00c0f3 !important;
+    color: white !important;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .ticket-options.full-width .entry-form div[class^='flex-grid'] .grid-item:last-of-type {
+        padding-right: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .ticket-options.entry-button c-portal_-input {
+        padding-top: 0.7em !important;
+        padding-bottom: 0.8em !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .ticket-options.entry-button c-portal_-input {
+        padding-top: 1em !important;
+        padding-bottom: 1em !important;
+    }
+}
+
+.ticket-label {
+    margin-top: 1em;
+}

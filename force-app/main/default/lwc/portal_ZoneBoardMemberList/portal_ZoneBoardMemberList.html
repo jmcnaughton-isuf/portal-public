@@ -1,0 +1,42 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:false={initFinished} alternative-text="Loading" size="Large"></lightning-spinner>
+        <template if:true={initFinished}>
+            <template if:true={isDisplayZoneLeadership}>
+                <div class="siteforceStarterBody" tabindex="-1">
+                    <div class="container large" style="padding-top: 0;">
+                        <div class="container">
+                            <div class="section-body-content" style="margin-bottom: 2em">
+                                <div class="flex-grid-3 news" style="justify-content: space-around">
+                                    <template for:each={boardMembers} for:item="boardMember" if:true={boardMembers}>
+                                        <a href={boardMember.zoneBioDetailURL} class="grid-item equalHeight card" key={boardMember.zoneMembershipId} style="padding-right: 1em !important">
+                                            <div class="container">
+                                                <template  if:true={permissionMap.zoneMembershipPictureRecord.display}>
+                                                    <div class="image" if:true={boardMember.pictureURL}>
+                                                        <img src={boardMember.pictureURL}/>
+                                                    </div>
+                                                    <div class="image" if:false={boardMember.pictureURL}>
+                                                        <img src={defaultPictureURL}/>
+                                                    </div>
+                                                </template>
+                                                <div class="copy">
+                                                    <h4 if:true={boardMember.fullName}>{boardMember.fullName}</h4>
+                                                    <template if:false={hideDegreeString}>
+                                                        <h5 if:true={boardMember.degreeString}>
+                                                            {boardMember.degreeString}
+                                                        </h5>
+                                                    </template>
+                                                    <p>{boardMember.title}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

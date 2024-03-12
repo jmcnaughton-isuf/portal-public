@@ -1,0 +1,70 @@
+<template>    
+    <div data-ascend-portal>
+        <div if:true={_showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+        <div class="panel" style="margin-bottom: 1.5em">
+            <div class="container large">
+                <h2 style="margin-bottom: .5em">Search</h2>
+                <div>
+                    <div class="entry-form" style="max-width: 1000px">
+                        <div class="flex-grid">
+                            <div class="grid-item" style="margin: 0">
+                                <c-portal_-input value={searchText} 
+                                                handle-input={handleSearchTextChange} 
+                                                handle-key-up={handleNameSearchKeyUp}
+                                                label="Name Search">
+                                </c-portal_-input>
+                            </div>
+                        </div>
+                        <div class="flex-grid checkbox-grid">
+                            <template for:each={checkboxSearchSettings} for:item="checkboxSetting">
+                                <div key={checkboxSetting.Id} class="grid-item">
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input class="radio" style="margin: 0"
+                                                data-name={checkboxSetting.Search_Criteria_Name__c} 
+                                                id={checkboxSetting.Id} 
+                                                type="checkbox" 
+                                                oninput={handleCheckbox} 
+                                                checked={checkboxSetting.checked}/>
+                                            <label for={checkboxSetting.Id} style="padding-top: 4px">{checkboxSetting.Search_Criteria_Name__c}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <a onclick={handleToggleAdvancedSearch} style="font-size: 1.2em">Show/Hide Advanced Search</a>
+                </div>
+
+                <div class="panel" if:true={_isShowAdvancedSearch}>
+                    <h3 style="margin-bottom: 0.75em">Advanced Search</h3>
+                    <template iterator:searchgroup={searchGroupList}>
+                        <template if:true={hasSearchGroupMap}>
+                            <div class="entry-form search-category" key={searchgroup.value.key}>
+                                <c-portal_lwc_-directory-search-category search-group-options-map={searchGroupMap}
+                                                                        search-group={searchgroup.value}
+                                                                        category-index={searchgroup.index}
+                                                                        handle-search-group-change={handleSearchGroupChange}
+                                                                        handle-delete-search-category={handleDeleteSearchCategory}>
+                                </c-portal_lwc_-directory-search-category>
+                            </div>
+                        </template>
+                    </template>
+                    <div class="button-list" if:true={isShowAddCategory}>
+                        <button class="button secondary small full-mobile" 
+                                aria-label="Add search criterion" 
+                                onclick={handleAddCategory}>Add Search Category</button>
+                    </div>
+                </div>
+                
+                <div class="button-list">
+                    <button class="button primary full-mobile" aria-label="Directory Search" onclick={handleSearch}>Search</button>
+                </div>
+            </div>
+        </div>
+        <p style="margin: 0 auto; font-size: 1.5em; font-weight: bold; width: fit-content" if:true={isShowNoResults}>{noResultsText}</p>
+        <c-portal_-directory-contact-table contact-list={contactList} items-per-page={itemsPerPage}></c-portal_-directory-contact-table>
+    </div>
+</template>

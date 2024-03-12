@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="componentLabel" label="Section Label" type="String" default="Designations"/>
+            <property name="componentVersion" label="Component Version" type="String" datasource="Modal,Lookup"/>
+            <property name="baseButtonColor" label="Base Button Color" type="Color"/>
+            <property name="selectedButtonColor" label="Selected Button Color" type="Color"/>
+            <property name="textColor" label="Heading Text Color" type="Color"/>
+            <property name="pageSectionName" label="Page Section Setting Name" type="String" default="Online Giving"/>
+            <property name="customMetadataDeveloperName" label="Lookup Custom Metadata Developer Name" type="String" default="Online Giving - Designation"/>
+            <property name="customMetadataApiName" label="Lookup Custom Metadata Api Name" type="String" default="Portal_Page_Section_Setting__mdt"/>
+
+            <property name="showMoreButton" label="Show More Button" type="Boolean" default="true"/>
+            <property name="selectMoreLabel" label="Show More Button Label" type="String" default="Show More +"/>
+            <property name="useSearch" label="Enable search in Show More" type="Boolean" default="true"/>
+            <property name="modalFormat" label="Show More Modal Format" datasource="Flat,Category,Hierarchy,Search Only" type="String"/>
+            <property name="featuredDesignationList" label="Featured Designations" type="String" description="A comma separated list of designation external ids"/>
+            <property name="maxNumberOfDesignations" label="Maximum Number Of Designations" type="Integer" max="5" min="1" default="5"/>
+            <property name="designationLevelLabels" label="Designation Level Labels" type="String" description='A list of Strings for each designation level label formatted like ["Level 1", "Level 2"]' default='["level 1", "level 2"]'/>
+            <property name="BlankCategoryLabel" label="Blank Category Label" description="If using Category modal, this is the label for designations with blank category lookups" type="String" default="No Academic Org"/>
+            <property name="otherDesignationLabel" label="Other Designation Label" description="Label for designation that is input manually by the user, leave blank to disable." type="String" default="Other"/>
+            <property name="modalTitle" label="Modal Title" type="String" default="Select Your Designations"/>
+            <property name="modalText" label="Modal Text" type="String" default="Please select your designations."/>
+            <property name="pageName" label="Online Giving Page Name" type="String" default="giving"/>
+            <property name="fieldNamesString" label="Modal Search Fields" description="Fields to search against on Designation in the Show More Modal (comma delimited)" type="String"/>
+
+            <property name="groupFields" label="Group Designations [DEPRECATED]" type="Boolean" default="true"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,5 @@
+input.radio {
+    padding: 10px !important;
+    max-width: 300px;
+    z-index: 9000;
+}

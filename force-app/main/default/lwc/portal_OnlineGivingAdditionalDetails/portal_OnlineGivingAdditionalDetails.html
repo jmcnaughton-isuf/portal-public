@@ -1,0 +1,29 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin">
+                <div class="section-body-content">
+                    <div class="container">
+                        <h2 style={headerStyle}>{componentLabel}</h2>
+                        <div class="flex-grid-2">
+                            <template for:each={_customFields} for:item='field' for:index="index">
+                                <div class="grid-item" key={field.label}>
+                                    <c-portal_-Custom-Form-Field 
+                                        multi-picklist-default-values={field.multiPicklistDefaultValues}
+                                        default-value={field.defaultValue}
+                                        label={field.label}
+                                        type={field.type}
+                                        disabled={field.disabled}
+                                        picklist-values={field.picklistValues}
+                                        handle-on-change={handleValueChange}
+                                        index={index}>
+                                    </c-portal_-Custom-Form-Field>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

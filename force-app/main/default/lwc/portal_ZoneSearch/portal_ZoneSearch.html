@@ -1,0 +1,80 @@
+<template>
+    <div data-ascend-portal>
+        <div class="siteforceStarterBody" tabindex="-1">
+            <lightning-spinner alternative-text="Loading" style="z-index: 10000" if:true={searchActive}></lightning-spinner>
+            <div class="panel" style="margin-bottom: 1.5em" if:false={hideSearch}>
+                <div class="container medium">
+                    <div class="container">
+                        <h2 style="margin-bottom: .5em">Search</h2>
+                        <!-- Search Fields -->
+                        <div class="entry-form">
+                            <div class="flex-grid-4">
+                                <div class="grid-item" if:false={hideNameSearch}>
+                                    <label>Name</label>
+                                    <input type="text" name="nameSearch" value={nameSearch} oninput={inputOnChange}>
+                                </div>
+                                <div class="grid-item" if:false={hideCityAndState}>
+                                    <label>City</label>
+                                    <input type="text" name="city" value={city} oninput={inputOnChange}>
+                                </div>
+                                <div class="grid-item" if:false={hideCityAndState}>
+                                    <label>State</label>
+                                    <input type="text" name="state" value={state} oninput={inputOnChange}>
+                                </div>
+                                <div class="grid-item" if:false={hideZipCode}>
+                                    <label>Postal Code</label>
+                                    <input type="text" name="zipCode" min="0" value={zipcode} oninput={inputOnChange}>
+                                </div>
+                                <div class="grid-item" if:false={hideCountries}>
+                                    <label>Country</label>
+                                    <c-portal_-select class="normal-line-height"
+                                                    handle-change={handlePicklistChange}
+                                                    option-list={countriesList}
+                                                    default-value={selectedCountry}
+                                                    is-show-null-option="true">
+                                    </c-portal_-select>
+                                </div>
+                                <div class="grid-item" if:false={hideRadius}>
+                                    <label>Radius</label>
+                                    <input type="number" name="radius" min="1" max="99999" value={radius} oninput={inputOnChange}>
+                                </div> 
+                            </div>               
+                            <div class="button-list">
+                                <div class="show-on-phone">
+                                    <button class="button primary full-mobile" onclick={search}>Search</button>
+                                    <button class="button secondary full-mobile" onclick={resetSearch}>Clear</button>
+                                </div>
+                                <div class="hide-on-phone">
+                                    <button class="button primary desktop" onclick={search}>Search</button>
+                                    <button class="button secondary desktop" onclick={resetSearch}>Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container medium">
+                <div class="container">
+                    <c-portal_-map
+                            if:false={hideMap}
+                            center={center}
+                            city-api-name="zoneCity"
+                            state-api-name="zoneState"
+                            title-api-name="Name"
+                            zoom-level={zoomLevel}
+                            marker-title={markerTitle}
+                            hide-marker-list={hideMarkerList}
+                            map-data={zoneData}
+                    ></c-portal_-map>
+                    <c-portal_-zone-search-table
+                                table-data={zoneData}
+                                front-end-data-map={frontEndDataMap}
+                                items-per-page={itemsPerPage}
+                                current-page-number={currentPageNumber}
+                                get-more-zone-records={getMoreZoneRecords}>
+                    </c-portal_-zone-search-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

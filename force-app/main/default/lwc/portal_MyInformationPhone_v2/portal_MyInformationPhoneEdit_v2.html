@@ -1,0 +1,106 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+    
+    <div if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type={_selfReportModalType}
+            configuration={_selfReportConfiguration}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container bottom-border" if:true={sectionConfiguration.isDisplay}>
+
+            <!-- Section Header -->
+            <h2 style="margin-bottom: 0.5em">{sectionConfiguration.label}</h2>
+
+            <!-- Phone Records -->
+            <template for:each={recordList} for:item="eachPhone" for:index="index">
+                <div if:false={eachPhone.isDelete} class="entry-heading" key={eachPhone.timestampHtmlKey}>
+                    <div class="edit-entry-list">
+                        <template if:true={sectionConfiguration.hasReportUpdateLink}>
+                            <a onclick={handleSelfReport} data-index={index}>
+                                <span if:true={eachPhone.hasSelfReportChange}>Pending</span>
+                                <span if:false={eachPhone.hasSelfReportChange}>Request Update</span>
+                            </a>
+                        </template>
+
+                        <template if:false={sectionConfiguration.hasReportUpdateLink}> 
+                            <a if:false={sectionConfiguration.isDisable} onclick={handleDeletePhone} data-index={index}>
+                                <img src={deleteIcon}>Delete
+                            </a>
+                        </template>
+                    </div>
+
+                    <div class="entry-form">
+                        <div class="flex-grid-4">                                
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneNumber.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.phoneNumber.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachPhone.phoneNumber}
+                                    field-id="phoneNumber"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.phoneNumber.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.phoneNumber.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.phoneNumber.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneType.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.phoneType.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachPhone.phoneType}
+                                    field-id="phoneType"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.phoneType.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.phoneType.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.phoneType.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={eachPhone.phoneTypePicklistValues}
+                                    is-null-option-disabled>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachPhone.phoneIsPreferred}
+                                    field-id="phoneIsPreferred"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.isRequired}
+                                    handle-change-callback={handleChange}
+                                    label={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.label}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={sectionConfiguration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachPhone.phoneShowOnDirectory}
+                                        field-id="phoneShowOnDirectory"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.phoneShowOnDirectory.fieldType}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.phoneShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        label={sectionConfiguration.fieldConfigurationMap.phoneShowOnDirectory.label}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="button-list" if:false={sectionConfiguration.isDisable}>
+                <template if:false={sectionConfiguration.hasReportUpdateLink}>
+                    <a class="button secondary small" onclick={handleAddPhone} if:true={isShowAdd}>Add Phone</a>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

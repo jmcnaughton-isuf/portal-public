@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Groups</label>
+    <protected>false</protected>
+    <values>
+        <field>Constituent_types_for_case_approval__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Constituent_types_to_add_to_zones__c</field>
+        <value xsi:type="xsd:string">Alumni</value>
+    </values>
+    <values>
+        <field>Constituent_types_to_exclude_to_zones__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Membership_record_insertion__c</field>
+        <value xsi:type="xsd:string">Create case</value>
+    </values>
+    <values>
+        <field>Membership_table_helper_text__c</field>
+        <value xsi:type="xsd:string">This shows all your group info</value>
+    </values>
+    <values>
+        <field>Order_Number__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>Prevent_is_on_newsletter_helper_text__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Record_Type__c</field>
+        <value xsi:type="xsd:string">Group</value>
+    </values>
+    <values>
+        <field>Show_on_directory__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Table_Header__c</field>
+        <value xsi:type="xsd:string">Alumni Groups</value>
+    </values>
+    <values>
+        <field>Values_for_checking_is_on_newsletter__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Zone_display_types__c</field>
+        <value xsi:type="xsd:string">Active zone memberships</value>
+    </values>
+</CustomMetadata>

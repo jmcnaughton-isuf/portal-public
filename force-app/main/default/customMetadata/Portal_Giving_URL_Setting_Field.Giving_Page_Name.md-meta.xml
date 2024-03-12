@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Giving Page Name</label>
+    <protected>false</protected>
+    <values>
+        <field>Field_API_Name__c</field>
+        <value xsi:type="xsd:string">ucinn_ascendv2__Membership_Level__c</value>
+    </values>
+    <values>
+        <field>Portal_Giving_URL_Setting__c</field>
+        <value xsi:type="xsd:string">Internal_Giving_Page</value>
+    </values>
+    <values>
+        <field>Query_Filter__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>SObject_API_Name__c</field>
+        <value xsi:type="xsd:string">ucinn_ascendv2__Society_Membership__c</value>
+    </values>
+    <values>
+        <field>Static_Field_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>URL_parameter_Name__c</field>
+        <value xsi:type="xsd:string">membershipLevelId</value>
+    </values>
+</CustomMetadata>

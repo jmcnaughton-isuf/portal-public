@@ -1,0 +1,20 @@
+.button-list.no-padding {
+    padding: 0 !important;
+}
+
+.button-list.confirm-action {
+    position: static;
+    width: auto;
+}
+
+a.show-on-phone {
+    margin: 17.6px 0 3.52px;
+}
+
+a.hide-on-phone {
+    font-size: 16.72px;
+}
+
+.alert p.show-on-phone {
+    margin-top: 35px;
+}

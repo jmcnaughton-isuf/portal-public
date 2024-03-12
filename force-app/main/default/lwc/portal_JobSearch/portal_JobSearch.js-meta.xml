@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="keywordLabel" label="Keyword Label" type="String" default="Keyword"/>
+            <property name="isShowKeyword" label="Show Keyword?" type="Boolean" default="true"/>
+            <property name="cityLabel" label="City Label" type="String" default="City"/>
+            <property name="isShowCity" label="Show City?" type="Boolean" default="true"/>
+            <property name="stateLabel" label="State Label" type="String" default="State"/>
+            <property name="isShowState" label="Show State?" type="Boolean" default="true"/>
+            <property name="postalCodeLabel" label="Postal Code Label" type="String" default="Postal Code"/>
+            <property name="isShowPostalCode" label="Show Postal Code?" type="Boolean" default="true"/>
+            <property name="radiusLabel" label="Radius Label" type="String" default="Radius"/>
+            <property name="isShowRadius" label="Show Radius?" type="Boolean" default="true"/>
+            <property name="multipleLocationsLabel" label="Multiple Locations Label" type="String" default="Multiple Locations?"/>
+            <property name="isShowMultipleLocations" label="Show Multiple Locations?" type="Boolean" default="true"/>
+            <property name="remoteLabel" label="Remote Label" type="String" default="Remote?"/>
+            <property name="isShowRemote" label="Show Remote?" type="Boolean" default="true"/>
+            <property name="salaryLabel" label="Salary Label" type="String" default="Salary"/>
+            <property name="isShowSalary" label="Show Salary?" type="Boolean" default="true"/>
+            <property name="nullSalariesLabel" label="Null Salaries Label" type="String" default="Include jobs without specified salaries?"/>
+            <property name="isShowNullSalaries" label="Show Null Salaries?" type="Boolean" default="true"/>
+            <property name="positionTypeLabel" label="Position Type Label" type="String" default="Position Type"/>
+            <property name="isShowPositionType" label="Show Position Type?" type="Boolean" default="true"/>
+            <property name="classDegreeLevelLabel" label="Class Or Degree Level Label" type="String" default="Class Or Degree Level"/>
+            <property name="isShowClassDegreeLevel" label="Show Class Or Degree Level?" type="Boolean" default="true"/>
+            <property name="noResultsText" label="No Results Text" type="String" default="There are no results for your search."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

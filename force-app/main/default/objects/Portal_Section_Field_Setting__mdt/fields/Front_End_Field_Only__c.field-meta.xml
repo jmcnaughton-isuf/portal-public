@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Front_End_Field_Only__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If this is checked, it means that there is no backend sobject field that corresponds to this field setting record, meaning this field only exists in the front end structure.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If this is checked, it means that there is no backend sobject field that corresponds to this field setting record, meaning this field only exists in the front end structure.</inlineHelpText>
+    <label>Front End Field Only</label>
+    <type>Checkbox</type>
+</CustomField>

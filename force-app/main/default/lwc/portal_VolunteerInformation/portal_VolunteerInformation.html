@@ -1,0 +1,45 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={_showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+
+        <div class="siteforceStarterBody no-padding">
+            <div class="container large" style="padding-bottom: 0; margin-bottom: 0">
+                <div class="container">
+                    <div class="form-element heading">
+                        <h2>Volunteer Information</h2>
+                        <a id="open-information" onclick={handleEditClick} class="button floating-button secondary small">Edit Information</a>
+                    </div>
+                    <div if:true={_volunteerInfo} class="slds-grid slds-wrap info-wrap">
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                            <h3 style="font-weight: bold">General Information</h3>
+                            <div class="flex-grid-2 wrap">
+                                <p class="grid-item"><strong>Name:</strong> {_volunteerInfo.fullName}</p>
+                                <p class="grid-item"><strong>Total Volunteer Hours:</strong> {_volunteerHours}</p>
+                                <p class="grid-item"><strong>Consider me for volunteering opportunties:</strong> {isVolunteer}</p>
+                            </div>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                            <h3 style="font-weight: bold">Constituent Skills</h3>
+                            <p class="skill-list">{formatSkills}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Report Hours modal-->
+        <div if:true={_reportHoursJobId}>
+            <c-portal_-volunteer-report-hours-form record-id={_reportHoursJobId}
+                                                refresh-parent={getVolunteerInformation}
+                                                close-modal={closeModal}>
+            </c-portal_-volunteer-report-hours-form>
+        </div>
+        <!-- Edit Information button modal-->
+        <c-portal_-volunteer-info-edit-form close-modal={closeEditModal}
+                                            refresh-page={getVolunteerInformation}
+                                            if:true={_isShowEditForm}>
+        </c-portal_-volunteer-info-edit-form>
+    </div>
+</template>

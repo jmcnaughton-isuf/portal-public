@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Private_Event_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>Alumni_Portal_Base_Url__c &amp; &apos;s/listing-detail?listingName=&apos; &amp;  SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Name, &apos;%&apos;, &apos;%25&apos;), &apos;&amp;&apos;, &apos;%26&apos;), &apos;&lt;&apos;, &apos;%3C&apos;), &apos;&gt;&apos;, &apos;%3E&apos;), &apos;&quot;&apos;, &apos;%22&apos;),&apos; &apos;, &apos;%20&apos;), &apos;@&apos;, &apos;%40&apos;), &apos;#&apos;, &apos;%23&apos;), &apos;$&apos;, &apos;%24&apos;), &apos;^&apos;, &apos;%5E&apos;), &apos;(&apos;, &apos;%28&apos;), &apos;)&apos;, &apos;%29&apos;), &apos;=&apos;, &apos;%3D&apos;), &apos;+&apos;, &apos;%2B&apos;), &apos;:&apos;, &apos;%3A&apos;), &apos;;&apos;, &apos;%3B&apos;), &apos;\\&apos;, &apos;%5C&apos;), &apos;/&apos;, &apos;%2F&apos;), &apos;?&apos;, &apos;%3F&apos;), &apos;[&apos;, &apos;%5B&apos;), &apos;]&apos; ,&apos;%5D&apos;), &apos;{&apos;, &apos;%7B&apos;), &apos;}&apos;, &apos;%7D&apos;), &apos;`&apos;, &apos;%60&apos;) &amp; &apos;&amp;recordId=&apos; &amp; Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Private Event Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

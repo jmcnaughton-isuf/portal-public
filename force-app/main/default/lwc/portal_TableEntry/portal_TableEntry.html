@@ -1,0 +1,55 @@
+<template>
+    <template if:true={isText}>
+        {entryValue}
+    </template>
+    <lightning-formatted-number value={entryValue}
+                                format-style="currency"
+                                currency-code="USD"
+                                if:true={isCurrency}>
+    </lightning-formatted-number>
+    <lightning-formatted-rich-text value={entryValue}
+                                   if:true={isHtml}>
+    </lightning-formatted-rich-text>
+    <lightning-formatted-date-time value={entryValue} 
+                                   if:true={isDate}>
+    </lightning-formatted-date-time>
+    <lightning-formatted-date-time value={entryValue}
+        year="numeric"
+        month="numeric"
+        day="numeric"
+        hour="2-digit"
+        minute="2-digit"
+        if:true={isDateTime}>
+    </lightning-formatted-date-time>
+    <c-portal_-input type={inputFieldType}
+        classes='slds-input short-text'
+        style='font-size: 0.95rem'
+        value={entryValue}
+        handle-input={handleInput}
+        required={columnData.isRequired}
+        if:true={isInputText}>
+    </c-portal_-input>
+    <a onclick={callback}
+        class={classes}
+        href={href}
+        if:true={isHyperlink}>
+        {entryValue}
+    </a>
+    <c-portal_-confirm-action 
+        message-map={entryValue.messageMap}
+        action-class={entryValue.actionClass}
+        callback-map={callback}
+        if:true={isConfirmAction}>
+    </c-portal_-confirm-action>
+
+    <template if:true={isExpandDataButton}>
+        <a class="expand-row" onclick={handleExpandDataClicked} 
+                              if:false={record.isShowExpandedData}>
+            {columnData.expandText}
+        </a>
+        <a class="expand-row expanded" onclick={handleExpandDataClicked} 
+                                       if:true={record.isShowExpandedData}>
+            {columnData.hideText}
+        </a>
+    </template>
+</template>

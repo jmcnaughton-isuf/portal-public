@@ -1,0 +1,37 @@
+<template>
+    <template if:true={_initDone}>
+        <template if:true={_isCheckbox}>
+            <div class="entry-form">
+                <fieldset>
+                    <div class="field-wrapper" if:true={isNewsletterCheckboxDisabled}>
+                        <p>N/A</p>
+                    </div>
+                    <div class="field-wrapper" if:false={isNewsletterCheckboxDisabled}>
+                        <input data-inputtype="radio" 
+                            type="checkbox" 
+                            name="general" 
+                            checked={_columnData} 
+                            class="radio" 
+                            oninput={handleCheckboxClick}>
+                    </div>
+                </fieldset>
+            </div>
+
+        </template>
+
+        <template if:true={_isText}>
+            <lightning-formatted-rich-text value={_columnData}></lightning-formatted-rich-text>
+        </template>
+
+        <template if:true={_isLeaveLink}>
+            <div class="entry-form">
+                <a onclick={handleLeaveClick}>Leave</a>
+            </div>
+        </template>
+        <template if:true={_isJoinLink}>
+            <div class="entry-form">
+                <a onclick={handleJoinClick}>Join</a>
+            </div>
+        </template>
+    </template>
+</template>

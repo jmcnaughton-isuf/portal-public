@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Display_On_Portal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If this field is checked, we will display the field on the front end portal page.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If this field is checked, we will display the field on the front end portal page.</inlineHelpText>
+    <label>Is Display On Portal</label>
+    <type>Checkbox</type>
+</CustomField>

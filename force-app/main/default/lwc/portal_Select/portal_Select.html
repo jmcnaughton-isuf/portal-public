@@ -1,0 +1,17 @@
+<template>
+    <label class={_labelClass} if:true={label}>
+        <abbr class="slds-required" title="required" if:true={required} style="float: left;">* </abbr>{label}
+    </label>
+    <!-- <i class="gg-chevron-down"></i> -->
+    <select class={classes} 
+            onchange={handleChange} 
+            name={inputName} 
+            disabled={disabled}
+            style={selectStyle}
+            required={required}>
+        <option value="" selected={hasNullOption} if:true={isShowNullOption}>--None--</option>
+        <template for:each={_optionList} for:item="option">
+            <option key={option.key} value={option.value} selected={option.isSelected}>{option.label}</option>
+        </template>
+    </select>
+</template>

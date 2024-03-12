@@ -1,0 +1,338 @@
+<apex:page controller="PORTAL_CyberSourceFormController" showHeader="false" sidebar="false"
+    lightningStyleSheets="true">
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <style type="text/css">
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:300;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Light.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:700;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Bold.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:400;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Regular.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:100;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Thin.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:900;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Black.ttf')}");
+        }
+
+        body {
+            background-color: transparent !important;
+        }
+
+        div,
+        input,
+        label,
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+            
+        .giving-card-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            bottom: 0;
+            padding-bottom: 20px;
+        }
+
+        .giving-card-buttons>button {
+            border: none;
+            background: #2574A9;
+            color: white;
+            font-size: 16px;
+            padding: 8px 25px;
+            border-radius: 5px;
+            transition: .25s all ease-in-out;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+        }
+
+        .giving-card-buttons>button:hover {
+            background-color: #1C577F;
+            transition: .25s all ease-in-out;
+        }
+
+        input, label {
+            margin: 0;
+            margin-bottom: 0 !important;
+        }
+    </style>
+
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Checkout</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+        </head>
+
+        <div class="form" style="text-align: left; padding-left: 1em; padding-right: 1em; width: 100%;">
+            <form style="margin-top: 20px">
+                <div class="form-group">
+                    <label for="full-name">Name</label>
+                    <div id="name-error" role="alert" style="color:red;"></div>
+                    <input id="full-name" class="form-control" name="full-name"></input>
+                </div>
+
+                <div class="form-group">
+                    <label id="bank-routing-number-label" for="bank-routing-number">Bank Routing Number</label>
+                    <div id="bank-routing-number-error" role="alert" style="color:red;"></div>
+                    <input id="bank-routing-number" class="form-control" name="bank-routing-number"/>
+                </div>
+                <div class="form-group">
+                    <label id="bank-account-number-label" for="bank-account-number">Bank Account Number</label>
+                    <div id="bank-account-number-error" role="alert" style="color:red;"></div>
+                    <input id="bank-account-number" class="form-control" name="bank-account-number"/>
+                </div>
+                <!-- This entire Account Type picklist is hidden OOB, remove style="display: none" to enable -->
+                <div id="bank-account-type-container" class="form-group col-md-6" style="display: none">
+                    <label for="bank-account-type">Account Type</label>
+                    <select id="bank-account-type" class="form-control" name="bank-account-type">
+                        <option value="C">Checking</option>
+                        <!-- Uncomment picklist values below if other account types are desired as payment methods -->
+                        <!-- <option value="S">Savings</option> -->
+                        <!-- <option value="X">Corporate Checking</option> -->
+                    </select>
+                </div>
+
+                <div class="form-group" style="text-align: left">
+                    <div id="authorization-text" style="font-size: 10px"></div>
+                    <div>
+                        <a href="http://www.firstdata.com/support/telecheck_returned_check/returned_check_fees.htm" target="_blank">
+                            View states' returned check fees
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{!termsAndConditionsUrl}" target="_blank">
+                            View terms and conditions
+                        </a>
+                    </div>
+                    <div style="margin: 10px 0; display: flex; align-items: center;">
+                        <input id="terms-checkbox" type="checkbox" class="radio" style="margin-top: 0 !important;"></input>
+                        <label style="margin-left: 4px;">I accept the terms and conditions</label>
+                    </div>
+                </div>
+
+                <div id="errors-output" role="alert" style="color:red;"></div>
+                <div class="giving-card-buttons">
+                    <button id="cancel-button" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 7px;">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Billing Details
+                    </button>
+                    <button id="pay-button" type="button">
+                        Give
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" style="margin-left: 7px;">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                    </button>
+                    <input type="hidden" id="flexresponse" name="flexresponse"></input>
+                </div>
+            </form>
+        </div>
+
+        <script type="application/javascript">
+            const lexOrigin = "{!lexOrigin}";
+
+            function handleErrors(paymentFields) {
+                let nameError = document.querySelector('#name-error');
+                let routingError = document.querySelector('#bank-routing-number-error');
+                let accountError = document.querySelector('#bank-account-number-error');
+                let errorsOutput = document.querySelector('#errors-output');
+
+                let numberOfErrors = 0;
+                if (!paymentFields?.fullName) {
+                    nameError.textContent = 'Name must be populated';
+                    numberOfErrors += 1;
+                } else {
+                    nameError.textContent = '';
+                }
+
+                if (!paymentFields?.bankRoutingNumber) {
+                    routingError.textContent = 'Routing number must be populated';
+                    numberOfErrors += 1;
+                } else {
+                    routingError.textContent = '';
+                }
+
+                if (!paymentFields?.bankAccountNumber) {
+                    accountError.textContent = 'Account number must be populated';
+                    numberOfErrors += 1;
+                } else {
+                    accountError.textContent = '';
+                }
+
+                if (numberOfErrors === 0) {
+                    errorsOutput.textContent = '';
+                } else if (numberOfErrors === 1) {
+                    errorsOutput.textContent = '1 field has an error.';
+                } else {
+                    errorsOutput.textContent = numberOfErrors + ' fields have an error.';
+                }
+
+                // Reuse the general error message div for missing terms and conditions acknowledgment and prioritize this message
+                if (!paymentFields?.termsAndConditions) {
+                    errorsOutput.textContent = 'Please accept the terms and conditions.';
+                    numberOfErrors += 1; 
+                }
+
+                return numberOfErrors !== 0;
+            }
+
+            const cancelButton = document.getElementById("cancel-button");
+            cancelButton.addEventListener('click', () => {
+                window.parent.postMessage({type:"previous"}, lexOrigin);
+            });
+
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                    let titleHeader = document.querySelector('h1');
+                    if (titleHeader) {
+                        titleHeader.textContent = 'Update';
+                    }
+
+                    let previousButton = document.querySelector('#cancel-button');
+                    if (previousButton) {
+                        previousButton.remove();
+                    }
+
+                    let submitButton = document.querySelector('#pay-button');
+                    if (submitButton) {
+                        submitButton.textContent = 'Update';
+                    }
+                }
+                else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                    const opts = eventData; 
+                    const displayOptions = opts.displayOptions;
+
+                    if (displayOptions) {
+                        // pre-populate name on form
+                        if (displayOptions.full_name) {
+                            document.getElementById("full-name").value = displayOptions.full_name;
+                        }
+                    }
+
+                    displayAuthorizationText(displayOptions?.giftType, displayOptions?.isSubscription, displayOptions?.full_name, '$' + displayOptions?.amount, displayOptions?.numberOfInstallments, displayOptions?.frequency?.toLowerCase(), 
+                                             displayOptions?.startDate ? (new Date(displayOptions.startDate + 'T00:00:00').toLocaleDateString('en-us', {day: "numeric", year: "numeric", month: "long"})) : undefined, 
+                                             displayOptions?.endDate ? (new Date(displayOptions.endDate + 'T00:00:00').toLocaleDateString('en-us', {day: "numeric", year: "numeric", month: "long"})) : undefined);
+
+                    let payButton = document.querySelector('#pay-button');
+                    payButton.addEventListener('click', function() {
+                        const paymentFields = {
+                            fullName: document.getElementById("full-name").value,
+                            bankRoutingNumber: document.getElementById("bank-routing-number").value,
+                            bankAccountNumber: document.getElementById("bank-account-number").value,
+                            bankAccountType: document.getElementById("bank-account-type")?.value || 'C', // default to Checking if for some reason the picklist is missing
+                            termsAndConditions: document.getElementById("terms-checkbox").checked,
+                            paymentMethodType: "ACH"
+                        };
+
+                        if (handleErrors(paymentFields)) {
+                            return;
+                        }
+                        
+                        window.parent.postMessage({
+                            type: "payment_method",
+                            token: "bank_account", // Payment/Cybersource backend require a non-null token, so this is easiest and matches the Spreedly VF page 
+                            additionalPaymentDataMap: paymentFields
+                        }, lexOrigin);                    
+                    });
+                }
+            });
+
+            /**
+             * giftType: string
+             * isSubscription: boolean
+             * name: string
+             * amount: string with currency symbol included
+             * numberOfInstallments: number, should be 0 if there are no installments
+             * frequency: string
+             * startDate: formatted string
+             * endDate: formatted string
+             */
+            function displayAuthorizationText(giftType, isSubscription, name, amount, numberOfInstallments, frequency, startDate, endDate) {
+                    let today = new Date().toLocaleDateString('en-us', {day: "numeric", year: "numeric", month: "long"});
+                    let nameText = name ? `, ${name},` : '';
+
+                    let accountTypePicklist = document.querySelector('#bank-account-type-container');
+                    let accountType = 'checking account';
+                    if (accountTypePicklist && accountTypePicklist.style.display !== 'none') {
+                        accountType = 'checking or savings account as indicated above';
+                    }
+
+                    let authorizationText = '';
+                    if (isSubscription) {
+                        paymentDescription = '';
+                        if (giftType === 'pledge') {
+                            paymentDescription = `${amount} divided into ${numberOfInstallments} ${frequency} payments beginning ${startDate}`;
+                        } else {
+                            paymentDescription = `my ${frequency} ${amount} payments beginning ${startDate}`;
+                            paymentDescription += (endDate ? ` and ending after ${endDate}` : '');
+                        }
+
+                        authorizationText = `Today, being ${today}, by entering my routing and account number above and clicking
+                        "Give", I${nameText} authorize ${paymentDescription} to be processed as electronic
+                        funds transfers (EFT) or drafts drawn from my ${accountType} 
+                        and, if necessary, electronic credits to my account to correct erroneous debits. I understand that
+                        my payment will process within 1-2 banking days. If any of my payments return unpaid, I authorize
+                        you or your service provider to collect the returned payment and my state's return item fee for
+                        each such payment by EFT(s) or draft(s) drawn from my account. Click the link below to view 
+                        states' returned item fees and, if applicable, costs. I understand that this authorization will
+                        remain in full force and effect until I notify you that I wish to revoke it and allowed you reasonable opportunity to act on my notice.
+                        PLEASE PRINT A COPY OF THIS PAGE FOR YOUR RECORDS. ALTERNATIVELY, CONTACT US TO LEARN HOW YOU CAN OBTAIN A COPY.`;
+                    } else {
+                        authorizationText = `Today, being ${today}, by entering my routing and account
+                        number above and clicking "Give", I${nameText} authorize my payment of ${amount} to
+                        be processed as an electronic funds transfer (EFT) or draft drawn from my ${accountType}
+                        and, if necessary, to have my account electronically credited to correct
+                        erroneous debits. I understand that my payment will be processed within 1-2 banking days. If the
+                        payment returns unpaid, I authorize you or your service provider to collect the payment and my
+                        state's return item fee and, if applicable, costs, by EFT(s) or draft(s) drawn from my account. Click
+                        the link below to view states' returned item fees and, if applicable, costs. I understand that this
+                        authorization will remain in full force and effect until I notify you that I wish to revoke it and allow you reasonable opportunity to act on my notice.
+                        PLEASE PRINT A COPY OF THIS PAGE FOR YOUR RECORDS. ALTERNATIVELY, CONTACT US TO LEARN HOW YOU CAN OBTAIN A COPY.`;
+                    }
+
+                    let authorizationDiv = document.querySelector('#authorization-text');
+                    if (authorizationDiv) {
+                        authorizationDiv.textContent = authorizationText;
+                    }
+            }
+
+            window.parent.postMessage({ type: "readyACH" }, lexOrigin);
+        </script>
+
+    </html>
+</apex:page>

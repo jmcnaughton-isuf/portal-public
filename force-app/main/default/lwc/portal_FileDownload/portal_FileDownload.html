@@ -1,0 +1,17 @@
+<template>
+    <div data-ascend-portal>
+        <div class="section-wrapper" if:true={isShowComponent}>
+            <div class="container large no-margin">
+                <div class="container">
+                    <lightning-spinner if:true={isShowSpinner} alternative-text="Loading" style="background: inherit; margin-bottom: 5px"></lightning-spinner>
+                    <c-portal_-table 
+                        if:true={isShowTable}
+                        title={title}
+                        records={records}
+                        column-mappings={columnMappings}>
+                    </c-portal_-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,27 @@
+.ticket-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+.ticket-table thead tr {
+    border-bottom: thin solid #dddddd;
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+.ticket-table th,
+.ticket-table td {
+    padding: 12px 15px;
+}
+
+.ticket-table tfoot {
+    font-weight: bold;
+    border-top: thin solid #dddddd;
+}
+
+.hide-on-phone p {
+    padding: 0.6rem;
+}

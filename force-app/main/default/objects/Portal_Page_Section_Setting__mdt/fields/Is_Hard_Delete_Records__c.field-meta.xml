@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Hard_Delete_Records__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tells us to delete the records if the user deletes them on the front end, instead of hiding them for historical data.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Tells us to delete the records if the user deletes them on the front end, instead of hiding them for historical data.</inlineHelpText>
+    <label>Is Hard Delete Records</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Form_Field__c</fullName>
+    <externalId>false</externalId>
+    <label>Custom Form Field</label>
+    <referenceTo>ucinn_portal_Custom_Form_Field__c</referenceTo>
+    <relationshipLabel>Registration Additional Info</relationshipLabel>
+    <relationshipName>ucinn_portal_Registration_Add_Infos</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

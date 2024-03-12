@@ -1,0 +1,35 @@
+header .menu .item.submenu-active span {
+    transform: rotate(180deg);
+}
+
+header {
+    z-index: 10002;
+}
+
+header .menu .item a {
+    font-family: 'Noah-Regular', sans-serif;
+}
+
+@media (min-width: 960px) {
+    header .has-submenu .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+        padding: 1em;
+        width: 100%;
+        text-align: left;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .25s all ease-in-out;
+    }
+    
+    header .submenu-active .submenu {
+        visibility: visible;
+        opacity: 1;
+        height: fit-content;
+        transition: .25s all ease-in-out;
+    }
+}

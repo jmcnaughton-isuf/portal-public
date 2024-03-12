@@ -1,0 +1,36 @@
+<template>
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container" if:true={sectionConfiguration.isDisplay}>
+            <div class="bottom-border">
+                <h2>{sectionConfiguration.label}</h2>
+                <a href="?mode=edit&tab=socialmedia" class="view-all-news button secondary small" style="top: 10px">Edit {sectionConfiguration.label}</a>
+            </div>
+                <div class="info-card">
+                    <div class="flex-grid-2">
+                        <div class="table-header">
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.isDisplay}>
+                                <p>{sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.label}</p>
+                            </div>
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaUrl.isDisplay}>
+                                <p>{sectionConfiguration.fieldConfigurationMap.socialMediaUrl.label}</p>
+                            </div>  
+                        </div>              
+                        <template for:each={recordList} for:item="socialMedia">
+                            <div class="table-row" key={socialMedia.Id}>
+                                <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.isDisplay}>
+                                    <h4>{sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.label}</h4>
+                                    <p>{socialMedia.socialMediaPlatform}</p>
+                                </div>
+                                <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaUrl.isDisplay}>
+                                    <h4>{sectionConfiguration.fieldConfigurationMap.socialMediaUrl.label}</h4>
+                                    <p>{socialMedia.socialMediaUrl}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            <div class="line-break"></div>  
+        </div>
+    </template>
+</template>

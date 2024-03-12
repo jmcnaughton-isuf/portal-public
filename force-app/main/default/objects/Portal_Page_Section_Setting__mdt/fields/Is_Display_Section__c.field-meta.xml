@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Display_Section__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field that controls the front end display of the section. If it is checked, the section will display on the front end. If it is unchecked, the section will not display on the front end.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Field that controls the front end display of the section. If it is checked, the section will display on the front end. If it is unchecked, the section will not display on the front end.</inlineHelpText>
+    <label>Is Display Section</label>
+    <type>Checkbox</type>
+</CustomField>

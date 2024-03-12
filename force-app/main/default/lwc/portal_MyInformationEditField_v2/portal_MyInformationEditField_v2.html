@@ -1,0 +1,37 @@
+<template>
+    <template if:false={isCheckbox}>
+        <label if:true={label}>{label}</label> 
+    </template>
+
+    <div class="labelled-toggle-switch" if:true={hasToggle}>
+        <span class="hide-input" style="margin-right: 4px">Hide</span>
+        <label class="switch">
+            <input type="checkbox" checked={toggleValue} onchange={updateToggleValue}>
+            <span class="slider round"></span>
+        </label>
+        <span class="show-input" style="margin-left: 4px">Show</span>
+    </div>
+
+    <div class="edit-entry-list" if:true={hasSelfReportLink}>
+        <a onclick={handleSelfReport} data-section-id={sectionId} data-field-id={fieldId}>
+            <span if:true={hasPreviousSelfReport}>Pending</span>
+            <span if:false={hasPreviousSelfReport}>Request Update</span>
+        </a>
+    </div>
+
+    <input lwc:if={isDate} type="date" value={value} onchange={handleChange} disabled={isDisabled} required={isRequired} min="1700-01-01" max="4000-12-31">
+
+    <fieldset lwc:elseif={isCheckbox}>
+        <div class="field-wrapper">
+            <input data-inputtype="radio" type="checkbox" class="radio" checked={value} onchange={handleChange} disabled={isDisabled} required={isRequired}>
+            <label if:true={label}>{label}</label>
+        </div>
+    </fieldset>
+
+    <c-portal_-lookup lwc:elseif={isLookup} input-value={value} handle-lookup-option-selected={handleLookupSelection} handle-change={handleLookupInput} clear-list={_isHideLookupOptions} display-setting-list={displaySettingList} custom-metadata-api-name={customMetadataApiName} disabled={isDisabled} required={isRequired}></c-portal_-lookup>
+
+    <c-portal_-select lwc:elseif={isPicklist} default-value={value} option-list={picklistValues} is-show-null-option={isNullOptionEnabled} handle-change={handleChange} disabled={isDisabled} required={isRequired} label-class="slds-form-element__label slds-no-flex"></c-portal_-select>
+
+    <lightning-input lwc:else type={inputType} value={value} onchange={handleChange} disabled={isDisabled} required={isRequired} variant="label-hidden"></lightning-input>
+
+</template>

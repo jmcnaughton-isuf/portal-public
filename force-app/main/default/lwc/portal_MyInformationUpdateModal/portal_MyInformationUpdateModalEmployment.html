@@ -1,0 +1,109 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"></lightning-spinner>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <h2 class="slds-modal__title slds-hyphenate">Request Update</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium">
+                <lightning-formatted-rich-text if:true={helperRichText} value={helperRichText}></lightning-formatted-rich-text>
+
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item if:true={informationMap.frontEndData.employer.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                    >
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employer.label}
+                            value={record.ucinn_ascendv2__Account__r.Name}
+                            is-toggled={informationMap.frontEndData.employer.toggle}
+                            is-disabled={informationMap.frontEndData.employer.disable}
+                            input-type="text"
+                            field-type="ucinn_ascendv2__Affiliation__c"
+                            field-name="ucinn_ascendv2__Account__r.Name"
+                            change-set-value=""
+                            toggle-value={record.Is_Show_Employer__c}
+                            toggle-field="Is_Show_Employer__c"
+                            is-lookup="true"
+                            display-setting-list={employmentDisplaySettingList}
+                            lookup-field="ucinn_ascendv2__Account__c"
+                            lookup-value={record.ucinn_ascendv2__Account__c}
+                            custom-metadata-api-name={informationMap.frontEndData.employer.customMetadataApiName}
+                        > </c-portal_-My-Information-Edit-Field>
+                        
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.jobTitle.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                    >
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.jobTitle.label}
+                            value={record.ucinn_ascendv2__Job_Title__c}
+                            is-toggled={informationMap.frontEndData.jobTitle.toggle}
+                            is-disabled={informationMap.frontEndData.jobTitle.disable}
+                            input-type="text"
+                            field-type="ucinn_ascendv2__Affiliation__c"
+                            field-name="ucinn_ascendv2__Job_Title__c"
+                            change-set-value=""
+                            toggle-value={record.Is_Show_Job_Title__c}
+                            toggle-field="Is_Show_Job_Title__c"
+                        > </c-portal_-My-Information-Edit-Field>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.employmentStartDate.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                    >
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employmentStartDate.label}
+                            value={record.ucinn_ascendv2__Start_Date__c}
+                            is-toggled={informationMap.frontEndData.employmentStartDate.toggle}
+                            is-disabled={informationMap.frontEndData.employmentStartDate.disable}
+                            input-type={informationMap.frontEndData.employmentStartDate.fieldType}
+                            field-type="ucinn_ascendv2__Affiliation__c"
+                            field-name="ucinn_ascendv2__Start_Date__c"
+                            change-set-value=""
+                        > </c-portal_-My-Information-Edit-Field>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.employmentEndDate.display}
+                        size="12"
+                        large-device-size="2"
+                        medium-device-size="2"
+                        small-device-size="2"
+                        class="layoutItem"
+                        >
+                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employmentEndDate.label}
+                                value={record.ucinn_ascendv2__End_Date__c}
+                                is-toggled={informationMap.frontEndData.employmentEndDate.toggle}
+                                is-disabled={informationMap.frontEndData.employmentEndDate.disable}
+                                input-type={informationMap.frontEndData.employmentEndDate.fieldType}
+                                field-type="ucinn_ascendv2__Affiliation__c"
+                                field-name="ucinn_ascendv2__End_Date__c"
+                                change-set-value=""
+                        > </c-portal_-My-Information-Edit-Field>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.employment.togglePerRecord}
+                        size="12"
+                        large-device-size="1"
+                        medium-device-size="1"
+                        small-device-size="1"
+                        class="layoutItem"
+                        >
+                        <lightning-input type="toggle" checked={record.Is_Show_On_Directory__c} message-toggle-active="Show" message-toggle-inactive="Hide" data-changesetvalue="" data-type="interim" onchange={updateDirectorySetting}></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+            </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    
+</template>

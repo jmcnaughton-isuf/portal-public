@@ -1,0 +1,429 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_isShowModal}>
+            <div class="slds-is-relative">
+                <div class="post-modal sf-modal" style="display: block">
+                    <div class="modal-background post-modal-background">
+                        <lightning-spinner if:true={_isShowModalSpinner} alternative-text="Loading" size="large"></lightning-spinner>
+
+                        <div class="modal" style="overflow-y: scroll">
+                            <div class="content-header-bar">
+                                <div class="slds-grid slds-wrap full-width">
+                                    <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                        <h2>{_jobModalText}</h2>
+                                    </div>
+                                    <div class=" slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                        <a onclick={handleCloseModal} class="close-btn">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="container">
+                                <c-portal_-create-job-posting job={_job} 
+                                    content-module-name={contentModuleName} 
+                                    content-page-name={contentPageName} 
+                                    page-name={pageName} 
+                                    main-section-name={mainSectionName} 
+                                    handle-close={handleCloseModal} 
+                                    handle-update-modal-spinner={handleUpdateModalSpinner}>
+                                </c-portal_-create-job-posting>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </template>
+
+        <template if:true={_isShowViewModal}>
+            <div class="view-modal">
+            <div class="modal-background view-modal-background">
+                <div class="modal">
+                    <div class="content-header-bar" style="margin-bottom: 0">
+                        <div class="slds-grid slds-wrap full-width">
+                            <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                <h2>Job Posting Details</h2>
+                            </div>
+                            <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                <a onclick={closeModal} class="close-btn">&times;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <c-portal_-job-listing-detail is-show-in-modal="true" record-id={_viewRecordId}></c-portal_-job-listing-detail>
+                    <div class="container large slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                        <div class="container slds-grid slds-wrap slds-grid_align-end">
+                            <div class="slds-m-bottom_small">
+                                <button class="button primary" onclick={closeModal}>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </template>
+
+        <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"> </lightning-spinner>
+
+        <template if:true={_isShowArchiveModal}>
+            <div class="archive-modal">
+                <div class="modal-background archive-modal-background">
+                    <div class="modal">
+                        <div class="content-header-bar" style="margin-bottom: 0">
+                            <div class="slds-grid slds-wrap full-width">
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                    <h2>Archive Job Application</h2>
+                                </div>
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                    <a class="close-btn" onclick={closeModal}>&times;</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <div class="bottom-border" style="padding: 2em 0 1em">
+                                <div class="content-wrapper" style="margin-bottom: 0">
+                                    <h4>Are you sure you wish to archive this job posting?</h4>
+                                </div>
+                            </div>
+                            <slot interop-layout_layout="" class="slds-slot">
+                                <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                                    <div class="slds-grid slds-wrap slds-grid_align-end">
+                                        <div class="button-list">
+                                            <button class="button secondary" onclick={closeModal}>Cancel</button>
+                                            <button class="button primary" onclick={archiveJob}>Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <div class="event-tabs tabs"> 
+            <div class="section-body-content">
+                <a onclick={openJobModal} class="submit-content button primary small">Post a Job</a>
+            </div>
+        
+            <lightning-tabset  role="tablist" if:true={_isShowComponent}>
+                <lightning-tab role="tablist" label={informationMap.frontEndData.openJobs.label} onactive={handleEqualHeight}>
+                    <p if:true={isShowNoOpenRecordsText} class="slds-align_absolute-center">
+                        {noResultsText}
+                    </p>
+                    <div if:false={isShowNoOpenRecordsText}>
+                        <div class="show-on-phone">
+                            <div class="registration-table">
+                                <div class="row bottom-border">
+                                    <div class="container">
+                                        <template for:each={_openVisibleData} for:item="job" for:index="index">
+                                            <h4 if:true={informationMap.frontEndData.companyName.display} key={job.Id}>
+                                                {informationMap.frontEndData.companyName.label}
+                                            </h4>
+                                            <p class="custom-overflow" key={job.Id} if:true={informationMap.frontEndData.companyName.display}><lightning-formatted-text value={job.Recruiting_Company__c} ></lightning-formatted-text></p>
+
+                                            <h4 if:true={informationMap.frontEndData.jobName.display} key={job.Id}>
+                                                {informationMap.frontEndData.jobName.label}
+                                            </h4>
+                                            <p class="custom-overflow" key={job.Id} if:true={informationMap.frontEndData.jobName.display}>{job.Name}</p>
+
+                                            <h4 if:true={informationMap.frontEndData.createdDate.display} key={job.Id}>
+                                                {informationMap.frontEndData.createdDate.label}
+                                            </h4>
+                                            <p key={job.Id} if:true={informationMap.frontEndData.createdDate.display}><lightning-formatted-date-time value={job.CreatedDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+
+                                            <h4 if:true={informationMap.frontEndData.expirationDate.display} key={job.Id}>
+                                                {informationMap.frontEndData.expirationDate.label}
+                                            </h4>
+                                            <p key={job.Id} if:true={informationMap.frontEndData.expirationDate.display}><lightning-formatted-date-time value={job.expirationDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+
+                                            <h4 if:true={informationMap.frontEndData.jobApplications.display} key={job.Id}>
+                                                {informationMap.frontEndData.jobApplications.label}
+                                            </h4>
+                                            <p key={job.Id}><a href={job.applicantsLink} if:true={job.showApplications}>View Applicants</a></p>
+
+                                            <h4 if:true={informationMap.frontEndData.viewCount.display} key={job.Id}>
+                                                {informationMap.frontEndData.viewCount.label}
+                                            </h4>
+                                            <p key={job.Id}><lightning-formatted-number value={job.View_Count__c} if:true={job.View_Count__c}></lightning-formatted-number></p>
+                                            <p key={job.Id}><lightning-formatted-number value="0" if:false={job.View_Count__c}></lightning-formatted-number></p>
+
+                                            <h4 if:true={informationMap.frontEndData.status.display} key={job.Id}>
+                                                {informationMap.frontEndData.status.label}
+                                            </h4>
+                                            <p key={job.Id} if:true={informationMap.frontEndData.status.display}><lightning-formatted-text value={job.Status__c}></lightning-formatted-text></p>
+
+                                            <div class="button-list" key={job.Id}>
+                                                <a class="button small secondary full-mobile" onclick={handleJobAction} data-type="view" data-index={index} data-id={job.Id} data-status="Open">View</a>
+                                                <a class="button small secondary full-mobile" onclick={handleJobAction} data-type="archive" data-index={index} data-id={job.Id} data-status="Open">Archive</a>
+                                                <a class="button small secondary full-mobile" onclick={handleJobAction} data-type="edit" data-index={index} data-id={job.Id} data-status="Open">Edit</a>
+                                                <a class="button small secondary full-mobile" onclick={handleJobAction} data-type="clone" data-index={index} data-id={job.Id} data-status="Open">Clone</a>
+                                            </div>
+                                        </template>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide-on-phone">
+                            <div class="registration-table" style="overflow-x: auto;">
+                                <div class="column" if:true={informationMap.frontEndData.companyName.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.companyName.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.companyName.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-text value={job.Recruiting_Company__c}></lightning-formatted-text></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.jobName.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.jobName.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.jobName.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-text value={job.Name}></lightning-formatted-text></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.createdDate.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.createdDate.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.createdDate.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-date-time value={job.CreatedDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.expirationDate.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.expirationDate.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.expirationDate.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-date-time value={job.Expiration_Date__c} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.jobApplications.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.jobApplications.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.jobApplications.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><a href={job.applicantsLink} if:true={job.showApplications}>View Applicants</a></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.viewCount.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.viewCount.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.viewCount.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-number value={job.View_Count__c} if:true={job.View_Count__c}></lightning-formatted-number></p>
+                                            <p><lightning-formatted-number value="0" if:false={job.View_Count__c}></lightning-formatted-number></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.status.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.status.label}</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.status.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-text value={job.Status__c}></lightning-formatted-text></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column name">
+                                    <div class="headerEqualHeight">
+                                        <p>&nbsp;</p>
+                                    </div>
+                                    <template for:each={_openVisibleData} for:item="job" for:index="index">
+                                        <div class="equalHeight" key={job.Id} data-index={index} style="padding-top: 0; max-width: none;">
+                                            <div class="button-list" style="padding-top: 0.3em !important; padding-bottom: 0 !important; position: relative;">
+                                                <a class="button small secondary" onclick={handleJobAction} data-type="view" data-index={index} data-id={job.Id} data-status="Open">View</a>
+                                                <a class="button small secondary" onclick={handleJobAction} data-type="archive" data-index={index} data-id={job.Id} data-status="Open">Archive</a>
+                                                <a class="button small secondary" onclick={handleJobAction} data-type="edit" data-index={index} data-id={job.Id} data-status="Open">Edit</a>
+                                                <a class="button small secondary" onclick={handleJobAction} data-type="clone" data-index={index} data-id={job.Id} data-status="Open">Clone</a>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <div if:true={hasOpenRecords}>
+                            <c-portal_util_-pagination
+                                records-per-page={recordsPerPage}
+                                queried-data={_openJobPostingList}
+                                current-page-number={openCurrentPage}
+                                query-more={handleQueryOpenMore}
+                                handle-page-change={handleOpenPageChange}
+                                total-number-of-items={openTotalItems}
+                            ></c-portal_util_-pagination>
+                        </div>
+                    </div>
+                </lightning-tab>
+                <lightning-tab role="tablist" label={informationMap.frontEndData.closedJobs.label} onactive={handleEqualHeight}>
+                    <p if:true={isShowNoClosedRecordsText} class="slds-align_absolute-center">
+                        {noResultsText}
+                    </p>
+                    <div if:false={isShowNoClosedRecordsText}>
+                        <div class="show-on-phone">
+                            <div class="registration-table">
+                                <div class="row bottom-border">
+                                    <div class="container">
+                                        <template for:each={_closedVisibleData} for:item="job" for:index="index">
+                                            <h4 if:true={informationMap.frontEndData.closedCompanyName.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedCompanyName.label}
+                                            </h4>
+                                            <p class="custom-overflow" key={job.Id} if:true={informationMap.frontEndData.closedCompanyName.display}><lightning-formatted-text value={job.Recruiting_Company__c} ></lightning-formatted-text></p>
+
+                                            <h4 if:true={informationMap.frontEndData.closedJobName.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedJobName.label}
+                                            </h4>
+                                            <p class="custom-overflow" key={job.Id} if:true={informationMap.frontEndData.closedJobName.display}>{job.Name}</p>
+
+                                            <h4 if:true={informationMap.frontEndData.closedCreatedDate.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedCreatedDate.label}
+                                            </h4>
+                                            <p key={job.Id} if:true={informationMap.frontEndData.closedCreatedDate.display}><lightning-formatted-date-time value={job.CreatedDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+
+                                            <h4 if:true={informationMap.frontEndData.closedExpirationDate.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedExpirationDate.label}
+                                            </h4>
+                                            <p key={job.Id} if:true={informationMap.frontEndData.closedExpirationDate.display}><lightning-formatted-date-time value={job.expirationDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+
+                                            <h4 if:true={informationMap.frontEndData.closedJobApplications.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedJobApplications.label}
+                                            </h4>
+                                            <p key={job.Id}><a href={job.applicantsLink} if:true={job.showApplications}>View Applicants</a></p>
+
+                                            <h4 if:true={informationMap.frontEndData.closedViewCount.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedViewCount.label}
+                                            </h4>
+                                            <p key={job.Id}><lightning-formatted-number value={job.View_Count__c} if:true={job.View_Count__c}></lightning-formatted-number></p>
+                                            <p key={job.Id}><lightning-formatted-number value="0" if:false={job.View_Count__c}></lightning-formatted-number></p>
+
+                                            <h4 if:true={informationMap.frontEndData.closedStatus.display} key={job.Id}>
+                                                {informationMap.frontEndData.closedStatus.label}
+                                            </h4>
+                                            <p key={job.Id} if:true={informationMap.frontEndData.closedStatus.display}><lightning-formatted-text value={job.Status__c}></lightning-formatted-text></p>
+
+                                            <div class="button-list" key={job.Id}>
+                                                <a class="button small secondary full-mobile" onclick={handleJobAction} data-type="view" data-index={index} data-id={job.Id} data-status="Closed">View</a>
+                                                <a class="button small secondary full-mobile" onclick={handleJobAction} data-type="clone" data-index={index} data-id={job.Id} data-status="Closed">Clone</a>
+                                            </div>
+                                        </template>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide-on-phone">
+                            <div class="registration-table" style="overflow-x: auto">
+                                <div class="column" if:true={informationMap.frontEndData.closedCompanyName.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedCompanyName.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedCompanyName.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-text value={job.Recruiting_Company__c}></lightning-formatted-text></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.closedJobName.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedJobName.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedJobName.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-text value={job.Name}></lightning-formatted-text></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.closedCreatedDate.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedCreatedDate.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedCreatedDate.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-date-time value={job.CreatedDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.closedExpirationDate.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedExpirationDate.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedExpirationDate.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-date-time value={job.Expiration_Date__c} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.closedJobApplications.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedJobApplications.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedJobApplications.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><a href={job.applicantsLink} if:true={job.showApplications}>View Applicants</a></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.closedViewCount.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedViewCount.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedViewCount.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index}>
+                                            <p><lightning-formatted-number value={job.View_Count__c} if:true={job.View_Count__c}></lightning-formatted-number></p>
+                                            <p><lightning-formatted-number value="0" if:false={job.View_Count__c}></lightning-formatted-number></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column" if:true={informationMap.frontEndData.closedStatus.display}>
+                                    <div class="headerEqualHeight">
+                                        <p>{informationMap.frontEndData.closedStatus.label}</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index" if:true={informationMap.frontEndData.closedStatus.display}>
+                                        <div class="equalHeight" key={job.Id} data-index={index} >
+                                            <p><lightning-formatted-text value={job.Status__c}></lightning-formatted-text></p>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="column name" style="min-width: 140px;">
+                                    <div class="headerEqualHeight">
+                                        <p>&nbsp;</p>
+                                    </div>
+                                    <template for:each={_closedVisibleData} for:item="job" for:index="index">
+                                        <div class="equalHeight" key={job.Id} data-index={index} style="padding-top: 0;">
+                                            <div class="button-list" style="padding-top: 0.3em !important; padding-bottom: 0 !important; position: relative;">
+                                                <a class="button small secondary" onclick={handleJobAction} data-type="view" data-index={index} data-id={job.Id} data-status="Closed">View</a>
+                                                <a class="button small secondary" onclick={handleJobAction} data-type="clone" data-index={index} data-id={job.Id} data-status="Closed">Clone</a>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <div if:true={hasClosedRecords}>
+                            <c-portal_util_-pagination
+                                records-per-page={recordsPerPage}
+                                queried-data={_closedJobPostingList}
+                                current-page-number={closedCurrentPage}
+                                query-more={handleQueryClosedMore}
+                                handle-page-change={handleClosedPageChange}
+                                total-number-of-items={closedTotalItems}
+                            ></c-portal_util_-pagination>
+                        </div>
+                    </div>
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+    </div>
+</template>

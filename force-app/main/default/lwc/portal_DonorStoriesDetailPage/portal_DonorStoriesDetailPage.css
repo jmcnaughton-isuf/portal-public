@@ -1,0 +1,7 @@
+.donor-story-detail {
+    text-align: center;
+}
+
+.donor-story-detail > * {
+    margin-bottom: 10px;
+}

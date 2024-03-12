@@ -1,0 +1,27 @@
+.method-selection-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.method-selection-container > button {
+    border: 1px solid var(--lwc-brandAccessible);
+    color: var(--lwc-brandAccessible);
+    background: white;
+    transition: .25s all ease-in-out;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.method-selection-container > button:first-of-type {
+    border-radius: 6px 0 0 6px;
+}
+
+.method-selection-container > button:last-of-type {
+    border-radius: 0 6px 6px 0;
+}
+
+.method-selection-container > button.active {
+    background-color: var(--lwc-brandAccessible);
+    color: white;
+}

@@ -1,0 +1,29 @@
+<template>
+    <div data-ascend-portal>
+        <div class="large center icon-block" if:true={_contentModuleMetadata}>
+            <div class="container large">
+                <div class="section-wrapper">
+                    <div class="container" style="margin-bottom: 2.2em;">
+                        <h2 style="margin-bottom: .75em;">{_contentModuleMetadata.heading}</h2>
+                        <p class="lead">{_contentModuleMetadata.subHeading}</p>
+                    </div>
+                    <div class={listClass}>
+                        <template for:each={_contentModuleMetadata.icons} for:item="icon">
+                            <div class="list-item equalHeight card show" style={iconSize} key={icon.label}>
+                                <div class="container">
+                                    <div class="image">
+                                        <img src={icon.imageUrl}>
+                                    </div>
+                                    <div class="copy" if:true={icon.label}>
+                                        <h4>{icon.label}</h4>
+                                    </div>
+                                    <a href={icon.link} class="button primary full-width" if:true={icon.buttonLabel}>{icon.buttonLabel}</a>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

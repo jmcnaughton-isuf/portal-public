@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="componentLabel" label="Section Label" type="String"/>
+            <property name="pageListString" label="Page List" type="String"/>
+            <property name="pageSectionName" label="Page Section Setting Name" type="String"/>
+            <property name="baseButtonColor" label="Base Button Color" type="Color"/>
+            <property name="textColor" label="Text Color" type="Color"/>
+            <property name="externalGatewayName" label="Online Giving Gateway Name" type="String" description="If using spreedly, match this with the name of the desired gateway from ucinn_ascendv2__Spreedly_Gateway__c custom setting record."/>
+            <property name="paymentMethod" label="Online Giving Payment Method" datasource="Stripe,Stripe Payment Element,Cybersource,Spreedly,TouchNet" type="String"/>
+            <property name="emailTemplateName" label="Online Giving Email Template Name" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

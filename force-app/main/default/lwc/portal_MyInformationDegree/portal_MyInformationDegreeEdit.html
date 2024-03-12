@@ -1,0 +1,465 @@
+<template>
+    <div data-ascend-portal>
+        <c-portal-_-my-information-update-modal if:true={_openModal}
+            information-map={informationMap}
+            update-type={_modalUpdateType}
+            record={_modalRecord}
+            sobject-name={_modalSObjectName}
+            record-type-name={_modalRecordTypeName}
+            handle-close={handleCloseModal}
+            master-degree-id={_modalMasterDegreeId}
+            record-to-update-id={_recordToUpdateId}
+        ></c-portal-_-my-information-update-modal>
+
+        <div class="container bottom-border">
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li style="list-style-type: none;"><a href="my-information">Back to My Information</a></li>
+                </ul>
+            </div>
+            <h2 style="margin-bottom: .5em">Degree Information</h2>
+            <template if:true={informationMap.frontEndData.schoolDegrees.display}>
+                <h3>{informationMap.frontEndData.schoolDegrees.label}</h3>
+                <template for:each={_interimSchoolDegrees} for:item="degree" for:index="index">
+                    <template if:false={degree.isHide}>
+                        <div class="entry-heading" key={degree.index}>
+                            <div class="edit-entry-list">
+                                <template if:true={informationMap.frontEndData.schoolDegrees.reportUpdateLink}>
+                                    <a onclick={pendingClick} data-index={index} data-type="schoolDegree" data-section="interimSchoolDegree" data-sobjectname="schoolDegreesSelfReport" data-recordtype="School_Degree_Information" if:true={degree.hasMaster}>Pending</a>
+                                    <a class="" onclick={reportUpdate} data-index={index} data-type="schoolDegree" data-sobjectname="schoolDegreesSelfReport" data-section="interimSchoolDegree" data-recordtype="School_Degree_Information"  if:false={degree.hasMaster}>Request Update</a>
+                                </template>
+                                <template if:false={informationMap.frontEndData.schoolDegrees.disable}> 
+                                    <template if:false={informationMap.frontEndData.schoolDegrees.reportUpdateLink}>
+                                        <a onclick={deleteDegree} data-type="interimSchoolDegree" data-index={index}><img src={deleteIcon}>Delete</a>
+                                    </template>
+                                </template>
+                            </div>
+                            <div class="entry-form">
+                                <div class="flex-grid-2">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeDegree.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeDegree.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeDegree}
+                                            is-picklist="true"
+                                            picklist-values={informationMap.picklists.schoolDegreeDegree}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeDegree.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeDegree.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeDegree.fieldType}
+                                            field-name="schoolDegreeDegree"
+                                            toggle-value={degree.isShowDegree}
+                                            toggle-field="isShowDegree"
+                                            change-set-value="School_Degree_Information"
+                                            field-type="interimSchoolDegree"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeYear.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeYear.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeYear}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeYear.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeYear.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeYear.fieldType}
+                                            toggle-value={degree.isShowYear}
+                                            field-name="schoolDegreeYear"
+                                            toggle-field="isShowYear"
+                                            field-type="interimSchoolDegree"
+                                            change-set-value="School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeMajor.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeMajor.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeMajor}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeMajor.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeMajor.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeMajor.fieldType}
+                                            toggle-value={degree.isShowMajor}
+                                            toggle-field="isShowMajor"
+                                            field-type="interimSchoolDegree"
+                                            change-set-value="School_Degree_Information"
+                                            index={index}
+                                            field-name="postCode"
+                                            is-lookup="true"
+                                            display-setting-list={majorDisplaySettingList} 
+                                            lookup-field="postCode"
+                                            lookup-value={degree.postCode}
+                                            handle-toggle-change={handleToggleUpdate}
+                                            custom-metadata-api-name={informationMap.frontEndData.schoolDegreeMajor.customMetadataApiName}
+                                            handle-lookup-additional-info={handleLookupAdditionalInformation}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeMinor.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeMinor.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeMinor}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeMinor.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeMinor.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeMinor.fieldType}
+                                            toggle-value={degree.isShowMinor}
+                                            toggle-field="isShowMinor"
+                                            field-type="interimSchoolDegree"
+                                            change-set-value="School_Degree_Information"
+                                            index={index}
+                                            field-name="schoolDegreeMinor"
+                                            is-lookup="true"
+                                            display-setting-list={minorDisplaySettingList} 
+                                            lookup-field="minorCode"
+                                            lookup-value={degree.minorCode}
+                                            handle-toggle-change={handleToggleUpdate}
+                                            custom-metadata-api-name={informationMap.frontEndData.schoolDegreeMinor.customMetadataApiName}
+                                            handle-lookup-additional-info={handleLookupAdditionalInformation}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeAcademicOrg.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeAcademicOrg}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeAcademicOrg.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeAcademicOrg.disable}
+                                        ></c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+                <template for:each={_informationMap.records.Degrees.School_Degree_Information} for:item="degree" for:index="index">
+                    <template if:false={degree.isHide}>
+                        <div class="entry-heading" key={degree.index}>
+                            <div class="edit-entry-list">
+                                <template if:true={informationMap.frontEndData.schoolDegrees.reportUpdateLink}>
+                                    <a onclick={pendingClick} data-index={index} data-type="schoolDegree" data-section="School_Degree_Information" data-sobjectname="schoolDegreesSelfReport" data-recordtype="School_Degree_Information" if:true={degree.hasMaster}>Pending</a>
+                                    <a class="" onclick={reportUpdate} data-index={index} data-type="schoolDegree" data-sobjectname="schoolDegreesSelfReport" data-section="School_Degree_Information" data-recordtype="School_Degree_Information"  if:false={degree.hasMaster}>Request Update</a>
+                                </template>
+                                <template if:false={informationMap.frontEndData.schoolDegrees.disable}> 
+                                    <template if:false={informationMap.frontEndData.schoolDegrees.reportUpdateLink}>
+                                        <a onclick={deleteDegree} data-type="schoolDegree" data-index={index}><img src={deleteIcon}>Delete</a>
+                                    </template>
+                                </template>
+                            </div>
+                            <div class="entry-form">
+                                <div class="flex-grid-2">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeDegree.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeDegree.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeDegree}
+                                            is-picklist="true"
+                                            picklist-values={informationMap.picklists.schoolDegreeDegree}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeDegree.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeDegree.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeDegree.fieldType}
+                                            field-name="schoolDegreeDegree"
+                                            toggle-value={degree.isShowDegree}
+                                            toggle-field="isShowDegree"
+                                            change-set-value="School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            field-type="School_Degree_Information"
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeYear.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeYear.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeYear}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeYear.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeYear.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeYear.fieldType}
+                                            toggle-value={degree.isShowYear}
+                                            field-name="schoolDegreeYear"
+                                            toggle-field="isShowYear"
+                                            field-type="School_Degree_Information"
+                                            change-set-value="School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeMajor.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeMajor.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeMajor}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeMajor.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeMajor.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeMajor.fieldType}
+                                            toggle-value={degree.isShowMajor}
+                                            toggle-field="isShowMajor"
+                                            field-type="School_Degree_Information"
+                                            change-set-value="School_Degree_Information"
+                                            index={index}
+                                            field-name="postCode"
+                                            is-lookup="true"
+                                            display-setting-list={majorDisplaySettingList} 
+                                            lookup-field="postCode"
+                                            lookup-value={degree.postCode}
+                                            handle-toggle-change={handleToggleUpdate}
+                                            custom-metadata-api-name={informationMap.frontEndData.schoolDegreeMajor.customMetadataApiName}
+                                            handle-lookup-additional-info={handleLookupAdditionalInformation}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeMinor.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeMinor.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeMinor}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeMinor.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeMinor.disable}
+                                            input-type={informationMap.frontEndData.schoolDegreeMinor.fieldType}
+                                            toggle-value={degree.isShowMinor}
+                                            toggle-field="isShowMinor"
+                                            field-type="School_Degree_Information"
+                                            change-set-value="School_Degree_Information"
+                                            index={index}
+                                            field-name="schoolDegreeMinor"
+                                            is-lookup="true"
+                                            display-setting-list={minorDisplaySettingList} 
+                                            lookup-field="minorCode"
+                                            lookup-value={degree.minorCode}
+                                            handle-toggle-change={handleToggleUpdate}
+                                            custom-metadata-api-name={informationMap.frontEndData.schoolDegreeMinor.customMetadataApiName}
+                                            handle-lookup-additional-info={handleLookupAdditionalInformation}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.schoolDegreeAcademicOrg.display}>
+                                        <label for="name">{informationMap.frontEndData.schoolDegreeAcademicOrg.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.schoolDegreeAcademicOrg}
+                                            is-toggled={informationMap.frontEndData.schoolDegreeAcademicOrg.toggle}
+                                            is-disabled={informationMap.frontEndData.schoolDegreeAcademicOrg.disable}
+                                        ></c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <div class="button-list">
+                    <a class="button secondary small" onclick={addSchoolDegree} if:false={informationMap.frontEndData.schoolDegrees.reportUpdateLink}>Add Degree</a>
+                </div>
+            </template>
+        </div>
+
+        <div class="line-break"></div>
+        <div class="container bottom-border">
+            <template if:true={informationMap.frontEndData.nonSchoolDegrees.display}>
+                <h3>{informationMap.frontEndData.nonSchoolDegrees.label}</h3>
+                <template for:each={_interimDegrees} for:item="degree" for:index="index">
+                    <template if:false={degree.isHide}>
+                        <div class="entry-heading" key={degree.index}>
+                            <div class="edit-entry-list">
+                                <template if:true={informationMap.frontEndData.nonSchoolDegrees.reportUpdateLink}>
+                                    <a onclick={pendingClick} data-index={index} data-type="nonSchoolDegree" data-section="interimDegree" data-sobjectname="nonSchoolDegreesSelfReport" data-recordtype="Non_School_Degree_Information" if:true={degree.hasMaster}>Pending</a>
+                                    <a onclick={reportUpdate} data-index={index} data-type="nonSchoolDegree" data-section="interimDegree" data-sobjectname="nonSchoolDegreesSelfReport" data-recordtype="Non_School_Degree_Information" if:false={degree.hasMaster}>Request Update</a>
+                                </template>
+                                <template if:false={informationMap.frontEndData.nonSchoolDegrees.disable}> 
+                                    <template if:false={informationMap.frontEndData.nonSchoolDegrees.reportUpdateLink}>
+                                        <a onclick={deleteDegree} data-type="interimSchoolDegree" data-index={index}><img src={deleteIcon}>Delete</a>
+                                    </template>
+                                </template>
+                            </div>
+                            <div class="entry-form">
+                                <div class="flex-grid-2">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeInstitution.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeInstitution}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeInstitution.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeInstitution.disable}
+                                            is-required={informationMap.frontEndData.nonSchoolDegreeInstitution.isRequired}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeInstitution.fieldType}
+                                            field-name="nonSchoolDegreeInstitution"
+                                            toggle-value={degree.isShowInstitution}
+                                            toggle-field="isShowInstitution"
+                                            index={index}
+                                            field-type="interimDegree"
+                                            change-set-value="Non_School_Degree_Information"
+                                            display-setting-list={nonSchoolDegreeInstitutionDisplaySettingList}
+                                            custom-metadata-api-name={informationMap.frontEndData.nonSchoolDegreeInstitution.customMetadataApiName}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeDegree.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeDegree}
+                                            is-picklist="true"
+                                            picklist-values={informationMap.picklists.nonSchoolDegreeDegree}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeDegree.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeDegree.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeDegree.fieldType}
+                                            field-name="nonSchoolDegreeDegree"
+                                            toggle-value={degree.isShowDegree}
+                                            toggle-field="isShowDegree"
+                                            field-type="interimDegree"
+                                            change-set-value="Non_School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeYear.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeYear}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeYear.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeYear.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeYear.fieldType}
+                                            field-name="nonSchoolDegreeYear"
+                                            toggle-value={degree.isShowYear}
+                                            toggle-field="isShowYear"
+                                            field-type="interimDegree"
+                                            change-set-value="Non_School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeMajor.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeMajor}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeMajor.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeMajor.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeMajor.fieldType}
+                                            field-name="nonSchoolDegreeMajor"
+                                            toggle-value={degree.isShowMajor}
+                                            toggle-field="isShowMajor"
+                                            field-type="interimDegree"
+                                            change-set-value="Non_School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegrees.fieldMap.isShowOnDirectory.display}>
+                                        <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegrees.togglePerRecord}>
+                                            <fieldset>
+                                                <div class="field-wrapper">
+                                                    <input type="checkbox" 
+                                                        class="radio" 
+                                                        checked={degree.isShowOnDirectory} 
+                                                        data-changesetvalue="Non_School_Degree_Information"
+                                                        data-type="interim" 
+                                                        data-index={index}
+                                                        oninput={updateDirectorySetting}>
+                                                    <label for="">{informationMap.frontEndData.nonSchoolDegrees.fieldMap.isShowOnDirectory.label}</label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+                <template for:each={_informationMap.records.Degrees.Non_School_Degree_Information} for:item="degree" for:index="index">
+                    <template if:false={degree.isHide}>
+                        <div class="entry-heading" key={degree.index}>
+                            <div class="edit-entry-list">
+                                <template if:true={informationMap.frontEndData.nonSchoolDegrees.reportUpdateLink}>
+                                    <a onclick={pendingClick} data-index={index} data-type="nonSchoolDegree" data-section="Non_School_Degree_Information" data-sobjectname="nonSchoolDegreesSelfReport" data-recordtype="Non_School_Degree_Information" if:true={degree.hasMaster}>Pending</a>
+                                    <a onclick={reportUpdate} data-index={index} data-type="nonSchoolDegree" data-section="Non_School_Degree_Information" data-sobjectname="nonSchoolDegreesSelfReport" data-recordtype="Non_School_Degree_Information" if:false={degree.hasMaster}>Request Update</a>
+                                </template>
+                                <template if:false={informationMap.frontEndData.nonSchoolDegrees.disable}> 
+                                    <template if:false={informationMap.frontEndData.nonSchoolDegrees.reportUpdateLink}>
+                                        <a onclick={deleteDegree} data-type="degree" data-index={index}><img src={deleteIcon}>Delete</a>
+                                    </template>
+                                </template>
+                            </div>
+                            <div class="entry-form">
+                                <div class="flex-grid-2">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeInstitution.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeInstitution.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeInstitution}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeInstitution.toggle}
+                                            is-required={informationMap.frontEndData.nonSchoolDegreeInstitution.isRequired}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeInstitution.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeInstitution.fieldType}
+                                            field-name="nonSchoolDegreeInstitution"
+                                            toggle-value={degree.isShowInstitution}
+                                            toggle-field="isShowInstitution"
+                                            index={index}
+                                            field-type="Non_School_Degree_Information"
+                                            change-set-value="Non_School_Degree_Information"
+                                            display-setting-list={nonSchoolDegreeInstitutionDisplaySettingList}
+                                            custom-metadata-api-name={informationMap.frontEndData.nonSchoolDegreeInstitution.customMetadataApiName}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeDegree.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeDegree.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeDegree}
+                                            is-picklist="true"
+                                            picklist-values={informationMap.picklists.nonSchoolDegreeDegree}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeDegree.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeDegree.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeDegree.fieldType}
+                                            field-name="nonSchoolDegreeDegree"
+                                            toggle-value={degree.isShowDegree}
+                                            toggle-field="isShowDegree"
+                                            field-type="Non_School_Degree_Information"
+                                            change-set-value="Non_School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeYear.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeYear.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeYear}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeYear.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeYear.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeYear.fieldType}
+                                            field-name="nonSchoolDegreeYear"
+                                            toggle-value={degree.isShowYear}
+                                            toggle-field="isShowYear"
+                                            field-type="Non_School_Degree_Information"
+                                            change-set-value="Non_School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegreeMajor.display}>
+                                        <label for="name">{informationMap.frontEndData.nonSchoolDegreeMajor.label}</label>
+                                        <c-portal_-My-Information-Edit-Field label=""
+                                            value={degree.nonSchoolDegreeMajor}
+                                            is-toggled={informationMap.frontEndData.nonSchoolDegreeMajor.toggle}
+                                            is-disabled={informationMap.frontEndData.nonSchoolDegreeMajor.disable}
+                                            input-type={informationMap.frontEndData.nonSchoolDegreeMajor.fieldType}
+                                            field-name="nonSchoolDegreeMajor"
+                                            toggle-value={degree.isShowMajor}
+                                            toggle-field="isShowMajor"
+                                            field-type="Non_School_Degree_Information"
+                                            change-set-value="Non_School_Degree_Information"
+                                            handle-toggle-change={handleToggleUpdate}
+                                            index={index}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <template if:true={informationMap.frontEndData.nonSchoolDegrees.fieldMap.isShowOnDirectory.display}>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.nonSchoolDegrees.togglePerRecord}>
+                                        <fieldset>
+                                            <div class="field-wrapper">
+                                                <input type="checkbox" 
+                                                    class="radio" 
+                                                    checked={degree.isShowOnDirectory} 
+                                                    data-changesetvalue="Non_School_Degree_Information"
+                                                    data-type="degree" 
+                                                    data-index={index}
+                                                    oninput={updateDirectorySetting}>
+                                                <label for="">{informationMap.frontEndData.nonSchoolDegrees.fieldMap.isShowOnDirectory.label}</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <div class="button-list" if:false={informationMap.frontEndData.nonSchoolDegrees.disable}>
+                    <a class="button secondary small" onclick={addDegree} if:false={informationMap.frontEndData.nonSchoolDegrees.reportUpdateLink}>Add Degree</a>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

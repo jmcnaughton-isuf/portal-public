@@ -1,0 +1,112 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"> </lightning-spinner>
+        <template if:true={_isDisplayTable}>
+            <div class="section-wrapper"> 
+                <div class="show-on-phone">
+                    <div class="registration-table">
+                        <div class="row bottom-border">
+                            <div class="container" style="padding: 0px;">
+                                <div class="entry-form">
+                                    <h2 style="margin-bottom: .5em" if:true={_tableTitle}>{_tableTitle}</h2>
+                                    <div class="equalHeight">
+                                        <div class="entry-form">
+                                            <div class="flex-grid-2 bottom-border">
+                                                <template if:true={showExcessZones}>
+                                                    <div class="grid-item single" if:true={isEditTable}>
+                                                        <h4>{joinZoneSectionText}</h4>
+                                                        <c-portal_-select
+                                                                is-show-null-option="true"
+                                                                option-list={_availableZonesToJoinPicklist} 
+                                                                handle-change={handleAddZoneMembership}>
+                                                        </c-portal_-select>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <lightning-helptext content={_helpText}></lightning-helptext> -->
+                                    <div style="padding-bottom: 0.5em">{_helpText}</div>
+                                    <template for:each={_zoneMembershipRecords} for:item="zoneMembership" for:index="zoneMembershipIndex">
+                                        <div key={zoneMembership.key}>
+                                            <hr if:true={zoneMembershipIndex}>
+                                            <template for:each={_columnTitlesList} for:item="column" for:index="columnIndex">
+                                                <h4 key={column.label}><b>{column.label}</b></h4>
+                                                <p key={column.label}>
+                                                    <c-portal_-zone-membership-table-entry
+                                                        zone-membership-record={zoneMembership}
+                                                        index={zoneMembershipIndex}
+                                                        column={column}
+                                                        is-edit-table={isEditTable}
+                                                        is-newsletter-field-disabled={isNewsletterFieldDisabled}
+                                                        handle-join-zone-membership={handleJoinZoneMembership}
+                                                        handle-leave-zone-membership={handleLeaveZoneMembership}
+                                                        handle-checkbox-change={handleCheckboxChange}>
+                                                    </c-portal_-zone-membership-table-entry>
+                                                </p>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hide-on-phone">
+                    <div class="container">
+                        <h2 style="margin-bottom: .5em" if:true={_tableTitle}>{_tableTitle}</h2>
+                        <div class="equalHeight">
+                            <div class="entry-form">
+                                <div class="flex-grid-2 bottom-border">
+                                    <template if:true={showExcessZones}>
+                                        <div class="grid-item single" if:true={isEditTable}>
+                                            <h4>{joinZoneSectionText}</h4>
+                                            <c-portal_-select
+                                                    is-show-null-option="true"
+                                                    option-list={_availableZonesToJoinPicklist} 
+                                                    handle-change={handleAddZoneMembership}>
+                                            </c-portal_-select>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 if:true={_helpText}>{_helpText}</h4>
+                        <template if:true={isShowNullText}>
+                            {noRecordsText}
+                        </template>
+                        <template if:false={isShowNullText}>
+                            <div class="registration-table" if:true={_isDisplayTable}>
+                                <template for:each={_columnTitlesList} for:item="column" for:index="columnIndex">
+                                    <div class="column no-controls" key={column.key}>
+                                        <div class="headerEqualHeight show" style={_headerStyle}><p style="display:inline-block">{column.label}</p>
+                                            <lightning-helptext class="help-text" icon-variant="inverse" content={column.helpText} if:true={column.helpText}>
+                                            </lightning-helptext>
+                                        </div>
+
+                                        <template for:each={_zoneMembershipRecords} for:item="zoneMembership" for:index="index">
+                                            <div class="dataEntry equalHeight show" style="height: 64px;" key={zoneMembership.key}>
+                                                <p>
+                                                    <c-portal_-zone-membership-table-entry
+                                                        zone-membership-record={zoneMembership}
+                                                        index={index}
+                                                        column={column}
+                                                        is-edit-table={isEditTable}
+                                                        is-newsletter-field-disabled={isNewsletterFieldDisabled}
+                                                        handle-join-zone-membership={handleJoinZoneMembership}
+                                                        handle-leave-zone-membership={handleLeaveZoneMembership}
+                                                        handle-checkbox-change={handleCheckboxChange}>
+                                                    </c-portal_-zone-membership-table-entry>
+                                                </p>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

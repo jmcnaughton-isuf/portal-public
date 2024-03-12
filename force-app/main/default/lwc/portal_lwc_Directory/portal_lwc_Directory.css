@@ -1,0 +1,40 @@
+.with-rule {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #000;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+}
+
+.with-rule span {
+    background: var(--lwc-colorPageBackground,#F5F7FA);
+    padding:0 10px;
+}
+
+
+@media (max-width: 768px) {
+    [data-ascend-portal] .flex-grid.checkbox-grid {
+        flex-wrap: wrap !important;
+        margin: 0.5rem 0 1rem;
+    }
+
+    [data-ascend-portal] .checkbox-grid div.grid-item {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    [data-ascend-portal] div.flex-grid.checkbox-grid {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    [data-ascend-portal] .checkbox-grid div.grid-item {
+        display: inline;
+    }
+
+    [data-ascend-portal] .checkbox-grid fieldset {
+        display: inline;
+        margin-top: 0.5rem;
+    }
+}

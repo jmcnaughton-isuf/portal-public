@@ -1,0 +1,19 @@
+.board-member-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.board-member {
+    width: 25%;
+    text-align: center;
+}
+
+.board-member > img {
+    margin-bottom: 10px;
+    height: 200px;
+}
+
+.title {
+    text-align: center;
+}

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recommend_Type_2__c</fullName>
+    <externalId>false</externalId>
+    <label>Recommend Type 2</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arts</fullName>
+                <default>false</default>
+                <label>Arts</label>
+            </value>
+            <value>
+                <fullName>Biology</fullName>
+                <default>false</default>
+                <label>Biology</label>
+            </value>
+            <value>
+                <fullName>Breakthroughs</fullName>
+                <default>false</default>
+                <label>Breakthroughs</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Child Development</fullName>
+                <default>false</default>
+                <label>Child Development</label>
+            </value>
+            <value>
+                <fullName>Computation</fullName>
+                <default>false</default>
+                <label>Computation</label>
+            </value>
+            <value>
+                <fullName>Culture</fullName>
+                <default>false</default>
+                <label>Culture</label>
+            </value>
+            <value>
+                <fullName>Economics</fullName>
+                <default>false</default>
+                <label>Economics</label>
+            </value>
+            <value>
+                <fullName>Emerging Treatments</fullName>
+                <default>false</default>
+                <label>Emerging Treatments</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Entrepreneurship</fullName>
+                <default>false</default>
+                <label>Entrepreneurship</label>
+            </value>
+            <value>
+                <fullName>Environment</fullName>
+                <default>false</default>
+                <label>Environment</label>
+            </value>
+            <value>
+                <fullName>Family Care</fullName>
+                <default>false</default>
+                <label>Family Care</label>
+            </value>
+            <value>
+                <fullName>Global</fullName>
+                <default>false</default>
+                <label>Global</label>
+            </value>
+            <value>
+                <fullName>Academia</fullName>
+                <default>false</default>
+                <label>Academia</label>
+            </value>
+            <value>
+                <fullName>History</fullName>
+                <default>false</default>
+                <label>History</label>
+            </value>
+            <value>
+                <fullName>Humanities</fullName>
+                <default>false</default>
+                <label>Humanities</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Language</fullName>
+                <default>false</default>
+                <label>Language</label>
+            </value>
+            <value>
+                <fullName>Law</fullName>
+                <default>false</default>
+                <label>Law</label>
+            </value>
+            <value>
+                <fullName>Markets</fullName>
+                <default>false</default>
+                <label>Markets</label>
+            </value>
+            <value>
+                <fullName>Mathematics</fullName>
+                <default>false</default>
+                <label>Mathematics</label>
+            </value>
+            <value>
+                <fullName>Medicine</fullName>
+                <default>false</default>
+                <label>Medicine</label>
+            </value>
+            <value>
+                <fullName>Mind and Brain</fullName>
+                <default>false</default>
+                <label>Mind and Brain</label>
+            </value>
+            <value>
+                <fullName>Personal Wellness</fullName>
+                <default>false</default>
+                <label>Personal Wellness</label>
+            </value>
+            <value>
+                <fullName>Physical Sciences</fullName>
+                <default>false</default>
+                <label>Physical Sciences</label>
+            </value>
+            <value>
+                <fullName>Politics</fullName>
+                <default>false</default>
+                <label>Politics</label>
+            </value>
+            <value>
+                <fullName>Public Health</fullName>
+                <default>false</default>
+                <label>Public Health</label>
+            </value>
+            <value>
+                <fullName>Public Policy</fullName>
+                <default>false</default>
+                <label>Public Policy</label>
+            </value>
+            <value>
+                <fullName>Religion</fullName>
+                <default>false</default>
+                <label>Religion</label>
+            </value>
+            <value>
+                <fullName>Security and Conflict</fullName>
+                <default>false</default>
+                <label>Security and Conflict</label>
+            </value>
+            <value>
+                <fullName>Social Impact</fullName>
+                <default>false</default>
+                <label>Social Impact</label>
+            </value>
+            <value>
+                <fullName>Social Justice</fullName>
+                <default>false</default>
+                <label>Social Justice</label>
+            </value>
+            <value>
+                <fullName>Social Sciences</fullName>
+                <default>false</default>
+                <label>Social Sciences</label>
+            </value>
+            <value>
+                <fullName>Space</fullName>
+                <default>false</default>
+                <label>Space</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Urban</fullName>
+                <default>false</default>
+                <label>Urban</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

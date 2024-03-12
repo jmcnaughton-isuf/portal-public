@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>All</fullName>
+        <default>true</default>
+        <label>All</label>
+    </customValue>
+    <customValue>
+        <fullName>Main</fullName>
+        <default>false</default>
+        <label>Main</label>
+    </customValue>
+    <customValue>
+        <fullName>Alumni Club of Irvine</fullName>
+        <default>false</default>
+        <label>Alumni Club of Irvine</label>
+    </customValue>
+    <masterLabel>Portal Zone</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

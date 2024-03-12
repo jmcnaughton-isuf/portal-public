@@ -1,0 +1,42 @@
+<template>
+    <template if:false={_isArray} for:each={_metadataList} for:item="attribute">
+        <div class="slds-p-bottom_small" key={attribute.label}>
+            <label>{attribute.label}</label>
+            <template if:true={attribute.isField}>
+                <lightning-textarea data-label={attribute.label} value={attribute.value} onchange={handleInput}></lightning-textarea>
+            </template>
+            <template if:true={attribute.isObject}>
+                <div class="slds-p-around_small slds-box">
+                    <c-portal_-content-module-metadata reference-var={attribute.label} 
+                                                       metadata-template={attribute.template}
+                                                       metadata={attribute.value} 
+                                                       metadata-change={handleChange}></c-portal_-content-module-metadata>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:true={_isArray}>
+        <template iterator:it={_objectList}>
+            <div class="slds-p-bottom_small" key={it.value}>
+                <template if:true={_defaultObjectIsField}>
+                    <lightning-textarea data-index={it.index} value={it.value} onchange={handleInput}></lightning-textarea>
+                    <div>
+                        <button class="slds-button slds-button_destructive slds-m-top_small" data-index={it.index} onclick={handleRemoveFromArray}>Remove</button>
+                    </div>
+                </template>
+                <template if:false={_defaultObjectIsField}>
+                    <div class="slds-p-around_small slds-box">
+                        <c-portal_-content-module-metadata reference-var={it.index} 
+                                                           metadata-template={_defaultObject}
+                                                           metadata={it.value} 
+                                                           metadata-change={handleChange}></c-portal_-content-module-metadata>
+                        <div>
+                            <button class="slds-button slds-button_destructive" data-index={it.index} onclick={handleRemoveFromArray}>Remove</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <button class="slds-button slds-button_brand slds-m-bottom_small" onclick={handleAddToArray}>Add</button>
+    </template>
+</template>

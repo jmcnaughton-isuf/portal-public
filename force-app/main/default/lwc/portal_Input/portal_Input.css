@@ -1,0 +1,41 @@
+.input-icon {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px 20px;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.clear-term-search {
+    cursor: pointer;
+    background-image: url(../resource/Grey_Clear_Icon);
+}
+
+.search-icon {
+    cursor: default;
+    background-image: url(../resource/Grey_Search_Icon);
+}
+
+.invalid {
+    color: red;
+}
+
+.short-text {
+    line-height: normal;
+}
+
+.top-margin {
+    margin-top: 5px;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}

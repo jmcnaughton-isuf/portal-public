@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="helperText" label="Footer helper text" type="String"></property>
+            <property name="rowsPerPage" label="Rows per page" type="Integer" default="5"/>
+            <property name="hideRowsWithNoGiving" label="Hide rows with no giving" type="Boolean" default="false" description="Hide the row if the consituent has not given for that year."></property>
+            <property name="fiscalYearOrder" type="String" label="Fiscal Year Order" datasource="Descending, Ascending" default="Descending"></property>
+            <property name="noTableDataTextHTML" label="No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

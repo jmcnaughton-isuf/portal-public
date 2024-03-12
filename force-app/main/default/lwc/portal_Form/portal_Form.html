@@ -1,0 +1,36 @@
+<template>
+    <template if:true={formData.isDisplay}>
+        <h2 if:true={formData.heading}>{formData.heading}</h2>
+
+        <div if:true={formData.formRowList} class="entry-form bottom-border" style="padding-bottom: 2em">
+            <template for:each={_recordList} for:item="record" for:index="recordIndex">
+                <div key={formFieldList}>
+                    <hr if:true={recordIndex}>
+                    <c-portal_-form-record form-field-list={record.formFieldList}
+                                           is-deleted={record.isDeleted}
+                                           index={recordIndex}
+                                           handle-value-change={local_handleValueChange}
+                                           data-index={recordIndex} >
+                    </c-portal_-form-record>
+                    <template if:true={formData.isMultipleRecordForm}>
+                        <button if:false={record.isDeleted}
+                                class="slds-button slds-button_brand slds-m-left_small" 
+                                onclick={handleDeleteRecord} 
+                                data-index={recordIndex}>Delete</button>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={formData.isMultipleRecordForm}>
+                <button class="slds-button slds-button_neutral slds-m-vertical_small" onclick={handleAddRecord}>Add</button>
+            </template>
+        </div>
+
+        <template if:true={formData.subSectionList} for:each={formData.subSectionList} for:item="subSection">
+            <c-portal_-form form-data={subSection} 
+                            handle-value-change={handleValueChange}
+                            key={subSection.formId}>
+            </c-portal_-form>
+        </template>
+    </template>
+</template>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="addressRequired" type="Boolean" label="Is Address Required?" />
+            <property name="emailTemplateDeveloperName" type="String" label="Email Template Developer Name:"
+                default="Portal_Event_Confirmation"
+            />
+            <property name="pageName" label="Page Name" type="String" description="Page Name of the Portal Page Section Setting record to use" default="Event Payment Form"/>
+            <property name="externalGatewayName" label="Online Giving Gateway Name" type="String" description="If using spreedly, match this with the name of the desired gateway from ucinn_ascendv2__Spreedly_Gateway__c custom setting record."/>
+            <property name="paymentMethod" type="String" label="Payment Vendor:" datasource="Cybersource,Stripe,Stripe Payment Element,Spreedly,Spreedly w/ ACH,TouchNet"/>
+            <property name="apiKeyCMDDeveloperName" type="String" label="DEPRECATED(API Key CMD Developer Name)"/>
+            <property name="secretKeyCMDDevelopername" type="String" label="DEPRECATED(Secret Key CMD Developer Name)"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

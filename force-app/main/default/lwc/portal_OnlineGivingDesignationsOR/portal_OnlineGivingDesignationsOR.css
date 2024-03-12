@@ -1,0 +1,40 @@
+.accordion .accordion-item .topic:after {
+    background: transparent url(/resource/Portal_Expand_More_Black) center no-repeat;
+}
+.fund-other-input {
+    font-size: 20px;
+    border: 0;
+    background: #f1f1f0 !important;
+    box-shadow: none;
+    border-bottom: 1px solid;
+    outline: none;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.slds-input { border: none !important; }
+
+.giving-designations-wrapper .flex-grid-or label:hover span > a {
+    color: #FFF;
+}
+
+.giving-designations-wrapper .flex-grid-or {
+    max-width: 280px;
+    margin: 0 auto;
+}
+.giving-designations-wrapper .flex-grid-or label input {
+    display: none;
+}
+.giving-designations-wrapper .ticket-options .flex-grid-or label span {
+    background: #F1BE48 !important;
+    font-size: 20px !important;
+    padding: 16px 20px 16px 40px;
+    color: #C8102E !important;
+    font-weight: bold !important;
+}
+.giving-designations-wrapper .flex-grid-or label:hover span {
+    background: #C8102E !important;
+}
+.giving-designations-wrapper .flex-grid-or label span > a {
+    color: #C8102E;
+    font-weight: bold;
+}

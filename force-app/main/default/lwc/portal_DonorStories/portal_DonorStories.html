@@ -1,0 +1,29 @@
+<template>
+    <div data-ascend-portal>
+        <div class="container large" if:true={showDonorStories}>
+            <div class="section-wrapper">
+                <div class="container" if:true={permissionMap.donorStory.display}>
+                    <h2 style="margin-bottom: 1em">{permissionMap.donorStory.label}</h2>
+
+                    <div class="flex-grid-3">
+                        <template for:each={donorStories} for:item="donorStory">
+                            <div class="grid-item equalHeight card" key={donorStory.name}>
+                                <div class="container">
+                                    <div class="image">
+                                        <lightning-formatted-rich-text if:true={permissionMap.thumbnailImage.display} value={donorStory.thumbnailImage}></lightning-formatted-rich-text>
+                                    </div>
+                                    <div class="copy">
+                                        <h4 class="break-word" if:true={permissionMap.headerContent.display}>{donorStory.name}</h4>
+                                        <lightning-formatted-rich-text class="break-word" if:true={permissionMap.headerContent.display} value={donorStory.headerContent}></lightning-formatted-rich-text>
+                                    </div>
+                                    <a href={donorStory.detailPageURL} class="button primary full-width">Read More</a>
+                                </div>
+                            </div>
+                        </template>
+                    </div>  
+
+                </div>
+            </div>            
+        </div>
+    </div>
+</template>

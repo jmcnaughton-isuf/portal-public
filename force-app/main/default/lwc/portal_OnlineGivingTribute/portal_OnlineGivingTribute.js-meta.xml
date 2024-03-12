@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+   <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="componentLabel" label="Section Label" type="String"/>
+            <property name="typeLabel" label="Tribute Type Label" type="String"/>
+            <property name="tributeeLabel" label="Tributee Label" type="String"/>
+            <property name="notifyNameLabel" label="Notify Name Label" type="String"/>
+            <property name="notifyAddressLabel" label="Notify Address Label" type="String"/>
+            <property name="showNotifyName" label="Show Notify Name" type="Boolean"/>
+            <property name="showNotifyAddress" label="Show Notify Address" type="Boolean"/>
+            <property name="pageName" label="Online Giving Page Name" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

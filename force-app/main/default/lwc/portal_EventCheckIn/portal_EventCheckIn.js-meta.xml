@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="loadingMessage" label="Loading Message" type="String" default="Please wait while the user is being checked in." description="The message when the page is loading."></property>
+            <property name="checkInMessage" label="Success Message" type="String" default="has been succesfully checked in." description="The message when the registrant is successfully checked in. The name of the registrant will be prepended to this message."></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

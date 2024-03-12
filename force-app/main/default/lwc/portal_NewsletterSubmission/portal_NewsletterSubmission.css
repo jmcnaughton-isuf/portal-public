@@ -1,0 +1,241 @@
+@media (min-width: 768px) {
+    .button-list.newsletter-section-modal {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.flex-grid-2 .grid-item:nth-child(odd) {
+    padding-right: 0.5em !important;
+}
+
+.flex-grid-2 .grid-item:nth-child(even) {
+    padding-left: 0.5em !important;
+}
+
+.button-list .button.secondary,
+.button-list .button.primary {
+    margin-bottom: 0.5em;
+}
+
+.custom-section {
+    display: none;
+    opacity: 0;
+    border: 1px solid black;
+    padding: 1.5em !important;
+    transition: all 400ms;
+    border: 1px solid #d1d5d8;
+    transform: scaleY(0.7);
+    position: relative;
+}
+
+/* line 13, src/sass/_section.scss */
+.custom-section input {
+    background-color: white !important;
+}
+
+/* line 16, src/sass/_section.scss */
+.custom-section .button img,
+.custom-section .button svg {
+    max-height: 20px;
+    border: none;
+    width: auto;
+}
+
+/* line 24, src/sass/_section.scss */
+.custom-section .button:hover svg {
+    fill: white;
+}
+
+/* line 28, src/sass/_section.scss */
+.custom-section.show {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* line 34, src/sass/_section.scss */
+.custom-section .content-entry {
+    border: 1px solid #e0e0e0;
+    border-top: 1px solid #005694;
+    padding: 1.4em;
+}
+
+/* line 39, src/sass/_section.scss */
+.custom-section .content-entry h2 {
+    margin-bottom: .5em;
+}
+
+/* line 43, src/sass/_section.scss */
+.custom-section .content-entry .content-block {
+    padding: 1em 0;
+    display: block;
+}
+
+/* line 44, src/sass/_section.scss */
+.custom-section .content-entry .content-block td {
+    text-align: center !important;
+}
+
+/* line 52, src/sass/_section.scss */
+.custom-section .content-entry .contentContainer {
+    max-width: 500px;
+    margin: auto;
+    text-align: inherit;
+}
+
+/* line 58, src/sass/_section.scss */
+.custom-section .content-entry img {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    border: 1px solid lightgray;
+}
+
+/* line 65, src/sass/_section.scss */
+.custom-section .content-entry .position-controls {
+    margin: 0 15px;
+    padding: 15px;
+}
+
+/* line 68, src/sass/_section.scss */
+.custom-section .content-entry .position-controls img {
+    max-width: 50px;
+}
+
+/* line 75, src/sass/_section.scss */
+.custom-section .controls {
+    position: absolute;
+    right: 0;
+    background: white;
+    width: 41px;
+    height: 100%;
+    top: 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+/* line 85, src/sass/_section.scss */
+.custom-section .controls a {
+    margin-bottom: 20px;
+}
+
+/* line 88, src/sass/_section.scss */
+.custom-section .controls a img {
+    width: 47%;
+}
+
+/* line 92, src/sass/_section.scss */
+.custom-section .controls a:hover {
+    text-decoration: none;
+}
+
+.banner {
+    border-top: thin solid;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Modal */
+/* modal part */
+/* line 5, src/sass/_modal.scss */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9000;
+    max-width: 100%;
+}
+
+/* line 14, src/sass/_modal.scss */
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+/* line 20, src/sass/_modal.scss */
+.section-wrapper {
+    padding: 0 1.5em;
+}
+
+/* line 24, src/sass/_modal.scss */
+.modal {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+}
+
+/* line 36, src/sass/_modal.scss */
+.modal .container {
+    padding: 0 1.5em;
+}
+
+/* line 40, src/sass/_modal.scss */
+.modal .content-header-bar h2 {
+    color: white;
+}
+
+/* line 44, src/sass/_modal.scss */
+.modal .button-list {
+    margin: 0;
+}
+
+/* line 48, src/sass/_modal.scss */
+.modal .close-btn {
+    font-size: 2.5em;
+    position: absolute;
+    top: 20px;
+    right: 27px;
+    color: white;
+}
+
+/* line 55, src/sass/_modal.scss */
+.modal .close-btn:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.flex-grid .grid-item {
+    max-width: 100%;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* line 67, src/sass/_modal.scss */
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 840px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        height: auto;
+        overflow: scroll;
+        max-height: 94%;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-content-button {
+        padding-top: 0;
+        margin-top: 0;
+    }
+}

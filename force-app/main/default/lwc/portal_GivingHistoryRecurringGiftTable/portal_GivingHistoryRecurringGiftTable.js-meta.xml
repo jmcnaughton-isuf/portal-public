@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="helperTextHTML" label="Helper Text" type="String" description ="Helper text that will display ontop of the table. The helper text can be in HTML."/>
+            <property name="showNextInstallmentPaymentCoulmn" label="Show Next Installment Payment Column" type="Boolean" default="true"></property>
+            <property name="nextInstallmentPaymentColumn" label="Next Installment Payment Column Title" type="String" default="Next Expected Installment Date"></property>
+            <property name="showUpdateCreditCardColumn" label="Show Update Credit Card Column" type="Boolean" description="Allow users to update the credit card used for recurring gifts"/>
+            <property name="updateCreditCardColumnTitle" label="Update Credit Card Column Title" type="String"/>
+            <property name="showCancelColumn" label="Show Cancel Gift Column" type="Boolean" description="Allow users to cancel a recurring gift"/>
+            <property name="cancelColumnTitle" label="Cancel Gift Column Title" type="String"/>
+            <property name="paymentMethod" label="Online Giving Payment Method" datasource="Stripe,Cybersource,Spreedly" type="String"/>
+            <property name="externalGatewayName" label="Online Giving Gateway Name" type="String" description="If using Spreedly, match this with the name of the desired gateway from ucinn_ascendv2__Spreedly_Gateway__c custom setting record."/>
+            <property name="desginationNameDisplayOption" label="Designation Name Display Options" type="String" datasource="List of Names, text" default="List of Names"></property>
+            <property name="desginationNameOverride" label="Multiple Designation Name Override" type="String" default="Multiple" description="If Desgination Name Display Options picklsit is set to text, this will override pleges with multiple designation with this text."></property>
+            <property name="itemsPerPage" label="Items per page" type="Integer" description="The number of rows to display on the table per page." required="true" default="10"/>
+            <property name="noTableDataTextHTML" label="No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

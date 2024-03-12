@@ -1,0 +1,82 @@
+<apex:page controller="PORTAL_LWC_EventManagementController"
+           standardStylesheets="false"
+           apiVersion="46.0"
+           showheader="false" 
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           doctype="html-5.0"
+           readOnly="true">
+    <head>
+        <style type="text/css">
+            .nameTag {
+                float: left;
+                width: 3.375in;
+                height: 2.3333in;
+                border-radius: 25px;
+                -moz-border-radius: 25px;
+                -webkit-border-radius: 25px;
+                -khtml-border-radius: 25px;
+                border: 1px solid rgb(0, 0, 0);
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .degrees {
+                font-size: 24px;
+                font-family: Garamond; 
+                word-wrap: break-word;
+                width: 80%;
+            }
+            
+            .attendeeInfo {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            .attendeeName {
+                width: 80%;
+                font-size: 24px;
+                font-family: Garamond; 
+            }
+            
+            .logo {
+                padding-top: 10px;
+                padding-left: 2px;
+                padding-right: 2px;
+                padding-bottom: 10px;
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-bottom: 10px;
+                border-bottom: 3px solid rgb(118,118,118);
+            }
+            
+            .pageBreak {
+                height: 
+            }
+        </style>
+    </head>
+    <apex:form >
+        <apex:variable var="count" value="{!0}"/>
+        <apex:repeat value="{!attendeeLists}" var="attendeeList">
+            <apex:repeat value="{!attendeeList}" var="attendeeRecord">
+                <apex:variable value="{!count+1}" var="count"/>  <!--increment-->
+                <div class="nameTag">
+                    <div class="logo" align="right">
+                        <apex:image id="UniversityLogo" width="60%" url="{!$Resource.ucinn_ascendv2__UniversityLogo}"/>
+                    </div>
+                    <div style="position: relative; height: 1in">
+                        <div class="attendeeInfo">
+                            <span class="attendeeName">
+                                {!attendeeRecord.nameTag}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <apex:outputText value="<br/>" rendered="{!MOD(count, 6)==0}" escape="false"/>
+            </apex:repeat>
+        </apex:repeat>
+    </apex:form>
+</apex:page>

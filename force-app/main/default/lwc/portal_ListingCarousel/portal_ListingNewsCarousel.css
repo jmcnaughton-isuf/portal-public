@@ -1,0 +1,40 @@
+.content {
+    width: 100%;
+    margin: auto;
+}
+
+.prevButton {
+    width: 3.0%;
+    margin: auto;
+    vertical-align: middle;
+    left: 0;
+}
+
+.nextButton {
+    width: 2.0%;
+    vertical-align: middle;
+    margin: auto;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .multi-column-carousel .multi-column-button.next {
+        right: -10px;
+    }
+
+    .multi-column-carousel .multi-column-button.previous {
+        left: -10px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .view-all-news.button {
+        top: -12px;
+    }
+}
+
+@media (max-width: 991px) {
+    .view-all-news.button {
+        top: -3px;
+    }
+}

@@ -1,0 +1,41 @@
+<template>
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <template if:true={sectionConfiguration.isDisplay}>
+            <div class="info-card">
+                <h3>{sectionConfiguration.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="table-header">
+                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailAddress.isDisplay}>
+                            <p>{sectionConfiguration.fieldConfigurationMap.emailAddress.label}</p>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailType.isDisplay}>
+                            <p>{sectionConfiguration.fieldConfigurationMap.emailType.label}</p>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.isDisplay}>
+                            <p>{sectionConfiguration.fieldConfigurationMap.emailIsPreferred.label}</p>
+                        </div>  
+                    </div>              
+                    <template for:each={recordList} for:item="email">
+                        <div class="table-row" key={email.Id}>
+                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.emailAddress.isDisplay}>
+                                <h4>{sectionConfiguration.fieldConfigurationMap.emailAddress.label}</h4>
+                                <p>{email.emailAddress}</p>
+                            </div>
+                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.emailType.isDisplay}>
+                                <h4>{sectionConfiguration.fieldConfigurationMap.emailType.label}</h4>
+                                <p>{email.emailType}</p>
+                            </div> 
+                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.isDisplay}>
+                                <h4>{sectionConfiguration.fieldConfigurationMap.emailIsPreferred.label}</h4>
+                                <p if:true={email.emailIsPreferred}>&#10003;</p>
+                                <p if:false={email.emailIsPreferred}></p>
+                            </div> 
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+        <div class="line-break"></div>
+    </template>
+</template>

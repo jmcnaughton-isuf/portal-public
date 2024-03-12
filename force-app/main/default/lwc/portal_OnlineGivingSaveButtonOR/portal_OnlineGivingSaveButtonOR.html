@@ -1,0 +1,23 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+        <div if:true={_isShowSpinner} style="position: relative; z-index: 9999">
+            <div class="slds-spinner_container slds-is-fixed">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+        <div class={saveButtonORClass}>
+            <div class="section-body-content">
+                <div class="container">
+                    <div class="button-list">
+                        <a class="button secondary" if:true={showPrev} onclick={handlePrevious}><img class="previous-button-logo" src={_previousNextButtonLogo} /> Previous</a>
+                        <a class={_saveButtonClass} if:true={showNext} onclick={handleNext}>Next Step: <span class="next-button-step"> {_nextStepValue}</span><img class="next-button-logo" src={_saveNextButtonLogo}></a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</template>

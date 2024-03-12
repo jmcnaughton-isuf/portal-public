@@ -1,0 +1,31 @@
+<template>
+    <div class="sf-modal" style="display: block;">
+
+        <div class="modal-background">
+            <div if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+            <div class="modal small">
+                <!-- Modal header-->
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>Update Credit Card Information</h2>
+                        </div> 
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                            <span class="close-btn" onclick={closeModal}>×</span>
+                        </div>
+                    </div>
+                </div>
+                <!--Modal body-->
+                <c-portal_-payment-form
+                    payment-method={paymentMethod}
+                    payment-type={paymentType}
+                    external-gateway-name={externalGatewayName}
+                    handle-payment-confirmation={handlePaymentConfirmation}
+                    is-update>
+                </c-portal_-payment-form>
+            </div>
+        </div>
+    </div>
+</template>

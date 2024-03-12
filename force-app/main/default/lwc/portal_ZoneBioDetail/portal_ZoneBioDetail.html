@@ -1,0 +1,42 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={initFinished}>
+            <div if:true={permissionMap.zoneBioDetail.display}>
+                <div class="siteforceStarterBody">
+                    <div class="container large">
+                        <div class="breadcrumb bottom-border">
+                            <ul>
+                                <li><a onclick={goBackToHomePage}>Back to {_zoneName}</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="slds-grid slds-wrap">
+                            <div class="event-thumb slds-p-around_medium slds-small-size_4-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                <div class="avatar" style="width: 90%; padding-bottom: 90%" if:true={permissionMap.zoneMembershipPictureRecord.display}>
+                                    <img src={bioDetail.pictureURL} class="rounded" />
+                                </div>
+                            </div>
+                            <div class="event-thumb slds-p-around_medium slds-small-size_8-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                                <div class="section-wrapper">
+                                    <h2 if:true={bioDetail.fullName}>{bioDetail.fullName}</h2>
+                                    <template if:false={hideDegreeString}>
+                                        <h5 if:true={bioDetail.degreeString}>
+                                            {bioDetail.degreeString}
+                                        </h5>
+                                    </template>
+                                    <p if:true={permissionMap.title.display} class="lead">{bioDetail.title}</p>
+                                </div>
+        
+                                <div class="section-wrapper">
+                                    <p if:true={permissionMap.description.display}>
+                                        <lightning-formatted-rich-text value={bioDetail.description}></lightning-formatted-rich-text>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

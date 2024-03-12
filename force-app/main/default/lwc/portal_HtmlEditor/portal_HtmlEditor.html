@@ -1,0 +1,7 @@
+<template>
+    <template if:true={isShowContent}>
+        <div data-ascend-portal>
+            <lightning-formatted-rich-text if:true={_contentModuleMetadata} value={_contentModuleMetadata.htmlText}></lightning-formatted-rich-text>
+        </div>
+    </template>
+</template>

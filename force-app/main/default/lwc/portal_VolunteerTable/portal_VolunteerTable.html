@@ -1,0 +1,30 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_isDisplayTable}>
+            <div class="event-tabs tabs">  
+                <c-portal_-table if:true={_isFresh} title={_tableTitle}
+                    records={_volunteerRecords}
+                    column-mappings={conciseColumnData}
+                    rows-per-page={itemsPerPage}>
+                </c-portal_-table>
+                <p if:false={_volunteerRecords.length} style="text-align: center">{noRecordsMessage}</p>
+            </div>
+        </template>
+
+        <template if:true={_reportHoursRecordId}>
+            <c-portal_-volunteer-report-hours-form record-id={_reportHoursRecordId}
+                                                close-modal={closeModal}
+                                                refresh-parent={refreshComponent}>
+            </c-portal_-volunteer-report-hours-form>
+        </template>
+
+        <template if:true={_shiftRecord}>
+            <c-portal_-volunteer-modify-application
+                volunteer-shift={_shiftRecord}
+                volunteer-id={_modifyAppRecordId}
+                handle-close-modify-modal={closeModal}
+                refresh-parent={refreshComponent}>
+            </c-portal_-volunteer-modify-application>
+        </template>
+    </div>
+</template>

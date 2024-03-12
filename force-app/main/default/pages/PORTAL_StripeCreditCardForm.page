@@ -1,0 +1,376 @@
+<apex:page controller="PORTAL_StripeCreditCardFormController" showHeader="false" sidebar="false">
+    <head>
+        <script src="https://js.stripe.com/v3/"></script>
+    </head>
+
+    <style type="text/css">
+    @font-face {
+    font-family: 'Noah-Bold';
+     src: url({!URLFOR($Resource.PORTAL_Fonts, '/Noah/NoahBold/font.woff')}) format('woff');
+    }
+    /* line 883, src/sass/style.scss */
+    .button-list {
+    padding: .4rem 0;
+    margin: 1rem 0 0;
+    font-size: 1.1em; }
+    /* line 888, src/sass/style.scss */
+    .button-list img {
+        width: 19px; }
+        /* line 891, src/sass/style.scss */
+        .button-list img svg {
+        width: 100%; }
+    /* line 894, src/sass/style.scss */
+    .button-list.center {
+        width: 100%;
+        text-align: center;
+        justify-content: center; }
+        /* line 899, src/sass/style.scss */
+        .button-list.center .button {
+        margin-right: 0; }
+    /* line 902, src/sass/style.scss */
+    .button-list.text {
+        margin-top: 6px; }
+        /* line 905, src/sass/style.scss */
+        .button-list.text a {
+        display: flex;
+        align-items: center; }
+        /* line 906, src/sass/style.scss */
+        .button-list.text a:first-of-type {
+            margin-right: 10px; }
+    /* line 912, src/sass/style.scss */
+    .button-list .button {
+        margin-right: 8px; }
+        /* line 916, src/sass/style.scss */
+        .button-list .button.has-icon:hover {
+        background-color: white;
+        color: #005595; }
+        /* line 922, src/sass/style.scss */
+        .button-list .button.full-mobile {
+        margin-right: 0;
+        margin-bottom: .7rem; }
+        /* line 926, src/sass/style.scss */
+        .button-list .button.full-mobile:last-of-type {
+            margin-bottom: 0; }
+        /* line 931, src/sass/style.scss */
+        .button-list .button.disabled {
+        opacity: .5;
+        pointer-events: none; }
+    /* line 937, src/sass/style.scss */
+    .button-list.controls .button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        flex: 1 1 100%;
+        text-align: center;
+        display: block; }
+
+    button {
+        font-family: 'Noah-Bold' !important;
+        background-color: #005595 !important;
+        color: white !important;
+        padding: .5em 1.1em !important;
+        border-radius: 3px !important;
+        font-weight: bold !important;
+        font-size: 1.1em !important;
+        transition: background-color 300ms, color 300ms !important;
+        border: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        background-image: initial !important;
+        background-repeat: initial !important;
+        background-position: initial !important;
+        margin: 1px !important;
+        /*  img {
+                width: 18px;
+                height: 18px;
+                position: relative;
+                top: -2px;
+                left: -5px;
+            }
+        */ }
+        /* line 971, src/sass/style.scss */
+        .button.slds-button_icon {
+            padding: .5em !important; }
+        /* line 975, src/sass/style.scss */
+        .button.primary {
+            background-color: #005595;
+            color: white;
+            border: 1px solid #005595; }
+            /* line 980, src/sass/style.scss */
+            .button.primary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 985, src/sass/style.scss */
+            .button.primary:hover svg .outline {
+                fill: white; }
+            /* line 988, src/sass/style.scss */
+            .button.primary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -2px;
+            right: 0px; }
+            /* line 995, src/sass/style.scss */
+            .button.primary svg .outline {
+                fill: white; }
+        /* line 1001, src/sass/style.scss */
+        .button.secondary {
+            background-color: white;
+            border: 1px solid #cdcfd8;
+            color: #005595; }
+            /* line 1006, src/sass/style.scss */
+            .button.secondary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 1012, src/sass/style.scss */
+            .button.secondary:hover svg {
+                fill: white; }
+            /* line 1014, src/sass/style.scss */
+            .button.secondary:hover svg .outline {
+                fill: white; }
+            /* line 1017, src/sass/style.scss */
+            .button.secondary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -1px;
+            right: 0px; }
+            /* line 1024, src/sass/style.scss */
+            .button.secondary svg .outline {
+                fill: #005595; }
+        /* line 1032, src/sass/style.scss */
+        .button.tertiary.light {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white; }
+            /* line 1037, src/sass/style.scss */
+            .button.tertiary.light:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1045, src/sass/style.scss */
+        .button.tertiary.dark {
+            background-color: transparent;
+            color: #005595;
+            border: 1px solid #005595; }
+            /* line 1050, src/sass/style.scss */
+            .button.tertiary.dark:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1058, src/sass/style.scss */
+        .button.tertiary.bare {
+            position: relative;
+            color: #005595;
+            padding: 0;
+            border: none;
+            background: transparent; }
+            /* line 1065, src/sass/style.scss */
+            .button.tertiary.bare:after {
+            content: '\003E';
+            position: absolute;
+            left: 110%;
+            top: 2px; }
+            /* line 1072, src/sass/style.scss */
+            .button.tertiary.bare:hover {
+            background-color: transparent;
+            border: none;
+            color: #00c0f3 !important;
+            text-decoration: none; }
+            /* line 1078, src/sass/style.scss */
+            .button.tertiary.bare:hover:after {
+                color: #00c0f3; }
+        /* line 1085, src/sass/style.scss */
+        .button.small {
+            font-size: .9rem;
+            padding: .5rem .7rem; }
+        /* line 1090, src/sass/style.scss */
+        .button.full-width {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: .6em; }
+            /* line 1097, src/sass/style.scss */
+            .button.full-width:last-of-type {
+            margin-bottom: 0; }
+        /* line 1103, src/sass/style.scss */
+        .button.full-mobile {
+            width: 100%;
+            text-align: center; }
+        /* line 1108, src/sass/style.scss */
+        .button:active, .button:focus {
+            color: white !important;
+            text-decoration: none !important;
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3; }
+
+    </style>
+
+    <body style="background: #f7f7f7;">
+        <!-- <div id="payment-request-button">
+        </div>-->
+        <form id="payment-form" style="padding-left: 1rem; padding-right: 1rem;">
+            <div id="payment-request-button">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
+            <div >
+                <p>Credit Card</p>
+            </div>
+            <div id="card-number">
+                <!-- Elements will create input elements here -->
+            </div>
+            <div >
+                <p>Expiration Date</p>
+            </div>
+            <div id="card-expiration">
+                <!-- Elements will create input elements here -->
+            </div>
+            <div >
+                <p>CVC</p>
+            </div>
+            <div id="card-cvc">
+            <!-- Elements will create input elements here -->
+            </div>
+            <div id="card-errors" role="alert"></div>
+        </form>
+        <div class="button-list" style="text-align: center">
+            <button class="button secondary" id="previous" type="button" onclick="previous()">Previous</button>
+            <button class="button secondary" id="submit" type="submit">Submit Payment</button>
+        </div>
+    </body>
+
+    <script type="application/javascript">
+        const lexOrigin = "{!lexOrigin}";
+        window.addEventListener("message", (event) => {
+            let eventData = event.data;
+            if (event.origin === lexOrigin && typeof eventData === 'string') {
+                eventData = JSON.parse(event.data);
+            }
+            
+            if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                var previousButton = document.querySelector('#previous');
+                if (previousButton) {
+                    previousButton.remove();
+                }
+
+                var submitButton = document.querySelector('#submit');
+                if (submitButton) {
+                    submitButton.textContent = 'Update';
+                }
+            }
+            else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                var stripeKey = eventData.stripeKey;
+                var giftType = eventData.giftType;
+                var amount = eventData.amount;
+
+                var stripe = Stripe(stripeKey);
+                var elements = stripe.elements();
+                var style = {
+                    base: {
+                        
+                    }
+                };
+
+                var cardNumber = elements.create("cardNumber", { style: style });
+                cardNumber.mount("#card-number");
+                cardNumber.on('change', ({error}) => {
+                    let displayError = document.getElementById('card-errors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                var cardExpiry = elements.create("cardExpiry", { style: style });
+                cardExpiry.mount("#card-expiration");
+                cardExpiry.on('change', ({error}) => {
+                    let displayError = document.getElementById('card-errors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                var cardCvc = elements.create("cardCvc", { style: style });
+                cardCvc.mount("#card-cvc");
+                cardCvc.on('change', ({error}) => {
+                    let displayError = document.getElementById('card-errors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+
+                var paymentRequest = stripe.paymentRequest({
+                    country: 'US',
+                    currency: 'usd',
+                    total: {
+                        label: 'Payment Total',
+                        amount: Math.round(amount * 100),
+                    },
+                    requestPayerName: true,
+                    requestPayerEmail: true,
+                    disableWallets: {!disableWallets}
+                });
+                var prButton = elements.create('paymentRequestButton', {
+                    paymentRequest: paymentRequest,
+                });
+
+                // Check the availability of the Payment Request API first.
+                paymentRequest.canMakePayment().then(function(result) {
+                    if (result) {
+                        prButton.mount('#payment-request-button');
+                    } else {
+                        document.getElementById('payment-request-button').style.display = 'none';
+                    }
+                });
+
+                paymentRequest.on('paymentmethod', function(ev) {
+                    window.parent.postMessage({ type: "confirmed", paymentId: ev.paymentMethod.id}, lexOrigin);
+                });
+
+                var form = document.getElementById('submit');
+                submit.addEventListener('click', async (event) => {
+                    event.preventDefault();
+                    // If the client secret was rendered server-side as a data-secret attribute
+                    // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
+                    const result = await stripe.createPaymentMethod(
+                        {
+                            type: 'card',
+                            card: cardNumber
+                        }
+                    );
+
+                    if (result.error) {
+                        // Show error to your customer (e.g., insufficient funds)
+                        let displayError = document.getElementById('card-errors');
+                        displayError.textContent = 'There was an error processing your payment. Please check your card information.';
+                        console.log(result.error.message);
+                    } else {
+                        window.parent.postMessage({ type: "confirmed", paymentId: result.paymentMethod.id}, lexOrigin);
+                    }
+                });
+            }
+        });
+
+        function previous() {
+            window.parent.postMessage({type:"previous"}, lexOrigin)
+        }
+
+        window.parent.postMessage({ type: "ready" }, lexOrigin);
+
+    </script>
+    
+    
+</apex:page>

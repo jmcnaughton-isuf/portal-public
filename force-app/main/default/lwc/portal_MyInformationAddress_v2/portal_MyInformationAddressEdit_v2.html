@@ -1,0 +1,241 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+    
+    <div if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type={_selfReportModalType}
+            configuration={_selfReportConfiguration}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container bottom-border" if:true={sectionConfiguration.isDisplay}>
+
+            <!-- Section Header -->
+            <h2 style="margin-bottom: 0.5em">{sectionConfiguration.label}</h2>
+
+            <!-- Address Records -->
+            <template for:each={recordList} for:item="eachAddress" for:index="index">
+                <div if:false={eachAddress.isDelete} class="entry-heading" key={eachAddress.timestampHtmlKey}>
+                    <div class="edit-entry-list">
+                        <template if:true={sectionConfiguration.hasReportUpdateLink}>
+                            <a onclick={handleSelfReport} data-index={index}>
+                                <span if:true={eachAddress.hasSelfReportChange}>Pending</span>
+                                <span if:false={eachAddress.hasSelfReportChange}>Request Update</span>
+                            </a>
+                        </template>
+
+                        <template if:false={sectionConfiguration.hasReportUpdateLink}> 
+                            <a if:false={sectionConfiguration.isDisable} onclick={handleDeleteAddress} data-index={index}>
+                                <img src={deleteIcon}>Delete
+                            </a>
+                        </template>
+                    </div>
+
+                    <div class="entry-form">
+                        <div if:true={hasAddressAutocomplete} style="padding-top: 1rem">
+                            <h5>Address Search</h5>
+
+                            <div class={autocompleteFlexGrid} style="align-items: flex-end">
+                                <div class="grid-item" if:true={hasInternationalAutocomplete}>
+                                    <label>{sectionConfiguration.fieldConfigurationMap.addressCountry.label}</label>
+                                    <c-portal_-select 
+                                        default-value={eachAddress.selectedCountryCode}
+                                        option-list={autocompleteCountryPicklistValues}
+                                        handle-change={handleCountrySelection}
+                                        classes=""
+                                        input-name={index}>
+                                    </c-portal_-select>
+                                </div>
+
+                                <div class="grid-item" style={autocompleteSearchStyle}>
+                                    <c-portal_-address-autocomplete handle-selection={handleAddressSelection} country={eachAddress.selectedCountryCode} name={index}></c-portal_-address-autocomplete>
+                                </div>
+                            </div>
+
+                            <hr style="margin: 0 0 1.5rem 0">
+                        </div>
+
+                        <div class="address-lines">
+                            <div style="display:flex;">
+                                <div style="font-size: 1.25em;">Street Address</div>
+                                <div style="bottom:.625em; position:relative;">
+                                    <div class="labelled-toggle-switch">
+                                        <span class="hide-input" style="bottom:7px;position:relative;">Hide</span>
+                                        <label class="switch">
+                                            <input type="checkbox" oninput={setAddressStreetToggle} checked={eachAddress.isShowAddressLines} data-index={index}>
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <span class="show-input" style="bottom:7px; position:relative;">Show</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-grid-3">                           
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressLine1.isDisplay}>
+                                    <label>{sectionConfiguration.fieldConfigurationMap.addressLine1.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachAddress.addressLine1}
+                                        field-id="addressLine1"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.addressLine1.fieldType}
+                                        is-disabled={sectionConfiguration.fieldConfigurationMap.addressLine1.isDisable}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.addressLine1.isRequired}
+                                        handle-change-callback={handleChange}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+    
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressLine2.isDisplay}>
+                                    <label>{sectionConfiguration.fieldConfigurationMap.addressLine2.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachAddress.addressLine2}
+                                        field-id="addressLine2"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.addressLine2.fieldType}
+                                        is-disabled={sectionConfiguration.fieldConfigurationMap.addressLine2.isDisable}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.addressLine2.isRequired}
+                                        handle-change-callback={handleChange}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+    
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressLine3.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachAddress.addressLine3}
+                                        field-id="addressLine3"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.addressLine3.fieldType}
+                                        is-disabled={sectionConfiguration.fieldConfigurationMap.addressLine3.isDisable}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.addressLine3.isRequired}
+                                        handle-change-callback={handleChange}
+                                        label={sectionConfiguration.fieldConfigurationMap.addressLine3.label}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-grid-3">
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressCity.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.addressCity.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachAddress.addressCity}
+                                    field-id="addressCity"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.addressCity.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.addressCity.isDisable}
+                                    is-required={eachAddress.isCityRequired}
+                                    has-toggle={sectionConfiguration.fieldConfigurationMap.addressCity.hasToggle}
+                                    toggle-value={eachAddress.isShowCity}
+                                    toggle-field="isShowCity"
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressState.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.addressState.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachAddress.addressState}
+                                    field-id="addressState"
+                                    index={index}
+                                    input-type={stateInputType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.addressState.isDisable}
+                                    is-required={eachAddress.isStateRequired}
+                                    has-toggle={sectionConfiguration.fieldConfigurationMap.addressState.hasToggle}
+                                    toggle-value={eachAddress.isShowState}
+                                    toggle-field="isShowState"
+                                    handle-change-callback={handleChange}
+                                    picklist-values={eachAddress.statePicklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+                            
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressCountry.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.addressCountry.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachAddress.addressCountry}
+                                    field-id="addressCountry"
+                                    index={index}
+                                    input-type={countryInputType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.addressCountry.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.addressCountry.isRequired}
+                                    has-toggle={sectionConfiguration.fieldConfigurationMap.addressCountry.hasToggle}
+                                    toggle-value={eachAddress.isShowCountry}
+                                    toggle-field="isShowCountry"
+                                    handle-change-callback={handleChange}
+                                    picklist-values={countryPicklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+                        </div>
+
+                        <div class="flex-grid-4">
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressPostalCode.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.addressPostalCode.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachAddress.addressPostalCode}
+                                    field-id="addressPostalCode"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.addressPostalCode.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.addressPostalCode.isDisable}
+                                    is-required={eachAddress.isPostalCodeRequired}
+                                    has-toggle={sectionConfiguration.fieldConfigurationMap.addressPostalCode.hasToggle}
+                                    toggle-value={eachAddress.isShowPostalCode}
+                                    toggle-field="isShowPostalCode"
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressType.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.addressType.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachAddress.addressType}
+                                    field-id="addressType"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.addressType.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.addressType.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.addressType.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={eachAddress.addressTypePicklistValues}
+                                    is-null-option-disabled>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressIsPreferred.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.fieldConfigurationMap.addressIsPreferred.label}
+                                    value={eachAddress.addressIsPreferred}
+                                    field-id="addressIsPreferred"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.addressIsPreferred.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.addressIsPreferred.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.addressIsPreferred.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={sectionConfiguration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.addressShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachAddress.addressShowOnDirectory}
+                                        field-id="addressShowOnDirectory"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.addressShowOnDirectory.fieldType}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.addressShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        label={sectionConfiguration.fieldConfigurationMap.addressShowOnDirectory.label}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="button-list" if:false={sectionConfiguration.isDisable}>
+                <template if:false={sectionConfiguration.hasReportUpdateLink}>
+                    <a class="button secondary small" onclick={handleAddAddress} if:true={isShowAdd}>Add Address</a>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

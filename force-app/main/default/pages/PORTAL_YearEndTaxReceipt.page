@@ -1,0 +1,239 @@
+<apex:page renderAs="pdf"
+            controller="PORTAL_VF_YearEndTaxReceipt"  
+            apiVersion="40.0"
+            applyBodyTag="false"
+            doctype="html-5.0">
+     
+    <head>
+        <style type="text/css">
+
+            body {
+                font-family: Arial Unicode MS; 
+            }
+            
+            table {
+                width: 100%;
+            }
+
+            .tableClass {
+                font-family: Arial Unicode MS; 
+                width: 100%; 
+                border-collapse: collapse;
+            }
+
+            .sectionHeader {
+                width: 100%;
+                font-size: 1em;
+                padding: 5px;
+                margin: 20px 0px;
+                color: black;
+                font-weight: bold;
+               
+            }   
+
+            .designationAmountTd {
+                text-align: right;
+            }
+
+            .totalTd {
+                border-top: 2px solid black;
+                padding-top: 10px;
+            }
+
+            .totalAmount {
+                text-align: right;
+            }
+
+            .headerTh {
+                font-size: 1em;
+                border-bottom: 2px solid black;
+            }
+
+            .headerAmountTh {
+                text-align:  right;
+            }
+
+            .title {
+                font-family: Arial Unicode MS; 
+                text-align: center;
+            }
+
+            .logo {
+                float: left;
+                width: 40%;
+            }
+
+            .smallerText {
+                font-size: small;
+            }
+            
+            .header {
+                overflow: hidden;
+            }
+            
+            .headerAddress {
+                float: right;
+                border-left: 1px solid black;
+            }
+            
+            .contactAddress {
+                text-align: left;
+                height: 80px;
+            }
+            
+            .innerHeaderAddress {
+                @extend smallerText;
+                padding-left: 5px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <apex:outputPanel styleClass="wholePanelClass" id="wholePanel" layout="none"> 
+            <!-- header -->
+            <div class="header">
+                <div class="logo">
+                    <apex:image id="GiftReceiptLogo" width="100%" value="{!$Resource[topLogoImageName]}" alt="{!staticContentInfo[CONTENT_MODULE_TOP_LOGO_ALT_TEXT_KEY]}"/>
+                </div>
+                <div class="headerAddress">
+                    <div class="innerHeaderAddress">
+                        <apex:outputText value="{!staticContentInfo[CONTENT_MODULE_SCHOOL_ADDRESS_KEY]}" escape="false"/>
+                    </div>
+                </div>
+            </div>
+            
+            <br/>
+
+            <!-- Constituent Information -->
+            <apex:outputPanel rendered="{!NOT(ISNULL(constituentWrapper.addressHTML))}" layout="none">
+                <div class="contactAddress">     
+                    <apex:outputText value="{!constituentWrapper.name}" styleClass="contactName"/><br/>
+                    <apex:outputText value="{!constituentWrapper.addressHTML}" escape="false"/> <br/>
+                    <apex:outputPanel layout="none">
+                        <apex:outputText value="{!constituentWrapper.city}"/> 
+                        <apex:outputText value=" {!constituentWrapper.state}"/>
+                        {!IF(and(or(constituentWrapper.city != '', constituentWrapper.state != ''),constituentWrapper.postalCode != ''), ',' , '')}
+                        <apex:outputText value=" {!constituentWrapper.postalCode}"/>
+                    </apex:outputPanel>
+                </div>
+            </apex:outputPanel>
+
+            <br/>
+            <br/>
+
+            <apex:pageBlock >
+                    <br/>
+
+                    <apex:outputText value="{0,date,long}">
+                        <apex:param value="{!TODAY()}" /> 
+                    </apex:outputText>
+
+                    <br/>
+                    <br/>
+                
+                    <apex:outputText value="{!staticContentInfo[CONTENT_MODULE_PRE_TABLE_TEXT_KEY]}" escape="false"/>
+
+                    <br/>
+
+                    <table class="tableClass" id="leads_list" style="-Fs-table-paginate: paginate">
+                        
+                        <!-- table columns -->
+                        <apex:outputPanel layout="none"> 
+                            <thead class="sectionHeader">
+                                <tr>
+
+                                    <apex:outputPanel rendered="{!frontEndDataMap[CREDIT_DATE_FIELD_ID].display}" layout="none">
+                                        <th class="headerTh">
+                                            <apex:outputText value="{!frontEndDataMap[CREDIT_DATE_FIELD_ID].label}"/>
+                                        </th>
+                                    </apex:outputPanel>
+                                   
+                                    <apex:outputPanel rendered="{!frontEndDataMap[DESIGNATION_FIELD_ID].display}" layout="none">
+                                        <th class="headerTh ">
+                                            <apex:outputText value="{!frontEndDataMap[DESIGNATION_FIELD_ID].label}"/>
+                                        </th>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel rendered="{!frontEndDataMap[PAYMENT_AMOUNT_FIELD_ID].display}" layout="none">
+                                        <th class="headerTh headerAmountTh ">
+                                            <apex:outputText value="{!frontEndDataMap[PAYMENT_AMOUNT_FIELD_ID].label}"/>
+                                        </th>
+                                    </apex:outputPanel>
+
+                                </tr>
+                            </thead>
+                        </apex:outputPanel>
+                         
+                        <tbody>
+                            <apex:repeat value="{!tableData}" var="payment">
+                                
+                                <tr class="designationTR">
+                                    <apex:outputPanel rendered="{!frontEndDataMap[CREDIT_DATE_FIELD_ID].display}" layout="none">
+                                        <td>
+                                            <div>
+                                                <apex:outputText value="{0,date,MM/dd/yy}">
+                                                    <apex:param value="{!payment[CREDIT_DATE_FIELD_ID]}" />
+                                                </apex:outputText>
+                                            </div>
+                                        </td> 
+                                    </apex:outputPanel>
+                                                                       
+                                    <apex:outputPanel rendered="{!frontEndDataMap[DESIGNATION_FIELD_ID].display}" layout="none">
+                                        <td data-label="Name">
+                                            <div class="slds-truncate" title="test2">
+                                                {!payment[DESIGNATION_FIELD_ID]}
+                                            </div>
+                                        </td>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel rendered="{!frontEndDataMap[PAYMENT_AMOUNT_FIELD_ID].display}" layout="none">
+                                        <td class="designationAmountTd" data-label="Amount">
+                                            <div class="slds-truncate">
+                                                <apex:outputText value="{0, Number, Currency}">
+                                                    <apex:param value="{!payment[PAYMENT_AMOUNT_FIELD_ID]}" />
+                                                </apex:outputText>
+                                            </div>
+                                        </td>  
+                                    </apex:outputPanel>
+                                          
+                                </tr>
+                                
+                            </apex:repeat>
+
+                            <apex:outputPanel rendered="{!frontEndDataMap[PAYMENT_AMOUNT_FIELD_ID].display}" layout="none">
+                                <tr >
+                                    <apex:outputPanel rendered="{!frontEndDataMap[CREDIT_DATE_FIELD_ID].display}" layout="none" >
+                                        <td  class="totalTd">
+                                        </td>
+                                    </apex:outputPanel>
+    
+                                    <apex:outputPanel rendered="{!frontEndDataMap[DESIGNATION_FIELD_ID].display}" layout="none">
+                                        <td class="totalTd">
+    
+                                        </td>
+                                    </apex:outputPanel>
+    
+                                    <td class="totalTd totalAmount">
+                                        <b>
+                                        <apex:outputText value="{0, Number, Currency}">
+                                            <apex:param value="{!totalAmountDecimal}" />
+                                        </apex:outputText>
+                                        </b>
+                                    </td>
+                                </tr>
+                            </apex:outputPanel>
+                            
+                        </tbody>
+                        
+                    </table>
+
+                    <br/>
+                    
+                    <apex:outputText value="{!staticContentInfo[CONTENT_MODULE_POST_TABLE_TEXT_KEY]}" escape="false"/>
+
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </body>
+</apex:page>

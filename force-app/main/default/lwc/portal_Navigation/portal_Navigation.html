@@ -1,0 +1,49 @@
+<template>
+    <div data-ascend-portal>
+        <header style={colorStyle}>
+            <ul class={_mobileDropDownClass}>
+                <li class="logo">
+                    <a href={homeUrl}><img src={communityLogoUrl} alt="UC Innovation"></a>
+                </li>
+
+                <template for:each={_firstRowNavigation} for:item="nav">
+                    <template if:false={nav.isHidden}>
+                        <li class="item" key={nav.label} if:false={nav.submenu}>
+                            <a href={nav.link}>
+                                {nav.label}
+                            </a>
+                        </li>
+                        <li class={nav.subMenuClass} key={nav.label} if:true={nav.submenu} style={colorStyle}>
+                            <div class="container" style="padding: 0 !important;">
+                                <a tabindex="0" onclick={handleSubmenuDropdown} data-label={nav.label}>
+                                    {nav.label}
+                                </a>
+                                <span style={_caretStyle}></span>
+                            </div>
+                            <ul class="submenu" style={colorStyle}>
+                                <template for:each={nav.submenu} for:item="subItem">
+                                    <li class="subitem" key={subItem.link} if:false={subItem.isHidden}>
+                                        <a href={subItem.link}>{subItem.label}</a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </li>
+                    </template>
+                </template>
+                <li class="item" if:false={isHideLogin}>
+                    <a href={communityLoginUrl} if:false={isLoggedInUser}>
+                        Log In
+                    </a>
+                    <a onclick={handleLogOut} if:true={isLoggedInUser}>
+                        Log Out
+                    </a>
+                </li>
+                <li class="toggle">
+                    <a onclick={handleHamburgerClick}>
+                        <img src={_hamResourceUrl}>
+                    </a>
+                </li>
+            </ul>
+        </header>
+    </div>
+</template>

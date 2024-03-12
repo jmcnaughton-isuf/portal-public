@@ -1,0 +1,65 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_isDisplayTable}>
+            <div class="section-wrapper"> 
+                <div class="show-on-phone">
+                    <div class="registration-table">
+                        <div class="row bottom-border" style="background-color: #fcfcfc; margin-bottom: 0;">
+                            <div class="container" style="padding: 0px;">
+                                <div class="entry-form">
+                                    <h2 style="margin-bottom: .5em; text-align: center;" if:true={_tableTitle}>{_tableTitle}</h2>
+                                    <template for:each={_membershipRecords} for:item="membership" for:index="membershipIndex" if:true={_isDisplayMembershipRecords}>
+                                        <div key={membership.key}>
+                                            <hr if:true={membershipIndex}>
+                                            <template for:each={_columnTitlesList} for:item="column" for:index="columnIndex">
+                                                <h4 key={column.label}><b>{column.label}</b></h4>
+                                                <p key={column.label}>
+                                                    <c-portal_-membership-table-entry
+                                                        membership-record={membership}
+                                                        column={column}
+                                                        is-edit-table={isEditTable}
+                                                        handle-renewal-solicit-opt-out={handleRenewalSolicitOptOut}>
+                                                    </c-portal_-membership-table-entry>
+                                                </p>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <div class="no-memberships-container" if:false={_isDisplayMembershipRecords}>
+                                        <p class="no-memberships-message">{noMembershipsMessage}</p>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hide-on-phone">
+                    <div class="container">
+                        <h2 style="margin-bottom: .5em" if:true={_tableTitle}>{_tableTitle}</h2>
+                        <div class="registration-table">
+                            <template for:each={_columnTitlesList} for:item="column" for:index="columnIndex">
+                                <div class="column no-controls" key={column.key}>
+                                    <div class="headerEqualHeight show" style={_headerStyle}><p>{column.label}</p></div>
+                                    <template for:each={_membershipRecords} for:item="membership" if:true={_isDisplayMembershipRecords}>
+                                        <div class="dataEntry equalHeight show" style="height: 64px;" key={membership.key}>
+                                            <p>
+                                                <c-portal_-membership-table-entry
+                                                    membership-record={membership}
+                                                    column={column}
+                                                    is-edit-table={isEditTable}
+                                                    handle-renewal-solicit-opt-out={handleRenewalSolicitOptOut}>
+                                                </c-portal_-membership-table-entry>
+                                            </p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                        <div class="no-memberships-container" if:false={_isDisplayMembershipRecords}>
+                            <p class="no-memberships-message">{noMembershipsMessage}</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

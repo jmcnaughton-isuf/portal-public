@@ -1,0 +1,38 @@
+<template>
+    <div data-ascend-portal>
+        <div class="username-request-container">
+            <lightning-spinner alternative-text="Loading" if:true={isShowSpinner}></lightning-spinner>
+            <div class="section-body-content center-content">
+                <div class="content-header-bar">
+                    <h1 class="contentTitle" style="font-size: 29px !important;">{forgotUsernameLabel}</h1>
+                </div>
+            </div>
+            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                <h2 style="color:white;font-size: 1rem;">This is an example of changed HTML while importing logic from the product component.</h2>
+            </div>
+            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert" if:true={errorMessage}>
+                <h2 style="color:white;font-size: 1rem;">{errorMessage}</h2>
+                <div class="slds-notify__close">
+                    <lightning-icon icon-name="utility:close" size="xx-small" variant="inverse" onclick={clearErrorMessage} disabled="false" alternative-text="Close" title="Close"></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </div>
+            </div>
+            <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_5-of-12 slds-large-size_5-of-12 request-form-container" style="margin: 40px auto 0; padding: 10px;">
+                <div class="input-text">
+                    <label for="emailAddress">{emailAddressLabel}</label>
+                    <input name="emailAddress" type="email" value={emailAddress} onchange={handleEmailChange} />
+                </div>
+                <div style="padding-bottom: 5px" if:true={isRecaptchaEnabled}>
+                    <c-portal_-Recaptcha>
+                    </c-portal_-Recaptcha>
+                </div>
+                <div class="form-element">
+                    <div class="button-list">
+                        <button onclick={handleSubmit} class="button primary full-mobile">{submitLabel}</button>
+                        <button onclick={handleCancel} class="button secondary full-mobile">{cancelLabel}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,73 @@
+.slds-col h1 {
+    font-size: 1rem;
+}
+
+.slds-col {
+    padding-top: 10px;
+}
+
+.banner {
+    border-top: thin solid;
+    position: fixed;
+    bottom:0;
+    background-color: white;
+    width: 100%;
+    z-index: 10000;
+}
+
+.currently-expired {
+    padding: 0 0 1.0em 0;
+}
+
+@media (max-width: 1199px) {
+    lightning-button-icon {
+        top: 4px !important;
+    }
+}
+
+@media (max-width: 959px) {
+    .flex-grid-2 .grid-item {
+        flex: auto !important;
+    }
+
+    .flex-grid-2 {
+        justify-content: center;
+        display: flex;
+    }
+
+    .grid-item {
+        margin-top: 0.1em;
+        margin-bottom: 0.1em !important;
+    }
+
+    .grid-item-button-style {
+        max-width: 360px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: var(--lwc-varSpacingHorizontalSmall,0.75rem);
+        margin-right: var(--lwc-varSpacingHorizontalSmall,0.75rem);
+    }
+
+    .grid-item-timer-style {
+        max-width: 360px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: var(--lwc-varSpacingHorizontalSmall,0.75rem);
+        margin-right: var(--lwc-varSpacingHorizontalSmall,0.75rem);
+    }
+    
+    .slds-grid {
+        margin-top: 0.7em;
+        margin-bottom: 0.7em;
+    }
+
+    .slds-col {
+        padding-top: 0;
+    }
+
+    .button {
+        width: 100% !important;
+    }
+}

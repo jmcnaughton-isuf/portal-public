@@ -1,0 +1,19 @@
+<template>
+    <div class="container xsmall">
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="section-wrapper" if:true={_isShowComponent}>               
+            <div class="ticket-options full-width">
+                <div class="container" style="padding-left: 0; padding-right: 0;">
+                    <div class="selection-info" id="pay-credit" style="display: block; padding-left: 0; padding-right: 0;">
+                        <iframe src="/apex/PORTAL_StripePaymentElementFormCompact" style={compactStyle} class="slds-align_absolute-center"></iframe>
+                        <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                            recaptcha-option={_recaptchaOption}
+                            recaptcha-token={_recaptchaToken}
+                            is-center-recaptcha="true">
+                        </c-portal_-Recaptcha>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

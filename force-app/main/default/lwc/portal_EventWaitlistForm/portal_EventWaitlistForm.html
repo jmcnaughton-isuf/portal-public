@@ -1,0 +1,155 @@
+<template>
+    <div class="sf-modal" style="display: block;">
+        <div if:true={_showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+        <div class="modal-background" id="view-waitlist-background">
+            <div class="modal">
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                            <h2>Event Waitlist Form</h2>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                            <span class="close-btn" onclick={closeModal}>×</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-wrapper">
+                    <div class="entry-form">
+                        <div class="flex-grid-2">
+                            <div class="grid-item">
+                                <c-portal_-input type="text" 
+                                                 value={_primaryRegistrant.firstName} 
+                                                 label="First Name"
+                                                 label-class="slds-form-element__label"
+                                                 required
+                                                 input-name="firstName"
+                                                 handle-input={handleRegistrantInput}>
+                                </c-portal_-input>
+                            </div>
+                            <div class="grid-item">
+                                <c-portal_-input type="text" 
+                                                 value={_primaryRegistrant.lastName} 
+                                                 label="Last Name"
+                                                 label-class="slds-form-element__label"
+                                                 required
+                                                 input-name="lastName"
+                                                 handle-input={handleRegistrantInput}>
+                                </c-portal_-input>
+                            </div>
+                            <div class="grid-item">
+                                <c-portal_-input classes="slds-input" 
+                                                 type="email" 
+                                                 value={_primaryRegistrant.email} 
+                                                 label="Email"
+                                                 label-class="slds-form-element__label"
+                                                 required
+                                                 input-name="email"
+                                                 handle-input={handleRegistrantInput}>
+                                </c-portal_-input>
+                            </div>
+                            <div class="grid-item">
+                                <c-portal_-input classes="slds-input" 
+                                                 type="number" 
+                                                 value={_numberOfTickets} 
+                                                 label="Number of Tickets"
+                                                 label-class="slds-form-element__label"
+                                                 required
+                                                 min="1"
+                                                 max={maxTickets}
+                                                 handle-input={handleTicketInput}>
+                                </c-portal_-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-bottom: 25px" if:true={_isRecaptchaEnabled}>
+                        <c-portal_-Recaptcha>
+                        </c-portal_-Recaptcha>
+                    </div>
+                    <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                        <div class="slds-grid slds-wrap">
+                            <div class="button-list">
+                                <button class="button secondary" onclick={closeModal}>Cancel</button>
+                                <button class="button primary" onclick={handleSubmitClick}>Submit</button>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Event Waitlist Form</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={_primaryRegistrant.firstName} 
+                                            label="First Name"
+                                            label-class="slds-form-element__label"
+                                            required
+                                            input-name="firstName"
+                                            handle-input={handleRegistrantInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={_primaryRegistrant.lastName} 
+                                            label="Last Name"
+                                            label-class="slds-form-element__label"
+                                            required
+                                            input-name="lastName"
+                                            handle-input={handleRegistrantInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <c-portal_-input classes="slds-input" 
+                                            type="email" 
+                                            value={_primaryRegistrant.email} 
+                                            label="Email"
+                                            label-class="slds-form-element__label"
+                                            required
+                                            input-name="email"
+                                            handle-input={handleRegistrantInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <c-portal_-input classes="slds-input" 
+                                            type="number" 
+                                            value={_numberOfTickets} 
+                                            label="Number of Tickets"
+                                            label-class="slds-form-element__label"
+                                            required
+                                            min="1"
+                                            max={maxTickets}
+                                            handle-input={handleTicketInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" onclick={handleSubmitClick} title="Submit">Submit</button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div> -->
+</template>

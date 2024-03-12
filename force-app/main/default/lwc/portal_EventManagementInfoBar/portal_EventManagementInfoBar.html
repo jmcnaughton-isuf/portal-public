@@ -1,0 +1,87 @@
+<template>
+    <div class="flex-grid-4 module-top-padding grid-bottom-margin">
+        <div class="grid-item grid-text-style text-align-center grid-item-top-padding grid-item-bottom-margin">
+            <lightning-progress-ring value={attendedParticipantsToRegistered}
+                                     size="large"
+                                     style="float:left;">
+            </lightning-progress-ring>
+            <h3 style="float:left;" class="slds-p-left_small">Registered: {registeredParticipants}</h3>
+        </div>
+        <div class="grid-item grid-text-style text-align-center grid-item-top-padding grid-item-bottom-margin">
+            <h3 class="slds-p-left_small h3-margin-left">Attended: {attendedParticipants}</h3>
+        </div>
+        <div class="grid-item hide-on-phone grid-item-bottom-margin">
+            <button class="button primary full-mobile" onclick={handleRefreshClick}>Refresh</button>
+            <!-- <lightning-button
+                label="Refresh"
+                title="Refresh"
+                onclick={handleRefreshClick}
+                icon-name="utility:refresh"
+                class="slds-button__icon_left">
+            </lightning-button>  -->
+        </div>
+        <div class="grid-item hide-on-phone grid-item-bottom-margin">
+            <button class="button primary full-mobile" onclick={handleAddAttendeeClick}>Add Attendee</button>
+            <!-- <lightning-button
+                label="Add Attendee"
+                title="Add Attendee"
+                onclick={handleAddAttendeeClick}
+                icon-name="utility:add"
+                class="slds-button__icon_left">
+            </lightning-button> -->
+        </div>
+    </div>
+    <div class="flex-grid-2">
+        <div class="grid-item show-on-phone">
+            <button class="button primary full-mobile extend-button" onclick={handleRefreshClick}>Refresh</button>
+        </div>
+        <div class="grid-item show-on-phone">
+            <button class="button primary full-mobile extend-button" onclick={handleAddAttendeeClick}>Add Attendee</button>
+        </div>
+    </div>
+    
+    <!-- <div class="slds-grid info-bar">
+        <div class="slds-col_bump-left">
+            <span>
+                <lightning-progress-ring 
+                    value={attendedParticipantsToRegistered}
+                    size="large"
+                ></lightning-progress-ring>
+            </span>
+            
+        </div>
+
+        <div class="slds-col">
+            <span class="gauge-text">
+                Registered: {registeredParticipants}
+            </span>
+        </div>
+        
+
+        <div class="slds-col">
+            Attended: {attendedParticipants}
+        </div>
+
+        <div class="slds-col">
+            <lightning-button
+                label="Refresh"
+                title="Refresh"
+                onclick={handleRefreshClick}
+                icon-name="utility:refresh"
+                class="slds-button__icon_left">
+            </lightning-button>
+        </div>
+
+        <div class="slds-col">
+            <lightning-button
+                label="Add Attendee"
+                title="Add Attendee"
+                onclick={handleAddAttendeeClick}
+                icon-name="utility:add"
+                class="slds-button__icon_left">
+            </lightning-button>
+        </div>
+    </div> -->
+
+    <div class="border-bottom"></div>
+</template>

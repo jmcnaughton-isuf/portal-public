@@ -1,0 +1,27 @@
+@media (max-width: 1250px) {
+    .layered.edit-entry-list {
+        position: static;
+    }
+
+    .layered.labelled-toggle-switch {
+        top: 0px;
+    }
+}
+
+.edit-entry-list {
+    right: 14px;
+}
+
+@media (max-width: 281px) {
+    .labelled-toggle-switch {
+        display: flex;
+        align-items: center;
+        right: 0;
+        width: fit-content;
+    }
+
+    .labelled-toggle-switch > span {
+        margin-top: 10px;
+        bottom: 0 !important;
+    }
+}

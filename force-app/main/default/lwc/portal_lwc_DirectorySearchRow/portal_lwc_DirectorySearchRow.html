@@ -1,0 +1,52 @@
+<template>
+    <div class="flex-grid-3">
+        <template if:true={hasOptions}>
+            <div class="grid-item" if:false={hasOneOptionInCategory}>
+                <c-portal_-select classes="slds-input slds-combobox__input" 
+                                  label="Select Criteria"
+                                  handle-change={handleSearchForChange} 
+                                  option-list={options} 
+                                  default-value={searchCriteriaName}>
+                </c-portal_-select>
+            </div>
+        </template>
+
+        <template if:false={hasMultipleFields}>
+            <div class="grid-item">
+                <c-portal_-directory-input-field current-search-setting={currentSearchSetting} add-value-to-search={addValueToSearch} ></c-portal_-directory-input-field>
+            </div>
+        </template>
+        <template if:true={hasMultipleFields}>
+            <template for:each={searchCriteria.subSettingList} for:item="subSetting">
+                <div class="grid-item" onkeyup={handleKeyUp} key={subSetting.Search_Criteria_Name__c}>
+                    <c-portal_-directory-input-field current-search-setting={subSetting} 
+                                                     add-value-to-search={addValueToSearch}
+                                                     label={subSetting.Search_Criteria_Name__c}
+                                                     manually-apply-values="true">
+                    </c-portal_-directory-input-field>
+                </div>
+            </template>
+            <p class="slds-m-top_large"><a onclick={handleMultiValueApply} role="button">Apply</a></p>
+        </template>
+    
+        <div class="grid-item">
+            <div class="results">
+                <template iterator:displayvalueit={valueListSelected}>
+                    <div class="pill" key={displayvalueit.value}>
+                        <a data-index={displayvalueit.index} class="remove-guest-btn" title="Remove" onclick={handleRemoveValue}>
+                            <p class="label">
+                                x
+                            </p>
+                        </a>
+                        <p>
+                            {displayvalueit.value}
+                        </p>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="edit-entry-list" if:false={isFirstIndex}>
+            <a data-index={index} onclick={handleDeleteSearchTerm}><img src={_blackHighlightResourceUrl}>Delete Search Criterion</a>
+        </div>
+    </div>
+</template>

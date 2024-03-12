@@ -1,0 +1,82 @@
+<template>
+    <div id="information-modal" class="sf-modal" style="display: block;">
+        <div class="modal-background" id="view-information-background">
+            <div class="modal">
+                <!-- Modal/Popup Box LWC header -->
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>Edit Volunteer Information</h2>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                            <span id="information-modal-close" class="close-btn" onclick={closeModal}>×</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- body -->
+                <div class="section-wrapper">
+                    <div if:true={_showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </div>
+                    <div class="entry-form bottom-border" style="padding-bottom: 1em">
+                        <div style="margin-bottom: 1em">
+                            <h3 style="margin-bottom: 0.5em">{_contactFormData.heading}</h3>
+                            <div class="flex-grid-2">
+                                <template for:each={_contactFormData.formRowList} for:item="record" for:index="recordIndex">
+                                    <template for:each={record.formFieldList} for:item="formField">
+                                        <div if:true={formField.isDisplay} class="grid-item" key={formField.fieldId}>
+                                            <fieldset>
+                                                <div class="field-wrapper block">
+                                                    <c-portal_-form-field field-data={formField} data-contact></c-portal_-form-field>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <c-portal_-form-field if:false={formField.isDisplay} field-data={formField} data-contact key={formField.fieldId}></c-portal_-form-field>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1em">
+                            <h3>{_skillFormData.heading}</h3>
+                            <!--List the chosen constituent skills-->
+                            <template for:each={_selectedSkills} for:item="skill" for:index="listIndex">
+                                <div class="pill" key={skill.value} style="margin-right: 3px">
+                                    <a class="remove-guest-btn" onclick={handleDeleteSkill} data-index={listIndex}>
+                                        <p class="label">×</p></a>
+                                    <p>{skill.label}</p>
+                                </div>
+                            </template>
+                            <a id="reference-skill" class="pill" onclick={handleAddList}>
+                                <div class="remove-guest-btn">
+                                    <p class="label">+</p>
+                                </div>
+                                <p>Add Skill</p>
+                            </a>
+                        </div>
+                        <!--Add skill picklist-->
+                        <div id="add-skill-form" style="display:flex; margin-top: 1em" 
+                             if:true={_showAddList} class="flex-grid-2 inline-grid">
+                            <div class="grid-item">
+                                <c-portal_-form-field field-data={formFieldSkills} handle-value-change={handleSkillChange} data-skill></c-portal_-form-field>
+                            </div>
+                            <div class="grid-item">
+                                <a if:false={isLookup} onclick={handleAddSkill} class="button primary small">Add</a>
+                                <a onclick={handleRemoveAddList} class="button secondary small">Hide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal/Popup Box LWC footer -->
+                    <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                        <div class="slds-grid slds-wrap slds-grid_align-end">
+                            <div class="button-list">
+                                <button id="close-btn2" class="button secondary" onclick={closeModal} title="Cancel">Cancel</button>
+                                <button id="waitlist-modal-close" class="button primary" onclick={handleSubmit} title="Submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,35 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+    <div if:true={_isShowComponent}>
+        <div class="container">
+            <div class="method-selection-container">
+                <button class={ccButtonClass} onclick={handleCardChoice}>{creditCardTitle}</button>
+                <button class={achButtonClass} onclick={handleACHChoice}>{achTitle}</button>
+            </div>
+            <div class="selection-info" style="display: block; padding-left: 0; padding-right: 0;">
+                <!-- Cybersource Credit Card Form -->
+                <iframe 
+                    class="slds-align_absolute-center" 
+                    src="/apex/PORTAL_VF_CyberSourceFormCompact" 
+                    style="width: 100%; max-width: 328px; height: 450px; border-style: none;" 
+                    if:true={isPayWithCreditCard}>
+                </iframe>
+
+                <!-- Cybersource ACH Form -->
+                <iframe
+                    class="slds-align_absolute-center" 
+                    src="/apex/PORTAL_VF_CyberSourceACHFormCompact" 
+                    style="width: 100%; max-width: 328px; height: 610px; border-style: none;" 
+                    if:true={isPayWithACH}>
+                </iframe>
+
+                <!-- reCAPTCHA -->
+                <c-portal_-Recaptcha
+                    recaptcha-option={_recaptchaOption}
+                    is-center-recaptcha="true"
+                    if:true={isDisplayRecaptcha}>
+                </c-portal_-Recaptcha>
+            </div>
+        </div>
+    </div>
+</template>

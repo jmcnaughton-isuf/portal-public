@@ -1,0 +1,21 @@
+.select-v2 {
+    outline: var(--lwc-brandAccessibleActive);
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid var(--lwc-brandAccessible);
+    border-radius: 0;
+    width: 100%;
+    background-color: white !important;
+}
+
+.no-border {
+    border: none;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid black;
+}

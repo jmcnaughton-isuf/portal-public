@@ -1,0 +1,26 @@
+<template>
+    <div data-ascend-portal>
+        <div class="button-block bottom-border" if:true={_contentModuleMetadata}>
+            <div class="container large">
+                <div class="container">
+                    <h2 style="margin-bottom: 1.5em" if:true={_contentModuleMetadata.heading}>{_contentModuleMetadata.heading}</h2>
+                    <!-- button-list takes in 4 different row quotients col-*, 2, 3, 4, 5-->
+                    <div class={listClass} style="margin-bottom: 1.5em">
+                        <template for:each={_contentModuleMetadata.buttonList} for:item="button">
+                            <a class="list-item button primary full-mobile equalHeightButtons show" 
+                            style="height: 34px;"
+                            href={button.link} 
+                            target={button.target}
+                            key={button.label}>
+                                {button.label}
+                            </a>
+                        </template>
+                    </div>
+                    <p class="lead">
+                        <lightning-formatted-rich-text value={_contentModuleMetadata.helpText}></lightning-formatted-rich-text>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

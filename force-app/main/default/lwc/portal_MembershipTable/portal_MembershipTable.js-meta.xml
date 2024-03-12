@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageName" label="Page Name" type="String"/>
+            <property name="mainSectionName" label="Main Section Name" type="String"/>
+            <property name="subSectionName" label="Sub Section Name" type="String"/>
+            <property name="noMembershipsMessage" label="&quot;No Table Data&quot; Message" type="String" default="No memberships to display."/>
+            <property name="isEditTable" label="Is Edit Table" type="Boolean"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

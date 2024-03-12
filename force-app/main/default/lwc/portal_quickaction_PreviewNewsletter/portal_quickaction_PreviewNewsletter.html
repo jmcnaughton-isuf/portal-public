@@ -1,0 +1,12 @@
+<template>
+        <header class="slds-modal__header">
+            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Preview Newsletter</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_large">
+            <c-portal_-newsletter-detail newsletter-id={recordId} if:true={_isCallbackDone}></c-portal_-newsletter-detail>
+        </div>
+        <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+        </footer>
+    
+</template>

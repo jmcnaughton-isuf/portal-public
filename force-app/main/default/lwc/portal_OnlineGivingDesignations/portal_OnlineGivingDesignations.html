@@ -1,0 +1,267 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin" style="padding-bottom: 0px">
+                <div class="section-body-content">
+                    <div class="container">
+                        <div class="ticket-options full-width">
+                            <h2 style={headerStyle}>{componentLabel}</h2>
+                            <div class={flexgridClass}>
+                                <template for:each={_featuredDesignationsList} for:item="designation">
+                                    <div class="grid-item designation-mobile-margin" key={designation.Id}>
+                                        <label data-name={designation.Name}
+                                            onmouseenter={handleDesignationEnter}
+                                            onmouseleave={handleDesignationLeave}>
+                                            <input type="radio" class="radio" data-name={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} onclick={handleDesignationClicked}>
+                                            <span class="not-available"><a>{designation.Name}</a></span>
+                                        </label>
+                                    </div>
+                                </template>
+                                <div class="grid-item" if:true={showMoreButton}>
+                                    <label data-name="showMore"
+                                        onmouseenter={handleDesignationEnter}
+                                        onmouseleave={handleDesignationLeave}>
+                                        <input type="radio" class="radio" data-name="showMore" onclick={handleShowMoreClicked}>
+                                        <span class="not-available"><a>{selectMoreLabel}</a></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid-item lookup-margin" if:true={_showLookup}>
+                                <c-portal_-lookup icon-style="top: 10px; right: 10px;" dropdown-style="top: 38px;" classes="" handle-lookup-option-selected={handleLookup} input-value="" clear-list={_clearList} handle-change={handleLookupChange} label={label} display-setting-list={_displaySettingList} custom-metadata-api-name={customMetadataApiName}></c-portal_-lookup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id={modalId} class="sf-modal" style="display: block" if:true={_showModal}>
+                <template if:true={_showSpinner}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <div class="modal-background" id="view-waitlist-background">
+                    <div class="modal">
+                        <div class="content-header-bar">
+                            <div class="slds-grid slds-wrap full-width">
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                    <h2>{modalTitle}</h2>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                    <span id="waitlist-modal-close" class="close-btn" onclick={closeModal}>×</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="section-wrapper">
+                                <template if:true={useSearch}>
+                                    <h4 style="margin-bottom: .5em !important">Search for your designation here.</h4>
+                                    <div class="search">
+                                        <input type="text" value={_keyword} data-name="keyword" oninput={setKeyword}>
+                                        <span class="search-icon"></span>
+                                    </div>
+                                    <a class="button primary slds-m-vertical_small" onclick={searchDesignations}>Search</a>
+                                    <template for:each={_searchDesignationList} for:item="designation" for:index="index">
+                                        <fieldset style="margin-bottom: 1em" key={designation.Id}>
+                                            <div class="field-wrapper">
+                                                <input style="display: inline-block; width: auto" 
+                                                    type="checkbox" 
+                                                    class="radio" 
+                                                    data-name={designation.Name} 
+                                                    data-id={designation.Id} 
+                                                    data-min={designation.minimumGiftAmount} 
+                                                    data-index={index} 
+                                                    key={designation.Id} 
+                                                    onclick={handleMultiDesignationClicked} 
+                                                    checked={designation.checked}>
+                                                <label for="">{designation.Name}</label>
+                                            </div>
+                                        </fieldset>
+                                    </template>
+                                </template>
+                            </div>
+                            <div class="section-wrapper">
+                                <h4>{modalText}</h4>
+                                <template if:true={isFlatModal} for:each={_allDesignations} for:item="designation" for:index="index">
+                                    <fieldset style="margin-bottom: 1em" key={designation.Id}>
+                                        <div class="field-wrapper">
+                                            <input style="display: inline-block; width: auto" 
+                                                type="checkbox" 
+                                                class="radio" 
+                                                data-name={designation.Name} 
+                                                data-id={designation.Id} 
+                                                data-min={designation.minimumGiftAmount} 
+                                                data-index={index} 
+                                                key={designation.Id} 
+                                                onclick={handleMultiDesignationClicked} 
+                                                checked={designation.checked}>
+                                            <label for="">{designation.Name}</label>
+                                        </div>
+                                    </fieldset>
+                                </template>
+                                <template if:true={isHierarchyModal}>
+                                    <div class="flex-grid-1">
+                                        <div class="grid-item full-width">
+                                            <label>{topDesignationLevelLabel}</label>
+                                            <c-portal_-select default-value={_topSelectedHierarchyDesignation}
+                                                            option-list={topHierarchyComboBoxOptionList}
+                                                            handle-change={handleTopHierarchyChange}
+                                                            classes="">
+                                            </c-portal_-select>
+                                        </div>
+                                        <template for:each={hierarchyComboBoxOptionList} for:item="optionList" for:index="index">
+                                            <div class="grid-item full-width" key={optionList.label}>
+                                                <label key={optionList.label}>{optionList.label}</label>
+                                                <c-portal_-select default-value={optionList.value}
+                                                                option-list={optionList.options}
+                                                                handle-change={handleHierarchyChange}
+                                                                classes=""
+                                                                input-name={optionList.depth}
+                                                                key={optionList.key}>
+                                                </c-portal_-select>
+                                            </div>
+                                        </template>
+                                        <template if:true={showAddButton}>
+                                            <a class="button primary slds-m-vertical_small" onclick={addSelectedButton}>Add Selected Designation</a>
+                                        </template>
+                                    </div>
+                                    <template for:each={_hierarchyTemporaryDesignationList} for:item="designation" for:index="index">
+                                        <fieldset style="margin-bottom: 1em" key={designation.Id}>
+                                            <div class="field-wrapper">
+                                                <input style="display: inline-block; width: auto" 
+                                                    type="checkbox" 
+                                                    class="radio"
+                                                    data-name={designation.Name} 
+                                                    data-id={designation.Id} 
+                                                    data-min={designation.minimumGiftAmount} 
+                                                    data-index={index} 
+                                                    onclick={handleMultiDesignationClicked} 
+                                                    checked={designation.checked}>
+                                                <label for="">{designation.Name}</label>
+                                            </div>
+                                        </fieldset>
+                                    </template>
+                                </template>
+                                <!-- Accordion -->
+                                <div class="accordion-block" if:true={isCategoryModal}>
+                                    <div class="accordion white full-width">
+                                        <template for:each={_categoryDesignations} for:item="category" for:index="index">
+                                            <div class={category.class} key={category.category}>
+                                                <a class="topic" data-index={index} onclick={handleCategoryClicked}>{category.category}</a>
+                                                <div class="accordion-content" if:true={category.showDesignations}>
+                                                    <template for:each={category.designations} for:item="designation" for:index="designationIndex">
+                                                        <fieldset style="margin-bottom: 1em" key={designation.Id}>
+                                                            <div class="field-wrapper">
+                                                                <input style="display: inline-block; width: auto" 
+                                                                    type="checkbox" 
+                                                                    class="radio" 
+                                                                    data-name={designation.Name} 
+                                                                    data-id={designation.Id} 
+                                                                    data-min={designation.minimumGiftAmount} 
+                                                                    data-category={category.category} 
+                                                                    data-index={designationIndex} 
+                                                                    key={designation.Id} 
+                                                                    onclick={handleMultiDesignationClicked} 
+                                                                    checked={designation.checked}>
+                                                                <label for="">{designation.Name}</label>
+                                                            </div>
+                                                        </fieldset>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-wrap slds-grid_align-end">
+                                    <div class="slds-p-around_small slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                                        <div class="button-list">
+                                            <a class="button secondary" onclick={closeModal}>Cancel</a>
+                                            <a class="button primary" onclick={handleContinueClicked}>Save</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <h2 style={headerStyle}>{componentLabel}</h2>
+            <lightning-layout multiple-rows="true">
+                <template for:each={_featuredDesignationsList} for:item="designation">
+                    <lightning-layout-item padding="around-small" size={_featuredDesignationColumnSize} style="padding-right:0px !important" key={designation.Id}>
+                        <button style="border-style:solid; width: 100%; font-size:1.5rem;" data-name={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} onclick={handleDesignationClicked}>{designation.Name}</button>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item padding="around-small" size="12" if:true={_showLookup}>
+                    <c-portal_-lookup handle-lookup-option-selected={handleLookup} input-value="" clear-list={_clearList} handle-change={handleLookupChange} label={label} display-setting-list={_displaySettingList} custom-metadata-api-name={customMetadataApiName}></c-portal_-lookup>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="12" style="padding-left:0px !important" if:true={showMoreButton}>
+                    <button style="border-style:solid; width: 100%; font-size:1.5rem;" data-name="showMore" onclick={handleShowMoreClicked}>{selectMoreLabel}</button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <template if:true={_showModal}>
+                <template if:true={_showSpinner}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <section role="dialog"  class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2  class="slds-modal__title slds-hyphenate">{modalTitle}</h2>
+                    </header>
+                    <template if:true={useSearch}>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <lightning-input type="text" placeholder="type keywords here" label="keywords" value={_keyword} data-name="keyword" onchange={setKeyword}></lightning-input>
+                            <button class="slds-button slds-button_neutral" onclick={searchDesignations}>Search</button>
+                            <template for:each={_searchDesignationList} for:item="designation" for:index="index">
+                                <lightning-input type="checkbox" data-name={designation.Name} label={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} data-index={index} key={designation.Id} onclick={handleMultiDesignationClicked} checked={designation.checked}></lightning-input>
+                            </template>
+                        </div>
+                    </template>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <p>{modalText}</p>
+
+                        <template if:true={isFlatModal} for:each={_allDesignations} for:item="designation" for:index="index">
+                            <lightning-input type="checkbox" data-name={designation.Name} label={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} data-index={index} key={designation.Id} onclick={handleMultiDesignationClicked} checked={designation.checked}></lightning-input>
+                        </template>
+
+                        <template if:true={isCategoryModal} for:each={_categoryDesignations} for:item="category" for:index="index">
+                            <a style="text-transform: uppercase; font-size: 1rem; color: #005496;font-weight: bold;" key={category.category} data-index={index} onclick={handleCategoryClicked}>{category.category}</a>
+                            <br key={category.category}/>
+                            <div style="height:2px;background-color:black" key={category.category}></div>
+                            <template if:true={category.showDesignations} for:each={category.designations} for:item="designation" for:index="designationIndex">
+                                <lightning-input type="checkbox" data-name={designation.Name} label={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} data-category={category.category} data-index={designationIndex} key={designation.Id} onclick={handleMultiDesignationClicked} checked={designation.checked}></lightning-input>
+                            </template>
+                            <br key={category.category}/>
+                        </template>
+
+                        <template if:true={isHierarchyModal}>
+                            <br/>
+                            <lightning-combobox label={topDesignationLevelLabel} value={_topSelectedHierarchyDesignation} options={topHierarchyComboBoxOptionList} onchange={handleTopHierarchyChange}></lightning-combobox>
+                            <br/>
+                            <template for:each={hierarchyComboBoxOptionList} for:item="optionList" for:index="index">
+                                <lightning-combobox label={optionList.label} data-depth={optionList.depth} value={optionList.value} options={optionList.options} onchange={handleHierarchyChange} key={optionList.key}></lightning-combobox>
+                                <br key={optionList.key}/>
+                            </template>
+                            <template if:true={showAddButton}>
+                                <button class="slds-button slds-button_neutral" onclick={addSelectedButton}>Add Selected Designation</button>
+                            </template>
+                            <br/>
+                            <br/>
+                            <template for:each={_hierarchyTemporaryDesignationList} for:item="designation" for:index="index">
+                                <lightning-input type="checkbox" data-name={designation.Name} label={designation.Name} data-id={designation.Id} data-min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c} data-index={index} key={designation.Id} onclick={handleMultiDesignationClicked} checked={designation.checked}></lightning-input>
+                            </template>
+                            <br/>
+                        </template>
+
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <br/>
+                        <p style="font-weight:bold;">{_numberOfDesignations} Selected</p>
+                        <br/>
+                        <button class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+                        <button class="slds-button slds-button_brand" onclick={handleContinueClicked}>Continue</button>
+                    </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template> -->
+        </template>
+    </div>
+</template>

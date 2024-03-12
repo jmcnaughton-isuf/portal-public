@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageName" label="Content Page Name" type="String"/>
+            <property name="moduleName" label="Content Module Name" type="String"/>
+            <property name="urlParamKey" label="URL Param Key" type="String" description="Use the URL param to match against sub name on content page."/>
+            <property name="displayTo" label="Users to Display To" datasource="All Users,Authenticated Users,Unauthenticated Users" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

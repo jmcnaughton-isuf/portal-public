@@ -1,0 +1,23 @@
+<template>
+    <div data-ascend-portal>
+        <div class="event-tabs tabs">
+        <!-- <lightning-input label="Show Online Events" class="container slds-p-vertical_medium" type="checkbox" checked={_isShowOnlineEvents} onchange={handleOnlineEventChange}></lightning-input> -->
+            <fieldset>
+                <div class="field-wrapper">
+                    <input style="display: inline-block; width: auto" 
+                        type="checkbox" 
+                        checked={_isShowOnlineEvents} 
+                        class="radio"
+                        onchange={handleOnlineEventChange}>
+                    <label>Show Online Events</label>
+                </div>
+            </fieldset>
+            <c-portal_-listing page-name={pageName} 
+                            main-section-name={mainSectionName} 
+                            sub-section-name={subSectionName} 
+                            listing-list={_listingList}
+                            design={design}>
+            </c-portal_-listing> 
+        </div>
+    </div>
+</template>

@@ -1,0 +1,70 @@
+<apex:page showHeader="false" sidebar="false" lightningStyleSheets="true" controller="PORTAL_ApplePayController">
+    <apex:variable var="merchantSession" value="{!merchantSession}" />
+    <apex:form >
+        <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
+            </head>
+            <style>
+            apple-pay-button {
+                --apple-pay-button-width: 100%;
+                --apple-pay-button-height: 40px;
+                --apple-pay-button-border-radius: 3px;
+                --apple-pay-button-padding: 0px 0px;
+                --apple-pay-button-box-sizing: border-box;
+                }
+            </style>
+            <body>
+                <apex:outputPanel rendered="{!isApplePayConfigured}">
+                    <div id="container">
+                        <apple-pay-button buttonstyle="black" type="plain" locale="en" onclick="handleApplePayClick()"></apple-pay-button>
+                    </div>
+                </apex:outputPanel>
+            </body>
+
+            <script type="application/javascript">
+                const applePayOrigin = "{!lexOrigin}";
+                let totalAmount = 0;
+                window.addEventListener("message", (event) => {
+                    let eventData = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+
+                    if (event.origin === applePayOrigin && eventData.type === "initialize") {
+                        totalAmount = eventData.displayOptions.amount;
+                    }
+                });
+
+                function handleApplePayClick() {
+                    let applePayRequest = {"countryCode": "US",
+                                            "currencyCode": "USD",
+                                            "merchantCapabilities": [
+                                                "supports3DS"
+                                            ],
+                                            "supportedNetworks": [
+                                                "visa",
+                                                "masterCard",
+                                                "amex",
+                                                "discover"
+                                            ],
+                                            "total": {
+                                                "label": "{!merchantName}",
+                                                "type": "final",
+                                                "amount": totalAmount
+                                            }}
+                    let appleSession = new ApplePaySession(3, applePayRequest); 
+                    appleSession.onvalidatemerchant = (event) => {
+                        let temp = {!merchantSession}
+                        appleSession.completeMerchantValidation(temp);
+                    }
+
+                    appleSession.onpaymentauthorized = (event) => {
+                        let paymentToken = JSON.stringify(event.payment.token.paymentData);
+
+                        window.parent.postMessage({ type: "applePayComplete", token: paymentToken }, applePayOrigin);
+                        appleSession.completePayment({status: ApplePaySession.STATUS_SUCCESS});
+                    }
+                    appleSession.begin()
+                }
+            </script>
+        </html>
+    </apex:form>
+</apex:page>

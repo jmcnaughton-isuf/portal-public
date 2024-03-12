@@ -1,0 +1,10 @@
+lightning-map {
+    max-height: none;
+    margin: 2.5em 0;
+}
+
+@media (min-width: 960px) {
+    .slds-has-coordinates {
+      height: 100% !important;
+    }
+}

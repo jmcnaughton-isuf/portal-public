@@ -1,0 +1,47 @@
+<template>
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container" if:true={isDisplayServiceIndicators}>
+            <div class="bottom-border">
+                <h2>{sectionConfiguration.serviceIndicators.label}</h2>
+                <a href="?mode=edit&tab=privacy" class="view-all-news button secondary small" style="top: 10px">Edit {sectionConfiguration.serviceIndicators.label}</a>
+            </div>
+            <div class="entry-form">
+                <template for:each={stickyServiceIndicators} for:item="stickyServiceIndicatorValue" for:index="index">
+                    <div class="flex-grid-1" key={stickyServiceIndicatorValue.timestampHtmlKey}>
+                        <div class="grid-item">
+                            <c-portal_-My-Information-Edit-Field_v2
+                                label={stickyServiceIndicatorValue.portalDescription}
+                                value={stickyServiceIndicatorValue.isActive}
+                                field-id="isActive"
+                                index={index}
+                                section-id="stickyServiceIndicators"
+                                input-type={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.fieldType}
+                                is-disabled>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="entry-form">
+                <template for:each={searchResults} for:item="serviceIndicator" for:index="index">
+                    <div class="flex-grid-1" key={serviceIndicator.timestampHtmlKey}>
+                        <div class="grid-item">
+                            <c-portal_-My-Information-Edit-Field_v2
+                                label={serviceIndicator.portalDescription}
+                                value={serviceIndicator.isActive}
+                                field-id="isActive"
+                                index={index}
+                                section-id="serviceIndicators"
+                                input-type={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.fieldType}
+                                is-disabled>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="line-break"></div>  
+        </div>
+    </template>
+</template>

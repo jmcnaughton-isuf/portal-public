@@ -1,0 +1,21 @@
+@media (min-width: 992px) {
+div[class^='flex-grid'] {
+    margin-left: 20px;
+}
+}
+
+div[class^='flex-grid'] {
+    position: relative;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    background: #f5f6f7;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+}
+
+.pill .remove-guest-btn .label {
+    top: -7px;
+}
+
+.results .pill p {
+    word-break: break-word;
+}

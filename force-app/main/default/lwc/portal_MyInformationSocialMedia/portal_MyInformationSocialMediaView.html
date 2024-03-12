@@ -1,0 +1,91 @@
+<template>
+    <div class="show-on-phone">
+        <h2>Social Media Information</h2>
+        <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Social Media Information</a>
+
+        <div class="registration-table" if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                        <h3>{informationMap.frontEndData.socialMediaPlatform.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimSocialMedia} for:item="account">
+                                <template if:false={account.isHide}>
+                                    <template if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                                        <h4 key={account.Id}>{informationMap.frontEndData.socialMediaPlatform.label}</h4>
+                                        <p key={account.Id}>{account.socialMediaPlatform}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                                        <h4 key={account.Id}>{informationMap.frontEndData.socialMediaUrl.label}</h4>
+                                        <p key={account.Id}>{account.socialMediaUrl}</p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={informationMap.records.Social_Media.records} for:item="account">
+                                <template if:false={account.isHide}>
+                                    <template if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                                        <h4 key={account.Id}>{informationMap.frontEndData.socialMediaPlatform.label}</h4>
+                                        <p key={account.Id}>{account.socialMediaPlatform}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                                        <h4 key={account.Id}>{informationMap.frontEndData.socialMediaUrl.label}</h4>
+                                        <p key={account.Id}>{account.socialMediaUrl}</p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hide-on-phone">
+        <div class="container">
+            <div class="bottom-border">
+                <h2>Social Media Information</h2>
+                <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Social Media Information</a>
+            </div>
+            
+            <div class="registration-table">
+                <div class="column no-controls" if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                    <div class="headerEqualHeight"><p>{informationMap.frontEndData.socialMediaPlatform.label}</p></div>
+                    <template for:each={_interimSocialMedia} for:item="account">
+                        <template if:false={account.isHide}>
+                            <div class="equalHeight" key={account.Id} if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                                <p>{account.socialMediaPlatform}</p>
+                            </div>
+                        </template>
+                    </template>
+                    <template for:each={informationMap.records.Social_Media.records} for:item="account">
+                        <template if:false={account.isHide}>
+                            <div class="equalHeight" key={account.Id} if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                                <p>{account.socialMediaPlatform}</p>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div class="column no-controls" if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                    <div class="headerEqualHeight"><p>{informationMap.frontEndData.socialMediaUrl.label}</p></div>
+                    <template for:each={_interimSocialMedia} for:item="account">
+                        <template if:false={account.isHide}>
+                            <div class="equalHeight" key={account.Id} if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                                <p>{account.socialMediaUrl}</p>
+                            </div>
+                        </template>
+                    </template>
+                    <template for:each={informationMap.records.Social_Media.records} for:item="account">
+                        <template if:false={account.isHide}>
+                            <div class="equalHeight" key={account.Id} if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                                <p>{account.socialMediaUrl}</p>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

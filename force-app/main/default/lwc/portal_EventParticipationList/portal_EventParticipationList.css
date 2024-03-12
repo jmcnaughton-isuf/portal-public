@@ -1,0 +1,110 @@
+div[data-ascend-portal] p {
+    margin-bottom: 0 !important;
+}
+
+div[data-ascend-portal] {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+h2.look-whos-coming-title {
+    color: var(--lwc-brandAccessible);
+    font-size: 48px;
+    font-weight: 300;
+    margin: 25px auto;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 50px;
+}
+
+.look-whos-coming-container {
+    width: 800px;
+    border-left: 30px solid var(--lwc-brandAccessible);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.13);
+}
+
+.header-container {
+    border-bottom: 1px solid #ededed;
+    padding: 10px 20px;
+}
+
+.name-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.name-container>div {
+    width: 250px;
+    padding: 20px;
+}
+
+.header-container>p {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.look-whos-coming-search-container {
+    display: flex;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.look-whos-coming-search-container>input {
+    font-size: 18px;
+    border: 1px solid var(--lwc-brandAccessible);
+}
+
+.look-whos-coming-search-container>button {
+    border: none;
+    background-color: var(--lwc-brandAccessible);
+    color: white;
+    font-size: 18px;
+    padding: 8px 25px;
+    border-radius: 0 5px 5px 0;
+    transition: .25s all ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.look-whos-coming-search-container>button>svg {
+    margin-left: 10px;
+}
+
+.look-whos-coming-search-container>button:hover {
+    background-color: var(--lwc-brandAccessibleActive);
+    transition: .25s all ease-in-out;
+}
+
+.look-whos-coming-search-container>input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+div[data-ascend-portal] p.reset {
+    color: var(--lwc-brandAccessible);
+    border-bottom: 1px solid var(--lwc-brandAccessible);
+    margin-bottom: 20px !important;
+    cursor: pointer;
+}
+
+@media (max-width: 840px) {
+    .look-whos-coming-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .look-whos-coming-search-container {
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2.look-whos-coming-title {
+        font-size: 36px;
+    }
+}

@@ -1,0 +1,224 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_showSpinner}>
+            <lightning-spinner variant="brand" size="large"></lightning-spinner>
+        </template>
+        <div class="container medium" style="padding-top: 1.5em" if:true={_callbackDone}>
+            <div class="container">
+                <div class="entry-form bottom-border">
+                    <div class="flex-grid-2">
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span> {frontEndDataMap.emailAddress.label}</label>
+                            <input name="emailAddress" disabled={frontEndDataMap.emailAddress.disable} type="email" oninput={setRecordValue} value={emailAddress} required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="address-line-2"><span class="required">*</span> Confirm Email</label>
+                            <input value={emailConfirmation} type="text" oninput={confirmEmail} data-name='verify' required>
+                        </div>
+                        <div class="grid-item email-type" if:true={frontEndDataMap.emailType.display}>
+                            <label for="">{frontEndDataMap.emailType.label} </label>
+                            <c-portal_-select 
+                                classes=""
+                                is-show-null-option="true" 
+                                required={frontEndDataMap.emailType.isRequired} 
+                                disabled={frontEndDataMap.emailType.disable} 
+                                input-name="emailType" 
+                                default-value={emailType} 
+                                option-list={_emailTypes} 
+                                handle-change={handleEmailType}>
+                            </c-portal_-select>
+                        </div>
+                    </div>
+                    <div class="flex-grid-2">
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span> {frontEndDataMap.firstName.label}</label>
+                            <input name="firstName" type="text" disabled={frontEndDataMap.firstName.disable} oninput={setRecordValue} value={firstName} required>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.middleName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.middleName.isRequired}>*</span> {frontEndDataMap.middleName.label}</label>
+                            <input name="middleName" type="text" disabled={frontEndDataMap.middleName.disable} oninput={setRecordValue} value={middleName}>
+                        </div>
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span> {frontEndDataMap.lastName.label}</label>
+                            <input name="lastName" type="text" disabled={frontEndDataMap.lastName.disable} oninput={setRecordValue} value={lastName} required>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.prefix.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.prefix.isRequired}>*</span> {frontEndDataMap.prefix.label}</label>
+                            <c-portal_-select 
+                                classes=""
+                                default-value={prefix} 
+                                disabled={frontEndDataMap.prefix.disable} 
+                                is-show-null-option="true" 
+                                input-name="prefix" 
+                                option-list={_picklists.prefix} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.suffix.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.suffix.isRequired}>*</span> {frontEndDataMap.suffix.label}</label>
+                            <c-portal_-select 
+                                classes=""
+                                default-value={suffix} 
+                                disabled={frontEndDataMap.suffix.disable} 
+                                is-show-null-option="true" 
+                                input-name="suffix" 
+                                option-list={_picklists.suffix} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                    </div>
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={frontEndDataMap.birthdate.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.birthdate.isRequired}>*</span> {frontEndDataMap.birthdate.label} </label>
+                            <input name="birthdate" type="date" value={birthdate} oninput={setRecordValue} max="9999-12-31" disabled={frontEndDataMap.birthdate.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.gender.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.gender.isRequired}>*</span> {frontEndDataMap.gender.label}</label>
+                            <c-portal_-select 
+                                default-value={gender} 
+                                disabled={frontEndDataMap.gender.disable} 
+                                is-show-null-option="true" 
+                                input-name="gender" 
+                                option-list={_picklists.gender} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                    </div>
+                    <div class="flex-grid-2">
+                        <div class="grid-item" if:true={frontEndDataMap.nicknameFirstName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.nicknameFirstName.isRequired}>*</span> {frontEndDataMap.nicknameFirstName.label}</label>
+                            <input name="nicknameFirstName" type="text" disabled={frontEndDataMap.nicknameFirstName.disable} oninput={setRecordValue} value={nicknameFirstName}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.nicknameLastName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.nicknameLastName.isRequired}>*</span> {frontEndDataMap.nicknameLastName.label}</label>
+                            <input name="nicknameLastName" type="text" disabled={frontEndDataMap.nicknameLastName.disable} oninput={setRecordValue} value={nicknameLastName}>
+                        </div>
+                    </div>
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={frontEndDataMap.maidenFirstName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.maidenFirstName.isRequired}>*</span> {frontEndDataMap.maidenFirstName.label}</label>
+                            <input name="maidenFirstName" type="text" disabled={frontEndDataMap.maidenFirstName.disable} oninput={setRecordValue} value={maidenFirstName}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.maidenMiddleName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.maidenMiddleName.isRequired}>*</span> {frontEndDataMap.maidenMiddleName.label}</label>
+                            <input name="maidenMiddleName" type="text" disabled={frontEndDataMap.maidenMiddleName.disable} oninput={setRecordValue} value={maidenMiddleName}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.maidenLastName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.maidenLastName.isRequired}>*</span> {frontEndDataMap.maidenLastName.label}</label>
+                            <input name="maidenLastName" type="text" disabled={frontEndDataMap.maidenLastName.disable} oninput={setRecordValue} value={maidenLastName}>
+                        </div>
+                    </div>
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={frontEndDataMap.degree.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.degree.isRequired}>*</span> {frontEndDataMap.degree.label}</label>
+                            <c-portal_-select 
+                                is-show-null-option="true" 
+                                disabled={frontEndDataMap.degree.disable} 
+                                default-value={degree} 
+                                input-name="degree" 
+                                option-list={_picklists.degree} 
+                                handle-change={setDegree}>
+                            </c-portal_-select>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.degreeYear.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.degreeYear.isRequired}>*</span> {frontEndDataMap.degreeYear.label}</label>
+                            <input name="degreeYear" type={frontEndDataMap.degreeYear.fieldType} disabled={frontEndDataMap.degreeYear.disable} oninput={setDegreeYear} value={degreeYear}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.studentId.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.studentId.isRequired}>*</span> {frontEndDataMap.studentId.label}</label>
+                            <input name="studentId" type="text" disabled={frontEndDataMap.studentId.disable} oninput={setRecordValue} value={studentId}>
+                        </div>
+                    </div>
+                    <div class="flex-grid-2">
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span> {frontEndDataMap.username.label} (minimum 5 characters)</label>
+                            <input name="username" disabled={frontEndDataMap.username.disable} type="email" oninput={setRecordValue} value={username} required>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.phoneNumber.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.phoneNumber.isRequired}>*</span> {frontEndDataMap.phoneNumber.label} </label>
+                            <input name="phoneNumber" type={frontEndDataMap.phoneNumber.fieldType} value={phoneNumber} disabled={frontEndDataMap.phoneNumber.disable} oninput={setRecordValue}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.phoneType.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.phoneType.isRequired}>*</span> {frontEndDataMap.phoneType.label}</label>
+                            <c-portal_-select 
+                                classes=""
+                                disabled={frontEndDataMap.phoneType.disable}
+                                is-show-null-option="true" 
+                                default-value={phoneType} 
+                                input-name="phoneType" 
+                                option-list={_phoneTypes} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                    </div>
+                    <div class="flex-grid-2">
+                        <div class="grid-item" if:true={frontEndDataMap.addressLine1.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressLine1.isRequired}>*</span> {frontEndDataMap.addressLine1.label}</label>
+                            <input name="addressLine1" type="text" disabled={frontEndDataMap.addressLine1.disable} oninput={setRecordValue} value={addressLine1}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressLine2.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressLine2.isRequired}>*</span> {frontEndDataMap.addressLine2.label}</label>
+                            <input name="addressLine2" type="text" disabled={frontEndDataMap.addressLine2.disable} oninput={setRecordValue} value={addressLine2}>
+                        </div>
+                    </div>
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={frontEndDataMap.addressCity.display}>
+                            <label for="city"><span class="required" if:true={frontEndDataMap.addressCity.isRequired}>*</span> {frontEndDataMap.addressCity.label}</label>
+                            <input name="addressCity" type="text" disabled={frontEndDataMap.addressCity.disable} oninput={setRecordValue} value={addressCity}>
+                        </div>
+
+                        <div class="grid-item" if:true={frontEndDataMap.addressCountry.display}>
+                            <label for="country"><span class="required" if:true={frontEndDataMap.addressCountry.isRequired}>*</span> {frontEndDataMap.addressCountry.label}</label>
+                            <c-portal_-select 
+                                default-value={addressCountry} 
+                                disabled={frontEndDataMap.addressCountry.disable} 
+                                is-show-null-option="true" 
+                                input-name="addressCountry" 
+                                option-list={_picklists.addressCountry} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                            <!-- <input name="addressCountry" type="text" disabled={frontEndDataMap.addressCountry.disable} oninput={setRecordValue} value={addressCountry}> -->
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressState.display}>
+                            <label for="state"><span class="required" if:true={frontEndDataMap.addressState.isRequired}>*</span> {frontEndDataMap.addressState.label}</label>
+                            <c-portal_-select 
+                                default-value={addressState} 
+                                disabled={frontEndDataMap.addressState.disable} 
+                                is-show-null-option="true" 
+                                input-name="addressState" 
+                                option-list={_picklists.addressState} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                            <!-- <input name="addressState" type="text" disabled={frontEndDataMap.addressState.disable} oninput={setRecordValue} value={addressState}> -->
+                        </div>
+
+                        <div class="grid-item" if:true={frontEndDataMap.addressPostalCode.display}>
+                            <label for="postal-code"><span class="required" if:true={frontEndDataMap.addressPostalCode.isRequired}>*</span> {frontEndDataMap.addressPostalCode.label}</label>
+                            <input name="addressPostalCode" type="text" disabled={frontEndDataMap.addressPostalCode.disable} oninput={setRecordValue} value={addressPostalCode}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressType.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressType.isRequired}>*</span> {frontEndDataMap.addressType.label}</label>
+                            <c-portal_-select 
+                                classes=""
+                                is-show-null-option="true" 
+                                disabled={frontEndDataMap.addressType.disable} 
+                                input-name="addressType" 
+                                default-value={addressType} 
+                                option-list={_addressTypes} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+                    <c-portal_-Recaptcha>
+                    </c-portal_-Recaptcha>
+                </div>
+                <div class="button-list">
+                    <a onclick={handleSubmit} class="button primary full-mobile">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

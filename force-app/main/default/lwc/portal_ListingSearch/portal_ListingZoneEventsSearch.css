@@ -1,0 +1,21 @@
+@media (max-width: 700px) {
+    .container.large {
+        padding: 1em;
+    }
+}
+
+@media (min-width: 700px) {
+    .container.large {
+        padding: 0.5em 2.25em;
+    }
+}
+
+.helptext-padding {
+    padding-right: 4px;
+}
+
+@media (max-width: 767px) {
+    lightning-helptext {
+        padding: 4px 0;
+    }
+}

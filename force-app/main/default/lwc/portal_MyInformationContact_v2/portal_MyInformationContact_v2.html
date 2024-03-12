@@ -1,0 +1,32 @@
+<template>
+    <div class="container">
+        <template if:true={isDisplay}>
+            <div class="bottom-border breadcrumb" if:false={isViewDisplay}>
+                <ul>
+                    <li><a href="?">Back to My Information</a></li>
+                </ul>
+            </div>
+            <div class="contact-title bottom-border">
+                <h2>Contact Information</h2>
+                <a href="?mode=edit&tab=contact" class="view-all-news button secondary small" style="top: 10px" if:true={isViewDisplay}>Edit Contact Information</a>
+            </div>
+        </template>
+
+        <c-portal_-My-Information-Personal-Info_v2
+            display-mode={displayMode}
+            is-display={isDisplay}>
+        </c-portal_-My-Information-Personal-Info_v2>
+        <c-portal_-My-Information-Email_v2
+            display-mode={displayMode}
+            is-display={isDisplay}>
+        </c-portal_-My-Information-Email_v2>
+        <c-portal_-My-Information-Phone_v2
+            display-mode={displayMode}
+            is-display={isDisplay}>
+        </c-portal_-My-Information-Phone_v2>
+        <c-portal_-My-Information-Address_v2
+            display-mode={displayMode}
+            is-display={isDisplay}>
+        </c-portal_-My-Information-Address_v2>
+    </div>
+</template>

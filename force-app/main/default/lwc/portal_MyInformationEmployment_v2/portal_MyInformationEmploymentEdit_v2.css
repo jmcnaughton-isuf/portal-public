@@ -1,0 +1,13 @@
+li {
+    list-style-type: none;
+}
+
+.breadcrumb li:first-child::before {
+    content: "< ";
+}
+
+@media (max-width: 281px) {
+    .entry-form {
+        margin-top: 20px;
+    }
+}

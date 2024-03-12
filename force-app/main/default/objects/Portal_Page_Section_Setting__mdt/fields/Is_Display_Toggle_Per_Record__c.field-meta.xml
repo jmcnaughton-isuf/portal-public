@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Display_Toggle_Per_Record__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If these records are associated with a directory setting and this field is checked, then the input field that allows the user to change their directory settings will show next to the record.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If these records are associated with a directory setting and this field is checked, then the input field that allows the user to change their directory settings will show next to the record.</inlineHelpText>
+    <label>Is Display Toggle Per Record</label>
+    <type>Checkbox</type>
+</CustomField>

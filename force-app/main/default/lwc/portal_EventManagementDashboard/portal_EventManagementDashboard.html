@@ -1,0 +1,50 @@
+<template>
+    <div data-ascend-portal>
+        <div class="event-header" style="padding-bottom: 0rem; margin-bottom: 0rem" if:true={displayDashboard}>
+            <div class="container large">
+                <div class="event-dashboard">
+                    <h3 style="margin-bottom: .4rem !important">Event Management Dashboard</h3>
+                    <div class="button-list controls">
+                        <a onclick={handleDownloadNameTags} class="button secondary small">View Name Tags</a>
+                        <a onclick={handleDownloadRSVPList} class="button secondary small">Download RSVP List</a>
+                        <a onclick={handleManageRSVPList} class="button secondary small">Manage RSVP List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div if:true={displayDashboard}>
+        <div class="title slds-border_bottom">
+            <h1>Event Management Dashboard</h1>
+        </div>
+
+        <br><br>
+
+        <div class="slds-grid management-buttons">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-button variant="brand" 
+                          label="View Name Tags"
+                          icon-name="utility:bookmark"
+                          onclick={handleDownloadNameTags}
+                ></lightning-button>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-button variant="brand" 
+                          label="Download RSVP List"
+                          icon-name="utility:people"
+                          onclick={handleDownloadRSVPList}
+                ></lightning-button>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-button variant="brand" 
+                          label="Manage RSVP List"
+                          icon-name="utility:approval"
+                          onclick={handleManageRSVPList}
+                ></lightning-button>
+            </div>
+        </div>
+        
+    </div> -->
+</template>

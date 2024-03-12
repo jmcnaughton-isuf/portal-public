@@ -1,0 +1,95 @@
+<template>
+    <div class="show-on-phone" if:true={records.length}>
+        <h2 if:true={title} style="margin-left: .5em; margin-bottom: .5em">{title}</h2>
+        <template for:each={_recordsToDisplay} for:item="record" for:index="index">
+            <div class="registration-table" style={tableStyle} key={record.key}>
+                <div class="row bottom-border">
+                    <div class="entry-form">
+                        <template for:each={columnMappings} for:item="columnMapping">
+                            <h4 key={columnMapping.label}>{columnMapping.label}<abbr class="slds-required" if:true={columnMapping.isRequired}>*</abbr></h4>
+                            <p key={columnMapping.label} if:false={columnMapping.expandText}>
+                                <c-portal_-table-entry record={record}
+                                                            column-data={columnMapping}
+                                                            table-sync-input={syncInputText}
+                                                            index={index}>
+                                </c-portal_-table-entry>
+                            </p>
+                            <template if:true={columnMapping.expandText}>
+                                <template if:true={record.expandedData} for:each={record.expandedData} for:item="expandedData" for:index="subindex">
+                                    <p key={expandedData.key} class="border-bottom">
+                                        <template for:each={columnMappings} for:item="innerColumn">
+                                            <strong key={expandedData.key}>{innerColumn.label}: </strong>
+                                            <c-portal_-table-entry entry-label={innerColumn.label}
+                                                                            record={expandedData}
+                                                                            column-data={innerColumn}
+                                                                            table-sync-input={syncInputText}
+                                                                            key={innerColumn.label}
+                                                                            index={index}
+                                                                            subitem-index={subindex}>
+                                            </c-portal_-table-entry>
+                                            <br key={expandedData.key}/>
+                                        </template>
+                                    </p>
+                                </template>
+
+                                <p key={columnMapping.label} if:false={record.expandedData}>
+                                    <c-portal_-table-entry record={record}
+                                                        column-data={columnMapping}
+                                                        table-sync-input={syncInputText}
+                                                        index={index}>
+                                    </c-portal_-table-entry>
+                                </p>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+        
+    <div class="hide-on-phone" if:true={records.length}>
+        <h2 if:true={title} style="margin-bottom: .5em">{title}</h2>
+        <div class="registration-table" style={tableStyle}>
+            <template for:each={columnMappings} for:item="columnMapping">
+                <div class="column no-controls" key={columnMapping.label}>
+                    <div class="headerEqualHeight show"><p>{columnMapping.label}<abbr class="slds-required" if:true={columnMapping.isRequired}>*</abbr></p></div>
+                    <template for:each={_recordsToDisplay} for:item="record" for:index="index">
+                        <div class="equalHeight show" key={record.key} data-index={index}>
+                            <p>
+                                <c-portal_-table-entry record={record}
+                                                                column-data={columnMapping}
+                                                                handle-expand-data={handleExpandData}
+                                                                table-sync-input={syncInputText}
+                                                                index={index}>
+                                </c-portal_-table-entry>
+                            </p>
+                        </div> 
+                        <template if:true={record.expandedData}>
+                            <div key={record.key} style="background-color: #efefef" if:true={record.isShowExpandedData}>
+                                <template for:each={record.expandedData} for:item="expandedItem" for:index="subindex">
+                                    <div class="equalHeight show" key={expandedItem.key} data-index={index}>
+                                        <p>
+                                            <c-portal_-table-entry record={expandedItem}
+                                                                            column-data={columnMapping}
+                                                                            table-sync-input={syncInputText}
+                                                                            index={index}
+                                                                            subitem-index={subindex}>
+                                            </c-portal_-table-entry>
+                                        </p>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+    <c-portal_util_-pagination
+        queried-data={records}
+        records-per-page={rowsPerPage}
+        handle-page-change={handlePageChange}
+        current-page-number={currentPageNumber}
+        query-more={queryMore}>
+    </c-portal_util_-pagination>
+</template>

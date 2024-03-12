@@ -1,0 +1,33 @@
+.accordion .accordion-item .topic:after {
+    background: transparent url(../resource/Portal_Expand_More_Black) center no-repeat;
+}
+
+[data-ascend-portal] .modal .container {
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    [data-ascend-portal] .ticket-options.full-width div[class^='flex-grid'] .grid-item:last-of-type {
+        padding-right: 1em !important;
+    }
+}
+
+@media (min-width: 700px) {
+    [data-ascend-portal] div[class^='flex-grid'] .grid-item:nth-child(-n+5) {
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+[data-ascend-portal] .lookup-margin {
+    margin-bottom: 1.5em !important;
+}
+
+@media (max-width: 699px) {
+    [data-ascend-portal] .lookup-margin {
+        margin-top: 1em;
+    }
+
+    [data-ascend-portal] .designation-mobile-margin {
+        margin-bottom: 2px !important;
+    }
+}

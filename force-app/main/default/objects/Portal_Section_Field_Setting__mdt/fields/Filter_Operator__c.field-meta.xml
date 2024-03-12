@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_Operator__c</fullName>
+    <description>If there are multiple records under the parent custom metadata section and we want to identify a specific record, this field tells us how to evaluate each record against other criteria listed on this field setting record.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If there are multiple records under the parent custom metadata section and we want to identify a specific record, this field tells us how to evaluate each record against other criteria listed on this field setting record.</inlineHelpText>
+    <label>Filter Operator</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>!=</fullName>
+                <default>true</default>
+                <label>!=</label>
+            </value>
+            <value>
+                <fullName>=</fullName>
+                <default>false</default>
+                <label>=</label>
+            </value>
+            <value>
+                <fullName>&lt;</fullName>
+                <default>false</default>
+                <label>&lt;</label>
+            </value>
+            <value>
+                <fullName>&gt;</fullName>
+                <default>false</default>
+                <label>&gt;</label>
+            </value>
+            <value>
+                <fullName>&lt;=</fullName>
+                <default>false</default>
+                <label>&lt;=</label>
+            </value>
+            <value>
+                <fullName>&gt;=</fullName>
+                <default>false</default>
+                <label>&gt;=</label>
+            </value>
+            <value>
+                <fullName>LIKE</fullName>
+                <default>false</default>
+                <label>LIKE</label>
+            </value>
+            <value>
+                <fullName>NOT LIKE</fullName>
+                <default>false</default>
+                <label>NOT LIKE</label>
+            </value>
+            <value>
+                <fullName>ISBLANK</fullName>
+                <default>false</default>
+                <label>ISBLANK</label>
+            </value>
+            <value>
+                <fullName>ISNOTBLANK</fullName>
+                <default>false</default>
+                <label>ISNOTBLANK</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

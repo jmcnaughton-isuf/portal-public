@@ -1,0 +1,19 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin giving-org-wrapper">
+                <div class="section-body-content">
+                    <div class="container">
+                        <fieldset>
+                            <div class="field-wrapper">
+                                <input style="display: inline-block; width: auto" type="checkbox" class="radio" checked={_givingAsOrg} onchange={handleCheckboxChange}>
+                                <label for="">{orgGivingCheckboxLabel}</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <!-- <lightning-input type="checkbox" label={orgGivingCheckboxLabel} onchange={handleCheckboxChange} checked={_givingAsOrg}></lightning-input> -->
+        </template>
+    </div>
+</template>

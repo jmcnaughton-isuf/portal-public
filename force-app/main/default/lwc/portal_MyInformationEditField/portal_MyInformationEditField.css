@@ -1,0 +1,21 @@
+.hide-input {
+    margin-right : 4px;
+}
+
+.show-input {
+    margin-left: 4px;
+}
+
+@media (max-width: 281px) {
+    .labelled-toggle-switch {
+        display: flex;
+        align-items: center;
+        right: 0;
+        width: fit-content;
+    }
+
+    .labelled-toggle-switch > span {
+        margin-top: 10px;
+        bottom: 0 !important;
+    }
+}

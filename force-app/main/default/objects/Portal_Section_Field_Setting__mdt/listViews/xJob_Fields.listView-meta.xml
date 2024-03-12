@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>xJob_Fields</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Front_End_Field_Label__c</columns>
+    <columns>Order_Number__c</columns>
+    <columns>Is_Display_On_Portal__c</columns>
+    <columns>Field_Type__c</columns>
+    <columns>Section_Mapping__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Section_Mapping__c</field>
+        <operation>startsWith</operation>
+        <value>Job</value>
+    </filters>
+    <label>xJob Fields</label>
+    <language>en_US</language>
+</ListView>

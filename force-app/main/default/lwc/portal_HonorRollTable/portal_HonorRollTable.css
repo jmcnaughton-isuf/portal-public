@@ -1,0 +1,16 @@
+@media (min-width: 700px) {
+    .flex-grid-3 .grid-item {
+        flex: 0 1 33.3% !important;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 700px) {
+    div[class^='flex-grid'] .grid-item {
+        flex: 1 1 100%;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        position: relative;
+        word-break: break-all;
+    }
+}

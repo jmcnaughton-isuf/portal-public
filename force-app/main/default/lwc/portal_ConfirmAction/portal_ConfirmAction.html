@@ -1,0 +1,17 @@
+<template>
+    <div class="confirm-action">
+        <div class={actionDivClasses}>
+            <a class="show-on-phone button small secondary full-mobile" onclick={handleAction}>{messageMap.action}</a>
+            <a class="hide-on-phone" onclick={handleAction}>{messageMap.action}</a>
+        </div>
+
+        <div class="alert">
+            <p class="show-on-phone"> </p>
+            <p>{messageMap.warning}</p>
+            <div class="button-list no-padding" style="padding: 0px !important; position: relative; width: 100%">
+                <a class="button primary small full-mobile" onclick={handleCancel}>{messageMap.cancel}</a>
+                <a class="button secondary small full-mobile" onclick={handleConfirm}>{messageMap.confirm}</a>
+            </div>
+        </div>
+    </div>    
+</template>

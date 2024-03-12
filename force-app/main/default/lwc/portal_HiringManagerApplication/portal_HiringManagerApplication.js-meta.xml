@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="redirectPage" type="String" label="Redirect Page Name" description="Page name user is redirected to after login submission." default="registration-confirmation"/>
+            <property name="emailTypeString" type="String" label="Email Types" description="Comma separated list of email types"/>
+            <property name="phoneTypeString" type="String" label="Phone Types" description="Comma separated list of phone types"/>
+            <property name="applicantHeader" type="String" label="Applicant Header"/>
+            <property name="companyHeader" type="String" label="Company Header"/>
+            <property name="emailTemplateDeveloperName" type="String" label="Email Template Developer Name" description="Email template to use for post-registration email"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

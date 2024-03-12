@@ -1,0 +1,15 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+
+        <div class="container" style="padding-top: 1rem">
+            <div class="slds-align--absolute-center" style="max-width: 1000px">
+                <lightning-formatted-rich-text value={_richTextMessage}></lightning-formatted-rich-text>
+            </div>
+
+            <div class="button-list slds-align--absolute-center" if:true={_isShowUnsubscribe}>
+                <a onclick={handleUnsubscribe} class="button primary full-mobile">Yes</a>
+            </div> 
+        </div>
+    </div>
+</template>

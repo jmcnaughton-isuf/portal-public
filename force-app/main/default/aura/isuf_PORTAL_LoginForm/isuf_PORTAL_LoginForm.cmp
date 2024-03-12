@@ -1,0 +1,126 @@
+<!-- add implements="forceCommunity:availableForAllPageTypes" to surface the component in community builder -->
+<aura:component controller="PORTAL_LoginFormControllerOR" implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="showError" type="Boolean" required="true" description="" default="false" access="private"/>
+    <aura:attribute name="errorMessage" type="String" required="false" description="" access="private"/>
+    <aura:attribute name="startUrl" type="String" required="false" description="The url you go to after a successful login" />
+    <aura:attribute name="usernameLabel" type="String" required="false" default="Username"/>
+    <aura:attribute name="passwordLabel" type="String" required="false" default="Password"/>
+    <aura:attribute name="loginButtonLabel" type="String" required="false" default="Log in"/>
+    <aura:attribute name="expid" type="String" required="false" description="The branding experience ID" />
+
+    <aura:attribute name="forgotPasswordLabel" type="String" required="false" default="Forgot your password?"/>
+    <aura:attribute name="forgotUsernameLabel" type="String" required="false" default="Forgot your username?"/>
+    <aura:attribute name="selfRegisterLabel" type="String" required="false" default="Not a member?"/>
+    <aura:attribute name="forgotPasswordUrl" type="String" required="false" default="/ForgotPassword"/>
+    <aura:attribute name="forgotUsernameUrl" type="String" required="false" default="/portal/s/forgot-username"/>
+    <aura:attribute name="selfRegisterUrl" type="String" required="false" default="/SelfRegister"/>
+    <aura:attribute name="isEnableRecaptcha" type="Boolean" required="false" default="false"/>
+
+    <aura:attribute name="isUsernamePasswordEnabled" type="Boolean" access="private"/>
+    <aura:attribute name="isSelfRegistrationEnabled" type="Boolean" access="private"/>
+    <aura:attribute name="communityForgotPasswordUrl" type="String" access="private"/>
+    <aura:attribute name="communitySelfRegisterUrl" type="String" access="private"/>
+
+    <aura:attribute name="facebookLabel" type="String" default="Login with Facebook"/>
+    <aura:attribute name="googleLabel" type="String" default="Login with Google"/>
+    <aura:attribute name="facebookURL" type="String"/>
+    <aura:attribute name="googleURL" type="String"/>
+    
+    <aura:attribute name="firstTimeLoginLabel" type="String" default="First Time Login?"/>
+
+    <aura:registerevent name="sitePropagatedStartUrl" type="c:setStartUrl"/>
+    <aura:registerEvent name="appEvent" type="c:updateSocialLoginLink"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+    <aura:handler name="aura:valueInit" value="{!this}" action="{!c.handleValueInitParent}" />
+    <aura:dependency resource="c:setStartUrl" type="EVENT"/>
+    <aura:dependency resource="c:updateSocialLoginLink" type="EVENT"/>
+    <!-- Please uncomment -->
+    <aura:dependency resource="siteforce:registerQueryEventMap" type="EVENT"/>
+
+    <aura:handler event="c:setStartUrl" action="{!c.setStartUrl}"/>
+    <aura:handler event="c:setExpId" action="{!c.setExpId}"/>
+    <aura:dependency resource="c:setExpId" type="EVENT"/>
+
+    <div data-ascend-portal="">
+        <ltng:require styles="/resource/PORTAL_Fonts/style.css"/>
+        <!-- <ltng:require styles="{!$Resource.SLDS213 + '/assets/styles/salesforce-lightning-design-system.css'}"/> -->
+        <aura:renderIf isTrue="{!v.isUsernamePasswordEnabled}">
+            <aura:renderIf isTrue="{!v.showError}">
+                <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                    <h2 id="loginErrorText" style="color:white;font-size: 1rem;">{!v.errorMessage}</h2>
+                    <div class="slds-notify__close">
+                        <lightning:buttonIcon iconName="utility:close"  variant="bare-inverse" onclick="{!c.handleCloseAlert}" disabled="false" alternativeText="Close" title="Close"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </div>
+                  </div>
+            </aura:renderIf>
+            <div class="topContainer">Sign in or create an account</div>
+            <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 bodyContainer " >
+                <div class="login-section container leftContainer " >
+                    <div style="width:auto">
+                        <div class="leftBodyHeader">Why create an account?</div>
+                        <div class="leftBodySpacer"></div>
+                        <div class="leftBodyText" style="padding-bottom: 8px;font-size: 1.1rem;">Logging in will allow you to:</div>
+                        <ul class="leftBodyText">
+                            <li>Manage your giving to Iowa State Universtiry</li>
+                            <li>Update your information</li>
+                            <li>Manage your preferences</li>
+                            <li>Manage access to gift receipts</li>
+                        </ul>
+                        <div class="leftBodyText">This login portal was launched in July 2025. If you haven't created a new username and poassword since launch, you will need to <a onclick="{!c.navigateToSelfRegister}">create an account</a>.</div>
+                    </div>
+                </div>
+                <div class="login-section container rightContainer">
+                    <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_5-of-12 slds-large-size_5-of-12 rightBody">
+                        <div class="form-element" style="width:85%;text-align: center;">
+                            <div class="rightBodyHeader">Log In</div>
+                            <span onkeypress="{!c.onKeyUp}">
+                                <div style="display: flex;align-items: end;">
+                                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right" style="flex:1">
+                                        <!-- <lightning:icon iconName="utility:search" class="slds-input__icon slds-icon-text-default" style="right: 35px;top: 33px;" size="small" alternativeText="Search Icon"/> -->
+                                        <lightning:input type="text" name="username" value="" aura:id="username" label="{!v.usernameLabel}" class="input sfdc_usernameinput sfdc custom-input" style="text-align:left"/>
+                                    </div>
+
+                                </div>
+                            </span>
+                            <span onkeypress="{!c.onKeyUp}">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                    <!-- <lightning:icon iconName="utility:search" class="slds-input__icon slds-icon-text-default" style="right: 35px;top: 33px;" size="small" alternativeText="Search Icon"/> -->
+                                    <lightning:input type="password" name="password" value="" aura:id="password" label="{!v.passwordLabel}" class="input sfdc_passwordinput sfdc custom-input" style="text-align:left"/>
+                                </div>
+                            </span>
+                            <div class="button-list">
+                                <button aura:id="submitButton" onclick="{!c.handleLogin}" class="button primary full-mobile" style="width: 100%; padding-top: 8px; padding-bottom: 8px;border-radius:12px">{!v.loginButtonLabel}</button>
+                                <!-- <button onclick="{!c.navigateToSelfRegister}" class="button secondary full-mobile">{!v.selfRegisterLabel}</button> -->
+                            </div>
+                            <div class="button-list forgotContainer">
+                                <a style="color: grey;" href="{!if(v.communityForgotPasswordUrl == null, v.forgotPasswordUrl, v.communityForgotPasswordUrl)}">{!v.forgotPasswordLabel}</a>
+                                <a style="color: grey;" href="{!v.forgotUsernameUrl}">{!v.forgotUsernameLabel}</a>
+                            </div>
+                            <div class="line-container">
+                                Or sign in using:
+                            </div> 
+                            <div if:true="{!v.facebookUrl}" style="display:flex">
+                                <c:isuf_PORTAL_SocialLoginButton2 label="{!v.googleLabel}"  provider="Google"/>
+                                <c:isuf_PORTAL_SocialLoginButton label="{!v.facebookLabel}" provider="Facebook"/>
+
+                            </div>
+                            <div class="button-list" style="justify-content: center;color:black">
+                                {!v.selfRegisterLabel}&nbsp;<span><a onclick="{!c.navigateToSelfRegister}" style="text-decoration:underline">Create Account</a></span>
+
+                            </div>
+                        </div>
+
+                        <aura:renderIf isTrue="{!v.isEnableRecaptcha}">
+                            <div class="form-element" style="height:90px;">
+                                <c:portal_Recaptcha aura:id="recaptcha" onrecaptchaReponse="{!c.handleRecaptchaResponse}"></c:portal_Recaptcha>
+                            </div>
+                        </aura:renderIf>
+
+                    </div>
+                </div>
+            </div>
+        </aura:renderIf>
+    </div>
+</aura:component>

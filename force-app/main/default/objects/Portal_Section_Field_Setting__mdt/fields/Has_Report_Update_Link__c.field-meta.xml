@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Report_Update_Link__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If certain sobject records cannot be edited on the front end, this checkbox tells us to call a special function that allows for the record to create a staging record for review.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If certain sobject records cannot be edited on the front end, this checkbox tells us to call a special function that allows for the record to create a staging record for review.</inlineHelpText>
+    <label>Has Report Update Link</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,186 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner variant="brand" alternative-text="Loading" size="large" if:true={_showSpinner}></lightning-spinner>
+        <template if:true={showComponent}>
+            <div class="container large no-margin">
+                <div class="section-body-content">
+                    <div class="container">
+                        <div class="ticket-options full-width">
+                            <h2 class="slds-m-bottom_small" style={textColorStyle}>{componentLabel}</h2>
+                            <div class="entry-form" style="padding-bottom: 0" if:true={defaultGiftTypeLabels}>
+                                <div class="flex-grid">
+                                    <div class="grid-item">
+                                        <label data-gifttype={_oneTimeGiftLabel} 
+                                            onclick={handleGiftTypeClick}
+                                            onmouseenter={handleGiftTypeEnter}
+                                            onmouseleave={handleGiftTypeLeave}
+                                            if:true={showOneTime}>
+                                            <input type="radio" class="radio" checked={isShowRadioButton}>
+                                            <span class="not-available"><a>{_oneTimeGiftLabel}</a></span>
+                                        </label>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label data-gifttype={_multiPaymentLabel} 
+                                            onclick={handleGiftTypeClick} 
+                                            onmouseenter={handleGiftTypeEnter}
+                                            onmouseleave={handleGiftTypeLeave}
+                                            if:true={showMultiPayment}>
+                                            <input type="radio" class="radio" checked={isMultiPayment}>
+                                            <span class="not-available">
+                                                <a>{_multiPaymentLabel}</a>
+                                                <lightning-helptext class="help-text" if:true={pledgeHelpText} content={pledgeHelpText}></lightning-helptext>
+                                            </span>                                            
+                                        </label>                                        
+                                    </div>
+                                    <div class="grid-item">
+                                        <label data-gifttype={_recurringGiftLabel} 
+                                            onclick={handleGiftTypeClick} 
+                                            onmouseenter={handleGiftTypeEnter}
+                                            onmouseleave={handleGiftTypeLeave}
+                                            if:true={showRecurring}>
+                                            <input type="radio" class="radio" checked={isRecurringGift}>
+                                            <span class="not-available">
+                                                <a>{_recurringGiftLabel}</a>
+                                                <lightning-helptext class="help-text" if:true={recurringHelpText} content={recurringHelpText}></lightning-helptext>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selection-info" style="display: block" if:true={isShowRadioButton}>
+                                <fieldset style="margin-bottom: 1em">
+                                    <div class="field-wrapper">
+                                        <input style="display: inline-block; width: auto" 
+                                            data-inputtype="radio" 
+                                            type="radio" 
+                                            name="onetime" 
+                                            value="onetime" 
+                                            class="radio" 
+                                            onchange={handleRadioButtonSelection}>
+                                        <label for="onetime">{pledgePaymentOneTimeGiftLabel}</label>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <div class="field-wrapper">
+                                        <input style="display: inline-block; width: auto" 
+                                            data-inputtype="radio" 
+                                            type="radio" 
+                                            name="pledgepayment" 
+                                            value="pledgepayment" 
+                                            class="radio"
+                                            onchange={handleRadioButtonSelection}>
+                                        <label for="pledgePayment">{pledgePaymentLabel}</label><br/>
+                                    </div>
+                                </fieldset>
+                                <div id="pledge" style="max-width: 32rem; margin-top: 1em" if:true={isShowPledgeId}>
+                                    <template if:true={_isGuestUser}>
+                                        <!-- <c-portal_-lookup label={pledgeIdLabel} 
+                                                        classes=''
+                                                        input-value={_pledgeId} 
+                                                        clear-list={_clearList} 
+                                                        all-lookup-options={_pledgeIdList} 
+                                                        handle-lookup-option-selected={handleLookup} 
+                                                        handle-change={handleLookupChange}>
+                                        </c-portal_-lookup> -->
+                                        <div class="button-list">
+                                            <c-portal_-input value={_pledgeIdInputText} 
+                                                            handle-input={handleInputTextChange}
+                                                            label={pledgeIdLabel}
+                                                            data-name="pledgeIdTextInput"
+                                                            style="padding-right: 10px;">
+                                            </c-portal_-input>
+                                            <button class="button small full-mobile slds-m-top_x-small" onclick={handleValidatePledge} style="height: 40px;">Validate</button>
+                                        </div>
+                                    </template>
+                                    <template if:false={_isGuestUser}>
+                                        <div class="flex-grid">
+                                            <div class="grid-item">
+                                                <c-portal_-select label={pledgeLabel}
+                                                                option-list={pledgePicklist}
+                                                                handle-change={handlePledgePicklistChange}
+                                                                input-name="activePledgePicklist"
+                                                                default-value={_pledgeId}
+                                                                classes="">
+                                                </c-portal_-select>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="selection-info" style="display: block" if:true={isMultiPayment}>
+                                <div class="flex-grid-3">
+                                    <div class="grid-item">
+                                        <label style={textColorStyle}>{numberOfPaymentsLabel}</label>
+                                        <input type="number" name="numberInstallments" 
+                                                            required 
+                                                            value={_numberOfInstallments} 
+                                                            step="1" 
+                                                            max={maxNumberOfPayments} 
+                                                            min={minNumberOfPayments} 
+                                                            oninput={handleChange} 
+                                                            data-id="installments"/>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label style={textColorStyle}>{pledgeFrequencyLabel}</label>
+                                        <c-portal_-select required="true"
+                                                        default-value={_pledgeFrequency}
+                                                        option-list={frequencyOptions}
+                                                        handle-change={handleChange}
+                                                        classes=""
+                                                        input-name='pledgeFrequency'>
+                                        </c-portal_-select>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label style={textColorStyle}>{pledgeStartDateLabel}</label>
+                                        <input type="date" 
+                                            required 
+                                            value={_pledgeStartDate} 
+                                            onblur={handleChange} 
+                                            data-id='pledgeStartDate' 
+                                            min={minimumPledgeStartDate}
+                                            max={maximumPledgeStartDate}
+                                            disabled={isDisablePledgeStartDate}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selection-info" style="display: block" if:true={isRecurringGift}>
+                                <div class={recurringGiftContainerClass}>
+                                    <div class="grid-item">
+                                        <label style={textColorStyle}>{recurringFrequencyLabel}</label>
+                                        <c-portal_-select required="true"
+                                            default-value={_recurringFrequency}
+                                            option-list={frequencyOptions}
+                                            handle-change={handleChange}
+                                            classes=""
+                                            input-name='recurringFrequency'>
+                                        </c-portal_-select>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label style={textColorStyle}>{recurringStartDateLabel}</label>
+                                        <input type="date" 
+                                            required 
+                                            onblur={handleChange} 
+                                            value={_recurringStartDate} 
+                                            data-id='recurringStartDate' 
+                                            min={minimumRecurringStartDate}
+                                            max={_maximumDate}/>
+                                    </div>
+                                    <div class="grid-item" if:true={showRecurringEndDate}>
+                                        <label style={textColorStyle}>{recurringEndDateLabel}</label>
+                                        <input type="date"  
+                                            onblur={handleChange} 
+                                            value={_recurringEndDate} 
+                                            data-id='recurringEndDate'
+                                            min={minimumRecurringEndDate}
+                                            max={_maximumDate}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-break"></div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

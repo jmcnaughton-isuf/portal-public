@@ -1,0 +1,322 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_isShowModal}>
+            <div class="withdraw-modal">
+                <div class="modal-background">
+                    <div class="modal">
+                        <div class="content-header-bar" style="margin-bottom: 0">
+                            <div class="slds-grid slds-wrap full-width">
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                    <h2>Withdraw Application</h2>
+                                </div>
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                    <a class="close-btn" onclick={closeModal}>&times;</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <div style="padding: 2em 0" class="border-bottom">
+                                <div class="content-wrapper">
+                                <h4>Withdrawing your application will remove you from consideration. Are you sure?</h4>
+                                </div>
+                            </div>
+                            <slot interop-layout_layout="" class="slds-slot">
+                                <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                                    <div class="slds-grid slds-wrap slds-grid_align-end">
+                                        <div class="button-list">
+                                            <button class="button secondary" onclick={closeModal}>Cancel</button>
+                                            <button class="button primary" onclick={withdrawApplication}>Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"> </lightning-spinner>
+
+        <div class="event-tabs tabs">
+        <lightning-tabset if:true={_callbackDone}>
+            <lightning-tab label={informationMap.frontEndData.openApplications.label} onactive={handleTabChange}>
+                <p if:true={isShowNoOpenRecordsText} class="slds-align_absolute-center">
+                    {noResultsText}
+                </p>
+                <div if:false={isShowNoOpenRecordsText}>
+                    <div class="show-on-phone">
+                        <div class="registration-table">
+                            <div class="row bottom-border">
+                                <div class="container">
+                                    <template for:each={_openVisibleData} for:item="openApplication">
+                                        <h4 if:true={informationMap.frontEndData.openCompanyName.display} key={openApplication.record.Id}>
+                                            {informationMap.frontEndData.openCompanyName.label}
+                                        </h4>
+                                        <p class="custom-overflow" key={openApplication.record.Id} if:true={informationMap.frontEndData.openCompanyName.display}><lightning-formatted-text value={openApplication.record.Job__r.Recruiting_Company__c} ></lightning-formatted-text></p>
+
+                                        <h4 if:true={informationMap.frontEndData.openJobName.display} key={openApplication.record.Id}>
+                                            {informationMap.frontEndData.openJobName.label}
+                                        </h4>
+                                        <p class="custom-overflow" key={openApplication.record.Id} if:true={informationMap.frontEndData.openJobName.display}><a href={openApplication.record.jobLink} >{openApplication.record.Job__r.Name}</a></p>
+
+                                        <h4 if:true={informationMap.frontEndData.openSubmissionDate.display} key={openApplication.record.Id}>
+                                            {informationMap.frontEndData.openSubmissionDate.label}
+                                        </h4>
+                                        <p key={openApplication.record.Id} if:true={informationMap.frontEndData.openSubmissionDate.display}><lightning-formatted-date-time value={openApplication.record.submissionDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+
+                                        <h4 if:true={informationMap.frontEndData.openPortfolioLink.display} key={openApplication.record.Id}>
+                                            {informationMap.frontEndData.openPortfolioLink.label}
+                                        </h4>
+                                        <p key={openApplication.record.Id} if:true={informationMap.frontEndData.openPortfolioLink.display}><a href={openApplication.record.Portfolio_Link__c}>{openApplication.record.Portfolio_Link__c}</a></p>
+
+                                        <template if:true={informationMap.frontEndData.openFiles.display}>
+                                            <h4 key={openApplication.record.Id}>
+                                                {informationMap.frontEndData.openFiles.label}
+                                            </h4>
+                                            <p key={openApplication.record.Id} if:false={openApplication.links}></p>
+                                            <template for:each={openApplication.links} for:item="link">
+                                                <p key={link.link}><a href={link.link} key={link.link}>{link.name}</a></p>
+                                            </template>
+                                        </template>
+
+                                        <h4 if:true={informationMap.frontEndData.openStatus.display} key={openApplication.record.Id}>
+                                            {informationMap.frontEndData.openStatus.label}
+                                        </h4>
+                                        <p style="margin-bottom: 0px !important;" key={openApplication.record.Id} if:true={informationMap.frontEndData.openStatus.display}><lightning-formatted-text value={openApplication.record.Status__c}></lightning-formatted-text></p>
+
+                                        <div class="button-list" style="padding-top: 10px !important; padding-bottom: 45px !important;" key={openApplication.record.Id}>
+                                            <a onclick={showModal} data-field-id={openApplication.record.Id} class="button small secondary full-mobile">Withdraw</a>
+                                        </div>
+                                    </template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hide-on-phone">
+                        <div class="registration-table" style="overflow-x: auto;">
+                            <div class="column" if:true={informationMap.frontEndData.openCompanyName.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.openCompanyName.label}</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index" if:true={informationMap.frontEndData.openCompanyName.display}>
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index}>
+                                        <p class="custom-overflow"><lightning-formatted-text value={openApplication.record.Job__r.Recruiting_Company__c}></lightning-formatted-text></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column" if:true={informationMap.frontEndData.openJobName.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.openJobName.label}</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index" if:true={informationMap.frontEndData.openJobName.display}>
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index}>
+                                        <p class="custom-overflow"><a href={openApplication.record.jobLink} >{openApplication.record.Job__r.Name}</a></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column" if:true={informationMap.frontEndData.openSubmissionDate.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.openSubmissionDate.label}</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index" if:true={informationMap.frontEndData.openSubmissionDate.display}>
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index}>
+                                        <p><lightning-formatted-date-time value={openApplication.record.submissionDate} year="numeric" day="numeric" month="2-digit" time-zone="UTC"></lightning-formatted-date-time></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column" if:true={informationMap.frontEndData.openPortfolioLink.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.openPortfolioLink.label}</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index" if:true={informationMap.frontEndData.openPortfolioLink.display}>
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index}>
+                                        <p><a href={openApplication.record.Portfolio_Link__c}>{openApplication.record.Portfolio_Link__c}</a></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column" if:true={informationMap.frontEndData.openFiles.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.openFiles.label}</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index">
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index}>
+                                        <template for:each={openApplication.links} for:item="link">
+                                            <p key={link.link}><a href={link.link} key={link.link}>{link.name}</a></p>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column" style="max-width:170px;" if:true={informationMap.frontEndData.openStatus.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.openStatus.label}</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index" if:true={informationMap.frontEndData.openStatus.display}>
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index}>
+                                        <p><lightning-formatted-text value={openApplication.record.Status__c}></lightning-formatted-text></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column name" style="min-width: 125px; max-width: 145px;">
+                                <div class="headerEqualHeight">
+                                    <p>&nbsp;</p>
+                                </div>
+                                <template for:each={_openVisibleData} for:item="openApplication" for:index="index">
+                                    <div class="equalHeight" key={openApplication.record.Id} data-index={index} style="padding-top: 0;">
+                                        <div class="button-list" style="position: relative; padding-top: 0.3em !important; padding-bottom: 0 !important;">
+                                            <a onclick={showModal} data-field-id={openApplication.record.Id} class="button small secondary">Withdraw</a>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div if:true={hasOpenRecords}>
+                        <c-portal_util_-pagination
+                            records-per-page={recordsPerPage}
+                            queried-data={_openApplicationsList}
+                            current-page-number={openCurrentPage}
+                            query-more={handleQueryOpenMore}
+                            handle-page-change={handleOpenPageChange}
+                            total-number-of-items={openTotalItems}
+                        ></c-portal_util_-pagination>
+                    </div>
+                </div>
+            </lightning-tab>
+
+            <lightning-tab label={informationMap.frontEndData.closedApplications.label} onactive={handleTabChange}>
+                <p if:true={isShowNoClosedRecordsText} class="slds-align_absolute-center">
+                    {noResultsText}
+                </p>
+                <div if:false={isShowNoClosedRecordsText}>
+                    <div class="show-on-phone">
+                        <div class="registration-table">
+                            <div class="row bottom-border">
+                                <div class="container">
+                                    <template for:each={_closedVisibleData} for:item="closedApplication">
+                                        <h4 if:true={informationMap.frontEndData.closedCompanyName.display} key={closedApplication.record.Id}>
+                                            {informationMap.frontEndData.closedCompanyName.label}
+                                        </h4>
+                                        <p class="custom-overflow" key={closedApplication.record.Id} if:true={informationMap.frontEndData.closedCompanyName.display}><lightning-formatted-text value={closedApplication.record.Job__r.Recruiting_Company__c} ></lightning-formatted-text></p>
+
+                                        <h4 if:true={informationMap.frontEndData.closedJobName.display} key={closedApplication.record.Id}>
+                                            {informationMap.frontEndData.closedJobName.label}
+                                        </h4>
+                                        <p class="custom-overflow" key={closedApplication.record.Id} if:true={informationMap.frontEndData.closedJobName.display}><a href={closedApplication.record.jobLink} >{closedApplication.record.Job__r.Name}</a></p>
+
+                                        <h4 if:true={informationMap.frontEndData.closedSubmissionDate.display} key={closedApplication.record.Id}>
+                                            {informationMap.frontEndData.closedSubmissionDate.label}
+                                        </h4>
+                                        <p key={closedApplication.record.Id} if:true={informationMap.frontEndData.closedSubmissionDate.display}><lightning-formatted-date-time value={closedApplication.record.submissionDate} year="numeric" day="numeric" month="2-digit"></lightning-formatted-date-time></p>
+
+                                        <h4 if:true={informationMap.frontEndData.closedPortfolioLink.display} key={closedApplication.record.Id}>
+                                            {informationMap.frontEndData.closedPortfolioLink.label}
+                                        </h4>
+                                        <p key={closedApplication.record.Id} if:true={informationMap.frontEndData.closedPortfolioLink.display}><a href={closedApplication.record.Portfolio_Link__c}>{closedApplication.record.Portfolio_Link__c}</a></p>
+
+                                        <template if:true={informationMap.frontEndData.closedFiles.display}>
+                                            <h4 key={closedApplication.record.Id}>
+                                                {informationMap.frontEndData.closedFiles.label}
+                                            </h4>
+                                            <p key={closedApplication.record.Id} if:false={closedApplication.links}></p>
+                                            <template for:each={closedApplication.links} for:item="link">
+                                                <p key={link.link}><a href={link.link} key={link.link}>{link.name}</a></p>
+                                            </template>
+                                        </template>
+
+                                        <h4 if:true={informationMap.frontEndData.closedStatus.display} key={closedApplication.record.Id}>
+                                            {informationMap.frontEndData.closedStatus.label}
+                                        </h4>
+                                        <p style="padding-bottom: 30px" key={closedApplication.record.Id} if:true={informationMap.frontEndData.closedStatus.display}><lightning-formatted-text value={closedApplication.record.Status__c}></lightning-formatted-text></p>
+                                    </template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hide-on-phone">
+                        <div class="registration-table" style="overflow-x: auto;">
+                            <div class="column name no-controls" if:true={informationMap.frontEndData.closedCompanyName.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.closedCompanyName.label}</p>
+                                </div>
+                                <template for:each={_closedVisibleData} for:item="closedApplication" for:index="index" if:true={informationMap.frontEndData.closedCompanyName.display}>
+                                    <div class="equalHeight" key={closedApplication.record.Id} data-index={index}>
+                                        <p class="custom-overflow"><lightning-formatted-text value={closedApplication.record.Job__r.Recruiting_Company__c}></lightning-formatted-text></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column name no-controls" if:true={informationMap.frontEndData.closedJobName.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.closedJobName.label}</p>
+                                </div>
+                                <template for:each={_closedVisibleData} for:item="closedApplication" for:index="index">
+                                    <div class="equalHeight" key={closedApplication.record.Id} data-index={index}>
+                                        <p class="custom-overflow"><a href={closedApplication.record.jobLink}>{closedApplication.record.Job__r.Name}</a></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column name no-controls" if:true={informationMap.frontEndData.closedSubmissionDate.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.closedSubmissionDate.label}</p>
+                                </div>
+                                <template for:each={_closedVisibleData} for:item="closedApplication" for:index="index">
+                                    <div class="equalHeight" key={closedApplication.record.Id} data-index={index}>
+                                        <p><lightning-formatted-date-time value={closedApplication.record.submissionDate} year="numeric" day="numeric" month="2-digit"></lightning-formatted-date-time></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column name no-controls" if:true={informationMap.frontEndData.closedPortfolioLink.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.closedPortfolioLink.label}</p>
+                                </div>
+                                <template for:each={_closedVisibleData} for:item="closedApplication" for:index="index">
+                                    <div class="equalHeight" key={closedApplication.record.Id} data-index={index}>
+                                        <p><a href={closedApplication.record.Portfolio_Link__c}>{closedApplication.record.Portfolio_Link__c}</a></p>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column name no-controls" if:true={informationMap.frontEndData.closedFiles.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.closedFiles.label}</p>
+                                </div>
+                                <template for:each={_closedVisibleData} for:item="closedApplication" for:index="index">
+                                    <div class="equalHeight" key={closedApplication.record.Id} data-index={index}>
+                                        <template for:each={closedApplication.links} for:item="link">
+                                            <p key={link.link}><a href={link.link} key={link.link}>{link.name}</a></p>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="column name no-controls" if:true={informationMap.frontEndData.closedStatus.display}>
+                                <div class="headerEqualHeight">
+                                    <p>{informationMap.frontEndData.closedStatus.label}</p>
+                                </div>
+                                <template for:each={_closedVisibleData} for:item="closedApplication" for:index="index">
+                                    <div class="equalHeight" key={closedApplication.record.Id} data-index={index}>
+                                        <p><lightning-formatted-text value={closedApplication.record.Status__c}></lightning-formatted-text></p>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div if:true={hasClosedRecords}>
+                        <c-portal_util_-pagination
+                            records-per-page={recordsPerPage}
+                            queried-data={_closedApplicationsList}
+                            current-page-number={closedCurrentPage}
+                            query-more={handleQueryClosedMore}
+                            handle-page-change={handleClosedPageChange}
+                            total-number-of-items={closedTotalItems}
+                        ></c-portal_util_-pagination>
+                    </div>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+        </div>
+    </div>
+</template>

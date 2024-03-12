@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageName" label="Online Giving Page Name" type="String"/>
+            <property name="paymentMethod" label="Online Giving Payment Method" datasource="Stripe,Stripe Payment Element,Cybersource,Cybersource w/ ACH,Spreedly,Spreedly w/ ACH,TouchNet" type="String"/>
+            <property name="externalGatewayName" label="Online Giving Gateway Name" type="String" description="If using spreedly, match this with the name of the desired gateway from ucinn_ascendv2__Spreedly_Gateway__c custom setting record."/>
+            <property name="apiKeyName" label="DEPRECATED(Online Giving API Key)" type="String"/>
+            <property name="apiKey" label="DEPRECATED(Online Giving Secret Key)" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

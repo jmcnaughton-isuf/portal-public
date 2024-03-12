@@ -1,0 +1,22 @@
+.disabled-button {
+    pointer-events: none;
+    background-color: #C9C7C5;
+    border-color: #C9C7C5;
+}
+
+.shift-info {
+    font-size: 1rem; 
+    vertical-align: text-top;
+}
+
+.button-list {
+    margin-bottom: 1em !important;
+}
+
+.accordion-item {
+    border-bottom: none !important;
+}
+
+.accordion-item:first-of-type {
+    border-top: none !important;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pieChartColorsCSV" label="Pie chart colors" type="String" description="Comma seperated list of hexadecimal codes."></property>
+            <property name="maxDesginations" label="Max Desginations" type="Integer" description="Max number of desginations to show sorted by amount descending. The rest will be be under other." required="true" default="10"></property>
+            <property name="helperText" label="Helper Text" type="String"></property>
+            <property name="noDataLabel" label="No Data Label" type="String" description="Message to display when the constituent has no data to display. Can be in HTML." default="No data."></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

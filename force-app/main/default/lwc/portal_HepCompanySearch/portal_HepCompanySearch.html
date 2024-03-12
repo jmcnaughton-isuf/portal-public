@@ -1,0 +1,19 @@
+<template>
+    <div onchange={handleTextChange}>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item padding="around-small" size = "4"> 
+                <h2 style="text-transform: uppercase; font-size: 1rem; color: #00c0f3;font-weight: bold;">{matchingCompanyLabel}</h2>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size = "8"> 
+                <lightning-input name="employer-search" variant="label-hidden" label="Employer Name" value={query} is-loading type="search">
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                <c-portal_-Hep-Company-Picker current-query={query} onhep_companypicked={handleCompanyPicked}>
+                </c-portal_-Hep-Company-Picker>
+            </lightning-layout-item>
+        </lightning-layout>
+        
+        
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordsPerPage" type="Integer" label="Newsletters Per Page" default="10"/>
+            <property name="noNewslettersMessage" type="String" label="No Results Message" description="The message that will be displayed when no newsletters are returned by the search" default="There are no newsletters that match your search."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

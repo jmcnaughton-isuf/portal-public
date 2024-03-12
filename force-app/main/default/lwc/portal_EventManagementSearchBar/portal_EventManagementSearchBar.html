@@ -1,0 +1,16 @@
+<template>
+    <div class="flex-grid-2 slds-m-top_small">
+        <div class="grid-item">
+            <c-portal_-input class="slds-col slds-size_1-of-6" 
+                            type="searchName" 
+                            label="Search By Name"
+                            value={searchString}
+                            input-name="searchName"
+                            handle-input={handleInput}>
+            </c-portal_-input>
+        </div>
+        <div class="grid-item search-button">
+            <button class="button primary small full-mobile" onclick={handleSearchClick}>Search</button>
+        </div>
+    </div>
+</template>

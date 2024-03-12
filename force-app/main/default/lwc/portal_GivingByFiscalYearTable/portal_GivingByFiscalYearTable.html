@@ -1,0 +1,188 @@
+<template>
+    <div data-ascend-portal>
+        <div class="section-wrapper dark-theme" if:true={isDisplayTable}>
+            <div class="container large no-margin">
+                <div class="container">
+                    <div if:false={callbackDone} style="padding: 30px">
+                        <lightning-spinner alternative-text="Loading" style="background: inherit; margin-bottom: 5px"></lightning-spinner>
+                    </div>
+
+                    <template if:true={callbackDone}>
+                        <c-portal_-table title={permissionMap.yearlyGivingSummaryCash.label}
+                                                records={allTableData}
+                                                column-mappings={columnDataList}
+                                                rows-per-page={rowsPerPage}>
+                        </c-portal_-table>
+                        <template if:true={noTableData}>
+                            <h2 style="margin-bottom: .5em">{permissionMap.yearlyGivingSummaryCash.label}</h2>
+                            <lightning-formatted-rich-text value={noTableDataTextHTML}></lightning-formatted-rich-text>
+                        </template>
+                        <lightning-formatted-rich-text value={helperText}></lightning-formatted-rich-text>
+                    </template>
+                </div>
+            </div>
+        </div>
+            <!-- <div class="section-wrapper dark-theme">  
+                <div class="container large no-margin">
+                    <div class="container">
+                        <div class="show-on-phone">
+                            <h2 style="margin-left: .5em; margin-bottom: .5em" 
+                                if:true={permissionMap.yearlyGivingSummaryCash.display}>
+                                {permissionMap.yearlyGivingSummaryCash.label}
+                            </h2>
+                            <template for:each={phoneDisplayData} for:item="phoneDataList">
+                                <div class="registration-table" key={phoneDataList}>
+                                    <div class="row bottom-border">
+                                        <div class="entry-form">
+                                            <template for:each={phoneDataList} for:item="phoneData">
+                                                <h4 key={phoneData.column}>{phoneData.column}</h4>
+                                                <p key={phoneData.column}>{phoneData.value}</p>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            <div class="registration-table">
+                                <div class="row bottom-border">
+                                    <div class="entry-form">
+                                        <h4>Fiscal year</h4>
+                                        <p>2022</p>
+                                        <h4>Cash</h4>
+                                        <p>$0.00</p>
+                                        <h4>Fundraising</h4>
+                                        <p>$0.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="registration-table">
+                                <div class="row bottom-border">
+                                <div class="entry-form">
+                                        <h4>Fiscal year</h4>
+                                        <p>2021</p>
+                                        <h4>Cash</h4>
+                                        <p>$0.00</p>
+                                        <h4>Fundraising</h4>
+                                        <p>$0.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="registration-table">
+                                <div class="row bottom-border">
+                                    <div class="entry-form">
+                                        <h4>Fiscal year</h4>
+                                        <p>2020</p>
+                                        <h4>Cash</h4>
+                                        <p>$0.00</p>
+                                        <h4>Fundraising</h4>
+                                        <p>$0.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <template if:true={showPagination}>
+                                <c-portal_-pagination
+                                    items-per-page={rowsPerPage}
+                                    total-number-of-rows={numberOfRows}
+                                    onpagechange={changePage}>
+                                </c-portal_-pagination>
+                            </template>
+                        </div>
+                            
+                        <div class="hide-on-phone">
+                            <div class="container">
+                                <h2 style="margin-bottom: .5em" if:true={permissionMap.yearlyGivingSummaryCash.display}>{permissionMap.yearlyGivingSummaryCash.label}</h2>
+                                <div class="registration-table">
+                                    <template for:each={tableDisplayData} for:item="column">
+                                        <div class="column no-controls" if:true={column.display} key={column.label}>
+                                            <div class="headerEqualHeight show"><p>{column.label}</p></div>
+                                            <template for:each={column.data} for:item="tableData">
+                                                <div class="equalHeight show" key={tableData}><p>{tableData}</p></div> 
+                                            </template>
+                                        </div>
+                                    </template>
+                                </div>
+                                <template if:true={showPagination}>
+                                    <c-portal_-pagination
+                                        items-per-page={rowsPerPage}
+                                        total-number-of-rows={numberOfRows}
+                                        onpagechange={changePage}>
+                                    </c-portal_-pagination>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    <!--         
+            <template if:true={permissionMap.yearlyGivingSummaryCash.display}>
+                <h2>{permissionMap.yearlyGivingSummaryCash.label}</h2>
+            </template>
+
+            <template if:true={noTableData}>
+                <lightning-formatted-rich-text value={noTableDataTextHTML}></lightning-formatted-rich-text>
+            </template>
+            
+            <template if:false={noTableData}>
+                <div class="row column-titles">
+                    <template for:each={columnTitlesList} for:item="column">
+                        <template if:true={column.display}>
+                            <div key={column.label}>
+                                {column.label}
+                            </div>
+                        </template>
+                    </template>
+                </div>
+
+                <div class="table">
+                    <template for:each={currentTableData} for:item="tableRow">
+                        <div class="row table-row" key={tableRow.id}>
+
+                            <template if:true={permissionMap.fiscalYear.display}>
+                                <div>
+                                    <div>
+                                        {tableRow.fiscalYear}
+                                    </div>
+                                </div> 
+                            </template>
+
+                            <template if:true={permissionMap.cashAmount.display}>
+                                <div>
+                                    <div>
+                                        <lightning-formatted-number value={tableRow.cash}
+                                                                    format-style="currency"
+                                                                    currency-code="USD">
+                                        </lightning-formatted-number>
+                                        
+                                    </div>
+                                </div>
+                            </template>
+
+                            <template if:true={permissionMap.fiscalAmountFundraising.display}>
+                                <div>
+                                    <div>
+                                        <lightning-formatted-number value={tableRow.fundraising}
+                                                                    format-style="currency"
+                                                                    currency-code="USD">
+                                        </lightning-formatted-number>
+                                    </div>
+                                </div>
+                            </template>
+
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={showPagination}>
+                <c-portal_-pagination
+                    items-per-page={rowsPerPage}
+                    total-number-of-rows={numberOfRows}
+                    onpagechange={changePage}>
+                </c-portal_-pagination>
+            </template>
+            
+            <div class="helper-text">
+                <lightning-formatted-rich-text value={helperText}></lightning-formatted-rich-text>
+            </div> -->
+
+    </div>
+</template>

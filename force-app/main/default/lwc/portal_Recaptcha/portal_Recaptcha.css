@@ -1,0 +1,12 @@
+iframe {
+    height: 100px;
+    width: 100%;
+    padding-top: 1rem;
+    border-style: none;
+    z-index: 10000;
+}
+
+.recaptchaV3 {
+    float:right;
+    width: 50%;
+}

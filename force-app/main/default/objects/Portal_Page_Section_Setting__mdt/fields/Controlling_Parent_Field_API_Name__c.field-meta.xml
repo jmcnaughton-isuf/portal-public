@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Controlling_Parent_Field_API_Name__c</fullName>
+    <description>The field we wish to use to restrict the query. (i.e can be the contact lookup field if we only want to show a single constituent&apos;s information on the My Information portal page)</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The field we wish to use to restrict the query. (i.e can be the contact lookup field if we only want to show a single constituent&apos;s information on the My Information portal page)</inlineHelpText>
+    <label>Controlling Parent Field API Name</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

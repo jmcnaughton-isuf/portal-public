@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Staging_Object_Fields__c</fullName>
+    <description>If the staging record has multiple fields for the same type of record, this record tells us how many records can fit on one staging record.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If the staging record has multiple fields for the same type of record, this record tells us how many records can fit on one staging record.</inlineHelpText>
+    <label>Max Staging Object Fields</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

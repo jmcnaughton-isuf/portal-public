@@ -1,0 +1,14 @@
+@font-face{
+    font-family:"Noah-Bold";
+    src:url("./Noah/NoahBold/font.woff") format("woff");
+}
+
+@font-face{
+    font-family:"Noah-Regular";
+    src:url("./Noah/NoahRegular/font.woff") format("woff");
+}
+
+@font-face{
+    font-family:"OktaNeue-UltraLight";
+    src:url("./OktaNeueUltraLight/font.woff") format("woff");
+}

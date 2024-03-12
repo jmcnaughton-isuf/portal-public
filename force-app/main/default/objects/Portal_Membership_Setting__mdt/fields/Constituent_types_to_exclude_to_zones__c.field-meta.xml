@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constituent_types_to_exclude_to_zones__c</fullName>
+    <description>Comma separate list of constituent type API values to exclude from adding by geolocation to zones.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Constituent types to exclude to zones</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

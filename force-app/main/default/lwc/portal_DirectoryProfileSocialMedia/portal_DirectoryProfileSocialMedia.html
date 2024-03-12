@@ -1,0 +1,93 @@
+<template>
+    <template if:true={isShowSection}>
+        <div class="container" style="margin-top: 1.5em" if:true={informationMap.frontEndData.socialMedia.display}> 
+            <c-portal_-table title={informationMap.frontEndData.socialMedia.label}
+                                     rows-per-page="4"
+                                     column-mappings={socialMediaColumnMapping}
+                                     records={socialMediaToDisplay}>
+            </c-portal_-table>
+        </div>
+        <!-- <lightning-layout-item size="12">
+            <div style="height:2px;background-color:black"></div>
+        </lightning-layout-item>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item
+                size="12"
+                small-device-size="12"
+                medium-device-size="10"
+                large-device-size="10"
+                >
+                <h2 class='mainNavigation'>Social Media Information</h2>
+            </lightning-layout-item>
+        </lightning-layout>
+        <hr>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item if:true={informationMap.frontEndData.socialMedia.display} 
+                size="12"
+                small-device-size="12"
+                medium-device-size="12"
+                large-device-size="12"
+                padding="around-small">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item if:true={informationMap.frontEndData.socialMediaPlatform.display}
+                        size="12"
+                        large-device-size="6"
+                        medium-device-size="6"
+                        small-device-size="6"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.socialMediaPlatform.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.frontEndData.socialMediaUrl.display}
+                        size="12"
+                        large-device-size="6"
+                        medium-device-size="6"
+                        small-device-size="6"
+                        class="layoutItem"
+                    >
+                        <lightning-formatted-text
+                            class="label"
+                            value={informationMap.frontEndData.socialMediaUrl.label}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item
+                        size="12"
+                        class="layoutItem">
+                        <div style="height:1px; background-color: black;"></div>
+                    </lightning-layout-item>
+                    <template for:each={informationMap.records.Social_Media.records} for:item="account">
+                        <lightning-layout-item if:true={informationMap.frontEndData.socialMediaPlatform.display}
+                            size="12"
+                            large-device-size="6"
+                            medium-device-size="6"
+                            small-device-size="6"
+                            class="layoutItem"
+                            key={account.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={account.ucinn_ascendv2__Platform__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={informationMap.frontEndData.socialMediaUrl.display}
+                            size="12"
+                            large-device-size="6"
+                            medium-device-size="6"
+                            small-device-size="6"
+                            class="layoutItem"
+                            key={account.Id}
+                        >
+                            <lightning-formatted-text
+                                class="value"
+                                value={account.ucinn_ascendv2__URL__c}>
+                            </lightning-formatted-text>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout> -->
+    </template>
+</template>

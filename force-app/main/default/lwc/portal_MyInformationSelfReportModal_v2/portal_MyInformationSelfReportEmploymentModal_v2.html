@@ -1,0 +1,115 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading" style="z-index: 10003; position: fixed"></lightning-spinner>
+    <div class="sf-modal" style="display: block">
+        <div class="modal-background">
+             <div class="modal">
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_11-of-12 slds-small-size_11-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>Request Update</h2>
+                        </div>
+                        <div class="slds-size_1-of-12 slds-small-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                            <span onclick={handleCancel} class="close-btn">&times;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-wrapper">
+                    <lightning-formatted-rich-text if:true={helperRichText} value={helperRichText}></lightning-formatted-rich-text>
+
+                    <div class="entry-form bottom-border" style="padding-bottom: 1em">
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={configuration.fieldConfigurationMap.employer.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={configuration.fieldConfigurationMap.employer.label}
+                                    value={selfReportRecord.employer}
+                                    field-id="employer"
+                                    input-type={configuration.fieldConfigurationMap.employer.fieldType}
+                                    is-disabled={configuration.fieldConfigurationMap.employer.isDisable}
+                                    is-required={configuration.fieldConfigurationMap.employer.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={configuration.fieldConfigurationMap.employer.hasToggle}
+                                    toggle-value={selfReportRecord.isShowEmployer}
+                                    toggle-field="isShowEmployer"
+                                    picklist-values={configuration.fieldConfigurationMap.employer.picklistValues}
+                                    is-lookup={configuration.fieldConfigurationMap.employer.isLookup}
+                                    lookup-value={selfReportRecord.employerId}
+                                    lookup-field-id="employerId"
+                                    custom-metadata-api-name={configuration.fieldConfigurationMap.employer.customMetadataApiName}
+                                    custom-metadata-developer-name={configuration.fieldConfigurationMap.employer.customMetadataDeveloperName}
+                                    handle-lookup-selection-callback={handleLookupSelection}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={configuration.fieldConfigurationMap.jobTitle.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={configuration.fieldConfigurationMap.jobTitle.label}
+                                    value={selfReportRecord.jobTitle}
+                                    field-id="jobTitle"
+                                    input-type={configuration.fieldConfigurationMap.jobTitle.fieldType}
+                                    is-disabled={configuration.fieldConfigurationMap.jobTitle.isDisable}
+                                    is-required={configuration.fieldConfigurationMap.jobTitle.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={configuration.fieldConfigurationMap.jobTitle.hasToggle}
+                                    toggle-value={selfReportRecord.isShowJobTitle}
+                                    toggle-field="isShowJobTitle"
+                                    picklist-values={configuration.fieldConfigurationMap.jobTitle.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={configuration.fieldConfigurationMap.employmentStartDate.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={configuration.fieldConfigurationMap.employmentStartDate.label}
+                                    value={selfReportRecord.employmentStartDate}
+                                    field-id="employmentStartDate"
+                                    input-type={configuration.fieldConfigurationMap.employmentStartDate.fieldType}
+                                    is-disabled={configuration.fieldConfigurationMap.employmentStartDate.isDisable}
+                                    is-required={configuration.fieldConfigurationMap.employmentStartDate.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={configuration.fieldConfigurationMap.employmentStartDate.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={configuration.fieldConfigurationMap.employmentEndDate.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={configuration.fieldConfigurationMap.employmentEndDate.label}
+                                    value={selfReportRecord.employmentEndDate}
+                                    field-id="employmentEndDate"
+                                    input-type={configuration.fieldConfigurationMap.employmentEndDate.fieldType}
+                                    is-disabled={configuration.fieldConfigurationMap.employmentEndDate.isDisable}
+                                    is-required={configuration.fieldConfigurationMap.employmentEndDate.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={configuration.fieldConfigurationMap.employmentEndDate.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={configuration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={configuration.fieldConfigurationMap.employmentShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        label={configuration.fieldConfigurationMap.employmentShowOnDirectory.label}
+                                        value={selfReportRecord.employmentShowOnDirectory}
+                                        field-id="employmentShowOnDirectory"
+                                        input-type={configuration.fieldConfigurationMap.employmentShowOnDirectory.fieldType}
+                                        is-disabled={configuration.fieldConfigurationMap.employmentShowOnDirectory.isDisable}
+                                        is-required={configuration.fieldConfigurationMap.employmentShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        picklist-values={configuration.fieldConfigurationMap.employmentShowOnDirectory.picklistValues}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                        <div class="slds-grid slds-wrap slds-grid_align-end">
+                            <div class="button-list">
+                                <button class="button secondary" onclick={handleCancel}>Cancel</button>
+                                <button class="button primary" onclick={handleSave}>Save</button>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+             </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,14 @@
+.ticket-options .selection-info span {
+    display: initial;
+    padding: initial;
+    border-radius: initial !important;
+    background-color: initial;
+    color: initial;
+    cursor: initial;
+    width: initial;
+    text-align: initial;
+}
+
+.section-wrapper {
+    padding-top: 0;
+}

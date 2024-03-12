@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Values_for_checking_is_on_newsletter__c</fullName>
+    <description>Comma separated list of service indicator values to not allow direct checking of the is on newsletter field on zone membership records. Those zone membership records will be created but a case will be created for enabling the is show on newsletter field.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Comma separated list of service indicator values.</inlineHelpText>
+    <label>Values for checking is on newsletter</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

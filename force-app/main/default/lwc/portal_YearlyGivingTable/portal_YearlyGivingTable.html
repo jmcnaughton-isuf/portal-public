@@ -1,0 +1,28 @@
+<template>
+    <div data-ascend-portal>
+        <div class="section-wrapper" if:true={isDisplayTable}>
+            <div class="container large no-margin">
+                <div class="container">
+                    <div if:false={callbackDone} style="padding: 30px">
+                        <lightning-spinner alternative-text="Loading" style="background: inherit; margin-bottom: 5px"></lightning-spinner>
+                    </div>
+
+                    <template if:true={callbackDone}>
+                        <c-portal_-table title={permissionMap.yearlyGivingTable.label}
+                                                records={tableData}
+                                                column-mappings={columnDataList}
+                                                rows-per-page="5">
+                        </c-portal_-table>
+                        <template if:true={helperTextHTML}>
+                            <lightning-formatted-rich-text value={helperTextHTML}></lightning-formatted-rich-text>
+                        </template>
+
+                        <template if:true={noTableData}>
+                            <lightning-formatted-rich-text value={noTableDataTextHTML}></lightning-formatted-rich-text>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

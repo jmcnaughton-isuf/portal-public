@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_on_directory__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determines if show on directory column in shown on the my membership page.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Show on directory</label>
+    <type>Checkbox</type>
+</CustomField>

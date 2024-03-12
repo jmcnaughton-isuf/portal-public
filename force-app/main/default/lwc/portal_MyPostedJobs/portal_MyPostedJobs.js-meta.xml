@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="contentModuleName" label="Content Module Name" type="String" description="Module name for the agreement clause"/>
+            <property name="contentPageName" label="Content Page Name" type="String" description="Module page for the agreement clause"/>
+            <property name="pageName" label="Page Name" type="String" default="Job Posting"/>
+            <property name="mainSectionName" label="Main Section Name" type="String" default="Job"/>
+            <property name="noResultsText" label="No Results Text" type="String" default="No posted jobs were found."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,65 @@
+<template>    
+    <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+    <template if:true={isDisplay}>
+        <div class="container container-no-padding">
+            <!-- Breadcrumb -->
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li>
+                        <a href="?">Back to My Information</a>
+                    </li>
+                </ul>
+            </div>
+            <h2>Privacy Settings</h2>
+            <div class="entry-form">
+                <template for:each={directoryOptOut} for:item="eachDirectoryOptOut" for:index="index">
+                    <div class="flex-grid-1" key={eachDirectoryOptOut.timestampHtmlKey}>
+                            <div class="grid-item" if:true={sectionConfiguration.directoryOptOut.fieldConfigurationMap.isDirectoryOptOut.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.directoryOptOut.fieldConfigurationMap.isDirectoryOptOut.label}
+                                    value={isDirectoryOptIn}
+                                    field-id="isDirectoryOptOut"
+                                    index={index}
+                                    section-id="directoryOptOut"
+                                    input-type={sectionConfiguration.directoryOptOut.fieldConfigurationMap.isDirectoryOptOut.fieldType}
+                                    is-disabled={sectionConfiguration.directoryOptOut.fieldConfigurationMap.isDirectoryOptOut.isDisable}
+                                    is-required={sectionConfiguration.directoryOptOut.fieldConfigurationMap.isDirectoryOptOut.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+                    </div>
+                </template>
+                <template for:each={directorySetting} for:item="eachDirectorySetting" for:index="index">
+                    <div class="flex-grid-1" key={eachDirectorySetting.timestampHtmlKey}>
+                            <div class="grid-item" if:true={sectionConfiguration.directorySetting.fieldConfigurationMap.receivingMessages.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.directorySetting.fieldConfigurationMap.receivingMessages.label}
+                                    value={eachDirectorySetting.receivingMessages}
+                                    field-id="receivingMessages"
+                                    index={index}
+                                    section-id="directorySetting"
+                                    input-type={sectionConfiguration.directorySetting.fieldConfigurationMap.receivingMessages.fieldType}
+                                    is-disabled={sectionConfiguration.directorySetting.fieldConfigurationMap.receivingMessages.isDisable}
+                                    is-required={sectionConfiguration.directorySetting.fieldConfigurationMap.receivingMessages.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+                            <div class="grid-item" if:true={sectionConfiguration.directorySetting.fieldConfigurationMap.studentCanSee.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label="Allow me to receive messages from university alumni, faculty, and (if my profile is visible to them) students."
+                                    value={eachDirectorySetting.studentCanSee}
+                                    field-id="studentCanSee"
+                                    index={index}
+                                    section-id="directorySetting"
+                                    input-type={sectionConfiguration.directorySetting.fieldConfigurationMap.studentCanSee.fieldType}
+                                    is-disabled={sectionConfiguration.directorySetting.fieldConfigurationMap.studentCanSee.isDisable}
+                                    is-required={sectionConfiguration.directorySetting.fieldConfigurationMap.studentCanSee.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>

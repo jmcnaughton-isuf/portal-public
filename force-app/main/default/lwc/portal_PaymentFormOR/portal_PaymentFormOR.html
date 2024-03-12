@@ -1,0 +1,7 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+    <template if:true={_isShowComponent}>
+        <iframe src="../apex/PORTAL_StripeCreditCardFormOR" style="width: 100%;" class="slds-align_absolute-center"></iframe>
+        <!-- <iframe src="https://isuf--partial.sandbox.my.site.com/portal/apex/PORTAL_StripeCreditCardFormOR"></iframe> -->
+    </template>
+</template>

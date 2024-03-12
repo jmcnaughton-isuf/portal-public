@@ -1,0 +1,28 @@
+<template>
+    <template if:false={_loaded}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <template if:true={_loaded}>
+        <ul class="slds-has-dividers_bottom-space">
+            <li class="slds-item" if:true={currentQuery}>
+                <h1>{companyNumber} items found.</h1>
+            </li>
+            <template for:each={_companies} for:item="company" key={_company.company_id}>
+                <li class="slds-item" key={company.company_id}>
+                    <lightning-card>
+                        <h1 slot="title"><a href="javascript:void(0);" onclick={onCompanyClick}
+                                data-id={company.company_id}>{company.name}</a></h1>
+                        <h1 class="slds-card__body slds-card__body_inner">
+                            <ul class="slds-list_horizontal slds-has-dividers_right">
+                                <li class="slds-item">{company.city}</li>
+                                <li class="slds-item">{company.state}</li>
+                                <li class="slds-item">{company.parent_name}</li>
+                                <li class="slds-item">{company.subsidiary_name}</li>
+                            </ul>
+                        </h1>
+                    </lightning-card>
+                </li>
+            </template>
+        </ul>
+    </template>
+</template>

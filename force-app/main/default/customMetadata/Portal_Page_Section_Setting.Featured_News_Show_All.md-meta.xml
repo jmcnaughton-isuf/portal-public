@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Featured News Show all</label>
+    <protected>false</protected>
+    <values>
+        <field>Active_Record_Field_Map__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Controlling_Parent_Field_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Controlling_Parent_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Create_Staging_Record_Condition_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Create_Staging_Record_Condition_Operator__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Create_Staging_Record_Condition_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Duplicate_Field_Logic__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>External_Id_Field_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Front_End_Section_Id__c</field>
+        <value xsi:type="xsd:string">featuredNewsShowAll</value>
+    </values>
+    <values>
+        <field>Front_End_Section_Label__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Group_By_Clause__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Has_Duplicate_Logic__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Has_Report_Update_Link__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Inactive_Record_Field_Map__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Is_Child__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Create_Staging_Record_Upon_Creation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Create_Staging_Record_Upon_Edit__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Create_Staging_Record_Using_Fields__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Disabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Display_On_Directory__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Display_Section__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Display_Toggle_On_Section__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Display_Toggle_Per_Record__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Is_Hard_Delete_Records__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Listing_Configurations__c</field>
+        <value xsi:type="xsd:string">{ &quot;scope&quot;: &quot;All&quot;, &quot;itemsPerPage&quot;: &quot;3&quot;, &quot;itemsPerRow&quot;: &quot;4&quot;, &quot;relevance&quot;: &quot;All&quot;, &quot;sharing&quot;: &quot;All&quot;, &quot;recordType&quot;: &quot;News&quot;, &quot;noResultsText&quot;: &quot;There are no results for your search.&quot;, &quot;searchSectionTitle&quot;: &quot;Search Featured News&quot;, &quot;listingSectionTitle&quot;: &quot;Featured News&quot;, &quot;actionOnContentNOTINWhereClause&quot;: &quot;Is_Not_Interested__c = true&quot; }</value>
+    </values>
+    <values>
+        <field>Max_Number_of_Query_Records__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Max_Staging_Object_Fields__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Order_By_Clause__c</field>
+        <value xsi:type="xsd:string">ORDER BY Start_Date_Time__c DESC</value>
+    </values>
+    <values>
+        <field>Original_Record_Field_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Page_Main_Section__c</field>
+        <value xsi:type="xsd:string">Featured News Show All</value>
+    </values>
+    <values>
+        <field>Page_Name__c</field>
+        <value xsi:type="xsd:string">News</value>
+    </values>
+    <values>
+        <field>Page_Sub_Section__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Record_Type_Developer_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Relationship_Wrapper_Id__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>SObject_API_Name__c</field>
+        <value xsi:type="xsd:string">ucinn_portal_Listing__c</value>
+    </values>
+    <values>
+        <field>SObject_Relationship_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Section_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Staging_Record_Controlling_Parent_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Staging_Record_Controlling_Parent_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Staging_Record_Type_Developer_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Staging_Record_Where_Clause__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Staging_sObject_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Where_Clause__c</field>
+        <value xsi:type="xsd:string">WHERE RecordType.DeveloperName = &apos;News&apos; AND Status__c = &apos;Published&apos;</value>
+    </values>
+</CustomMetadata>

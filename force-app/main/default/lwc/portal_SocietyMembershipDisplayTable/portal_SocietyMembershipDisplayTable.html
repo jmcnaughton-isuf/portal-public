@@ -1,0 +1,89 @@
+<template>
+    <div class="show-on-phone">
+        <h2 style="margin-left: .5em; margin-bottom: .5em">{title}</h2>
+        <template for:each={_recordsToDisplay} for:item="record">
+            <div class="registration-table" key={record.key}>
+                <div class="row bottom-border">
+                    <div class="entry-form">
+                        <template for:each={columnMappings} for:item="columnMapping">
+                            <template if:true={columnMapping.display}>
+                                <h4 key={columnMapping.label}>{columnMapping.label}</h4>
+                                <p key={columnMapping.label} if:false={columnMapping.expandText}>
+                                    <c-portal_-society-membership-display-table-entry record={record}
+                                                                column-data={columnMapping}
+                                                                handle-checkbox-click={handleCheckboxClick}>
+                                    </c-portal_-society-membership-display-table-entry>
+                                </p>
+                                <template if:true={columnMapping.expandText}>
+                                    <template if:true={record.expandedData} for:each={record.expandedData} for:item="expandedData">
+                                        <p key={expandedData.key} class="border-bottom">
+                                            <template for:each={columnMappings} for:item="innerColumn">
+                                                <strong key={expandedData.key}>{innerColumn.label}: </strong>
+                                                <c-portal_-society-membership-display-table-entry entry-label={innerColumn.label}
+                                                                                record={expandedData}
+                                                                                column-data={innerColumn}
+                                                                                key={innerColumn.label}
+                                                                                handle-checkbox-click={handleCheckboxClick}>
+                                                </c-portal_-society-membership-display-table-entry>
+                                                <br key={expandedData.key}/>
+                                            </template>
+                                        </p>
+                                    </template>
+                                </template>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <c-portal_util_-pagination
+            queried-data={records}
+            records-per-page={rowsPerPage}
+            handle-page-change={handlePageChange}>
+        </c-portal_util_-pagination>
+    </div>
+        
+    <div class="hide-on-phone" if:true={records.length}>
+        <h2 style="margin-bottom: .5em">{title}</h2>
+        <div class="registration-table">
+            <template for:each={columnMappings} for:item="columnMapping">
+                <template if:true={columnMapping.display}>
+                    <div class="column no-controls" key={columnMapping.label}>
+                        <div class="headerEqualHeight show"><p>{columnMapping.label}</p></div>
+                        <template for:each={_recordsToDisplay} for:item="record">
+                            <div class="equalHeight show" key={record.key}>
+                                <p>
+                                    <c-portal_-society-membership-display-table-entry record={record}
+                                                                    column-data={columnMapping}
+                                                                    handle-expand-data={handleExpandData}
+                                                                    handle-checkbox-click={handleCheckboxClick}>
+                                    </c-portal_-society-membership-display-table-entry>
+                                </p>
+                            </div> 
+                            <template if:true={record.expandedData}>
+                                <div key={record.key} style="background-color: #efefef" if:true={record.isShowExpandedData}>
+                                    <template for:each={record.expandedData} for:item="expandedItem">
+                                        <div class="equalHeight show" key={expandedItem.key}>
+                                            <p>
+                                                <c-portal_-society-membership-display-table-entry record={expandedItem}
+                                                                                column-data={columnMapping}
+                                                                                handle-checkbox-click={handleCheckboxClick}>
+                                                </c-portal_-society-membership-display-table-entry>
+                                            </p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+        <c-portal_util_-pagination
+            queried-data={records}
+            records-per-page={rowsPerPage}
+            handle-page-change={handlePageChange}
+            query-more={queryMore}>
+        </c-portal_util_-pagination>
+    </div>
+</template>

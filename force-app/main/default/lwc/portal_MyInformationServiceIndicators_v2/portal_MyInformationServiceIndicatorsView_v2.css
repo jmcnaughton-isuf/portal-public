@@ -1,0 +1,5 @@
+@media (max-width: 959px) {
+    .container-no-padding {
+        padding: 0;
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <!-- <property name="hideContent" label="Hide Content" type="Boolean"/> -->
+            <property name="contentModuleName" label="Content Module Override Name"
+                      description="A Content Module name that, if present on the current Listing, overrides this Footer component."
+                      type="String"/>
+            <property name="pageName" label="Page Name" type="String"/>
+            <property name="mainSectionName" label="Main Section Name" type="String"/>
+            <property name="subSectionName" label="Sub-Section Name" type="String"/>
+            <property name="design" label="Design" type="String"/>
+            <property name="titleText" label="Title Text" type="String"/>
+            <property name="showMoreURL" label="Show More URL" type="String"/>
+            <property name="showMoreLabel" label="Show More Button Label" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

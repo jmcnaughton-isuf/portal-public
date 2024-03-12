@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageName" label="Online Giving Page Name" type="String" default="giving"/>
+            <property name="componentLabel" label="Section Label" type="String" default="Pledge Information"/>
+            <property name="totalPledgeAmountLabel" label="Total Pledge Amount Label" type="String" default="Total Pledge Amount"/>
+            <property name="amountPaidToDateLabel" label="Amount Paid To Date Label" type="String" default="Amount Paid To Date"/>
+            <property name="currentDueDateLabel" label="Current Due Date Label" type="String" default="Current Due Date"/>
+            <property name="pastDueAmountLabel" label="Past Due Amount Label" type="String" default="Past Due Amount"/>
+            <property name="currentDueAmountLabel" label="Current Due Amount Label" type="String" default="Current Due Amount"/>
+            <property name="totalDueAmountLabel" label="Total Due Amount Label" type="String" default="Total Due Amount"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

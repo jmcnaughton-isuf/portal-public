@@ -1,0 +1,13 @@
+<template>
+    <template if:true={initDone}>
+        <div data-ascend-portal>
+            <div class="container medium banner" style="margin-bottom: 0;" if:true={showBanner}>
+                <div class="contentContainer">
+                    <div class="slds-grid align-center">
+                        <h1 class="contentTitle" if:true={permissionMap.bannerText.display}>{bannerTextHTML}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

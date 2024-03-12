@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="forgotUsernameLabel" label="Forgot Username Label" type="String" default="Forgot Username" description="The label for the component."></property>
+            <property name="emailAddressLabel" label="Email Address Label" type="String" default="Email Address" description="The label for the field where the user enters an email address associated with an account."></property>
+            <property name="submitLabel" label="Submit Label" type="String" default="Submit" description="The label for the button to trigger the send username submission."></property>
+            <property name="cancelLabel" label="Cancel Label" type="String" default="Cancel" description="The label for the button to cancel the process and navigate back to the login page."></property>
+            <property name="emailTemplateDeveloperName" label="Email Template Developer Name" type="String" default="Portal_Send_Username" description="The developer name of the email template to use when sending username."></property>
+            <property name="isRecaptchaEnabled" label="Enable reCAPTCHA" type="Boolean" default="false" description="Whether or not to require recaptcha when submitting the form."></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

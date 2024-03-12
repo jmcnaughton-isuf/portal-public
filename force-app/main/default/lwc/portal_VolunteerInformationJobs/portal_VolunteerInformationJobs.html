@@ -1,0 +1,30 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <template for:each={_jobListToShow} for:item="job">
+            <lightning-layout-item key={job.jobId} size="6" padding="around-small">
+                <div class="slds-box">
+                    <p class="slds-m-bottom_small" if:true={job.interim}><b>{job.firstName} {job.lastName}</b></p>
+                    <h2 class="slds-m-bottom_small slds-text-heading_small">{job.eventName} - {job.jobName}</h2>
+                    <span>{job.startDate} - {job.endDate}</span>
+                    <template if:true={job.reportedHours}>
+                        <p><b>{job.reportedHours} Hours Worked</b></p>
+                    </template>
+                    <template if:true={isShowReportButton}>
+                        <br/>
+                        <button class="slds-button slds-button_brand slds-m-around_small" 
+                                data-id={job.jobId}
+                                onclick={handleReportHours}>
+                            Report Hours
+                        </button>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+    <c-portal_util_-pagination queried-data={jobList}
+                               total-number-of-items={jobList.length}
+                               records-per-page={itemsPerPage}
+                               handle-page-change={handlePageChange}>
+    </c-portal_util_-pagination>
+
+</template>

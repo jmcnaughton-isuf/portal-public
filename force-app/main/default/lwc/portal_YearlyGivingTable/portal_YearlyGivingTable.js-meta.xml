@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="helperTextHTML" label="Helper Text" type="String" description ="Helper text that will display ontop of the table. The helper text can be in HTML."/>
+            <property name="hideReceipt" label="Hide Receipt" type="Boolean" default="false"/>
+            <property name="receiptLabel" label="Receipt Column Label" type="String" default="Receipt"/>
+            <property name="receiptRowLabel" label="Receipt Row Label" type="String" default="Receipt"/>
+            <property name="receiptNotReadyText" label="Receipt Not Ready Row Label" type="String" default="Tax letter has not been finalized yet."/>
+            <property name="receiptBaseURL" label="Receipt Base Url" type="String" default="PORTAL_YearEndTaxReceipt" description="Relative base URL for the receipt."/>
+            <property name="receiptContentPageName" label="Receipt Content Page Name" description="Content page name where static receipt info is held" type="String" default="Gift Receipt Page"/>
+            <property name="noTableDataTextHTML" label="No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+        </targetConfig>
+    </targetConfigs>
+
+</LightningComponentBundle>

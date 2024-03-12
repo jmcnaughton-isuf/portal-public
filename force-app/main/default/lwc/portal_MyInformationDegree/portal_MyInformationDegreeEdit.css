@@ -1,0 +1,33 @@
+.breadcrumb li:first-child::before {
+    content: "< ";
+}
+
+.hide-input {
+    margin-right : 4px;
+}
+
+.show-input {
+    margin-left: 4px;
+}
+
+@media (max-width: 1000px) {
+    [data-ascend-portal] div[class^='flex-grid'] .grid-item {
+        flex: 1 1 100% !important;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+}
+
+
+@media (max-width: 281px) {
+    .container.bottom-border {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .entry-form {
+        margin-top: 20px;
+    }
+}

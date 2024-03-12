@@ -1,0 +1,167 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_showSpinner}>
+            <lightning-spinner variant="brand" size="large"></lightning-spinner>
+        </template>
+
+        <div class="slds-m-top_large">
+            <c-portal_-hiring-manager-progress-bar
+                current-page-index={_currentPage}>
+            </c-portal_-hiring-manager-progress-bar>
+        </div>
+
+        <div class="container medium">
+            <div class="container" if:true={isShowFirstPage}>
+                <h2 style="margin-bottom: .5em">{applicantHeader}</h2>
+                <div class="entry-form bottom-border">
+                    <div class="flex-grid-2">
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span>{frontEndDataMap.emailAddress.label}</label>
+                            <input type="email" value={emailAddress} name="emailAddress" onchange={setRecordValue} oninput={clearValidity} required/>
+                        </div>
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span>Confirm Email</label>
+                            <input type="email" value={emailConfirmation} data-name='verify' name="emailConfirm" onchange={confirmEmail} oninput={clearValidity} required>
+                        </div>
+                        <div class="grid-item half-size" if:true={frontEndDataMap.emailType.display}>
+                            <c-portal_-select 
+                                required={frontEndDataMap.emailType.isRequired}
+                                label={frontEndDataMap.emailType.label}
+                                input-name="emailType" 
+                                disabled={frontEndDataMap.emailType.disable} 
+                                is-show-null-option="true" 
+                                default-value={emailType} 
+                                option-list={_emailTypes} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                    </div>
+                    <div class="flex-grid-3">
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span>{frontEndDataMap.firstName.label}</label>
+                            <input type="text" value={firstName} name="firstName" onchange={setRecordValue} oninput={clearValidity} required>         
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.middleName.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.middleName.isRequired}>*</span>{frontEndDataMap.middleName.label}</label>
+                            <input type="text" value={middleName} name="middleName" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.middleName.isRequired}>
+                        </div>
+                        <div class="grid-item">
+                            <label for=""><span class="required">*</span>{frontEndDataMap.lastName.label}</label>
+                            <input type="text" value={lastName} name="lastName" onchange={setRecordValue} oninput={clearValidity} required>
+                        </div>
+                    </div>
+                        
+                    <div class="flex-grid-2">
+                        <div class="grid-item" if:true={frontEndDataMap.phoneNumber.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.phoneNumber.isRequired}>*</span>{frontEndDataMap.phoneNumber.label}</label>
+                            <input type={frontEndDataMap.phoneNumber.fieldType} value={phoneNumber} name="phoneNumber" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.phoneNumber.isRequired}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.phoneType.display}>
+                            <c-portal_-select 
+                                required={frontEndDataMap.phoneType.isRequired}
+                                label={frontEndDataMap.phoneType.label}
+                                is-show-null-option="true" 
+                                disabled={frontEndDataMap.phoneType.disable} 
+                                default-value={phoneType} 
+                                input-name="phoneType" 
+                                option-list={_phoneTypes} 
+                                handle-change={setRecordValue}>
+                            </c-portal_-select>
+                        </div>
+                        <div class="grid-item half-size">
+                            <label for=""><span class="required">*</span>{frontEndDataMap.jobTitle.label}</label>
+                            <input type="text" value={jobTitle} name="jobTitle" onchange={setRecordValue} oninput={clearValidity} required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-list" if:true={_callbackDone}>
+                    <a onclick={handleNextPage} class="button primary">Next</a>
+                </div>
+            </div>
+
+            <div class="container" if:true={isShowSecondPage}>
+                <h2 style="margin-bottom: .5em">{companyHeader}</h2>
+                <div class="entry-form">
+                    <div class="flex-grid">
+                        <div class="grid-item full-width">
+                            <label for=""><span class="required">*</span>{frontEndDataMap.companyName.label}</label>
+                            <input type="text" value={companyName} name="companyName" onchange={setRecordValue} oninput={clearValidity} disabled={frontEndDataMap.companyName.disable} required>
+                        </div>
+                    </div>
+                    <div class="flex-grid">
+                        <div class="grid-item full-width" if:true={frontEndDataMap.description.display}>
+                            <lightning-textarea name="description" label={frontEndDataMap.description.label} required={frontEndDataMap.description.isRequired} disabled={frontEndDataMap.description.disable} onchange={setRecordValue} value={description}></lightning-textarea>
+                        </div>
+                    </div>
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={frontEndDataMap.website.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.website.isRequired}>*</span>{frontEndDataMap.website.label}</label>
+                            <input placeholder="https://example.com" type={frontEndDataMap.website.fieldType} value={website} name="website" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.website.isRequired} disabled={frontEndDataMap.website.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.linkedIn.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.linkedIn.isRequired}>*</span>{frontEndDataMap.linkedIn.label}</label>
+                            <input type="text" value={linkedIn} name="linkedIn" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.linkedIn.isRequired} disabled={frontEndDataMap.linkedIn.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.industry.display}>
+                            <c-portal_-select is-show-null-option="true" label={frontEndDataMap.industry.label} required={frontEndDataMap.industry.isRequired} disabled={frontEndDataMap.industry.disable} default-value={industry} input-name="industry" option-list={_picklists.industry} handle-change={setRecordValue}></c-portal_-select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="line-break"></div>
+
+                <h2 style="margin-bottom: .5em">Company Contact Information</h2>
+                <div class="entry-form bottom-border">
+                    <div class="flex-grid-2">
+                        <div class="grid-item" if:true={frontEndDataMap.companyEmailAddress.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.companyEmailAddress.isRequired}>*</span>{frontEndDataMap.companyEmailAddress.label}</label>
+                            <input type="email" value={companyEmailAddress} name="companyEmailAddress" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.companyEmailAddress.isRequired} disabled={frontEndDataMap.companyEmailAddress.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.companyPhoneNumber.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.companyPhoneNumber.isRequired}>*</span>{frontEndDataMap.companyPhoneNumber.label}</label>
+                            <input type="text" value={companyPhoneNumber} name="companyPhoneNumber" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.companyPhoneNumber.isRequired} disabled={frontEndDataMap.companyPhoneNumber.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressLine1.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressLine1.isRequired}>*</span>{frontEndDataMap.addressLine1.label}</label>
+                            <input type="text" value={addressLine1} name="addressLine1" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.addressLine1.isRequired} disabled={frontEndDataMap.addressLine1.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressLine2.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressLine2.isRequired}>*</span>{frontEndDataMap.addressLine2.label}</label>
+                            <input type="text" value={addressLine2} name="addressLine2" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.addressLine2.isRequired} disabled={frontEndDataMap.addressLine2.disable}>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grid-3">
+                        <div class="grid-item" if:true={frontEndDataMap.addressCity.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressCity.isRequired}>*</span>{frontEndDataMap.addressCity.label}</label>
+                            <input type="text" value={addressCity} name="addressCity" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.addressCity.isRequired} disabled={frontEndDataMap.addressCity.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressState.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressState.isRequired}>*</span>{frontEndDataMap.addressState.label}</label>
+                            <input type="text" value={addressState} name="addressState" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.addressState.isRequired} disabled={frontEndDataMap.addressState.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressCountry.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressCountry.isRequired}>*</span>{frontEndDataMap.addressCountry.label}</label>
+                            <input type="text" value={addressCountry} name="addressCountry" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.addressCountry.isRequired} disabled={frontEndDataMap.addressCountry.disable}>
+                        </div>
+                        <div class="grid-item" if:true={frontEndDataMap.addressPostalCode.display}>
+                            <label for=""><span class="required" if:true={frontEndDataMap.addressPostalCode.isRequired}>*</span>{frontEndDataMap.addressPostalCode.label}</label>
+                            <input type="text" value={addressPostalCode} name="addressPostalCode" onchange={setRecordValue} oninput={clearValidity} required={frontEndDataMap.addressPostalCode.isRequired} disabled={frontEndDataMap.addressPostalCode.disable}>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+                    <c-portal_-Recaptcha>
+                    </c-portal_-Recaptcha>
+                </div>
+                
+                <div class="button-list" if:true={_callbackDone}>
+                    <a onclick={handlePreviousPage} class="button secondary">Back</a>
+                    <a onclick={handleSubmit} class="button primary">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

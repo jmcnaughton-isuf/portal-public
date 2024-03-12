@@ -1,0 +1,37 @@
+.subheader {
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    color: #005496;
+    font-weight:bold;
+    padding-top: .25rem;
+}
+
+.header {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #005496;
+    font-weight: bold;
+}
+
+.layoutItem {
+    padding: .25rem .5rem .25rem .5rem;
+}
+
+.mainNavigation {
+    text-transform: uppercase;
+    font-size: 2.0rem;
+    color: #00c0f3;
+    font-weight: bold;
+    padding-top: .5rem;
+}
+
+.label {
+    text-transform: uppercase;
+    font-size: 1.0rem;
+}
+
+.value {
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    font-weight: bold;
+}

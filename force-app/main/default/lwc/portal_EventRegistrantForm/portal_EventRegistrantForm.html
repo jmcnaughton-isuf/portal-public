@@ -1,0 +1,646 @@
+<template>
+    <div class="container large" if:true={registrant} style="margin-bottom: 0px">
+        <div class="content-wrapper" style="margin-bottom: 0px">
+            <div class="ticket-options full-width">
+                <div class="entry-form">
+                    <div class="flex-grid-2">
+                        <template for:each={registrant.ticketList} for:item="ticket" for:index="ticketIndex" if:true={_isShowTickets}>
+                            <div key={ticket.ticketTypeId} class="grid-item" if:false={ticket.isHidden}>
+                                <!-- Ticket Type Name, Price, Sold Out status -->
+                                <label for="general-admission" class="ticket-label">
+                                    <template if:false={ticket.ticketType.isDiscounted}>
+                                        {ticket.ticketType.name} - <lightning-formatted-number value={ticket.ticketType.price} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </template>
+                                    <template if:true={ticket.ticketType.isDiscounted}>
+                                        {ticket.ticketType.name} - <lightning-formatted-number value={ticket.ticketType.originalPrice} format-style="currency" currency-code="USD" class="strike-through"></lightning-formatted-number>&nbsp;<lightning-formatted-number class="discount-price" value={ticket.ticketType.price} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </template>
+                                    <template if:true={ticket.ticketType.isSoldOut}> (Sold Out)</template>
+                                </label>
+                                <div class="ticket-options entry-button">
+                                    <label>
+                                        <!-- clickable Select Ticket checkbox button, gets disabled if sold out or already purchased tickets -->
+                                        <template if:true={ticket.purchasedQuantity}>
+                                            <input id={ticket.ticketTypeId} 
+                                                class="radio"
+                                                data-index={ticketIndex} 
+                                                type="checkbox" 
+                                                checked={ticket.isSelected} 
+                                                disabled 
+                                                onchange={handleTicketCheckbox}/>
+                                        </template>
+                                        <template if:false={ticket.purchasedQuantity}>
+                                            <input id={ticket.ticketTypeId} 
+                                                class="radio"
+                                                data-index={ticketIndex} 
+                                                type="checkbox" 
+                                                checked={ticket.isSelected} 
+                                                disabled={ticket.ticketType.isSoldOut} 
+                                                onchange={handleTicketCheckbox}/>
+                                        </template>
+                                        <!-- button label, based on tickets available, waitlist available, or sold out -->
+                                        <span if:false={ticket.ticketType.isSoldOut}>Select Ticket</span>
+                                        <template if:true={ticket.ticketType.isSoldOut}>
+                                            <span if:false={isWaitlistEnabled} class="disabled">Sold Out</span>
+                                            <template if:true={isWaitlistEnabled}>
+                                                <span if:true={ticket.ticketType.isWaitlist} 
+                                                    data-id={ticket.ticketType.id}
+                                                    onclick={handleWaitlistClick}>Join Waitlist</span>
+                                                <span if:false={ticket.ticketType.isWaitlist}>Sold Out</span>
+                                            </template>
+                                        </template>
+                                        <!-- input for number of tickets -->
+                                        <c-portal_-input 
+                                                required
+                                                input-style="margin-left: 0.25rem; display: inherit !important; opacity: inherit !important; padding-top: inherit !important; padding-bottom: inherit !important"
+                                                classes="slds-input"
+                                                min={ticket.min}
+                                                max={ticket.max}
+                                                type="number" 
+                                                value={ticket.quantity}
+                                                disabled={ticket.ticketType.isSoldOut}
+                                                input-name={ticket.ticketTypeId}
+                                                handle-input={handleTicketInput}
+                                                if:true={ticket.isSelected}>
+                                        </c-portal_-input>
+                                    </label>
+                                </div>
+                            </div>
+                        </template>
+                        <div class="grid-item" if:true={hasPromoCodes}>
+                            <label class="slds-m-top_small">Promo Code</label>
+                            <c-portal_-input type="text" 
+                                             value={promoCode}
+                                             handle-input={handlePromoCodeChange}>
+                            </c-portal_-input>
+                            <button class="button secondary slds-m-top_small" disabled={isPromoCodeButtonDisabled} onclick={handleApplyPromoCode}>Apply Promo Code</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="entry-form bottom-border" style="margin-bottom: 0">
+                <div class="flex-grid-2">
+                    <div class="grid-item">
+                        <c-portal_-input label="First Name"
+                                         type="text" 
+                                         value={registrant.firstName}
+                                         disabled={isBioInfoDisabled}
+                                         required
+                                         input-name="firstName" 
+                                         handle-change={handleInput}></c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text" 
+                                         label="Last Name"
+                                         value={registrant.lastName} 
+                                         disabled={isBioInfoDisabled}
+                                         required
+                                         input-name="lastName"
+                                         handle-change={handleInput}></c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="email" 
+                                         value={registrant.email} 
+                                         disabled={isBioInfoDisabled}
+                                         label="Email"
+                                         required={isEmailRequired}
+                                         input-name="email"
+                                         handle-input={handleInput}></c-portal_-input>
+                    </div>
+
+                    <div class="grid-item">
+                        <c-portal_-input type="text" 
+                                         value={registrant.nameTag} 
+                                         label="Name Tag"
+                                         required
+                                         input-name="nameTag"
+                                         handle-input={handleInput}></c-portal_-input>
+                    </div>
+                    <div class="grid-item" if:true={isLookWhosComingEnabled}>
+                        <fieldset>
+                            <div class="field-wrapper">
+                                <input type="checkbox" name="isDisplayOnLookWhosComingList" checked={registrant.isDisplayOnLookWhosComingList} class="radio" onchange={handleInput}>
+                                <label>Show Name on Look Who's Coming List</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="grid-item" if:true={registrantIndex}>
+                        <fieldset>
+                            <div class="field-wrapper">
+                                <input type="checkbox" name="isSendConfirmation" checked={registrant.isSendConfirmation} class="radio" onchange={handleInput}>
+                                <label>Send Confirmation Email</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <template if:true={registrationTemplate}>
+                        <div class="grid-item" if:true={registrationTemplate.Is_Display_Degree_and_Year_Field__c}>
+                            <label>Degree and Year</label>
+                            <c-portal_-input type="text" 
+                                             value={registrant.degreeAndYear} 
+                                             input-name="degreeAndYear"
+                                             handle-input={handleInput}></c-portal_-input>
+
+                        </div>
+                        <div class="grid-item" if:true={registrationTemplate.Is_Display_Employer_Field__c}>
+                            <label>Employer</label>
+                                <c-portal_-input type="text" 
+                                                 value={registrant.employer} 
+                                                 input-name="employer"
+                                                 handle-input={handleInput}></c-portal_-input>
+                        </div>
+                        <div class="grid-item" if:true={registrationTemplate.Is_Display_Phone_Field__c}>
+                            <label>Phone</label>
+                                <c-portal_-input type="text" 
+                                                 value={registrant.phone} 
+                                                 input-name="phone"
+                                                 handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </template>
+                </div>
+                <template if:true={registrationTemplate}>
+                    <div class="flex-grid-2" if:true={registrationTemplate.Is_Display_Address_Fields__c}>
+                        <div class="grid-item">
+                            <label>Street Line 1</label>
+                            <c-portal_-input type="text" 
+                                                value={registrant.street1} 
+                                                input-name="street1"
+                                                handle-input={handleInput}></c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <label>Street Line 2</label>
+                            <c-portal_-input type="text" 
+                                                value={registrant.street2} 
+                                                input-name="street2"
+                                                handle-input={handleInput}></c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <label>City</label>
+                            <c-portal_-input type="text" 
+                                                value={registrant.city} 
+                                                input-name="city"
+                                                handle-input={handleInput}></c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <label>State/Province</label>
+                            <c-portal_-input type="text" 
+                                                value={registrant.state} 
+                                                input-name="state"
+                                                handle-input={handleInput}></c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <label>Country</label>
+                            <c-portal_-input type="text" 
+                                                value={registrant.country} 
+                                                input-name="country"
+                                                handle-input={handleInput}></c-portal_-input>
+                        </div>
+                        <div class="grid-item">
+                            <label>Postal Code</label>
+                            <c-portal_-input type="text" 
+                                                value={registrant.postalCode} 
+                                                input-name="postalCode"
+                                                handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </div>
+                </template>
+                <div class="flex-grid-2" if:true={registrant.additionalInfoList}>
+                    <template for:each={registrant.additionalInfoList} for:item="additionalInfo" for:index="index">
+                        <div class="grid-item" if:false={additionalInfo.formField.pageNumber} key={additionalInfo.key}>
+                            <c-portal_-Custom-Form-Field multi-picklist-default-values={additionalInfo.formField.multiPicklistDefaultValues}
+                                                        default-value={additionalInfo.value}
+                                                        value={additionalInfo.value}
+                                                        label={additionalInfo.formField.label}
+                                                        is-required={additionalInfo.formField.isRequired}
+                                                        type={additionalInfo.formField.type}
+                                                        disabled={additionalInfo.formField.disabled}
+                                                        picklist-values={additionalInfo.formField.picklistValues}
+                                                        handle-on-change={handleAdditionalInfoChange}
+                                                        index={registrantIndex}>
+                            </c-portal_-Custom-Form-Field>
+                        </div>
+                    </template>
+
+                </div>
+            </div>
+        </div>
+        
+        <div if:true={registrationTemplate} class="content-wrapper" style="margin-bottom: 0px">
+            <lightning-formatted-rich-text if:true={registrationTemplate.Is_Display_Registration_Helper_Text__c} value={registrationTemplate.Registration_Helper_Text__c}></lightning-formatted-rich-text>
+        </div>
+<!--             
+        <div class="content-wrapper">
+            <div class="entry-form bottom-border" style="margin-bottom: 0">
+                <div class="flex-grid-2">
+                    <div class="grid-item">
+                        <label for="first-name"><span class="required">*</span> First Name</label>
+                        <input id="first-name" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="last-name"><span class="required">*</span> Last Name</label>
+                        <input id="last-name" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="email"><span class="required">*</span> Email</label>
+                        <input id="email" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="name-tag"><span class="required">*</span> Name Tag</label>
+                        <input id="name-tag" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="degree">Degree and Year</label>
+                        <input id="degree" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="employer">Employer</label>
+                        <input id="employer" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="street1">Street Line 1</label>
+                        <input id="street1" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="street2">Street Line 2</label>
+                        <input id="street2" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="city">City</label>
+                        <input id="city" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="state">State/Province</label>
+                        <input id="state" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="country">Country</label>
+                        <input id="country" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <label for="postalcode">Postal Code</label>
+                        <input id="postalcode" type="text" value="">
+                    </div>
+                    <div class="grid-item">
+                        <fieldset>
+                            <div class="field-wrapper">
+                                <input data-inputtype="radio" type="checkbox" name="general" value="general" class="radio">
+                                <label for="alumDirectory">Test Checkbox</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="grid-item">
+                        <label>Test Multiselect</label>
+                        <div lightning-duallistbox_duallistbox="" class="slds-form-element__control">
+                            <div lightning-duallistbox_duallistbox="" class="slds-dueling-list">
+                                <div lightning-duallistbox_duallistbox="" id="assertive-thing-50" aria-live="assertive" class="slds-assistive-text"></div>
+                                <div lightning-duallistbox_duallistbox="" id="keyboard-interacton-50" class="slds-assistive-text">Press Ctrl (Cmd on Mac) + Left Arrow or Ctrl (Cmd on Mac) + Right Arrow to move items between lists.</div>
+                                <div lightning-duallistbox_duallistbox="" class="slds-dueling-list__column slds-dueling-list__column_responsive">
+                                    <span lightning-duallistbox_duallistbox="" id="source-list-label-50" class="slds-form-element__label">Available</span>
+                                    <div lightning-duallistbox_duallistbox="" class="slds-dueling-list__options">
+                                        <ul lightning-duallistbox_duallistbox="" data-source-list="" id="source-list-50" aria-describedby="keyboard-interacton-50" aria-labelledby="source-list-label-50" aria-multiselectable="true" role="listbox" aria-disabled="false" class="slds-listbox slds-listbox_vertical">
+                                            <li lightning-duallistbox_duallistbox="" role="presentation" class="slds-listbox__item">
+                                                <div lightning-duallistbox_duallistbox="" aria-selected="false" role="option" tabindex="-1" data-index="0" data-value="One" class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" data-type="source-list-50">
+                                                    <span lightning-duallistbox_duallistbox="" class="slds-media__body">
+                                                        <span lightning-duallistbox_duallistbox="" title="One" class="slds-truncate">One</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li lightning-duallistbox_duallistbox="" role="presentation" class="slds-listbox__item">
+                                                <div lightning-duallistbox_duallistbox="" aria-selected="true" role="option" tabindex="0" data-index="1" data-value="Two" class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline slds-is-selected" data-type="source-list-50">
+                                                    <span lightning-duallistbox_duallistbox="" class="slds-media__body">
+                                                        <span lightning-duallistbox_duallistbox="" title="Two" class="slds-truncate">Two</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li lightning-duallistbox_duallistbox="" role="presentation" class="slds-listbox__item">
+                                                <div lightning-duallistbox_duallistbox="" aria-selected="false" role="option" tabindex="-1" data-index="2" data-value="Three" class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" data-type="source-list-50">
+                                                    <span lightning-duallistbox_duallistbox="" class="slds-media__body">
+                                                        <span lightning-duallistbox_duallistbox="" title="Three" class="slds-truncate">Three</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li lightning-duallistbox_duallistbox="" role="presentation" class="slds-listbox__item">
+                                                <div lightning-duallistbox_duallistbox="" aria-selected="false" role="option" tabindex="-1" data-index="3" data-value="Four" class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" data-type="source-list-50">
+                                                    <span lightning-duallistbox_duallistbox="" class="slds-media__body">
+                                                        <span lightning-duallistbox_duallistbox="" title="Four" class="slds-truncate">Four</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div lightning-duallistbox_duallistbox="" class="slds-dueling-list__column">
+                                    <lightning-button-icon lightning-duallistbox_duallistbox="">
+                                        <button title="Move selection to Selected" type="button" class="slds-button slds-button_icon slds-button_icon-container">
+                                            <lightning-primitive-icon>
+                                                <svg focusable="false" data-key="right" aria-hidden="true" viewBox="0 0 52 52" class="slds-button__icon">
+                                                    <g><path d="M14 43.7V8.3c0-1 1.3-1.7 2.2-.9l21.2 17.3c.8.6.8 1.9 0 2.5L16.2 44.7c-.9.7-2.2.1-2.2-1z"></path></g>
+                                                </svg>
+                                            </lightning-primitive-icon>
+                                            <span class="slds-assistive-text">Move selection to Selected</span>
+                                        </button>
+                                    </lightning-button-icon>
+                                    <lightning-button-icon lightning-duallistbox_duallistbox="">
+                                        <button title="Move selection to Available" type="button" class="slds-button slds-button_icon slds-button_icon-container">
+                                            <lightning-primitive-icon>
+                                                <svg focusable="false" data-key="left" aria-hidden="true" viewBox="0 0 52 52" class="slds-button__icon">
+                                                    <g><path d="M38 8.3v35.4c0 1-1.3 1.7-2.2.9L14.6 27.3c-.8-.6-.8-1.9 0-2.5L35.8 7.3c.9-.7 2.2-.1 2.2 1z"></path></g>
+                                                </svg>
+                                            </lightning-primitive-icon>
+                                            <span class="slds-assistive-text">Move selection to Available</span>
+                                        </button>
+                                    </lightning-button-icon>
+                                </div>
+                                <div lightning-duallistbox_duallistbox="" class="slds-dueling-list__column slds-dueling-list__column_responsive">
+                                    <span lightning-duallistbox_duallistbox="" id="selected-list-label-50" class="slds-form-element__label">Selected</span>
+                                    <div lightning-duallistbox_duallistbox="" class="slds-dueling-list__options">
+                                        <ul lightning-duallistbox_duallistbox="" data-selected-list="" id="selected-list-50" aria-describedby="keyboard-interacton-50" aria-labelledby="selected-list-label-50" aria-multiselectable="true" role="listbox" aria-disabled="false" class="slds-listbox slds-listbox_vertical"></ul>
+                                    </div>
+                                </div>
+                                <div lightning-duallistbox_duallistbox="" class="slds-dueling-list__column">
+                                    <lightning-button-icon lightning-duallistbox_duallistbox="">
+                                        <button title="Move selection up" type="button" class="slds-button slds-button_icon slds-button_icon-container">
+                                            <lightning-primitive-icon>
+                                                <svg focusable="false" data-key="up" aria-hidden="true" viewBox="0 0 52 52" class="slds-button__icon">
+                                                    <g><path d="M43.7 38H8.3c-1 0-1.7-1.3-.9-2.2l17.3-21.2c.6-.8 1.9-.8 2.5 0l17.5 21.2c.7.9.1 2.2-1 2.2z"></path></g>
+                                                </svg>
+                                            </lightning-primitive-icon>
+                                            <span class="slds-assistive-text">Move selection up</span>
+                                        </button>
+                                    </lightning-button-icon>
+                                    <lightning-button-icon lightning-duallistbox_duallistbox="">
+                                        <button title="Move selection down" type="button" class="slds-button slds-button_icon slds-button_icon-container">
+                                            <lightning-primitive-icon>
+                                                <svg focusable="false" data-key="down" aria-hidden="true" viewBox="0 0 52 52" class="slds-button__icon">
+                                                    <g><path d="M8.3 14h35.4c1 0 1.7 1.3.9 2.2L27.3 37.4c-.6.8-1.9.8-2.5 0L7.3 16.2c-.7-.9-.1-2.2 1-2.2z"></path></g>
+                                                </svg>
+                                            </lightning-primitive-icon>
+                                            <span class="slds-assistive-text">Move selection down</span>
+                                        </button>
+                                    </lightning-button-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <label for="shirtsize">What is your shirt size?</label>
+                        <i class="gg-chevron-down"></i>
+                        <select name="shirtsize">
+                            <option value="small">S</option>
+                            <option value="medium" selected="">M</option>
+                            <option value="large">L</option>
+                            <option value="extralarge">XL</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="entry-form">
+                <div class="button-list">
+                    <a href="events_event-registration-registrant-added.html" class="button secondary full-mobile">Add to Guest List</a>
+                    <a href="events_event-shopping-cart.html" class="button primary full-mobile">Add to Cart</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+<!--     
+    <div class="container" if:true={registrant}>
+        <template for:each={registrant.ticketList} for:item="ticket" for:index="ticketIndex" if:true={_isShowTickets}>
+            <div key={ticket.ticketTypeId} class="slds-grid slds-wrap slds-p-horizontal_small" if:false={ticket.isHidden}>
+                <div class="slds-form-element slds-m-top_xx-small">
+                    <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                            <template if:true={ticket.purchasedQuantity}>
+                                <input id={ticket.ticketTypeId} data-index={ticketIndex} type="checkbox" checked={ticket.isSelected} disabled onchange={handleTicketCheckbox}/>
+                            </template>
+                            <template if:false={ticket.purchasedQuantity}>
+                                <input id={ticket.ticketTypeId} data-index={ticketIndex} type="checkbox" checked={ticket.isSelected} disabled={ticket.ticketType.isSoldOut} onchange={handleTicketCheckbox}/>
+                            </template>
+                            <label class="slds-checkbox__label" for={ticket.ticketTypeId}>
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label">
+                                    <template if:false={ticket.ticketType.isDiscounted}>
+                                        {ticket.ticketType.name} - <lightning-formatted-number value={ticket.ticketType.price} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </template>
+                                    <template if:true={ticket.ticketType.isDiscounted}>
+                                        {ticket.ticketType.name} - <span class="strike-through"><lightning-formatted-number value={ticket.ticketType.originalPrice} format-style="currency" currency-code="USD"></lightning-formatted-number></span>&nbsp;<span class="discount-price"><lightning-formatted-number value={ticket.ticketType.price} format-style="currency" currency-code="USD"></lightning-formatted-number></span>
+                                    </template>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <template if:false={isWaitlistEnabled}>
+                    <span class="sold-out-text slds-m-top_xx-small" if:true={ticket.ticketType.isSoldOut}>SOLD OUT</span>
+                </template>
+                <c-portal_-input class="slds-size_1-of-6"
+                                 classes="slds-input" 
+                                 required
+                                 min={ticket.min}
+                                 max={ticket.max}
+                                 type="number" 
+                                 value={ticket.quantity}
+                                 disabled={ticket.ticketType.isSoldOut}
+                                 input-name={ticket.ticketTypeId}
+                                 handle-input={handleTicketInput}
+                                 if:true={ticket.isSelected}></c-portal_-input>
+                <template if:true={isWaitlistEnabled}>
+                    <template if:true={ticket.ticketType.isSoldOut}>
+                        <button if:true={ticket.ticketType.isWaitlist} 
+                                class="slds-button slds-button_neutral" 
+                                data-id={ticket.ticketType.id}
+                                onclick={handleWaitlistClick}>
+                            Join Waitlist
+                        </button>
+                        <span class="sold-out-text slds-m-top_xx-small" if:false={ticket.ticketType.isWaitlist}>SOLD OUT</span>
+                    </template>
+                </template>
+            </div>
+        </template>
+        <div class="slds-p-around_small" if:true={hasPromoCodes}>
+            <label class="slds-form-element__label">Promo Code</label>
+            <c-portal_-input class="slds-size_1-of-6"
+                             classes="slds-input" 
+                             type="text" 
+                             value={promoCode}
+                             handle-input={handlePromoCodeChange}></c-portal_-input>
+            <button class="slds-button slds-button_brand slds-m-top_small" disabled={isPromoCodeButtonDisabled} onclick={handleApplyPromoCode}>Apply Promo Code</button>
+        </div>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                     label="First Name"
+                                     label-class="slds-form-element__label"
+                                     type="text" 
+                                     value={registrant.firstName}
+                                     disabled={isBioInfoDisabled}
+                                     required
+                                     input-name="firstName" 
+                                     handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                    type="text" 
+                                    label="Last Name"
+                                    label-class="slds-form-element__label"
+                                    value={registrant.lastName} 
+                                    disabled={isBioInfoDisabled}
+                                    required
+                                    input-name="lastName"
+                                    handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                    type="email" 
+                                    value={registrant.email} 
+                                    disabled={isBioInfoDisabled}
+                                    label="Email"
+                                    label-class="slds-form-element__label"
+                                    required={isEmailRequired}
+                                    input-name="email"
+                                    handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                    type="text" 
+                                    value={registrant.nameTag} 
+                                    label="Name Tag"
+                                    label-class="slds-form-element__label"
+                                    required
+                                    input-name="nameTag"
+                                    handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                <div class="form-field">
+                    <lightning-input type="checkbox" name="isSendConfirmation" checked={registrant.isSendConfirmation} label="Send Confirmation Email" if:true={registrantIndex} onchange={handleInput}></lightning-input>
+                </div>
+            </lightning-layout-item>
+            <template if:true={registrationTemplate}>
+                <lightning-layout-item size="6" padding="around-small" if:true={registrationTemplate.Is_Display_Degree_and_Year_Field__c}>
+                    <div class="form-field">
+                        <label class="slds-form-element__label">Degree and Year</label>
+                        <c-portal_-input classes="slds-input" 
+                                        type="text" 
+                                        value={registrant.degreeAndYear} 
+                                        input-name="degreeAndYear"
+                                        handle-input={handleInput}></c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small" if:true={registrationTemplate.Is_Display_Employer_Field__c}>
+                    <div class="form-field">
+                        <label class="slds-form-element__label">Employer</label>
+                        <c-portal_-input classes="slds-input" 
+                                        type="text" 
+                                        value={registrant.employer} 
+                                        input-name="employer"
+                                        handle-input={handleInput}></c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small" if:true={registrationTemplate.Is_Display_Phone_Field__c}>
+                    <div class="form-field">
+                        <label class="slds-form-element__label">Phone</label>
+                        <c-portal_-input classes="slds-input" 
+                                        type="text" 
+                                        value={registrant.phone} 
+                                        input-name="phone"
+                                        handle-input={handleInput}></c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+                <template if:true={registrationTemplate.Is_Display_Address_Fields__c}>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <label class="slds-form-element__label">Street Line 1</label>
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={registrant.street1} 
+                                            input-name="street1"
+                                            handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <label class="slds-form-element__label">Street Line 2</label>
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={registrant.street2} 
+                                            input-name="street2"
+                                            handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <label class="slds-form-element__label">City</label>
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={registrant.city} 
+                                            input-name="city"
+                                            handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <label class="slds-form-element__label">State/Province</label>
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={registrant.state} 
+                                            input-name="state"
+                                            handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <label class="slds-form-element__label">Country</label>
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={registrant.country} 
+                                            input-name="country"
+                                            handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="form-field">
+                            <label class="slds-form-element__label">Postal Code</label>
+                            <c-portal_-input classes="slds-input" 
+                                            type="text" 
+                                            value={registrant.postalCode} 
+                                            input-name="postalCode"
+                                            handle-input={handleInput}></c-portal_-input>
+                        </div>
+                    </lightning-layout-item>
+                </template>
+            </template>
+        </lightning-layout>
+        <lightning-layout multiple-rows="true">
+            <template if:true={registrant.additionalInfoList} for:each={registrant.additionalInfoList} for:item="additionalInfo" for:index="index">
+                <lightning-layout-item size="6" padding="around-small" if:false={additionalInfo.formField.pageNumber} key={additionalInfo.key}>
+                    <div class="form-field">
+                        <c-portal_-Custom-Form-Field multi-picklist-default-values={additionalInfo.formField.multiPicklistDefaultValues}
+                                                     label-class="slds-form-element__label"
+                                                     default-value={additionalInfo.value}
+                                                     value={additionalInfo.value}
+                                                     label={additionalInfo.formField.label}
+                                                     is-required={additionalInfo.formField.isRequired}
+                                                     type={additionalInfo.formField.type}
+                                                     disabled={additionalInfo.formField.disabled}
+                                                     picklist-values={additionalInfo.formField.picklistValues}
+                                                     handle-on-change={handleAdditionalInfoChange}
+                                                     index={registrantIndex}>
+                        </c-portal_-Custom-Form-Field>
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </div> -->
+</template>

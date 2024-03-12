@@ -1,0 +1,49 @@
+<template>
+    <!-- Displayed if this listing is NOT a draft -->
+    <template if:false={isDraft}>
+        <div class="modal-header slds-modal__header slds-size_1-of-1">
+            <h4 class="title slds-text-heading--medium">Change Status</h4>
+        </div>
+
+        <div class="slds-modal__content slds-p-around--x-small slds-align_absolute-center slds-size_1-of-1 
+                    slds-is-relative" id="modalbody">
+            <form class="slds-form--stacked">
+                <lightning-radio-group 
+                        name="changeStatus"
+                        label="Listing Status"
+                        options={picklistList}
+                        value={_selectedValue}
+                        type="radio"
+                        onchange={handleChange}></lightning-radio-group>
+            </form> 
+        </div>
+
+        <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+            <div class="forceChangeRecordTypeFooter">
+                <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                <button class="slds-button slds-button--brand" onclick={handleSaveStatus}>Save</button>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- Displayed if this listing IS a draft -->
+    <template if:true={isDraft}>
+        <div class="modal-header slds-modal__header slds-size_1-of-1">
+            <h4 class="title slds-text-heading--medium">Update Published Listing</h4>
+        </div>
+
+        <div class="slds-modal__content slds-p-around--x-small slds-align_absolute-center 
+                    slds-size_1-of-1 slds-is-relative">
+            <p>Do you want to update the Master Listing with your changes?</p>
+        </div>
+
+        <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+            <div class="forceChangeRecordTypeFooter">
+                <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                <button class="slds-button slds-button--brand" onclick={handleMergeDraftWithMaster}>Submit</button>
+            </div>
+        </div>
+    </template>
+
+</template>

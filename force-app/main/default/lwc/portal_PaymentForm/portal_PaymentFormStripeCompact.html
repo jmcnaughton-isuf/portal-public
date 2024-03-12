@@ -1,0 +1,14 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+    <template if:true={_isShowComponent}>
+        <div class="container xsmall">
+            <div class="selection-info" id="pay-credit" style="display: block; padding-left: 0; padding-right: 0;">
+                <iframe src="/apex/PORTAL_StripeCreditCardFormCompact" style="width: 100%; max-width: 332px; height: 340px; border-style: none;" class="slds-align_absolute-center"></iframe>
+                <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                    recaptcha-option={_recaptchaOption}
+                    is-center-recaptcha="true">
+                </c-portal_-Recaptcha>
+            </div>
+        </div>
+    </template>
+</template>

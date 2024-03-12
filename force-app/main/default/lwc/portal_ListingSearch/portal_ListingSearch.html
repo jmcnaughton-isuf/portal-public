@@ -1,0 +1,91 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="6" padding="around-small">
+                <c-portal_-input type="text"
+                                value={_keyword}
+                                label="Keyword Search"
+                                label-class="slds-form-element__label"
+                                classes="slds-input"
+                                handle-input={handleKeywordInput}>
+                </c-portal_-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small" if:true={_listingPicklists}>
+                <label class="slds-form-element__label">Event Type</label>
+                <c-portal_-select option-list={_listingPicklists.Category__c} 
+                                handle-change={handleCategoryChange}
+                                default-value={_category}
+                                if:true={_listingPicklists.Category__c}>
+                </c-portal_-select>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <c-portal_-input type="text"
+                                value={_city}
+                                input-name="_city"
+                                label="City"
+                                label-class="slds-form-element__label"
+                                classes="slds-input"
+                                disabled={_isShowOnlineEventsOnly}
+                                handle-input={handleLocationInput}>
+                </c-portal_-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <c-portal_-input type="text"
+                                value={_state}
+                                input-name="_state"
+                                label="State"
+                                label-class="slds-form-element__label"
+                                classes="slds-input"
+                                disabled={_isShowOnlineEventsOnly}
+                                handle-input={handleLocationInput}>
+                </c-portal_-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <c-portal_-input type="text"
+                                value={_country}
+                                input-name="_country"
+                                label="Country"
+                                label-class="slds-form-element__label"
+                                classes="slds-input"
+                                disabled={_isShowOnlineEventsOnly}
+                                handle-input={handleLocationInput}>
+                </c-portal_-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <c-portal_-input type="text"
+                                value={_zipCode}
+                                input-name="_zipCode"
+                                label="Zip Code"
+                                label-class="slds-form-element__label"
+                                classes="slds-input"
+                                disabled={_isShowOnlineEventsOnly}
+                                handle-input={handleLocationInput}>
+                </c-portal_-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <c-portal_-input type="text"
+                                value={_radius}
+                                label="Radius (Miles)"
+                                label-class="slds-form-element__label"
+                                classes="slds-input"
+                                disabled={_isShowOnlineEventsOnly}
+                                handle-input={handleRadiusInput}>
+                </c-portal_-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-input label="Show Online Events Only" type="checkbox" checked={_isShowOnlineEventsOnly} onchange={handleOnlineEventChange}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class='slds-align_absolute-center'>
+            <button class='slds-button slds-button_brand' onclick={handleSearch}>Search</button>
+            <button class='slds-button slds-button_neutral' onclick={handleClear}>Clear</button>
+        </div>
+        <c-portal_-listing page-name={pageName} 
+                        main-section-name={mainSectionName} 
+                        sub-section-name={subSectionName} 
+                        listing-list={_listingList}
+                        design={design}>
+        </c-portal_-listing>
+    </div>
+</template>

@@ -1,0 +1,54 @@
+<template>
+    <div data-ascend-portal>
+        <div if:false={callbackDone} class="event-tabs tabs" style="padding: 30px">
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </div>
+        <template if:true={showUpdateCreditCardModal}>
+            <c-portal_-giving-history-credit-card
+                gift-id={giftId}
+                subscription-id={subscriptionId}
+                payment-method={paymentMethod}
+                payment-type="pledge"
+                external-gateway-name={externalGatewayName}
+                external-payment-gateway-id={externalPaymentGatewayId}
+                close-modal={closeUpdateModal}>
+            </c-portal_-giving-history-credit-card>
+        </template>
+
+        <template if:true={showCancelGiftModal}>
+            <c-portal_-giving-history-cancel-gift
+                gift-id={giftId}
+                subscription-id={subscriptionId}
+                payment-method={paymentMethod}
+                gift-type="pledge"
+                external-payment-gateway-id={externalPaymentGatewayId}
+                external-system-id={externalSystemId}
+                close-modal={closeCancelModal}>
+            </c-portal_-giving-history-cancel-gift>
+        </template>
+
+        <template if:true={callbackDone}>
+            <template if:true={permissionMap.pledgeTable.display}>
+                <div class="event-tabs tabs">
+                    <template if:true={helperTextHTML}>
+                        <div class="helper-text">
+                            <lightning-formatted-rich-text value={helperTextHTML}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+            
+                    <template if:true={isTableEmpty}>
+                        <lightning-formatted-rich-text value={noTableDataTextHTML}></lightning-formatted-rich-text>
+                    </template>
+
+                    <c-portal_-table title={permissionMap.pledgeTable.label}
+                                            records={tableData}
+                                            column-mappings={columnDataList}
+                                            rows-per-page={itemsPerPage}
+                                            query-more={getTableData}
+                                            if:false={isTableEmpty}>
+                    </c-portal_-table>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

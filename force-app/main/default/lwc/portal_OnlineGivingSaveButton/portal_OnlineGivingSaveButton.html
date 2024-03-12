@@ -1,0 +1,23 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={_isShowSpinner} style="position: relative; z-index: 10001">
+            <div class="slds-spinner_container slds-is-fixed">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+        <div class={containerClass}>
+            <div class="section-body-content">
+                <div class="container">
+                    <div class="button-list">
+                        <a class="button secondary" if:true={showPrev} onclick={handlePrevious}>Back</a>
+                        <a class="button primary" if:true={showNext} onclick={handleNext}>Next</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_saved}>
+            <div class="container small">
+                <div class="event-details">
+                    <img src={imgSrc}/>
+                    <lightning-formatted-rich-text value={htmlText}></lightning-formatted-rich-text>
+                    <h2 style="margin-bottom: .7em; font-weight: bold;">Gift Details</h2>
+                    <h5><span class="bold">Payment Date: </span><lightning-formatted-date-time value={_data.startDate} month="long" day="2-digit" year="numeric" time-zone="UTC"></lightning-formatted-date-time></h5>
+                    <h5 if:true={_data.endDate}><span class="bold">End Date: </span><lightning-formatted-date-time value={_data.endDate} month="long" day="2-digit" year="numeric" time-zone="UTC"></lightning-formatted-date-time></h5>
+                    <h5><span class="bold">Frequency: </span>{_data.frequency}</h5>
+                    <br>
+                    <c-portal_-table records={_data.designations}
+                                            column-mappings={columnDataList}
+                                            rows-per-page="20">
+                    </c-portal_-table>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

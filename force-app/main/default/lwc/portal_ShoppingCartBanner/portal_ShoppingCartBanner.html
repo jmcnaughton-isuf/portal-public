@@ -1,0 +1,71 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={showBanner}>
+            <div class="banner hide-on-phone">
+                <div class="slds-grid slds-grid_align-space">
+                    <div class="slds-col">
+                        <h3 style="position: relative; top: 12px">{_bannerText}</h3>
+                    </div>
+    
+                    <div class="slds-col">
+                        <a class="button primary" 
+                        href="./shopping-cart"
+                        style="position: relative; top: 5px">
+                        Go To Shopping Cart
+                        </a>
+                    </div>
+    
+                    <div class="slds-col">
+                        <c-portal_-shopping-cart-timer
+                            handle-expiration={handleExpiration}
+                            session-expiration-date={sessionExpirationDate}>
+                        </c-portal_-shopping-cart-timer>
+                    </div>
+    
+                    <div class="slds-col">
+                        <lightning-button-icon 
+                            style="position: relative; top: 12px"
+                            icon-name="action:close"  
+                            alternative-text="Close" 
+                            title="Close"
+                            size="large"
+                            onclick={handleCloseBanner}
+                        ></lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner show-on-phone">
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <div class="flex-grid-2" style="justify-content: center; display: flex;">
+                            <div class="grid-item grid-item-button-style">
+                                <a class="button primary full-mobile" 
+                                href="./shopping-cart">
+                                Go To Shopping Cart
+                                </a>
+                            </div>
+                            <div class="grid-item grid-item-timer-style">
+                                <c-portal_-shopping-cart-timer
+                                    handle-expiration={handleExpiration}
+                                    session-expiration-date={sessionExpirationDate}
+                                    is-hide-header-text>
+                                </c-portal_-shopping-cart-timer>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="slds-col slds-align_absolute-center slds-size--1-of-12 slds-var-m-horizontal_x-small">
+                        <lightning-button-icon 
+                                    icon-name="action:close"  
+                                    alternative-text="Close" 
+                                    title="Close"
+                                    size="large"
+                                    onclick={handleCloseBanner}
+                        ></lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Published_News_must_have_portal</fullName>
+    <active>true</active>
+    <description>Any published news must have the portal zone completed</description>
+    <errorConditionFormula>RecordType.DeveloperName = &apos;News&apos;
+ &amp;&amp;  ISPICKVAL(Status__c ,&apos;Published&apos;)
+ &amp;&amp;  ISBLANK( Portal_Zone__c  )</errorConditionFormula>
+    <errorMessage>Any published news must have the portal zone completed</errorMessage>
+</ValidationRule>

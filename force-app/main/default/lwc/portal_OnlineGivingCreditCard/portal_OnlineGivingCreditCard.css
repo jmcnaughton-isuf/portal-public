@@ -1,0 +1,137 @@
+[data-ascend-portal] div.gift-details-container {
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #F7F7F7;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[data-ascend-portal] .gift-details-column > h5 {
+    margin-bottom: 2px;
+}
+
+[data-ascend-portal] .gift-details-column > lightning-formatted-date-time,
+[data-ascend-portal] .gift-details-column > p {
+    font-size: 1.1rem;
+}
+
+.gift-details-column {
+    margin-bottom: 5px;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    height: 1px;    
+    border: 1px solid rgba(0,0,0,.10);
+    margin-bottom: 30px;
+}
+
+.show-more {
+    color: var(--lwc-brandAccessibleActive);
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.show-more>svg {
+    margin-left: 25px;
+    transition: .25s all ease-in-out;
+}
+
+.gift-summary-header {
+    padding: 14px 0 0;
+    font-weight: bold;
+    color: rgb(34, 24, 105);
+    margin-bottom: 0.8em;
+}
+
+.gift-details-column {
+    margin-right: 50px;
+}
+
+.highlight-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.highlight-container h5 {
+    font-size: 20px;
+}
+
+.highlight-container p {
+    font-size: 18px;
+}
+
+.designation-list-container {
+    width: 100%;
+}
+
+.designation-list-header-container {
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    padding: 15px 5px;
+    background-color: rgba(0, 0, 0, .10);
+}
+
+.designation-list-header-container > h3 {
+    width: 50%;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.designation-list-row {
+    width: 100%;
+    display: flex;
+    padding: 15px 5px;
+}
+
+.designation-list-row:nth-child(odd) {
+    background-color: rgba(0, 0, 0, .10);
+}
+
+.designation-list-row > div {
+    width: 50%;
+}
+
+.designation-list-row > div > p {
+    margin-bottom: 0 !important;
+    font-size: 1.1rem;
+}
+
+.designation-list-row > div > h3 {
+    display: none;
+    font-size: 1.1rem;
+}
+
+@media(max-width: 665px) {
+    [data-ascend-portal] .gift-details-column > p {
+        margin-bottom: 0 !important;
+    }
+
+    [data-ascend-portal] div.gift-details-container {
+        padding: 0;
+    }
+
+    .show-more {
+        margin-bottom: 0;
+    }
+
+    .gift-details-column {
+        width: 50%;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .designation-list-header-container,
+    .designation-list-row,
+    .show-more {
+        padding: 15px;
+    }
+}

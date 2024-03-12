@@ -1,0 +1,62 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin" style="padding-top: 0px">
+                <div class="section-body-content" if:true={showDesignations}>
+                    <div class="container">
+                        <div class="ticket-options full-width">
+                            <div class="selection-info" style="display: block;">
+                                <h3 style={headerStyle}>{componentLabel}</h3>
+                                <div class="v-table">
+                                    <div class="slds-grid slds-wrap table-headings"> 
+                                        <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                            <h4>{designationLabel}</h4>
+                                        </div>
+                                        <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                            <h4>{amountLabel}</h4>
+                                        </div>
+                                    </div>
+                                    <template for:each={_designationList} for:item="designation" for:index="index">
+                                        <div class="slds-grid slds-wrap" key={designation.Id}> 
+                                            <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12" if:false={designation.showOther}>
+                                                <p>{designation.Name}</p>
+                                            </div>
+                                            <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12" if:true={designation.showOther}>
+                                                <input type="text" 
+                                                    placeholder="Type designation name here." 
+                                                    oninput={handleOtherDesignationInput} 
+                                                    value={designation.value}
+                                                    required/>
+                                            </div>
+                                            <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_5-of-12">
+                                                <input type="number" 
+                                                    step="any" 
+                                                    format="currency" 
+                                                    required 
+                                                    value={designation.amount} 
+                                                    min={designation.minimumGiftAmount} 
+                                                    onchange={handleAmountChange} 
+                                                    data-index={index} 
+                                                    data-id={designation.Id}/>
+                                            </div>
+                                            <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_1-of-12" if:true={isShowDesignationDeleteButton}>
+                                                <a class="button secondary small full-width" 
+                                                data-id={designation.Id} 
+                                                data-index={index} 
+                                                onclick={deleteDesignation}>
+                                                Delete
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    <p class="slds-p-top_small">{amountTotalLabel}: ${_totalAmount}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line-break"></div>
+            </div>
+        </template>
+    </div>
+</template>

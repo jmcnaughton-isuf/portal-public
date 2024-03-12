@@ -1,0 +1,15 @@
+<template>
+    <div if:true={_isShowSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <div class="slds-modal__header">
+        <h2 class="slds-text-heading--medium">Send Test Newsletter</h2>
+    </div>
+    <div class="slds-modal__content slds-p-around--medium">
+        <c-portal_-input label="Add up to 10 email addresses separated by a semi-colon" value={_emailString} classes="slds-input" input-name="emailString" handle-input={handleEmailStringChange}></c-portal_-input>
+    </div>
+    <div class="slds-modal__footer">
+        <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+        <lightning-button label="Send" onclick={sendTestNewsletter}></lightning-button>
+    </div>
+</template>

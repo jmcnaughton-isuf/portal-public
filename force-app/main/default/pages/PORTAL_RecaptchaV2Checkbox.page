@@ -1,0 +1,67 @@
+<apex:page controller="PORTAL_RecaptchaController" showHeader="false" sidebar="false">
+    <style type="text/css">
+        body {
+            background: none transparent;
+        }
+    </style>
+    <html>
+        <body>
+            <script type="text/javascript">
+                const siteKey = "{!siteKey}";
+                const lexOrigin = "{!lexOrigin}";
+
+                let onRecaptchaSubmit = function(response) {
+                    window.parent.postMessage({type: "recaptcha_v2_verified", token: response}, "{!$Site.BaseSecureUrl}");
+                };
+                let onErrorCallback = function(response) {
+                    window.parent.postMessage({type: "recaptcha_v2_error", token: response}, "{!$Site.BaseSecureUrl}");
+                };
+                let onExprCallback = function(response) {
+                    window.parent.postMessage({type: "recaptcha_v2_expired"}, "{!$Site.BaseSecureUrl}");
+                }
+                var onloadCallback = function() {
+                    let recaptchaSize = (window.innerWidth > 300) ? 'normal' : 'compact';
+                    grecaptcha.render('recaptcha',
+                    {
+                        "sitekey": siteKey,
+                        "callback": onRecaptchaSubmit,
+                        "error-callback": onErrorCallback,
+                        "expired-callback": onExprCallback,
+                        "size": recaptchaSize
+                    });
+                    window.parent.postMessage({type: "recaptcha-rendered"}, "{!$Site.BaseSecureUrl}");
+                };
+                let observer = new MutationObserver(function(mutations) {
+                    if (document.getElementById('challengeLocation') &&
+                        document.getElementById('challengeLocation').nextSibling &&
+                        document.getElementById('challengeLocation').nextSibling.nextSibling) {
+                        document.getElementById('challengeLocation').nextSibling.nextSibling.lastChild.style.height = '520px';
+                        document.getElementById('challengeLocation').nextSibling.nextSibling.lastChild.style.position = 'absolute';
+                        const isCaptchaVisible = document.getElementById('challengeLocation').nextSibling.nextSibling.style.visibility;
+                        window.parent.postMessage({type: "recaptchaChallengeVisible", visible: isCaptchaVisible}, "{!$Site.BaseSecureUrl}")
+                    }
+                });
+                let config = {subtree: true, childList: true, attributes: true};
+                observer.observe(document.body, config);
+
+                window.addEventListener("message", (event) => {
+                    let eventData = event.data;
+                    if (event.origin === lexOrigin && typeof eventData === 'string') {
+                        eventData = JSON.parse(event.data);
+                    }
+
+                    if (event.origin === lexOrigin && eventData.type === "recaptcha_v2_reset_request") {
+                        grecaptcha.reset();
+                    }
+                });
+            </script>
+            <form action="?" method="POST">
+                <div id="recaptcha" align=""></div>
+                <br/>
+                <input type="submit" value="Submit" style="display:none"></input>
+            </form>
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer=""></script>
+            <div id="challengeLocation"></div>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,11 @@
+@media (min-width: 992px) {
+    .container.medium {
+        width: 100% !important;
+        padding: 1em 1.5em;
+    }
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 1em 1em 0 1em;
+}

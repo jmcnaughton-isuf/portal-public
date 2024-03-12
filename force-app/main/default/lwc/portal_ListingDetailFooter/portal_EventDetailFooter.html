@@ -1,0 +1,11 @@
+<template>
+    <div data-ascend-portal>
+        <div class="event-footer" if:false={isFrontEndDataMapEmpty}>
+            <div class="container large" if:true={isShowComponent}>
+                <div class="content" if:true={frontEndDataMap.footerContent.display}>
+                    <lightning-formatted-rich-text value={_listing.footerContent}></lightning-formatted-rich-text>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

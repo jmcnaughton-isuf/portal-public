@@ -1,0 +1,103 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important; align-items: center; justify-content: center; display: flex;">
+        <div class="slds-m-top_large gift-container progress-wrapper">
+            <div class="container" if:true={_finalPageStyle} style="display: flex;  align-items: center;  justify-content: center;">
+                <div class="image" style="max-width:65px;">
+                    <img src={savebuttonnextlogo}> <!-- "/portal/resource/1669698283000/portal_savebuttonnextlogo"> -->
+                </div>
+                <div class="text">
+                    <h1 style={giftText}>Make a Gift to Iowa State</h1>
+                </div>
+            </div>
+
+            <div class="container large"  style="pointer-events:none" if:true={_currentPage}>
+                <div class="container" if:true={_finalPageStyle}>
+                    <div class="slds-m-around_medium">
+                        <div if:true={mobileVersion}>
+                            <img src={progressBarLogo} style="height: 60px; width: 280px;">
+                        </div>
+                        <div if:false={mobileVersion}>
+                            <img src={progressBarLogo}>
+                        </div>
+                    </div>
+                    <!-- <lightning-progress-indicator current-step={_currentPage} type="path" variant="base">
+                        <template for:each={steps} for:item="step">
+                            <lightning-progress-step label={step.label} value={step.value} key={step.key}></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator> -->
+                </div>
+            </div>
+            <div class="container large" style="" if:true={_currentPage}>
+                <div class="slds-box" style="background-color:#C8102E;padding:1rem;">
+                    <div if:true={mobileVersion}>
+                        <div class="slds-grid slds-gutters banner-wrapperOR">
+                            <div class="slds-col">
+                                <span class="number" if:true={_finalPageStyle}>{_currentPageNo}</span>
+                                <span class="title" >{_currentPageValue}</span>
+                            </div>
+                            <div class="grid-item" if:true={_firstPage}>
+                                <label data-name="showMore">
+                                    <input type="radio" hidden class="radio" data-name="showMore" onclick={handleShowMoreClicked}>
+                                    <span class="not-available" style="color:white;"> <a>Need Help <span>?</span></a></span>
+                                </label>
+                            </div>
+                            <!-- <div class="slds-grid--vertical-align-end" >
+                                <a href="https://dev-isufevents.cs4.force.com/portal/s/give" style="color:white;">Need Help &nbsp;<span>?</span></a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div if:false={mobileVersion} class="slds-grid slds-gutters banner-wrapper">
+                        <div class="slds-col">
+                            <span class="number" if:true={_finalPageStyle}>{_currentPageNo}</span>
+                            <span class="title" >{_currentPageValue}</span>
+                        </div>
+                        <div class="grid-item" if:true={_firstPage}>
+                            <label data-name="showMore">
+                                <input type="radio" hidden class="radio" data-name="showMore" onclick={handleShowMoreClicked}>
+                                <span class="not-available" style="color:white;"> <a>Need Help <span>?</span></a></span>
+                            </label>
+                        </div>
+                        <!-- <div class="slds-grid--vertical-align-end" >
+                            <a href="https://dev-isufevents.cs4.force.com/portal/s/give" style="color:white;">Need Help &nbsp;<span>?</span></a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="sf-modal" style="display: block" if:true={_showModal}>
+                <template if:true={_showSpinner}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <div class="modal-background" id="view-waitlist-background">
+                    <div class="modal">
+                        <div class="content-header-barr">
+                            <div class="slds-grid slds-wrap full-width">
+                                 <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                    <h2 style="text-align: center;color: #C8102E;">Giving Form FAQs </h2>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                    <span id="waitlist-modal-close" class="close-btn" onclick={closeModal}>×</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="section-wrapper">
+                                <template if:true={_showModal}>
+                                         <div data-ascend-portal>
+                                            <lightning-formatted-rich-text value={_contentModuleMetadata.htmlText}></lightning-formatted-rich-text>
+                                        </div> <!-- need to fix this -->
+                                    <!-- <h4 style="margin-bottom: .5em !important; font-weight: bold;"> Can’t find a fund?</h4>
+                                    <p style="margin-bottom: .5em !important"> If you don’t see the fund you’d like to support, select “unlisted fund” under “Select a unit or college” and enter your desired fund information in the text box that appears below. Please note that you can only select one unlisted fund per transaction.</p>
+                                    <p style="margin-bottom: .5em !important">We’ll contact you if we have any questions about your gift designation.</p>
+                                    <br>
+                                    <h4 style="margin-bottom: .5em !important">Prefer to send your gift by mail?</h4>
+                                    <p style="margin-bottom: .5em !important">Print and fill out our gift/pledge <a href='/resource/1672091100000/NeedHelp_GiftForm?'> form</a> and mail it to us at the included address.  </p>
+                                    <p> If you have any other questions, call us at 866-419-6768 or email us at <a href="mailto:isufoundation@foundation.iastate.edu">isufoundation@foundation.iastate.edu</a></p> -->
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

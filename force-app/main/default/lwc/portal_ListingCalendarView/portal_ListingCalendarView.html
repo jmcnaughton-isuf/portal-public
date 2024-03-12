@@ -1,0 +1,14 @@
+<template>
+    <div data-ascend-portal>
+        <div class="event-tabs tabs">
+            <c-portal_-calendar listing-list={_allCalendarListings} front-end-data-map={frontEndDataMap} no-results-mobile-message={noResultsMobileMessage}></c-portal_-calendar>
+            <c-portal_-listing page-name={pageName} 
+                            main-section-name={mainSectionName}
+                            sub-section-name={subSectionName}
+                            design="None"
+                            handle-listing-change={handleListingChange}
+                            handle-front-end-data-map={handleFrontEndDataMap}>
+            </c-portal_-listing>
+        </div>
+    </div>
+</template>

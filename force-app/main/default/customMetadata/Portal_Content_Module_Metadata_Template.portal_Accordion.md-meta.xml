@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>portal_Accordion</label>
+    <protected>false</protected>
+    <values>
+        <field>LWC_Name__c</field>
+        <value xsi:type="xsd:string">portal_Accordion</value>
+    </values>
+    <values>
+        <field>Metadata_Template__c</field>
+        <value xsi:type="xsd:string">{&quot;heading&quot;: &quot;Accordion Heading&quot;,
+&quot;items&quot;: [{&quot;topicName&quot;: &quot;Topic Name&quot;, &quot;text&quot;: &quot;Topic Text&quot;, &quot;isOpen&quot;: &quot;false&quot;}]}</value>
+    </values>
+</CustomMetadata>

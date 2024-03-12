@@ -1,0 +1,39 @@
+.address-lines {
+    border-style: groove;
+    margin: 15px 0;
+    border-spacing: 50px;
+    padding: 5px;
+}
+
+.hide-input {
+    margin-right: 4px;
+}
+
+.show-input {
+    margin-left: 4px;
+}
+
+.container {
+    padding: 0;
+}
+
+@media (max-width: 281px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .labelled-toggle-switch {
+        display: flex;
+        align-items: center;
+        right: 0;
+        width: fit-content;
+        left: -20px;
+        position: relative;
+    }
+
+    .labelled-toggle-switch > span {
+        margin-top: 10px;
+        bottom: 0 !important;
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Name__c</fullName>
+    <description>Formula that populates Full name field by checking Interim field first, if no interim then check constituent. If no constituent, then the field is blank.</description>
+    <externalId>false</externalId>
+    <formula>IF( NOT( ISBLANK(Interim__c) ), Interim__r.ucinn_ascendv2__Full_Name_Formula__c,
+   IF(NOT( ISBLANK(Contact__c) ), Contact__r.ucinn_ascendv2__First_and_Last_Name_Formula__c,
+      IF(NOT( ISBLANK(Purchasing_Constituent__c) ),Purchasing_Constituent__r.ucinn_ascendv2__First_and_Last_Name_Formula__c, &quot;&quot;)))</formula>
+    <inlineHelpText>Formula that populates Full name field by checking Interim field first, if no interim then check constituent. If no constituent, then the field is blank.</inlineHelpText>
+    <label>Full Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

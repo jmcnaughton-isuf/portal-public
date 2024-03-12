@@ -1,0 +1,61 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item 
+            size="12"
+            small-device-size="12" 
+            medium-device-size="12" 
+            large-device-size="12" 
+            padding="around-small">
+            <h2 class="header">Additional Information</h2>
+        </lightning-layout-item>
+        <lightning-layout-item 
+            size="12"
+            small-device-size="12"
+            medium-device-size="12"
+            large-device-size="12"
+            padding="around-small">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item
+                    size="12"
+                    large-device-size="6"
+                    medium-device-size="6"
+                    small-device-size="6"
+                    class="layoutItem">
+                    <lightning-formatted-text
+                        class="label"
+                        value="Hiring Manager: ">
+                    </lightning-formatted-text>
+                    <lightning-formatted-text if:true={informationMap.additionalInformation.hiringManager}
+                        class="value"
+                        value="Yes">
+                    </lightning-formatted-text>
+                    <lightning-formatted-text if:false={informationMap.additionalInformation.hiringManager}
+                        class="value"
+                        value="No">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item
+                    size="12"
+                    large-device-size="6"
+                    medium-device-size="6"
+                    small-device-size="6"
+                    class="layoutItem">
+                    <lightning-formatted-text
+                        class="label"
+                        value="Job Seeker: ">
+                    </lightning-formatted-text>
+                    <lightning-formatted-text if:true={informationMap.additionalInformation.jobSeeker}
+                        class="value"
+                        value="Yes">
+                    </lightning-formatted-text>
+                    <lightning-formatted-text if:false={informationMap.additionalInformation.jobSeeker}
+                        class="value"
+                        value="No">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

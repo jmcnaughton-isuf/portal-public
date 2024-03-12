@@ -1,0 +1,286 @@
+<apex:page controller="PORTAL_CyberSourceFormController" showHeader="false" sidebar="false"
+    lightningStyleSheets="true">
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <style type="text/css">
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:300;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Light.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:700;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Bold.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:400;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Regular.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:100;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Thin.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:900;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Black.ttf')}");
+        }
+
+        body {
+            background-color: transparent !important;
+        }
+
+        div,
+        input,
+        label {
+            font-family: 'Lato', sans-serif;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+            
+        .giving-card-buttons {
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            bottom: 25px;
+            position: absolute;
+        }
+
+        .giving-card-buttons>button {
+            border: none;
+            background: #2574A9;
+            color: white;
+            font-size: 16px;
+            padding: 8px 25px;
+            border-radius: 5px;
+            transition: .25s all ease-in-out;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+        }
+
+        .giving-card-buttons>button:hover {
+            background-color: #1C577F;
+            transition: .25s all ease-in-out;
+        }
+
+        .expiry-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .expiry-container > div {
+            width: 48%;
+        }
+    </style>
+
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Checkout</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+        </head>
+
+        <div class="form" style="text-align: left; padding-left: 1em; padding-right: 1em;">
+            <div style="padding-bottom: 10px">
+                <apex:include pageName="PORTAL_GooglePay"></apex:include>
+            </div>
+            <div style="padding-bottom: 10px">
+                <apex:include pageName="PORTAL_ApplePay"></apex:include>
+            </div>
+            <form action="/token" id="my-sample-form" method="post">
+                <div class="form-group">
+                    <label for="full_name">Name</label>
+                    <input id="full_name" class="form-control" name="full_name" placeholder="Name on the card"></input>
+                </div>
+
+                <div class="form-group">
+                    <label id="cardNumber-label">Card Number</label>
+                    <div id="number-error" role="alert" style="color:red;"></div>
+                    <div id="number-container" class="form-control"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="securityCode-container">Security Code</label>
+                    <div id="securityCode-error" role="alert" style="color:red;"></div>
+                    <div id="securityCode-container" class="form-control"></div>
+                </div>
+                <div class="form-row expiry-container">
+                    <div>
+                        <label for="expMonth">Expiry month</label>
+                        <select id="expMonth" class="form-control">
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="expYear">Expiry year</label>
+                        <select id="expYear" class="form-control">
+                        </select>
+                    </div>
+                </div>
+                <div id="errors-output" role="alert" style="color:red;"></div>
+                <div class="giving-card-buttons">
+                    <button id="cancel-button" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 7px;">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Billing Details
+                    </button>
+                    <button id="pay-button" type="button">
+                        Give
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" style="margin-left: 7px;">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                    </button>
+                    <input type="hidden" id="flexresponse" name="flexresponse"></input>
+                </div>
+            </form>
+        </div>
+
+
+        
+        <script src="https://flex.cybersource.com/cybersource/assets/microform/0.11/flex-microform.min.js"></script>
+
+        <script type="application/javascript">
+            const lexOrigin = "{!lexOrigin}";
+
+            const cancelButton = document.getElementById("cancel-button");
+            cancelButton.addEventListener('click', () => {
+                window.parent.postMessage({type:"previous"}, lexOrigin);
+            });
+
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                    var titleHeader = document.querySelector('h1');
+                    if (titleHeader) {
+                        titleHeader.textContent = 'Update';
+                    }
+
+                    var previousButton = document.querySelector('#cancel-button');
+                    if (previousButton) {
+                        previousButton.remove();
+                    }
+
+                    var submitButton = document.querySelector('#pay-button');
+                    if (submitButton) {
+                        submitButton.textContent = 'Update';
+                    }
+                }
+                else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                    const opts = eventData;
+                    const captureContext = "{!captureContext}";
+                    var payButton = document.querySelector('#pay-button');
+                    var errorsOutput = document.querySelector('#errors-output');
+                    var numberError = document.querySelector('#number-error');
+                    var securityCodeError = document.querySelector('#securityCode-error');
+                    
+                    // custom styles that will be applied to each field we create using Microform
+                    var myStyles = {  
+                    'input': {    
+                        'font-size': '14px',    
+                        'font-family': 'Lato, sans-serif',    
+                        'color': '#555'  
+                    },  
+                    ':focus': { 'color': 'blue' },  
+                    ':disabled': { 'cursor': 'not-allowed' },  
+                    'valid': { 'color': '#3c763d' },  
+                    'invalid': { 'color': '#a94442' }
+                    };
+
+                    // setup Microform
+                    var flex = new Flex(captureContext);
+                    var microform = flex.microform({ styles: myStyles });
+                    var number = microform.createField('number', { placeholder: 'Enter card number' });
+                    var securityCode = microform.createField('securityCode', { placeholder: '•••', maxLength: 4 });
+                    
+                    number.load('#number-container');
+                    securityCode.load('#securityCode-container');
+
+                    let yearSelect = document.querySelector('#expYear');
+                    let currentYear = new Date().getFullYear()
+
+                    for (var year = currentYear; year <= currentYear + 5; year++){
+                        var opt = document.createElement('option');
+                        opt.value = year;
+                        opt.innerHTML = year;
+                        yearSelect.appendChild(opt);
+                    }
+
+                    const displayOptions = opts.displayOptions;
+                    if (displayOptions) {
+                        if (displayOptions.full_name) {
+                            document.getElementById("full_name").value = displayOptions.full_name;
+                        }
+                    }
+
+                    payButton.addEventListener('click', function() {
+                        // Compiling MM & YY into optional parameters	 
+                        var options = {    
+                            expirationMonth: document.querySelector('#expMonth').value,  
+                            expirationYear: document.querySelector('#expYear').value
+                        };
+                        microform.createToken(options, function (err, token) {
+                        if (err) {
+                            // handle error
+                            console.error(err);
+
+                            errorsOutput.textContent = err.message;
+
+                            securityCodeError.textContent = '';
+                            numberError.textContent = ''
+                            for (const eachErrorDetail of err.details) {
+                                if (eachErrorDetail.location == 'number') {
+                                    numberError.textContent = eachErrorDetail.message;
+                                }
+                                if (eachErrorDetail.location == 'securityCode') {
+                                    securityCodeError.textContent = eachErrorDetail.message;
+                                }
+                            }
+                            
+                        } else {
+                            //clear error messages and send the request with an event
+                            errorsOutput.textContent = '';
+                            securityCodeError.textContent = '';
+                            numberError.textContent = '';
+                            window.parent.postMessage({ type: "payment_method", token: token}, lexOrigin);
+                        }
+                        });
+                    });
+                }
+            });
+
+            window.parent.postMessage({ type: "ready" }, lexOrigin);
+            
+        </script>
+
+    </html>
+</apex:page>

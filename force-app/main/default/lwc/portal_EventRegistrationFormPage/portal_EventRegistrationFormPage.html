@@ -1,0 +1,29 @@
+<template>
+    <div class="container large entry-form" if:true={currentIndex}>
+        <div class="content-wrapper">
+        <template for:each={_fieldsToDisplay} for:item="fieldMap" for:index="registrantIndex">
+            <div class="slds-p-top_large" key={fieldMap.key} if:true={fieldMap.isShowRegistrant}>
+                <h4>{fieldMap.name}</h4>
+                <div class="flex-grid-1">
+                    <template for:each={fieldMap.additionalInfoList} for:item="additionalInfo">
+                        <div class="grid-item" key={additionalInfo.key}>
+                            <c-portal_-Custom-Form-Field multi-picklist-default-values={additionalInfo.formField.multiPicklistDefaultValues}
+                                                         default-value={additionalInfo.value}
+                                                         value={additionalInfo}
+                                                         label={additionalInfo.formField.label}
+                                                         is-required={additionalInfo.formField.isRequired}
+                                                         type={additionalInfo.formField.type}
+                                                         disabled={additionalInfo.formField.disabled}
+                                                         picklist-values={additionalInfo.formField.picklistValues}
+                                                         variant="label-hidden"
+                                                         handle-on-change={handleAdditionalInfoChange}
+                                                         index={registrantIndex}>
+                            </c-portal_-Custom-Form-Field>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+        </div>
+    </div>
+</template>

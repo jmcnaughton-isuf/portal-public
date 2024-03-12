@@ -1,0 +1,15 @@
+<template>
+    <div class="container medium">
+        <div class="section-body-content">
+            <div class="hide-on-phone">
+                <div class="container" style="pointer-events:none" if:true={_currentPage}>
+                    <lightning-progress-indicator current-step={_currentPage} type="path" variant="base">
+                        <template for:each={steps} for:item="step">
+                            <lightning-progress-step label={step.label} value={step.value} key={step.key}></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator> 
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

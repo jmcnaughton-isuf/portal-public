@@ -1,0 +1,20 @@
+.disabled-button {
+    pointer-events: none;
+    background-color: #C9C7C5;
+    border-color: #C9C7C5;
+}
+
+@media (min-width: 700px) {
+    div[class^='flex-grid'].inline-grid .grid-item:nth-child(2) a {
+        position: relative;
+        margin-top: 24px;
+    }
+}
+
+.grid-item a.primary {
+    margin-right: 14px;
+}
+
+.pill p {
+    word-break: break-word;
+}

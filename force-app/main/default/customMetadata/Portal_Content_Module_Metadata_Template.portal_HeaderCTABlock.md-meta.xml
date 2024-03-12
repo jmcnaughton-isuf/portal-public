@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>portal_HeaderCTABlock</label>
+    <protected>false</protected>
+    <values>
+        <field>LWC_Name__c</field>
+        <value xsi:type="xsd:string">portal_HeaderCTABlock</value>
+    </values>
+    <values>
+        <field>Metadata_Template__c</field>
+        <value xsi:type="xsd:string">{&quot;heading&quot;: &quot;Insert HTML heading here&quot;, &quot;eyebrow&quot;: &quot;Insert eyebrow here&quot;, &quot;description&quot;: &quot;Insert HTML description here&quot;,
+&quot;image&quot;: {&quot;imageUrl&quot;: &quot;Insert Image URL Here&quot;, &quot;altText&quot;: &quot;Insert Alt Text Here&quot;},
+&quot;button1&quot;: {&quot;label&quot;: &quot;Button 1&quot;, &quot;link&quot;: &quot;Button Link 1&quot;, &quot;target&quot;: &quot;_blank&quot;},
+&quot;button2&quot;: {&quot;label&quot; : &quot;Button 2&quot;, &quot;link&quot; : &quot;Button Link 2&quot;, &quot;target&quot;: &quot;_blank&quot;}}</value>
+    </values>
+</CustomMetadata>

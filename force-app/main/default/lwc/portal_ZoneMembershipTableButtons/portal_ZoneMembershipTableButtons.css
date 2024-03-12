@@ -1,0 +1,25 @@
+@media(max-width: 1527px) {
+    [data-ascend-portal] .container.large {
+        padding: 0.5em 1em 0.5em 3.5em;
+        margin: 0 auto 0 0;
+    }
+}
+
+@media(max-width: 959px) {
+    [data-ascend-portal] .container.large {
+        padding: 0.5em 3em;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 767px) {
+    [data-ascend-portal] .container.large {
+        padding: 0.5em 1em;
+        margin: 0 auto;
+    }
+}
+
+[data-ascend-portal] .button-list {
+    padding-left: 1em;
+    padding-right: 1em;
+}

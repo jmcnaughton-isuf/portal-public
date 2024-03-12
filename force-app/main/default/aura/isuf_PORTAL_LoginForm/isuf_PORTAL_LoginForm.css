@@ -1,0 +1,136 @@
+.THIS {
+}
+.THIS .line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding-bottom: 8px;
+}
+
+.THIS .line {
+    flex: 1;
+    height: 1px;
+    background-color: orange; /* Color of the line */
+}
+
+.THIS .or-text {
+    padding: 0 10px; /* Adjust the padding as needed */
+    font-size: 12px;
+}
+.THIS .custom-input .slds-input {
+    background-color: white!important;
+    font-size: 12px;
+    height: 100%;
+    border-color: grey;
+    text-align: left;
+}
+
+.THIS .bodyContainer  {
+    display: flex !important;
+    color: #C8102E;
+}
+
+.THIS .forgotContainer {
+    display: flex; 
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 0;
+    padding-bottom: 24px !important;
+    border-bottom-style: solid;
+    border-bottom-color: lightgrey;
+    border-bottom-width: 1px;
+    margin-bottom: 12px;
+}
+.THIS .leftBodySpacer {
+    margin: 20px 0;
+    border-top: yellow;
+    /* border-bottom: red; */
+    border-width: 1px;
+    border-style: solid;
+    /* color: currentColor; */
+    width: 10%;
+
+}
+.THIS .leftContainer {
+    width: 35% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.THIS .leftBodyHeader {
+    font-size: 28px; 
+    font-weight:bold
+}
+
+.THIS .leftBodyText {
+    font-size: 16px;
+    color:black;
+}
+.THIS .topContainer {
+    color: #c8102e;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 3%;
+    margin-left: 10%;
+}
+
+
+.THIS .rightContainer {
+    width: 35%; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.THIS .rightBody {
+    margin: 0 0; 
+    width: 125%;
+    display: flex;
+    justify-content: center !important;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: black;
+    padding: 30px;
+    max-width: 425px;
+}
+.THIS .rightBodyHeader {
+    font-size: 28px; 
+    font-weight:bold;
+    color: #C8102E;
+    padding:20px 0
+}
+
+
+@media (min-width: 0px) {
+    .THIS .bodyContainer{
+        flex-direction:column !important;
+    }
+    .cIsuf_PORTAL_LoginForm .rightContainer {
+        width: 75% !important;
+
+    }
+    .THIS .leftContainer {
+        width: 75% !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 780px) {
+    .THIS .bodyContainer{
+        flex-direction:row !important;
+    }
+    .cIsuf_PORTAL_LoginForm .rightContainer {
+        width: 35% !important;
+
+    }
+    .THIS .leftContainer {
+        width: 35% !important;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}

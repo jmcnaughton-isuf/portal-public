@@ -1,0 +1,7 @@
+.accordion .accordion-item .topic:after {
+    background: transparent url(../resource/Portal_Expand_More_Black) center no-repeat;
+}
+
+[data-ascend-portal] .container {
+    padding: 0 1.2em !important;
+}

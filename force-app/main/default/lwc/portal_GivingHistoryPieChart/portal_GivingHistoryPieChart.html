@@ -1,0 +1,99 @@
+<template>
+    <div data-ascend-portal>
+        <div class="section-wrapper" if:true={isDisplayPieChart}>
+            <div class="container large no-margin">
+                <div class="container">
+                    <div if:false={callbackDone} style="padding: 30px">
+                        <lightning-spinner alternative-text="Loading" style="background: inherit; margin-bottom: 5px"></lightning-spinner>
+                    </div>
+
+                    <template if:true={callbackDone}>
+                        <template if:true={permissionMap.pieChart.display}>
+                            <h2 class="slds-align_absolute-center slds-m-bottom_medium">
+                                {permissionMap.pieChart.label}
+                            </h2>
+                        </template>    
+                    </template>
+                    <template if:true={noData}>
+                        <lightning-formatted-rich-text value={noDataLabel}></lightning-formatted-rich-text>
+                    </template>
+                    <template if:false={noData}>
+                        <div>
+                            <div class="row" id="row1">
+                                <div class="column" style="width: 70%" id="col1">
+                                    <canvas class="pie-chart" id="pieChart" style={chartStyle}></canvas>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </template>
+
+                    <template if:true={helperText}>
+                        <div class="helper-text">
+                            <lightning-formatted-rich-text value={helperText}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+                    <!-- <div class="slds-grid slds-wrap">
+                        <div class="hide-m slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12"></div>
+                        <div class="slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                            <div class="legend">
+                                <ul>
+                                    <li>
+                                        <div class="legendValue">
+                                            <span style="background-color: #02c3f9" class="label-color"></span>
+                                            <span class="label">New York Relief Fund</span>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="legendValue">
+                                            <span style="background-color: #00569a" class="label-color"></span>
+                                            <span class="label">Sokovia Relief Fund</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="legendValue">
+                                            <span style="background-color: #000000" class="label-color"></span>
+                                            <span class="label">Maria Stark Foundation</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_5-of-12 slds-large-size_5-of-12">
+                            <img src="../../assets/img/giving-by-designation-placement-image.png">
+                        </div>
+                        <div class="hide-m slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12"></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <template if:true={callbackDone}>
+            <template if:true={permissionMap.pieChart.display}>
+                <h2 class="slds-align_absolute-center slds-m-bottom_medium">
+                    {permissionMap.pieChart.label}
+                </h2>
+            </template>    
+        </template>
+        
+        <template if:true={noData}>
+            <lightning-formatted-rich-text value={noDataLabel}></lightning-formatted-rich-text>
+        </template>
+        <template if:false={noData}>
+            <div>
+                <div class="row" id="row1">
+                    <div class="column" style="width: 70%" id="col1">
+                        <canvas class="pie-chart" id="pieChart"></canvas>
+                    </div>
+        
+                </div>
+            </div>
+        </template>
+
+        <template if:true={helperText}>
+            <div class="helper-text">
+                <lightning-formatted-rich-text value={helperText}></lightning-formatted-rich-text>
+            </div>
+        </template> -->
+    </div>
+</template>

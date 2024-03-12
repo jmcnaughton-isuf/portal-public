@@ -1,0 +1,135 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container small">
+                <div class="container">
+                    <div class="section-wrapper bottom-border">
+                        <h2 style={headerStyle}>{componentLabel}</h2>
+                        <div class="entry-form" if:true={_callbackDone}>
+                            <div class="flex-grid-3">
+                                <div class="grid-item" if:true={informationMap.frontEndData.firstName.display}>
+                                <!-- <lightning-input type="text" value={firstName} label={informationMap.frontEndData.firstName.label} data-id="firstName" onchange={setRecordValue} required="true"></lightning-input> -->
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.firstName.isRequired}>*</span>{informationMap.frontEndData.firstName.label}</label>
+                                    <input type="text" value={firstName} name="firstName" oninput={setRecordValue} required={informationMap.frontEndData.firstName.isRequired}/>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.middleName.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.middleName.isRequired}>*</span>{informationMap.frontEndData.middleName.label}</label>
+                                    <input type="text" value={middleName} name="middleName" oninput={setRecordValue} required={informationMap.frontEndData.middleName.isRequired}/>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.lastName.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.lastName.isRequired}>*</span>{informationMap.frontEndData.lastName.label}</label>
+                                    <input type="text" value={lastName} name="lastName" oninput={setRecordValue} required={informationMap.frontEndData.lastName.isRequired}/>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailAddress.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.emailAddress.isRequired}>*</span>{informationMap.frontEndData.emailAddress.label}</label>
+                                    <input type="email" value={emailAddress} name="emailAddress" onchange={setEmailValue} oninput={clearValidity} required={informationMap.frontEndData.emailAddress.isRequired}/>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailAddress.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.emailAddress.isRequired}>*</span>Confirm Email</label>
+                                    <input type="email" value={_emailConfirmation} name="emailConfirm" onchange={setEmailValue} oninput={clearValidity} required={informationMap.frontEndData.emailAddress.isRequired}>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.emailType.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.emailType.isRequired}>*</span>{informationMap.frontEndData.emailType.label}</label>
+                                    <c-portal_-select default-value={emailType}
+                                                    option-list={emailTypePicklist}
+                                                    handle-change={setRecordValue}
+                                                    classes=""
+                                                    input-name='emailType'
+                                                    required={informationMap.frontEndData.emailType.isRequired}>
+                                    </c-portal_-select>
+                                </div>
+                            </div>
+
+                            <div class="flex-grid-2">
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneNumber.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.phoneNumber.isRequired}>*</span>{informationMap.frontEndData.phoneNumber.label}</label>
+                                    <input type="text" value={phoneNumber} name="phoneNumber" oninput={setRecordValue} required={informationMap.frontEndData.phoneNumber.isRequired}/>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.phoneType.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.phoneType.isRequired}>*</span>{informationMap.frontEndData.phoneType.label}</label>
+                                    <c-portal_-select default-value={phoneType}
+                                                    option-list={phoneTypePicklist}
+                                                    handle-change={setRecordValue}
+                                                    classes=""
+                                                    input-name='phoneType'
+                                                    required={informationMap.frontEndData.phoneType.isRequired}>
+                                    </c-portal_-select>
+                                </div>
+                            </div>
+                            
+                            <div class={addressAutocompleteFlexGrid} if:true={hasAddressAutocomplete}>
+                                <template if:true={_hasInternationalAutocomplete}>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressCountry.display}>
+                                        <label for=""><span class="required" if:true={informationMap.frontEndData.addressCountry.isRequired}>*</span>{informationMap.frontEndData.addressCountry.label}</label>
+                                        <c-portal_-select default-value={_addressCountryCode}
+                                                        option-list={_countriesList}
+                                                        handle-change={handleCountrySelection}
+                                                        classes=""
+                                                        input-name="addressCountry"
+                                                        required={informationMap.frontEndData.addressCountry.isRequired}>
+                                        </c-portal_-select>
+                                    </div>
+                                </template>
+                                <div class="grid-item autocomplete" style={addressAutocompleteStyle}>
+                                    <c-portal_-address-autocomplete handle-selection={handleAddressSelection} country={_addressCountryCode}></c-portal_-address-autocomplete>
+                                </div>
+                            </div>
+                            <div class="flex-grid-2">
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressLine1.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.addressLine1.isRequired}>*</span>{informationMap.frontEndData.addressLine1.label}</label>
+                                    <input type="text" value={addressLine1} name="addressLine1" oninput={setRecordValue} required={informationMap.frontEndData.addressLine1.isRequired}>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressLine2.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.addressLine2.isRequired}>*</span>{informationMap.frontEndData.addressLine2.label}</label>
+                                    <input type="text" value={addressLine2} name="addressLine2" oninput={setRecordValue} required={informationMap.frontEndData.addressLine2.isRequired}>
+                                </div>
+                            </div>
+                            <div class={addressRegionFlexGrid}>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressCity.display}>
+                                    <label for=""><span class="required" if:true={addressCityRequired}>*</span>{informationMap.frontEndData.addressCity.label}</label>
+                                    <input type="text" value={addressCity} name="addressCity" oninput={setRecordValue} required={informationMap.frontEndData.addressCity.isRequired}>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressState.display}>
+                                    <label for=""><span class="required" if:true={addressStateRequired}>*</span>{informationMap.frontEndData.addressState.label}</label>
+                                    <input type="text" value={addressState} name="addressState" oninput={setRecordValue} required={addressStateRequired}>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressPostalCode.display}>
+                                    <label for=""><span class="required" if:true={addressPostalCodeRequired}>*</span>{informationMap.frontEndData.addressPostalCode.label}</label>
+                                    <input type="text" value={addressPostalCode} name="addressPostalCode" oninput={setRecordValue} required={addressPostalCodeRequired}>
+                                </div>
+                                <template if:true={_hasInternationalAutocomplete}>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.addressType.display}>
+                                        <label for=""><span class="required" if:true={informationMap.frontEndData.addressType.isRequired}>*</span>{informationMap.frontEndData.addressType.label}</label>
+                                        <c-portal_-select default-value={addressType}
+                                                        option-list={addressTypePicklist}
+                                                        handle-change={setRecordValue}
+                                                        classes=""
+                                                        input-name='addressType'
+                                                        required={informationMap.frontEndData.addressType.isRequired}>
+                                        </c-portal_-select>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="flex-grid-2" if:false={_hasInternationalAutocomplete}>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressCountry.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.addressCountry.isRequired}>*</span>{informationMap.frontEndData.addressCountry.label}</label>
+                                    <input type="text" value={addressCountry} name="addressCountry" oninput={setRecordValue} required={informationMap.frontEndData.addressCountry.isRequired}>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.addressType.display}>
+                                    <label for=""><span class="required" if:true={informationMap.frontEndData.addressType.isRequired}>*</span>{informationMap.frontEndData.addressType.label}</label>
+                                    <c-portal_-select default-value={addressType}
+                                                    option-list={addressTypePicklist}
+                                                    handle-change={setRecordValue}
+                                                    classes=""
+                                                    input-name='addressType'
+                                                    required={informationMap.frontEndData.addressType.isRequired}>
+                                    </c-portal_-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

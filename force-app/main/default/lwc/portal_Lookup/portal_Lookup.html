@@ -1,0 +1,59 @@
+<template>
+    <div>
+        <label if:true={hasLabel}>{label}</label>
+        <div class="slds-is-relative" tabindex="-1" onfocus={_handleInputFocus} onblur={_handleInputBlur}>
+            <c-portal_-input classes={classes} type="text" value={_inputValue} 
+                             handle-input={handleInputValueChange} 
+                             handle-clear={handleInputValueClear}
+                             required={required}
+                             max-length={maxLength}
+                             handle-key-up={_handleKeyUp}
+                             handle-focus={_handleInputFocus}
+                             handle-blur={_handleInputBlur}
+                             disabled={disabled}
+                             placeholder={placeholder}
+                             include-search-icon={hasSearchIcon}
+                             include-clear-button={hasClearButton}
+                             icon-style={iconStyle}></c-portal_-input>
+            <div if:true={_isShowSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+            <ul class="slds-input drop-down" style={dropdownStyle} if:true={hasLookupOptionsToDisplay}>
+                <template for:each={_lookupOptionsToDisplay} for:item="lookupOption">
+                    <li class="slds-listbox__item" 
+                        key={lookupOption.value}
+                        data-value={lookupOption.value}
+                        data-label={lookupOption.label}
+                        onclick={handleLookupOptionClick}>
+                            {lookupOption.label}
+                    </li>
+                </template>
+            </ul>
+            
+            <!-- <input  id="{!'myInformationInput' + ' '  + v.toggleId}"
+                    type="{!v.inputType}"
+                    value="{!v.searchText}"
+                    oninput='{!c.handleSearchTextChange}'
+                    maxlength="{!v.maxLength}"
+            /> -->
+            <!-- <aura:if isTrue='{!v.filterOptions.length > 0}'>
+                <ul class='auto-populate'>
+                    <aura:if isTrue="{!v.showSpinner}">
+                        <div>
+                            <div class="slds-spinner-brand  slds-spinner slds-spinner-large slds-is-relative">
+                                <span class="slds-assistive-text">Loading</span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </aura:if>  
+                    <aura:iteration items='{!v.filterOptions}' var='item' indexVar='index'>
+                        <li class="slds-listbox__item" data-index="{!index}" onclick='{!c.handlePicklistSelection}'>
+                            <span title="{!item}">{!item}</span>
+                        </li>
+                    </aura:iteration>
+                </ul>
+            </aura:if> -->
+        </div>
+    </div>
+</template>

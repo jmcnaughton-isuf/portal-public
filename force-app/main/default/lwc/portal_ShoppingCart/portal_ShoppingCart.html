@@ -1,0 +1,70 @@
+<template>
+    <div data-ascend-portal>
+        <div class="container large" style="margin-bottom: 0; padding-top: 3em">
+            <div class="heading">
+                <div class="content-wrapper">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-m-top_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_7-of-12 slds-large-size_8-of-12">
+                            <h1>Shopping Cart</h1>
+                        </div>
+                        <div class="slds-m-top_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_5-of-12 slds-large-size_4-of-12" if:true={itemsInShoppingCart}>
+                            <c-portal_-shopping-cart-timer
+                                session-expiration-date={sessionExpirationDate}
+                                oneventexpired={handleDisableButtons}>
+                            </c-portal_-shopping-cart-timer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template if:true={itemsInShoppingCart}>
+            <c-portal_-shopping-cart-registered-event-list
+                session-id={sessionId}
+                event-list={eventList}
+                total-price={totalPrice}
+                show-modification-buttons={showModificationButtons}
+                disable-buttons={disableButtons}
+                modification-for-event={handleEventModification}
+                delete-registration-for-event={handleDeleteRegistrationForEvent}>
+            </c-portal_-shopping-cart-registered-event-list>
+            <div class="container large" style="padding-top: 1em">
+                <div class="content-wrapper">
+                    <div class="registration-table col3">
+                        <div class="show-on-phone">
+                            <div class="row bottom-border slds-p-around_small">
+                                <h3 class="slds-align_absolute-center" style="margin-bottom: 0px">Total payment due: {totalPrice}</h3>
+                            </div>
+                        </div>
+                        <div class="hide-on-phone">
+                            <div class="row table-row bottom-border" style="border-top: none">
+                                <div><h4>Total payment due:</h4></div>
+                                <div><h4>{totalPrice}</h4></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="button-list">
+                        <a href="events" class="button secondary full-mobile">Return to Events</a>
+                        <a onclick={handleCheckoutButton} class="button primary full-mobile">Check out</a>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template if:false={itemsInShoppingCart}>
+            <div class="container large" style="padding-top: 1em" if:false={showSpinner}>
+                <div class="content-wrapper">
+                    <h2>
+                        Your Shopping Cart is Empty!
+                    </h2>
+                    <div class="button-list">
+                        <a href="events" class="button secondary full-mobile">Return to Events</a>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div if:true={showSpinner}>
+            <lightning-spinner variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+    </div>
+</template>

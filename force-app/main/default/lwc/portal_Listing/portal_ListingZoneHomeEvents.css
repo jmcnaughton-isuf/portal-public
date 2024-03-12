@@ -1,0 +1,24 @@
+.view-all-news.button {
+    right: 0px;
+    top: -3px;
+}
+
+.listing-name {
+    word-break: break-word;
+}
+
+@media (max-width: 1199px) {
+    .view-all-news.button {
+        top: -12px;
+    }
+}
+
+@media (max-width: 991px) {
+    .view-all-news.button {
+        top: -3px;
+    }
+}
+
+[data-ascend-portal] .event-list .event:last-of-type {
+    border-bottom: 1px solid #e0e0e0;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_Field__c</fullName>
+    <description>If there are multiple records under the parent custom metadata section and we want to identify a specific record, this field tells us what sobject field api name we will use to find the record.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If there are multiple records under the parent custom metadata section and we want to identify a specific record, this field tells us what sobject field api name we will use to find the record.</inlineHelpText>
+    <label>Filter Field</label>
+    <length>30</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

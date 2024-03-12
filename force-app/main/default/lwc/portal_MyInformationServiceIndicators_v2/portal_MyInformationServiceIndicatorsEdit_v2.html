@@ -1,0 +1,70 @@
+<template>    
+    <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+    <template if:true={isDisplay}>
+        <div class="container" if:true={isDisplayServiceIndicators}>
+            <div class="bottom-border">
+                <h2>{sectionConfiguration.serviceIndicators.label}</h2>
+            </div>
+
+            <div class="entry-form">
+                <template for:each={stickyServiceIndicators} for:item="stickyServiceIndicatorValue" for:index="index">
+                    <div class="flex-grid-1" key={stickyServiceIndicatorValue.timestampHtmlKey}>
+                        <div class="grid-item">
+                            <c-portal_-My-Information-Edit-Field_v2
+                                label={stickyServiceIndicatorValue.portalDescription}
+                                value={stickyServiceIndicatorValue.isActive}
+                                field-id="isActive"
+                                index={index}
+                                section-id="stickyServiceIndicators"
+                                input-type={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.fieldType}
+                                is-disabled={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.isDisable}
+                                is-required={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.isRequired}
+                                handle-change-callback={handleChange}>
+                            </c-portal_-My-Information-Edit-Field_v2>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="section-wrapper" if:true={isDisplaySearchBar}>
+                <h4 style="margin-bottom: .5em !important">Search for new contact preferences here.</h4>
+                <div class="search">
+                    <input type="text" value={searchInput} oninput={handleSearchInput}>
+                    <span class="search-icon"></span>
+                </div>
+                <div class="button-list" style="margin:0; padding-bottom: 20px">
+                    <a class="button primary slds-m-vertical_small" onclick={handleSearchServiceIndicators}>Search</a>
+                    <a class="button secondary slds-m-vertical_small" onclick={handleReset}>Reset</a>
+                </div>
+                <div class="entry-form">
+                    <template for:each={searchResultsToDisplay} for:item="searchResult" for:index="index">
+                        <div class="flex-grid-1" key={searchResult.timestampHtmlKey}>
+                            <div class="grid-item">
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={searchResult.portalDescription}
+                                    value={searchResult.isActive}
+                                    field-id="isActive"
+                                    index={index}
+                                    section-id="serviceIndicatorValues"
+                                    input-type={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.fieldType}
+                                    is-disabled={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.isDisable}
+                                    is-required={sectionConfiguration.serviceIndicators.fieldConfigurationMap.isActive.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <c-portal_util_-pagination 
+                queried-data={searchResults}
+                records-per-page={_itemsPerPage}
+                handle-page-change={handlePageChange}
+                current-page-number={_currentPage}
+                is-not-reset-with-new-data>
+            </c-portal_util_-pagination>
+            <div class="line-break"></div>  
+        </div>
+    </template>
+</template>

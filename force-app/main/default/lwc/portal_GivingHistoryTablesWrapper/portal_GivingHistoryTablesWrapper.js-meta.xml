@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="tabTitlesCSV" label="Tab Titles" type="String" description="Comma seperated list of titles for the tabs." required="true" default="Giving History, Pledges, Recurring Gift, Matching Gift"></property>
+            <property name="tabColor" label="Tab Color" description="The default color of the tabs and its background. Can be a Hex code of the name of a color." type="String" default="#87ceff" required="true"/>
+            <property name="tabHighlightedColor" label="Tab Selected Color" description="The color of the tab and its background when selected. Can be a Hex code of the name of a color." type="String" default="burlywood" required="true"/>
+            <property name="showFirstTable" label="Show Giving History Table" type="Boolean" default="true"/>
+            <property name="showSecondTable" label="Show Pledge Table" type="Boolean" default="true"/>
+            <property name="showThirdTable" label="Show Recurring Gift Table" type="Boolean" default="true"/>
+            <property name="showFourthTable" label="Show Matching Gift Table" type="Boolean" default="true"/>
+
+            <property name="givingHistoryHelperTextHTML" label="Giving History Helper Text" type="String" description ="Helper text that will display ontop of the table. The helper text can be in HTML."/>
+            <property name="givingHistoryItemsPerPage" label="Giving History Items per page" type="Integer" description="The number of rows to display on the table per page." required="true" default="10"/>
+            <property name="givingHistoryHideReceipt" label="Giving History Hide Receipt" type="Boolean" default="false"/>
+            <property name="givingHistoryReceiptColumnLabel" label="Giving History Receipt column label" type="String" default="Receipt"/>
+            <property name="givingHistoryReceiptRowText" label="Giving History Receipt row text" description="Text to show when a receipt is available for a row." type="String" default="View Receipt"/>
+            <property name="givingHistoryNoReceiptRowText" label="Giving History No receipt row text" description="Text to show when a receipt is NOT available for a row." type="String" default="No receipt available"/>
+            <property name="givingHistoryReceiptBaseURL" label="Giving History Receipt Base URL" description="URL for the gift receipt" type="String" default="PORTAL_GiftReceiptPage"/>
+            <property name="givingHistoryReceiptContentPageName" label="Giving History Receipt Content Page Name" description="Content page name where static receipt info is held" type="String" default="Gift Receipt Page"/>
+            <property name="givingHistoryNoTableDataTextHTML" label="Giving History No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+
+            <property name="pledgesHelperTextHTML" label="Pledge Helper Text" type="String" description="Helper text in HTML"></property>
+            <property name="pledgesShowNumberOfPaymentsColumn" label="Pledge Show Number of Payments Column" type="Boolean" default="true"></property>
+            <property name="pledgesNumberOfPaymentsColumnTitle" label="Pledge Number of remaning payments column title" type="String" default="Number of payments"></property>
+            <property name="pledgesDesginationNameDisplayOption" label="Pledge Designation Name Display Options" type="String" datasource="List of Names, text" default="List of Names"></property>
+            <property name="pledgesDesginationNameOverride" label="Pledge Multiple Designation Name Override" type="String" default="Multiple" description="If Desgination Name Display Options picklsit is set to text, this will override pleges with multiple designation with this text."></property>
+            <property name="pledgesItemsPerPage" label="Pledge Items per page" type="Integer" description="The number of rows to display on the table per page." required="true" default="10"/>
+            <property name="pledgesNoTableDataTextHTML" label="Pledge No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+
+            <property name="recurringGiftHelperTextHTML" label="Recurring Gift Helper Text" type="String" description ="Helper text that will display ontop of the table. The helper text can be in HTML."/>
+            <property name="recurringGiftShowNextInstallmentPaymentCoulmn" label="Recurring Gift Show Next Installment Payment Column" type="Boolean" default="true"></property>
+            <property name="recurringGiftNextInstallmentPaymentColumn" label="Recurring Gift Next Installment Payment Column Title" type="String" default="Next Expected Installment Date"></property>
+            <property name="recurringGiftDesginationNameDisplayOption" label="Recurring Gift Designation Name Display Options" type="String" datasource="List of Names, text" default="List of Names"></property>
+            <property name="recurringGiftDesginationNameOverride" label="Recurring Gift Multiple Designation Name Override" type="String" default="Multiple" description="If Desgination Name Display Options picklsit is set to text, this will override pleges with multiple designation with this text."></property>
+            <property name="recurringGiftItemsPerPage" label="Recurring Gift Items per page" type="Integer" description="The number of rows to display on the table per page." required="true" default="10"/>
+            <property name="recurringGiftDataTextHTML" label="Recurring Gift No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+
+            <property name="matchingGiftHelperTextHTML" label="Matching Gift Helper Text" type="String" description="Helper text in HTML"></property>
+            <property name="matchingGiftDesginationNameDisplayOption" label="Matching Gift Designation Name Display Options" type="String" datasource="List of Names, text" default="List of Names"></property>
+            <property name="matchingGiftDesginationNameOverride" label="Matching Gift Multiple Designation Name Override" type="String" default="Multiple" description="If Desgination Name Display Options picklsit is set to text, this will override pleges with multiple designation with this text."></property>
+            <property name="matchingGiftItemsPerPage" label="Matching Gift Items per page" type="Integer" description="The number of rows to display on the table per page." required="true" default="10"/>
+            <property name="matchingGiftDataTextHTML" label="Matching Gift No Table Data Text" description="Message to display when the constituent has no data to display. Can be in HTML." type="String" default="No data."></property>
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticket_Type_Validation</fullName>
+    <active>true</active>
+    <description>Registration Template or Registration Page must be populated if Ticket Type is populated</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Ticket_Type__c)),AND(ISBLANK(Registration_Page__c), ISBLANK(Registration_Template__c)))</errorConditionFormula>
+    <errorMessage>Registration Template or Registration Page must be populated if Ticket Type is populated.</errorMessage>
+</ValidationRule>

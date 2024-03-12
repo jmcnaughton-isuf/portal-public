@@ -1,0 +1,122 @@
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sf-modal .modal .content-header-bar h2 {
+    color: white;
+}
+
+@media (min-width: 1200px) {
+    h2 {
+        font-size: 2.6em;
+        font-family: "Noah-Bold";
+        color: #404040;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl, fieldset {
+    margin: 0;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: .7em !important;
+}
+
+.pendingText {
+    font-size: 1rem;
+    color: #ff0000;
+}
+
+.sf-modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100001;
+}
+
+.sf-modal .modal-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width: 768px) {
+    .modal {
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 840px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+        height: auto;
+        overflow: scroll;
+        max-height: 94%;
+        padding-bottom: 20px;
+    }
+}
+
+@media(max-width:768px) {
+.sf-modal .modal {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+}
+}
+
+.sf-modal .modal .close-btn {
+    font-size: 2.5em;
+    position: absolute;
+    top: 20px;
+    right: 27px;
+    color: white;
+}
+
+@media (max-width: 960px) {
+    .honor-roll-management {
+        padding: 0 1em;
+    }
+}
+
+.opt-out-btn {
+    margin: auto !important;
+}
+
+.content-wrapper {
+    padding: 0 1.5em !important;
+    margin: 0 0 1.5em 0;
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    p {
+        font-size: 1.1rem;
+        /* line-height: 1.4; */
+        margin-bottom: 1.25em !important;
+    }
+}
+
+.modal-title {
+    padding: 0 !important;
+}
+
+.slds-grid {
+    padding: 1em 0 1em 0;
+}

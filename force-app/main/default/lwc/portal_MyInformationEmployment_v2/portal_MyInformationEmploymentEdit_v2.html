@@ -1,0 +1,149 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+    
+    <div if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type={_selfReportModalType}
+            configuration={_selfReportConfiguration}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container bottom-border" if:true={sectionConfiguration.isDisplay}>
+            <!-- Breadcrumb -->
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li>
+                        <a href="?">Back to My Information</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section Header -->
+            <h2 style="margin-bottom: 0.5em">{sectionConfiguration.label}</h2>
+
+            <!-- Records -->
+            <template for:each={recordList} for:item="eachEmployment" for:index="index">
+                <div if:false={eachEmployment.isDelete} class="entry-heading" key={eachEmployment.timestampHtmlKey}>
+
+                    <!-- Report Update or Delete Each Record -->
+                    <div class="edit-entry-list">
+                        <template if:true={sectionConfiguration.hasReportUpdateLink}>
+                            <a onclick={handleSelfReport} data-index={index}>
+                                <span if:true={eachEmployment.hasSelfReportChange}>Pending</span>
+                                <span if:false={eachEmployment.hasSelfReportChange}>Request Update</span>
+                            </a>
+                        </template>
+
+                        <template if:false={sectionConfiguration.hasReportUpdateLink}> 
+                            <a if:false={sectionConfiguration.isDisable} onclick={handleDeleteEmployment} data-index={index}>
+                                <img src={deleteIcon}>Delete
+                            </a>
+                        </template>
+                    </div>
+
+                    <!-- Each Record Fields -->
+                    <div class="entry-form">
+                        <div class="flex-grid-2">
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employer.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.fieldConfigurationMap.employer.label}
+                                    value={eachEmployment.employer}
+                                    field-id="employer"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.employer.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.employer.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.employer.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={sectionConfiguration.fieldConfigurationMap.employer.hasToggle}
+                                    toggle-value={eachEmployment.isShowEmployer}
+                                    toggle-field="isShowEmployer"
+                                    picklist-values={sectionConfiguration.fieldConfigurationMap.employer.picklistValues}
+                                    is-lookup={sectionConfiguration.fieldConfigurationMap.employer.isLookup}
+                                    lookup-value={eachEmployment.employerId}
+                                    lookup-field-id="employerId"
+                                    custom-metadata-api-name={sectionConfiguration.fieldConfigurationMap.employer.customMetadataApiName}
+                                    custom-metadata-developer-name={sectionConfiguration.fieldConfigurationMap.employer.customMetadataDeveloperName}
+                                    handle-lookup-selection-callback={handleLookupSelection}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.jobTitle.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.fieldConfigurationMap.jobTitle.label}
+                                    value={eachEmployment.jobTitle}
+                                    field-id="jobTitle"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.jobTitle.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.jobTitle.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.jobTitle.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={sectionConfiguration.fieldConfigurationMap.jobTitle.hasToggle}
+                                    toggle-value={eachEmployment.isShowJobTitle}
+                                    toggle-field="isShowJobTitle"
+                                    picklist-values={sectionConfiguration.fieldConfigurationMap.jobTitle.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employmentStartDate.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.fieldConfigurationMap.employmentStartDate.label}
+                                    value={eachEmployment.employmentStartDate}
+                                    field-id="employmentStartDate"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.employmentStartDate.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.employmentStartDate.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.employmentStartDate.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={sectionConfiguration.fieldConfigurationMap.employmentStartDate.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employmentEndDate.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={sectionConfiguration.fieldConfigurationMap.employmentEndDate.label}
+                                    value={eachEmployment.employmentEndDate}
+                                    field-id="employmentEndDate"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.employmentEndDate.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.employmentEndDate.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.employmentEndDate.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={sectionConfiguration.fieldConfigurationMap.employmentEndDate.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={sectionConfiguration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employmentShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        label={sectionConfiguration.fieldConfigurationMap.employmentShowOnDirectory.label}
+                                        value={eachEmployment.employmentShowOnDirectory}
+                                        field-id="employmentShowOnDirectory"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.employmentShowOnDirectory.fieldType}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.employmentShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        picklist-values={sectionConfiguration.fieldConfigurationMap.employmentShowOnDirectory.picklistValues}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                </div>
+            </template>
+
+            <!-- Add Button -->
+            <template if:false={sectionConfiguration.isDisable}>
+                <div class="button-list" if:false={sectionConfiguration.hasReportUpdateLink}>
+                    <a class="button secondary small" onclick={handleAddEmployment}>Add Employment</a>
+                </div>
+            </template>
+
+        </div>
+    </div>
+</template>

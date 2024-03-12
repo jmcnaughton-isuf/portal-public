@@ -1,0 +1,19 @@
+<template>
+    <div class="section-wrapper" if:true={honorRollNameList}>
+        <div class="container large">
+            <div class="content-wrapper">
+                <div class="flex-grid-3">
+                    <template for:each={honorRollNameList} for:item="record">
+                            <div class="grid-item donor" key={record.Id}>
+                                <c-portal_-honor-roll-detail
+                                    record={record}
+                                    honor-roll-year={honorRollYear}
+                                    handle-honor-roll-name-click={handleHonorRollNameClick}
+                                ></c-portal_-honor-roll-detail>
+                            </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

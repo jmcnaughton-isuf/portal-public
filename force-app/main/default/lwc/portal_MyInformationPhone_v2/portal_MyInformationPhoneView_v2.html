@@ -1,0 +1,41 @@
+<template>
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <template if:true={sectionConfiguration.isDisplay}>
+            <div class="info-card">
+                <h3>{sectionConfiguration.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="table-header">
+                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneNumber.isDisplay}>
+                            <p>{sectionConfiguration.fieldConfigurationMap.phoneNumber.label}</p>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneType.isDisplay}>
+                            <p>{sectionConfiguration.fieldConfigurationMap.phoneType.label}</p>
+                        </div>
+                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.isDisplay}>
+                            <p>{sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.label}</p>
+                        </div> 
+                    </div>               
+                    <template for:each={recordList} for:item="phone">
+                        <div class="table-row" key={phone.Id}>
+                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.phoneNumber.isDisplay}>
+                                <h4>{sectionConfiguration.fieldConfigurationMap.phoneNumber.label}</h4>
+                                <p>{phone.phoneNumber}</p>
+                            </div>
+                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.phoneType.isDisplay}>
+                                <h4>{sectionConfiguration.fieldConfigurationMap.phoneType.label}</h4>
+                                <p>{phone.phoneType}</p>
+                            </div> 
+                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.isDisplay}>
+                                <h4>{sectionConfiguration.fieldConfigurationMap.phoneIsPreferred.label}</h4>
+                                <p if:true={phone.phoneIsPreferred}>&#10003;</p>
+                                <p if:false={phone.phoneIsPreferred}></p>
+                            </div> 
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+        <div class="line-break"></div>
+    </template>
+</template>

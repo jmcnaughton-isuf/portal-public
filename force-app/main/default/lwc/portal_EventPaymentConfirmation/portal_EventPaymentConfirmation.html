@@ -1,0 +1,64 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={_showSpinner}>
+            <lightning-spinner variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+        <div class="container large" if:true={showEvents}>
+            <div class="event-details">
+                <h1>Success!</h1>
+                <h2 style="color: #005595; margin-bottom: .7em">Your registration/s has been confirmed</h2>
+                <div class="event-list" style="border-top: none">
+
+                    <template for:each={eventFormattedList} for:item="event">
+
+                        <div class="event-listing" key={event.Id}>
+                            <h3>{event.eventName}</h3>
+                            <p class="date listing">{event.formattedDate}</p>
+                        </div>
+                    </template>
+                </div>
+                
+                <div class="button-list">
+                    <a onclick={handleNavigateToHome} class="button primary full-moble">Continue browsing events</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div if:true={showEvents}>
+            <div class="title">
+                <h1>Success!</h1>
+            </div>
+
+            <br>
+
+            <div class="subtitle">
+                <h1>Your registration is confirmed</h1>
+            </div>
+
+            <br><br>
+
+            <template for:each={eventFormattedList} for:item="event">
+                <div class="eventName" key={event.Id}>
+                    <h3>{event.eventName}</h3>
+                    <br>
+                </div>
+
+                <div class="eventTime" key={event.Id}>
+                    <h4>{event.formattedDate}</h4>
+                    <br> <br>
+                </div>
+            </template>
+
+            <br> <br>
+
+            <div class="next-button">
+                <div class="slds-align_absolute-center">
+                    <lightning-button 
+                        variant="brand" 
+                        label="Home"
+                        onclick={handleNavigateToHome}
+                    ></lightning-button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</template>

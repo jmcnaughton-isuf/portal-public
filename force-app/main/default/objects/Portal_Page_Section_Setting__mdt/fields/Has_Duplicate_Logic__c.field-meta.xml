@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Duplicate_Logic__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tells us if we have logic to determine if a record is a duplicate of another record.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Tells us if we have logic to determine if a record is a duplicate of another record.</inlineHelpText>
+    <label>Has Duplicate Logic</label>
+    <type>Checkbox</type>
+</CustomField>

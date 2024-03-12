@@ -1,0 +1,18 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner
+            if:true={showSpinner}
+            variant="brand"
+            size="large">
+        </lightning-spinner>
+    
+        <template if:true={_isShowButtons}>
+            <div class="container large" >
+                <div class="button-list">
+                    <a class="button secondary full-mobile" onclick={handleBackClick}>Back</a>
+                    <a class="button primary full-mobile" onclick={handleSaveClick}>Save</a>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

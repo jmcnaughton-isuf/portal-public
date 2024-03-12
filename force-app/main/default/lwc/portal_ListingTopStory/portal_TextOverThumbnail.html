@@ -1,0 +1,26 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={showComponent} class="forceCommunityThemeHeroBase forceCommunityThemeHeroStarter feature">
+            <template if:true={_showSpinner}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+            <template if:true={showThumbnailImage}>
+                <img src={_shownListing.thumbnailImageUrl}>
+            </template>
+            <template if:false={showThumbnailImage}>
+                <img src={_shownListing.headerImageUrl} if:true={showHeaderImage}>
+            </template>
+            <div class="contentContainer">
+                <div class="slds-grid align-left">
+                    <div class="content">
+                        <p class="eyebrow">Top Story</p>
+                        <h1 class="contentTitle" if:true={frontEndDataMap.name.display}>{_shownListing.name}</h1>
+                        <a href={_shownListing.listingUrl} class="button tertiary light" if:true={frontEndDataMap.listingDetailUrl.display}>Read</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div if:false={showComponent} style="padding:10px">
+        </div>
+    </div>
+</template>

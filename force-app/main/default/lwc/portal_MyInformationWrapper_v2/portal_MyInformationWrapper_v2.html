@@ -1,0 +1,75 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+        
+        <div class="container large" if:true={_isDisplayWrapper}>
+            <div class="section-body-content">
+                <div class="portal-progress-bar-mobile progress-no-show-vertical-mobile" style="margin-bottom: 40px; margin-top: 40px">
+                    <div class="slds-path lightningProgressIndicator">
+                        <div class="slds-grid slds-path__track">
+                            <div class="slds-grid slds-path__scroller-container">
+                                <div class="slds-path__scroller" role="application">
+                                    <div class="slds-path__scroller_inner">
+                                        <ul class="slds-path__nav" aria-orientation="horizontal" role="listbox">
+                                            <template for:each={progressTabList} for:item="step" for:index="index">
+                                                <div class={step.class} role="listitem" key={step.key}>
+                                                    <a aria-selected="false" onclick={handleTabClick} role="option" tabindex={index} class="slds-path__link" data-value={step.value}>
+                                                        <span class="slds-path__stage">
+                                                            <svg focusable="false" data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                                <g>
+                                                                    <path
+                                                                        d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                    </path>
+                                                                </g>
+                                                            </svg>
+                                                            <span class="slds-assistive-text">Current Stage</span>
+                                                        </span>
+                                                        <span class="slds-path__title">{step.label}</span></a>
+                                                </div>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-wrapper">
+                <!-- order of arguments matters in child LWCs, display-mode should be set before is-display -->
+                <c-portal_-My-Information-Contact_v2
+                    display-mode={_displayMode}
+                    is-display={isDisplayContact}> 
+                </c-portal_-My-Information-Contact_v2>
+
+                <c-portal_-My-Information-Employment_v2
+                    display-mode={_displayMode}
+                    is-display={isDisplayEmployment}> 
+                </c-portal_-My-Information-Employment_v2>
+
+                <c-portal_-My-Information-Degree_v2
+                    display-mode={_displayMode}
+                    is-display={isDisplayDegree}> 
+                </c-portal_-My-Information-Degree_v2>
+            
+                <c-portal_-My-Information-Social-Media_v2
+                    display-mode={_displayMode}
+                    is-display={isDisplaySocialMedia}> 
+                </c-portal_-My-Information-Social-Media_v2>
+
+                <c-portal_-My-Information-Contact-Preferences_v2
+                    display-mode={_displayMode}
+                    is-display={isDisplayPrivacy}> 
+                </c-portal_-My-Information-Contact-Preferences_v2>
+            </div>
+
+            <div class="container" if:true={isEditMode}>
+                <div class="button-list">
+                    <a href="?" class="button secondary">Cancel</a>
+                    <a onclick={handleSave} class="button primary">Save</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</template>

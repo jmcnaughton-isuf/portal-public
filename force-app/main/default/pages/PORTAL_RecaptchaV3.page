@@ -1,0 +1,31 @@
+<apex:page controller="PORTAL_RecaptchaController" showHeader="false" sidebar="false">
+    <style type="text/css">
+        body {
+            background: none transparent;
+        }
+    </style>
+    <html>
+        <head>
+            <script src="https://www.google.com/recaptcha/api.js?render={!siteKey}"></script>
+        </head>
+        <script type="application/javascript">
+            const siteKey = "!{siteKey}";
+            const lexOrigin = "{!lexOrigin}";
+
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "recaptcha_v3_request") {
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute("{!siteKey}", {action: 'form_submit'}).then(function(token) {
+                            window.parent.postMessage({type: "recaptcha_v3_response", token: token}, "{!$Site.BaseSecureUrl}");
+                        });
+                });
+                }
+            });
+        </script>
+    </html>
+</apex:page>

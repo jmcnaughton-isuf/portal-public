@@ -1,0 +1,670 @@
+<template>
+
+    <div class="show-on-phone">
+        <h2>Contact Information</h2>
+        <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Contact Information</a>
+
+        <div class="registration-table" if:true={informationMap.frontEndData.name.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <h3>{informationMap.frontEndData.name.label}</h3>
+                    <template if:true={informationMap.frontEndData.name.display}>
+                        <div class="entry-form">
+                            <h4 if:true={informationMap.frontEndData.firstName.display}>{informationMap.frontEndData.firstName.label}</h4>
+                            <p>{firstName}</p>
+                            <h4 if:true={informationMap.frontEndData.middleName.display}>{informationMap.frontEndData.middleName.label}</h4>
+                            <p>{middleName}</p>
+                            <h4 if:true={informationMap.frontEndData.lastName.display}>{informationMap.frontEndData.lastName.label}</h4>
+                            <p>{lastName}</p>
+                            <h4 if:true={informationMap.frontEndData.prefix.display}>{informationMap.frontEndData.prefix.label}</h4>
+                            <p>{title}</p>
+                            <h4 if:true={informationMap.frontEndData.suffix.display}>{informationMap.frontEndData.suffix.label}</h4>
+                            <p>{suffix}</p>
+                            <h4 if:true={informationMap.frontEndData.businessTitle.display}>{informationMap.frontEndData.businessTitle.label}</h4>
+                            <p>{businessTitle}</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="registration-table" if:true={informationMap.frontEndData.alsoKnownAs.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.alsoKnownAs.display}>
+                        <h3>{informationMap.frontEndData.alsoKnownAs.label}</h3>
+                        <div class="entry-form">
+                            <h4 if:true={informationMap.frontEndData.maidenFirstName.display}>{informationMap.frontEndData.maidenFirstName.label}</h4>
+                            <p>{maidenFirstName}</p>
+                            <h4 if:true={informationMap.frontEndData.maidenMiddleName.display}>{informationMap.frontEndData.maidenMiddleName.label}</h4>
+                            <p>{maidenMiddleName}</p>
+                            <h4 if:true={informationMap.frontEndData.maidenLastName.display}>{informationMap.frontEndData.maidenLastName.label}</h4>
+                            <p>{maidenLastName}</p>
+                            <h4 if:true={informationMap.frontEndData.nicknameFirstName.display}>{informationMap.frontEndData.nicknameFirstName.label}</h4>
+                            <p>{nicknameFirstName}</p>
+                            <h4 if:true={informationMap.frontEndData.nicknameLastName.display}>{informationMap.frontEndData.nicknameLastName.label}</h4>
+                            <p>{nicknameLastName}</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="registration-table" if:true={informationMap.frontEndData.directoryName.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.directoryName.display}>
+                        <h3>{informationMap.frontEndData.directoryName.label}</h3>
+                        <div class="entry-form">
+                            <h4 if:true={informationMap.frontEndData.directoryFirstName.display}>{informationMap.frontEndData.directoryFirstName.label}</h4>
+                            <p>{directoryFirstName}</p>
+                            <h4 if:true={informationMap.frontEndData.directoryLastName.display}>{informationMap.frontEndData.directoryLastName.label}</h4>
+                            <p>{directoryLastName}</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="registration-table" if:true={informationMap.frontEndData.additionalDetails.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.additionalDetails.display}>
+                        <h3>{informationMap.frontEndData.additionalDetails.label}</h3>
+                        <div class="entry-form">
+                            <h4 if:true={informationMap.frontEndData.gender.display}>{informationMap.frontEndData.gender.label}</h4>
+                            <p>{gender}</p>
+                            <h4 if:true={informationMap.frontEndData.pronoun.display}>{informationMap.frontEndData.pronoun.label}</h4>
+                            <p>{pronoun}</p>
+                            <h4 if:true={informationMap.frontEndData.birthdate.display}>{informationMap.frontEndData.birthdate.label}</h4>
+                            <p>                    
+                                <lightning-formatted-date-time
+                                    class="value"
+                                    value={birthdate}
+                                    day="numeric"
+                                    month="short"
+                                    year="numeric"
+                                    time-zone="UTC"
+                                    variant="label-hidden">
+                                </lightning-formatted-date-time>
+                            </p>
+                            <h4 if:true={informationMap.frontEndData.maritalStatus.display}>{informationMap.frontEndData.maritalStatus.label}</h4>
+                            <p>{maritalStatus}</p>
+                            <h4 if:true={informationMap.frontEndData.spouseFirstName.display}>{informationMap.frontEndData.spouseFirstName.label}</h4>
+                            <p>{spouseFirstName}</p>
+                            <h4 if:true={informationMap.frontEndData.spouseLastName.display}>{informationMap.frontEndData.spouseLastName.label}</h4>
+                            <p>{spouseLastName}</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="registration-table" if:true={informationMap.frontEndData.emails.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.emails.display}>
+                        <h3>{informationMap.frontEndData.emails.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimEmail} for:item="email">
+                                <template if:false={email.isHide}>
+                                    <template if:true={informationMap.frontEndData.emailAddress.display}>
+                                        <h4 key={email.Id}>{informationMap.frontEndData.emailAddress.label}</h4>
+                                        <p key={email.Id}>{email.emailAddress}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.emailType.display}>
+                                        <h4 key={email.Id}>{informationMap.frontEndData.emailType.label}</h4>
+                                        <p key={email.Id}>{email.emailType}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                                        <h4 key={email.Id}>{informationMap.frontEndData.emailIsPreferred.label}</h4>
+                                        <p key={email.Id} if:true={email.emailIsPreferred}>&#10003;</p>
+                                        <p key={email.Id} if:false={email.emailIsPreferred}></p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={informationMap.records.Emails.records} for:item="email">
+                                <template if:false={email.isHide}>
+                                    <template if:true={informationMap.frontEndData.emailAddress.display}>
+                                        <h4 key={email.Id}>{informationMap.frontEndData.emailAddress.label}</h4>
+                                        <p key={email.Id}>{email.emailAddress}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.emailType.display}>
+                                        <h4 key={email.Id}>{informationMap.frontEndData.emailType.label}</h4>
+                                        <p key={email.Id}>{email.emailType}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                                        <h4 key={email.Id}>{informationMap.frontEndData.emailIsPreferred.label}</h4>
+                                        <p key={email.Id} if:true={email.emailIsPreferred}>&#10003;</p>
+                                        <p key={email.Id} if:false={email.emailIsPreferred}></p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="registration-table" if:true={informationMap.frontEndData.phones.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.phones.display}>
+                        <h3>{informationMap.frontEndData.phones.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimPhones} for:item="phone">
+                                <template if:false={phone.isHide}>
+                                    <template if:true={informationMap.frontEndData.phoneNumber.display}>
+                                        <h4 key={phone.Id}>{informationMap.frontEndData.phoneNumber.label}</h4>
+                                        <p key={phone.Id}>{phone.phoneNumber}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.phoneType.display}>
+                                        <h4 key={phone.Id}>{informationMap.frontEndData.phoneType.label}</h4>
+                                        <p key={phone.Id}>{phone.phoneType}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.phoneIsPreferred.display}>
+                                        <h4 key={phone.Id}>{informationMap.frontEndData.phoneIsPreferred.label}</h4>
+                                        <p key={phone.Id} if:true={phone.phoneIsPreferred}>&#10003;</p>
+                                        <p key={phone.Id} if:false={phone.phoneIsPreferred}></p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={_informationMap.records.Phones.records} for:item="phone">
+                                <template if:false={phone.isHide}>
+                                    <template if:true={informationMap.frontEndData.phoneNumber.display}>
+                                        <h4 key={phone.Id}>{informationMap.frontEndData.phoneNumber.label}</h4>
+                                        <p key={phone.Id}>{phone.phoneNumber}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.phoneType.display}>
+                                        <h4 key={phone.Id}>{informationMap.frontEndData.phoneType.label}</h4>
+                                        <p key={phone.Id}>{phone.phoneType}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.phoneIsPreferred.display}>
+                                        <h4 key={phone.Id}>{informationMap.frontEndData.phoneIsPreferred.label}</h4>
+                                        <p key={phone.Id} if:true={phone.phoneIsPreferred}>&#10003;</p>
+                                        <p key={phone.Id} if:false={phone.phoneIsPreferred}></p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="registration-table" if:true={informationMap.frontEndData.addresses.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.addresses.display}>
+                        <h3>{informationMap.frontEndData.addresses.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimAddresses} for:item="address">
+                                <template if:false={address.isHide}>
+                                    <template if:true={areStreetsVisible}>
+                                        <h4 key={address.Id}>Street</h4>
+                                        <p key={address.Id}>
+                                            <template if:true={informationMap.frontEndData.addressLine1.display}>{address.addressLine1} </template>
+                                            <template if:true={informationMap.frontEndData.addressLine2.display}>{address.addressLine2} </template>
+                                            <template if:true={informationMap.frontEndData.addressLine3.display}>{address.addressLine3}</template>
+                                        </p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.addressCity.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressCity.label}</h4>
+                                        <p key={address.Id}>{address.addressCity}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressState.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressState.label}</h4>
+                                        <p key={address.Id}>{address.addressState}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressPostalCode.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressPostalCode.label}</h4>
+                                        <p key={address.Id}>{address.addressPostalCode}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressCountry.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressCountry.label}</h4>
+                                        <p key={address.Id}>{address.addressCountry}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressType.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressType.label}</h4>
+                                        <p key={address.Id}>{address.addressType}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.addressIsPreferred.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressIsPreferred.label}</h4>
+                                        <p key={address.Id} if:true={address.addressIsPreferred}>&#10003;</p>
+                                        <p key={address.Id} if:false={address.addressIsPreferred}></p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={informationMap.records.Addresses.records} for:item="address">
+                                <template if:false={address.isHide}>
+                                    <template if:true={areStreetsVisible}>
+                                        <h4 key={address.Id}>Street</h4>
+                                        <p key={address.Id}>
+                                            <template if:true={informationMap.frontEndData.addressLine1.display}>{address.addressLine1} </template>
+                                            <template if:true={informationMap.frontEndData.addressLine2.display}>{address.addressLine2} </template>
+                                            <template if:true={informationMap.frontEndData.addressLine3.display}>{address.addressLine3}</template>
+                                        </p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.addressCity.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressCity.label}</h4>
+                                        <p key={address.Id}>{address.addressCity}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressState.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressState.label}</h4>
+                                        <p key={address.Id}>{address.addressState}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressPostalCode.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressPostalCode.label}</h4>
+                                        <p key={address.Id}>{address.addressPostalCode}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressCountry.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressCountry.label}</h4>
+                                        <p key={address.Id}>{address.addressCountry}</p>
+                                    </template>
+                                    
+                                    <template if:true={informationMap.frontEndData.addressType.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressType.label}</h4>
+                                        <p key={address.Id}>{address.addressType}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.addressIsPreferred.display}>
+                                        <h4 key={address.Id}>{informationMap.frontEndData.addressIsPreferred.label}</h4>
+                                        <p key={address.Id} if:true={address.addressIsPreferred}>&#10003;</p>
+                                        <p key={address.Id} if:false={address.addressIsPreferred}></p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hide-on-phone">
+        <div class="container">
+            <div class="bottom-border">
+                <h2>Contact Information</h2>
+                <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Contact Information</a>
+            </div>
+
+            <template if:true={informationMap.frontEndData.name.display}>
+                <h3 class="slds-border_bottom">{informationMap.frontEndData.name.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.firstName.display}>
+                        <h4>{informationMap.frontEndData.firstName.label}</h4>
+                        {firstName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.middleName.display}>
+                        <h4>{informationMap.frontEndData.middleName.label}</h4>
+                        {middleName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.lastName.display}>
+                        <h4>{informationMap.frontEndData.lastName.label}</h4>
+                        {lastName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.prefix.display}>
+                        <h4>{informationMap.frontEndData.prefix.label}</h4>
+                        {title}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.suffix.display}>
+                        <h4>{informationMap.frontEndData.suffix.label}</h4>
+                        {suffix}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.businessTitle.display}>
+                        <h4>{informationMap.frontEndData.businessTitle.label}</h4>
+                        {businessTitle}
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={informationMap.frontEndData.alsoKnownAs.display}>
+                <h3 class="slds-border_bottom">{informationMap.frontEndData.alsoKnownAs.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.maidenFirstName.display}>
+                        <h4>{informationMap.frontEndData.maidenFirstName.label}</h4>
+                        {maidenFirstName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.maidenMiddleName.display}>
+                        <h4>{informationMap.frontEndData.maidenMiddleName.label}</h4>
+                        {maidenMiddleName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.maidenLastName.display}>
+                        <h4>{informationMap.frontEndData.maidenLastName.label}</h4>
+                        {maidenLastName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.nicknameFirstName.display}>
+                        <h4>{informationMap.frontEndData.nicknameFirstName.label}</h4>
+                        {nicknameFirstName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.nicknameLastName.display}>
+                        <h4>{informationMap.frontEndData.nicknameLastName.label}</h4>
+                        {nicknameLastName}
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={informationMap.frontEndData.directoryName.display}>
+                <h3 class="slds-border_bottom">{informationMap.frontEndData.directoryName.label}</h3>
+                <div class="flex-grid-2">
+                    <div class="grid-item" if:true={informationMap.frontEndData.directoryFirstName.display}>
+                        <h4>{informationMap.frontEndData.directoryFirstName.label}</h4>
+                        {directoryFirstName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.directoryLastName.display}>
+                        <h4>{informationMap.frontEndData.directoryLastName.label}</h4>
+                        {directoryLastName}
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={informationMap.frontEndData.additionalDetails.display}>
+                <h3 class="slds-border_bottom">{informationMap.frontEndData.additionalDetails.label}</h3>
+                <div class="flex-grid-3">
+                    <div class="grid-item" if:true={informationMap.frontEndData.gender.display}>
+                        <h4>{informationMap.frontEndData.gender.label}</h4>
+                        {gender}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.pronoun.display}>
+                        <h4>{informationMap.frontEndData.pronoun.label}</h4>
+                        {pronoun}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.birthdate.display}>
+                        <h4>{informationMap.frontEndData.birthdate.label}</h4>
+                        <lightning-formatted-date-time
+                                class="value"
+                                value={birthdate}
+                                day="numeric"
+                                month="short"
+                                year="numeric"
+                                time-zone="UTC"
+                                variant="label-hidden"
+                            >
+                        </lightning-formatted-date-time>
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.maritalStatus.display}>
+                        <h4>{informationMap.frontEndData.maritalStatus.label}</h4>
+                        {maritalStatus}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.spouseFirstName.display}>
+                        <h4>{informationMap.frontEndData.spouseFirstName.label}</h4>
+                        {spouseFirstName}
+                    </div>
+                    <div class="grid-item" if:true={informationMap.frontEndData.spouseLastName.display}>
+                        <h4>{informationMap.frontEndData.spouseLastName.label}</h4>
+                        {spouseLastName}
+                    </div>
+                </div>
+                <div class="line-break"></div>
+            </template>
+
+            <template if:true={informationMap.frontEndData.emails.display}>
+                <h3>{informationMap.frontEndData.emails.label}</h3>
+                <div class="registration-table">
+                    <div class="column no-controls" if:true={informationMap.frontEndData.emailAddress.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.emailAddress.label}</p></div>
+                        <template for:each={_interimEmail} for:item="email">
+                            <template if:false={email.isHide}>
+                                <div class="equalHeight" key={email.Id} if:true={informationMap.frontEndData.emailAddress.display}>
+                                    <p>{email.emailAddress}</p>
+                                </div> 
+                            </template>
+                        </template>
+
+                        <template for:each={informationMap.records.Emails.records} for:item="email">
+                            <template if:false={email.isHide}>
+                                <div class="equalHeight" key={email.Id} if:true={informationMap.frontEndData.emailAddress.display}>
+                                    <p>{email.emailAddress}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.emailType.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.emailType.label}</p></div>
+                        <template for:each={_interimEmail} for:item="email">
+                            <template if:false={email.isHide}>
+                                <div class="equalHeight" key={email.Id} if:true={informationMap.frontEndData.emailType.display}>
+                                    <p>{email.emailType}</p>
+                                </div> 
+                            </template>
+                        </template>
+
+                        <template for:each={informationMap.records.Emails.records} for:item="email">
+                            <template if:false={email.isHide}>
+                                <div class="equalHeight" key={email.Id} if:true={informationMap.frontEndData.emailType.display}>
+                                    <p>{email.emailType}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.emailIsPreferred.label}</p></div>
+                        <template for:each={_interimEmail} for:item="email">
+                            <template if:false={email.isHide}>
+                                <div class="equalHeight" key={email.Id} if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                                    <p if:true={email.emailIsPreferred}>&#10003;</p>
+                                    <p if:false={email.emailIsPreferred}></p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Emails.records} for:item="email">
+                            <template if:false={email.isHide}>
+                                <div class="equalHeight" key={email.Id} if:true={informationMap.frontEndData.emailIsPreferred.display}>
+                                    <p if:true={email.emailIsPreferred}>&#10003;</p>
+                                    <p if:false={email.emailIsPreferred}></p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                </div>
+                <div class="line-break"></div>
+            </template>
+
+            <template if:true={informationMap.frontEndData.phones.display}>
+                <h3>{informationMap.frontEndData.phones.label}</h3>
+                <div class="registration-table">
+                    <div class="column no-controls" if:true={informationMap.frontEndData.phoneNumber.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.phoneNumber.label}</p></div>
+                        <template for:each={_interimPhones} for:item="phone">
+                            <template if:false={phone.isHide}>
+                                <div class="equalHeight" key={phone.Id}>
+                                    <p>{phone.phoneNumber}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={_informationMap.records.Phones.records} for:item="phone">
+                            <template if:false={phone.isHide}>
+                                <div class="equalHeight" key={phone.Id}>
+                                    <p>{phone.phoneNumber}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.phoneType.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.phoneType.label}</p></div>
+                        <template for:each={_interimPhones} for:item="phone">
+                            <template if:false={phone.isHide}>
+                                <div class="equalHeight" key={phone.Id}>
+                                    <p>{phone.phoneType}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Phones.records} for:item="phone">
+                            <template if:false={phone.isHide}>
+                                <div class="equalHeight" key={phone.Id}>
+                                    <p>{phone.phoneType}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.phoneIsPreferred.display}>
+                        <div class="headerEqualHeight"><p>Is Preferred</p></div>
+                        <template for:each={_interimPhones} for:item="phone">
+                            <template if:false={phone.isHide}>
+                                <div class="equalHeight" key={phone.Id}>
+                                    <p if:true={phone.phoneIsPreferred}>&#10003;</p>
+                                    <p if:false={phone.phoneIsPreferred}></p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Phones.records} for:item="phone">
+                            <template if:false={phone.isHide}>
+                                <div class="equalHeight" key={phone.Id}>
+                                    <p if:true={phone.phoneIsPreferred}>&#10003;</p>
+                                    <p if:false={phone.phoneIsPreferred}></p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                </div>
+                <div class="line-break"></div>
+            </template>
+
+            <template if:true={informationMap.frontEndData.addresses.display}>
+                <h3>{informationMap.frontEndData.addresses.label}</h3>
+                <div class="registration-table">
+                    <div class="column no-controls" if:true={areStreetsVisible}>
+                        <div class="headerEqualHeight"><p>Street</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" key={address.Id}>
+                                    <p>
+                                        <template if:true={informationMap.frontEndData.addressLine1.display}>{address.addressLine1} </template>
+                                        <template if:true={informationMap.frontEndData.addressLine2.display}>{address.addressLine2} </template>
+                                        <template if:true={informationMap.frontEndData.addressLine3.display}>{address.addressLine3}</template>
+                                    </p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" key={address.Id}>
+                                    <p>
+                                        <template if:true={informationMap.frontEndData.addressLine1.display}>{address.addressLine1} </template>
+                                        <template if:true={informationMap.frontEndData.addressLine2.display}>{address.addressLine2} </template>
+                                        <template if:true={informationMap.frontEndData.addressLine3.display}>{address.addressLine3}</template>
+                                    </p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.addressCity.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.addressCity.label}</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressCity.display} key={address.Id}>
+                                    <p>{address.addressCity}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressCity.display} key={address.Id}>
+                                    <p>{address.addressCity}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.addressState.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.addressState.label}</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressState.display} key={address.Id}>
+                                    <p>{address.addressState}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressState.display} key={address.Id}>
+                                    <p>{address.addressState}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.addressPostalCode.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.addressPostalCode.label}</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressPostalCode.display} key={address.Id}>
+                                    <p>{address.addressPostalCode}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressPostalCode.display} key={address.Id}>
+                                    <p>{address.addressPostalCode}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.addressCountry.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.addressCountry.label}</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressCountry.display} key={address.Id}>
+                                    <p>{address.addressCountry}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressCountry.display} key={address.Id}>
+                                    <p>{address.addressCountry}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.addressType.display}>
+                        <div class="headerEqualHeight"><p>{informationMap.frontEndData.addressType.label}</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressType.display} key={address.Id}>
+                                    <p>{address.addressType}</p>
+                                </div> 
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={informationMap.frontEndData.addressType.display} key={address.Id}>
+                                    <p>{address.addressType}</p>
+                                </div> 
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column no-controls" if:true={informationMap.frontEndData.addressIsPreferred.display}>
+                        <div class="headerEqualHeight"><p>Is Preferred</p></div>
+                        <template for:each={_interimAddresses} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={address.addressIsPreferred} key={address.Id}><p>&#10003;</p></div>
+                                <div class="equalHeightAddress" if:false={address.addressIsPreferred} key={address.Id}><p></p></div>
+                            </template>
+                        </template>
+                        <template for:each={informationMap.records.Addresses.records} for:item="address">
+                            <template if:false={address.isHide}>
+                                <div class="equalHeightAddress" if:true={address.addressIsPreferred} key={address.Id}><p>&#10003;</p></div>
+                                <div class="equalHeightAddress" if:false={address.addressIsPreferred} key={address.Id}><p></p></div>
+                            </template>
+                        </template>
+
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

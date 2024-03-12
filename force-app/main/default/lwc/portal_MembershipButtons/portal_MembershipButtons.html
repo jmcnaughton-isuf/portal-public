@@ -1,0 +1,14 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:true={_isShowSpinner}
+            variant="brand"
+            size="large">
+        </lightning-spinner>
+        <div class="container">
+            <div class="section-wrapper" style="margin-top: 14px">
+                <a class="button secondary" href={editMembershipsUrl} if:true={isShowEditButton} style="margin-right: 4px; margin-bottom: 4px">{editMembershipsButtonLabel}</a>
+                <a class="button secondary" href={purchaseMembershipsUrl} if:true={isShowPurchaseButton}>{purchaseMembershipsButtonLabel}</a>
+            </div>
+        </div>    
+    </div>
+</template>

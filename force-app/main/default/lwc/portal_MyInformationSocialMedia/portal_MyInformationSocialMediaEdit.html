@@ -1,0 +1,143 @@
+<template>
+    <div data-ascend-portal>
+        <c-portal-_-my-information-update-modal if:true={_openModal}
+            information-map={informationMap}
+            update-type={_modalUpdateType}
+            record={_modalRecord}
+            sobject-name={_modalSObjectName}
+            record-type-name={_modalRecordTypeName}
+            handle-close={handleCloseModal}
+        ></c-portal-_-my-information-update-modal>
+
+        <div class="container bottom-border">
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li style="list-style-type: none;"><a href="my-information">Back to My Information</a></li>
+                </ul>
+            </div>
+            <h2 style="margin-bottom: .5em">{informationMap.frontEndData.socialMedia.label}</h2>
+
+            <template for:each={_interimSocialMedia} for:item="account" for:index="index">
+                <template if:false={account.isHide}>
+                    <div class="entry-heading" key={account.index}>
+                        <div class="edit-entry-list" if:false={informationMap.frontEndData.socialMedia.disable}>
+                            <a onclick={deleteSocialMedia} data-index={index} data-type="interim"><img src={deleteIcon}>Delete</a>
+                        </div>
+                        <div class="entry-form">
+                            <div class="flex-grid-3">
+                                <div class="grid-item" if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                                    <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.socialMediaPlatform.isRequired} style="float: left;">* </abbr>
+                                    <label for="name">{informationMap.frontEndData.socialMediaPlatform.label}</label>
+                                    <c-portal_-My-Information-Edit-Field label=""
+                                        value={account.socialMediaPlatform}
+                                        is-picklist="true"
+                                        picklist-values={informationMap.picklists.socialMediaPlatform}
+                                        is-toggled={informationMap.frontEndData.socialMediaPlatform.toggle}
+                                        is-required={informationMap.frontEndData.socialMediaPlatform.isRequired}
+                                        is-disabled={informationMap.frontEndData.socialMediaPlatform.disable}
+                                        input-type={informationMap.frontEndData.socialMediaPlatform}
+                                        field-type="interimSocialMedia"
+                                        field-name="socialMediaPlatform"
+                                        change-set-value="Social_Media"
+                                        index={index}
+                                    > </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                                    <c-portal_-My-Information-Edit-Field
+                                        label={informationMap.frontEndData.socialMediaUrl.label}
+                                        value={account.socialMediaUrl}
+                                        is-toggled={informationMap.frontEndData.socialMediaUrl.toggle}
+                                        is-disabled={informationMap.frontEndData.socialMediaUrl.disable}
+                                        input-type={informationMap.frontEndData.socialMediaUrl.fieldType}
+                                        field-type="interimSocialMedia"
+                                        field-name="socialMediaUrl"
+                                        change-set-value="Social_Media"
+                                        index={index}
+                                    ></c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.socialMedia.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input data-inputtype="radio" 
+                                                type="checkbox" 
+                                                name="general" class="radio"
+                                                value={account.socialMediaShowOnDirectory} 
+                                                data-changesetvalue="Social_Media" 
+                                                onchange={updateDirectorySetting} 
+                                                data-type="interim" 
+                                                data-index={index}>
+                                            <label for="" if:true={informationMap.frontEndData.socialMediaShowOnDirectory.label}>{informationMap.frontEndData.socialMediaShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template for:each={_informationMap.records.Social_Media.records} for:item="account" for:index="index">
+                <template if:false={account.isHide}>
+                    <div class="entry-heading" key={account.index}>
+                        <div class="edit-entry-list" if:false={informationMap.frontEndData.socialMedia.disable}>
+                            <a onclick={deleteSocialMedia} data-index={index} data-type="socialmedia"><img src={deleteIcon}>Delete</a>
+                        </div>
+                        <div class="entry-form">
+                            <div class="flex-grid-3">
+                                <div class="grid-item" if:true={informationMap.frontEndData.socialMediaPlatform.display}>
+                                    <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.socialMediaPlatform.isRequired} style="float: left;">* </abbr>
+                                    <label for="name">{informationMap.frontEndData.socialMediaPlatform.label}</label>
+                                    <c-portal_-My-Information-Edit-Field label=""
+                                        value={account.socialMediaPlatform}
+                                        is-picklist="true"
+                                        picklist-values={informationMap.picklists.socialMediaPlatform}
+                                        is-toggled={informationMap.frontEndData.socialMediaPlatform.toggle}
+                                        is-required={informationMap.frontEndData.socialMediaPlatform.isRequired}
+                                        is-disabled={informationMap.frontEndData.socialMediaPlatform.disable}
+                                        input-type={informationMap.frontEndData.socialMediaPlatform}
+                                        field-type="socialmedia"
+                                        field-name="socialMediaPlatform"
+                                        change-set-value="Social_Media"
+                                        index={index}
+                                    > </c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.socialMediaUrl.display}>
+                                    <c-portal_-My-Information-Edit-Field
+                                        label={informationMap.frontEndData.socialMediaUrl.label}
+                                        value={account.socialMediaUrl}
+                                        is-toggled={informationMap.frontEndData.socialMediaUrl.toggle}
+                                        is-disabled={informationMap.frontEndData.socialMediaUrl.disable}
+                                        input-type={informationMap.frontEndData.socialMediaUrl.fieldType}
+                                        field-type="socialmedia"
+                                        field-name="socialMediaUrl"
+                                        change-set-value="Social_Media"
+                                        index={index}
+                                    ></c-portal_-My-Information-Edit-Field>
+                                </div>
+                                <div class="grid-item" if:true={informationMap.frontEndData.socialMedia.togglePerRecord}>
+                                    <fieldset>
+                                        <div class="field-wrapper">
+                                            <input data-inputtype="radio" 
+                                                type="checkbox" 
+                                                name="general" class="radio"
+                                                checked={account.socialMediaShowOnDirectory} 
+                                                data-changesetvalue="Social_Media" 
+                                                onchange={updateDirectorySetting} 
+                                                data-type="socialmedia" 
+                                                data-index={index}>
+                                            <label for="" if:true={informationMap.frontEndData.socialMediaShowOnDirectory.label}>{informationMap.frontEndData.socialMediaShowOnDirectory.label}</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <div class="button-list" if:false={informationMap.frontEndData.socialMedia.disable}>
+                <a class="button secondary small" onclick={addSocialMedia}>Add Account</a>
+            </div>
+        </div>  
+    </div>
+</template>

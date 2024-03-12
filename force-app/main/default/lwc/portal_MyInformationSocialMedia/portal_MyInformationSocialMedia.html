@@ -1,0 +1,104 @@
+<template>
+
+    <c-portal-_-my-information-update-modal if:true={_openModal}
+        information-map={informationMap}
+        update-type={_modalUpdateType}
+        record={_modalRecord}
+        sobject-name={_modalSObjectName}
+        record-type-name={_modalRecordTypeName}
+        handle-close={handleCloseModal}
+    ></c-portal-_-my-information-update-modal>
+
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item
+            size="12"
+            small-device-size="12"
+            medium-device-size="10"
+            large-device-size="10"
+            >
+            <h2 class='mainNavigation'>Social Media Information</h2>
+        </lightning-layout-item>
+        <lightning-layout-item
+            size="12"
+            small-device-size="12"
+            medium-device-size="2"
+            large-device-size="2"
+            padding="around-medium">
+            <lightning-button 
+                variant="brand"
+                label="Edit Social Media Information"
+                title="Edit Social Media Information"
+            ></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+    <hr/>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item if:true={informationMap.permissions.Social_Media} 
+            size="12"
+            small-device-size="12"
+            medium-device-size="12"
+            large-device-size="12"
+            padding="around-small">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item if:true={informationMap.permissions.Social_Media.ucinn_ascendv2__Platform__c.display}
+                    size="12"
+                    large-device-size="6"
+                    medium-device-size="6"
+                    small-device-size="6"
+                    class="layoutItem"
+                >
+                    <lightning-formatted-text
+                        class="label"
+                        value="Platform">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.permissions.Social_Media.ucinn_ascendv2__URL__c.display}
+                    size="12"
+                    large-device-size="6"
+                    medium-device-size="6"
+                    small-device-size="6"
+                    class="layoutItem"
+                >
+                    <lightning-formatted-text
+                        class="label"
+                        value="Handle">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item
+                    size="12"
+                    class="layoutItem">
+                    <div style="height:1px; background-color: black;"></div>
+                </lightning-layout-item>
+                <template for:each={informationMap.records.Social_Media.records} for:item="account">
+                    <lightning-layout-item if:true={informationMap.permissions.Social_Media.ucinn_ascendv2__Platform__c.display}
+                        size="12"
+                        large-device-size="6"
+                        medium-device-size="6"
+                        small-device-size="6"
+                        class="layoutItem"
+                        key={account.Id}
+                    >
+                        <lightning-formatted-text
+                            class="value"
+                            value={account.ucinn_ascendv2__Platform__c}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.permissions.Social_Media.ucinn_ascendv2__URL__c.display}
+                        size="12"
+                        large-device-size="6"
+                        medium-device-size="6"
+                        small-device-size="6"
+                        class="layoutItem"
+                        key={account.Id}
+                    >
+                        <lightning-formatted-text
+                            class="value"
+                            value={account.ucinn_ascendv2__URL__c}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>

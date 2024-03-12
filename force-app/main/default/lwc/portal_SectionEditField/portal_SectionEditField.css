@@ -1,0 +1,8 @@
+label {
+    color: #404040;
+}
+
+label.zero-padding-margin {
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,239 @@
+<template>
+    <div data-ascend-portal class="slds-is-relative">
+        <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"> </lightning-spinner>
+        <template if:true={_isShowModal}>   
+            <div class="apply-modal">
+                <div class="modal-background apply-modal-background">
+                    <div class="modal">
+                        <div class="content-header-bar">
+                            <div class="slds-grid slds-wrap full-width">
+                                <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                    <h2>Apply to Job</h2>
+                                    <h4 style="color: white; margin: .5em 0 0 0 ">{jobName}</h4>
+                                </div>
+                                <div class=" slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                    <a onclick={handleCloseModal} class="close-btn">&times;</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container" style="overflow: scroll;">
+                            <c-portal_-create-job-application job={_job} handle-close={handleCloseModal}></c-portal_-create-job-application>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template> 
+
+        <div class="event-header" if:true={_callbackDone}>
+            <div class="container large" style="margin-bottom: 0">
+                <div class="breadcrumb" if:false={isShowInModal}>
+                    <ul style="list-style-type: none !important;">
+                        <li><a href="/s/job-board"> Back to Job Postings</a></li>
+                    </ul>
+                </div>
+                <h1 class="page-header" if:true={informationMap.frontEndData.jobName.display}>{jobName}</h1>
+                <h3 if:true={informationMap.frontEndData.companyName.display}>{companyName}</h3>
+                <p class="job-address" style="margin-bottom: 1.5em !important">
+                    <lightning-formatted-address city={city}
+                                                    country={country}
+                                                    province={state}
+                                                    street={formattedStreet}
+                                                    postal-code={postalCode}                                                                                               
+                                                    disabled="true">
+                    </lightning-formatted-address>
+                </p>
+
+                <div if:false={_isUserOwned}>
+                    <template if:true={isExternalSite}>
+                        <a href={externalLink} target="_blank" class="button primary">Apply</a>
+                    </template>
+                    <template if:false={isExternalSite}>
+                        <a if:true={_applied} onclick={handleViewApplication} class="button primary">View Application</a>
+                        <a if:false={_applied} disabled={_applied} onclick={handleShowModal} class="button primary">Apply</a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="container large" if:true={_callbackDone}>
+            <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                <div class="section-wrapper">
+                    <div class="container">
+                        <slot interop-layout_layout="" class="slds-slot">
+                            <template if:true={informationMap.frontEndData.description.display}>
+                                <div class="section-wrapper bottom-border" if:true={description}>
+                                    <lightning-layout-item class="slds-size_12-of-12" >
+                                        <slot>
+                                            <lightning-formatted-rich-text value={description} class="slds-rich-text-editor__output">
+                                            </lightning-formatted-rich-text>
+                                        </slot>
+                                    </lightning-layout-item>
+                                </div>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.desiredMajors.display}>
+                                <div class="section-wrapper bottom-border" if:true={desiredMajors}>
+                                    <lightning-layout-item class="slds-size_12-of-12" >
+                                        <slot>
+                                            <lightning-formatted-rich-text value={desiredMajors} class="slds-rich-text-editor__output"></lightning-formatted-rich-text>
+                                        </slot>
+                                    </lightning-layout-item>
+                                </div>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.desiredSkills.display}>
+                                <div class="section-wrapper bottom-border" if:true={desiredSkills}>
+                                    <lightning-layout-item class="slds-size_12-of-12" >
+                                        <slot>
+                                            <lightning-formatted-rich-text class="slds-rich-text-editor__output"  value={desiredSkills}></lightning-formatted-rich-text>
+                                        </slot>
+                                    </lightning-layout-item>
+                                </div>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.qualification.display}>
+                                <div class="section-wrapper bottom-border" if:true={qualification}>
+                                    <lightning-layout-item class="slds-size_12-of-12" >
+                                        <slot>
+                                            <lightning-formatted-rich-text value={qualification} class="slds-rich-text-editor__output">
+                                            </lightning-formatted-rich-text>
+                                        </slot>
+                                    </lightning-layout-item>
+                                </div>
+                            </template>
+                            
+                            <template if:true={informationMap.frontEndData.classDegreeLevel.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={classDegreeLevel}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.classDegreeLevel.label}: </strong>{classDegreeLevel}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+
+                            <template if:true={informationMap.frontEndData.positionType.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={positionType}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.positionType.label}: </strong>{positionType}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.hoursPerWeek.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={hoursPerWeek}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.hoursPerWeek.label}: </strong>{hoursPerWeek}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.salary.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={salary}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.salary.label}: </strong>{salary}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.workAuthorization.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={workAuthorization}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.workAuthorization.label}: </strong>{workAuthorization}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.coverLetter.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={coverLetter}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.coverLetter.label}: </strong>{coverLetter}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.unofficialTranscript.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={unofficialTranscript}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.unofficialTranscript.label}: </strong>{unofficialTranscript}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.multipleLocations.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={multipleLocations}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.multipleLocations.label}: </strong>{multipleLocations}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template if:true={informationMap.frontEndData.isRemote.display}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={isRemote}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.isRemote.label}: </strong>{isRemote}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+
+                            <lightning-layout-item class="slds-size_12-of-12">
+                                <slot>
+                                    <hr>
+                                </slot>
+                            </lightning-layout-item>
+
+                            <template if:true={hasContactInfo}>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={informationMap.frontEndData.jobPosterName.display}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.jobPosterName.label}: </strong>{jobPosterName}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={informationMap.frontEndData.jobPosterCompany.display}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.jobPosterCompany.label}: </strong>{jobPosterCompany}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={informationMap.frontEndData.jobPosterJobTitle.display}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.jobPosterJobTitle.label}: </strong>{jobPosterJobTitle}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={informationMap.frontEndData.jobPosterPhone.display}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.jobPosterPhone.label}: </strong>{jobPosterPhone}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={informationMap.frontEndData.jobPosterEmail.display}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.jobPosterEmail.label}: </strong>{jobPosterEmail}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12" if:true={informationMap.frontEndData.jobPosterDegree.display}>
+                                    <slot>
+                                        <p><strong>{informationMap.frontEndData.jobPosterDegree.label}: </strong>{jobPosterDegree}</p>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12">
+                                    <slot>
+                                        <hr>
+                                    </slot>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-size_12-of-12" if:false={_isUserOwned}>
+                                    <slot>
+                                        <template if:true={isExternalSite}>
+                                            <a href={externalLink} target="_blank" class="button primary">Apply</a>
+                                        </template>
+                                        <template if:false={isExternalSite}>
+                                            <a if:true={_applied} onclick={handleViewApplication} class="button primary">View Application</a>
+                                            <a if:false={_applied} disabled={_applied} onclick={handleShowModal} class="button primary">Apply</a>
+                                        </template>
+                                    </slot>
+                                </lightning-layout-item>
+                            </template>
+                        </slot>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

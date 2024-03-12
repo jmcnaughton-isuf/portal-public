@@ -1,0 +1,15 @@
+<template>
+    <div if:true={formFieldList} class={recordClass}>
+        <template for:each={formFieldList} for:item="formField">
+            <div key={formField.fieldId} if:true={formField.isDisplay} class="grid-item">
+                <c-portal_-form-field field-data={formField}
+                                      handle-value-change={local_handleValueChange}>
+                </c-portal_-form-field>
+            </div>
+            <c-portal_-form-field field-data={formField} 
+                                  if:false={formField.isDisplay} 
+                                  key={formField.fieldId}>
+            </c-portal_-form-field>
+        </template>
+    </div>
+</template>

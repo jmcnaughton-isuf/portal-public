@@ -1,0 +1,103 @@
+p {
+    margin-bottom: 0 !important;
+}
+
+.table-header>div.grid-item,
+div.grid-item.table-cell {
+    margin: 0;
+    padding: .7em;
+    word-break: break-word;
+}
+
+.table-header {
+    font-size: 1.05rem;
+    background-color: #717171;
+    color: #fff;
+}
+
+.table-row {
+    min-height: 42px;
+}
+
+.table-row,
+.table-header {
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    border-top: none;
+}
+
+.table-row:nth-child(even) {
+    background-color: #EFF1F3;
+    border-top: none;
+}
+
+.table-row:nth-child(odd) {
+    background-color: #FAFDFF;
+    border-top: none;
+}
+
+.table-cell>h4 {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    p {
+        margin-bottom: .7em !important;
+    }
+
+    .info-card div[class^='flex-grid'] div.table-row {
+        flex-direction: column;
+        background-color: #fff;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .table-cell>h4 {
+        display: block;
+        font-size: 1.3rem;
+        color: #005595;
+        margin-bottom: 6px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    div[class^='flex-grid'] .grid-item {
+        width: 100%;
+        flex: auto !important;
+        max-width: 100%;
+        background-color: #fff;
+        padding: 0;
+    }
+
+    .info-card div[class^='flex-grid'] .grid-item h4 {
+        border-bottom: 1px solid #e3e3e3;
+        margin-bottom: 6px;
+        padding-bottom: 4px;
+    }
+
+    .info-card div[class^='flex-grid'] .table-row>.grid-item.table-cell {
+        margin-bottom: .5rem;
+    }
+
+    .info-card div[class^='flex-grid'] .table-row>.grid-item.table-cell:last-of-type {
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card div[class^='flex-grid'] .table-row:last-of-type>.grid-item.table-cell:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .info-card > h3.slds-border_bottom {
+        border-bottom: none;
+    }
+
+    .info-card {
+        background-color: #FFF;
+        padding: 1em;
+        margin-bottom: 1.5em;
+        box-shadow: 0px 2px 1px #efefef;
+    }
+}

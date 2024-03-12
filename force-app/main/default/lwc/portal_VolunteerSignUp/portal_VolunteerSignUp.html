@@ -1,0 +1,84 @@
+<template>
+  <!-- Modal -->
+  <div id="signup-modal" class="sf-modal" style="display: block;">  
+    <div class="modal-background" id="signup-modal-background">
+      <div class="modal">
+        <!--Header Section-->  
+        <div class="content-header-bar">
+          <div class="slds-grid slds-wrap full-width">
+            <div class="slds-size_11-of-12 slds-grid">
+              <div if:true={isShowBackButton} class="slds-size_1-of-12 slds-m-right_small">
+                <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Back" onclick={handleBackButtonClick}>
+                  <lightning-icon icon-name="utility:back"
+                        alternative-text="go back to list"
+                        variant="inverse"
+                        size="small">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">Back</span>
+                </button>
+              </div>
+              <div class="slds-col">
+                <h2>Job Sign Up</h2>
+              </div>
+            </div>
+            <div class="slds-size_1-of-12">
+              <span id="signup-modal-close" class="close-btn" onclick={handleCloseModal}>×</span>
+            </div>
+          </div>
+        </div>
+        <!--Body Section-->  
+        <div class="section-wrapper">
+          <lightning-spinner if:true={_isShowSpinner} class="shift-spinner" alternative-text="Loading" size="large"></lightning-spinner>
+          <h4>{volunteerShift.volunteerJobShiftName}:</h4>
+          <p><lightning-formatted-date-time 
+            value={startDateTime}
+            year="numeric"
+            month="numeric"
+            day="numeric"
+            hour="2-digit"
+            minute="2-digit">
+          </lightning-formatted-date-time> 
+          &nbsp;-&nbsp;  
+          <lightning-formatted-date-time 
+            value={endDateTime}
+            year="numeric"
+            month="numeric"
+            day="numeric"
+            hour="2-digit"
+            minute="2-digit">
+          </lightning-formatted-date-time></p>
+          <div class="flex-grid-2">
+            <template for:each={_signUpFieldList} for:item="fieldMap">
+              <div key={fieldMap.id} if:true={fieldMap.display}
+                  class="grid-item">
+                <c-portal_-section-edit-field field-id={fieldMap.id} 
+                                              field-data={fieldMap}
+                                              value={fieldMap.value}
+                                              input-classes="short-text top-margin"
+                                              label-classes="zero-padding-margin"
+                                              picklist-values={fieldMap.picklistValues}
+                                              handle-value-change={handleValueChange}>
+                </c-portal_-section-edit-field>
+              </div>
+            </template>
+          </div>
+
+          <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+            <c-portal_-Recaptcha>
+            </c-portal_-Recaptcha>
+          </div>
+                      
+          <!--Footer Buttons-->
+          <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12" if:true={_isShowRegistrationFields} style="margin-top: 1em;">
+            <div class="slds-grid slds-wrap">
+              <div class="button-list">
+                <button class="button secondary" onclick={handleCloseModal} title="Cancel">Cancel</button>
+                <button class="button primary" onclick={handleVolunteerShiftSignUp} title="Submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>  
+  </div>  
+</template>

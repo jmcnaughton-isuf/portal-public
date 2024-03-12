@@ -1,0 +1,22 @@
+h4 {
+    color: #404040;
+}
+
+@media (min-width: 768px) {
+    .amount-line {
+        width: 60%;
+        margin-top: 0px;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .amount-line {
+        width: 100%;
+        height: 0px;
+        margin-top: 0px;
+        padding: 0px;
+        margin-bottom: 4px;
+    }
+}

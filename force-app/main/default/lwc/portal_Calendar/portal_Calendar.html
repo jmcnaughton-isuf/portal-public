@@ -1,0 +1,146 @@
+<template>
+    <div class="slds-box slds-datepicker">
+        <div class="slds-grid slds-page-header" role="banner">
+            <div class=" slds-size--1-of-12 slds-align--absolute-center">
+                <button class="slds-button slds-button_icon slds-button_icon-border button secondary" title="Back"
+                        disabled={isPreviousMonthDisabled} onclick={handlePreviousMonthClick}>
+                  <lightning-icon icon-name="utility:chevronleft"
+                        alternative-text="back"
+                        size="small"
+                        class="arrow-button">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">back</span>
+                </button>
+              </div>
+              <div class="slds-size--4-of-12 slds-align--absolute-center month"> <b class="month-select">{_month}</b></div>
+              <div class="slds-size--1-of-12 slds-align--absolute-center right-arrow"> 
+                <button class="slds-button slds-button_icon slds-button_icon-border button secondary" title="Next"
+                        disabled={isNextMonthDisabled} onclick={handleNextMonthClick}>
+                  <lightning-icon icon-name="utility:chevronright"
+                        alternative-text="next"
+                        size="small"
+                        class="arrow-button">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">next</span>
+                </button>
+              </div>
+          <div class=" slds-size--4-of-12 slds-align--absolute-center year-picklist"> 
+                <select name="year" class="year-input" onchange={handleYearChange}>
+                    <template for:each={_yearOptions} for:item="year">
+                        <option value={year.value} key={year.value}>{year.label}</option>
+                    </template>
+                </select>
+                <a class="drop-down-arrow"></a>
+            </div>
+            
+        </div>
+        <div class="calendar hide-on-phone">
+            <div class="calendar__header slds-text-title--caps">
+                <template for:each={_daysOfTheWeek} for:item="dayOfTheWeek">
+                    <div key={dayOfTheWeek}>{dayOfTheWeek}</div>
+                </template>
+            </div>
+            <div class="days_grid" if:false={_isResized}>
+                <!--For each week-->
+                <template for:each={_daysGrid} for:item="daysRow">
+                    <div key={daysRow} class="calendar__week">
+                        <!--For each day-->
+                        <template for:each={daysRow} for:item="dayMap">
+                        <!--Case: day with listing(s)-->
+                            <div class="calendar__day day has-event" key={dayMap.key} if:true={dayMap.hasListing}>
+                                <div class="force-height">
+                                    <span class="day-number is-today" if:true={dayMap.isToday}>{dayMap.day}</span>
+                                    <span class="day-number" if:false={dayMap.isToday}>{dayMap.day}</span>
+                                    <template for:each={dayMap.listingList} for:item="listing">
+                                        <br key={listing.Id}>
+                                        
+                                        <a class="listing-day" href={listing.listingUrl} target={listing.listingUrlTarget} key={listing.Id} data-date={dayMap.date} data-id={listing.Id} if:true={listing}>
+                                            <div class="listing-name">
+                                                <template if:true={frontEndDataMap.name.display}>
+                                                    <span if:true={listing.name}>{listing.name}</span>
+                                                </template>
+                                            </div>
+                                        </a>
+                                    </template>
+                                </div>
+                                <!--show more section-->
+                                <div class="show-more slds-p-top_x-small">
+                                    <a class="button secondary small show-all-events"
+                                        onclick={handleShowMoreWrapper} aria-haspopup="false" data-date={dayMap.key}>All Events</a>
+                                    <div class="popover-container">
+                                        <section class="slds-popover slds-nubbin_top-left slds-popover_medium popover-extra" 
+                                                    role="dialog" aria-describedby={dayMap.key} aria-label="all events">
+                                            <div class="content-header-bar" style="margin-bottom: 0">
+                                                <div class="slds-grid">
+                                                    <h5>{dayMap.readableDate}</h5>
+                                                    <a class="close-btn close-x" title="Close" onclick={handleClosePopup} data-date={dayMap.key}>×</a>
+                                                </div>
+                                            </div>
+                                            <div class="slds-popover__body" id={dayMap.key} style="padding-top:1em; 
+                                            border-right: 1px solid #cdcfd8; 
+                                            border-left: 1px solid #cdcfd8;
+                                            border-bottom: 1px solid #cdcfd8">
+                                                <template for:each={dayMap.listingList} for:item="listing">
+                                                    <a class="listing-day" href={listing.listingUrl} target={listing.listingUrlTarget} key={listing.Id} data-date={dayMap.date} data-id={listing.Id} if:true={listing}>
+                                                        <div class="listing-name listing-popover">
+                                                            <template if:true={frontEndDataMap.name.display}>
+                                                                <span if:true={listing.name}>{listing.name}</span>
+                                                            </template>
+                                                        </div>
+                                                    </a>
+                                                </template>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Case: empty day-->
+                            <div class="calendar__day day" key={dayMap.key} if:false={dayMap.hasListing}>
+                                <span class="day-number is-today" if:true={dayMap.isToday}>{dayMap.day}</span>
+                                <span class="day-number" if:false={dayMap.isToday}>{dayMap.day}</span>
+                        </div>    
+                        </template> 
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="show-on-phone">
+            <div class="slds-grid slds-grid_vertical slds-m-vertical_x-small">
+                <p if:false={_hasEventThisMonth} style="text-align: center" class="slds-p-top_medium">{noResultsMobileMessage}</p>
+                <!-- For each week -->
+                <template for:each={_daysGrid} for:item="daysRow">
+                    <div key={daysRow}>
+                      <!--For each day-->
+                      <template for:each={daysRow} for:item="dayMap">
+                        <!--Case: day with event(s)-->
+                        <div key={dayMap.key} if:true={dayMap.hasEventThisMonth} class="slds-col slds-m-bottom_medium">
+                            <span class="day-number is-today" if:true={dayMap.isToday} style="margin-bottom: 0.25em">{dayMap.day}</span>
+                            <span class="day-number" if:false={dayMap.isToday}>{dayMap.day}</span>
+                            <template for:each={dayMap.listingList} for:item="listing">                      
+                            <a class="listing-day slds-m-bottom_x-small" href={listing.listingUrl} target={listing.listingUrlTarget} key={listing.Id} data-date={dayMap.date} data-id={listing.Id} if:true={listing}>
+                                <div class="listing-name">
+                                    <template if:true={frontEndDataMap.name.display}>
+                                        <span if:true={listing.name}>{listing.name}</span> 
+                                    </template>
+                                </div>
+                            </a>
+                          </template>
+                        </div>
+                      </template>
+                    </div>
+                  </template>
+  
+            </div>
+        </div>
+        
+        <div class="slds-p-top_medium">
+                <div class=" slds-size--1-of-12 slds-align--absolute-center"> </div>
+                <div class=" slds-size--9-of-12 slds-align--absolute-center" style="margin-bottom: 0.5rem">
+                    <b><a onclick={handleTodayClick} class="button secondary">Today</a></b>
+                </div>
+                <div class=" slds-size--1-of-12 slds-align--absolute-center"> </div>
+                <div class=" slds-size--1-of-12 slds-align--absolute-center">   </div>      
+        </div> 
+    </div>
+</template>

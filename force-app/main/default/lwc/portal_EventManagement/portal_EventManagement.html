@@ -1,0 +1,40 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+
+        <div class="container large" style="margin-top: 1em">
+            <div class="content-wrapper" if:true={eventListingName}>
+                <div class="container">
+                    <c-portal_-event-management-info-bar registered-participants={registeredParticipants}
+                                                        attended-participants={attendedParticipants}
+                                                        attended-participants-to-registered={attendedParticipantsToRegistered}
+                                                        onrefresh={handleRefresh}
+                                                        onaddattendee={handleAddAttendee}>
+                    </c-portal_-event-management-info-bar>
+                    <c-portal_-event-management-search-bar
+                        search-string={searchString}
+                        handle-input={handleSearchInput}
+                        onsearch={handleSearch}>
+                    </c-portal_-event-management-search-bar>
+                </div>
+                <c-portal_-event-management-table
+                    participation-list={visibleTableData}
+                    mark-as-attended={handleMarkParticipationAsAttended}
+                    delete-participation-record={handleDeleteParticipationRecord}
+                ></c-portal_-event-management-table>
+                <template if:true={participationList}>
+                    <c-portal_util_-pagination
+                        records-per-page={rowsPerPage}
+                        queried-data={participationList}
+                        current-page-number={currentPage}
+                        query-more={handleQueryMore}
+                        handle-page-change={handlePageChange}
+                        total-number-of-items={totalNumberOfItems}
+                    ></c-portal_util_-pagination>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

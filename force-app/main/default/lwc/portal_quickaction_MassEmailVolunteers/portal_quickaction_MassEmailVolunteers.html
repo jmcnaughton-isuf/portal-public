@@ -1,0 +1,23 @@
+<template>
+    <div if:true={_showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Mass Email Volunteers</h2>
+    </header>
+    <div class="slds-modal__content" id="modal-content-id-1">
+        <div if:true={renderComponent} class="slds-p-around_medium" style="max-height: 60vh;overflow-y: auto;">
+            <c-portal_-select option-list={_templateList} 
+                              default-value={_template}
+                              handle-change={handleTemplateChange}
+                              if:true={_templateList}>
+            </c-portal_-select>
+            <br/><hr>
+            <lightning-formatted-rich-text if:true={htmlValue} value={htmlValue}></lightning-formatted-rich-text>
+        </div>
+    </div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={handleSend}>Send</button>
+    </footer>
+</template>

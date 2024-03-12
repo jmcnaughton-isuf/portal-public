@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Page_Main_Section__c</fullName>
+    <description>The main header that we are displaying the records under on the portal page</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The main header that we are displaying the records under on the portal page</inlineHelpText>
+    <label>Page Main Section</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Personal_Information</fullName>
+                <default>false</default>
+                <label>Personal_Information</label>
+            </value>
+            <value>
+                <fullName>Phones</fullName>
+                <default>false</default>
+                <label>Phones</label>
+            </value>
+            <value>
+                <fullName>Emails</fullName>
+                <default>false</default>
+                <label>Emails</label>
+            </value>
+            <value>
+                <fullName>Addresses</fullName>
+                <default>false</default>
+                <label>Addresses</label>
+            </value>
+            <value>
+                <fullName>Degrees</fullName>
+                <default>false</default>
+                <label>Degrees</label>
+            </value>
+            <value>
+                <fullName>Employment</fullName>
+                <default>false</default>
+                <label>Employment</label>
+            </value>
+            <value>
+                <fullName>Social_Media</fullName>
+                <default>false</default>
+                <label>Social_Media</label>
+            </value>
+            <value>
+                <fullName>Privacy_Settings</fullName>
+                <default>false</default>
+                <label>Privacy_Settings</label>
+            </value>
+            <value>
+                <fullName>Designations</fullName>
+                <default>false</default>
+                <label>Designations</label>
+            </value>
+            <value>
+                <fullName>Giving History Table</fullName>
+                <default>false</default>
+                <label>Giving History Table</label>
+            </value>
+            <value>
+                <fullName>Pledge table</fullName>
+                <default>false</default>
+                <label>Pledge table</label>
+            </value>
+            <value>
+                <fullName>Matching Gift Table</fullName>
+                <default>false</default>
+                <label>Matching Gift Table</label>
+            </value>
+            <value>
+                <fullName>Recurring Gift Table</fullName>
+                <default>false</default>
+                <label>Recurring Gift Table</label>
+            </value>
+            <value>
+                <fullName>Yearly Giving Table</fullName>
+                <default>false</default>
+                <label>Yearly Giving Table</label>
+            </value>
+            <value>
+                <fullName>Year End Tax Letter</fullName>
+                <default>false</default>
+                <label>Year End Tax Letter</label>
+            </value>
+            <value>
+                <fullName>Yearly Giving Summary Table</fullName>
+                <default>false</default>
+                <label>Yearly Giving Summary Table</label>
+            </value>
+            <value>
+                <fullName>Events Tabs</fullName>
+                <default>false</default>
+                <label>Events Tabs</label>
+            </value>
+            <value>
+                <fullName>Content Submission Form</fullName>
+                <default>false</default>
+                <label>Content Submission Form</label>
+            </value>
+            <value>
+                <fullName>Submitted Content</fullName>
+                <default>false</default>
+                <label>Submitted Content</label>
+            </value>
+            <value>
+                <fullName>Company_Information</fullName>
+                <default>false</default>
+                <label>Company_Information</label>
+            </value>
+            <value>
+                <fullName>Giving History Gift Receipt</fullName>
+                <default>false</default>
+                <label>Giving History Gift Receipt</label>
+            </value>
+            <value>
+                <fullName>Pie chart</fullName>
+                <default>false</default>
+                <label>Pie chart</label>
+            </value>
+            <value>
+                <fullName>Giving Societies List</fullName>
+                <default>false</default>
+                <label>Giving Societies List</label>
+            </value>
+            <value>
+                <fullName>Giving Societies Banner</fullName>
+                <default>false</default>
+                <label>Giving Societies Banner</label>
+            </value>
+            <value>
+                <fullName>Donor Story</fullName>
+                <default>false</default>
+                <label>Donor Story</label>
+            </value>
+            <value>
+                <fullName>Detail Page</fullName>
+                <default>false</default>
+                <label>Detail Page</label>
+            </value>
+            <value>
+                <fullName>Society Membership Table</fullName>
+                <default>false</default>
+                <label>Society Membership Table</label>
+            </value>
+            <value>
+                <fullName>Zone Search</fullName>
+                <default>false</default>
+                <label>Zone Search</label>
+            </value>
+            <value>
+                <fullName>Zone Leadership</fullName>
+                <default>false</default>
+                <label>Zone Leadership</label>
+            </value>
+            <value>
+                <fullName>Featured Zone Members</fullName>
+                <default>false</default>
+                <label>Featured Zone Members</label>
+            </value>
+            <value>
+                <fullName>Zone Bio Detail</fullName>
+                <default>false</default>
+                <label>Zone Bio Detail</label>
+            </value>
+            <value>
+                <fullName>Zone Memberships</fullName>
+                <default>false</default>
+                <label>Zone Memberships</label>
+            </value>
+            <value>
+                <fullName>Job</fullName>
+                <default>false</default>
+                <label>Job</label>
+            </value>
+            <value>
+                <fullName>Closed_Applications</fullName>
+                <default>false</default>
+                <label>Closed_Applications</label>
+            </value>
+            <value>
+                <fullName>Open_Applications</fullName>
+                <default>false</default>
+                <label>Open_Applications</label>
+            </value>
+            <value>
+                <fullName>Open_Jobs</fullName>
+                <default>false</default>
+                <label>Open_Jobs</label>
+            </value>
+            <value>
+                <fullName>Closed_Jobs</fullName>
+                <default>false</default>
+                <label>Closed_Jobs</label>
+            </value>
+            <value>
+                <fullName>Active Membership Table</fullName>
+                <default>false</default>
+                <label>Active Membership Table</label>
+            </value>
+            <value>
+                <fullName>Membership Purchase</fullName>
+                <default>false</default>
+                <label>Membership Purchase</label>
+            </value>
+            <value>
+                <fullName>Membership Table</fullName>
+                <default>false</default>
+                <label>Membership Table</label>
+            </value>
+            <value>
+                <fullName>Merge_Fields</fullName>
+                <default>false</default>
+                <label>Merge_Fields</label>
+            </value>
+            <value>
+                <fullName>News Top Story</fullName>
+                <default>false</default>
+                <label>News Top Story</label>
+            </value>
+            <value>
+                <fullName>Featured News Carousel</fullName>
+                <default>false</default>
+                <label>Featured News Carousel</label>
+            </value>
+            <value>
+                <fullName>Featured News Show All</fullName>
+                <default>false</default>
+                <label>Featured News Show All</label>
+            </value>
+            <value>
+                <fullName>Bookmarked News Carousel</fullName>
+                <default>false</default>
+                <label>Bookmarked News Carousel</label>
+            </value>
+            <value>
+                <fullName>Most Viewed News Carousel</fullName>
+                <default>false</default>
+                <label>Most Viewed News Carousel</label>
+            </value>
+            <value>
+                <fullName>Bookmarked News Show All</fullName>
+                <default>false</default>
+                <label>Bookmarked News Show All</label>
+            </value>
+            <value>
+                <fullName>Recommended News Carousel</fullName>
+                <default>false</default>
+                <label>Recommended News Carousel</label>
+            </value>
+            <value>
+                <fullName>Submitted_Newsletters</fullName>
+                <default>false</default>
+                <label>Submitted_Newsletters</label>
+            </value>
+            <value>
+                <fullName>Listing_Merge_Fields</fullName>
+                <default>false</default>
+                <label>Listing_Merge_Fields</label>
+            </value>
+            <value>
+                <fullName>Zone_Merge_Fields</fullName>
+                <default>false</default>
+                <label>Zone_Merge_Fields</label>
+            </value>
+            <value>
+                <fullName>Newsletter_Section_Merge_Fields</fullName>
+                <default>false</default>
+                <label>Newsletter_Section_Merge_Fields</label>
+            </value>
+            <value>
+                <fullName>Volunteer Report Form</fullName>
+                <default>false</default>
+                <label>Volunteer Report Form</label>
+            </value>
+            <value>
+                <fullName>Volunteer Information</fullName>
+                <default>false</default>
+                <label>Volunteer Information</label>
+            </value>
+            <value>
+                <fullName>Volunteer Edit Form</fullName>
+                <default>false</default>
+                <label>Volunteer Edit Form</label>
+            </value>
+            <value>
+                <fullName>Volunteer Job List</fullName>
+                <default>false</default>
+                <label>Volunteer Job List</label>
+            </value>
+            <value>
+                <fullName>Volunteer Sign Up</fullName>
+                <default>false</default>
+                <label>Volunteer Sign Up</label>
+            </value>
+            <value>
+                <fullName>Volunteer Tables</fullName>
+                <default>false</default>
+                <label>Volunteer Tables</label>
+            </value>
+            <value>
+                <fullName>Volunteer Modify</fullName>
+                <default>false</default>
+                <label>Volunteer Modify</label>
+            </value>
+            <value>
+                <fullName>Zone Announcements</fullName>
+                <default>false</default>
+                <label>Zone Announcements</label>
+            </value>
+            <value>
+                <fullName>Directory Search</fullName>
+                <default>false</default>
+                <label>Directory Search</label>
+            </value>
+            <value>
+                <fullName>Gift Type</fullName>
+                <default>false</default>
+                <label>Gift Type</label>
+            </value>
+            <value>
+                <fullName>Not Interested News Show All</fullName>
+                <default>false</default>
+                <label>Not Interested News Show All</label>
+            </value>
+            <value>
+                <fullName>Most Recent News Carousel</fullName>
+                <default>false</default>
+                <label>Most Recent News Carousel</label>
+            </value>
+            <value>
+                <fullName>Listing Detail</fullName>
+                <default>false</default>
+                <label>Listing Detail</label>
+            </value>
+            <value>
+                <fullName>Recommended News Show All</fullName>
+                <default>false</default>
+                <label>Recommended News Show All</label>
+            </value>
+            <value>
+                <fullName>Most Viewed News Show All</fullName>
+                <default>false</default>
+                <label>Most Viewed News Show All</label>
+            </value>
+            <value>
+                <fullName>Membership Benefits</fullName>
+                <default>false</default>
+                <label>Membership Benefits</label>
+            </value>
+            <value>
+                <fullName>Look Who Is Coming List</fullName>
+                <default>false</default>
+                <label>Look Who Is Coming List</label>
+            </value>
+            <value>
+                <fullName>Recommended_News</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Recommended_News</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

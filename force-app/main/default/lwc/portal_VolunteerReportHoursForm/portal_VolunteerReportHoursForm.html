@@ -1,0 +1,63 @@
+<template>
+    <div id="report-modal" class="sf-modal" style="display: block;">
+        <div class="modal-background" id="view-report-background">
+            <div class="modal small">
+                <!-- Modal/Popup Box LWC header here -->
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div if:true={_headingInfo} class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>{_headingInfo.heading} Hours Report Form</h2>
+                            <h4 style="color: white; font-weight: bold">
+                                <lightning-formatted-date-time 
+                                    value={_headingInfo.startDateTime}
+                                    year="numeric"
+                                    month="numeric"
+                                    day="numeric"
+                                    hour="2-digit"
+                                    minute="2-digit">
+                                </lightning-formatted-date-time> 
+                                &nbsp;-&nbsp;  
+                                <lightning-formatted-date-time 
+                                    value={_headingInfo.endDateTime}
+                                    year="numeric"
+                                    month="numeric"
+                                    day="numeric"
+                                    hour="2-digit"
+                                    minute="2-digit">
+                                </lightning-formatted-date-time>
+                            </h4>
+                        </div>
+                        <div if:false={_headingInfo} class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>Hours Report Form</h2>
+                        </div> 
+                        <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                            <span id="information-modal-close" class="close-btn" onclick={closeModal}>×</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="section-wrapper" style="overflow-y: auto">
+                    <div if:true={_showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </div>
+                    <div if:false={_formData}>
+                        <p>The Volunteer Shift you are trying to report hours for either has not been completed or cannot be found.</p>
+                        <p>For assistance please contact an administrator.</p>
+                    </div>
+                    <div if:true={_formData}>
+                        <c-portal_-form form-data={_formData}></c-portal_-form>
+                        <!-- Modal/Popup Box LWC footer starts here -->
+                        <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                            <div class="slds-grid slds-wrap slds-grid_align-end">
+                                <div class="button-list">
+                                    <button id="close-btn2" class="button secondary" onclick={closeModal} title="Cancel">Cancel</button>
+                                    <button id="report-modal-close" class="button primary" onclick={handleSubmit} title="Submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

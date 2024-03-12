@@ -1,0 +1,14 @@
+.address-lines {
+    border-style: groove;
+    margin: 15px 0;
+    border-spacing: 50px;
+    padding: 5px;
+}
+
+.hide-input {
+    margin-right: 4px;
+}
+
+.show-input {
+    margin-left: 4px;
+}

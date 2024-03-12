@@ -1,0 +1,49 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin">
+                <div class="section-wrapper bottom-border">
+                    <div class="ticket-options full-width">
+                        <div class="selection-info giving-summary" style="display: block;">
+                            <div class="slds-text-align_left">
+                                <h2 style="color:rgb(34, 24, 105);">{componentLabel}</h2>
+                                <br>
+                                <div class="flex-grid-3">
+                                    <div class="grid-item">
+                                        <h4>
+                                            <b>{currentDueDateLabel}: </b>
+                                            {_selectedPledgeInfo.currentDueDate}
+                                        </h4>
+                                        <br>
+                                        <h5>
+                                            <b>{pastDueAmountLabel}: </b>
+                                            ${_selectedPledgeInfo.pastDueAmount}
+                                        </h5>
+                                        <h5>
+                                            <b>{currentDueAmountLabel}: </b>
+                                            ${_selectedPledgeInfo.currentDueAmount}
+                                        </h5>
+                                        <h5>
+                                            <b>{totalDueAmountLabel}: </b>
+                                            ${_selectedPledgeInfo.totalDueAmount}
+                                        </h5>
+                                    </div>
+                                    <div class="grid-item">
+                                        <h5>
+                                            <b>{totalPledgeAmountLabel}: </b>
+                                            ${_selectedPledgeInfo.totalPledgeAmount}
+                                        </h5>
+                                        <h5>
+                                            <b>{amountPaidToDateLabel}: </b>
+                                            ${_selectedPledgeInfo.amountPaidToDate}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

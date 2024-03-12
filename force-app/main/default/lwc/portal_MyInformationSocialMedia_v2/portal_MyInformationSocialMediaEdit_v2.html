@@ -1,0 +1,101 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+    
+    <div if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type={_selfReportModalType}
+            configuration={_selfReportConfiguration}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container bottom-border" if:true={sectionConfiguration.isDisplay}>
+            <!-- Breadcrumb -->
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li>
+                        <a href="?">Back to My Information</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section Header -->
+            <h2 style="margin-bottom: 0.5em">{sectionConfiguration.label}</h2>
+
+            <!-- Social Media Records -->
+            <template for:each={recordList} for:item="eachSocialMedia" for:index="index">
+                <div if:false={eachSocialMedia.isDelete} class="entry-heading" key={eachSocialMedia.timestampHtmlKey}>
+                    <div class="edit-entry-list">
+                        <template if:true={sectionConfiguration.hasReportUpdateLink}>
+                            <a onclick={handleSelfReport} data-index={index}>
+                                <span if:true={eachSocialMedia.hasSelfReportChange}>Pending</span>
+                                <span if:false={eachSocialMedia.hasSelfReportChange}>Request Update</span>
+                            </a>
+                        </template>
+
+                        <template if:false={sectionConfiguration.hasReportUpdateLink}> 
+                            <a if:false={sectionConfiguration.isDisable} onclick={handleDeleteSocialMedia} data-index={index}>
+                                <img src={deleteIcon}>Delete
+                            </a>
+                        </template>
+                    </div>
+
+                    <div class="entry-form">
+                        <div class="flex-grid-3">                                
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.isDisplay}>
+                                <abbr class="slds-required" title="required" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.isRequired} style="float: left;">* </abbr>
+                                <label>{sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachSocialMedia.socialMediaPlatform}
+                                    field-id="socialMediaPlatform"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={sectionConfiguration.fieldConfigurationMap.socialMediaPlatform.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaUrl.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.socialMediaUrl.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachSocialMedia.socialMediaUrl}
+                                    field-id="socialMediaUrl"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.socialMediaUrl.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.socialMediaUrl.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.socialMediaUrl.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={sectionConfiguration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.socialMediaShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachSocialMedia.socialMediaShowOnDirectory}
+                                        field-id="socialMediaShowOnDirectory"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.socialMediaShowOnDirectory.fieldType}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.socialMediaShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        label={sectionConfiguration.fieldConfigurationMap.socialMediaShowOnDirectory.label}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="button-list" if:false={sectionConfiguration.isDisable}>
+                <template if:false={sectionConfiguration.hasReportUpdateLink}>
+                    <a class="button secondary small" onclick={handleAddSocialMedia}>Add Social Media</a>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

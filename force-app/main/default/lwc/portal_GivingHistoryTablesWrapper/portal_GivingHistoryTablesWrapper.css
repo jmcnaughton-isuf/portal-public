@@ -1,0 +1,36 @@
+.tabs {
+    display: flex;
+}
+
+.tabs a {
+    margin-right: 15px;
+    padding-top : 10px;
+    padding-bottom: 10px;
+    flex: 0 1 15%;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.content, a[data-active = true] {
+    background-color: var(--tabHighlightedColor);
+}
+
+.content {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+a[data-active = false] {
+    background-color: var(--tabColor);
+}
+
+.content-padding {
+    margin: 0 auto;
+}
+
+@media (min-width: 1170px) {
+    .content-padding {
+        max-width: 1170px;
+    }
+}

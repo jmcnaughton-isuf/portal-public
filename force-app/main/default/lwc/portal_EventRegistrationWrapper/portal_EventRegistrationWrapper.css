@@ -1,0 +1,45 @@
+@media(min-width: 700px) {
+    [data-ascend-portal] .user-listing div[class^='flex-grid'] .grid-item {
+        margin-bottom: 1.5rem;
+    }
+
+    [data-ascend-portal] .user-listing div[class^='flex-grid'] .grid-item:last-of-type {
+        padding-right: 1em;
+    }
+
+    [data-ascend-portal] .user {
+        height: 100%;
+    }
+}
+
+@media(max-width: 768px) {
+    .terms-and-conditions-label {
+        margin-top: .45rem;
+    }
+}
+
+.button-list .button[disabled] {
+    opacity: .5;
+    pointer-events: none;
+}
+
+[data-ascend-portal] .user {
+    pointer-events: none;
+}
+
+[data-ascend-portal] .modify-guest-btn {
+    pointer-events: auto;
+}
+
+[data-ascend-portal] .remove-guest-btn {
+    pointer-events: all
+}
+
+[data-ascend-portal] .user:hover {
+    border: solid 1px #005595;
+    transition: border 0.25s;
+}
+
+[data-ascend-portal] .user[data-current-registrant=true] {
+    border: solid 1px #005595;
+}

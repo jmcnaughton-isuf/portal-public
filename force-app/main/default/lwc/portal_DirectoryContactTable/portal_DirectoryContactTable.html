@@ -1,0 +1,45 @@
+<template>
+    <div class="container" if:true={hasContactList}>
+        <div class="container large">
+            <c-portal_-table title="Search Results"
+                                     records={contactList}
+                                     column-mappings={columnDataList}
+                                     rows-per-page={itemsPerPage}>
+            </c-portal_-table>
+        </div>
+    </div>
+    <!-- <template if:true={hasContactList}>
+
+        <section class="slds-border_around">
+            <header class="slds-theme_info">
+                <div class="col"><h1>First Name</h1></div>
+                <div class="col"><h1>Last Name</h1></div>
+                <div class="col"><h1>Degree</h1></div>
+                <div class="col"><h1>Degree Year</h1></div>
+                <div class="col"><h1>Position</h1></div>
+                <div class="col"><h1>Company</h1></div>
+            </header>
+            <template for:each={_contactListToDisplay} for:item="contact">
+                <div class="row" key={contact.contactId}>
+                    <div class="col detail"><a data-id={contact.contactId} onclick={handleNameClick}>{contact.firstName}</a></div>
+                    <div class="col detail"><a data-id={contact.contactId} onclick={handleNameClick}>{contact.lastName}</a></div>
+                    <div class="col detail">{contact.degree}</div>
+                    <div class="col detail">{contact.degreeYear}</div>
+                    <div class="col detail">{contact.jobTitle}</div>
+                    <div class="col detail">{contact.companyName}</div>
+                </div>
+            </template>
+        </section>
+        <template if:true={hasMoreThanOnePage}>
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a onclick={handlePreviousClick}>&laquo;</a>
+                    <template for:each={_pageList} for:item="page">
+                        <a key={page.number} class={page.class} data-pagenumber={page.number} onclick={handlePageNumberClick}>{page.number}</a>
+                    </template>
+                    <a onclick={handleNextClick}>&raquo;</a>
+                </div>
+            </div>
+        </template>
+    </template> -->
+</template>

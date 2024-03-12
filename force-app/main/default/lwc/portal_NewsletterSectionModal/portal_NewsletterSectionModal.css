@@ -1,0 +1,84 @@
+.header-flex-grid {
+    display: flex;
+    align-items: baseline;
+}
+
+.header-flex-grid .button-list.align-right {
+    margin-left: auto;
+    margin-top: 0;
+}
+
+@media (min-width: 700px) {
+    .grid-item:nth-child(even) {
+        padding-left: 0.5em !important;
+    }
+
+    .grid-item:nth-child(odd) {
+        padding-right: 0.5em !important;
+    }
+}
+
+.selectable {
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    -webkit-box-shadow: 4px 4px 19px 4px rgb(0 0 0 / 15%);
+    box-shadow: 4px 4px 19px 4px rgb(0 0 0 / 15%);
+    margin-bottom: 3em;
+    max-width: 450px;
+    padding: 1.5em;
+    transition: all 400ms;
+    text-decoration: none;
+}
+
+.selectable:hover {
+    background-color: #ccc;
+}
+
+.slds-rich-text-editor__output span:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+    cursor: default !important;
+}
+
+.selectable {
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    -webkit-box-shadow: 4px 4px 19px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 19px 4px rgba(0, 0, 0, 0.15);
+    margin-bottom: 3em;
+    max-width: 450px;
+    padding: 1.5em;
+    transition: all 400ms;
+    text-decoration: none;
+}
+
+/* line 110, src/sass/_section.scss */
+.selectable .dates p {
+    color: #005595;
+    margin-bottom: .5em !important;
+}
+
+/* line 115, src/sass/_section.scss */
+.selectable p {
+    color: #404040;
+}
+
+/* line 117, src/sass/_section.scss */
+.selectable:focus {
+    border: 2px solid #005595;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+/* line 122, src/sass/_section.scss */
+.selectable:focus:hover {
+    border: 2px solid #005595;
+    text-decoration: none;
+}
+
+/* line 128, src/sass/_section.scss */
+.selectable:hover {
+    border: 2px solid #005595;
+    text-decoration: none;
+    background-color: #f6f8f9;
+}

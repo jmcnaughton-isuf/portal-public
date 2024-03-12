@@ -1,0 +1,45 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+    <template if:true={_isShowComponent}>
+        <div class="container xsmall">
+            <div class="section-wrapper">
+               
+                <div class="ticket-options full-width">
+                    <div class="container" style="padding-left: 0; padding-right: 0;">
+                        <!-- <h2 if:false={isUpdate} style="margin-bottom: .8em">Payment Information</h2> -->
+                        <!-- <div class="entry-form" style="padding-bottom: 0">
+                            <div class="flex-grid">
+                                <div class="grid-item">
+                                    <label style="pointer-events: none">
+                                        <input id="credit-btn" data-inputtype="checkbox" type="radio" name="pay-type" value="" class="radio" checked="">
+                                        <span class="not-available" style="border-bottom: none">{creditCardTitle}</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="selection-info" id="pay-credit" style="display: block; padding-left: 0; padding-right: 0;">
+                            <iframe src="../apex/PORTAL_StripeCreditCardFormOR" style="width: 100% !important;height: 700px" class="slds-align_absolute-center"></iframe>
+                            <!-- <iframe src="https://isuf--partial.sandbox.my.site.com/portal/apex/PORTAL_StripeCreditCardFormOR"></iframe> -->
+                            <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                                recaptcha-option={_recaptchaOption}
+                                recaptcha-token={_recaptchaToken}
+                                is-center-recaptcha="true">
+                            </c-portal_-Recaptcha>
+<!--                     
+                            <template>
+                                <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+                                <template if:true={_isShowComponent}>
+                                    <iframe src="../apex/PORTAL_StripeCreditCardFormOR" style={widthPercentage} class="slds-align_absolute-center"></iframe>
+                                </template>
+                            </template> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <!-- <div style="margin-top: 2em">
+            <iframe src="/apex/PORTAL_StripeCreditCardForm" style="width:300px; height:75vw;border-style:none;" class="slds-align_absolute-center"></iframe>
+        </div> -->
+    </template>
+</template>

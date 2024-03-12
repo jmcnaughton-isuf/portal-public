@@ -1,0 +1,29 @@
+<template>
+    <div data-ascend-portal>
+        <div class="container large" if:true={isShowComponent}>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="6" if:true={_isCreatePledgeSubscription}>
+                    <h2 style="text-transform: uppercase; font-size: 1rem;font-weight: bold;">{firstPaymentLabel}</h2>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6" if:true={_isCreatePledgeSubscription}>
+                    <p>${_firstAmount}</p>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small" size="6">
+                    <h2 style="text-transform: uppercase; font-size: 1rem;font-weight: bold;">{remainingPaymentsLabel}</h2>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6">
+                    <p>{remainingInstallments} payment(s) of ${_amount}</p>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small" size="6" if:false={_isCreatePledgeSubscription}>
+                    <h2 style="text-transform: uppercase; font-size: 1rem;font-weight: bold;">{lastPaymentLabel}</h2>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6" if:false={_isCreatePledgeSubscription}>
+                    <p>${_lastAmount}</p>
+                </lightning-layout-item>
+
+            </lightning-layout>
+        </div>
+    </div>
+</template>

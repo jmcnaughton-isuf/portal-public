@@ -1,0 +1,7 @@
+.email-type {
+    flex: 1 1 50% !important;
+    max-width: 50%;
+}
+body .required {
+    font-weight: var(--lwc-fontWeightBold, 700);
+}

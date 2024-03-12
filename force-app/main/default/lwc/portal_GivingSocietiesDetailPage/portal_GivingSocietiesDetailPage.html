@@ -1,0 +1,36 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={initDone} class="event-header"> 
+            <div class="container xlarge" if:true={permissionMap.givingSociety.display}>
+                <div class="section-wrapper">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-p-around_medium slds-p-around_large slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                            <div class="giving-thumb" if:true={permissionMap.logo.display}>
+                                <lightning-formatted-rich-text class="logo-img" value={givingSocietyData.logo}></lightning-formatted-rich-text>
+                            </div>
+                        </div> 
+
+                        <div class="slds-p-around_medium slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                            <h1 class="page-header" if:true={permissionMap.name.display}>{givingSocietyData.name}</h1>
+                            <p if:true={permissionMap.description.display}>{givingSocietyData.description}</p>
+                            
+                            <template if:true={showLevels}>
+                                <h3 style="margin: 1em 0 .4em 0">{permissionMap.membershipLevels.label}</h3>
+
+                                <template for:each={givingSocietyData.ucinn_ascendv2__Membership_Levels_Giving_Society__r} for:item="membershipLevel">
+                                    <h4 style="margin-bottom: 0" key={membershipLevel.label} if:true={permissionMap.label.display}>{membershipLevel.label}</h4>
+                                    <p key={membershipLevel.label} if:true={permissionMap.eligibility.display}>{membershipLevel.eligibility}</p>
+                                    <p key={membershipLevel.label} if:true={permissionMap.summary.display}>{membershipLevel.summary}</p>
+                                </template>
+                            </template>
+
+                            <div class="button-list" style="padding-bottom: 0 !important; margin-bottom: 0 !important">          
+                                <a class="button primary full-mobile" onclick={givingButtonClicked} if:true={showGivingLink}>{givingLinkText} {givingSocietyData.name}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

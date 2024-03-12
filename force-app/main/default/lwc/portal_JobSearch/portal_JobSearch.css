@@ -1,0 +1,50 @@
+@media (min-width: 768px) {
+    .event-tabs .entry-form .flex-grid-5 .grid-item .remote-checkbox {
+        padding-top: 3px;
+        padding-left: 10px;
+    }
+}
+
+@media (min-width: 700px) {
+    .event-tabs .entry-form .flex-grid-5 .grid-item .remote-checkbox {
+        padding-left: 9px;
+    }
+}
+
+.job-list {
+    padding-top: 20px;
+    overflow-wrap: break-word;
+}
+
+.border {
+    border-top: 1px solid #d1d5d8;
+    padding-top: 10px;
+}
+
+.job-title {
+    margin: 0px;
+}
+
+.date.float-right {
+    top: 30px;
+}
+
+@media (min-width: 1200px) {
+    .job-title {
+        max-width: 85%;
+    }
+    
+    .date.float-right {
+        top: 40px;
+    }
+}
+
+@media (min-width: 768px) {
+    .job-title {
+        max-width: 75%;
+    }
+
+    .no-results {
+        padding-top: 1rem;
+    }
+}

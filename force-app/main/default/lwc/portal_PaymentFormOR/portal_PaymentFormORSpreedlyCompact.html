@@ -1,0 +1,10 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container xsmall" if:true={_isShowComponent}>
+            <iframe class="slds-align_absolute-center" src="/apex/PORTAL_VF_SpreedlyCreditCardFormCompact" style="width: 100%; max-width: 326px; height: 500px; border-style: none;"></iframe>
+            <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                recaptcha-option={_recaptchaOption}
+                is-center-recaptcha="true">
+            </c-portal_-Recaptcha>
+        </div>
+</template>

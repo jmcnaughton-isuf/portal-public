@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lookup_Filter_Clause__c</fullName>
+    <description>If this field setting record requires a lookup input on the front end, this field tells us how to filter the query.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If this field setting record requires a lookup input on the front end, this field tells us how to filter the query.</inlineHelpText>
+    <label>Lookup Filter Clause</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

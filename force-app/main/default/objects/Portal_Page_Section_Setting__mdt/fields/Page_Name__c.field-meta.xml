@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Page_Name__c</fullName>
+    <description>The portal page name that we are displaying the records on</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The portal page name that we are displaying the records on</inlineHelpText>
+    <label>Page Name</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bio Information</fullName>
+                <default>true</default>
+                <label>Bio Information</label>
+            </value>
+            <value>
+                <fullName>In Progress Interim</fullName>
+                <default>false</default>
+                <label>In Progress Interim</label>
+            </value>
+            <value>
+                <fullName>Interim Company</fullName>
+                <default>false</default>
+                <label>Interim Company</label>
+            </value>
+            <value>
+                <fullName>My Information</fullName>
+                <default>false</default>
+                <label>My Information</label>
+            </value>
+            <value>
+                <fullName>Online Giving</fullName>
+                <default>false</default>
+                <label>Online Giving</label>
+            </value>
+            <value>
+                <fullName>My Information Self Report</fullName>
+                <default>false</default>
+                <label>My Information Self Report</label>
+            </value>
+            <value>
+                <fullName>Giving Societies</fullName>
+                <default>false</default>
+                <label>Giving Societies</label>
+            </value>
+            <value>
+                <fullName>Giving History</fullName>
+                <default>false</default>
+                <label>Giving History</label>
+            </value>
+            <value>
+                <fullName>Year end tax letter</fullName>
+                <default>false</default>
+                <label>Year end tax letter</label>
+            </value>
+            <value>
+                <fullName>Events</fullName>
+                <default>false</default>
+                <label>Events</label>
+            </value>
+            <value>
+                <fullName>Event Submission Form</fullName>
+                <default>false</default>
+                <label>Event Submission Form</label>
+            </value>
+            <value>
+                <fullName>Submitted Content</fullName>
+                <default>false</default>
+                <label>Submitted Content</label>
+            </value>
+            <value>
+                <fullName>New User Login</fullName>
+                <default>false</default>
+                <label>New User Login</label>
+            </value>
+            <value>
+                <fullName>Hiring Manager</fullName>
+                <default>false</default>
+                <label>Hiring Manager</label>
+            </value>
+            <value>
+                <fullName>Gift Receipt</fullName>
+                <default>false</default>
+                <label>Gift Receipt</label>
+            </value>
+            <value>
+                <fullName>Yearly Tax letter Table</fullName>
+                <default>false</default>
+                <label>Yearly Tax letter Table</label>
+            </value>
+            <value>
+                <fullName>Giving Societies Detail</fullName>
+                <default>false</default>
+                <label>Giving Societies Detail</label>
+            </value>
+            <value>
+                <fullName>Zone Home Page</fullName>
+                <default>false</default>
+                <label>Zone Home Page</label>
+            </value>
+            <value>
+                <fullName>Zone Bio Detail</fullName>
+                <default>false</default>
+                <label>Zone Bio Detail</label>
+            </value>
+            <value>
+                <fullName>Zone Leadership</fullName>
+                <default>false</default>
+                <label>Zone Leadership</label>
+            </value>
+            <value>
+                <fullName>Zone Memberships</fullName>
+                <default>false</default>
+                <label>Zone Memberships</label>
+            </value>
+            <value>
+                <fullName>Zone Search</fullName>
+                <default>false</default>
+                <label>Zone Search</label>
+            </value>
+            <value>
+                <fullName>Job Posting</fullName>
+                <default>false</default>
+                <label>Job Posting</label>
+            </value>
+            <value>
+                <fullName>Job Management</fullName>
+                <default>false</default>
+                <label>Job Management</label>
+            </value>
+            <value>
+                <fullName>Job Listing</fullName>
+                <default>false</default>
+                <label>Job Listing</label>
+            </value>
+            <value>
+                <fullName>Job Application</fullName>
+                <default>false</default>
+                <label>Job Application</label>
+            </value>
+            <value>
+                <fullName>My Applications</fullName>
+                <default>false</default>
+                <label>My Applications</label>
+            </value>
+            <value>
+                <fullName>Job Applicants</fullName>
+                <default>false</default>
+                <label>Job Applicants</label>
+            </value>
+            <value>
+                <fullName>Job Search</fullName>
+                <default>false</default>
+                <label>Job Search</label>
+            </value>
+            <value>
+                <fullName>Membership Purchase</fullName>
+                <default>false</default>
+                <label>Membership Purchase</label>
+            </value>
+            <value>
+                <fullName>Memberships</fullName>
+                <default>false</default>
+                <label>Memberships</label>
+            </value>
+            <value>
+                <fullName>Newsletter Submission</fullName>
+                <default>false</default>
+                <label>Newsletter Submission</label>
+            </value>
+            <value>
+                <fullName>News</fullName>
+                <default>false</default>
+                <label>News</label>
+            </value>
+            <value>
+                <fullName>My Newsletters</fullName>
+                <default>false</default>
+                <label>My Newsletters</label>
+            </value>
+            <value>
+                <fullName>Zone Template</fullName>
+                <default>false</default>
+                <label>Zone Template</label>
+            </value>
+            <value>
+                <fullName>Volunteer Information</fullName>
+                <default>false</default>
+                <label>Volunteer Information</label>
+            </value>
+            <value>
+                <fullName>Volunteers</fullName>
+                <default>false</default>
+                <label>Volunteers</label>
+            </value>
+            <value>
+                <fullName>Directory Page</fullName>
+                <default>false</default>
+                <label>Directory Page</label>
+            </value>
+            <value>
+                <fullName>Directory Search</fullName>
+                <default>false</default>
+                <label>Directory Search</label>
+            </value>
+            <value>
+                <fullName>Zones</fullName>
+                <default>false</default>
+                <label>Zones</label>
+            </value>
+            <value>
+                <fullName>Phone Center</fullName>
+                <default>false</default>
+                <label>Phone Center</label>
+            </value>
+            <value>
+                <fullName>Listing Detail Page</fullName>
+                <default>false</default>
+                <label>Listing Detail Page</label>
+            </value>
+            <value>
+                <fullName>Look Who Is Coming</fullName>
+                <default>false</default>
+                <label>Look Who Is Coming</label>
+            </value>
+            <value>
+                <fullName>Event Payment Form</fullName>
+                <default>false</default>
+                <label>Event Payment Form</label>
+            </value>
+            <value>
+                <fullName>Contextual Giving Form</fullName>
+                <default>false</default>
+                <label>Contextual Giving Form</label>
+            </value>
+            <value>
+                <fullName>Class Notes</fullName>
+                <default>false</default>
+                <label>Class Notes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,42 @@
+<template>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin gift-container giving-summary-wrapper" style="max-width: 700px !important;">
+                <div class="section-wrapper" if:true={showDesignations}>
+                    <div class="ticket-options full-width">
+                        <div class="selection-info giving-summary" style="display: block;">
+                            <h3 style={headerStyle}>{componentLabel}</h3>
+                            <template for:each={_designationList} for:item="designation" for:index="index">
+                                <div class="slds-grid slds-wrap" key={designation.Id}>
+
+                                    <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                        <p>{designation.Name}</p>
+                                    </div>
+                                    <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <input type="number"
+                                            step=".01"
+                                            format="currency"
+                                            required
+                                            value={designation.amount}
+                                            min={designation.ucinn_ascendv2__Minimum_Gift_Amount__c}
+                                            onchange={handleAmountChange}
+                                            data-index={index}
+                                            data-id={designation.Id}/>
+                                    </div>
+                                    <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                        <a class="button secondary small full-width"
+                                        data-id={designation.Id}
+                                        data-index={index}
+                                        onclick={deleteDesignation}>
+                                        Delete
+                                        </a>
+                                    </div>
+                                </div>
+                            </template>
+                              <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 tot-amt">{amountTotalLabel}: </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 amt-val" > ${_totalAmount}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+</template>

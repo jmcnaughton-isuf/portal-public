@@ -1,0 +1,63 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+    <div class="container xsmall" if:true={_isShowComponent}>
+        <div class="section-wrapper">
+            
+            <div class="ticket-options full-width">
+                <div class="container" style="padding-left: 0; padding-right: 0;">
+                    <h2 if:false={isUpdate} style="margin-bottom: .8em">Payment Information</h2>
+                    <div class="entry-form" style="padding-bottom: 0">
+                        <div class="flex-grid">
+                            <div class="grid-item">
+                                <label>
+                                    <input type="radio" class="radio" checked={isPayWithCreditCard} onclick={handleCardChoice}>
+                                    <span class="not-available" style="border-bottom: none"><a>{creditCardTitle}</a></span>
+                                </label>
+                            </div>
+                            
+                            <div class="grid-item">
+                                <label>
+                                    <input  type="radio" class="radio" checked={isPayWithACH} onclick={handleACHChoice}>
+                                    <span class="not-available" style="border-bottom: none"><a>{achTitle}</a></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selection-info" style="display: block; padding-left: 0; padding-right: 0;">
+                        <template if:true={isPayWithCreditCard}>
+                            <iframe class="slds-align_absolute-center" src="/apex/PORTAL_VF_SpreedlyCreditCardForm" style="width: 100%; max-width: 326px; height: 520px; border-style: none;"></iframe>
+                            <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                                recaptcha-option={_recaptchaOption}
+                                recaptcha-token={_recaptchaToken}
+                                is-center-recaptcha="true">
+                            </c-portal_-Recaptcha>
+                        </template>
+                        <template if:true={isPayWithACH}>
+                            <iframe class="slds-align_absolute-center" src="/apex/PORTAL_VF_SpreedlyACHForm" style="width: 100%; max-width: 326px; height: 495px; border-style: none;"></iframe>
+                            <c-portal_-Recaptcha if:true={isDisplayRecaptcha}
+                                recaptcha-option={_recaptchaOption}
+                                recaptcha-token={_recaptchaToken}
+                                is-center-recaptcha="true">
+                            </c-portal_-Recaptcha>
+                        </template>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container" style="margin-top: 2em">
+        <div class="container large">
+            <div class="flex-grid-4">
+                <div class="grid-item"></div>
+                <div class="grid-item">
+                    <button class="button primary full-width" onclick={handleACHChoice}>Pay with ACH</button>
+                </div>
+                <div class="grid-item">
+                    <button class="button primary full-width" onclick={handleCardChoice}>Pay with Credit Card</button>
+                </div>
+                <div class="grid-item"></div>
+            </div>
+        </div>
+    </div> -->
+</template>

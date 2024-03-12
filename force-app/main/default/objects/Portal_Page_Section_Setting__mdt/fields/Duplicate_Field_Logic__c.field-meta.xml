@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Field_Logic__c</fullName>
+    <description>Boolean logic string composed of fields aliased with numbers and the standard boolean operators that controls how we evaluate duplicate records.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Boolean logic string composed of fields aliased with numbers and the standard boolean operators that controls how we evaluate duplicate records.</inlineHelpText>
+    <label>Duplicate Field Logic</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

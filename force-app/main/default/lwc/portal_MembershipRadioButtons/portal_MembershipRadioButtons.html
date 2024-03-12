@@ -1,0 +1,29 @@
+<template>
+    <div class="container">
+        <div class="section-wrapper">
+            <div class="ticket-options full-width">
+                <h2 style="margin-bottom: .8em">Please Choose your Membership Type</h2>
+                <div class="entry-form bottom-border">
+                    <div class="flex-grid-3" style="margin-bottom: 1em">
+                        <template for:each={membershipOptions} for:item="membership">
+                            <div class="grid-item" key={membership.value}>
+                                <label>
+                                    <input data-id={membership.value} data-inputtype="checkbox" type="radio" name="membership-type" class="radio" checked={membership.checked} onclick={handleRadioButtonChange}>
+                                    <span class="not-available"><a>{membership.label}</a></span>
+                                </label>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="selection-info" style="display: block;" if:true={membershipDescription}>
+                        {membershipDescription}
+                    </div>
+                </div>
+                <div class="slds-grid" style="margin-bottom: 1em"> 
+                    <div class="button-list" style="margin-top: 0">
+                        <button onclick={handleNextClick} class="button primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</template>

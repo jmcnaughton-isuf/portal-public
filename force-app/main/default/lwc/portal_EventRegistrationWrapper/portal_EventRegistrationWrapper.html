@@ -1,0 +1,158 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <c-portal_-event-waitlist-form ticket-type-id={_ticketTypeIdForWaitlist}
+                                    max-tickets={_waitlistMax}
+                                    primary-registrant={primaryRegistrant}
+                                    close-modal={handleCloseWaitlistModal}
+                                    if:true={_showWaitlistModal}>
+        </c-portal_-event-waitlist-form>
+        <c-portal_-event-waitlist-delete-confirmation waitlist-entry-id={_waitlistEntryId}
+                                                    if:true={_showWaitlistDeleteConfirmation}>
+        </c-portal_-event-waitlist-delete-confirmation>
+        <template if:true={isShowRegistration}>
+            <c-portal_-event-registration-header listing={_listing}
+                                                ticket-type-list={_ticketTypeList}>
+            </c-portal_-event-registration-header>
+            <template if:false={_currentPageIndex}>
+                <template if:false={_currentPageIndex}>
+                    <div class="container large" if:true={hasMultipleRegistrants}>
+                        <div class="content-wrapper">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_12-of-12">
+                                    <div class="form-element heading">
+                                        <h3 style="margin-bottom: 0">List of Guests</h3>
+                                    </div>
+                                    <div class="user-listing">
+                                        <div class="flex-grid-3">
+                                            <template for:each={registrantListToDisplay} for:item="registrant" for:index="displayIndex">
+                                                <div class="grid-item" key={registrant.firstName}>
+                                                    <div class="user" data-current-registrant={registrant.isCurrentRegistrant}>
+                                                        <h4 lwc:if={registrant.firstName}>{registrant.firstName} {registrant.lastName}</h4>
+                                                        <h4 lwc:elseif={registrant.lastName}>{registrant.firstName} {registrant.lastName}</h4>
+                                                        <h4 lwc:else>(New Guest)</h4>
+                                                        <a class="remove-guest-btn" data-index={displayIndex} onclick={handleRemoveGuest} if:true={registrant.isRemovable}></a>
+                                                        <a class="modify-guest-btn" data-index={displayIndex} onclick={handleRegistrantClick}>Modify Registration</a>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <c-portal_-event-registrant-form registrant={currentRegistrant} 
+                                                registrant-index={_registrantIndex}
+                                                promo-code={_promoCode}
+                                                handle-input={handleRegistrantInput}
+                                                handle-ticket-input={handleTicketInput}
+                                                handle-ticket-checkbox={handleTicketCheckbox}
+                                                handle-promo-code-change={handlePromoCodeChange}
+                                                handle-apply-promo-code={handleApplyPromoCode}
+                                                handle-waitlist-click={handleWaitlistClick}
+                                                registration-template={_registrationTemplate}
+                                                has-promo-codes={_hasPromoCodes}
+                                                is-show-tickets={isShowTickets}
+                                                is-guest-registration-modifiable={_isGuestRegistrationModifiable}
+                                                is-waitlist-enabled={_listing.Is_Allow_Waitlisting_for_Event__c}
+                                                is-look-whos-coming-enabled={_listing.Is_Display_Look_Who_s_Coming__c}
+                                                handle-additional-info-change={handleAdditionalInfoChange}>
+                </c-portal_-event-registrant-form>
+            </template>
+            <template if:true={_currentPageIndex}>
+                <c-portal_-event-registration-form-page registrant-list={_registrantList}
+                                                        current-index={_currentPageIndex}
+                                                        handle-additional-info-change={handleAdditionalInfoChange}>
+                </c-portal_-event-registration-form-page>
+            </template>
+            <div class="container large" style="padding-top: 0px">
+                <div class="content-wrapper">
+                    <div class="entry-form">
+                        <template if:true={isLastPage}>
+                            <template if:true={_registrationTemplate}>
+                                <div class="slds-p-vertical_small" if:true={_registrationTemplate.Has_Terms_and_Conditions__c}>
+                                    <label style="width: 100%">
+                                        <c-portal_-input class="slds-m-right_xx-small"
+                                                        classes="radio"
+                                                        type="checkbox" 
+                                                        style="float: left" 
+                                                        checked={_isTermsAndConditionsChecked} 
+                                                        handle-input={handleTermsAndConditions}>
+                                        </c-portal_-input>
+                                        <div class="terms-and-conditions-label">
+                                            <lightning-formatted-rich-text value={_registrationTemplate.Terms_and_Conditions_Text__c}></lightning-formatted-rich-text>
+                                        </div>
+                                    </label>
+                                </div>
+                            </template>
+                            <div if:true={_isWalkIn} class="button-list" style="margin-top: 0px; margin-bottom: 1.2rem">
+                                <c-portal_-select
+                                    chevron-down-style="background-repeat: no-repeat !important; background-position: calc(100% - 3px) center !important; background-size: 20px !important; padding-right: 20px !important;"
+                                    label="Payment Type"
+                                    option-list={_paymentOptions}
+                                    handle-change={handlePaymentMethodChange}
+                                    default-value="Cash">
+                                </c-portal_-select>
+                            </div>
+                        </template>
+                        <div style="padding-bottom: 25px" if:true={isDisplayRecaptchaForNonTicketedEvent}>
+                            <c-portal_-Recaptcha>
+                            </c-portal_-Recaptcha>
+                        </div>
+                        <div class="button-list" style="margin-top: 0">
+                            <template if:false={_currentPageIndex}>
+                                <button class="button secondary full-mobile" if:true={isShowAddGuest} onclick={handleAddGuest}>Add a Guest</button>
+                            </template>
+                            <template if:true={_totalNumberOfPages}>
+                                <button class="button primary full-mobile" if:true={isShowPreviousPageButton} onclick={handlePreviousPage}>Previous Page</button>
+                                <button class="button primary full-mobile" if:true={isShowNextPageButton} onclick={handleNextPage}>Next Page</button>
+                            </template>
+                            <template if:true={isLastPage}>
+                                <button class="button primary full-mobile" 
+                                        disabled={isRegisterButtonDisabled}
+                                        onclick={handleRegisterClick}>Register</button>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="slds-p-horizontal_small">
+                <div class="slds-m-vertical_large" if:true={_totalNumberOfPages}>
+                    <button class="slds-button slds-button_brand" if:true={isShowPreviousPageButton} onclick={handlePreviousPage}>Previous Page</button>
+                    <button class="slds-button slds-button_brand" if:true={isShowNextPageButton} onclick={handleNextPage}>Next Page</button>
+                </div>
+                <template if:true={isShowRegisterButton}>
+                    <label class="slds-form-element__label" if:true={_isWalkIn}>Payment Type</label>
+                    <c-portal_-select option-list={_paymentOptions} 
+                                    handle-change={handlePaymentMethodChange}
+                                    default-value="Cash"
+                                    if:true={_isWalkIn}>
+                    </c-portal_-select>
+                    <template if:true={_registrationTemplate}>
+                        <div class="slds-p-vertical_small" if:true={_registrationTemplate.Has_Terms_and_Conditions__c}>
+                            <label>
+                                <c-portal_-input class="slds-m-right_xx-small slds-p-top_xxx-small"
+                                                type="checkbox" 
+                                                style="float: left" 
+                                                checked={_isTermsAndConditionsChecked} 
+                                                handle-input={handleTermsAndConditions}>
+                                </c-portal_-input>
+                                <lightning-formatted-rich-text value={_registrationTemplate.Terms_and_Conditions_Text__c}></lightning-formatted-rich-text>
+                            </label>
+                        </div>
+                    </template>
+                    <button class="slds-button slds-button_brand slds-m-top_small" 
+                            disabled={isRegisterButtonDisabled}
+                            onclick={handleRegisterClick}>Register</button>
+                </template>
+            </div> -->
+        </template>
+        <template if:true={_isShowEventConfirmation}>
+            <c-portal_-event-payment-confirmation
+                event-list={eventList}>
+            </c-portal_-event-payment-confirmation>
+        </template>
+    </div>
+</template>

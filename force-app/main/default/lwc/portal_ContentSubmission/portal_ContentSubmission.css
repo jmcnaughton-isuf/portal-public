@@ -1,0 +1,21 @@
+[data-ascend-portal] .flex-grid-1 .grid-item {
+    padding-right: 0;
+}
+
+[data-ascend-portal] .file-upload-label {
+    position: relative;
+    z-index: 1;
+}
+
+[data-ascend-portal] .file-upload-spacer {
+    margin-top: -17px;
+}
+
+[data-ascend-portal] .uploaded-files {
+    font-weight: bold;
+    color: #020068;
+}
+
+[data-ascend-portal] .container.medium {
+    margin-top: 1.5em;
+}

@@ -1,0 +1,81 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+    
+        <template if:true={callbackDone}>
+            <template if:true={permissionMap.givingSocieties.display}>
+                <div class="panel" style="margin-bottom: 2em;">
+                    <div class="container medium">
+                        <h2 style="margin-bottom: .5em">{permissionMap.givingSocieties.label}</h2>
+
+                        <div class="entry-form" if:false={hideSearch}>
+                            <div class="flex-grid-2">
+                                <div class="grid-item" if:true={showNameSearch}>
+                                    <label for="name">{nameSearchLabel}</label>
+                                    <c-portal_-input
+                                        value={nameSearch}
+                                        handle-change={handleChange}>   
+                                    </c-portal_-input>
+                                </div>
+                                <div class="grid-item" style="padding-right: 0" if:true={showTypeSearch}>
+                                    <label for="type">{typeSearchLabel}</label>
+                                    <c-portal_-select 
+                                        handle-change={typeChange} 
+                                        option-list={picklistOptions} 
+                                        default-value={typeSelected}>
+                                    </c-portal_-select>
+                                </div>
+                            </div>
+                            <div class="button-list" style="margin-top: 0; margin-bottom: 0">
+                                <a class="button secondary full-mobile" onclick={handleClear}>Clear</a>
+                                <a class="button primary full-mobile" onclick={handleSearch}>Search</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <template if:true={hasNoResults}>
+                    <h3 class="no-results-message">{noResultsText}</h3>
+                </template>
+                <template if:false={hasNoResults}>
+                    <div class="container medium" style="padding: 1em 0">
+                        <div class="section-wrapper">
+                            <div class="container">
+                                <div class="flex-grid-3">
+                                    <template for:each={visibleTableData} for:item='givingSociety'>
+                                        <div class="grid-item equalHeight card" key={givingSociety.Name}>
+                                            <div class="container">
+                                                <div class="image">
+                                                    <lightning-formatted-rich-text value={givingSociety.logo} if:true={permissionMap.logo.display}></lightning-formatted-rich-text>
+                                                </div>
+                                                <div class="copy">
+                                                    <h4 if:true={permissionMap.name.display}>{givingSociety.name}</h4>
+                                                    <p if:true={permissionMap.description.display}>{givingSociety.description}</p>
+                                                </div>
+                                                <template if:true={permissionMap.externalWebsite.display}>
+                                                    <template if:true={givingSociety.websiteURL}>
+                                                        <a href={givingSociety.websiteURL} class="button primary full-width">{detailPageLinkText}</a>
+                                                    </template>
+                                                </template>
+                                            </div>
+                                        </div> 
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+
+            <!-- pagination -->
+            <c-portal_util_-pagination queried-data={tableData}
+                               records-per-page={itemsPerPage}
+                               handle-page-change={handlePageChange}
+                               current-page-number={currentPage}>
+            </c-portal_util_-pagination>
+               
+            </template>
+        </template>
+    </div>
+</template>

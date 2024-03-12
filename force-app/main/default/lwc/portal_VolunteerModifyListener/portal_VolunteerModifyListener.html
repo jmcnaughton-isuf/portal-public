@@ -1,0 +1,11 @@
+<template>
+    <template if:true={_isShowModifyModal}>
+        <div data-ascend-portal>
+            <c-portal_-volunteer-modify-application
+                volunteer-shift={_shiftObject}
+                volunteer-id={_volunteerId}
+                handle-close-modify-modal={handleCloseModifyModal}>
+            </c-portal_-volunteer-modify-application>
+        </div>
+    </template>
+</template>

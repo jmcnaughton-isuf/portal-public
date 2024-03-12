@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageName" label="Online Giving Page Name" type="String" default="giving"/>
+            <property name="orgGivingCheckboxLabel" label="Organizational Giving Checkbox Label" type="String" default="Are you giving on behalf of an Organization?"/>
+            <property name="showOrgGiving" label="Show Organizational Giving Checkbox" type="Boolean"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,10 @@
+@media (min-width: 768px) {
+    .dataEntry {
+        padding: 0.7em;
+        font-size: .95rem;
+        background-color: white;
+        border-top: 1px solid #e0e0e0;
+        padding-bottom: 65px;
+        position: relative;
+    }
+}

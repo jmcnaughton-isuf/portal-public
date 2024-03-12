@@ -1,0 +1,42 @@
+h1 {
+    font-size: 1rem;
+}
+
+.membershipTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+.membershipTable thead th {
+    background-color: #2574A9;
+    color: #ffffff;
+    border-bottom: solid 2px #d8d8d8;
+    position: sticky;
+    top: 0;
+    padding-left: 15px;
+}
+
+.membershipTable tr,
+.membershipTable td {
+    padding: 12px 15px;
+    border: solid 1px #d8d8d8;
+    border-left: 0;
+    border-right: 0;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.membershipTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.membershipTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.membershipTable tbody tr:last-of-type {
+    border-bottom: 2px solid #2574A9;
+}

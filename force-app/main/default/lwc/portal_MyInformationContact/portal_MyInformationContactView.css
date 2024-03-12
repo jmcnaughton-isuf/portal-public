@@ -1,0 +1,9 @@
+.grid-item {
+    font-size: 1.2em;
+}
+
+@media (max-width: 959px) {
+    h3 {
+        padding-bottom: 0.6em;
+    }
+}

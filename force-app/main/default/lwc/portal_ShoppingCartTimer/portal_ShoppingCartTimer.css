@@ -1,0 +1,45 @@
+.timer {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.timer h5 {
+    display:inline-block;
+}
+.timer h6 {
+    color: red;
+    display:inline-block;
+}
+
+.expiration-time {
+    top: 16px;
+}
+
+@media (max-width: 1199px) {
+    .expiration-time {
+        top: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .custom-hide-on-phone {
+        display: none;
+    }
+}
+
+@media (min-width: 361px) {
+    .custom-show-on-phone {
+        display: none;
+    }
+}
+
+@media (max-width: 959px) {
+    .mobile-text-style h4 {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .mobile-text-style .expiration-time {
+        top: 0;
+    }
+}

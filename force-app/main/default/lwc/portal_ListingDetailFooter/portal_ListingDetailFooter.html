@@ -1,0 +1,18 @@
+<template>
+    <div data-ascend-portal if:false={isFrontEndDataMapEmpty}>
+        <div class="container medium" if:true={isShowComponent}>
+            <div class="content text-spacing" style="display: flex; justify-content:center; word-break: break-word;" if:true={frontEndDataMap.footerContent.display}>
+                <lightning-formatted-rich-text value={_listing.footerContent}></lightning-formatted-rich-text>
+            </div>
+            <c-portal_-listing-carousel if:true={isShowListingCarousel}
+                                        page-name={pageName}
+                                        main-section-name={mainSectionName}
+                                        sub-section-name={subSectionName}
+                                        design={design}
+                                        title-text={titleText}
+                                        show-more-u-r-l={showMoreURL}
+                                        show-more-label={showMoreLabel}>
+            </c-portal_-listing-carousel>
+        </div>
+    </div>
+</template>

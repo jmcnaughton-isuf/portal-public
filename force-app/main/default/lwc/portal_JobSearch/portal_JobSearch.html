@@ -1,0 +1,136 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"> </lightning-spinner>
+        <div class="event-tabs tabs" if:true={_callbackDone}>
+            <div class="entry-form">
+                <div class="flex-grid-5">
+                    <div class="grid-item full-width" if:true={isShowKeyword}>
+                        <c-portal_-input input-name="keyword" handle-change={setRecordValue} min-length="2" value={keyword} label={keywordLabel} classes="slds-input" label-class="slds-form-element__label"></c-portal_-input>
+                    </div>
+                    <div class="grid-item" if:true={isShowCity}>
+                        <c-portal_-input input-name="city" handle-change={setRecordValue} value={city} label={cityLabel} classes="slds-input" label-class="slds-form-element__label"></c-portal_-input>
+                    </div>
+                    <div class="grid-item" if:true={isShowState}>
+                        <c-portal_-input input-name="state" handle-change={setRecordValue} value={state} label={stateLabel} classes="slds-input" label-class="slds-form-element__label"></c-portal_-input>
+                    </div>
+                    <div class="grid-item" if:true={isShowPostalCode}>
+                        <c-portal_-input input-name="postalCode" handle-change={setRecordValue} value={postalCode} label={postalCodeLabel} classes="slds-input" label-class="slds-form-element__label"></c-portal_-input>
+                    </div>
+                    <div class="grid-item" if:true={isShowRadius}>
+                        <c-portal_-input input-name="radius" handle-change={setRecordValue} min="1" max="99999" value={radius} type="number" label={radiusLabel} classes="slds-input" label-class="slds-form-element__label" required></c-portal_-input>
+                    </div> 
+                    <div class="grid-item" if:true={isShowRemote}>
+                        <fieldset class="remote-checkbox">
+                            <div class="field-wrapper">
+                                <input data-inputtype="radio" type="checkbox" name="isRemote" value="" class="radio" onchange={setRecordValue} checked={isRemote}>
+                                <label for="alumDirectory">{remoteLabel}</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="flex-grid-2">
+                    <div class="grid-item" if:true={isShowSalary}>
+                        <label style="display: block">{salaryLabel}</label>
+                        <input class="inline" name="lowerBoundSalary" type="number" min="0" value={lowerBoundSalary} onchange={setRecordValue}> - <input class="inline" type="number" name="upperBoundSalary" min="0" value={upperBoundSalary} onchange={setRecordValue}>
+                    </div>
+            
+                    <div class="grid-item">
+                        <fieldset>
+                            <div class="field-wrapper" if:true={isShowNullSalaries}>
+                                <input data-inputtype="radio" name="includeNulls" onchange={setRecordValue} checked={includeNulls} type="checkbox" class="radio">
+                                <label for="alumDirectory">{nullSalariesLabel}</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="flex-grid-2">
+                    <div class="grid-item" if:true={isShowPositionType}>
+                        <c-portal_-select input-name="positionType" is-show-null-option="true" label={positionTypeLabel} default-value={positionType} option-list={picklists.ucinn_portal_Job__c.Position_Type__c} handle-change={setRecordValue} ></c-portal_-select>
+                    </div> 
+                    <div class="grid-item" if:true={isShowClassDegreeLevel}>
+                        <c-portal_-select input-name="classDegreeLevel" is-show-null-option="true" label={classDegreeLevelLabel}  default-value={classDegreeLevel} option-list={picklists.ucinn_portal_Job__c.Class_Or_Degree_Level__c} handle-change={setRecordValue} ></c-portal_-select>
+                    </div> 
+                </div>
+                <div class="button-list">
+                    <a onclick={handleSearch} class="button primary full-mobile">Search</a>
+                    <a onclick={handleClear}  class="button secondary full-mobile">Clear</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="job-list" if:true={_callbackDone}>
+            <div class="event-list">
+                <div if:true={hasRecords}>
+                    <template for:each={_visibleData} for:item="record">
+                        <div class="event" key={record.Id}>
+                            <p class="date float-right" if:true={frontEndData.jobPostedDate.display}>
+                                <lightning-formatted-text value="Posted on "></lightning-formatted-text>
+                                <lightning-formatted-date-time value={record.CreatedDate} year="numeric" day="numeric" month="2-digit"></lightning-formatted-date-time>
+                            </p>
+                            <template if:false={isLoggedInUser}>
+                                <h2 class="job-title">{record.Name}</h2>
+                                <div class="border"></div>
+                                <p>
+                                    <lightning-formatted-address city={record.cityToDisplay}
+                                                                 country=""
+                                                                 province={record.stateToDisplay}
+                                                                 street=""
+                                                                 postal-code={record.postalCodeToDisplay}                                                 
+                                                                 disabled="true">
+                                    </lightning-formatted-address>
+                                </p>
+                                <div class="button-list">
+                                    Please
+                                    <a href="/s/login">&nbsp;login&nbsp;</a>
+                                    to see more details.
+                                </div>
+                            </template>
+                            <template if:true={isLoggedInUser}>
+                                <a href={record.jobLink}>
+                                    <h2 class="job-title">{record.Name}</h2>
+                                    <div class="border"></div>
+                                </a>
+                                <h4><lightning-formatted-text if:true={frontEndData.jobCompanyName.display} value={record.Recruiting_Company__c}></lightning-formatted-text></h4>
+                                <p class="job-address">
+                                    <lightning-formatted-address city={record.cityToDisplay}
+                                                                 country=""
+                                                                 province={record.stateToDisplay}
+                                                                 street=""
+                                                                 postal-code={record.postalCodeToDisplay}                                                 
+                                                                 disabled="true">
+                                    </lightning-formatted-address>
+                                </p>
+                                <p if:true={frontEndData.jobSalary.display}>
+                                    <strong if:true={record.Approximate_Salary__c}>Salary: </strong>
+                                    <lightning-formatted-number value={record.Approximate_Salary__c} format-style="currency" currency-code="USD" minimum-fraction-digits="0"></lightning-formatted-number>
+                                </p>
+                                <template if:true={frontEndData.jobDescription.display}>
+                                    <p if:true={record.Description__c}><strong>Description: </strong>
+                                    <lightning-formatted-rich-text value={record.Description__c}></lightning-formatted-rich-text>
+                                    </p>
+                                </template>
+                                <div class="button-list">
+                                    <a class="button tertiary bare" href={record.jobLink}>View Job</a>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+                <div if:false={hasRecords}>
+                    <h2 class="slds-text-align_center no-results">{noResultsText}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div if:true={hasRecords}>
+            <c-portal_util_-pagination
+                records-per-page={recordsPerPage}
+                queried-data={records}
+                current-page-number={currentPage}
+                query-more={handleQueryMore}
+                handle-page-change={handlePageChange}
+                total-number-of-items={totalItems}
+            ></c-portal_util_-pagination>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+.breadcrumb li:first-child::before {
+    content: "< ";
+}
+
+@media (max-width: 959px) {
+    .container-no-padding {
+        padding: 0;
+    }
+}

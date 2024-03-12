@@ -1,0 +1,25 @@
+.image {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height:200px;
+}
+
+.forceCommunityThemeHeroBase.feature .contentContainer{
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+    height: auto;
+}
+
+@media (min-width: 960px) {
+    .forceCommunityThemeHeroBase.feature .contentContainer {
+        position: relative;
+        height: 100%;
+    }
+}
+
+.forceCommunityThemeHeroBase.forceCommunityThemeHeroStarter.feature img{
+    display: inline !important;
+}

@@ -1,0 +1,46 @@
+<template>
+    <div data-ascend-portal if:false={isFrontEndDataMapEmpty}>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+
+        <div class="container medium no-margin page-title">
+            <div class="container header">
+                <h1 if:true={frontEndDataMap.name.display}>{_name}</h1>
+                <div if:true={isShowActionOnContentIcons}>
+                    <div class="button-list text">
+                        <a onclick={handleActionOnContent} data-type="notInterested">
+                            <img src={communityNotInterestedLogoUrl}>Not interested
+                        </a>
+                        <a onclick={handleActionOnContent} data-type="bookmark"> 
+                            <img src={communityBookmarkLogoUrl}>Bookmark
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container medium no-margin" if:true={isShowHeaderImage}>
+            <div class="floating-image" if:true={frontEndDataMap.headerImage.display}>
+                <img src={_image}>
+            </div>
+            <div class="caption">
+                <div class="container" if:true={frontEndDataMap.headerCaption.display}>
+                    <lightning-formatted-rich-text value={_caption}></lightning-formatted-rich-text>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-margin">
+            <div class="container small" style="margin-bottom: 0rem; padding-bottom:0rem">
+                <div class="container" if:true={frontEndDataMap.author.display}>
+                    <b>{_author}</b>
+                </div>
+                <div class="container" if:true={frontEndDataMap.publicationDate.display}>
+                    <p class="publication-date">{_publicationDate}</p>
+                </div>
+                <div class="container" if:true={frontEndDataMap.headerContent.display}>
+                    <lightning-formatted-rich-text class="lead" value={_content}></lightning-formatted-rich-text>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

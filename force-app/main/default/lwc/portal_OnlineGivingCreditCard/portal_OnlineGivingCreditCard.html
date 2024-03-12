@@ -1,0 +1,86 @@
+<template>
+    <div data-ascend-portal if:true={isShowComponent}>
+        <div style="padding-left: 1.2em; padding-right: 1.2em;">
+            <div class="container xsmall">
+                <h2 class="gift-summary-header">Gift Summary</h2>
+                <div class="gift-details-container">
+                    <div class="highlight-container">
+                        <div class="gift-details-column">
+                            <h5>Gift Type</h5>
+                            <p>{giftType}</p>
+                        </div>
+                        <div class="gift-details-column">
+                            <h5>Amount</h5>
+                            <p>${paymentAmount}</p>
+                        </div>
+                        <div class="gift-details-column" if:true={isDisplayTotalAmount}>
+                            <h5>Total Amount Pledged</h5>
+                            <p>${_amount}</p>
+                        </div>
+                    </div>
+                    <div class="flex-break" if:false={isOneTimeGift}></div>
+                    <div class="gift-details-column" if:true={isShowLastPledgePaymentAmount}>
+                        <h5>Last Payment Amount</h5>
+                        <p>${_lastPledgePaymentAmount}</p>
+                    </div>
+                    <div class="gift-details-column" if:true={isShowStartDate}>
+                        <h5>Start Date</h5>
+                        <lightning-formatted-date-time value={_startDate}></lightning-formatted-date-time>
+                    </div>
+                    <div class="gift-details-column" if:true={isShowEndDate}>
+                        <h5>End Date</h5>
+                        <lightning-formatted-date-time value={_endDate}></lightning-formatted-date-time>
+                    </div>
+                    <div class="gift-details-column" if:false={isOneTimeGift}>
+                        <h5>Frequency</h5>
+                        <p>{_frequency}</p>
+                    </div>
+                    <div class="gift-details-column" if:true={isShowNumberOfInstallments}>
+                        <h5>Number of Installments</h5>
+                        <p>{_numberOfInstallments}</p>
+                    </div>
+                    <div class="designation-list-container" if:true={_designationList}>
+                        <div class="designation-list-header-container">
+                            <h3>Designation</h3>
+                            <h3>Amount</h3>
+                        </div>
+                        <template for:each={_designationList} for:item="eachDesignation">
+                            <div class="designation-list-row" key={eachDesignation.Id}>
+                                <div>
+                                    <p>{eachDesignation.Name}</p>
+                                </div>
+                                <div>
+                                    <p>${eachDesignation.amount}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template if:true={isRenderPaymentForm}>
+            <div style="padding-left: 1.2em; padding-right: 1.2em;">
+                <c-portal_-payment-form
+                    payment-method={paymentMethod}
+                    payment-type={_giftType}
+                    amount={paymentAmount}
+                    number-of-installments={_numberOfInstallments}
+                    frequency={_frequency}
+                    start-date={_startDate}
+                    end-date={_endDate}
+                    external-gateway-name={externalGatewayName}
+                    billing-information={_constituentBillingInformation}
+                    organization-billing-information={_organizationBillingInformation}
+                    is-giving-as-org={_isGivingAsOrg}
+                    handle-payment-confirmation={paymentConfirmationHandler}
+                    handle-previous-click={handlePreviousButtonClick}
+                    additional-metadata={_additionalMetadata}
+                    payment-origin={paymentOrigin}
+                    is-create-pledge-subscription={_isCreatePledgeSubscription}
+                    is-recaptcha-enabled={_isRecaptchaEnabled}>
+                </c-portal_-payment-form>
+            </div>
+        </template>
+    </div>
+    
+</template>

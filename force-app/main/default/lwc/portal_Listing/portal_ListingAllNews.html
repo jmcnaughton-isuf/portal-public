@@ -1,0 +1,90 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div if:true={showComponent} class="container">
+            <template if:true={isDisplayNoResultsMessage}>
+                <h2 class="slds-text-align_center">{_noResultsText}</h2>
+            </template>
+            <div class="container medium">
+                <div class="section-wrapper" id="wrapper" style="padding-bottom: 0">
+                    <div class="flex-grid-3 news" id="news">
+                        <template for:each={listingListToDisplay} for:item="eachListing">
+                            <a href={eachListing.listingUrl} class="grid-item equalHeight card show" style="transition: 1.5s" key={eachListing.Id}>
+                                <div class="container">
+                                    <div class="image">
+                                        <template if:true={eachListing.thumbnailImageUrl}>
+                                            <img src={eachListing.thumbnailImageUrl} style="width: 100%" if:true={frontEndDataMap.thumbnailImage.display}>
+                                        </template>
+                                        <template if:false={eachListing.thumbnailImageUrl}>
+                                            <template if:true={eachListing.headerImageUrl}>
+                                                <img src={eachListing.headerImageUrl} style="width: 100%" if:true={frontEndDataMap.headerImage.display}>
+                                            </template>
+                                        </template>
+                                    </div>
+                                    <div class="copy">
+                                        <h4>
+                                            <lightning-formatted-rich-text value={eachListing.name} style="line-height: normal; color:#005595" if:true={frontEndDataMap.name.display}>
+                                            </lightning-formatted-rich-text>
+                                        </h4>
+                                        <p>
+                                            <lightning-formatted-rich-text value={eachListing.headerContent} style="line-height: normal" if:true={frontEndDataMap.headerContent.display}>
+                                            </lightning-formatted-rich-text>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                    </template>
+                    </div>
+                </div>
+                <div class="button-list center" style="margin-top: 0" if:false={isLastPage}>
+                    <a class="button primary" id="load-more" onclick={handleNextClick}>Load More</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <div if:true={showComponent} class="container">
+            <template if:true={hasNoResults}>
+                {_noResultsText}
+            </template>
+            <lightning-layout multiple-rows="true" class="content">
+                <template if:true={_showSpinner}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <lightning-layout-item size="12">
+
+                        <lightning-layout multiple-rows="false" horizontal-align="center">
+                            <template for:each={listingListToDisplay} for:item="eachListing">
+                                <lightning-layout-item size={_sizing} key={eachListing.Id} padding="around-small">
+                                    <a class="slds-align_absolute-center" href={eachListing.listingUrl} target="_blank">
+                                        <lightning-layout multiple-rows="true">
+                                            <lightning-layout-item size="12">
+                                                <lightning-formatted-rich-text value={eachListing.Thumbnail_Image__c}>
+                                                </lightning-formatted-rich-text>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12">
+                                                <h1 style="font-size: 25px; text-decoration: none">
+                                                    <lightning-formatted-rich-text value={eachListing.Name}>
+                                                    </lightning-formatted-rich-text>
+                                                </h1>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12">
+                                                <h1 style="font-size: 16px; text-decoration: none">
+                                                    <lightning-formatted-text value={eachListing.Header_Content__c}>
+                                                    </lightning-formatted-text>
+                                                </h1>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </a>
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>
+
+                </lightning-layout-item>
+                <div class='slds-align_absolute-center' if:false={isLastPage}>
+                    <button class='slds-button slds-button_brand' onclick={handleNextClick}>Load More</button>
+                </div>
+            </lightning-layout>
+        </div> -->
+    </div>
+</template>

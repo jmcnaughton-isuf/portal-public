@@ -1,0 +1,299 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+    
+    <div if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type={_selfReportModalType}
+            configuration={_selfReportConfiguration}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container bottom-border">
+            <!-- Breadcrumb -->
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li>
+                        <a href="?">Back to My Information</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section Header -->
+            <h2 style="margin-bottom: 0.5em">Degree Information</h2>
+
+            <!-- School Degree Records -->
+            <template if:true={isDisplaySchoolDegrees}>
+                <h3>{sectionConfiguration.schoolDegrees.label}</h3>
+
+                <template for:each={schoolDegrees} for:item="eachDegree" for:index="index">
+                    <div if:false={eachDegree.isDelete} class="entry-heading" key={eachDegree.timestampHtmlKey}>
+                        <div class="edit-entry-list">
+                            <template if:true={sectionConfiguration.schoolDegrees.hasReportUpdateLink}>
+                                <a onclick={handleSelfReport} data-section-id="schoolDegrees" data-index={index}>
+                                    <span if:true={eachDegree.hasSelfReportChange}>Pending</span>
+                                    <span if:false={eachDegree.hasSelfReportChange}>Request Update</span>
+                                </a>
+                            </template>
+
+                            <template if:false={sectionConfiguration.schoolDegrees.hasReportUpdateLink}> 
+                                <a if:false={sectionConfiguration.schoolDegrees.isDisable} onclick={handleDeleteDegree} data-index={index} data-section-id="schoolDegrees">
+                                    <img src={deleteIcon}>Delete
+                                </a>
+                            </template>
+                        </div>
+
+                        <!-- display each degree for editing -->
+                        <div class="entry-form">
+                            <div class="flex-grid-2">
+                                
+                                <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.isDisplay}>
+                                    <label>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachDegree.schoolDegreeDegree}
+                                        field-id="schoolDegreeDegree"
+                                        index={index}
+                                        section-id="schoolDegrees"
+                                        input-type={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.fieldType}
+                                        is-disabled={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.isDisable}
+                                        is-required={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.isRequired}
+                                        handle-change-callback={handleChange}
+                                        has-toggle={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.hasToggle}
+                                        toggle-value={eachDegree.isShowDegree}
+                                        toggle-field="isShowDegree"
+                                        picklist-values={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeDegree.picklistValues}>
+                                     </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+
+                                <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.isDisplay}>
+                                    <label>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachDegree.schoolDegreeYear}
+                                        field-id="schoolDegreeYear"
+                                        index={index}
+                                        section-id="schoolDegrees"
+                                        input-type={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.fieldType}
+                                        is-disabled={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.isDisable}
+                                        is-required={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.isRequired}
+                                        handle-change-callback={handleChange}
+                                        has-toggle={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.hasToggle}
+                                        toggle-value={eachDegree.isShowYear}
+                                        toggle-field="isShowYear"
+                                        picklist-values={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeYear.picklistValues>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+
+                                <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.isDisplay}>
+                                    <label>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachDegree.schoolDegreeMajor}
+                                        field-id="schoolDegreeMajor"
+                                        index={index}
+                                        section-id="schoolDegrees"
+                                        input-type={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.fieldType}
+                                        is-disabled={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.isDisable}
+                                        is-required={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.isRequired}
+                                        handle-change-callback={handleChange}
+                                        has-toggle={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.hasToggle}
+                                        toggle-value={eachDegree.isShowMajor}
+                                        toggle-field="isShowMajor"
+                                        picklist-values={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.picklistValues}
+                                        is-lookup={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.isLookup}
+                                        lookup-value={eachDegree.postCode}
+                                        lookup-field-id="postCode"
+                                        custom-metadata-api-name={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.customMetadataApiName}
+                                        custom-metadata-developer-name={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMajor.customMetadataDeveloperName}
+                                        handle-lookup-selection-callback={handleLookupSelection}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+
+                                <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.isDisplay}>
+                                    <label>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2 
+                                        value={eachDegree.schoolDegreeMinor}
+                                        field-id="schoolDegreeMinor"
+                                        index={index}
+                                        section-id="schoolDegrees"
+                                        input-type={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.fieldType}
+                                        is-disabled={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.isDisable}
+                                        is-required={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.isRequired}
+                                        handle-change-callback={handleChange}
+                                        has-toggle={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.hasToggle}
+                                        toggle-value={eachDegree.isShowMinor}
+                                        toggle-field="isShowMinor"
+                                        picklist-values={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.picklistValues}
+                                        is-lookup={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.isLookup}
+                                        lookup-value={eachDegree.minorCode}
+                                        lookup-field-id="minorCode"
+                                        custom-metadata-api-name={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.customMetadataApiName}
+                                        custom-metadata-developer-name={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeMinor.customMetadataDeveloperName}
+                                        handle-lookup-selection-callback={handleLookupSelection}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+
+                                <div class="grid-item" if:true={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.isDisplay}>
+                                    <label>{sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.label}</label>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachDegree.schoolDegreeAcademicOrg}
+                                        field-id="schoolDegreeAcademicOrg"
+                                        index={index}
+                                        section-id="schoolDegrees"
+                                        field-type={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.fieldType}
+                                        is-disabled={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.isDisable}
+                                        is-required={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.isRequired}
+                                        handle-change-callback={handleChange}
+                                        picklist-values={sectionConfiguration.schoolDegrees.fieldConfigurationMap.schoolDegreeAcademicOrg.picklistValues}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <div class="button-list">
+                    <template if:false={sectionConfiguration.schoolDegrees.isDisable}>
+                        <template if:false={sectionConfiguration.schoolDegrees.hasReportUpdateLink}>
+                            <a class="button secondary small" onclick={handleAddDegree} data-section-id="schoolDegrees">Add Degree</a>
+                        </template>
+                    </template>
+                </div>
+
+            </template>
+        </div>
+
+        <div class="line-break"></div>
+
+        <!-- Non-School Degree Records -->
+        <div class="container bottom-border" if:true={isDisplayNonSchoolDegrees}>
+            <h3>{sectionConfiguration.nonSchoolDegrees.label}</h3>
+
+            <template for:each={nonSchoolDegrees} for:item="eachDegree" for:index="index">
+                <div if:false={eachDegree.isDelete} class="entry-heading" key={eachDegree.timestampHtmlKey}>
+                    <div class="edit-entry-list">
+                        <template if:true={sectionConfiguration.nonSchoolDegrees.hasReportUpdateLink}>
+                            <a onclick={handleSelfReport} data-section-id="nonSchoolDegrees" data-index={index}>
+                                <span if:true={eachDegree.hasSelfReportChange}>Pending</span>
+                                <span if:false={eachDegree.hasSelfReportChange}>Request Update</span>
+                            </a>
+                        </template>
+
+                        <template if:false={sectionConfiguration.nonSchoolDegrees.hasReportUpdateLink}> 
+                            <a if:false={sectionConfiguration.nonSchoolDegrees.isDisable} onclick={handleDeleteDegree} data-index={index} data-section-id="nonSchoolDegrees">
+                                <img src={deleteIcon}>Delete
+                            </a>
+                        </template>
+                    </div>
+
+                    <div class="entry-form">
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.isDisplay}>
+                                <label>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachDegree.nonSchoolDegreeInstitution}
+                                    field-id="nonSchoolDegreeInstitution"
+                                    index={index}
+                                    section-id="nonSchoolDegrees"
+                                    input-type={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.fieldType}
+                                    is-disabled={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.isDisable}
+                                    is-required={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.hasToggle}
+                                    toggle-value={eachDegree.isShowInstitution}
+                                    toggle-field="isShowInstitution"
+                                    picklist-values={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.picklistValues}
+                                    is-lookup={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.isLookup}
+                                    lookup-value={eachDegree.nonSchoolDegreeInstitutionId}
+                                    lookup-field-id="nonSchoolDegreeInstitutionId"
+                                    custom-metadata-api-name={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.customMetadataApiName}
+                                    custom-metadata-developer-name={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeInstitution.customMetadataDeveloperName}
+                                    handle-lookup-selection-callback={handleLookupSelection}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.isDisplay}>
+                                <label>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachDegree.nonSchoolDegreeDegree}
+                                    field-id="nonSchoolDegreeDegree"
+                                    index={index}
+                                    section-id="nonSchoolDegrees"
+                                    input-type={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.fieldType}
+                                    is-disabled={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.isDisable}
+                                    is-required={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.hasToggle}
+                                    toggle-value={eachDegree.isShowDegree}
+                                    toggle-field="isShowDegree"
+                                    picklist-values={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeDegree.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.isDisplay}>
+                                <label>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachDegree.nonSchoolDegreeYear}
+                                    field-id="nonSchoolDegreeYear"
+                                    index={index}
+                                    section-id="nonSchoolDegrees"
+                                    input-type={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.fieldType}
+                                    is-disabled={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.isDisable}
+                                    is-required={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.hasToggle}
+                                    toggle-value={eachDegree.isShowYear}
+                                    toggle-field="isShowYear"
+                                    picklist-values={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeYear.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.isDisplay}>
+                                <label>{sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachDegree.nonSchoolDegreeMajor}
+                                    field-id="nonSchoolDegreeMajor"
+                                    index={index}
+                                    section-id="nonSchoolDegrees"
+                                    input-type={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.fieldType}
+                                    is-disabled={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.isDisable}
+                                    is-required={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.isRequired}
+                                    handle-change-callback={handleChange}
+                                    has-toggle={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.hasToggle}
+                                    toggle-value={eachDegree.isShowMajor}
+                                    toggle-field="isShowMajor"
+                                    picklist-values={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.nonSchoolDegreeMajor.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={sectionConfiguration.nonSchoolDegrees.isTogglePerRecord}>
+                                <div class="grid-item" if:true={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.isShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        label={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.isShowOnDirectory.label}
+                                        value={eachDegree.isShowOnDirectory}
+                                        field-id="isShowOnDirectory"
+                                        index={index}
+                                        section-id="nonSchoolDegrees"
+                                        input-type={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.isShowOnDirectory.fieldType}
+                                        is-required={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.isShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        picklist-values={sectionConfiguration.nonSchoolDegrees.fieldConfigurationMap.isShowOnDirectory.picklistValues}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:false={sectionConfiguration.nonSchoolDegrees.isDisable}>
+                <div class="button-list" if:false={sectionConfiguration.nonSchoolDegrees.hasReportUpdateLink}>
+                    <a class="button secondary small" onclick={handleAddDegree} data-section-id="nonSchoolDegrees">Add Degree</a>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

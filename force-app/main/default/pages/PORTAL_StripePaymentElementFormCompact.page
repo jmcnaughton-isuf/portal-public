@@ -1,0 +1,227 @@
+<apex:page controller="PORTAL_StripePaymentElementFormCtrl" showHeader="false" sidebar="false">
+    <head>
+        <script src="https://js.stripe.com/v3/"></script>
+    </head>
+
+    <style type="text/css">
+    @font-face {
+        font-family:'Lato';
+        font-style:normal;
+        font-weight:300;
+        src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Light.ttf')}");
+    }
+    @font-face {
+        font-family:'Lato';
+        font-style:normal;
+        font-weight:700;
+        src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Bold.ttf')}");
+    }
+    @font-face {
+        font-family:'Lato';
+        font-style:normal;
+        font-weight:400;
+        src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Regular.ttf')}");
+    }
+    @font-face {
+        font-family:'Lato';
+        font-style:normal;
+        font-weight:100;
+        src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Thin.ttf')}");
+    }
+    @font-face {
+        font-family:'Lato';
+        font-style:normal;
+        font-weight:900;
+        src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Black.ttf')}");
+    }
+
+    body {
+        background-color: transparent !important;
+    }
+        
+    .giving-card-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        bottom: 25px;
+        padding: 15px;
+        box-sizing: border-box;
+        position: absolute;
+    }
+
+    .giving-card-buttons>button {
+        border: none;
+        background: #2574A9;
+        color: white;
+        font-size: 16px;
+        padding: 8px 25px;
+        border-radius: 5px;
+        transition: .25s all ease-in-out;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
+
+    .giving-card-buttons>button:hover {
+        background-color: #1C577F;
+        transition: .25s all ease-in-out;
+    }
+
+    </style>
+
+    <body>
+        <form id="payment-form" style="padding-left: 1rem; padding-right: 1rem;">
+            <div id="payment-element">
+                <!-- Elements will create form elements here -->
+            </div>
+        </form>
+        <div class="giving-card-buttons" style="text-align: center">
+            <button id="previous" type="button" onclick="previous()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 7px;">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+                Billing Details
+            </button>
+            <button id="submit" type="submit">
+                Give                
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" style="margin-left: 7px;">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                </svg>
+            </button>
+        </div>
+    </body>
+
+    <script type="application/javascript">
+        const lexOrigin = "{!lexOrigin}";
+        let stripe = undefined
+        let elements = undefined;
+        let paymentType = undefined;
+        let isEnableApplePay = false;
+        
+        window.addEventListener("message", async (event) => {
+            if (event.origin !== lexOrigin) {
+                return;
+            }
+
+            let eventData = event.data;
+            if (typeof eventData === "string") {
+                eventData = JSON.parse(event.data);
+            }
+            
+            if (eventData.type === "isUpdate" && eventData.value) {
+                let previousButton = document.querySelector("#previous");
+                if (previousButton) {
+                    previousButton.remove();
+                }
+
+                let submitButton = document.querySelector("#submit");
+                if (submitButton) {
+                    submitButton.textContent = "Update";
+                }
+            } else if (eventData.type === "initialize") {
+                let stripeKey = eventData.stripeKey;
+                let clientSecretKey = eventData.clientSecretKey;
+
+                stripe = Stripe(stripeKey);
+                elements = stripe.elements({clientSecret: clientSecretKey});
+                let style = {
+                    base: {
+                        
+                    }
+                };
+                const paymentElement = elements.create("payment");
+                paymentElement.mount("#payment-element");
+                paymentElement.on('change', handlePaymentElementChange);
+
+                var form = document.getElementById("submit");
+                submit.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    window.parent.postMessage({type: "isUserSubmission", isApplePay: paymentType === 'apple_pay'}, lexOrigin);
+                });
+            } else if (eventData.type === 'isEnableApplePay') {
+                isEnableApplePay = true;
+                let submitButton = document.querySelector("#submit");
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+            } else if (eventData.type === "isValidUserSubmission") {
+                await submitPaymentLogic(eventData.isSubscription);
+            }
+        });
+
+        function handlePaymentElementChange(event) {
+            paymentType = event.value.type;
+            isEnableApplePay = false;
+            const isApplePay = paymentType === 'apple_pay';
+
+            let submitButton = document.querySelector("#submit");
+            if (submitButton) {
+                submitButton.disabled = isApplePay;
+            }
+
+            if (isApplePay) {
+                window.parent.postMessage({type: 'isApplePay'}, lexOrigin);
+            }
+        }
+
+        function previous() {
+            window.parent.postMessage({type:"previous"}, lexOrigin);
+        }
+
+        async function submitPaymentLogic(isSubscription) {
+            if (paymentType === 'apple_pay' && !isEnableApplePay) {
+                return;
+            }
+
+            let previousButton = document.querySelector("#previous");
+            if (previousButton) {
+                previousButton.disabled = true;
+            }
+
+            let submitButton = document.querySelector("#submit");
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
+
+            let result;
+            if (isSubscription) {
+                result = await stripe.confirmSetup({
+                    elements,
+                    confirmParams: {
+                        return_url: window.location.origin
+                    },
+                    redirect: "if_required"
+                });
+            } else {
+                result = await stripe.confirmPayment({
+                    elements,
+                    confirmParams: {
+                        return_url: window.location.origin
+                    },
+                    redirect: "if_required"
+                });
+            }
+            
+            if (!result.error) {
+                window.parent.postMessage({ type: "confirmed"}, lexOrigin);
+            } else {
+                if (previousButton) {
+                    previousButton.disabled = false;
+                }
+                
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+
+                window.parent.postMessage({ type: "error"}, lexOrigin);
+            }
+        }
+
+        window.parent.postMessage({ type: "ready" }, lexOrigin);
+
+    </script>
+    
+    
+</apex:page>

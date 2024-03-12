@@ -1,0 +1,12 @@
+.pageHeader {
+    font-size: 18px;
+    text-align: center;
+}
+
+.errorMessageHeader {
+    font-size: 16px;
+}
+
+.errorMessage {
+    font-size: 14px;
+}

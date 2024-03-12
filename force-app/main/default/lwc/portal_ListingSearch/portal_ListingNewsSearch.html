@@ -1,0 +1,68 @@
+<template>
+    <div data-ascend-portal>
+        <div class="siteforceStarterBody" style="padding-bottom: 2em">
+            <div class="panel" style="margin-bottom: 2em;">
+                <div class="container medium">
+                    <h2 style="margin-bottom: .5em">{_searchSectionTitle}</h2>
+                    <div class="entry-form">
+                        <div class="flex-grid-2">
+                            <div class="grid-item">
+                                <label for="name">Keyword Search</label>
+                                <input id="name" type="text" value={_keyword} onchange={handleKeywordInput}>
+                            </div>
+                        </div>
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={_listingPicklists}>
+                                <label for="type">News Category</label>
+                                <c-portal_-select name="type"
+                                                option-list={_listingPicklists.Category__c} 
+                                                handle-change={handleCategoryChange}
+                                                default-value={_category}>
+                                </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={_listingPicklists}>
+                                <label for="type">Article Length</label>
+                                <c-portal_-select name="type"
+                                                option-list={_listingPicklists.Article_Length__c} 
+                                                handle-change={handleArticleLengthChange}
+                                                default-value={_articleLength}>
+                                </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={_listingPicklists}>
+                                <label for="type">Topic</label>
+                                <c-portal_-select name="type"
+                                                option-list={_listingPicklists.Recommend_Type_1__c} 
+                                                handle-change={handleTopicChange}
+                                                default-value={_topic}>
+                                </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={_listingPicklists}>
+                                <label for="type">Format</label>
+                                <c-portal_-select name="type"
+                                                option-list={_listingPicklists.Format__c} 
+                                                handle-change={handleFormatChange}
+                                                default-value={_format}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+                        <div class="button-list" style="margin-top: 0; margin-bottom: 0">
+                            <button class="button secondary full-mobile" onclick={handleClear}>Clear</button>
+                            <button class="button primary full-mobile" onclick={handleSearch}>Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <template if:true={_listingSectionTitle}>
+                <p style="text-align: center; font-size: 2rem;">{_listingSectionTitle}</p>
+            </template>
+            <c-portal_-listing page-name={pageName} 
+                            main-section-name={mainSectionName} 
+                            sub-section-name={subSectionName} 
+                            listing-list={_listingList}
+                            design={design}
+                            prevent-load-query=true
+                            set-section-titles={setSectionTitles}>
+            </c-portal_-listing>
+        </div>
+    </div>
+</template>

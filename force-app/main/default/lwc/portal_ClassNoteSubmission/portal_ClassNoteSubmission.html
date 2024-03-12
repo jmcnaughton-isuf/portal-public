@@ -1,0 +1,161 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner alternative-text="Loading" if:true={isShowSpinner}></lightning-spinner>
+
+        <div class="container small class-note-container" if:true={isDisplayComponent}>
+            <h1>Submit a Class Note</h1>
+
+            <div class="class-note-card">
+                
+                <div class="class-note-progress-bar">
+                    <template for:each={progressBarStepList} for:item="step">
+                        <div key={step.timestamp} class={step.class}></div>
+                    </template>
+                </div>
+
+                <!-- Page 1 Personal Info -->
+
+                <div lwc:if={isDisplayPersonalInfoPage}>
+                    <div class="class-note-input" if:true={frontEndDataMap.submissionCategory.display}>
+                        <lightning-dual-listbox 
+                            name="submissionCategory"    
+                            label={frontEndDataMap.submissionCategory.label}
+                            variant="label-stacked"
+                            source-label="Available"
+                            selected-label="Selected"
+                            options={picklists.submissionCategory}
+                            value={record.submissionCategory}
+                            required={frontEndDataMap.submissionCategory.isRequired}
+                            onchange={handleChange}
+                            style="padding: 0">
+                        </lightning-dual-listbox>
+                    </div>
+
+                    <div class="flex-grid-2">
+                        <div class="grid-item class-note-input" if:true={frontEndDataMap.firstName.display}>
+                            <label for="firstName"><span if:true={frontEndDataMap.firstName.isRequired} class="slds-required">*</span>{frontEndDataMap.firstName.label}</label>
+                            <input value={record.firstName} required={frontEndDataMap.firstName.isRequired} onchange={handleChange} name="firstName" id="firstName"/>
+                        </div>
+
+                        <div class="grid-item class-note-input" if:true={frontEndDataMap.lastName.display}>
+                            <label for="lastName"><span if:true={frontEndDataMap.lastName.isRequired} class="slds-required">*</span>{frontEndDataMap.lastName.label}</label>
+                            <input value={record.lastName} required={frontEndDataMap.lastName.isRequired} onchange={handleChange} name="lastName" id="lastName"/>
+                        </div>
+
+                        <div class="grid-item class-note-input" if:true={frontEndDataMap.emailAddress.display}>
+                            <label for="emailAddress"><span if:true={frontEndDataMap.emailAddress.isRequired} class="slds-required">*</span>{frontEndDataMap.emailAddress.label}</label>
+                            <input type="email" value={record.emailAddress} required={frontEndDataMap.emailAddress.isRequired} onchange={handleChange} oninput={handleInput} name="emailAddress" id="emailAddress"/>
+                        </div>
+
+                        <div class="grid-item class-note-input" if:true={frontEndDataMap.classYear.display}>
+                            <label for="classYear"><span if:true={frontEndDataMap.classYear.isRequired} class="slds-required">*</span>{frontEndDataMap.classYear.label}</label>
+                            <input value={record.classYear} required={frontEndDataMap.classYear.isRequired} onchange={handleChange} name="classYear" id="classYear" maxlength="4"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page 2 Class Note Contents -->
+
+                <div lwc:elseif={isDisplayClassNoteContentPage}>
+                    <div class="class-note-input" if:true={frontEndDataMap.classNoteContent.display}>
+                        <label for="classNoteContent"><span if:true={frontEndDataMap.classNoteContent.isRequired} class="slds-required">*</span>{frontEndDataMap.classNoteContent.label}</label>
+                        <textarea required={frontEndDataMap.classNoteContent.isRequired} onchange={handleChange} name="classNoteContent" id="classNoteContent" placeholder={frontEndDataMap.classNoteContent.tooltipText}>
+                            {record.classNoteContent}
+                        </textarea>
+                    </div>
+
+                    <div class="class-note-input" if:true={frontEndDataMap.classNoteImage.display}>
+                        <lightning-file-upload 
+                            label={frontEndDataMap.classNoteImage.label}
+                            required={frontEndDataMap.classNoteImage.isRequired}
+                            record-id={recordId}
+                            file-field-name="ucinn_portal_Guest_Record_fileupload__c"
+                            file-field-value={recordId}
+                            accept={validFileTypes}
+                            onuploadfinished={handleFileUpload}
+                            name="classNoteImage">
+                        </lightning-file-upload>
+                        <label style="margin-top: 2px; text-transform: none">{uploadedFileName}</label>
+                    </div>
+
+                    <div class="class-note-input" if:true={frontEndDataMap.classNoteImageCaption.display}>
+                        <label for="classNoteImageCaption"><span if:true={frontEndDataMap.classNoteImageCaption.isRequired} class="slds-required">*</span>{frontEndDataMap.classNoteImageCaption.label}</label>
+                        <textarea required={frontEndDataMap.classNoteImageCaption.isRequired} onchange={handleChange} name="classNoteImageCaption" id="classNoteImageCaption" placeholder={frontEndDataMap.classNoteImageCaption.tooltipText}>
+                            {record.classNoteImageCaption}
+                        </textarea>
+                    </div>
+                </div>
+
+                <!-- Page 3 Preview and Checkboxes -->
+
+                <div lwc:elseif={isDisplayPreviewPage}>
+                    <div>
+                        <label>PREVIEW:</label>
+                        <div class="class-note-preview">
+                            <div class="class-note-image" if:true={isDisplayImagePreview}>
+                                <img if:true={uploadedFileSrc} src={uploadedFileSrc}/>
+                                <p if:true={record.classNoteImageCaption}>{record.classNoteImageCaption}</p>
+                            </div>
+                            <div class="class-note-content">
+                                <p if:true={record.classNoteContent}>{record.classNoteContent}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="class-note-input" if:true={frontEndDataMap.hasPublishPermission.display}>
+                        <fieldset>
+                            <div class="field-wrapper">
+                                <input checked={record.hasPublishPermission} type="checkbox" class="radio" required={frontEndDataMap.hasPublishPermission.isRequired} onchange={handleChange} name="hasPublishPermission" id="hasPublishPermission"/>
+                                <label class="checkbox-label" for="hasPublishPermission">{frontEndDataMap.hasPublishPermission.label}<span if:true={frontEndDataMap.hasPublishPermission.isRequired} class="slds-required">*</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="class-note-input" if:true={frontEndDataMap.hasSocialMediaPermission.display}>
+                        <fieldset>
+                            <div class="field-wrapper">
+                                <input checked={record.hasSocialMediaPermission} type="checkbox" class="radio" required={frontEndDataMap.hasSocialMediaPermission.isRequired} onchange={handleChange} name="hasSocialMediaPermission" id="hasSocialMediaPermission"/>
+                                <label class="checkbox-label" for="hasSocialMediaPermission">{frontEndDataMap.hasSocialMediaPermission.label}<span if:true={frontEndDataMap.hasSocialMediaPermission.isRequired} class="slds-required">*</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                
+                <!-- Page 4 Confirmation -->
+
+                <div lwc:elseif={isDisplayConfirmationPage}>
+                    <lightning-formatted-rich-text if:true={contentModuleMetadata.htmlText} value={contentModuleMetadata.htmlText}></lightning-formatted-rich-text>
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="class-note-buttons">
+                    <button onclick={handleBack} if:true={isDisplayBackButton}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 7px;">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Back
+                    </button>
+
+                    <button style="margin-left: auto;" onclick={handleNext} lwc:if={isDisplayNextButton}>
+                        Next 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" style="margin-left: 7px;">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </button>
+                    <button style="margin-left: auto" onclick={handleSubmit} lwc:elseif={isDisplaySubmitButton}>
+                        Submit
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" style="margin-left: 7px;">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </button>
+                    <button style="margin-left: auto" onclick={handleRestart} lwc:elseif={isDisplayRestartButton}>
+                        Submit Another
+                    </button>
+                </div>
+            </div>
+
+            <template if:true={isRecaptchaEnabled}>
+                <c-portal_-Recaptcha if:true={isDisplaySubmitButton} is-center-recaptcha></c-portal_-Recaptcha>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="hideImage" label="DEPRECATED(Hide Header Image)" type="Boolean"/>
+            <property name="hideCaption" label="DEPRECATED(Hide Header Caption)" type="Boolean"/>
+            <property name="hideContent" label="DEPRECATED(Hide Header Content)" type="Boolean"/>
+            <property name="contentModuleName" label="Content Module Override Name"
+                      description="A Content Module name that, if present on the current Listing, overrides this Header component."
+                      type="String"/>
+            <property name="notInterestedLogoUrl" label="Inactive Not Interested Logo URL" type="String" description="Icon to display when the user is still interested in the listing"/>
+            <property name="activeNotInterestedLogoUrl" label="Active Not Interested Logo URL" type="String" description="Icon to display when the user is not interested in the listing"/>
+            <property name="bookmarkLogoUrl" label="Inactive Bookmark Logo URL" type="String" description="Icon to display when the user has not bookmarked the listing"/>
+            <property name="activeBookmarkLogoUrl" label="Active Bookmark Logo URL" type="String" description="Icon to display when the user has bookmarked the listing"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

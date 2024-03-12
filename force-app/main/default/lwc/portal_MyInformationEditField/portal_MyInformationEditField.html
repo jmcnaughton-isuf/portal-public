@@ -1,0 +1,81 @@
+<template>
+    <template if:true={isToggled}>
+        <template if:false={isDate}>
+            <template if:false={isCheckbox}>
+                <label for="" if:true={label}>{label}</label>
+                <div class="labelled-toggle-switch">
+                    <span class="hide-input">Hide</span>
+                    <label class="switch">
+                        <input type="checkbox" checked={toggleValue} oninput={updateToggleValue} >
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="show-input">Show</span>
+                </div>
+                <lightning-input variant="label-hidden" disabled={isDisabled} type={inputType} checked={_value} value={_value} onchange={updateValue} required={isRequired} if:true={showInputBox}></lightning-input>
+                <!-- <input disabled={isDisabled} type={inputType} checked={_value} value={_value} oninput={updateValue} required={isRequired} if:true={showInputBox}> -->
+            </template>
+        </template>
+
+        <template if:true={isDate}>
+            <label for="name" if:true={label}>{label}</label>
+            <input type="date" value={_value} oninput={updateValue} disabled={isDisabled} required={isRequired} min="1700-01-01" max="4000-12-31">
+        </template>
+        
+        <template if:true={isCheckbox}>
+            <div class="labelled-toggle-switch">
+                <span class="hide-input">Hide</span>
+                <label class="switch">
+                    <input type="checkbox" checked={toggleValue} oninput={updateToggleValue} >
+                    <span class="slider round"></span>
+                </label>
+                <span class="show-input">Show</span>
+            </div>
+            <fieldset>
+                <div class="field-wrapper">
+                    <input data-inputtype="radio" type="checkbox" class="radio" disabled={isDisabled} checked={_value} value={_value} oninput={updateValue} if:true={showInputBox} required={isRequired}>
+                    <label for="" if:true={label}>{label}</label>
+                </div>
+            </fieldset>
+        </template>
+
+        <template if:true={inputBoxIsLookup}>
+            <c-portal_-lookup required={isRequired} handle-lookup-option-selected={handleLookup} input-value={_value} disabled={isDisabled} clear-list={_clearList} handle-change={handleLookupChange}  display-setting-list={displaySettingList} custom-metadata-api-name={customMetadataApiName}></c-portal_-lookup>
+        </template>
+
+        <template if:true={isPicklist}>
+            <c-portal_-select is-show-null-option="true" disabled={isDisabled} default-value={_value} option-list={picklistValues} handle-change={updateValue} required={isRequired} label-class="slds-form-element__label slds-no-flex"></c-portal_-select>
+        </template>
+
+    </template>
+    <template if:false={isToggled}>
+        <template if:false={isDate}>
+            <template if:false={isCheckbox}>
+                <label for="" if:true={label}>{label}</label>
+                <lightning-input variant="label-hidden" disabled={isDisabled} type={inputType} checked={_value} value={_value} onchange={updateValue} if:true={showInputBox} required={isRequired}></lightning-input>
+            </template>
+        </template>
+
+        <template if:true={isDate}>
+            <label for="name" if:true={label}>{label}</label>
+            <input type="date" value={_value} oninput={updateValue} disabled={isDisabled} required={isRequired} min="1700-01-01" max="4000-12-31">
+        </template>
+
+        <template if:true={isCheckbox}>
+            <fieldset>
+                <div class="field-wrapper">
+                    <input data-inputtype="radio" type="checkbox" class="radio" disabled={isDisabled} checked={_value} value={_value} oninput={updateValue} if:true={showInputBox} required={isRequired}>
+                    <label for="" if:true={label}>{label}</label>
+                </div>
+            </fieldset>
+        </template>
+        <!-- <input disabled={isDisabled} type={inputType} checked={_value} value={_value} oninput={updateValue} if:true={showInputBox} required={isRequired}> -->
+
+        <template if:true={inputBoxIsLookup} >
+            <c-portal_-lookup required={isRequired} handle-lookup-option-selected={handleLookup} input-value={_value} disabled={isDisabled} clear-list={_clearList} handle-change={handleLookupChange}  display-setting-list={displaySettingList} custom-metadata-api-name={customMetadataApiName}></c-portal_-lookup>
+        </template>
+
+        <template if:true={isPicklist}>
+            <c-portal_-select is-show-null-option={isNullOptionEnabled} disabled={isDisabled} default-value={_value} option-list={picklistValues} handle-change={updateValue} required={isRequired} label-class="slds-form-element__label slds-no-flex"></c-portal_-select>
+        </template>
+     </template>
+</template>

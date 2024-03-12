@@ -1,0 +1,37 @@
+.featured-board-member-title {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    font-size: 22px;
+}
+
+.featured-board-member-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.featured-board-member-list > div {
+    flex-basis: 33.33%;
+    text-align : center;
+}
+
+.featured-board-member-view-more {
+    text-align: center;
+}
+
+.view-all-news.button {
+    right: 0px;
+    top: -3px;
+}
+
+@media (max-width: 1199px) {
+    .view-all-news.button {
+        top: -12px;
+    }
+}
+
+@media (max-width: 991px) {
+    .view-all-news.button {
+        top: -3px;
+    }
+}

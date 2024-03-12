@@ -1,0 +1,11 @@
+<template>
+    <div style="padding: 15px 20px 25px 20px;" if:true={_isShowComponent}>
+        <div style="font-size:1.5rem; text-align:center; max-width:fit-content; margin: 0 auto;">
+            {_touchNetDisplayMessage}
+        </div>
+
+        <div if:true={_isShowPreviousButton} style="text-align:center; margin-top: 15px">
+            <button class="button primary small" onclick={handlePreviousClick}>Return to Billing Information</button>
+        </div>
+    </div>
+</template>

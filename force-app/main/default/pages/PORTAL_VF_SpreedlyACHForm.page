@@ -1,0 +1,367 @@
+<apex:page controller="PORTAL_SpreedlyACHFormController" showHeader="false" sidebar="false"
+    lightningStyleSheets="true">
+    <html>
+
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        select {
+            width: 100%;
+            margin-bottom: 20px !important;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            display:block !important;
+            font-family: 'Noah-Bold';
+        }
+
+        .formbody {
+            display:block;
+            text-align:center;
+            background-color: #f7f7f7;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        form {
+            background-color: #f7f7f7;
+            margin: auto;
+            text-align:left;
+            display:inline-block;
+            padding-bottom: 1rem;
+            width: 100%;
+        }
+
+        @font-face {
+        font-family: 'Noah-Bold';
+        src: url({!URLFOR($Resource.PORTAL_Fonts, '/Noah/NoahBold/font.woff')}) format('woff');
+        }
+        /* line 883, src/sass/style.scss */
+        .button-list {
+        padding: .4rem 0;
+        margin: 1rem 0 0;
+        font-size: 1.1em; }
+        /* line 888, src/sass/style.scss */
+        .button-list img {
+            width: 19px; }
+            /* line 891, src/sass/style.scss */
+            .button-list img svg {
+            width: 100%; }
+        /* line 894, src/sass/style.scss */
+        .button-list.center {
+            width: 100%;
+            text-align: center;
+            justify-content: center; }
+            /* line 899, src/sass/style.scss */
+            .button-list.center .button {
+            margin-right: 0; }
+        /* line 902, src/sass/style.scss */
+        .button-list.text {
+            margin-top: 6px; }
+            /* line 905, src/sass/style.scss */
+            .button-list.text a {
+            display: flex;
+            align-items: center; }
+            /* line 906, src/sass/style.scss */
+            .button-list.text a:first-of-type {
+                margin-right: 10px; }
+        /* line 912, src/sass/style.scss */
+        .button-list .button {
+            margin-right: 8px; }
+            /* line 916, src/sass/style.scss */
+            .button-list .button.has-icon:hover {
+            background-color: white;
+            color: #005595; }
+            /* line 922, src/sass/style.scss */
+            .button-list .button.full-mobile {
+            margin-right: 0;
+            margin-bottom: .7rem; }
+            /* line 926, src/sass/style.scss */
+            .button-list .button.full-mobile:last-of-type {
+                margin-bottom: 0; }
+            /* line 931, src/sass/style.scss */
+            .button-list .button.disabled {
+            opacity: .5;
+            pointer-events: none; }
+        /* line 937, src/sass/style.scss */
+        .button-list.controls .button {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            flex: 1 1 100%;
+            text-align: center;
+            display: block; }
+
+        button {
+            font-family: 'Noah-Bold' !important;
+            background-color: #005595 !important;
+            color: white !important;
+            padding: .5em 1.1em !important;
+            border-radius: 3px !important;
+            font-weight: bold !important;
+            font-size: 1.1em !important;
+            transition: background-color 300ms, color 300ms !important;
+            border: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            background-image: initial !important;
+            background-repeat: initial !important;
+            background-position: initial !important;
+            margin: 1px !important;
+        /*  img {
+                width: 18px;
+                height: 18px;
+                position: relative;
+                top: -2px;
+                left: -5px;
+            }
+        */ }
+        /* line 971, src/sass/style.scss */
+        .button.slds-button_icon {
+            padding: .5em !important; }
+        /* line 975, src/sass/style.scss */
+        .button.primary {
+            background-color: #005595;
+            color: white;
+            border: 1px solid #005595; }
+            /* line 980, src/sass/style.scss */
+            .button.primary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 985, src/sass/style.scss */
+            .button.primary:hover svg .outline {
+                fill: white; }
+            /* line 988, src/sass/style.scss */
+            .button.primary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -2px;
+            right: 0px; }
+            /* line 995, src/sass/style.scss */
+            .button.primary svg .outline {
+                fill: white; }
+        /* line 1001, src/sass/style.scss */
+        .button.secondary {
+            background-color: white;
+            border: 1px solid #cdcfd8;
+            color: #005595; }
+            /* line 1006, src/sass/style.scss */
+            .button.secondary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 1012, src/sass/style.scss */
+            .button.secondary:hover svg {
+                fill: white; }
+            /* line 1014, src/sass/style.scss */
+            .button.secondary:hover svg .outline {
+                fill: white; }
+            /* line 1017, src/sass/style.scss */
+            .button.secondary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -1px;
+            right: 0px; }
+            /* line 1024, src/sass/style.scss */
+            .button.secondary svg .outline {
+                fill: #005595; }
+        /* line 1032, src/sass/style.scss */
+        .button.tertiary.light {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white; }
+            /* line 1037, src/sass/style.scss */
+            .button.tertiary.light:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1045, src/sass/style.scss */
+        .button.tertiary.dark {
+            background-color: transparent;
+            color: #005595;
+            border: 1px solid #005595; }
+            /* line 1050, src/sass/style.scss */
+            .button.tertiary.dark:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1058, src/sass/style.scss */
+        .button.tertiary.bare {
+            position: relative;
+            color: #005595;
+            padding: 0;
+            border: none;
+            background: transparent; }
+            /* line 1065, src/sass/style.scss */
+            .button.tertiary.bare:after {
+            content: '\003E';
+            position: absolute;
+            left: 110%;
+            top: 2px; }
+            /* line 1072, src/sass/style.scss */
+            .button.tertiary.bare:hover {
+            background-color: transparent;
+            border: none;
+            color: #00c0f3 !important;
+            text-decoration: none; }
+            /* line 1078, src/sass/style.scss */
+            .button.tertiary.bare:hover:after {
+                color: #00c0f3; }
+        /* line 1085, src/sass/style.scss */
+        .button.small {
+            font-size: .9rem;
+            padding: .5rem .7rem; }
+        /* line 1090, src/sass/style.scss */
+        .button.full-width {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: .6em; }
+            /* line 1097, src/sass/style.scss */
+            .button.full-width:last-of-type {
+            margin-bottom: 0; }
+        /* line 1103, src/sass/style.scss */
+        .button.full-mobile {
+            width: 100%;
+            text-align: center; }
+        /* line 1108, src/sass/style.scss */
+        .button:active, .button:focus {
+            color: white !important;
+            text-decoration: none !important;
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3; } 
+    </style>
+
+    <head>
+        <apex:slds />
+    </head>
+
+    <body class="slds-scope" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  style="background: #f7f7f7;">
+        <div class="formbody">
+            <form style="width: 100%">
+                <apex:panelGrid columns="1">
+                    <apex:panelGroup >
+                        <div>
+                            <label id="full_name_label" for="full_name">Name</label>
+                            <input type="text" id="full_name" name="full_name"/>
+                        </div>
+                        <div>
+                            <label id="bank_routing_number_label" for="bank_routing_number">Bank Routing Number</label>
+                            <input type="text" id="bank_routing_number" name="bank_routing_number"/>
+                        </div>
+                        <div>
+                            <label id="bank_account_number_label" for="bank_account_number">Bank Account Number</label>
+                            <input type="text" id="bank_account_number" name="bank_account_number"/>
+                        </div>
+                        <div>
+                            <label for="bank_account_type">Account Type</label>
+                            <select id="bank_account_type" name="bank_account_type">
+                                <option value="checking">Checking</option>
+                                <option value="savings">Savings</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="bank_account_holder_type">Account Holder</label>
+                            <select id="bank_account_holder_type" name="bank_account_holder_type">
+                              <option value="personal">Personal</option>
+                              <option value="business">Business</option>
+                            </select>
+                        </div>
+                    </apex:panelGroup>
+                </apex:panelGrid>
+                <div class="button-list" style="text-align: center">
+                    <button class="button secondary" id="cancel-button" type="button">Previous</button>
+                    <button class="button secondary" id="submit-button" type="button">Submit Payment</button>
+                </div>
+                <!-- <div style="display:flex; flex-direction: row; justify-content: center; align-items: stretch">
+                    <input class="slds-button slds-button_text-destructive" id="cancel-button" type="button" value="Previous" />
+                    <input class="slds-button slds-button_brand" id="submit-button" type="submit" value="Submit" />
+                </div> -->
+            </form>
+        </div>
+
+        <script type="application/javascript">
+            const lexOrigin = "{!lexOrigin}";
+
+            const cancelButton = document.getElementById("cancel-button");
+            cancelButton.addEventListener('click', () => {
+                window.parent.postMessage({type:"previous"}, lexOrigin);
+            });
+
+            const submitButton = document.getElementById("submit-button");
+            submitButton.addEventListener('click', () => {
+                var fullName = document.getElementById("full_name").value;
+                var bankRoutingNumber = document.getElementById("bank_routing_number").value;
+                var bankAccountNumber = document.getElementById("bank_account_number").value;
+                var bankAccountType = document.getElementById("bank_account_type").value;
+                var bankAccountHolderType = document.getElementById("bank_account_holder_type").value;
+                var paymentMethodType = "bank_account";
+                
+                const paymentFields = {fullName: fullName,
+                                        bankRoutingNumber: bankRoutingNumber,
+                                        bankAccountNumber: bankAccountNumber,
+                                        bankAccountType: bankAccountType,
+                                        bankAccountHolderType: bankAccountHolderType,
+                                        paymentMethodType: paymentMethodType};
+                window.parent.postMessage({
+                            type: "payment_method",
+                            token: "bank_account", //no token since it needs to be created in the backend for Spreedly ACH payments (unless spreedly adds ACH support to their IFrames in the future)
+                            additionalPaymentDataMap: paymentFields
+                        }, lexOrigin);
+            });
+
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                    var previousButton = document.querySelector('#cancel-button');
+                    if (previousButton) {
+                        previousButton.remove();
+                    }
+
+                    var submitButton = document.querySelector('#submit-button');
+                    if (submitButton) {
+                        submitButton.textContent = 'Update';
+                    }
+                }
+                else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                    const opts = eventData;
+
+                    const displayOptions = opts.displayOptions;
+                    if (displayOptions) {
+                        if (displayOptions.full_name) {
+                            document.getElementById("full_name").value = displayOptions.full_name;
+                        }
+                    }
+                }
+            });
+
+            window.parent.postMessage({ type: "readyACH" }, lexOrigin);
+        </script>
+    </body>
+
+    </html>
+</apex:page>

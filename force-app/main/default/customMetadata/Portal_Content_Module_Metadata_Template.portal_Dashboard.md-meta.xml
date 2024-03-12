@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>portal_Dashboard</label>
+    <protected>false</protected>
+    <values>
+        <field>LWC_Name__c</field>
+        <value xsi:type="xsd:string">portal_Dashboard</value>
+    </values>
+    <values>
+        <field>Metadata_Template__c</field>
+        <value xsi:type="xsd:string">{&quot;heading&quot;: &quot;Heading Name&quot;,
+&quot;subHeading&quot;: &quot;Sub Heading&quot;,
+&quot;buttonList&quot;: [{&quot;label&quot;: &quot;Button Label&quot;, &quot;link&quot;: &quot;Button Link&quot;}],
+&quot;iconList&quot;: [{&quot;imageUrl&quot;: &quot;Image URL&quot;, &quot;altText&quot;: &quot;Image Alternative Text&quot;, &quot;label&quot;: &quot;Icon Label&quot;, &quot;link&quot;: &quot;Icon Link&quot;}]}</value>
+    </values>
+</CustomMetadata>

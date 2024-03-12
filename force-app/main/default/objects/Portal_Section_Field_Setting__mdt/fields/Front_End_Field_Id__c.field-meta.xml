@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Front_End_Field_Id__c</fullName>
+    <description>The unique id that will be used on the front end to display the correct data and can be used as the field name in apex if we want to wrap the class in a custom data structure.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The unique id that will be used on the front end to display the correct data and can be used as the field name in apex if we want to wrap the class in a custom data structure.</inlineHelpText>
+    <label>Front End Field Id</label>
+    <length>40</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

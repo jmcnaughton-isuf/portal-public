@@ -1,0 +1,361 @@
+<template>
+    <div data-ascend-portal>
+        <div if:true={_isShowSpinner} style="position: relative; z-index: 10001">
+            <div class="slds-spinner_container slds-is-fixed">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+
+        <template if:true={_isCallbackDone}>
+            <div class="widget message-bar success" if:true={_showSuccessMessage}>
+                <div class="container large" style="position: relative; margin-bottom: 0;">
+                    <p>{_successMessage}</p>
+                    <a class="button close close-message-bar" name="success" role="button" aria-label="Close success message" onclick={handleCloseSuccess}>Close</a>
+                </div>
+            </div>
+            <div class="widget message-bar error" style="background: #e01111;" if:true={_showErrorMessage}>
+                <div class="container large" style="position: relative; margin-bottom: 0;">
+                    <p>{_errorMessage}</p>
+                    <a class="button close close-message-bar" name="success" role="button" aria-label="Close success message" onclick={handleCloseError}>Close</a>
+                </div>
+            </div>
+
+            <div class="container medium">
+                <div class="content-wrapper">
+                    <div class="form-element heading">
+                        <h2 style="margin-bottom: 0">{_titleText}</h2>
+                    </div>
+                    <div class="entry-form">
+                        <div class="flex-grid">
+                            <div class="grid-item full-width">
+                                <c-portal_-select is-show-null-option="true" label="Alumni Club/Group" input-name="availableZone" default-value={_listing.Portal_Zone__c} option-list={_availableZones} handle-change={handleAvailableZone}></c-portal_-select>
+                            </div>
+                        </div>
+                        <template if:true={_isShowListing}>
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <c-portal_-input classes="slds-input" value={_listing.Name} input-name="Name" label="Listing Name" handle-change={setRecordValue} required="true"></c-portal_-input>
+                                </div>
+                            </div>
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <c-portal_-input classes="slds-input" value={_listing.Subject_Line__c} input-name="Subject_Line__c" label="Subject Line" handle-change={setRecordValue} required="true"></c-portal_-input>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:true={_isShowListing}>
+                            <div class="show-on-phone">
+                                <div class="flex-grid">
+                                        <div class="grid-item full-width">
+                                            <div class="newsletter-submission-datetimepicker">                                        
+                                                <label for="startdate-mobile"><abbr class="slds-required" title="required" style="float: left;">* </abbr>Scheduled Date and Time</label>
+                                                <input type="datetime-local" id="startdate-mobile" value={_listing.Start_Date_Time__c} name="Start_Date_Time__c" max="4000-12-31T23:59" onblur={setRecordValue} required></input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="flex-grid">
+                                    <div class="grid-item full-width">
+                                        <c-portal_-select is-show-null-option="true" label="Time Zone" input-name="Time_Zone__c" default-value={_listing.Time_Zone__c} option-list={_timezones} handle-change={setRecordValue}></c-portal_-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hide-on-phone">
+                                <div class="flex-grid">
+                                    <div class="grid-item" style="flex: 1 1 40%; padding-right: 0.5rem;">
+                                        <div class="newsletter-submission-datetimepicker">
+                                            <label for="startdate"><abbr class="slds-required" title="required" style="float: left;">* </abbr>Scheduled Date and Time</label>
+                                            <input type="datetime-local" id="startdate" value={_listing.Start_Date_Time__c} name="Start_Date_Time__c" max="4000-12-31T23:59" onblur={setRecordValue} required></input>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item full-width" style="flex: 1 1 60% !important;">
+                                        <c-portal_-select is-show-null-option="true" label="Time Zone" input-name="Time_Zone__c" default-value={_listing.Time_Zone__c} option-list={_timezones} handle-change={setRecordValue}></c-portal_-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-grid">
+                                <div class="grid-item" style="padding-right: 0 !important">
+                                    <lightning-input-rich-text label-visible="true" label="Introduction" name="Body_Content__c" data-target="richText" value={_listing.Body_Content__c} onchange={setRecordValue}></lightning-input-rich-text>
+                                </div>
+                            </div>
+                            <div class="flex-grid">
+                                <div class="grid-item" style="padding-right: 0 !important">
+                                    <c-portal_-select is-show-null-option="true" label="Merge Field Selected" input-name="mergeField" value={_greeting} option-list={_mergeFields} handle-change={handleMergeFieldSelection}></c-portal_-select>
+                                    <div class="button-list" style="margin-top: 1em;">
+                                        <button onclick={handleMergeFieldInsertion} class={insertMergeFieldButtonClasses} disabled={isDisableInsertMergeFieldButton}>Insert Merge Field</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <template for:each={_sectionList} for:item="section" for:index="index">
+                                <div class="entry-form bottom-border custom-section show" key={section.Name} style="transform: none">
+                                    <div class="flex-grid-3">
+                                        <div class="grid-item">
+                                            <lightning-layout-item>
+                                                <slot>
+                                                    <c-portal_-input classes="slds-input" type="text" value={section.Section_Title__c} label="Section Title" handle-change={setSectionFieldValue} input-name="Section_Title__c" index={index}></c-portal_-input>
+                                                </slot>
+                                            </lightning-layout-item>
+                                        </div>
+                                        <div class="grid-item">
+                                            <lightning-layout-item class="slds-size_3-of-12">
+                                                <slot>
+                                                    <lightning-input type="color" value={section.Background_Color__c} label="Background Color" onchange={setSectionFieldValue} name="Background_Color__c" data-index={index}></lightning-input>
+                                                </slot>
+                                            </lightning-layout-item>
+                                        </div>
+                                        <div class="grid-item">
+                                            <a onclick={openDeleteSectionModal} data-index={index} class="button secondary small full-mobile delete-section">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM9 9h6c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-8c0-.55.45-1 1-1zm6.5-5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z"></path></svg>
+                                                Delete section</a>
+                                        </div>
+                                    </div>
+                                    <template for:each={section.htmlList} for:item="htmlText" for:index="htmlIndex">
+                                        <div class="section-entry" style="background-color: #f1f1f1" key={htmlText}>
+                                            <div class="content-entry">
+                                                <div class="button-list bottom-border" style="margin-top: 0; margin-bottom: 40px">
+                                                    <a onclick={handleEditNewsletterSection} data-index={index} data-section={htmlIndex} class="button secondary small full-mobile">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
+                                                        Edit content</a>
+                                                    <a onclick={openDeleteContentModal} data-index={index} data-section={htmlIndex} class="button secondary small full-mobile">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM9 9h6c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-8c0-.55.45-1 1-1zm6.5-5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z"></path></svg>
+                                                        Delete content</a>
+                                                    <a onclick={moveSectionUp} data-index={index} data-section={htmlIndex} class="button secondary small full-mobile move-up">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M11.29 8.71L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.38-.39-1.02-.39-1.41 0z"></path></svg>
+                                                        Move up</a>
+                                                    <a onclick={moveSectionDown} data-index={index} data-section={htmlIndex} class="button secondary small full-mobile move-down">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595"><path d="M24 24H0V0h24v24z" fill="none" opacity=".87"></path><path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"></path></svg>
+                                                        Move down</a>
+                                                </div>
+                                                <slot>
+                                                    <div class="contentContainer">
+                                                        <lightning-formatted-rich-text value={htmlText}></lightning-formatted-rich-text>
+                                                    </div>
+                                                </slot>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    <div class="button-list add-content-button">
+                                        <a onclick={openContentModal} data-index={index} class="button secondary small float-right full-mobile">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 10h-3v3c0 .55-.45 1-1 1s-1-.45-1-1v-3H8c-.55 0-1-.45-1-1s.45-1 1-1h3V8c0-.55.45-1 1-1s1 .45 1 1v3h3c.55 0 1 .45 1 1s-.45 1-1 1z"></path></svg>
+                                            Add content
+                                        </a>
+                                    </div>
+                                </div>
+                            </template>
+                            <div class="bottom-border" style="padding-bottom: .5em">
+                                <div class="button-list ">
+                                    <a onclick={addSection} data-index={index} class="button secondary small full-mobile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="position: static" height="24px" viewBox="0 0 24 24" width="24px" fill="#005595"><path d="M3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm17-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 9h-3v3c0 .55-.45 1-1 1s-1-.45-1-1v-3h-3c-.55 0-1-.45-1-1s.45-1 1-1h3V6c0-.55.45-1 1-1s1 .45 1 1v3h3c.55 0 1 .45 1 1s-.45 1-1 1z"></path></svg>
+                                        Add Content Section</a>
+                                </div>
+                            </div>
+
+                            <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+                                <c-portal_-Recaptcha>
+                                </c-portal_-Recaptcha>
+                            </div>
+                        
+                            <div class="button-list">
+                                <a onclick={displayPreview} class="button secondary">Preview</a>
+                                <a onclick={openSendTestModal} class="button secondary">Send Test</a>
+                                <a onclick={handleSubmit} class="button primary">Submit</a>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Are you sure modal section -->
+            <section if:true={_isShowDeleteSectionModal}>
+                <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" style="z-index: 10002;">
+                    <div class="modal-background change-status-modal-background" onclick={closeModal}>
+                        <div class="modal" onclick={clickIgnore}>
+                            <div class="content-header-bar" style="margin-bottom: 0">
+                                <div class="slds-grid slds-wrap full-width">
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                        <h2>Delete section</h2>
+                                    </div>
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                        <a onclick={closeModal} class="close-btn">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="container">
+                                <div style="padding: 2em 0" class="border-bottom">
+                                    <p class="lead">Are you sure you would like to delete this section?</p>
+                                </div>
+                                <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                                    <div class="slds-grid slds-wrap slds-grid_align-end">
+                                        <div class="button-list">
+                                            <a onclick={closeModal} class="button secondary">Cancel</a>
+                                            <a onclick={handleDeleteNewsletterSection} class="button primary">Confirm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        <!-- Are you sure modal content -->
+        <section if:true={_isShowDeleteContentModal}>
+                <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" style="z-index: 10002;">
+                    <div class="modal-background change-status-modal-background" onclick={closeModal}>
+                        <div class="modal" onclick={clickIgnore}>
+                            <div class="content-header-bar" style="margin-bottom: 0">
+                                <div class="slds-grid slds-wrap full-width">
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                        <h2>Delete content</h2>
+                                    </div>
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                        <a onclick={closeModal} class="close-btn">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="container">
+                                <div style="padding: 2em 0" class="border-bottom">
+                                    <p class="lead">Are you sure you would like to delete this content?</p>
+                                </div>
+                                <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                                    <div class="slds-grid slds-wrap slds-grid_align-end">
+                                        <div class="button-list">
+                                            <a onclick={closeModal} class="button secondary">Cancel</a>
+                                            <a onclick={handleDeleteContent} class="button primary">Confirm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Send Test Modal -->
+            <section if:true={_isShowSendTestModal}>
+                <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" style="z-index: 10002;">
+                    <div class="modal-background change-status-modal-background" onclick={closeSendTestModal}>
+                        <div class="modal" onclick={clickIgnore}>
+                            <div class="content-header-bar" style="margin-bottom: 0">
+                                <div class="slds-grid slds-wrap full-width">
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                        <h2>Send Test</h2>
+                                    </div>
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                        <a onclick={closeSendTestModal} class="close-btn">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="container">
+                                <div style="padding: 2em 0" class="border-bottom">
+                                    <c-portal_-input label="Add up to 10 email addresses separated by a semi-colon" value={_emailString} classes="slds-input" input-name="emailString" handle-input={handleEmailStringChange}></c-portal_-input>
+                                </div>
+                                <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12">
+                                    <div class="slds-grid slds-wrap slds-grid_align-end">
+                                        <div class="button-list">
+                                            <a onclick={closeSendTestModal} class="button secondary">Cancel</a>
+                                            <a onclick={handleBackFromSendTest} if:true={_isSendTestOpenedFromPreview} class="button secondary">Back</a>
+                                            <a onclick={sendTestNewsletter} class="button primary">Send</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--edit/create content modal-->
+            <div if:true={_isShowContentModal} style="position: relative;">
+                <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" style="z-index: 10002;">
+                    <div class="modal-background change-status-modal-background">
+                        <div class="modal">
+                            <div class="content-header-bar" style="margin-bottom: 0">
+                                <div class="slds-grid slds-wrap full-width">
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                        <h2>{_contentModalTitle}</h2>
+                                    </div>
+                                    <div
+                                        class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                        <a onclick={closeModal} class="close-btn">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div class="container">
+
+                                <c-portal_-newsletter-section-modal 
+                                        onready={onNewsletterSectionModalReady}
+                                        handle-is-show-templates-change={handleContentModalTemplatesChange}
+                                ></c-portal_-newsletter-section-modal>
+
+                                <div class="button-list" style="margin-top: 0;" if:false={_isContentModalSecondPage}>
+                                    <a onclick={closeModal} class="button secondary">Cancel</a>
+                                </div>
+                                <template if:true={_isContentModalSecondPage}>
+                                    <div class="button-list newsletter-section-modal">
+                                        <a onclick={closeModal} class="button full-mobile secondary">Cancel</a>
+                                        <a onclick={handleBack} class="button full-mobile secondary">Back</a>
+                                        <a onclick={saveNewsletterContent} class="button full-mobile primary">Save</a>
+                                    </div>
+                                </template>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <template if:true={_isShowPreview}>
+                <section role="dialog"  class="slds-modal slds-fade-in-open" style="z-index: 10002;">
+                    <div class="modal-background change-status-modal-background" onclick={closeModal}>
+                        <div class="modal" onclick={clickIgnore}>
+                            <div class="content-header-bar" style="margin-bottom: 0">
+                                <div class="slds-grid slds-wrap full-width">
+                                    <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                        <h2>View {_listing.Subject_Line__c}</h2>
+                                    </div>
+                                </div>
+                                <div
+                                    class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                    <a class="close-btn" onclick={closeModal}>&times;</a>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div class="preview" style="font-family: sans-serif; padding: 1em 0; max-width: 600px; margin: auto">
+                                    <lightning-formatted-rich-text value={_previewHTML}></lightning-formatted-rich-text>
+                                </div>
+
+                                <div class="bottom-border"></div>
+                                <div class="button-list justify-right">
+                                    <a class="button secondary" onclick={closeModal}>Back</a>
+                                    <a onclick={openSendTestModalFromPreview} class="button secondary">Send Test</a>
+                                    <a onclick={handleSubmit} class="button primary">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </section>
+            </template>
+        </template>
+    </div>
+</template>

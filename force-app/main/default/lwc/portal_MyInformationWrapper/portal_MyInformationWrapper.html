@@ -1,0 +1,215 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_showSpinner}>
+            <lightning-spinner variant="brand" size="large"></lightning-spinner>
+        </template>
+        <div if:true={_callbackDone} class="container large">
+            <div class="section-body-content">
+                <div class="portal-progress-bar-mobile progress-no-show-vertical-mobile" style="margin-bottom: 40px; margin-top: 40px">
+                    <div class="slds-path lightningProgressIndicator">
+                        <div class="slds-grid slds-path__track">
+                            <div class="slds-grid slds-path__scroller-container">
+                                <div class="slds-path__scroller" role="application">
+                                    <div class="slds-path__scroller_inner">
+                                        <ul class="slds-path__nav" aria-orientation="horizontal" role="listbox">
+                                            <template for:each={_progressTabList} for:item="step" for:index="index">
+                                                <div class={step.class} role="listitem" key={step.key}>
+                                                    <a aria-selected="false" onclick={setTab} role="option" tabindex={index} class="slds-path__link" data-value={step.value}>
+                                                        <span class="slds-path__stage">
+                                                            <svg focusable="false" data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                                <g>
+                                                                    <path
+                                                                        d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                    </path>
+                                                                </g>
+                                                            </svg>
+                                                            <span class="slds-assistive-text">Current Stage</span>
+                                                        </span>
+                                                        <span class="slds-path__title">{step.label}</span></a>
+                                                </div>
+                                            </template>
+                                            <!-- <div class={pathClass} role="listitem">
+                                                <a aria-selected="false" onclick={setTab} role="option" tabindex="0" class="slds-path__link">
+                                                    <span class="slds-path__stage">
+                                                        <svg focusable="false" data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                            <g>
+                                                                <path
+                                                                    d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                        <span class="slds-assistive-text">Current Stage</span>
+                                                    </span>
+                                                    <span class="slds-path__title">Contact</span></a>
+                                            </div>
+                                            <div class={pathClass} role="listitem">
+                                                <a aria-selected="false" onclick={setTab} role="option" tabindex="-1" class="slds-path__link">
+                                                    <span class="slds-path__stage">
+                                                        <svg focusable="false" data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                            <g>
+                                                                <path
+                                                                    d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="slds-path__title">Degree</span>
+                                                </a>
+                                            </div>
+                                            <div class={pathClass} role="listitem">
+                                                <a aria-selected="false" onclick={setTab} role="option" tabindex="-1" class="slds-path__link">
+                                                    <span class="slds-path__stage">
+                                                        <svg focusable="false"  data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                            <g>
+                                                                <path
+                                                                    d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="slds-path__title">Employment</span>
+                                                </a>
+                                            </div>
+                                            <div class={pathClass} role="listitem">
+                                                <a aria-selected="false" onclick={setTab} role="option" tabindex="-1" class="slds-path__link">
+                                                    <span class="slds-path__stage">
+                                                        <svg focusable="false" data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                            <g>
+                                                                <path
+                                                                    d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="slds-path__title">Social Media</span>
+                                                </a>
+                                            </div>
+                                            <div class={pathClass} role="listitem">
+                                                <a aria-selected="false" onclick={setTab} role="option" tabindex="-1" class="slds-path__link">
+                                                    <span class="slds-path__stage">
+                                                        <svg focusable="false" data-key="check" aria-hidden="true" viewBox="0 0 52 52" class="slds-icon slds-icon_x-small">
+                                                            <g>
+                                                                <path
+                                                                    d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="slds-path__title">Privacy</span>
+                                                </a>
+                                            </div>
+                                            -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="show-on-phone">
+                <lightning-tabset active-tab-value={tab} variant="vertical">
+                    <lightning-tab label='Contact Information' value="contact" if:true={_displayContactTab} onactive={setTab}>
+                    </lightning-tab>
+                    <lightning-tab label="Employment Information" value="employment" if:true={_displayEmploymentTab} onactive={setTab}>
+                    </lightning-tab>
+                    <lightning-tab label="Degree Information" value="degree" if:true={_displayDegreeTab} onactive={setTab}>
+                    </lightning-tab>
+                    <lightning-tab label="Social Media Information" value="socialmedia" if:true={_displaySocialMediaTab} onactive={setTab}>
+                    </lightning-tab>
+                    <lightning-tab label="Privacy Settings" value="privacy" if:true={_displayPrivacyTab} onactive={setTab}>
+                    </lightning-tab>
+                </lightning-tabset>
+            </div> -->
+
+            <div class="section-wrapper" if:true={displayView}>
+                <template if:true={_displayContactSection}>
+                    <c-portal_-My-Information-Contact 
+                        information-map={informationMap}
+                        display-view={displayView}>
+                    </c-portal_-My-Information-Contact>
+                </template>
+                <template if:true={_displayDegreeSection}>
+                    <c-portal_-My-Information-Degree 
+                        information-map={informationMap}
+                        display-view={displayView}
+                    >
+                </c-portal_-My-Information-Degree>
+                </template>
+                <template  if:true={_displayEmploymentSection}>
+                    <c-portal_-My-Information-Employment
+                        information-map={informationMap}
+                        display-view={displayView}
+                    >
+                </c-portal_-My-Information-Employment>
+                </template>
+                <template if:true={_displaySocialMediaSection}>
+                    <c-portal_-My-Information-Social-Media
+                        information-map={informationMap}
+                        display-view={displayView}
+                    >
+                    </c-portal_-My-Information-Social-Media>
+                </template>
+                <template if:true={_displayPrivacySection}>
+                    <c-portal_-My-Information-Privacy-Settings
+                        information-map={informationMap}
+                        display-view={displayView}
+                    >
+                    </c-portal_-My-Information-Privacy-Settings>
+                </template>
+            </div>
+
+            <template if:false={displayView}>
+                <div class="section-wrapper slds-hide" data-section="contact" data-element="editsection">
+                    <c-portal_-My-Information-Contact 
+                        display-view={displayView} 
+                        information-map={informationMap} 
+                        delete-icon={_deleteIcon}
+                        data-target="contact">
+                    </c-portal_-My-Information-Contact>
+                </div>
+                <div class="section-wrapper slds-hide" data-section="employment" data-element="editsection">
+                    <c-portal_-My-Information-Employment
+                        data-target="employment"
+                        information-map={informationMap}
+                        delete-icon={_deleteIcon}
+                        display-view={displayView}
+                    ></c-portal_-My-Information-Employment>
+                </div>
+                <div class="section-wrapper slds-hide" data-section="degree" data-element="editsection">
+                    <c-portal_-My-Information-Degree 
+                        data-target="degree"
+                        information-map={informationMap}
+                        delete-icon={_deleteIcon}
+                        display-view={displayView}
+                    ></c-portal_-My-Information-Degree>
+                </div>
+                <div class="section-wrapper slds-hide" data-section="socialmedia" data-element="editsection">
+                    <c-portal_-My-Information-Social-Media
+                        data-target="socialmedia"
+                        information-map={informationMap}
+                        delete-icon={_deleteIcon}
+                        display-view={displayView}
+                    >
+                    </c-portal_-My-Information-Social-Media>
+                </div>
+                <div class="section-wrapper slds-hide" data-section="privacy" data-element="editsection">
+                    <c-portal_-My-Information-Privacy-Settings
+                        data-target="privacy"
+                        information-map={informationMap}
+                        display-view={displayView}
+                    >
+                    </c-portal_-My-Information-Privacy-Settings>
+                </div>
+            </template>
+
+            <div class="container" if:true={_callbackDone}>
+                <div class="button-list" if:false={displayView}>
+                    <a href="my-information" class="button secondary">Cancel</a>
+                    <a onclick={save} class="button primary">Save</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</template>

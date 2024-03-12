@@ -1,0 +1,217 @@
+<template>
+    <div class="show-on-phone" if:true={informationMap.frontEndData.employment.display}>
+        <h2>{informationMap.frontEndData.employment.label}</h2>
+        <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Employment Information</a>
+        <div class="registration-table" if:true={informationMap.frontEndData.employment.display}>
+            <div class="row bottom-border">
+                <div class="container">
+                    <template if:true={informationMap.frontEndData.employment.display}>
+                        <h3>{informationMap.frontEndData.employment.label}</h3>
+                        <div class="entry-form">
+                            <template for:each={_interimEmployment} for:item="employment">
+                                <template if:false={employment.isHide}>
+                                    <template if:true={informationMap.frontEndData.employer.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.employer.label}</h4>
+                                        <p key={employment.Id}>{employment.employer}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.jobTitle.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.jobTitle.label}</h4>
+                                        <p key={employment.Id}>{employment.jobTitle}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.employmentStartDate.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.employmentStartDate.label}</h4>
+                                        <p key={employment.Id}>
+                                            <lightning-formatted-date-time
+                                                day="numeric"
+                                                month="short"
+                                                year="numeric"
+                                                class="value"
+                                                time-zone="UTC"
+                                                value={employment.employmentStartDate}>
+                                            </lightning-formatted-date-time>
+                                        </p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.employmentEndDate.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.employmentEndDate.label}</h4>
+                                        <p key={employment.Id}>
+                                            <lightning-formatted-date-time
+                                                day="numeric"
+                                                month="short"
+                                                year="numeric"
+                                                class="value"
+                                                time-zone="UTC"
+                                                value={employment.employmentEndDate}>
+                                            </lightning-formatted-date-time>
+                                        </p>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <template for:each={informationMap.records.Employment.records} for:item="employment">
+                                <template if:false={employment.isHide}>
+                                    <template if:true={informationMap.frontEndData.employer.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.employer.label}</h4>
+                                        <p key={employment.Id}>{employment.employer}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.jobTitle.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.jobTitle.label}</h4>
+                                        <p key={employment.Id}>{employment.jobTitle}</p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.employmentStartDate.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.employmentStartDate.label}</h4>
+                                        <p key={employment.Id}>
+                                            <lightning-formatted-date-time
+                                                day="numeric"
+                                                month="short"
+                                                year="numeric"
+                                                class="value"
+                                                time-zone="UTC"
+                                                value={employment.employmentStartDate}>
+                                            </lightning-formatted-date-time>
+                                        </p>
+                                    </template>
+
+                                    <template if:true={informationMap.frontEndData.employmentEndDate.display}>
+                                        <h4 key={employment.Id}>{informationMap.frontEndData.employmentEndDate.label}</h4>
+                                        <p key={employment.Id}>
+                                            <lightning-formatted-date-time
+                                                day="numeric"
+                                                month="short"
+                                                year="numeric"
+                                                class="value"
+                                                time-zone="UTC"
+                                                value={employment.employmentEndDate}>
+                                            </lightning-formatted-date-time>
+                                        </p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hide-on-phone" if:true={informationMap.frontEndData.employment.display}>
+        <div class="container">
+            <div class="bottom-border">
+                <h2>{informationMap.frontEndData.employment.label}</h2>
+                <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Employment Information</a>
+            </div>
+            
+            <div class="registration-table">
+                <div class="column no-controls" if:true={informationMap.frontEndData.employer.display}>
+                    <div class="headerEqualHeight">
+                        <p>{informationMap.frontEndData.employer.label}</p>
+                    </div>
+                    <template for:each={_interimEmployment} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>{employment.employer}</p>
+                            </div>
+                        </template>
+                    </template>
+                    <template for:each={informationMap.records.Employment.records} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>{employment.employer}</p>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div class="column no-controls" if:true={informationMap.frontEndData.jobTitle.display}>
+                    <div class="headerEqualHeight"><p>{informationMap.frontEndData.jobTitle.label}</p></div>
+                    <template for:each={_interimEmployment} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>{employment.jobTitle}</p>
+                            </div>
+                        </template>
+                    </template>
+                    <template for:each={informationMap.records.Employment.records} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>{employment.jobTitle}</p>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div class="column no-controls" if:true={informationMap.frontEndData.employmentStartDate.display}>
+                    <div class="headerEqualHeight"><p>{informationMap.frontEndData.employmentStartDate.label}</p></div>
+                    <template for:each={_interimEmployment} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>                            
+                                    <lightning-formatted-date-time
+                                        day="numeric"
+                                        month="short"
+                                        year="numeric"
+                                        class="value"
+                                        time-zone="UTC"
+                                        value={employment.employmentStartDate}>
+                                    </lightning-formatted-date-time>
+                                </p>
+                            </div>
+                        </template>
+                    </template>
+                    <template for:each={informationMap.records.Employment.records} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>                            
+                                    <lightning-formatted-date-time
+                                        day="numeric"
+                                        month="short"
+                                        year="numeric"
+                                        class="value"
+                                        time-zone="UTC"
+                                        value={employment.employmentStartDate}>
+                                    </lightning-formatted-date-time>
+                                </p>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div class="column no-controls" if:true={informationMap.frontEndData.employmentEndDate.display}>
+                    <div class="headerEqualHeight"><p>{informationMap.frontEndData.employmentEndDate.label}</p></div>
+                    <template for:each={_interimEmployment} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>                            
+                                    <lightning-formatted-date-time
+                                        day="numeric"
+                                        month="short"
+                                        year="numeric"
+                                        class="value"
+                                        time-zone="UTC"
+                                        value={employment.employmentEndDate}>
+                                    </lightning-formatted-date-time>
+                                </p>
+                            </div>
+                        </template>
+                    </template>
+                    <template for:each={informationMap.records.Employment.records} for:item="employment">
+                        <template if:false={employment.isHide}>
+                            <div class="equalHeight" key={employment.Id}>
+                                <p>                            
+                                    <lightning-formatted-date-time
+                                        day="numeric"
+                                        month="short"
+                                        year="numeric"
+                                        class="value"
+                                        time-zone="UTC"
+                                        value={employment.employmentEndDate}>
+                                    </lightning-formatted-date-time>
+                                </p>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

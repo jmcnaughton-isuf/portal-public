@@ -1,0 +1,70 @@
+<template>
+    <template if:true={isDisplay}>
+        <lightning-spinner alternative-text="Loading" if:true={_isShowSpinner}></lightning-spinner>
+        <div class="container">
+        	<div class="bottom-border">
+	            <h2>{sectionConfiguration.label}</h2>
+	            <a href="?mode=edit&tab=employment" class="view-all-news button secondary small" style="top: 10px">Edit {sectionConfiguration.label}</a>
+	        </div>
+	        <template if:true={sectionConfiguration.isDisplay}>
+	            <div class="info-card">
+	                <div class="flex-grid-3">
+	                    <div class="table-header">
+	                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employer.isDisplay}>
+	                            <p>{sectionConfiguration.fieldConfigurationMap.employer.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.jobTitle.isDisplay}>
+	                            <p>{sectionConfiguration.fieldConfigurationMap.jobTitle.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employmentStartDate.isDisplay}>
+	                            <p>{sectionConfiguration.fieldConfigurationMap.employmentStartDate.label}</p>
+	                        </div>
+	                        <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.employmentEndDate.isDisplay}>
+	                            <p>{sectionConfiguration.fieldConfigurationMap.employmentEndDate.label}</p>
+	                        </div>
+	                    </div>              
+	                    <template for:each={recordList} for:item="employment">
+	                        <div class="table-row" key={employment.Id}>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.employer.isDisplay}>
+	                                <h4>{sectionConfiguration.fieldConfigurationMap.employer.label}</h4>
+	                                <p>{employment.employer}</p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.jobTitle.isDisplay}>
+	                                <h4>{sectionConfiguration.fieldConfigurationMap.jobTitle.label}</h4>
+	                                <p>{employment.jobTitle}</p>
+	                            </div> 
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.employmentStartDate.isDisplay}>
+	                                <h4>{sectionConfiguration.fieldConfigurationMap.employmentStartDate.label}</h4>
+	                                <p>
+	                                    <lightning-formatted-date-time
+	                                        day="numeric"
+	                                        month="short"
+	                                        year="numeric"
+	                                        class="value"
+	                                        time-zone="UTC"
+	                                        value={employment.employmentStartDate}>
+	                                    </lightning-formatted-date-time>
+	                                </p>
+	                            </div>
+	                            <div class="grid-item table-cell" if:true={sectionConfiguration.fieldConfigurationMap.employmentEndDate.isDisplay}>
+	                                <h4>{sectionConfiguration.fieldConfigurationMap.employmentEndDate.label}</h4>
+	                                <p>
+	                                    <lightning-formatted-date-time
+	                                        day="numeric"
+	                                        month="short"
+	                                        year="numeric"
+	                                        class="value"
+	                                        time-zone="UTC"
+	                                        value={employment.employmentEndDate}>
+	                                    </lightning-formatted-date-time>
+	                                </p>
+	                            </div> 
+	                        </div>
+	                    </template>
+	                </div>
+	            </div>
+	        </template>
+	        <div class="line-break"></div>
+        </div>
+    </template>
+</template>

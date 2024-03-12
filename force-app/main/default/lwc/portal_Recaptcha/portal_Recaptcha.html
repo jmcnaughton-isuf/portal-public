@@ -1,0 +1,14 @@
+<template>
+    <div style={_recaptchaV2Style} class="slds-align_absolute-center" if:true={isDisplayRecaptchaV2Checkbox}>
+        <iframe 
+        class="recaptchaV2"
+        src="/apex/PORTAL_RecaptchaV2Checkbox"
+        scrolling="no"></iframe>
+    </div>
+    <div align="right" if:true={isDisplayRecaptchaV3}>
+        <iframe 
+        class="recaptchaV3"
+        src="/apex/PORTAL_RecaptchaV3"
+        scrolling="no"></iframe>
+    </div>
+</template>

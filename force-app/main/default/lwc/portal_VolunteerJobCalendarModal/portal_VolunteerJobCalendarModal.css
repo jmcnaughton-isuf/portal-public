@@ -1,0 +1,17 @@
+.accordion-block {
+   padding-bottom: 0 !important;
+   margin-bottom: 49px;
+}
+
+h4 {
+    color: white;
+    margin-bottom: 0;
+}
+
+.shift-item:first-of-type {
+    border-top: 1px solid gray;
+}
+
+.shift-item {
+    border-bottom: 1px solid gray;
+}

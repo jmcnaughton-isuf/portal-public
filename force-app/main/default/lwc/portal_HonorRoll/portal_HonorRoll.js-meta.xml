@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="honorYearLabel" type="String" default="Honor Roll Year" label="Label for the Honor Roll Year input field"/>
+            <property name="givingSocietyLabel" type="String" default="Giving Societies" label="Label for the Giving Society input field"/>
+            <property name="divisionOrSchoolLabel" type="String" default="Division/School" label="Label for the Division/School input field"/>
+            <property name="classYearLabel" type="String" default="Class Year" label="Label for the Class Year input field"/>
+
+            <property name="showHonorRollYearFilter" label="Show Honor Roll Year Filter" type="Boolean" default="True"/>
+            <property name="showGivingSocietyFilter" label="Show Giving Society Filter" type="Boolean" default="True"/>
+            <property name="showDivisionOrSchoolFilter" label="Show Division/School Filter" type="Boolean" default="True"/>
+            <property name="showClassYearLabel" label="Show Class Year Filter" type="Boolean" default="True"/>
+
+            <property name="itemsPerPage" type="integer" default="10" label="Enter names per page:"/>
+            <property name="oldestClassYear" type="integer" default="1999" label="Enter oldest class year to display:"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="componentLabel" label="Section Label" type="String"/>
+            <property name="pageName" label="Online Giving Page Name" type="String"/>
+            <property name="pageSectionName" label="Page Section Setting Name" type="String" default="Online Giving"/>
+            <property name="textColor" label="Header Text Color" type="Color"/>
+            <property name="organizationInformationLabel" label="Organization Information Label" type="String"/>
+            <property name="organizationalContactInformationLabel" label="Organizational Contact Information Label" type="String"/>
+            <property name="hasAddressAutocomplete" label="Use Address Autocomplete" type="Boolean" description="Use the autocomplete service from the Address Service Provider custom setting to autocomplete and autofill billing address fields"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

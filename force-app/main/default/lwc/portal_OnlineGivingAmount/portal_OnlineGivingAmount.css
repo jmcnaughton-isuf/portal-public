@@ -1,0 +1,3 @@
+.entry-form .grid-item .ticket-options.entry-button input[type="radio"]:checked + span {
+    width: 100% !important;
+}

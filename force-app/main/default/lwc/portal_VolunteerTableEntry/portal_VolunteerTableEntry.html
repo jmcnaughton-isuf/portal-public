@@ -1,0 +1,21 @@
+<!--This entire LWC is obsolete/not necessary bc of Display Table-->
+<template>
+    <template if:true={_initDone}>
+        <a if:true={_isReportLink} data-id={recordId} onclick={handleReportHours}>Report Hours</a>
+        <a if:true={_isModifyLink} data-id={recordId} 
+                                   data-shiftid={shiftId} 
+                                   data-jobname={jobName}
+                                   data-startdate={startDate}
+                                   data-enddate={endDate}
+                                   onclick={handleModifyApplication}>Modify Application</a>
+        <lightning-formatted-date-time if:true={_isDateTime}
+                value={_columnData}
+                year="numeric"
+                month="numeric"
+                day="numeric"
+                hour="2-digit"
+                minute="2-digit">
+        </lightning-formatted-date-time> 
+        <lightning-formatted-rich-text if:true={_isText} value={_columnData}></lightning-formatted-rich-text>
+    </template>
+</template>

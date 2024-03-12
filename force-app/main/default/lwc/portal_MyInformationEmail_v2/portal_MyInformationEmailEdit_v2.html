@@ -1,0 +1,106 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading"></lightning-spinner>
+    
+    <div if:true={isDisplay}>
+        <c-portal_-My-Information-Self-Report-Modal_v2 
+            if:true={_isDisplaySelfReportModal}
+            modal-type={_selfReportModalType}
+            configuration={_selfReportConfiguration}
+            self-report-record={_selfReportRecord}
+            save-params={_selfReportSaveParams}
+            helper-rich-text={_requestUpdateRichText}
+            handle-close={handleSelfReportClose}>
+        </c-portal_-My-Information-Self-Report-Modal_v2>
+
+        <div class="container bottom-border" if:true={sectionConfiguration.isDisplay}>
+
+            <!-- Section Header -->
+            <h2 style="margin-bottom: 0.5em">{sectionConfiguration.label}</h2>
+
+            <!-- Email Records -->
+            <template for:each={recordList} for:item="eachEmail" for:index="index">
+                <div if:false={eachEmail.isDelete} class="entry-heading" key={eachEmail.timestampHtmlKey}>
+                    <div class="edit-entry-list">
+                        <template if:true={sectionConfiguration.hasReportUpdateLink}>
+                            <a onclick={handleSelfReport} data-index={index}>
+                                <span if:true={eachEmail.hasSelfReportChange}>Pending</span>
+                                <span if:false={eachEmail.hasSelfReportChange}>Request Update</span>
+                            </a>
+                        </template>
+
+                        <template if:false={sectionConfiguration.hasReportUpdateLink}> 
+                            <a if:false={sectionConfiguration.isDisable} onclick={handleDeleteEmail} data-index={index}>
+                                <img src={deleteIcon}>Delete
+                            </a>
+                        </template>
+                    </div>
+
+                    <div class="entry-form">
+                        <div class="flex-grid-4">                                
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailAddress.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.emailAddress.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachEmail.emailAddress}
+                                    field-id="emailAddress"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.emailAddress.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.emailAddress.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.emailAddress.isRequired}
+                                    handle-change-callback={handleChange}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailType.isDisplay}>
+                                <label>{sectionConfiguration.fieldConfigurationMap.emailType.label}</label>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachEmail.emailType}
+                                    field-id="emailType"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.emailType.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.emailType.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.emailType.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={eachEmail.emailTypePicklistValues}
+                                    is-null-option-disabled>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    value={eachEmail.emailIsPreferred}
+                                    field-id="emailIsPreferred"
+                                    index={index}
+                                    input-type={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.fieldType}
+                                    is-disabled={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.isDisable}
+                                    is-required={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.isRequired}
+                                    handle-change-callback={handleChange}
+                                    label={sectionConfiguration.fieldConfigurationMap.emailIsPreferred.label}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={sectionConfiguration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={sectionConfiguration.fieldConfigurationMap.emailShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        value={eachEmail.emailShowOnDirectory}
+                                        field-id="emailShowOnDirectory"
+                                        index={index}
+                                        input-type={sectionConfiguration.fieldConfigurationMap.emailShowOnDirectory.fieldType}
+                                        is-required={sectionConfiguration.fieldConfigurationMap.emailShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        label={sectionConfiguration.fieldConfigurationMap.emailShowOnDirectory.label}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="button-list" if:false={sectionConfiguration.isDisable}>
+                <template if:false={sectionConfiguration.hasReportUpdateLink}>
+                    <a class="button secondary small" onclick={handleAddEmail} if:true={isShowAdd}>Add Email</a>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

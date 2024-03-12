@@ -1,0 +1,50 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:true={showSpinner}
+            variant="brand"
+            size="large">
+        </lightning-spinner>
+
+        <template if:true={initDone}>
+            <div class="container large">
+                <div class="section-wrapper">
+                    <c-portal_-society-membership-display-table title={permissionMap.lifetimeMemberships.label}
+                                            records={lifetimeMemberships}
+                                            column-mappings={lifetimeMembershipColumnTitles}
+                                            handle-checkbox-click={handleShowHonorRollOption}>
+                    </c-portal_-society-membership-display-table>
+
+                    <template if:true={permissionMap.annualMemberships.display}>
+                        <c-portal_-society-membership-display-table title={permissionMap.annualMemberships.label}
+                                                records={annualMemberships}
+                                                column-mappings={annualMembershipColumnTitles}
+                                                handle-checkbox-click={handleShowHonorRollOption}>
+                        </c-portal_-society-membership-display-table>
+                    </template>
+
+                    <!-- inactive memberships -->
+                    <template if:true={showInactiveSocietyMemberships}>
+                        <c-portal_-society-membership-display-table title={permissionMap.inactiveMemberships.label}
+                                                records={inactiveMemberships}
+                                                column-mappings={inactiveMembershipColumnTitles}
+                                                handle-checkbox-click={handleShowHonorRollOption}>
+                        </c-portal_-society-membership-display-table>
+                    </template>
+
+                    <c-portal_-honor-roll-management
+                        honor-roll-opt-out-value={honorRollOptOutValue}
+                        honor-roll-name={honorRollName}
+                        honor-roll-joint-preference={honorRollJointPreference}
+                        has-pending-name-change={hasPendingNameChange}
+                        is-joint-preference-available={isJointPreferenceAvailable}
+                        handle-submit-changes={handleSubmitChanges}
+                        handle-opt-out-change={handleOptOutChange}
+                        handle-honor-roll-name-input={handleHonorRollNameInput}
+                        handle-joint-preference-change={handleJointPreferenceChange}
+                    ></c-portal_-honor-roll-management>
+
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

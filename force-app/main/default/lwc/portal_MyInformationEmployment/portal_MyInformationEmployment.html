@@ -1,0 +1,158 @@
+<template>
+
+    <c-portal-_-my-information-update-modal if:true={_openModal}
+        information-map={informationMap}
+        update-type={_modalUpdateType}
+        record={_modalRecord}
+        sobject-name={_modalSObjectName}
+        record-type-name={_modalRecordTypeName}
+    ></c-portal-_-my-information-update-modal>
+
+    
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item
+            size="12"
+            small-device-size="12"
+            medium-device-size="10"
+            large-device-size="10"
+            >
+            <h2 class='mainNavigation'>Employment Information</h2>
+        </lightning-layout-item>
+        <lightning-layout-item
+            size="12"
+            small-device-size="12"
+            medium-device-size="2"
+            large-device-size="2"
+            padding="around-medium">
+            <lightning-button 
+                variant="brand"
+                label="Edit Employment Information"
+                title="Edit Employment Information"
+            ></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+    <hr/>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item if:true={informationMap.permissions.Employment} 
+            size="12"
+            small-device-size="12"
+            medium-device-size="12"
+            large-device-size="12"
+            padding="around-small">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__Account__r.Name.display}
+                    size="12"
+                    large-device-size="3"
+                    medium-device-size="3"
+                    small-device-size="3"
+                    class="layoutItem"
+                >
+                    <lightning-formatted-text
+                        class="label"
+                        value="Employer">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__Job_Title__c.display}
+                    size="12"
+                    large-device-size="3"
+                    medium-device-size="3"
+                    small-device-size="3"
+                    class="layoutItem"
+                >
+                    <lightning-formatted-text
+                        class="label"
+                        value="Job Title">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__Start_Date__c.display}
+                    size="12"
+                    large-device-size="3"
+                    medium-device-size="3"
+                    small-device-size="3"
+                    class="layoutItem"
+                >
+                    <lightning-formatted-text
+                        class="label"
+                        value="Start Date">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__End_Date__c.display}
+                    size="12"
+                    large-device-size="3"
+                    medium-device-size="3"
+                    small-device-size="3"
+                    class="layoutItem"
+                >
+                    <lightning-formatted-text
+                        class="label"
+                        value="End Date">
+                    </lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item
+                    size="12"
+                    class="layoutItem">
+                    <div style="height:1px; background-color: black;"></div>
+                </lightning-layout-item>
+                <template for:each={informationMap.records.Employment.records} for:item="employment">
+                    <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__Account__r.Name.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                        key={employment.Id}
+                    >
+                        <lightning-formatted-text
+                            class="value"
+                            value={employment.ucinn_ascendv2__Account__r.Name}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__Job_Title__c.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                        key={employment.Id}
+                    >
+                        <lightning-formatted-text
+                            class="value"
+                            value={employment.ucinn_ascendv2__Job_Title__c}>
+                        </lightning-formatted-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__Start_Date__c.display}
+                        size="12"
+                        large-device-size="3"
+                        medium-device-size="3"
+                        small-device-size="3"
+                        class="layoutItem"
+                        key={employment.Id}
+                    >
+                        <lightning-formatted-date-time
+                            day="numeric"
+                            month="short"
+                            year="numeric"
+                            class="value"
+                            value={employment.ucinn_ascendv2__Start_Date__c}>
+                        </lightning-formatted-date-time>
+                    </lightning-layout-item><lightning-layout-item if:true={informationMap.permissions.Employment.ucinn_ascendv2__End_Date__c.display}
+                    size="12"
+                    large-device-size="3"
+                    medium-device-size="3"
+                    small-device-size="3"
+                    class="layoutItem"
+                    key={employment.Id}
+                >
+                    <lightning-formatted-date-time
+                        day="numeric"
+                        month="short"
+                        year="numeric"
+                        class="value"
+                        value={employment.ucinn_ascendv2__End_Date__c}>
+                    </lightning-formatted-date-time>
+                </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

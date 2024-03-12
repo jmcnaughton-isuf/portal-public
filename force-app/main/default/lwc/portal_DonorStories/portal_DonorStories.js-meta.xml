@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="numOfItemsToShow" label="Number of items to show" type="Integer" description="The number of donor stories to show." required="true" default="3"/>
+            <property name="donorStoryDetailPage" type="String" label="Donor story detail page URL" description="Page URL for the donor story detail page" default="donor-story-detail"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

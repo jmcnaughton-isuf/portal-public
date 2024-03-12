@@ -1,0 +1,77 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} alternative-text="Loading" style="z-index: 10003; position: fixed"></lightning-spinner>
+    <div class="sf-modal" style="display: block">
+        <div class="modal-background">
+             <div class="modal">
+                <div class="content-header-bar">
+                    <div class="slds-grid slds-wrap full-width">
+                        <div class="slds-size_11-of-12 slds-small-size_11-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                            <h2>Request Update</h2>
+                        </div>
+                        <div class="slds-size_1-of-12 slds-small-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                            <span onclick={handleCancel} class="close-btn">&times;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-wrapper">
+                    <lightning-formatted-rich-text if:true={helperRichText} value={helperRichText}></lightning-formatted-rich-text>
+
+                    <div class="entry-form bottom-border" style="padding-bottom: 1em">
+                        <div class="flex-grid">
+                            <div class="grid-item" if:true={configuration.fieldConfigurationMap.phoneNumber.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={configuration.fieldConfigurationMap.phoneNumber.label}
+                                    value={selfReportRecord.phoneNumber}
+                                    field-id="phoneNumber"
+                                    input-type={configuration.fieldConfigurationMap.phoneNumber.fieldType}
+                                    is-disabled={configuration.fieldConfigurationMap.phoneNumber.isDisable}
+                                    is-required={configuration.fieldConfigurationMap.phoneNumber.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={configuration.fieldConfigurationMap.phoneNumber.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <div class="grid-item" if:true={configuration.fieldConfigurationMap.phoneType.isDisplay}>
+                                <c-portal_-My-Information-Edit-Field_v2
+                                    label={configuration.fieldConfigurationMap.phoneType.label}
+                                    value={selfReportRecord.phoneType}
+                                    field-id="phoneType"
+                                    input-type={configuration.fieldConfigurationMap.phoneType.fieldType}
+                                    is-disabled={configuration.fieldConfigurationMap.phoneType.isDisable}
+                                    is-required={configuration.fieldConfigurationMap.phoneType.isRequired}
+                                    handle-change-callback={handleChange}
+                                    picklist-values={configuration.fieldConfigurationMap.phoneType.picklistValues}>
+                                </c-portal_-My-Information-Edit-Field_v2>
+                            </div>
+
+                            <template if:true={configuration.isTogglePerRecord}>
+                                <div class="grid-item" if:true={configuration.fieldConfigurationMap.phoneShowOnDirectory.isDisplay}>
+                                    <c-portal_-My-Information-Edit-Field_v2
+                                        label={configuration.fieldConfigurationMap.phoneShowOnDirectory.label}
+                                        value={selfReportRecord.phoneShowOnDirectory}
+                                        field-id="phoneShowOnDirectory"
+                                        input-type={configuration.fieldConfigurationMap.phoneShowOnDirectory.fieldType}
+                                        is-disabled={configuration.fieldConfigurationMap.phoneShowOnDirectory.isDisable}
+                                        is-required={configuration.fieldConfigurationMap.phoneShowOnDirectory.isRequired}
+                                        handle-change-callback={handleChange}
+                                        picklist-values={configuration.fieldConfigurationMap.phoneShowOnDirectory.picklistValues}>
+                                    </c-portal_-My-Information-Edit-Field_v2>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                        <div class="slds-grid slds-wrap slds-grid_align-end">
+                            <div class="button-list">
+                                <button class="button secondary" onclick={handleCancel}>Cancel</button>
+                                <button class="button primary" onclick={handleSave}>Save</button>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+             </div>
+        </div>
+    </div>
+</template>

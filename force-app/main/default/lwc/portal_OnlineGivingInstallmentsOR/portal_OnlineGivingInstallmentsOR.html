@@ -1,0 +1,20 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+        <div class="container large payment-result-wrapper" if:true={isShowComponent}>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="6" if:true={isShowComponent}>
+                    <h2 style="text-transform: uppercase; font-size: 1rem;font-weight: bold;">{firstPaymentLabel}</h2>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6" if:true={isShowComponent}>
+                    <p>${_firstAmount}</p>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6" if:true={isShowComponent}>
+                    <h2 style="text-transform: uppercase; font-size: 1rem;font-weight: bold;">{remainingPaymentsLabel}</h2>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6" if:true={isShowComponent}>
+                    <p>{remainingInstallments} payment(s) of ${_amount}</p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </div>
+</template>

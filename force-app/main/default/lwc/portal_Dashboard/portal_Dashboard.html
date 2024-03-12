@@ -1,0 +1,79 @@
+<template>
+    <div data-ascend-portal>
+        <div class="center dashboard-block" if:true={_contentModuleMetadata}>
+            <div class="container large">
+                <div class="container">
+                    <h2 class="slds-align_absolute-center">{_contentModuleMetadata.heading}</h2>
+                </div>
+                <div class="icon-block no-margin">
+                    <div class={iconListClass}>
+                        <template for:each={_contentModuleMetadata.iconList} for:item="icon">
+                            <div class="list-item equalHeight2 card" key={icon.label}>
+                                <div class="container">
+                                    <a class="image" href={icon.link}>
+                                        <img src={icon.imageUrl} alt={icon.altText}/>
+                                    </a>
+                                    <div class="copy">
+                                        <h4>{icon.label}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="button-block">
+                    <div class="container">
+                        <h3>{_contentModuleMetadata.subHeading}</h3>
+                        <div class={buttonListClass}>
+                            <template for:each={_contentModuleMetadata.buttonList} for:item="button">
+                                <a href={button.link} 
+                                class="list-item button primary full-mobile"
+                                key={button.label}>{button.label}</a>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="dashboard" if:true={_contentModuleMetadata}>
+        <h2 class="heading slds-align_absolute-center">{_contentModuleMetadata.heading}</h2>
+        <div class="icon-list">
+            <lightning-layout class="slds-m-horizontal_large" horizontal-align="center" multiple-rows="true">
+                <template for:each={_contentModuleMetadata.iconList} for:item="icon">
+                    <lightning-layout-item key={_contentModuleMetadata.label} 
+                                           size="12"
+                                           large-device-size={iconLayoutSize}
+                                           medium-device-size={iconLayoutSize}
+                                           small-device-size="6">
+                        <div class="icon">
+                            <a class="slds-align_absolute-center" href={icon.link}>
+                                <img src={icon.imageUrl} alt={icon.altText}/>
+                            </a>
+                            <div class="slds-p-top_small slds-align_absolute-center">{icon.label}</div>
+                        </div>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+        <div class="sub-heading">
+            <span>{_contentModuleMetadata.subHeading}</span>
+        </div>
+        <div class="button-list">
+            <lightning-layout class="slds-m-horizontal_large" horizontal-align="center" multiple-rows="true">
+                <template for:each={_contentModuleMetadata.buttonList} for:item="button">
+                    <lightning-layout-item key={button.label} 
+                                           size="12" 
+                                           large-device-size={buttonLayoutSize}
+                                           medium-device-size={buttonLayoutSize}
+                                           small-device-size="6"
+                                           padding="around-small">
+                        <div class="slds-align_absolute-center">
+                            <a class="slds-button slds-button_brand" href={button.link}>{button.label}</a>
+                        </div>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </div> -->
+</template>

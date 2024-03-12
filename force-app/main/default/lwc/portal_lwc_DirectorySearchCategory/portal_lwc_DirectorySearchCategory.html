@@ -1,0 +1,56 @@
+<template>
+    <div class="flex-grid-3">
+        <div class="grid-item">
+            <i class="gg-chevron-down" style="top: 35px !important;"></i>
+            <label>Search Category {categoryDisplayIndex}</label>
+            <select class="slds-input slds-combobox__input" onchange={handleSearchForChange}>
+                <option value=''>Select Category</option>
+                <template for:each={options} for:item="option">
+                    <option key={option.key} value={option.key}>{option.key}</option>
+                </template>
+            </select>
+        </div>
+        <template if:true={isDisplaySingleSearch}>
+            <div class="grid-item" if:false={hasMultipleFields}>       
+                <c-portal_-directory-input-field current-search-setting={currentSearchSetting} add-value-to-search={addValueToSearch} ></c-portal_-directory-input-field>
+            </div>
+    
+            <div class="grid-item">
+                <div class="results">
+                    <template iterator:displayvalueit={valueListSelected}>
+                        <div class="pill" key={displayvalueit.value}>
+                            <a data-index={displayvalueit.index} class="remove-guest-btn" title="Remove" onclick={handleRemoveValue}>
+                                <p class="label">
+                                    x
+                                </p>
+                            </a>
+                            <p>
+                                {displayvalueit.value}
+                            </p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <template if:false={isDisplayCriteriaWithCategoryPicklist}>
+        <template iterator:searchcriteria={searchCriteriaList}>
+            <c-portal_lwc_-directory-search-row search-setting-list={currentSearchSettingList} 
+                                                search-criteria={searchcriteria.value} 
+                                                handle-delete-search-term={handleDeleteSearchTerm}
+                                                index={searchcriteria.index} 
+                                                handle-search-criteria-change={handleSearchCriteriaChange} 
+                                                selected-option-list={selectedOptions} 
+                                                search-category={searchCategory}
+                                                key={searchcriteria.value.key}>
+            </c-portal_lwc_-directory-search-row>
+        </template>
+        <div class="button-list" if:true={isShowAddSearchCriteria}>
+            <button class="button secondary small full-mobile" aria-label="Add New Search Criteria" onclick={handleAddSearchCriteria}>Add Search Criteria</button>
+        </div>
+    </template>
+    <div class="edit-entry-list" if:false={isFirstCategory}>
+        <a data-index={categoryIndex} onclick={handleDeleteSearchCategory}><img src={_blackHighlightResourceUrl}>Delete Search Category</a>
+    </div>
+</template>

@@ -1,0 +1,70 @@
+<template>
+    <lightning-spinner if:true={_isShowSpinner} variant="brand" size="large"> </lightning-spinner>
+    <div class="entry-form bottom-border" if:true={_callbackDone}>
+        <div class="flex-grid-2">
+            <div class="grid-item" if:true={informationMap.frontEndData.firstName.display}>
+                <label for="first-name">
+                    <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.firstName.isRequired} style="float: left;">* </abbr>{informationMap.frontEndData.firstName.label}
+                </label>
+                <input type="text" name="firstName" onchange={setRecordValue} value={firstName} required={informationMap.frontEndData.firstName.isRequired} disabled={informationMap.frontEndData.firstName.disable} maxlength="255">
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.lastName.display}>
+                <label for="last-name">
+                    <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.lastName.isRequired} style="float: left;">* </abbr>{informationMap.frontEndData.lastName.label}
+                </label>
+                <input type="text" name="lastName" onchange={setRecordValue} value={lastName} required={informationMap.frontEndData.lastName.isRequired} disabled={informationMap.frontEndData.lastName.disable} maxlength="255">
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.phone.display}>
+                <label for="phone">
+                    <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.phone.isRequired} style="float: left;">* </abbr>{informationMap.frontEndData.phone.label}
+                </label>
+                <input type="text" name="phone" onchange={setRecordValue} value={phone} required={informationMap.frontEndData.phone.isRequired} disabled={informationMap.frontEndData.phone.disable} maxlength="40">
+            </div>
+            <div class="grid-item" if:true={informationMap.frontEndData.email.display}>
+                <label for="email">
+                    <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.email.isRequired} style="float: left;">* </abbr>{informationMap.frontEndData.email.label}
+                </label>
+                <input type="text" name="email" onchange={setRecordValue} value={email} required={informationMap.frontEndData.email.isRequired} disabled={informationMap.frontEndData.email.disable} maxlength="80">
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem" if:true={informationMap.frontEndData.portfolioLink.display}>
+            <label for="portfolio-link">
+                <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.portfolioLink.isRequired} style="float: left;">* </abbr>{informationMap.frontEndData.portfolioLink.label}
+            </label>
+            <input type="text" name="portfolioLink" onchange={setRecordValue} value={portfolioLink} required={informationMap.frontEndData.portfolioLink.isRequired} disabled={informationMap.frontEndData.portfolioLink.disable} maxlength="255">
+        </div>
+        <div class="flex-grid-2">
+            <div class="grid-item" if:true={informationMap.frontEndData.resume.display}>
+                <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.resume.isRequired} style="float: left;">* </abbr>
+                <lightning-file-upload label={informationMap.frontEndData.resume.label} name="resumeFileUploader" record-id={_jobApplication.Id} onuploadfinished={handleResumeUpload}>
+                </lightning-file-upload>
+                <template if:true={_isShowResume} for:each={_resumeFiles} for:item="resume">
+                    <p class="application-files" key={resume.Id}>{resume.name}</p>
+                </template>
+            </div>
+            
+            <div class="grid-item" if:true={informationMap.frontEndData.optionalFiles.display}>
+                <abbr class="slds-required" title="required" if:true={informationMap.frontEndData.optionalFiles.isRequired} style="float: left;">* </abbr>
+                <lightning-file-upload label={informationMap.frontEndData.optionalFiles.label} name="optionalFileUploader" multiple="true" record-id={_jobApplication.Id} onuploadfinished={handleOptionalUpload}>
+                </lightning-file-upload>
+                <template if:true={_isShowOptionalFiles} for:each={_optionalFiles} for:item="file">
+                    <p class="application-files" key={file.Id}>{file.name}</p>
+                </template>
+            </div>
+        </div>            
+    </div>
+
+    <div style="padding-bottom: 5px" class="container large" if:true={_isRecaptchaEnabled}>
+        <c-portal_-Recaptcha>
+        </c-portal_-Recaptcha>
+    </div>
+
+    <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+        <div class="slds-grid slds-wrap">
+            <div class="button-list">
+                <button onclick={handleSubmit} class="button primary">Submit</button>
+                <button onclick={handleCancel} class="button secondary">Cancel</button>
+            </div>
+        </div>
+    </div>    
+</template>

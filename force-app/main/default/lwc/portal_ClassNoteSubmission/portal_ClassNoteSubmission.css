@@ -1,0 +1,220 @@
+/* HTML Element Styling */
+input, textarea {
+    outline: var(--lwc-brandAccessible);
+    border: 1px solid var(--lwc-brandAccessible);
+    border-radius: 0;
+    background-color: transparent !important;
+}
+
+input:focus, textarea:focus {
+    outline: 1.5px solid var(--lwc-brandAccessibleActive);
+}
+
+input:disabled, textarea:disabled {
+    color: var(--lwc-brandDisabled);
+}
+
+select {
+    outline: var(--lwc-brandAccessible);
+    border: 1px solid var(--lwc-brandAccessible);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--lwc-brandAccessible) 50%),
+                      linear-gradient(135deg, var(--lwc-brandAccessible) 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px),
+                         calc(100% - 15px) calc(1em + 2px),
+                         calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px,
+                     5px 5px,
+                     1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    outline: 1.5px solid var(--lwc-brandAccessibleActive);
+    background-image: linear-gradient(45deg, var(--lwc-brandAccessible) 50%, transparent 50%),
+                      linear-gradient(135deg, transparent 50%, var(--lwc-brandAccessible) 50%);
+    background-position: calc(100% - 15px) 1em,
+                         calc(100% - 20px) 1em,
+                         calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px,
+                     5px 5px,
+                     1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: var(--lwc-brandAccessible);
+    outline: 0;
+}
+
+/* Container classes */
+
+.container.class-note-container {
+    padding: 1rem;
+    max-width: 700px;
+}
+
+.class-note-card {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 25px solid var(--lwc-brandAccessible);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.13);
+}
+
+/* Various progress bar classes */
+
+.class-note-progress-bar {
+    margin: 0 auto 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 3px solid #cccccc;
+    background-color: #cccccc;
+}
+
+.connector {
+    height: 4px;
+    width: 30%;
+    border: 3px solid #cccccc;
+    background-color: #cccccc;
+}
+
+.complete {
+    border: 3px solid var(--lwc-brandAccessible);
+    background-color: var(--lwc-brandAccessible);
+}
+
+.active {
+    border: 3px solid var(--lwc-brandAccessible);
+    background-color: white; 
+}
+
+/* various inputs/label classes */
+
+.class-note-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.class-note-input:last-of-type {
+    margin-bottom: 0;
+}
+
+.class-note-input input:not(.radio),
+.class-note-input select,
+.class-note-input textarea {
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.class-note-input input:not(.radio),
+.class-note-input select {
+    height: 42px;
+}
+
+label:not(.checkbox-label) {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+label.checkbox-label {
+    font-size: 15px;
+    padding-top: 4px;
+}
+
+/* Buttons */
+
+.class-note-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.class-note-buttons > button {
+    border: none;
+    background-color: var(--lwc-brandAccessible);
+    color: white;
+    font-size: 16px;
+    padding: 8px 25px;
+    border-radius: 5px;
+    transition: .25s all ease-in-out;
+}
+
+.class-note-buttons > button:hover {
+    background-color: var(--lwc-brandAccessibleActive);
+    transition: .25s all ease-in-out;
+}
+
+/* Preview */
+
+.class-note-preview {
+    outline: var(--lwc-brandAccessible);
+    border: 3px solid var(--lwc-brandAccessible);
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.class-note-preview .class-note-content p {
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 0 !important;
+    word-break: break-all;
+}
+
+.class-note-preview .class-note-image {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.class-note-preview .class-note-image img {
+    max-width: 250px;
+    width: auto;
+    max-height: 150px;
+    height: auto;
+}
+
+.class-note-preview .class-note-image p {
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+    margin-right: 5px;
+}
+
+@media(max-width: 600px) {
+    .class-note-preview .class-note-image img {
+        max-width: 150px;
+    }
+}
+
+@media(max-width: 400px) {
+    .class-note-preview {
+        flex-direction: column;
+    }
+
+    .class-note-preview .class-note-image p {
+        margin-right: 0;
+    }
+
+    .class-note-preview .class-note-image img {
+        max-width: 100%;
+    }
+
+    .class-note-preview .class-note-image + .class-note-content p {
+        margin-top: 10px;
+    }
+}

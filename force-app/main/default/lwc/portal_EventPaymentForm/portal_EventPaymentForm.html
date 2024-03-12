@@ -1,0 +1,247 @@
+<template>
+    <div class="container large" if:true={primaryRegistrant}>
+        <div class="content-wrapper">
+            <div class="entry-form">
+                <div class="form-element heading">
+                    <h3>Registration Details</h3>
+                </div>
+            
+                <div class="flex-grid-2">
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="First Name"
+                                         value={primaryRegistrant.firstName}
+                                         required
+                                         input-name="firstName" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text" 
+                                         label="Last Name"
+                                         value={primaryRegistrant.lastName}
+                                         required
+                                         input-name="lastName"
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="email" 
+                                         label="Email"
+                                         value={primaryRegistrant.email}
+                                         required
+                                         input-name="email"
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper" if:true={isShowBillingInformation}>
+            <div class="entry-form bottom-border">
+                <div class="form-element heading">
+                    <h3>Billing Information</h3>
+                </div>
+                <div class="flex-grid-2">
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="Address Line 1"
+                                         value={primaryRegistrant.addressLine1}
+                                         required={addressRequired}
+                                         input-name="addressLine1" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="Address Line 2"
+                                         value={primaryRegistrant.addressLine2}
+                                         input-name="addressLine2" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="City"
+                                         value={primaryRegistrant.city}
+                                         required={addressRequired}
+                                         input-name="city" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="State/Province/Other"
+                                         value={primaryRegistrant.state}
+                                         required={addressRequired}
+                                         input-name="state" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="Postal Code"
+                                         value={primaryRegistrant.postalCode}
+                                         required={addressRequired}
+                                         input-name="postalCode" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    <div class="grid-item">
+                        <c-portal_-input type="text"
+                                         label="Country"
+                                         value={primaryRegistrant.country}
+                                         required={addressRequired}
+                                         input-name="country" 
+                                         handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <div if:true={primaryRegistrant}>
+        <div class="title">
+            <h2>Registration Details</h2>
+        </div>
+
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                    type="text"
+                                    label="First Name"
+                                    label-class="slds-form-element__label" 
+                                    value={primaryRegistrant.firstName}
+                                    required
+                                    input-name="firstName" 
+                                    handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                    type="text" 
+                                    label="Last Name"
+                                    label-class="slds-form-element__label" 
+                                    value={primaryRegistrant.lastName}
+                                    required
+                                    input-name="lastName"
+                                    handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="form-field">
+                    <c-portal_-input classes="slds-input" 
+                                    type="email" 
+                                    label="Email"
+                                    label-class="slds-form-element__label" 
+                                    value={primaryRegistrant.email}
+                                    required
+                                    input-name="email"
+                                    handle-input={handleInput}></c-portal_-input>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <template if:true={isShowBillingInformation}>
+            <br>
+            <div class="title">
+                <h2>Billing information</h2>
+            </div>
+
+            <lightning-layout multiple-rows="true">
+
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="form-field">
+                        <c-portal_-input classes="slds-input" 
+                                        type="text"
+                                        label="ADDRESS LINE 1"
+                                        label-class="slds-form-element__label"
+                                        value={primaryRegistrant.addressLine1}
+                                        required={addressRequired}
+                                        input-name="addressLine1" 
+                                        handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="form-field">
+                        <c-portal_-input classes="slds-input" 
+                                        type="text"
+                                        label="ADDRESS LINE 2"
+                                        label-class="slds-form-element__label"
+                                        value={primaryRegistrant.addressLine2}
+                                        input-name="addressLine2" 
+                                        handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="form-field">
+                        <c-portal_-input classes="slds-input" 
+                                        type="text"
+                                        label="CITY"
+                                        label-class="slds-form-element__label"
+                                        value={primaryRegistrant.city}
+                                        required={addressRequired}
+                                        input-name="city" 
+                                        handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="form-field">
+                        <c-portal_-input classes="slds-input" 
+                                        type="text"
+                                        label="STATE"
+                                        label-class="slds-form-element__label"
+                                        value={primaryRegistrant.state}
+                                        required={addressRequired}
+                                        input-name="state" 
+                                        handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="form-field">
+                        <c-portal_-input classes="slds-input" 
+                                        type="text"
+                                        label="COUNTRY"
+                                        label-class="slds-form-element__label"
+                                        value={primaryRegistrant.country}
+                                        required={addressRequired}
+                                        input-name="country" 
+                                        handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="form-field">
+                        <c-portal_-input classes="slds-input" 
+                                        type="text"
+                                        label="POSTAL CODE"
+                                        label-class="slds-form-element__label"
+                                        value={primaryRegistrant.postalCode}
+                                        required={addressRequired}
+                                        input-name="postalCode" 
+                                        handle-input={handleInput}>
+                        </c-portal_-input>
+                    </div>
+                </lightning-layout-item>
+
+            </lightning-layout>
+
+        </template>
+    </div> -->
+</template>

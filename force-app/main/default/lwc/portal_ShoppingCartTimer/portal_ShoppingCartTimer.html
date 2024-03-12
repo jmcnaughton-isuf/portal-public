@@ -1,0 +1,11 @@
+<template>
+    <div class="custom-hide-on-phone mobile-text-style">
+        <h4 class="expiration-time slds-m-bottom_medium" if:true={timeToExpiration}>Time to Expiration: <span>{timeToExpiration}</span></h4>
+    </div>
+    <div class="custom-show-on-phone mobile-text-style">
+        <h4 class="expiration-time slds-m-bottom_medium" if:true={timeToExpiration}>
+            <div class="slds-size_12-of-12 slds-small-size_12-of-12">{headerText}</div>
+            <div class="slds-size_12-of-12 slds-small-size_12-of-12"><span>{timeToExpiration}</span></div>
+        </h4>
+    </div>
+</template>

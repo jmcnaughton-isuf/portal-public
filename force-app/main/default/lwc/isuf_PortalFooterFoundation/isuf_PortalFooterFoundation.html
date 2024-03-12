@@ -1,0 +1,77 @@
+<!--
+ - Created by jmcnaughton on 4/17/2023.
+ -->
+
+<!-- Isuf Portal Footer Foundation -->
+<template>
+    <footer class="site-footer">
+        <div class="site-footer__flex-wrap">
+            <a href="http://www.foundation.iastate.edu" class="site-footer__logo">
+                <img src={logo} alt="Iowa State University Foundation" loading="lazy" width="516" height="69">
+            </a>
+
+            <nav class="site-footer__departments-nav" aria-label="Footer Departments">
+                <div class="site-footer__social-links-wrap">
+                    <ul class="site-footer__social">
+                        <li>
+                            <a href="https://www.instagram.com/isufoundation" target="_blank">
+
+                                <span class="visible-for-screen-readers">Instagram</span>
+                                <img style="height: 48px; width: 48px" src={instagram} alt="Iowa State University Foundation Instagram" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/isufoundation" target="_blank">
+
+                                <span class="visible-for-screen-readers">YouTube</span>
+                                <img style="height: 48px; width: 48px" src={youtube} alt="Iowa State University Foundation Youtube" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/isufoundation" target="_blank">
+
+                                <span class="visible-for-screen-readers">Facebook</span>
+                                <img style="height: 48px; width: 48px" src={linkedin} alt="Iowa State University Foundation LinkedIn" loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/isufoundation" target="_blank">
+
+                                <span class="visible-for-screen-readers">Twitter</span>
+                                <img style="height: 48px; width: 48px;" src={twitter} alt="Iowa State University Foundation Twitter" loading="lazy">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul>
+                    <li>
+                        <p class="site-footer__section-label">Contact Us</p>
+                    </li>
+                    <li>
+                        <p><a class="site-footer__section-email" href="mailto:isufoundation@foundation.iastate.edu">isufoundation@foundation.iastate.edu</a></p>
+                    </li>
+                    <li>
+                        <a class="site-footer__section-phone" href="tel:866-419-6768">866-419-6768</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="site-footer__bottom-wrap">
+
+            <div class="site-footer__copyright">
+                    <ul>
+                        <li style="float: left; margin-left: 1.5rem; margin-top: 1rem">
+                            &copy; Iowa State University Foundation
+                        </li>
+                        <li style="float: right; margin-right: 4.5rem; margin-top: 1rem">
+                            <a href={privacyPolicy} target="_blank" style="color: white; text-decoration: underline">Privacy Policy</a>
+                        </li>
+                        <li style="float: right; margin-right: 1rem; margin-top: 1rem">
+                            <a href={terms} target="_blank" style="color: white; text-decoration: underline">Website Terms of Use</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </footer>
+</template>

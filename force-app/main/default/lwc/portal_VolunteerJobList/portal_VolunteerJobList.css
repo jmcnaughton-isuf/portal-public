@@ -1,0 +1,20 @@
+.accordion-block {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.event-list {
+    margin-top: 3em;
+}
+
+.event {
+    background-color: transparent;
+} 
+
+.shift-item:first-of-type {
+    border-top: 1px solid gray;
+}
+
+.shift-item {
+    border-bottom: 1px solid gray;
+}

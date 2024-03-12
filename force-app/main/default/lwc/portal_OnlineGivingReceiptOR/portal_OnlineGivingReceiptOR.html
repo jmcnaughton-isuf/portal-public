@@ -1,0 +1,39 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+        <template if:true={_saved}>
+            <div class="container small">
+                <div class="event-details">
+                    <img  style={imgStyle} src={imgSrc}/>
+                    <!-- <lightning-formatted-rich-text value={htmlText} ></lightning-formatted-rich-text> -->
+                    <p style="margin-bottom: .7em; margin-top: 0.7em;"> Thank you for investing in the students, faculty and researchers who will tackle tomorrow’s toughest problems with the ingenuity and can-do attitude that is the hallmark of an Iowa State University education. We are grateful for your support.</p>
+                    <p style="margin-bottom: .7em;"> An official receipt detailing your charitable gifts this year will be available in January. If you have any questions, please call our Gift Administration Team at 515.294.4607 or toll-free at 866.419.6768.</p>
+                    <p style="margin-bottom: .7em;"> Your friends at the Iowa State University Foundation</p>
+
+                   <!-- <lightning-formatted-rich-text value={htmlAddText} ></lightning-formatted-rich-text> -->
+                    <h2 style="margin-bottom: .7em; font-weight: bold;">Gift Details</h2>
+                    <h5><span class="bold">Payment Date: </span><lightning-formatted-date-time value={_data.startDate} month="long" day="2-digit" year="numeric" time-zone="UTC"></lightning-formatted-date-time></h5>
+                    <h5 if:true={_data.endDate}><span class="bold">End Date: </span><lightning-formatted-date-time value={_data.endDate} month="long" day="2-digit" year="numeric" time-zone="UTC"></lightning-formatted-date-time></h5>
+                    <h5><span class="bold">Frequency: </span>{_data.frequency}</h5>
+                    <h5 if:true={_showMultiPayment}><span class="bold">Total Number of Payments: </span>{_numberOfInstallments}</h5>
+                    <br>
+                    <c-portal_-table records={_designationData}
+                                            column-mappings={columnDataList}
+                                            rows-per-page="20">
+                    </c-portal_-table>
+                    <br>
+                    <div class="slds-p-around_small slds-size_6-of-12 slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 tot-amt">Total Paid: </div>
+                    <div class="slds-p-around_small slds-size_6-of-12 slds-small-size_6-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 amt-val" > ${_totalAmount}</div>
+                    <div if:true={_showMultiPayment}>
+                        <c-portal_-table records={_data.designations}
+                                         column-mappings={multiPaymentColumnList}
+                                         rows-per-page="20">
+                        </c-portal_-table>
+                        <br>
+                        <div class="slds-p-around_small slds-size_6-of-12 slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 tot-amt">Total Pledged: </div>
+                        <div class="slds-p-around_small slds-size_6-of-12 slds-small-size_6-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 amt-val" > ${_totalPledgeAmount}</div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,36 @@
+<template>
+    <div if:true={fieldData.isDisplay} style={containerStyle}>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <label if:false={isCheckbox} style={labelStyle}>
+            <span class="required" if:true={fieldData.isRequired}>*</span>
+            {fieldData.label}
+            <c-portal_-tooltip if:true={fieldData.tooltipText} text={fieldData.tooltipText}></c-portal_-tooltip>
+        </label>
+        <div if:true={fieldData.fieldDescription}>
+            <lightning-formatted-rich-text class="slds-rich-text-editor__output field-description" value={fieldData.fieldDescription}></lightning-formatted-rich-text>
+        </div>
+        <c-portal_-input disabled={fieldData.isDisabled} 
+                         required={fieldData.isRequired}
+                         type={fieldData.fieldType} 
+                         classes={inputClasses}
+                         value={_value} 
+                         checked={_value} 
+                         handle-input={updateValue} 
+                         step={fieldData.step}
+                         if:true={isInputBox}></c-portal_-input>
+        <c-portal_-select option-list={_picklistValues} default-value={_value} handle-change={updateValue} if:true={isPicklist}></c-portal_-select>
+        <lightning-input-rich-text disabled={fieldData.isDisabled} value={_value} onchange={updateValue} if:true={isRichText}></lightning-input-rich-text>
+        <lightning-textarea disabled={fieldData.isDisabled} value={_value} onchange={updateValue} style="margin-top: -16px" if:true={isTextArea}></lightning-textarea>
+        <c-portal_-lookup input-value={lookupValue} 
+                          handle-lookup-option-selected={local_handleLookup} 
+                          display-setting-list={fieldData.lookupSettingList} 
+                          custom-metadata-api-name='Portal_Section_Field_Setting__mdt' 
+                          if:true={isLookup}>
+        </c-portal_-lookup>
+        <label if:true={isCheckbox} style={labelStyle}>
+            <span class="required" if:true={fieldData.isRequired}>*</span>
+            {fieldData.label}
+            <c-portal_-tooltip if:true={fieldData.tooltipText} text={fieldData.tooltipText}></c-portal_-tooltip>
+        </label>
+    </div>
+</template>

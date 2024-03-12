@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="givingFormName" label="Giving Form Record Name" type="String" description="The name of the Giving Form record to use for configuration." required="true" default=""></property>
+            <property name="urlParamName" label="URL Parameter Name" type="String" description="URL Parameter for Giving Form." required="false" default=""></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

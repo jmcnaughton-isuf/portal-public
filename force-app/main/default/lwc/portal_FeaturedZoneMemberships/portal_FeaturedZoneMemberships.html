@@ -1,0 +1,45 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={initFinished}>
+            <template if:true={showFeaturedMembership}>
+                <div class="container large" style="padding-top: 0; margin-top: 0;">
+                    <div class="container">
+                        <div class="section-body-content">
+                            <div if:true={permissionMap.featuredZoneMembers.display}>
+                                <h2 style="margin-bottom: .5em; border-bottom: 1px solid #d1d5d8">{permissionMap.featuredZoneMembers.label}</h2>
+                                <template if:true={showViewMoreButton}>
+                                    <a href={zoneLeadershipLink} class="view-all-news button secondary small">View more Featured Members</a>
+                                </template>
+                            </div>
+                            <div class="flex-grid-4 news" style="justify-content: space-around">
+                                <template for:each={featuredZoneMemberList} for:item="featuredBoardMember">
+                                    <a href={featuredBoardMember.zoneBioDetailURL} class="grid-item equalHeight card" key={featuredBoardMember.Id}>
+                                        <div class="container">
+                                            <template if:true={permissionMap.zoneMembershipPictureRecord.display}>
+                                                <div class="image" if:true={featuredBoardMember.pictureURL}>
+                                                    <img src={featuredBoardMember.pictureURL}/>
+                                                </div>
+                                                <div class="image" if:false={featuredBoardMember.pictureURL}>
+                                                    <img src={defaultPictureURL}/>
+                                                </div>
+                                            </template>
+                                            <div class="copy">
+                                                <h4 if:true={featuredBoardMember.fullName}>{featuredBoardMember.fullName}</h4>
+                                                <template if:false={hideDegreeString}>
+                                                    <h5 if:true={featuredBoardMember.degreeString}>
+                                                        {featuredBoardMember.degreeString}
+                                                    </h5>
+                                                </template>
+                                                <p if:true={permissionMap.title.display}>{featuredBoardMember.title}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template> 
+        </template>
+    </div>
+</template>

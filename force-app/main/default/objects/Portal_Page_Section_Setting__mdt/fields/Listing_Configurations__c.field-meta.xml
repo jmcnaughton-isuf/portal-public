@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Listing_Configurations__c</fullName>
+    <defaultValue>&quot;{\&quot;scope\&quot;: \&quot;\&quot;, \&quot;relevance\&quot;: \&quot;\&quot;, \&quot;recordType\&quot;:\&quot;\&quot;, \&quot;portalZone\&quot;: \&quot;\&quot;, \&quot;sharing\&quot;: \&quot;\&quot;, \&quot;maxItems\&quot;: \&quot;\&quot;, \&quot;itemsPerPage\&quot;: \&quot;\&quot;}&quot;</defaultValue>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Listing Configurations</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>6</visibleLines>
+</CustomField>

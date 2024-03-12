@@ -1,0 +1,56 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin">
+                <div class="section-body-content">
+                    <div class="container">
+                        <fieldset style="margin-bottom: 1em">
+                            <div class="field-wrapper">
+                                <input style="display: inline-block; width: auto" type="checkbox" class="radio" onchange={handleMatchinGiftChecked} checked={_showMatchingCompany}>
+                                <label for="">{componentLabel}</label>
+                            </div>
+                        </fieldset>
+                        <div class="text-entry" if:true={_showMatchingCompany}>
+                            <template if:false={isHepIntegrated}>
+                                <label for="pledge-input">{matchingCompanyLabel}</label>
+                                <input type="text" value={_companyName} onchange={handleCompanyNameChange}/>
+                            </template>
+                            <template if:true={isHepIntegrated}>
+                                <h2>Selected Company</h2>
+                                <p>{_companyName}</p>
+                                <lightning-button label="Clear" onclick={deleteMatchingCompany} if:true={_companyName}></lightning-button>
+                                <c-portal_-Hep-Search-Container matching-company-label={matchingCompanyLabel} onhep_company_selected={handleCompanySelected}></c-portal_-Hep-Search-Container>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <lightning-input style="text-transform: uppercase; font-size: 1rem;font-weight: bold;" type="checkbox" onchange={handleMatchinGiftChecked} label={componentLabel}></lightning-input>
+            <template if:true={_showMatchingCompany}>
+                <lightning-layout if:true={isHepIntegrated} multiple-rows="true">
+                    <lightning-layout-item padding="around-large" size="12" large-device-size="6" medium-device-size="6" small-device-size="12">
+                        <h2 style="text-transform: uppercase; font-size: 1rem; font-weight: bold;">Selected Company</h2>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-large" size="12" large-device-size="4" medium-device-size="4" small-device-size="12">
+                        <p>{_companyName}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-large" size="12" large-device-size="2" medium-device-size="2" small-device-size="12">
+                    <lightning-button label="Clear" onclick={deleteMatchingCompany} if:true={_companyName}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="12">
+                        <c-portal_-Hep-Search-Container matching-company-label={matchingCompanyLabel} onhep_company_selected={handleCompanySelected}></c-portal_-Hep-Search-Container>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout if:false={isHepIntegrated}>
+                    <lightning-layout-item padding="around-small" size="12" large-device-size="6" medium-device-size="6" small-device-size="12">
+                        <h2 style="text-transform: uppercase; font-size: 1rem; font-weight: bold;">{matchingCompanyLabel}</h2>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="12" large-device-size="6" medium-device-size="6" small-device-size="12">
+                        <lightning-input variant='label-hidden' type="text" value="" onchange={handleCompanyNameChange} label={matchingCompanyLabel}></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template> -->
+        </template>
+    </div>
+    
+</template>

@@ -1,0 +1,31 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner
+            if:true={isShowSpinner}
+            variant="brand"
+            size="large">
+        </lightning-spinner>
+
+        <div class="container" if:true={isSetupComplete}>
+            <div class="flex-grid-2">
+                <div class="grid-item">
+                    <fieldset>
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" 
+                                type="checkbox" 
+                                name="general" 
+                                checked={_globalMembershipSolicitOptOutValue} 
+                                onchange={handleMembershipRenewalSolicitationChange}
+                                class="radio">
+                            <label for="general">{membershipSolicitOptOutLabel}</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="button-list">
+                <a title="Cancel" href={cancelEditMembershipUrl} onclick={handleCancelClick} class="button secondary">Cancel</a>
+                <a title="Save Changes" onclick={handleMembershipSaveClick} class="button primary">Save Changes</a>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership_record_insertion__c</fullName>
+    <description>Determines how zone membership records are saved based.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Membership record insertion</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct insertion</fullName>
+                <default>true</default>
+                <label>Direct insertion</label>
+            </value>
+            <value>
+                <fullName>Create case</fullName>
+                <default>false</default>
+                <label>Create case</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="nameSearchLabel" label="Name Search Label" type="String" default="Name Search"/>
+            <property name="typeSearchLabel" label="Type Search Label" type="String" default="Type Search"/>
+            <property name="itemsPerPage" label="Items per page" type="Integer" description="The number of Giving Societies to display on the table per page." required="true" default="10"/>
+            <property name="givingSocietiesDetailPageURL" type="String" label="Giving Societies Detail Page URL" description="The URL for the giving society detail page."/>
+            <property name="searchOptions" label="Search Options" type="String" datasource="Show all, Show name, Show type, Hide" default="Show all"/>
+            <property name="detailPageLinkText" label="Detail page link text" type="String" default="Learn More" description="Text for giving socities detail link."/>
+            <property name="noResultsText" label="No results message" type="String" default="There are no giving societies that match your search." description="Text that appears when there are no results returned by the search."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

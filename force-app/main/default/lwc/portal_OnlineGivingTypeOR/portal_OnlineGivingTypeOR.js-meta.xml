@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="componentLabel" label="Section Label" type="String"/>
+            <property name="defaultGiftTypeLabels" label="Default Gift Type Labels" description="A comma separated list of labels." type="String" default="One-Time,Multi-Payment,Recurring"/>
+            <property name="baseButtonColor" label="Base Button Color" type="Color"/>
+            <property name="selectedButtonColor" label="Selected Button Color" type="Color"/>
+            <property name="textColor" label="Heading Text Color" type="Color"/>
+            <property name="showOneTime" label="Show One Time Gift Button" type="Boolean"/>
+            <property name="showMultiPayment" label="Show Multi-Payment Gift Button" type="Boolean"/>
+            <property name="showRecurring" label="Show Recurring Gift Button" type="Boolean"/>
+            <property name="showRecurringEndDate" label="Show Optional Recurring Gift End Date" type="Boolean"/>
+            <property name="showPledgePayment" label="Show Pledge Payment Radio Button" type="Boolean"/>
+            <property name="pledgePaymentOneTimeGiftLabel" label="One Time Gift Label for Pledge Payment" type="String" default="I would like to make a one-time gift."/>
+            <property name="pledgePaymentLabel" label="Pledge Payment Label" type="String" default="I would like to pay a part of a pledge."/>
+            <property name="pledgeIdLabel" label="Pledge Id Label for Guest Pledge Payment" type="String" default="Pledge Id"/>
+            <property name="pledgeLabel" label="Pledge Label for Non-Guest Pledge Payment" type="String" default="Pledge"/>
+            <property name="numberOfPaymentsLabel" label="Number of Payments Label" type="String"/>
+            <property name="defaultMaxNumberOfPayments" label="Maximum Number of Payments Custom" description="A comma separated list of numbers, if it is left blank a free form input field will show instead." type="String"/>
+            <property name="minNumberOfPayments" label="Minimum Number of Payments" type="Integer"/>
+            <property name="maxNumberOfPayments" label="Maximum Number of Payments" type="Integer"/>
+            <property name="pledgeFrequencyLabel" label="Frequency Label for Multi-Payment" type="String"/>
+            <property name="pledgeStartDateLabel" label="Start Date Label for Multi-Payment" type="String"/>
+            <property name="recurringFrequencyLabel" label="Frequency Label for Recurring Gift" type="String"/>
+            <property name="recurringStartDateLabel" label="Start Date Label for Recurring Gift" type="String"/>
+            <property name="recurringEndDateLabel" label="End Date Label for Recurring Gift" type="String"/>
+            <property name="pageName" label="Online Giving Page Name" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

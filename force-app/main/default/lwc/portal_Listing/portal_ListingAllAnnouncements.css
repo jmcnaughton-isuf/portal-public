@@ -1,0 +1,13 @@
+@media (max-width: 767px) {
+    [data-ascend-portal] .event-list {
+        padding-bottom: 1em;
+    }
+}
+
+.listing-name {
+    word-break: break-word;
+}
+
+[data-ascend-portal] .event-list .event:last-of-type {
+    border-bottom: 1px solid #e0e0e0;
+}

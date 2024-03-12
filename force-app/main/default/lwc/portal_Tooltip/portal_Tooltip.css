@@ -1,0 +1,26 @@
+span {
+    position: relative;
+}
+
+button {
+    position: relative;
+    left: 3px;
+    bottom: 2px;
+}
+
+button:hover {
+    --lwc-colorTextIconDefault: #1c577f;
+}
+
+div.slds-popover {
+    position: relative; 
+    bottom: 4px;
+    width: max-content;
+    min-width: 50px;
+    font-size: 1.1rem;
+}
+
+div.slds-popover.slds-popover_tooltip > div.content-header-bar {
+    margin-bottom: 0;
+    padding: 0.5rem;
+}

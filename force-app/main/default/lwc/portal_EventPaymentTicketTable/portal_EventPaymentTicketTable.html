@@ -1,0 +1,89 @@
+<template>
+    <div class="event" style="margin-bottom: 2em">
+        <div class="container large">
+            <div class="section-wrapper">
+                <div class="registration-table alt">
+                    <div class="show-on-phone">
+                        <template for:each={ticketList} for:item="ticket">
+                            <div class="row bottom-border slds-p-around_small" key={ticket.name}>
+                                <h4>Event</h4>
+                                <p>{ticket.info.event}</p>
+                                <h4>Ticket</h4>
+                                <p>{ticket.info.name}</p>
+                                <h4>Quantity</h4>
+                                <p>{ticket.info.quantity}</p>
+                                <h4>Price</h4>
+                                <p>{ticket.info.priceString}</p>
+                            </div>
+                        </template>
+                        <!-- <div class="row bottom-border">
+                            <h4>Event</h4>
+                            <p>Alumni Club of Ohio and Chicago Women's Alliance (CWA)</p>
+                            <h4>Ticket</h4>
+                            <p>General Admission</p>
+                            <h4>Quantity</h4>
+                            <p>2</p>
+                            <h4>Price</h4>
+                            <p>$15.00</p>
+                        </div> -->
+                        <div class="row">
+                            <h4>Total due: {totalPrice}</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="hide-on-phone">
+                        <div class="row table-heading">
+                            <div><p>Event</p></div>
+                            <div><p>Ticket</p></div>
+                            <div><p>Quantity</p></div>
+                            <div><p>Price</p></div>
+                        </div>
+
+                        <template for:each={ticketList} for:item="ticket">
+                            <div class="row table-row" key={ticket.name}>
+                                <div><p>{ticket.info.event}</p></div>
+                                <div><p>{ticket.info.name}</p></div>
+                                <div><p>{ticket.info.quantity}</p></div>
+                                <div><p>{ticket.info.priceString}</p></div>
+                            </div>
+                        </template>
+
+                        <div class="row table-row">
+                            <div><p class="bold" style="margin-bottom: 0">Total due:</p></div>
+                            <div></div>
+                            <div></div>
+                            <div><p class="bold" style="margin-bottom: 0">{totalPrice}</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div if:true={ticketList}>
+        <table class="ticket-table">
+            <thead>
+                <th>Ticket</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </thead>
+
+            <tbody>
+                <template for:each={ticketList} for:item="ticket">
+                    <tr key={ticket.Id}>
+                        <td>{ticket.name}</td>
+                        <td>{ticket.info.quantity}</td>
+                        <td>{ticket.info.priceString}</td>
+                    </tr>
+                </template>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>Total Price</td>
+                    <td></td>
+                    <td>{totalPrice}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>     -->
+</template>

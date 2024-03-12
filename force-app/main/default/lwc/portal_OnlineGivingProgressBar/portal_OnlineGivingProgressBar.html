@@ -1,0 +1,15 @@
+<template>
+    <div data-ascend-portal>
+        <div class="slds-m-top_large hide-on-phone">
+            <div class="container large" style="pointer-events:none" if:true={_currentPage}>
+                <div class="container">
+                    <lightning-progress-indicator current-step={_currentPage} type="path" variant="base">
+                        <template for:each={steps} for:item="step">
+                            <lightning-progress-step label={step.label} value={step.value} key={step.key}></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator> 
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

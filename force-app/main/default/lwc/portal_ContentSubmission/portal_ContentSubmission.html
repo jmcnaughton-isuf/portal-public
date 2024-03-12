@@ -1,0 +1,68 @@
+<template>
+    <div data-ascend-portal>
+        <lightning-spinner if:true={_showSpinner} alternative-text="Loading" size="large"></lightning-spinner>
+
+        <div class="container medium" if:true={isShowPage}>
+            <div class="container entry-form">
+                <div class="content-wrapper">
+                    <div class="flex-grid-1">
+                        <c-portal_-section-edit-field if:true={pageMetadata.eventTitle} class="grid-item" field-id="eventTitle" picklist-values={picklists.eventTitle} field-data={pageMetadata.eventTitle} value={_listing.eventTitle}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.eventSummary} class="grid-item" field-id="eventSummary" picklist-values={picklists.eventSummary} field-data={pageMetadata.eventSummary} value={_listing.eventSummary}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.eventDescription} class="grid-item" field-id="eventDescription" picklist-values={picklists.eventDescription} field-data={pageMetadata.eventDescription} value={_listing.eventDescription}></c-portal_-section-edit-field>
+                        <div if:true={pageMetadata.eventPhotos} class="grid-item">
+                            <label class="slds-form-element__label file-upload-label">
+                                <span class="required" if:true={pageMetadata.eventPhotos.isRequired}>*</span>
+                                {pageMetadata.eventPhotos.label}
+                                <c-portal_-tooltip if:true={pageMetadata.eventPhotos.tooltipText} text={pageMetadata.eventPhotos.tooltipText}></c-portal_-tooltip>
+                            </label>
+                            <div class="file-upload-spacer"></div>
+                            <lightning-file-upload record-id={_recordId} onuploadfinished={handleFileUpload}></lightning-file-upload>
+                            <template for:each={_uploadedFiles} for:item="file">
+                                <p class="uploaded-files" key={file.documentId}>{file.name}</p>
+                            </template>
+                            <lightning-formatted-rich-text if:true={pageMetadata.eventPhotos.fieldDescription} value={pageMetadata.eventPhotos.fieldDescription}></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                    <div class="flex-grid-2">
+                        <c-portal_-section-edit-field if:true={pageMetadata.eventStartDateTime} class="grid-item" field-id="eventStartDateTime" picklist-values={picklists.eventStartDateTime} field-data={pageMetadata.eventStartDateTime} value={_listing.eventStartDateTime}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.eventEndDateTime} class="grid-item" field-id="eventEndDateTime" picklist-values={picklists.eventEndDateTime} field-data={pageMetadata.eventEndDateTime} value={_listing.eventEndDateTime}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.timeZone} class="grid-item" field-id="timeZone" picklist-values={picklists.timeZone} field-data={pageMetadata.timeZone} value={_listing.timeZone}></c-portal_-section-edit-field>
+                    </div>
+                    <div class="flex-grid-2">
+                        <c-portal_-section-edit-field if:true={pageMetadata.locationVenue} class="grid-item" field-id="locationVenue" picklist-values={picklists.locationVenue} field-data={pageMetadata.locationVenue} value={_listing.locationVenue}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.street} class="grid-item" field-id="street" picklist-values={picklists.street} field-data={pageMetadata.street} value={_listing.street}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.city} class="grid-item" field-id="city" picklist-values={picklists.city} field-data={pageMetadata.city} value={_listing.city}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.state} class="grid-item" field-id="state" picklist-values={picklists.state} field-data={pageMetadata.state} value={_listing.state}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.postalCode} class="grid-item" field-id="postalCode" picklist-values={picklists.postalCode} field-data={pageMetadata.postalCode} value={_listing.postalCode}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.country} class="grid-item" field-id="country" picklist-values={picklists.country} field-data={pageMetadata.country} value={_listing.country}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.onlineEventUrl} class="grid-item" field-id="onlineEventUrl" picklist-values={picklists.onlineEventUrl} field-data={pageMetadata.onlineEventUrl} value={_listing.onlineEventUrl}></c-portal_-section-edit-field>
+                    </div>
+                    <div class="flex-grid-1">
+                        <c-portal_-section-edit-field if:true={pageMetadata.registrationDetails} class="grid-item" field-id="registrationDetails" picklist-values={picklists.registrationDetails} field-data={pageMetadata.registrationDetails} value={_listing.registrationDetails}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.registrationUrl} class="grid-item" field-id="registrationUrl" picklist-values={picklists.registrationUrl} field-data={pageMetadata.registrationUrl} value={_listing.registrationUrl}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.submitterName} class="grid-item" field-id="submitterName" picklist-values={picklists.submitterName} field-data={pageMetadata.submitterName} value={_listing.submitterName}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.submitterPhone} class="grid-item" field-id="submitterPhone" picklist-values={picklists.submitterPhone} field-data={pageMetadata.submitterPhone} value={_listing.submitterPhone}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.submitterEmail} class="grid-item" field-id="submitterEmail" picklist-values={picklists.submitterEmail} field-data={pageMetadata.submitterEmail} value={_listing.submitterEmail}></c-portal_-section-edit-field>
+                        <c-portal_-section-edit-field if:true={pageMetadata.portalZone} class="grid-item" field-id="portalZone" picklist-values={picklists.portalZone} field-data={pageMetadata.portalZone} value={_listing.portalZone}></c-portal_-section-edit-field>
+                    </div>
+                    <fieldset if:true={pageMetadata.termsOfAgreement}>
+                        <lightning-formatted-rich-text if:true={pageMetadata.termsOfAgreement.fieldDescription} value={pageMetadata.termsOfAgreement.fieldDescription}></lightning-formatted-rich-text>
+                        <div class="field-wrapper">
+                            <c-portal_-input type="checkbox" classes="radio" checked={_isAcceptedTermsOfAgreement} handle-change={handleTermsChange}></c-portal_-input>
+                            <label>{pageMetadata.termsOfAgreement.label}</label>
+                        </div>
+                    </fieldset>
+
+                    <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+                        <c-portal_-Recaptcha>
+                        </c-portal_-Recaptcha>
+                    </div>
+                    <div class="button-list">
+                        <button if:true={isSubmitDisabled} class="button primary full-mobile disabled" disabled>Submit</button>
+                        <button if:false={isSubmitDisabled} class="button primary full-mobile" onclick={handleSubmit}>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

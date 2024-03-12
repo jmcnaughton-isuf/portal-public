@@ -1,0 +1,31 @@
+<template>
+    <div if:true={fieldData.display}>
+        <lightning-spinner alternative-text="Loading" size="medium" if:true={_isShowSpinner}></lightning-spinner>
+        <label class={_labelClasses}>
+            <span class="required" if:true={fieldData.isRequired}>*</span>
+            {fieldData.label}
+            <c-portal_-tooltip text={fieldData.tooltipText} if:true={fieldData.tooltipText}></c-portal_-tooltip>
+        </label>
+        <c-portal_-input disabled={fieldData.disable} 
+                         required={fieldData.isRequired}
+                         type={fieldData.fieldType} 
+                         max={fieldData.max}
+                         classes={_inputClasses}
+                         value={_value} 
+                         checked={_value} 
+                         handle-input={updateValue} 
+                         if:true={showInputBox}></c-portal_-input>
+        <c-portal_-select option-list={picklistValues} default-value={_value} handle-change={updateValue} disabled={fieldData.disable} chevron-down-style={selectChevronDownStyle} if:true={fieldData.isPicklist}></c-portal_-select>
+        <lightning-input-rich-text disabled={fieldData.disable} value={_value} onchange={updateValue} if:true={fieldData.isRichText}></lightning-input-rich-text>
+        <lightning-textarea style="margin-top: 5px;" disabled={fieldData.disable} value={_value} onchange={updateValue} if:true={fieldData.isTextArea} variant="label-hidden"></lightning-textarea>
+        <c-portal_-lookup input-value={_value} 
+                          handle-lookup-option-selected={local_handleLookup} 
+                          display-setting-list={displaySettingList} 
+                          custom-metadata-api-name='Portal_Section_Field_Setting__mdt' 
+                          if:true={isShowLookup}>
+        </c-portal_-lookup>
+        <div if:true={fieldData.fieldDescription}>
+            <lightning-formatted-rich-text value={fieldData.fieldDescription}></lightning-formatted-rich-text>
+        </div>
+    </div>
+</template>

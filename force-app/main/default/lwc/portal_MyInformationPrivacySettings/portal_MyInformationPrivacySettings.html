@@ -1,0 +1,127 @@
+<template>
+    <div if:true={displayView}>
+        <div class="container container-no-padding">
+            <div class="bottom-border">
+                <h2 if:true={displayView}>Privacy Settings</h2>
+                <a onclick={editInformation} class="view-all-news button secondary small" style="top: 10px">Edit Privacy Settings</a>
+            </div>
+            <div class="entry-form">
+                <div class="form-element" if:true={informationMap.frontEndData.directoryOptOut.display}>
+                    <fieldset>
+                        <div class="field-wrapper block">
+                            <input data-inputtype="radio" type="radio" name="alumDirectory" class="radio" disabled={displayView} value={directoryOptOut} checked={directoryOptOut}>
+                            <label for="alumDirectory">Include me in the alumni directory.</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <template if:true={informationMap.frontEndData.directorySetting.display}>
+                    <div class="form-element" if:true={informationMap.frontEndData.receivingMessages.display}>
+                        <fieldset>
+                            <div class="field-wrapper block">
+                                <input data-inputtype="radio" type="radio" name="receiveMessages" disabled={displayView} value={receivingMessages} class="radio" checked={receivingMessages}>
+                                <label for="receiveMessages">Allow me to receive messages.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-element" if:true={informationMap.frontEndData.studentCanSee.display}>
+                        <fieldset>
+                            <div class="field-wrapper block">
+                                <input data-inputtype="radio" type="radio" name="receiveMessagesAlum" disabled={displayView} value={studentCanSee} class="radio" checked={studentCanSee}>
+                                <label for="receiveMessagesAlum">Allow me to receive messages from university alumni, faculty, and (if my profile is visible to them) students.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bottom-border" if:false={displayView}>
+        <div class="bottom-border breadcrumb">
+            <ul>
+                <li style="list-style-type: none;"><a href="my-information">Back to My Information</a></li>
+            </ul>
+        </div>
+        <h2 style="margin-bottom: .5em" if:false={displayView}>Privacy Settings</h2>
+        <div class="entry-form" if:false={displayView}>
+            <div class="form-element">
+                <fieldset>
+                    <div class="field-wrapper block" if:true={informationMap.frontEndData.directoryOptOut.display}>
+                        <input data-inputtype="radio" type="checkbox" name="alumDirectory" class="radio" oninput={updateDirectoryOptOut} checked={directoryOptOut} value={directoryOptOut} disabled={informationMap.frontEndData.directoryOptOut.disable}>
+                        <label for="alumDirectory">Include me in the alumni directory.</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <template if:true={informationMap.frontEndData.directorySetting.display}>
+                <div class="form-element" if:true={informationMap.frontEndData.receivingMessages.display}>
+                    <fieldset>
+                        <div class="field-wrapper block">
+                            <input data-inputtype="radio" type="checkbox" name="receiveMessages" class="radio" disabled={informationMap.frontEndData.receivingMessages.disable} checked={receivingMessages} value={receivingMessages} oninput={updateIsReceivingMessages}>
+                            <label for="receiveMessages">Allow me to receive messages.</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-element" if:true={informationMap.frontEndData.studentCanSee.display} onchange={updateIsStudentCanSee}>
+                    <fieldset>
+                        <div class="field-wrapper block" if:true={informationMap.frontEndData.studentCanSee.display}>
+                            <input data-inputtype="radio" type="checkbox" name="receiveMessagesAlum" class="radio" disabled={informationMap.frontEndData.studentCanSee.disable} checked={studentCanSee} value={studentCanSee} oninput={updateIsStudentCanSee}>
+                            <label for="receiveMessagesAlum">Allow me to receive messages from university alumni, faculty, and (if my profile is visible to them) students.</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </template>
+        </div>
+    </div>  
+
+    <!-- <lightning-layout multiple-rows="true">
+        <lightning-layout-item
+            size="12"
+            small-device-size="12"
+            medium-device-size="10"
+            large-device-size="10"
+            >
+            <h2 style="margin-bottom: .5em">Privacy Settings</h2>
+        </lightning-layout-item>
+        <lightning-layout-item if:true={displayView}
+            size="12"
+            small-device-size="12"
+            medium-device-size="2"
+            large-device-size="2"
+            padding="around-medium">
+            <lightning-button 
+                variant="brand"
+                label="Edit Privacy Settings"
+                title="Edit Privacy Settings"
+                onclick={editInformation}
+            ></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+    <hr/>
+    <template if:true={displayView}>
+        <lightning-input type="checkbox" disabled={displayView} checked={directoryOptOut} label="Include me in the alumni directory."
+            if:true={informationMap.frontEndData.directoryOptOut.display} onchange={updateDirectoryOptOut}></lightning-input>
+
+        <template if:true={informationMap.frontEndData.directorySetting.display}>
+            <lightning-input type="checkbox" disabled={displayView} checked={receivingMessages} label="Allow me to receive messages."
+                if:true={informationMap.frontEndData.receivingMessages.display} onchange={updateIsReceivingMessages}></lightning-input>
+            <lightning-input type="checkbox" disabled={displayView} checked={studentCanSee} label="Allow me to receive messages from university alumni, faculty, and (if my profile is visible to them) students."
+                if:true={informationMap.frontEndData.studentCanSee.display} onchange={updateIsStudentCanSee}></lightning-input>
+        </template>
+    </template> -->
+
+    <!-- <template if:false={displayView}>
+        <lightning-input type="checkbox" disabled={informationMap.frontEndData.directoryOptOut.disable} checked={directoryOptOut} label="Include me in the alumni directory."
+            if:true={informationMap.frontEndData.directoryOptOut.display} onchange={updateDirectoryOptOut}></lightning-input>
+
+        <template if:true={informationMap.frontEndData.directorySetting.display}>
+            <lightning-input type="checkbox" disabled={informationMap.frontEndData.receivingMessages.disable} checked={receivingMessages} label="Allow me to receive messages."
+                if:true={informationMap.frontEndData.receivingMessages.display} onchange={updateIsReceivingMessages}></lightning-input>
+            <lightning-input type="checkbox" disabled={informationMap.frontEndData.studentCanSee.disable} checked={studentCanSee} label="Allow me to receive messages from university alumni, faculty, and (if my profile is visible to them) students."
+                if:true={informationMap.frontEndData.studentCanSee.display} onchange={updateIsStudentCanSee}></lightning-input>
+        </template>
+    </template> -->
+
+</template>

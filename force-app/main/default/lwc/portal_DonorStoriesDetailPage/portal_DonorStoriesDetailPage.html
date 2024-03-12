@@ -1,0 +1,20 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={initDone}>
+            <div class="container" if:true={permissionMap.donorStory.display}>
+                <div class="section-wrapper">
+                    <div class="container">
+                        <h1 if:true={permissionMap.name.display} class="slds-align_absolute-center slds-m-bottom_small">{donorStoryInfo.name}</h1>
+                        <lightning-formatted-rich-text class="slds-align_absolute-center" value={donorStoryInfo.headerImage} if:true={permissionMap.headerImage.display}></lightning-formatted-rich-text>
+                        <div if:true={donorStoryInfo.bodyText}>
+                            <lightning-formatted-rich-text value={donorStoryInfo.bodyText} if:true={permissionMap.bodyText.display}></lightning-formatted-rich-text>
+                        </div>
+                        <div if:false={donorStoryInfo.bodyText}>
+                            <lightning-formatted-rich-text value={donorStoryInfo.bodyHtml} if:true={permissionMap.bodyHtml.display}></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

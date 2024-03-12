@@ -1,0 +1,259 @@
+<template>
+    <div data-ascend-portal>
+        <div class="entry-form" if:true={_isShowComponent}>
+            <div class="flex-grid-2">
+                <div class="grid-item" if:true={frontEndData.companyName.display}>
+                    <label for="company-name">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.companyName.isRequired} style="float: left;">* </abbr>{frontEndData.companyName.label}
+                    </label>
+                    <input name="companyName" onchange={setRecordValue} type="text" maxlength="80" value={companyName} required={frontEndData.companyName.isRequired} disabled={frontEndData.companyName.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.isExternal.display}>
+                    <fieldset>
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" onchange={setRecordValue} name="isExternal" checked={isExternal} class="radio" required={frontEndData.isExternal.isRequired} disabled={frontEndData.isExternal.disable}>
+                            <label for="alumDirectory"><abbr class="slds-required" title="required" if:true={frontEndData.isExternal.isRequired} style="float: left;">* </abbr>{frontEndData.isExternal.label}</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <template if:true={isShowExternalLink}>
+                    <div class="grid-item" if:true={isShowExternalLink}>
+                        <label>
+                            <abbr class="slds-required" title="required" if:true={frontEndData.externalLink.isRequired} style="float: left;">* </abbr>{frontEndData.externalLink.label}
+                        </label>
+                        <input name="externalLink" onchange={setRecordValue} value={externalLink} type="text" maxlength="255" required={frontEndData.externalLink.isRequired} disabled={frontEndData.externalLink.disable}>
+                    </div>
+                    <div class="grid-item">
+                    </div>
+                </template>
+                <div class="grid-item" if:true={frontEndData.expirationDate.display}>
+                    <label for="exp-date">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.expirationDate.isRequired} style="float: left;">* </abbr>{frontEndData.expirationDate.label}
+                    </label>
+                    <input name="expirationDate" type="date" min={currentDate} max="4000-12-31" onchange={setRecordValue} value={expirationDate} required={frontEndData.expirationDate.isRequired} disabled={frontEndData.expirationDate.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.addressLine1.display}>
+                    <label for="address-1">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.addressLine1.isRequired} style="float: left;">* </abbr>{frontEndData.addressLine1.label}
+                    </label>
+                    <input name="addressLine1" type="text" maxlength="75" onchange={setRecordValue} value={addressLine1} required={frontEndData.addressLine1.isRequired} disabled={frontEndData.addressLine1.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.addressLine2.display}>
+                    <label for="address-2">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.addressLine2.isRequired} style="float: left;">* </abbr>{frontEndData.addressLine2.label}
+                    </label>
+                    <input name="addressLine2" onchange={setRecordValue} value={addressLine2} type="text" maxlength="75" required={frontEndData.addressLine2.isRequired} disabled={frontEndData.addressLine2.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.addressLine3.display}>
+                    <label for="address-3">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.addressLine3.isRequired} style="float: left;">* </abbr>{frontEndData.addressLine3.label}
+                    </label>
+                    <input name="addressLine3" onchange={setRecordValue} value={addressLine3} type="text" maxlength="75" required={frontEndData.addressLine3.isRequired} disabled={frontEndData.addressLine3.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.city.display}>
+                    <label for="city">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.city.isRequired} style="float: left;">* </abbr>{frontEndData.city.label}
+                    </label>
+                    <input name="city" onchange={setRecordValue} value={city} type="text" maxlength="75" required={frontEndData.city.isRequired} disabled={frontEndData.city.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.state.display}>
+                    <label for="state">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.state.isRequired} style="float: left;">* </abbr>{frontEndData.state.label}
+                    </label>
+                    <input name="state" onchange={setRecordValue} value={state} type="text" maxlength="75" required={frontEndData.state.isRequired} disabled={frontEndData.state.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.country.display}>
+                    <label for="country">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.country.isRequired} style="float: left;">* </abbr>{frontEndData.country.label}
+                    </label>
+                    <input name="country" onchange={setRecordValue} value={country} type="text" maxlength="75" required={frontEndData.country.isRequired} disabled={frontEndData.country.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.postalCode.display}>
+                    <label for="post-code">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.postalCode.isRequired} style="float: left;">* </abbr>{frontEndData.postalCode.label}
+                    </label>
+                    <input name="postalCode" onchange={setRecordValue} value={postalCode} type="text" maxlength="25" required={frontEndData.postalCode.isRequired} disabled={frontEndData.postalCode.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.multipleLocations.display}>
+                    <fieldset class="solo">
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" name="multipleLocations" onchange={setRecordValue} checked={multipleLocations} class="radio" required={frontEndData.multipleLocations.isRequired} disabled={frontEndData.multipleLocations.disable}>
+                            <label for="alumDirectory">
+                                <abbr class="slds-required" title="required" if:true={frontEndData.multipleLocations.isRequired} style="float: left;">* </abbr>{frontEndData.multipleLocations.label}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="grid-item" if:true={frontEndData.isRemote.display}>
+                    <fieldset class="solo">
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" name="isRemote" onchange={setRecordValue} checked={isRemote} class="radio" required={frontEndData.isRemote.isRequired} disabled={frontEndData.isRemote.disable}>
+                            <label for="alumDirectory">
+                                <abbr class="slds-required" title="required" if:true={frontEndData.isRemote.isRequired} style="float: left;">* </abbr>{frontEndData.isRemote.label}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="grid-item" if:true={frontEndData.positionType.display}>
+                    <c-portal_-select
+                        input-name="positionType"
+                        default-value={positionType}
+                        option-list={picklists.positionType}
+                        handle-change={setRecordValue}
+                        label={frontEndData.positionType.label}
+                        is-show-null-option="true">
+                    </c-portal_-select>
+                </div> 
+                <div class="grid-item" if:true={frontEndData.classDegreeLevel.display}>
+                    <c-portal_-select
+                        input-name="classDegreeLevel"
+                        default-value={classDegreeLevel}
+                        option-list={picklists.classDegreeLevel}
+                        handle-change={setRecordValue}
+                        label={frontEndData.classDegreeLevel.label}
+                        is-show-null-option="true">
+                    </c-portal_-select>
+                </div>
+
+                <div class="grid-item" if:true={frontEndData.jobName.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobName.isRequired} style="float: left;">* </abbr>{frontEndData.jobName.label}
+                    </label>
+                    <input name="jobName" onchange={setRecordValue} value={jobName} type="text" maxlength="80" required={frontEndData.jobName.isRequired} disabled={frontEndData.jobName.disable}>
+                </div>
+
+                <div class="grid-item" if:true={frontEndData.description.display}>
+                    <lightning-input-rich-text label-visible="true" value={description} maxlength="32768" onchange={setRecordValue} name="description" label={frontEndData.description.label} required={frontEndData.description.isRequired} disabled={frontEndData.description.disable} valid={_isValidDescription} message-when-bad-input={_messageOnInvalidInput}></lightning-input-rich-text>
+                </div>
+                <div class="grid-item" if:true={frontEndData.desiredMajors.display}>
+                    <lightning-input-rich-text label-visible="true" value={desiredMajors} maxlength="32768" onchange={setRecordValue} name="desiredMajors" label={frontEndData.desiredMajors.label} required={frontEndData.desiredMajors.isRequired} disabled={frontEndData.desiredMajors.disable} valid={_isValidDesiredMajors} message-when-bad-input={_messageOnInvalidInput}></lightning-input-rich-text>
+                </div>  
+                <div class="grid-item" if:true={frontEndData.desiredSkills.display}>
+                    <lightning-input-rich-text label-visible="true" value={desiredSkills} maxlength="32768" onchange={setRecordValue} name="desiredSkills" label={frontEndData.desiredSkills.label} required={frontEndData.desiredSkills.isRequired} disabled={frontEndData.desiredSkills.disable} valid={_isValidDesiredSkills} message-when-bad-input={_messageOnInvalidInput}></lightning-input-rich-text>
+                </div>
+                <div class="grid-item" if:true={frontEndData.qualification.display}>
+                    <lightning-input-rich-text label-visible="true" value={qualification} maxlength="32768" onchange={setRecordValue} name="qualification" label={frontEndData.qualification.label} required={frontEndData.qualification.isRequired} disabled={frontEndData.qualification.disable} valid={_isValidQualifications} message-when-bad-input={_messageOnInvalidInput}></lightning-input-rich-text>
+                </div>    
+            </div>
+            <div class="flex-grid-3">
+                <div class="grid-item" if:true={frontEndData.coverLetter.display}>
+                    <fieldset>
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" onchange={setRecordValue} type="checkbox" name="coverLetter" checked={coverLetter} class="radio" required={frontEndData.coverLetter.isRequired} disabled={frontEndData.coverLetter.disable}>
+                            <label for="alumDirectory">
+                                <abbr class="slds-required" title="required" if:true={frontEndData.coverLetter.isRequired} style="float: left;">* </abbr>{frontEndData.coverLetter.label}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="grid-item" if:true={frontEndData.unofficialTranscript.display}>
+                    <fieldset>
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" onchange={setRecordValue} type="checkbox" name="unofficialTranscript" checked={unofficialTranscript} class="radio" required={frontEndData.unofficialTranscript.isRequired} disabled={frontEndData.unofficialTranscript.disable}>
+                            <label for="alumDirectory">
+                                <abbr class="slds-required" title="required" if:true={frontEndData.unofficialTranscript.isRequired} style="float: left;">* </abbr>{frontEndData.unofficialTranscript.label}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="grid-item" if:true={frontEndData.workAuthorization.display}>
+                    <fieldset>
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" name="workAuthorization" onchange={setRecordValue} checked={workAuthorization} class="radio" required={frontEndData.workAuthorization.isRequired} disabled={frontEndData.workAuthorization.disable}>
+                            <label for="alumDirectory">
+                                <abbr class="slds-required" title="required" if:true={frontEndData.workAuthorization.isRequired} style="float: left;">* </abbr>{frontEndData.workAuthorization.label}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="flex-grid-2 bottom-border">
+                <div class="grid-item" if:true={frontEndData.salary.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.salary.isRequired} style="float: left;">* </abbr>{frontEndData.salary.label}
+                    </label>
+                    <input name="salary" onchange={setRecordValue} value={salary} type="number" min="0" max="999999999999.99" step="0.01" required={frontEndData.salary.isRequired} disabled={frontEndData.salary.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.hoursPerWeek.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.hoursPerWeek.isRequired} style="float: left;">* </abbr>{frontEndData.hoursPerWeek.label}
+                    </label>
+                    <input name="hoursPerWeek" onchange={setRecordValue} value={hoursPerWeek} type="number" min="0" max="168" step="0.1" required={frontEndData.hoursPerWeek.isRequired} disabled={frontEndData.hoursPerWeek.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.hasContactInfo.display}>
+                    <fieldset class="solo">
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" name="hasContactInfo" onchange={setRecordValue} checked={hasContactInfo} class="radio" id="allow-contact-toggle" required={frontEndData.hasContactInfo.isRequired} disabled={frontEndData.hasContactInfo.disable}>
+                            <label for="allow">
+                                <abbr class="slds-required" title="required" if:true={frontEndData.hasContactInfo.isRequired} style="float: left;">* </abbr>{frontEndData.hasContactInfo.label}
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div if:true={hasContactInfo} class="flex-grid-2 bottom-border">
+                <div class="grid-item" if:true={frontEndData.jobPosterName.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobPosterName.isRequired} style="float: left;">* </abbr>{frontEndData.jobPosterName.label}
+                    </label>
+                    <input name="jobPosterName" onchange={setRecordValue} value={jobPosterName} type="text" maxlength="75" required={frontEndData.jobPosterName.isRequired} disabled={frontEndData.jobPosterName.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.jobPosterCompany.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobPosterCompany.isRequired} style="float: left;">* </abbr>{frontEndData.jobPosterCompany.label}
+                    </label>
+                    <input name="jobPosterCompany" onchange={setRecordValue} value={jobPosterCompany} type="text" maxlength="75" required={frontEndData.jobPosterCompany.isRequired} disabled={frontEndData.jobPosterCompany.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.jobPosterJobTitle.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobPosterJobTitle.isRequired} style="float: left;">* </abbr>{frontEndData.jobPosterJobTitle.label}
+                    </label>
+                    <input name="jobPosterJobTitle" onchange={setRecordValue} value={jobPosterJobTitle} type="text" maxlength="50" required={frontEndData.jobPosterJobTitle.isRequired} disabled={frontEndData.jobPosterJobTitle.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.jobPosterPhone.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobPosterPhone.isRequired} style="float: left;">* </abbr>{frontEndData.jobPosterPhone.label}
+                    </label>
+                    <input name="jobPosterPhone" onchange={setRecordValue} value={jobPosterPhone} type="text" maxlength="40" required={frontEndData.jobPosterPhone.isRequired} disabled={frontEndData.jobPosterPhone.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.jobPosterEmail.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobPosterEmail.isRequired} style="float: left;">* </abbr>{frontEndData.jobPosterEmail.label}
+                    </label>
+                    <input name="jobPosterEmail" onchange={setRecordValue} value={jobPosterEmail} type="text" maxlength="80" required={frontEndData.jobPosterEmail.isRequired} disabled={frontEndData.jobPosterEmail.disable}>
+                </div>
+                <div class="grid-item" if:true={frontEndData.jobPosterSchoolDegree.display}>
+                    <label for="">
+                        <abbr class="slds-required" title="required" if:true={frontEndData.jobPosterSchoolDegree.isRequired} style="float: left;">* </abbr>{frontEndData.jobPosterSchoolDegree.label}
+                    </label>
+                    <input name="jobPosterSchoolDegree" onchange={setRecordValue} value={jobPosterSchoolDegree} type="text" maxlength="20" required={frontEndData.jobPosterSchoolDegree.isRequired} disabled={frontEndData.jobPosterSchoolDegree.disable}>
+                </div>
+            </div>
+
+            <div class="flex-grid-2 bottom-border" if:true={hasAgree}>
+                <div class="grid-item" if:true={hasAgree}>
+                    <fieldset class="solo">
+                        <div class="field-wrapper">
+                            <input data-inputtype="radio" type="checkbox" name="isAgree" onchange={setRecordValue} checked={isAgree} class="radio">
+                            <label for="alumDirectory">{_agreementClause}</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div style="padding-bottom: 5px" if:true={_isRecaptchaEnabled}>
+                <c-portal_-Recaptcha>
+                </c-portal_-Recaptcha>
+            </div>
+
+            <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                <div class="slds-grid slds-wrap">
+                    <div class="button-list">
+                        <button class={submitButtonClasses} onclick={handleSubmit} disabled={isDisableSubmit}>Submit</button>
+                        <button class="button secondary" onclick={handleCancel}>Cancel</button>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</template>

@@ -1,0 +1,254 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <template if:true={participationList}>
+        <div class="show-on-phone">
+            <template for:each={participationList} for:item="participation">
+                <div class="registration-table" key={participation.Id}>
+                    <div class="row bottom-border">
+                        <div class="entry-form">
+                            <h4>Full Name</h4>
+                            <p>{participation.fullName}</p>
+                            <h4>Status</h4>
+                            <p>{participation.status}</p>
+                            <h4>Attended</h4>
+                            <p if:true={participation.hasAttended}>Yes</p>
+                            <p if:false={participation.hasAttended}>No</p>
+                            <p>                            
+                                <button class="button secondary full-mobile extend-button" 
+                                        data-id={participation.participationId}
+                                        data-attended={participation.hasAttended}
+                                        onclick={handleMarkAsAttendedClick}>
+                                    <template if:true={participation.hasAttended}>
+                                        Unmark Attended
+                                    </template>
+                                    <template if:false={participation.hasAttended}>
+                                        Mark Attended
+                                    </template>
+                                </button>
+                            </p>
+                            <p>
+                                <button class="button secondary full-mobile extend-button"
+                                        data-id={participation.participationId}
+                                        onclick={handleDeleteClick}>
+                                    Delete
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <!-- <div class="registration-table">
+                <div class="row bottom-border">
+                    <div class="entry-form">
+                        <h4>Fiscal year</h4>
+                        <p>2021</p>
+                        <h4>Cash</h4>
+                        <p>$0.00</p>
+                        <h4>Fundraising</h4>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="registration-table">
+                <div class="row bottom-border">
+                    <div class="entry-form">
+                        <h4>Fiscal year</h4>
+                        <p>2020</p>
+                        <h4>Cash</h4>
+                        <p>$0.00</p>
+                        <h4>Fundraising</h4>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+            
+        <div class="hide-on-phone">
+            <div class="container">
+                <div class="registration-table">
+                    <div class="column no-controls">
+                        <div class="headerEqualHeight show" style="height: 65px;"><p>Full Name</p></div>
+                        <template for:each={participationList} for:item="participation">
+                            <div class="equalHeight show" style="height: 87px;" key={participation.Id}>
+                                <p>{participation.fullName}</p>
+                            </div> 
+                        </template>
+                        <!-- <div class="equalHeight show" style="height: 87px;"><p>2022</p></div>  -->
+                        <!-- <div class="equalHeight show" style="height: 87px;"><p>2021</p></div> 
+                        <div class="equalHeight show" style="height: 87px;"><p>2020</p></div> 
+                        <div class="equalHeight show" style="height: 87px;"><p>2019</p></div> 
+                        <div class="equalHeight show" style="height: 87px;"><p>2018</p></div>  -->
+                    </div>
+                    <div class="column no-controls">
+                        <div class="headerEqualHeight show" style="height: 65px;"><p>Status</p></div>
+                            <template for:each={participationList} for:item="participation">
+                                <div class="equalHeight show" style="height: 87px;" key={participation.Id}>
+                                    <p>{participation.status}</p>
+                                </div> 
+                            </template>
+                        <!-- <div class="equalHeight show" style="height: 87px;"><p>$456,672.21</p></div>
+                        <div class="equalHeight show" style="height: 87px;"><p>$0.00</p></div>
+                        <div class="equalHeight show" style="height: 87px;"><p>$0.00</p></div>
+                        <div class="equalHeight show" style="height: 87px;"><p>$0.00</p></div>
+                        <div class="equalHeight show" style="height: 87px;"><p>$0.00</p></div> -->
+                    </div>
+                    <div class="column no-controls" style="max-width: 100px">
+                        <div class="headerEqualHeight show" style="height: 65px;"><p>Attended</p></div>
+                            <template for:each={participationList} for:item="participation">
+                                <div class="equalHeight show" style="height: 87px;" key={participation.Id}>
+                                    <p if:true={participation.hasAttended}>Yes</p>
+                                    <p if:false={participation.hasAttended}>No</p>
+                                </div> 
+                            </template>
+                    </div> 
+                    <div class="column no-controls">
+                        <div class="headerEqualHeight show" style="height: 65px;"><p></p></div>
+                        <template for:each={participationList} for:item="participation">
+                            <div class="equalHeight show slds-align_absolute-center" style="height: 87px;" key={participation.Id}>
+                                <button class="button secondary small full-mobile button-right-margin" 
+                                        data-id={participation.participationId}
+                                        data-attended={participation.hasAttended}
+                                        onclick={handleMarkAsAttendedClick}>
+                                    <template if:true={participation.hasAttended}>
+                                        Unmark Attended
+                                    </template>
+                                    <template if:false={participation.hasAttended}>
+                                        Mark Attended
+                                    </template>
+                                </button>
+                                <button class="button secondary small full-mobile"
+                                    data-id={participation.participationId}
+                                    onclick={handleDeleteClick}>
+                                    Delete
+                                </button>
+                            </div> 
+                        </template>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={_showModal}>
+        <div class="sf-modal" style="display: block;">
+            <div if:true={_showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+            <div class="modal-background" id="view-waitlist-background">
+                <div class="modal">
+                    <div class="content-header-bar">
+                        <div class="slds-grid slds-wrap full-width">
+                            <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_10-of-12">
+                                <h2>Deleting Participant</h2>
+                            </div>
+                            <div class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+                                <span class="close-btn" onclick={handleCloseModal}>×</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-wrapper">
+                        <p>Are you sure you want to delete this participant?</p>  
+                        <div class="slds-size_12-of-12 slds-max-medium-size_12-of-12 ">
+                            <div class="slds-grid slds-wrap slds-grid_align-end">
+                                <div class="button-list">
+                                    <button class="button secondary" onclick={handleCloseModal}>Cancel</button>
+                                    <button class="button primary" onclick={handleDeleteParticipationRecord}>Delete</button>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- <div if:true={participationList}>
+        <table class="participationTable">
+            <thead>
+                <th>Full Name</th>
+                <th>Status</th>
+                <th>Attended</th>
+                <th></th>
+                <th></th>
+            </thead>
+
+            <tbody>
+                <template for:each={participationList} for:item="participation">
+                    <tr key={participation.Id}>
+                        <td>{participation.fullName}</td>
+                        <td>{participation.status}</td>
+                        <td>
+                          <div if:true={participation.hasAttended}>
+                            <lightning-icon 
+                              icon-name="utility:success" 
+                              alternative-text="Success!" 
+                              variant="success"
+                              title="success variant"
+                            ></lightning-icon>
+                          </div>
+
+                          <div if:false={participation.hasAttended}>
+                            <lightning-icon 
+                              icon-name="utility:error" 
+                              alternative-text="Error!" 
+                              variant="error"
+                              title="error variant"
+                            ></lightning-icon>
+                          </div>
+                        </td>
+                        <td>
+                            <lightning-button
+                                label="Mark as Attended"
+                                title="markAsAttended"
+                                data-id={participation.participationId}
+                                data-attended={participation.hasAttended}
+                                onclick={handleMarkAsAttendedClick}
+                                icon-name="utility:check"
+                                class="slds-button__icon_left">
+                            </lightning-button>
+                        </td>
+                        <td>
+                            <lightning-button-icon
+                                title="Delete"
+                                data-id={participation.participationId}
+                                onclick={handleDeleteClick}
+                                icon-name="utility:clear">
+                            </lightning-button-icon>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+  <template if:true={_showModal}>  
+      <div class="slds-modal slds-fade-in-open slds-backdrop">  
+        <div class="slds-modal__container">  
+          <div class="slds-modal__header">  
+            <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large"  
+              variant="bare-inverse" onclick={handleCloseModal} class="slds-modal__close">  
+            </lightning-button-icon>  
+            <h2>Deleting Participant</h2>  
+          </div>  
+          <div class="slds-modal__content slds-p-around_medium">  
+              <P>Are you sure you want to delete this participant?</P>  
+          </div>  
+          <div class="slds-modal__footer">  
+            <lightning-button 
+              icon-name="utility:close" 
+              label="Cancel" 
+              variant="neutral" 
+              onclick={handleCloseModal}
+            ></lightning-button>
+
+            <lightning-button 
+              icon-name="utility:delete" 
+              label="Delete" 
+              variant="destructive" 
+              onclick={handleDeleteParticipationRecord}
+            ></lightning-button>
+
+          </div>  
+        </div>  
+      </div>  
+  </template>   -->
+</template>

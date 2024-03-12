@@ -1,0 +1,19 @@
+<template>
+    <div data-ascend-portal>
+        <div class="circle quotation-block" 
+            style="background: linear-gradient(0deg, rgba(237,241,245,1) 0%, rgba(210,224,235,1) 100%);"
+            if:true={_contentModuleMetadata}>
+            <div class="container medium">
+                <div class="quote-image" if:true={_contentModuleMetadata.image}>
+                    <img src={_contentModuleMetadata.image.imageUrl} alt={_contentModuleMetadata.image.altText}>
+                </div>
+                <h2 class="quote-text" if:true={_contentModuleMetadata.quote}>
+                    “{_contentModuleMetadata.quote}”
+                </h2>
+                <div class="quote=source">
+                    <p class="lead">{_contentModuleMetadata.citation}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,35 @@
+<apex:page controller="PORTAL_LWC_EventManagementController" readOnly="true" renderAs="pdf">
+    <apex:form >
+        <apex:variable var="degreeAndYearNeeded" value="{!degreeAndYearNeeded}" />
+        <apex:pageBlock title="{!documentTitle}" id="event_attendees">
+            <apex:repeat value="{! attendeeLists }" var="attendeeList">
+                <apex:pageBlockTable value="{!attendeeList}" var="attendeeRecord" columns="{!IF(degreeAndYearNeeded == 'true' ,5,4)}" columnsWidth="150px, 150px, 300px, 200px, 100px" border="1px">
+                    <apex:column >
+                        <apex:facet name="header">Last Name</apex:facet>
+                        {! attendeeRecord.lastName }
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">First Name</apex:facet>
+                        {! attendeeRecord.firstName }
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Ticket Type</apex:facet>
+                        <apex:repeat value="{! attendeeRecord.ticketTypeNameSet }" var="ticketTypeName">
+                            {!ticketTypeName}
+                            <br/>
+                        </apex:repeat>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Primary Registrant</apex:facet>
+                        {! attendeeRecord.primaryRegistrantName }
+                    </apex:column>
+                    <apex:column rendered="{!IF(degreeAndYearNeeded == 'true', true, false)}">
+                        <apex:facet name="header">Degree Information</apex:facet>
+                        {! attendeeRecord.degreeString }
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+            </apex:repeat>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

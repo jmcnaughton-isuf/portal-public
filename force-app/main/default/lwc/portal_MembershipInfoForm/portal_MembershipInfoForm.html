@@ -1,0 +1,37 @@
+<template>
+    <div class="container">
+        <h2 style="margin-bottom: .8em">Please Enter your Information</h2>
+        <div class="entry-form bottom-border">
+            <div class="flex-grid-3">
+                <template for:each={fieldList} for:item="fieldMap">
+                    <div class="grid-item" key={fieldMap.key} if:true={fieldMap.display}>
+                        <c-portal_-section-edit-field field-id={fieldMap.id} 
+                                                    field-data={fieldMap}
+                                                    value={fieldMap.value}
+                                                    picklist-values={fieldMap.picklistValues}
+                                                    handle-value-change={handleValueChange}>
+                        </c-portal_-section-edit-field>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <template if:true={isShowMembershipBenefits}>
+            <c-portal_-membership-benefits membership-benefits-table-name={membershipBenefitsTableName}
+                    membership-benefits-data={membershipBenefitsData}
+                    membership-benefits-columns={membershipBenefitsColumns}
+                    total-amount={totalAmount}
+                    total-non-gift-amount={totalNonGiftAmount}
+                    total-gift-amount={totalGiftAmount}
+                    membership-benefits-front-end-data-map={membershipBenefitsFrontEndDataMap}>
+            </c-portal_-membership-benefits>
+        </template>
+
+        <div class="slds-grid">                 
+            <div class="button-list" style="margin-bottom:1em; margin-top: 0">
+                <button onclick={handleBackClick} class="button secondary" if:false={isHideBackButton}>Back</button>
+                <button if:false={isDisableNextButton} onclick={handleNextClick} type="button" class="button primary">Next</button>                
+                <button if:true={isDisableNextButton} onclick={handleNextClick} type="button" class="button primary disabled" disabled>Next</button>
+            </div>
+        </div>
+    </div>
+</template>

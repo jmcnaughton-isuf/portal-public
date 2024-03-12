@@ -1,0 +1,33 @@
+<template>
+    <div if:true={_showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Generate Giving URL</h2>
+    </header>
+    <div class="slds-modal__content" id="modal-content-id-1">
+
+        <div class="slds-p-around_medium" style="max-height: 60vh;overflow-y: auto;">
+            <c-portal_-input type="text" label="Give Base URL"
+                        handle-input={handleBaseUrlUpdate} 
+                        value={_baseGivingURL}
+                        input-style="width: 100%; padding:12px; margin-bottom: 12px;">
+            </c-portal_-input>
+            <c-portal_-input type="text" label="Generated Give Page URL"
+                        disabled="true"
+                        value={_generatedGivingUrl}
+                        input-style="width: 100%; padding:12px;">
+            </c-portal_-input>
+            <button type="button" class="slds-button slds-button_brand" 
+                                  style="margin-top: 10px;"
+                                  disabled={isDisableCopyLinkButton}
+                                  onclick={handleCopyURLClick}>
+                Copy URL
+            </button>
+        </div>
+    </div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={handleClose}>Close</button>
+        <button class="slds-button slds-button_brand" onclick={handleGenerateLink}>Generate Link</button>
+    </footer>
+</template>

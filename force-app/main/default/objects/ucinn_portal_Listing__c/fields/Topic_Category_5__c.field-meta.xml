@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic_Category_5__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Recommend_Type_1__c, &apos;Arts&apos;), &apos;Arts, Humanities, and Religion&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Biology&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Breakthroughs&apos;), &apos;Intellectual Breakthroughs&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Business&apos;), &apos;Economics and Business&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Physical Sciences&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Child Development&apos;), &apos;Social Impact and Education&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Computation&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Culture&apos;), &apos;Arts, Humanities, and Religion&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Social Justice&apos;), &apos;Policy, Law, and Society&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Economics&apos;), &apos;Economics and Business&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Emerging Treatments&apos;), &apos;Medicine, Health care, and Wellness&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Engineering&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Entrepreneurship&apos;), &apos;Economics and Business&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Environment&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Family Care&apos;), &apos;Medicine, Health care, and Wellness&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Global&apos;), &apos;Global Issues&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Higher Education&apos;), &apos;Social Impact and Education&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;History&apos;), &apos;Arts, Humanities, and Religion&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Humanities&apos;), &apos;Arts, Humanities, and Religion&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;K-12 Education&apos;), &apos;Social Impact and Education&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Language&apos;), &apos;Arts, Humanities, and Religion&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Law&apos;), &apos;Policy, Law, and Society&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Markets&apos;), &apos;Economics and Business&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Mathematics&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Medicine&apos;), &apos;Medicine, Health care, and Wellness&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Mind and Brain&apos;), &apos;Medicine, Health care, and Wellness&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Personal Wellness&apos;), &apos;Medicine, Health care, and Wellness&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Politics&apos;), &apos;Policy, Law, and Society&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Public Health&apos;), &apos;Medicine, Health care, and Wellness&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Public Policy&apos;), &apos;Policy, Law, and Society&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Religion&apos;), &apos;Arts, Humanities, and Religion&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Security and Conflict&apos;), &apos;Policy, Law, and Society&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Social Impact&apos;), &apos;Social Impact and Education&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Social Sciences&apos;), &apos;Policy, Law, and Society&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Space&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Technology&apos;), &apos;Science, Engineering, and Technology&apos;,
+IF(ISPICKVAL(Recommend_Type_1__c, &apos;Urban&apos;), &apos;Urban&apos;, &apos;&apos;)))))))))))))))))))))))))))))))))))))</formula>
+    <label>Topic Category 5</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

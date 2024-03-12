@@ -1,0 +1,58 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_showSpinner}>
+            <lightning-spinner variant="brand" size="large"></lightning-spinner>
+        </template>
+        <div if:true={_callbackDone}>
+            <div class="forceCommunityThemeHeroBase forceCommunityThemeHeroStarter giving">
+                <div class="contentContainer">
+                    <div class="widthContainer slds-grid align-center">
+                        <div class="content">
+                            <!-- <div class="eyebrow">User Profile</div> -->
+                            <div class="avatar">
+                                <c-portal_-profile-picture record-id={_contactId}
+                                                        image-style={imageStyle}>
+                                </c-portal_-profile-picture>
+                                <!--<img src="../../assets/img/profile-image.png" class="rounded" />-->
+                            </div>
+                            <h1 class="contentTitle">{_name}</h1>
+                            <p style="margin-bottom: 1.5em !important" class="lead">{sendMessageText}</p>
+                            <!-- <a href="" class="button tertiary light">Send Message</a> -->
+                            <button class={sendMessageButtonClass} 
+                                    onclick={handleMessageClick} 
+                                    disabled={isSendMessageButtonDisabled}>
+                                Send a Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <img src={_directoryProfileHeader}>
+            </div>
+            <!-- <div class="slds-text-align_center">
+                <c-portal_-profile-picture record-id={_contactId}></c-portal_-profile-picture>
+                <h1>{_name}</h1>
+                <button class="slds-button slds-button_brand" onclick={handleMessageClick} disabled={isSendMessageButtonDisabled}>Send a Message</button>
+                <p>{sendMessageText}</p>
+            </div> -->
+            <div class="container large">
+                <div class="section-wrapper">
+                    <c-portal_-directory-profile-contact 
+                        information-map={informationMap}>
+                    </c-portal_-directory-profile-contact>
+                    <c-portal_-directory-profile-degree 
+                        information-map={informationMap}>
+                    </c-portal_-directory-profile-degree>
+                    <c-portal_-directory-profile-employment
+                        information-map={informationMap}>
+                    </c-portal_-directory-profile-employment>
+                    <c-portal_-directory-profile-social-media
+                        information-map={informationMap}>
+                    </c-portal_-directory-profile-social-media>
+                </div>
+            </div>
+        </div>
+        <c-portal_-directory-messaging-modal if:true={_openModal}
+                                            contact-id={_contactId}
+                                            close-modal={closeModal}></c-portal_-directory-messaging-modal>
+    </div>
+</template>

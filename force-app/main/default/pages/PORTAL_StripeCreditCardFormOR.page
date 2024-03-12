@@ -1,0 +1,687 @@
+<apex:page controller="PORTAL_StripeCreditCardFormController" showHeader="false" sidebar="false">
+    <head>
+        <script src="https://js.stripe.com/v3/"></script>
+        <apex:slds />
+       <!--We need the tags below to make the visualforce page mobile aware-->
+       <meta charset="UTF-8"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+       <title>Mobile</title>
+        <script>
+            function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+            }
+        </script>
+        <style type="text/css">
+            @font-face {
+                font-family: 'Noah-Bold';
+                src: url({!URLFOR($Resource.PORTAL_Fonts, '/Noah/NoahBold/font.woff')}) format('woff');
+            }
+            /* line 883, src/sass/style.scss */
+            .button-list {
+                padding: .4rem 0;
+                margin: 1rem 0 0;
+                font-size: 1.1em; }
+            /* line 888, src/sass/style.scss */
+            .button-list img {
+                width: 19px; }
+            /* line 891, src/sass/style.scss */
+            .button-list img svg {
+                width: 100%; }
+            /* line 894, src/sass/style.scss */
+            .button-list.center {
+                width: 100%;
+                text-align: center;
+                justify-content: center; }
+            /* line 899, src/sass/style.scss */
+            .button-list.center .button {
+                margin-right: 0; }
+            /* line 902, src/sass/style.scss */
+            .button-list.text {
+                margin-top: 6px; }
+            /* line 905, src/sass/style.scss */
+            .button-list.text a {
+                display: flex;
+                align-items: center; }
+            /* line 906, src/sass/style.scss */
+            .button-list.text a:first-of-type {
+                margin-right: 10px; }
+            /* line 912, src/sass/style.scss */
+            .button-list .button {
+                margin-right: 8px; }
+            /* line 916, src/sass/style.scss */
+            .button-list .button.has-icon:hover {
+                background-color: white;
+                color: #005595; }
+            /* line 922, src/sass/style.scss */
+            .button-list .button.full-mobile {
+                margin-right: 0;
+                margin-bottom: .7rem; }
+            /* line 926, src/sass/style.scss */
+            .button-list .button.full-mobile:last-of-type {
+                margin-bottom: 0; }
+            /* line 931, src/sass/style.scss */
+            .button-list .button.disabled {
+                opacity: .5;
+                pointer-events: none; }
+            /* line 937, src/sass/style.scss */
+            .button-list.controls .button {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+                flex: 1 1 100%;
+                text-align: center;
+                display: block; }
+    
+            button {
+                font-family: 'Noah-Bold' !important;
+                background-color: #C8102E !important;
+                color: white !important;
+                padding: .5em 1.1em !important;
+                border-radius: 3px !important;
+                font-weight: bold !important;
+                font-size: 1.1em !important;
+                transition: background-color 300ms, color 300ms !important;
+                border: none !important;
+                -webkit-appearance: none !important;
+                -moz-appearance: none !important;
+                appearance: none !important;
+                text-decoration: none !important;
+                display: inline-block !important;
+                background-image: initial !important;
+                background-repeat: initial !important;
+                background-position: initial !important;
+                margin: 1px !important;
+                /*  img {
+                        width: 18px;
+                        height: 18px;
+                        position: relative;
+                        top: -2px;
+                        left: -5px;
+                    }
+                */ }
+            /* line 971, src/sass/style.scss */
+            .button.slds-button_icon {
+                padding: .5em !important; }
+            /* line 975, src/sass/style.scss */
+            .button.primary {
+                background-color: #005595;
+                color: white;
+                border: 1px solid #005595; }
+            /* line 980, src/sass/style.scss */
+            .button.primary:hover {
+                background-color: #00c0f3;
+                border: 1px solid #00c0f3;
+                color: white;
+                text-decoration: none; }
+            /* line 985, src/sass/style.scss */
+            .button.primary:hover svg .outline {
+                fill: white; }
+            /* line 988, src/sass/style.scss */
+            .button.primary svg {
+                height: 17px;
+                width: 17px;
+                position: relative;
+                top: -2px;
+                right: 0px; }
+            /* line 995, src/sass/style.scss */
+            .button.primary svg .outline {
+                fill: white; }
+            /* line 1001, src/sass/style.scss */
+            .button.secondary {
+                background-color: white;
+                border: 1px solid #cdcfd8;
+                color: #005595; }
+            /* line 1006, src/sass/style.scss */
+            .button.secondary:hover {
+                background-color: #00c0f3;
+                border: 1px solid #00c0f3;
+                color: white;
+                text-decoration: none; }
+            /* line 1012, src/sass/style.scss */
+            .button.secondary:hover svg {
+                fill: white; }
+            /* line 1014, src/sass/style.scss */
+            .button.secondary:hover svg .outline {
+                fill: white; }
+            /* line 1017, src/sass/style.scss */
+            .button.secondary svg {
+                height: 17px;
+                width: 17px;
+                position: relative;
+                top: -1px;
+                right: 0px; }
+            /* line 1024, src/sass/style.scss */
+            .button.secondary svg .outline {
+                fill: #005595; }
+            /* line 1032, src/sass/style.scss */
+            .button.tertiary.light {
+                background-color: transparent;
+                border: 1px solid white;
+                color: white; }
+            /* line 1037, src/sass/style.scss */
+            .button.tertiary.light:hover {
+                background-color: #00c0f3;
+                border: 1px solid #00c0f3;
+                color: white;
+                text-decoration: none; }
+            /* line 1045, src/sass/style.scss */
+            .button.tertiary.dark {
+                background-color: transparent;
+                color: #005595;
+                border: 1px solid #005595; }
+            /* line 1050, src/sass/style.scss */
+            .button.tertiary.dark:hover {
+                background-color: #00c0f3;
+                border: 1px solid #00c0f3;
+                color: white;
+                text-decoration: none; }
+            /* line 1058, src/sass/style.scss */
+            .button.tertiary.bare {
+                position: relative;
+                color: #005595;
+                padding: 0;
+                border: none;
+                background: transparent; }
+            /* line 1065, src/sass/style.scss */
+            .button.tertiary.bare:after {
+                content: '\003E';
+                position: absolute;
+                left: 110%;
+                top: 2px; }
+            /* line 1072, src/sass/style.scss */
+            .button.tertiary.bare:hover {
+                background-color: transparent;
+                border: none;
+                color: #00c0f3 !important;
+                text-decoration: none; }
+            /* line 1078, src/sass/style.scss */
+            .button.tertiary.bare:hover:after {
+                color: #00c0f3; }
+            /* line 1085, src/sass/style.scss */
+            .button.small {
+                font-size: .9rem;
+                padding: .5rem .7rem; }
+            /* line 1090, src/sass/style.scss */
+            .button.full-width {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: .6em; }
+            /* line 1097, src/sass/style.scss */
+            .button.full-width:last-of-type {
+                margin-bottom: 0; }
+            /* line 1103, src/sass/style.scss */
+            .button.full-mobile {
+                width: 100%;
+                text-align: center; }
+            /* line 1108, src/sass/style.scss */
+            .button:active, .button:focus {
+                color: white !important;
+                text-decoration: none !important;
+                background-color: #00c0f3;
+                border: 1px solid #00c0f3; }
+    
+            /* Custom */
+                .wrapper-container .slds-combobox__form-element {
+                    width: 100%;
+                    margin: auto;
+                }
+                .giving-amount-wrapper .flex-grid, .giving-type-wrapper .flex-grid {
+                    display: block !important;
+                }
+                .giving-amount-wrapper .flex-grid .grid-item, .giving-type-wrapper .flex-grid .grid-item {
+                    margin: 10px auto;
+                    width: 100%;
+                    padding-right: 0px;
+                }
+                .slds-combobox_container, .slds-combobox {
+                    max-width: unset;
+                }
+                .giving-amount-wrapper, .giving-type-wrapper {
+                    max-width: 100% !important;
+                }
+                .giving-amount-wrapper .grid-item a {
+                    margin-left: -20px;
+                }
+                .giving-org-wrapper {
+                    margin-bottom: 35px !important;
+                }
+                .gift-containe, .giving-type-wrapper .section-body-content, .gift-information-wrapper .section-body-content, .matching-comp-wrapper .section-body-content, .giving-tribute-wrapper .section-body-content, .giving-org-wrapper .section-body-content, .gift-button-wrapper .section-body-content {
+                    max-width: 90% !important;
+                }
+                .giving-type-wrapper .entry-form label {
+                    width: 100% !important;
+                }
+                .sf-modal .search {
+                    width: 100%;
+                }
+                .sf-modal .slds-m-vertical_small {
+                    margin: 20px 0px ;
+                }
+                .sf-modal .field-wrapper a.button.small {
+                    width: 30%;
+                    vertical-align: middle;
+                }
+                .sf-modal fieldset .field-wrapper label {
+                    width: 70%;
+                }
+                .StripeElement {
+                    border-bottom: 1px solid;
+                    margin: 12px 0;
+                    padding-bottom: 5px;
+                }
+                .element-group {
+                    width: 45%;
+                    float: left;
+                }
+                .fund-information {
+                    clear: both;
+                    margin-top: 20px;
+                }
+                .fund-information {
+                    background: #f7f7f7;
+                }
+                .fund-information .slds-table, .billing-information .slds-grid {
+                    background:#EBEBEB;
+                    width: 100%;
+                    margin: auto;
+            		float:left;
+                }
+                body.slds-scope {
+                    font-family: sans-serif;
+                    color: #4a4a4a;
+                    padding: 10px 20px;
+            		max-width: 100%;
+                }
+                .slds-scope .label-text {
+                    font-weight: bold;
+                    font-size: 18px;
+                    font-family: sans-serif;
+                    color: #4a4a4a;
+                    margin-bottom: 10px;
+                }
+                .slds-scope h4.label-text {
+                    font-size: 16px;
+                }
+                .slds-scope .slds-input {
+                    background: none;
+                }
+    			.slds-grid .slds-medium-size_6-of-12, .slds-grid .slds-large-size_6-of-12 {
+                    width: 50%;
+                    float: left;
+                }
+            	.slds-p-around_small.slds-medium-size_8-of-12, .slds-p-around_small.slds-large-size_8-of-12 {
+            		width: 66.66%;
+                    float: left;
+           		}
+            	.slds-p-around_small.slds-medium-size_4-of-12, .slds-p-around_small.slds-large-size_4-of-12 {
+            		width: 33.33%;
+                    float: left;
+           		}
+            	.payment-content a{
+                    color: #C8102E;
+                }
+                #card-errors {
+                    color: red;
+                }
+                .slds-scope {
+                    font-family: sans-serif;
+                    color: #4a4a4a;
+            		max-width: 100%;
+    				margin: auto;
+                }
+                .slds-scope .slds-input, .slds-scope .slds-input:focus {
+                    background: none;
+                    border: none;
+                    box-shadow: none;
+                    font-size: 16px;
+                    color: #4a4a4a;
+                    margin-bottom: 0px;
+                    padding-left: 0px;
+                    font-family: sans-serif;
+            		font-weight: normal;
+                }
+                .slds-scope .slds-input, .slds-scope .slds-input:focus {
+                    background: none;
+                    border: none;
+                    box-shadow: none;
+                    font-size: 16px;
+                    color: #4a4a4a;
+                    margin-bottom: 0px;
+                    padding-left: 0px;
+                    font-family: sans-serif;
+                }
+                .fund-information .row, .billing-information .row{
+                    font-size: 16px;
+                    font-family: sans-serif;
+                }
+            	.button-list button.secondary {
+                    background: #C8102E;
+                    color: #F1BE48 !important;
+                    width: 48%;
+                    font-size: 20px !important;
+                    padding: 10px 0px 10px 15px !important;
+                    font-family: sans-serif !important;
+                    text-align: center;
+                }
+                .button-list button.primary {
+                  	background: #C8102E;
+                    color: #F1BE48 !important;
+                    padding: 10px 5px !important;
+                    width: 49%;
+                    border: none;
+                    text-align: center;
+                    float: right;
+                    font-size: 20px !important;
+                    font-family: sans-serif !important;
+                }
+                .tot-amt, .amt-val {
+                    font-weight: bold;
+                }
+                .tot-amt {
+                    text-align:right;
+                }
+            	iframe .slds-scope:not(html), iframe .slds-scope body, .slds-scope, .slds-scope * {
+            		font-size: 16px;
+            	}
+            	.amt-val {
+                    border-top: 1px solid #4a4a4a;
+                }
+            	.fund-information p.label-text{
+                    margin-top: 100px;
+                }
+                .billing-information {
+                    margin-top: 170px !important;
+                }
+                .payment-content {
+                    position: relative;
+                    top: 20px;
+                    margin-bottom: 30px;
+                }
+            	.button-list .primary img {
+            		width: 30px;
+                	margin-top: -6px;
+            	}
+            	.button-list button#previous img {
+                    width: 25px;
+                    float: left;
+                    margin-top: 3px;
+                    margin-left: -10px;
+                }
+            	img.submit-arrow {
+                    float: right;
+                    position: relative;
+                    top: 7px;
+                }
+                /* Payment Page Mobile Version CSS */
+                .mobile-version .slds-grid .slds-size_12-of-12 , .mobile-version .slds-grid .slds-small-size_12-of-12 {
+                    width: 100%;
+                }
+        </style>
+    </head>
+
+    <body style="background: #f7f7f7;">
+    <!-- <div id="payment-request-button">
+    </div>-->
+    <div class="slds-scope wrapper-container">
+ 
+        <form id="payment-form">
+            <div class="slds-align_absolute-center">
+                <apex:image url="{!$Resource.portal_creditcard}" height="400px"/>
+            </div>
+    		<!-- <div >
+                <p class="label-text">Name on card</p>
+            </div>
+            <div id="card-name" class="StripeElement StripeElement--empty">
+                <span id="fund-name"> </span>
+                <input type="text" id="form-card-name" placeholder="Name on card" value="" class="slds-input label-text" />
+            </div> -->
+            <div >
+                <p class="label-text">Card Number</p>
+            </div>
+            <div id="card-number">
+                <!-- Elements will create input elements here -->
+            </div>
+            <div class="element-group">
+                <div >
+                    <p class="label-text">Expiration Date</p>
+                </div>
+                <div id="card-expiration">
+                    <!-- Elements will create input elements here -->
+                </div>
+            </div>
+            <div class="element-group" style="margin-left: 10%;">
+                <div >
+                    <p class="label-text">Security Code</p>
+                </div>
+                <div id="card-cvc">
+                    <!-- Elements will create input elements here -->
+                </div>
+            </div>
+            <div id="card-errors" role="alert"></div>
+        </form>
+    
+        <div class="fund-information" >
+            <div class="container" style="margin-top: 2em;">
+                <div class="container large">
+                    <p class="label-text"> Review Your Gift </p>
+                    <div class="flex-grid-4" style="display: block;">
+                        <div class="slds-table">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                                    <h4 class="label-text">Fund</h4>
+                                    <span id="fund-name"> </span>
+                                    <div class="slds-size--1-of-1" id="fund-name-data">
+    
+                                    </div>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                    <h4 class="label-text">Amount</h4>
+                                    <span id="fund-amount" class="slds-size--1-of-1"></span>
+                                </div>
+                            </div>
+                            <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12 tot-amt">Total Amount: </div>
+                            <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 amt-val" > $<span id="total-amount"> </span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="billing-information" class="billing-information" >
+            <div class="container" style="margin-top: 2em;">
+                <div class="container large">
+                    <p class="label-text"> Review Your Contact Information </p>
+                    <div class="flex-grid-4" style="display: block;">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                    <h4 class="label-text">Name: </h4>
+                                    <span id="billing-name"> </span>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                    <h4 class="label-text">Email: </h4>
+                                    <span id="billing-email" style="overflow-wrap: break-word;"> </span>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                    <h4 class="label-text">Address: </h4>
+                                    <span id="billing-address"> </span>
+                                </div>
+                                <div class="slds-p-around_small slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                                    <h4 class="label-text">Phone: </h4>
+                                    <span id="billing-phone"> </span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment-content">
+            By clicking submit, you agree to our <a href="/resource/1673412839000/Portal_ISUF_Terms">Website Terms of Use.</a> and acknowledge that you have read our <a href="/resource/1673412895000/Portal_ISUF_Policy">Privacy Policy.</a>
+        </div>
+        <div class="button-list">
+            <button class="button secondary" id="previous" type="button" onclick="previous()">
+                <apex:image url="{!$Resource.portal_previoussteplogo}" height="400px"/>Previous</button>
+
+            <button class="button primary" id="submit" type="submit">
+                <apex:image url="{!$Resource.portal_submitbuttonlocked}" height="400px"/>Submit
+                <apex:image url="{!$Resource.portal_savebuttonnextlogo}" height="400px" style="float: right;position: relative;top: 7px;"/>
+            </button>
+        </div>
+        </div>
+    </body>
+
+    <script type="application/javascript">
+        const lexOrigin = "{!lexOrigin}";
+        window.addEventListener("load", onWindowLoadFn);
+        function onWindowLoadFn(e) {
+            if(window.innerWidth < 768) {
+                //document.getElementsByTagName('body').classList.add("mobile-version");
+            }
+        }
+        window.addEventListener("message", (event) => {
+            let eventData = event.data;
+            if (event.origin === lexOrigin && typeof eventData === 'string') {
+                eventData = JSON.parse(event.data);
+            }
+
+            if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                var previousButton = document.querySelector('#previous');
+                if (previousButton) {
+                    previousButton.remove();
+                }
+
+                var submitButton = document.querySelector('#submit');
+                if (submitButton) {
+                    submitButton.textContent = 'Update';
+                }
+            }
+            else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                console.log(eventData);
+                console.log(JSON.stringify(eventData));
+                var billingInformation = eventData.billingInformation;
+                var designationInformation = eventData.designationInformation;
+                var billingInformationOnPaymentPage = eventData.billingInformationOnPaymentPage;
+                var totalAmount = eventData.totalAmount;
+                var stripeKey = eventData.stripeKey;
+                var giftType = eventData.giftType;
+
+                var stripe = Stripe(stripeKey);
+                var elements = stripe.elements();
+                var style = {
+                    base: {
+
+                    }
+                };
+                console.log('BillingInfo on Payment Page: '+JSON.stringify(billingInformation) +' Amount:: '+totalAmount);
+                if(billingInformationOnPaymentPage) {
+                    let addressName = document.getElementById('billing-name');
+                    addressName.textContent = billingInformationOnPaymentPage.name;
+                    let addressEmail = document.getElementById('billing-email');
+                    console.log('Billing email: ' + billingInformationOnPaymentPage.email);
+                    console.log('Address Email: ' + addressEmail.textContent);
+                    addressEmail.textContent = billingInformationOnPaymentPage.email;
+                    let addressPhone = document.getElementById('billing-phone');
+                    if(billingInformationOnPaymentPage.phone) {
+                        let formatPhoneNumber = billingInformationOnPaymentPage.phone.replaceAll("-", "").trim();
+                        if(formatPhoneNumber.length === 10){
+                            formatPhoneNumber =  formatPhoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+                            addressPhone.textContent = formatPhoneNumber;
+                        } else {
+                            addressPhone.textContent = billingInformationOnPaymentPage.phone;
+                        }
+                    }
+
+                    let addressInformation = document.getElementById('billing-address');
+                    addressInformation.textContent = billingInformationOnPaymentPage.address.line1 +', ' + billingInformationOnPaymentPage.address.city + ', ' + billingInformationOnPaymentPage.address.state + ' ' + billingInformationOnPaymentPage.address.postal_code;// + ', ' + billingInformationOnPaymentPage.address.country ;
+                }
+                console.log('billingInformationOnPaymentPage.name'+billingInformationOnPaymentPage.name + ' email: '+billingInformationOnPaymentPage.email);
+                if (billingInformationOnPaymentPage.name.length==0) {
+                    document.getElementById('billing-information').style.display = 'none';
+                    console.log(' Inside: billingInformationOnPaymentPage.name');
+                }
+                if(designationInformation) {
+                    let htmlToAppend = "";
+                    let fundNameId = document.getElementById('fund-name-data');
+                    let fundName = document.getElementById('fund-name');
+                    let fundAmount = document.getElementById('fund-amount');
+                    let tAmount = document.getElementById('total-amount');
+                    for (let record of designationInformation) {
+                        fundNameId.innerHTML += '<div class="row">'+ record.Name+'</div>';
+                        fundAmount.innerHTML += '<div class="row">'+ '$' + Number(record.amount).toFixed(2)+'</div>';
+                        console.log('amount : ' + record.amount);
+                    }
+                    tAmount.textContent =  eventData.totalAmount;//totalAmount;
+                }
+                var cardNumber = elements.create("cardNumber", { style: style });
+                cardNumber.mount("#card-number");
+                cardNumber.on('change', ({error}) => {
+                    let displayError = document.getElementById('card-errors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                var cardExpiry = elements.create("cardExpiry", { style: style });
+                cardExpiry.mount("#card-expiration");
+                cardExpiry.on('change', ({error}) => {
+                    let displayError = document.getElementById('card-errors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                var cardCvc = elements.create("cardCvc", { style: style });
+                cardCvc.mount("#card-cvc");
+                cardCvc.on('change', ({error}) => {
+                    let displayError = document.getElementById('card-errors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                var form = document.getElementById('submit');
+                submit.addEventListener('click', async (event) => {
+                    event.preventDefault();
+                    // If the client secret was rendered server-side as a data-secret attribute
+                    // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
+
+                    const result = await stripe.createPaymentMethod(
+                        {
+                            type: 'card',
+                            card: cardNumber,
+                            billing_details: billingInformation
+                        }
+                    );
+
+                    if (result.error) {
+                        // Show error to your customer (e.g., insufficient funds)
+                        let displayError = document.getElementById('card-errors');
+                        displayError.textContent = 'There was an error processing your payment. Please check your card information.';
+                        console.log(result.error.message);
+                    } else {
+                        window.parent.postMessage({ type: "confirmed", paymentId: result.paymentMethod.id}, lexOrigin);
+                    }
+                });
+            }
+        });
+
+        function previous() {
+            window.parent.postMessage({type:"previous"}, lexOrigin)
+        }
+
+        window.parent.postMessage({ type: "ready" }, lexOrigin);
+
+        function resizeIframe(obj)
+        {
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+            obj.style.width = obj.contentWindow.document.body.scrollWidth + 'px';
+        }
+    </script>
+
+
+</apex:page>

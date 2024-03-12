@@ -1,0 +1,71 @@
+<template>
+    <nav class="tabs content-padding">
+        <template iterator:tab={tabTitles}>
+            <a onclick={changeTab} data-active={tab.value.active} data-index={tab.index} key={tab.value.label}>
+                {tab.value.label}
+            </a>
+        </template>
+    </nav>
+
+    <div class="content">
+        <div class="content-padding">
+            <template if:true={showFirstTable}>
+                <template if:true={firstTab}>
+                    <c-portal_-giving-history-table
+                        helper-text-h-t-m-l={givingHistoryHelperTextHTML}
+                        items-per-page={givingHistoryItemsPerPage}
+                        hide-receipt={givingHistoryHideReceipt}
+                        receipt-column-label={givingHistoryReceiptColumnLabel}
+                        receipt-row-text={givingHistoryReceiptRowText}
+                        no-receipt-row-text={givingHistoryNoReceiptRowText}
+                        receipt-base-u-r-l={givingHistoryReceiptBaseURL}
+                        receipt-content-page-name={givingHistoryReceiptContentPageName}
+                        no-table-data-text-h-t-m-l={givingHistoryNoTableDataTextHTML}>
+                    </c-portal_-giving-history-table>
+                </template>
+            </template>
+            
+            <template if:true={showSecondTable}>
+                <template if:true={secondTab}>
+                    <c-portal_-giving-history-pledge-table
+                        helper-text-h-t-m-l={pledgesHelperTextHTML}  
+                        show-number-of-payments-column={pledgesShowNumberOfPaymentsColumn}
+                        number-of-payments-column-title={pledgesNumberOfPaymentsColumnTitle}
+                        desgination-name-display-option={pledgesDesginationNameDisplayOption}
+                        desgination-name-override={pledgesDesginationNameOverride}
+                        items-per-page={pledgesItemsPerPage}
+                        no-table-data-text-h-t-m-l={pledgesNoTableDataTextHTML}>
+                    </c-portal_-giving-history-pledge-table>
+                </template>
+            </template>
+            
+            <template if:true={showThirdTable}>  
+                <template if:true={thirdTab}>
+                    <c-portal_-giving-history-recurring-gift-table
+                        helper-text-h-t-m-l={recurringGiftHelperTextHTML}
+                        show-next-installment-payment-coulmn={recurringGiftShowNextInstallmentPaymentCoulmn}
+                        next-installment-payment-column={recurringGiftNextInstallmentPaymentColumn}
+                        desgination-name-display-option={recurringGiftDesginationNameDisplayOption}
+                        desgination-name-override={recurringGiftDesginationNameOverride}
+                        items-per-page={recurringGiftItemsPerPage}
+                        no-table-data-text-h-t-m-l={recurringGiftDataTextHTML}>
+                    </c-portal_-giving-history-recurring-gift-table>
+                </template>
+            </template>
+            
+            <template if:true={showFourthTable}>
+                <template if:true={fourthTab}>
+                    <c-portal_-giving-history-matching-gift-table
+                       helper-text-h-t-m-l={matchingGiftHelperTextHTML}
+                       desgination-name-display-option={matchingGiftDesginationNameDisplayOption}
+                       desgination-name-override={matchingGiftDesginationNameOverride}
+                       items-per-page={matchingGiftItemsPerPage}
+                       no-table-data-text-h-t-m-l={matchingGiftDataTextHTML}>
+                    </c-portal_-giving-history-matching-gift-table>
+                </template>
+            </template>
+            
+        </div>
+    </div>
+    
+</template>

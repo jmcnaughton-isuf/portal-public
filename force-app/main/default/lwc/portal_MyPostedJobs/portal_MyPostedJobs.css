@@ -1,0 +1,138 @@
+.column.name {
+    min-width: 275px;
+}
+
+.show-on-phone .registration-table .button-list {
+    margin: 0 0 2rem 0 !important;
+    padding: 0 0 1rem !important;
+}
+
+.show-on-phone .registration-table p:last-of-type {
+    margin-bottom: 13px !important;
+}
+
+.view-modal, .archive-modal, .post-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90000;
+    overflow: scroll;
+}
+
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .modal {
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 840px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+        height: auto;
+        overflow: auto;
+        max-height: 94%;
+        padding-bottom: 20px;
+    }
+}
+
+.modal {
+    background-color: #fff;
+    max-width: 100%;
+}
+
+.content-header-bar {
+    background: rgba(0, 85, 149, 0.8);
+    color: white !important;
+    padding: 1.5em;
+    margin-bottom: 15px;
+}
+
+.modal .content-header-bar h2 {
+    color: white;
+}
+
+@media (min-width: 1200px) {
+    h2 {
+        font-size: 2.6em;
+        font-family: "Noah-Bold";
+        color: #404040;
+    }
+}
+
+.modal .close-btn {
+    font-size: 2.5em;
+    position: absolute;
+    top: 20px;
+    right: 27px;
+    color: white;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    transition: color .1s linear;
+}
+
+.content-wrapper {
+    margin: 0 0 1.5em 0;
+    display: block;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    position: relative;
+}
+
+@media (min-width: 1200px) {
+    h4 {
+        font-size: 1.6em;
+        font-family: "Noah-Regular";
+        margin-bottom: .5em;
+    }
+}
+
+h4 {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5 {
+    color: black;
+}
+
+.equalHeight {
+    overflow-wrap: break-word;
+    max-width: 15em;
+}
+
+@media (min-width: 768px) {
+    [data-ascend-portal] .registration-table .column > div.equalHeight {
+        padding-bottom: 0.7em;
+    }
+}
+
+.hide-on-phone .custom-overflow {
+    width: 15em;
+    overflow-wrap: break-word;
+}
+
+.show-on-phone .custom-overflow {
+    overflow-wrap: break-word;
+}

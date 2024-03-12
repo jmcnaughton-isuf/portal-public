@@ -1,0 +1,182 @@
+<template>
+    <div data-ascend-portal>
+        <c-portal-_-my-information-update-modal if:true={_openModal}
+            information-map={informationMap}
+            update-type={_modalUpdateType}
+            record={_modalRecord}
+            sobject-name={_modalSObjectName}
+            record-type-name={_modalRecordTypeName}
+            handle-close={handleCloseModal}
+        ></c-portal-_-my-information-update-modal>
+        <div class="container bottom-border">
+            <div class="bottom-border breadcrumb">
+                <ul>
+                    <li style="list-style-type: none;"><a href="my-information">Back to My Information</a></li>
+                </ul>
+            </div>
+            <h2 style="margin-bottom: .5em">{informationMap.frontEndData.employment.label}</h2>
+                <template for:each={_interimEmployment} for:item="employment" for:index="index">
+                    <template if:false={employment.isHide}>
+                        <div class="entry-heading" key={employment.index}>
+                            <div class="edit-entry-list" if:false={informationMap.frontEndData.employment.disable}>
+                                <a onclick={deleteEmployment} data-index={index} data-type="interim"><img src={deleteIcon}>Delete</a>
+                            </div>
+                            <div class="entry-form">
+                                <div class="flex-grid-2">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employer.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employer.label}
+                                            value={employment.employer}
+                                            is-toggled={informationMap.frontEndData.employer.toggle}
+                                            is-disabled={informationMap.frontEndData.employer.disable}
+                                            is-required={informationMap.frontEndData.employer.isRequired}
+                                            input-type={informationMap.frontEndData.employer.fieldType}
+                                            field-type="interimEmployment"
+                                            field-name="employer"
+                                            index={index}
+                                            change-set-value="Employment"
+                                            toggle-value={employment.isShowEmployer}
+                                            toggle-field="isShowEmployer"
+                                            display-setting-list={employmentDisplaySettingList}
+                                            custom-metadata-api-name={informationMap.frontEndData.employer.customMetadataApiName}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.jobTitle.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.jobTitle.label}
+                                            value={employment.jobTitle}
+                                            is-toggled={informationMap.frontEndData.jobTitle.toggle}
+                                            is-disabled={informationMap.frontEndData.jobTitle.disable}
+                                            input-type={informationMap.frontEndData.jobTitle.fieldType}
+                                            field-type="interimEmployment"
+                                            field-name="jobTitle"
+                                            index={index}
+                                            change-set-value="Employment"
+                                            toggle-value={employment.isShowJobTitle}
+                                            toggle-field="isShowJobTitle"
+                                            handle-toggle-change={handleToggleUpdate}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employmentStartDate.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employmentStartDate.label}
+                                            value={employment.employmentStartDate}
+                                            is-toggled={informationMap.frontEndData.employmentStartDate.toggle}
+                                            is-disabled={informationMap.frontEndData.employmentStartDate.disable}
+                                            input-type={informationMap.frontEndData.employmentStartDate.fieldType}
+                                            field-type="interimEmployment"
+                                            field-name="employmentStartDate"
+                                            index={index}
+                                            change-set-value="Employment"
+                                            handle-toggle-change={handleToggleUpdate}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employmentEndDate.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employmentEndDate.label}
+                                                value={employment.employmentEndDate}
+                                                is-toggled={informationMap.frontEndData.employmentEndDate.toggle}
+                                                is-disabled={informationMap.frontEndData.employmentEndDate.disable}
+                                                input-type={informationMap.frontEndData.employmentEndDate.fieldType}
+                                                field-type="interimEmployment"
+                                                field-name="employmentEndDate"
+                                                index={index}
+                                                change-set-value="Employment"
+                                                handle-toggle-change={handleToggleUpdate}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employment.togglePerRecord}>
+                                        <fieldset>
+                                            <div class="field-wrapper">
+                                                <input type="checkbox" class="radio" checked={employment.employmentShowOnDirectory} data-changesetvalue="interim" oninput={updateDirectorySetting} data-index={index}  data-type="interim">
+                                                <label for="" if:true={informationMap.frontEndData.employmentShowOnDirectory.label}>{informationMap.frontEndData.employmentShowOnDirectory.label}</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <template for:each={_informationMap.records.Employment.records} for:item="employment" for:index="index">
+                    <template if:false={employment.isHide}>
+                        <div class="entry-heading" key={employment.index}>
+                            <div class="edit-entry-list" if:false={informationMap.frontEndData.employment.disable}>
+                                <a onclick={deleteEmployment} data-index={index} data-type="employment"><img src={deleteIcon}>Delete</a>
+                            </div>
+                            <div class="entry-form">
+                                <div class="flex-grid-2">
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employer.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employer.label}
+                                            value={employment.employer}
+                                            is-toggled={informationMap.frontEndData.employer.toggle}
+                                            is-disabled={informationMap.frontEndData.employer.disable}
+                                            is-required={informationMap.frontEndData.employer.isRequired}
+                                            input-type={informationMap.frontEndData.employer.fieldType}
+                                            field-type="employment"
+                                            field-name="employer"
+                                            index={index}
+                                            change-set-value="Employment"
+                                            toggle-value={employment.isShowEmployer}
+                                            toggle-field="isShowEmployer"
+                                            display-setting-list={employmentDisplaySettingList}
+                                            custom-metadata-api-name={informationMap.frontEndData.employer.customMetadataApiName}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.jobTitle.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.jobTitle.label}
+                                            value={employment.jobTitle}
+                                            is-toggled={informationMap.frontEndData.jobTitle.toggle}
+                                            is-disabled={informationMap.frontEndData.jobTitle.disable}
+                                            input-type={informationMap.frontEndData.jobTitle.fieldType}
+                                            field-type="employment"
+                                            field-name="jobTitle"
+                                            index={index}
+                                            change-set-value="Employment"
+                                            toggle-value={employment.isShowJobTitle}
+                                            toggle-field="isShowJobTitle"
+                                            handle-toggle-change={handleToggleUpdate}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employmentStartDate.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employmentStartDate.label}
+                                            value={employment.employmentStartDate}
+                                            is-toggled={informationMap.frontEndData.employmentStartDate.toggle}
+                                            is-disabled={informationMap.frontEndData.employmentStartDate.disable}
+                                            input-type={informationMap.frontEndData.employmentStartDate.fieldType}
+                                            field-type="employment"
+                                            field-name="employmentStartDate"
+                                            index={index}
+                                            change-set-value="Employment"
+                                            handle-toggle-change={handleToggleUpdate}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employmentEndDate.display}>
+                                        <c-portal_-My-Information-Edit-Field label={informationMap.frontEndData.employmentEndDate.label}
+                                                value={employment.employmentEndDate}
+                                                is-toggled={informationMap.frontEndData.employmentEndDate.toggle}
+                                                is-disabled={informationMap.frontEndData.employmentEndDate.disable}
+                                                input-type={informationMap.frontEndData.employmentEndDate.fieldType}
+                                                field-type="employment"
+                                                field-name="employmentEndDate"
+                                                index={index}
+                                                change-set-value="Employment"
+                                                handle-toggle-change={handleToggleUpdate}
+                                        > </c-portal_-My-Information-Edit-Field>
+                                    </div>
+                                    <div class="grid-item" if:true={informationMap.frontEndData.employment.togglePerRecord}>
+                                        <fieldset>
+                                            <div class="field-wrapper">
+                                                <input type="checkbox" class="radio" checked={employment.employmentShowOnDirectory} data-changesetvalue="Employment" onchange={updateDirectorySetting} data-index={index}  data-type="employment">
+                                                <label for="" if:true={informationMap.frontEndData.employmentShowOnDirectory.label}>{informationMap.frontEndData.employmentShowOnDirectory.label}</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            <div class="button-list" if:false={informationMap.frontEndData.employment.disable}>
+                <a class="button secondary small" onclick={addEmployment}>Add Employment</a>
+            </div>
+        </div> 
+    </div>
+</template>

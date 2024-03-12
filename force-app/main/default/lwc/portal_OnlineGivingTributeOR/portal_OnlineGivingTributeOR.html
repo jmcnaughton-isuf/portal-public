@@ -1,0 +1,95 @@
+<template>
+    <div data-ascend-portal style="max-width: 700px !important;">
+        <template if:true={isShowComponent}>
+            <div class="container large no-margin giving-tribute-wrapper">
+                <div class="section-body-content">
+                    <div class="container">
+                        <fieldset style="margin-bottom: 1em;">
+                            <div class="field-wrapper">
+                                <input style="display: inline-block; width: auto" type="checkbox" class="radio" checked={_showForm} onchange={handleTributeChecked}/>
+                                <label for="">{componentLabel}</label>
+                            </div>
+                        </fieldset>
+                        <div class="entry-form" style="margin-top: 1.5em" if:true={_showForm}>
+                            <h4><b>{typeLabel}</b></h4>
+                            <!-- <div class="flex-grid-2">
+                                <fieldset style="margin-bottom: 1em;" >
+                                    <div class="field-wrapper">
+                                        <div class="grid-item">
+                                            <input style="display: inline-block; width: auto; border: 1px solid !important; " type="checkbox" name="ucinn_ascendv2__Tribute_Type_1__c" class="radio" value={_tribute.ucinn_ascendv2__Tribute_Type_1__c} onchange={handleChange}/>
+                                            <label for="">In Honor of</label>
+                                        </div>
+                                        <div class="grid-item">
+                                            <input style="display: inline-block; width: auto ; border: 1px solid !important;" type="checkbox" name="ucinn_ascendv2__Tribute_Type_1__c" class="radio" value={_tribute.ucinn_ascendv2__Tribute_Type_1__c} onchange={handleChange}/>
+                                            <label for="">In Memory of</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div> -->
+                             <div class="flex-grid-2">
+                                <div class="grid-item">
+                                    <i class="gg-chevron-down"></i>
+                                    <c-portal_-select default-value={_tribute.ucinn_ascendv2__Tribute_Type_1__c}
+                                                    input-name="ucinn_ascendv2__Tribute_Type_1__c"
+                                                    option-list={tributePicklistValues}
+                                                    handle-change={handleChange}
+                                                    classes="">
+                                    </c-portal_-select>
+                                </div>
+                            </div>
+                            <h4><b>{tributeeLabel}</b></h4>
+                            <div class="flex-grid-2">
+                                <div class="grid-item">
+                                    <label for=""><span class="required">*</span>First Name</label>
+                                    <input type="text" name="ucinn_ascendv2__In_Memory_Honor_First_Name_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__In_Memory_Honor_First_Name_1__c}>
+                                </div>
+                                <div class="grid-item">
+                                    <label for=""><span class="required">*</span>Last Name</label>
+                                    <input type="text" name="ucinn_ascendv2__In_Memory_Honor_Last_Name_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__In_Memory_Honor_Last_Name_1__c}>
+                                </div>
+                            </div>
+                            <template if:true={showNotifyName}>
+                                <h4><b>{notifyNameLabel}</b></h4>
+                                <div class="flex-grid-2">
+                                    <div class="grid-item">
+                                        <label for="">First Name</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_First_Name_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_First_Name_1__c}>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label for="">Last Name</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_Last_Name_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_Last_Name_1__c}>
+                                    </div>
+                                </div>
+                            </template>
+                            <template if:true={showNotifyAddress}>
+                                <h4><b>{notifyAddressLabel}</b></h4>
+                                <div class="flex-grid-2">
+                                    <div class="grid-item">
+                                        <label for="">Address Line 1</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_Address_Line_1_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_Address_Line_1_1__c}>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label for="">Address Line 2</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_Address_Line_2_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_Address_Line_2_1__c}>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label for="">City</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_City_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_City_1__c}>
+                                    </div>
+                                    <div class="grid-item">
+                                        <label for="">State</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_State_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_State_1__c}>
+                                    </div>
+                                    <div class="grid-item single">
+                                        <label for="">Postal Code</label>
+                                        <input type="text" name="ucinn_ascendv2__Notify_Postal_Code_1__c" oninput={handleChange} value={_tribute.ucinn_ascendv2__Notify_Postal_Code_1__c}>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

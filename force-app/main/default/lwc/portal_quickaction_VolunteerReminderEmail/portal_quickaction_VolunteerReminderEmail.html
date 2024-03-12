@@ -1,0 +1,29 @@
+<template>
+    <div if:true={_showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Schedule Reminder Email</h2>
+    </header>
+    <div class="slds-modal__content" id="modal-content-id-1">
+        <div if:true={renderComponent} class="slds-p-around_medium" style="max-height: 60vh;overflow-y: auto;">
+            <h2 class="slds-align_absolute-center slds-text-heading_small">Please select a date and time to send out reminder emails</h2>
+            <div class="slds-align_absolute-center">
+                <lightning-input type="datetime" value={_scheduleDate} onchange={handleDateChange}></lightning-input>
+            </div>
+            <hr>
+            <h2>Email Template</h2>
+            <c-portal_-select option-list={_templateList} 
+                              default-value={_template}
+                              handle-change={handleTemplateChange}
+                              if:true={_templateList}>
+            </c-portal_-select>
+            <br/><hr>
+            <lightning-formatted-rich-text if:true={htmlValue} value={htmlValue}></lightning-formatted-rich-text>
+        </div>
+    </div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={handleSchedule}>Schedule</button>
+    </footer>
+</template>

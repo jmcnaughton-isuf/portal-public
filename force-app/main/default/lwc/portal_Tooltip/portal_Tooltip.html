@@ -1,0 +1,16 @@
+<template>
+    <span>
+        <button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="tooltip" aria-disabled="true" onmouseover={tooltipActive} onmouseout={tooltipInactive}>
+            <lightning-icon icon-name="utility:info" 
+                class="slds-icon-utility-info slds-input__icon slds-icon_container"
+                alternative-text="help text"
+                size="xx-small">
+            </lightning-icon>
+        </button>
+        <div class="popover-container" style="display: none;">
+            <div class="slds-popover slds-popover_tooltip slds-nubbin_top-left" role="tooltip" id="tooltip">
+                <div class="content-header-bar">{text}</div>
+            </div>
+        </div>
+    </span>
+</template>

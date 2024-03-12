@@ -1,0 +1,186 @@
+<template>
+  <div data-ascend-portal>
+    <div class="event-tabs tabs">
+        <div class="slds-box slds-datepicker">
+            <!--banner across the top w arrows, month, year, arrow-->
+            <div class="slds-grid slds-page-header" role="banner">
+                <div class=" slds-size--1-of-12 slds-align--absolute-center">
+                  <button class="slds-button slds-button_icon slds-button_icon-border button secondary" title="Back"
+                          disabled={isPreviousMonthDisabled} onclick={handlePreviousMonthClick}>
+                    <lightning-icon icon-name="utility:chevronleft"
+                          alternative-text="back"
+                          size="small"
+                          class="arrow-button">
+                    </lightning-icon>
+                    <span class="slds-assistive-text">back</span>
+                  </button>
+                </div>
+                <div class="slds-size--4-of-12 slds-align--absolute-center month"> <b class="month-select">{_month}</b></div>
+                <div class="slds-size--1-of-12 slds-align--absolute-center right-arrow"> 
+                  <button class="slds-button slds-button_icon slds-button_icon-border button secondary" title="Next"
+                          disabled={isNextMonthDisabled} onclick={handleNextMonthClick}>
+                    <lightning-icon icon-name="utility:chevronright"
+                          alternative-text="next"
+                          size="small"
+                          class="arrow-button">
+                    </lightning-icon>
+                    <span class="slds-assistive-text">next</span>
+                  </button>
+                </div>
+                <div class=" slds-size--4-of-12 slds-align--absolute-center year-picklist">
+                  <select name="year" class="year-input" onchange={handleYearChange}>
+                    <template for:each={_yearOptions} for:item="year">
+                      <option value={year.value} key={year.value}>{year.label}</option>
+                    </template>
+                  </select>
+                  <a class="drop-down-arrow"></a>
+                </div>    
+            </div>
+      
+            <!--desktop/non-mobile case-->
+            <div class="calendar hide-on-phone">
+              <!--days of the week labels-->
+              <div class="calendar__header slds-text-title--caps">
+                <template for:each={_daysOfTheWeek} for:item="dayOfTheWeek">
+                  <div key={dayOfTheWeek}>{dayOfTheWeek}</div>
+                </template>
+              </div>
+
+              <div class="days_grid" if:false={_isResized}>
+                <!--For each week-->
+                <template for:each={_daysGrid} for:item="daysRow">
+                  <div key={daysRow} class="calendar__week">
+                      <!--For each day-->
+                      <template for:each={daysRow} for:item="dayMap">
+                        <!--Case: day with job(s)-->
+                        <div class="calendar__day day has-event" key={dayMap.key} if:true={dayMap.hasJob}>
+                            <div class="force-height">
+                              <span class="day-number">{dayMap.day}</span>
+                              <template for:each={dayMap.jobList} for:item="job">
+                                <br key={job.id}>
+                                
+                                <a class="job-day" key={job.Id} data-date={dayMap.date} data-id={job.Id} onclick={handleJobClick} if:true={job}>
+                                  <div class="job-name">
+                                    <template if:true={_frontEndDataMap.volunteerEventName.display}>
+                                        <span if:true={job.volunteerEventName}>{job.volunteerEventName}: </span> 
+                                    </template>
+                                    <span if:true={_frontEndDataMap.volunteerJobName.display}>{job.volunteerJobName}</span>
+                                  </div>
+                                </a>
+                              </template>
+                            </div>
+                            <!--show more section-->
+                            <div class="show-more slds-p-top_x-small">
+                              <a class="button secondary small show-all-events"
+                                  onclick={handleShowMoreWrapper} aria-haspopup="false" data-date={dayMap.key}>All Jobs</a>
+                              <div class="popover-container">
+                                <section class="slds-popover slds-nubbin_top-left slds-popover_medium popover-extra" 
+                                          role="dialog" aria-describedby={dayMap.key} aria-label="all events">
+                                  <div class="content-header-bar">
+                                    <div class="slds-grid">
+                                      <h5>{dayMap.readableDate}</h5>
+                                      <a class="close-btn close-x" title="Close" onclick={handleClosePopup} data-date={dayMap.key}>×</a>
+                                    </div>
+                                  </div>
+                                  <div class="slds-popover__body" id={dayMap.key}>
+                                    <template for:each={dayMap.jobList} for:item="job">
+                                      <a class="job-day" key={job.Id} data-date={dayMap.date} data-id={job.Id} 
+                                        onclick={handleJobClick} if:true={job}>
+                                        <div class="job-name job-popover">
+                                          <template if:true={_frontEndDataMap.volunteerEventName.display}>
+                                              <span if:true={job.volunteerEventName}>{job.volunteerEventName}: </span> 
+                                          </template>
+                                          <span if:true={_frontEndDataMap.volunteerJobName.display}>{job.volunteerJobName}</span>
+                                        </div>
+                                      </a>
+                                    </template>
+                                  </div>
+                                </section>
+                              </div>
+                            </div>
+                          </div>
+        
+                          <!--Case: empty day-->
+                          <div class="calendar__day day" key={dayMap.key} if:false={dayMap.hasJob}>
+                            <span class="day-number">{dayMap.day}</span>
+                          </div>
+        
+                          
+                      </template> 
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <!--mobile case, only care about days with jobs-->
+            <div class="show-on-phone">
+              <div class="slds-grid slds-grid_vertical slds-m-vertical_x-small">
+                <p if:false={_monthHasJobs} style="text-align: center" class="slds-p-top_medium">{noJobsMobileMessage}</p>
+                <!--For each week-->
+                <template for:each={_daysGrid} for:item="daysRow">
+                  <div key={daysRow}>
+                    <!--For each day-->
+                    <template for:each={daysRow} for:item="dayMap">
+                      <!--Case: day with job(s)-->
+                      <div key={dayMap.key} if:true={dayMap.hasJobThisMonth} class="slds-col slds-m-bottom_medium">
+                        <span class="day-number">{dayMap.day}</span>
+                        <template for:each={dayMap.jobList} for:item="job">                      
+                          <a class="job-day slds-m-bottom_x-small" key={job.Id} data-date={dayMap.date} data-id={job.Id} onclick={handleJobClick} if:true={job}>
+                            <div class="job-name">
+                              <template if:true={_frontEndDataMap.volunteerEventName.display}>
+                                  <span if:true={job.volunteerEventName}>{job.volunteerEventName}: </span> 
+                              </template>
+                              <span if:true={_frontEndDataMap.volunteerJobName.display}>{job.volunteerJobName}</span>
+                            </div>
+                          </a>
+                        </template>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+              </div>
+            </div>
+      
+            <!-- Today button at bottom-->
+            <div class="slds-p-top_medium">
+                    <div class="slds-size--1-of-12 slds-align--absolute-center"> </div>
+                    <div class="slds-size--9-of-12 slds-align--absolute-center" style="margin-bottom: 0.5rem">
+                        <b><a onclick={handleTodayClick} class="button secondary">Today</a></b>
+                    </div>
+                    <div class="slds-size--1-of-12 slds-align--absolute-center"> </div>
+                    <div class="slds-size--1-of-12 slds-align--absolute-center"> </div>      
+            </div> 
+      </div>
+    </div>
+
+    <!--main job modal-->
+    <template if:true={_isShowModal}>  
+      <c-portal_-volunteer-job-calendar-modal
+        front-end-data-map={_frontEndDataMap}
+        volunteer-job={_jobModalObject}
+        handle-close-modal={handleCloseCalendarModal}
+        handle-volunter-shift-sign-up={handleVolunterShiftSignUp}>
+      </c-portal_-volunteer-job-calendar-modal>
+    </template> 
+
+    <!--2 modals called within main job modal-->
+    <template if:true={_isShowSignUpForm}>
+      <c-portal_-volunteer-sign-up 
+        volunteer-shift={_shiftModalObject}
+        sign-up-type={_signUpType}
+        handle-close-sign-up-modal={handleCloseSignUpModal}
+        is-show-back-button="true"
+        is-show-modal={_isShowSignUpForm}>
+      </c-portal_-volunteer-sign-up>
+    </template>
+
+    <template if:true={_isShowModifyModal}>
+      <c-portal_-volunteer-modify-application
+          volunteer-shift={_shiftModalObject}
+          volunteer-id={_volunteerId}
+          is-show-list-back-button="true"
+          handle-close-modify-modal={handleCloseModifyModal}>
+      </c-portal_-volunteer-modify-application>
+    </template>
+  </div>
+</template>

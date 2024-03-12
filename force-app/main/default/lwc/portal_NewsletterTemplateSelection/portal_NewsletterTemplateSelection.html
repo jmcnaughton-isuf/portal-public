@@ -1,0 +1,20 @@
+<template>
+    <div class="container">
+        <template for:each={templates} for:item="template" for:index="index">
+            <div onclick={templateChosen}  class='selectable slds-align_absolute-center' data-index={index} key={template.Id}>
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-rich-text value={template.Header_Image__c}></lightning-formatted-rich-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-rich-text value={template.Body_Content__c}></lightning-formatted-rich-text>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-rich-text value={template.Footer_Content__c}></lightning-formatted-rich-text>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </template>
+    </div>
+    
+</template>

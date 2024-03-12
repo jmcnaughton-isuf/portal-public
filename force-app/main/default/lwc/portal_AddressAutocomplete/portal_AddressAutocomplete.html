@@ -1,0 +1,16 @@
+<template>
+    <c-portal_-lookup 
+        input-value={inputValue}
+        handle-change={handleChange}
+        is-hide-options-on-blur
+        is-hide-options-after-selection={isHideOptionsAfterSelection}
+        required={required}
+        has-search-icon
+        hide-clear-button
+        min-char-to-lookup=1
+        placeholder="Search Address"
+        get-custom-lookup-options={getAddressSuggestions}
+        handle-lookup-option-selected={handleLookupSelection}
+        is-show-spinner={isShowSpinner}>
+    </c-portal_-lookup>
+</template>

@@ -1,0 +1,58 @@
+<template>
+    <template if:true={membershipBenefitsData.length}>
+        <div class="slds-grid slds-gutters_large slds-wrap bottom-border" style="padding-top: 1.5rem;">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                <c-portal_-table title={membershipBenefitsTableName}
+                                records={membershipBenefitsData}
+                                column-mappings={membershipBenefitsColumns}>
+                </c-portal_-table>
+            </div>
+
+            <div class="slds-col slds-large-size_1-of-12"></div>
+
+            <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12" if:true={membershipBenefitsFrontEndDataMap}>
+                <div class="show-on-phone">
+                    <h2 style="margin-left: 0.5em; margin-bottom: .5em" if:true={membershipBenefitsFrontEndDataMap.membershipBreakdownTitle.display}>{membershipBenefitsFrontEndDataMap.membershipBreakdownTitle.label}</h2>
+                    <div class="registration-table col2">
+                        <div class="show-on-phone" style="padding-left: 1em;">
+                            <div class="row" style="border-top: none; background: transparent !important;" if:true={membershipBenefitsFrontEndDataMap.totalNonGiftAmount.display}>
+                                <div><h4 class="text-amount-align" style="border-bottom: none !important;">{membershipBenefitsFrontEndDataMap.totalNonGiftAmount.label}</h4></div>
+                                <div><h4 class="amount-align" style="border-bottom: none !important;">${totalNonGiftAmount}</h4></div>
+                            </div>
+                            <div class="row" style="border-top: none; background: transparent !important; padding: 0;" if:true={membershipBenefitsFrontEndDataMap.totalGiftAmount.display}>
+                                <div><h4 class="text-amount-align" style="border-bottom: none !important;">{membershipBenefitsFrontEndDataMap.totalGiftAmount.label}</h4></div>
+                                <div><h4 class="amount-align" style="border-bottom: none !important;">${totalGiftAmount}</h4></div>
+                            </div>
+                            <hr class="amount-line">
+                            <div class="row" style="border-top: none; background: transparent !important; padding-top: .5em" if:true={membershipBenefitsFrontEndDataMap.totalAmountDue.display}>
+                                <div><h4 class="text-amount-align" style="border-bottom: none !important;">{membershipBenefitsFrontEndDataMap.totalAmountDue.label}</h4></div>
+                                <div><h4 class="amount-align" style="border-bottom: none !important;">${totalAmount}</h4></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hide-on-phone">
+                    <h2 style="margin-bottom: .5em" if:true={membershipBenefitsFrontEndDataMap.membershipBreakdownTitle.display}>{membershipBenefitsFrontEndDataMap.membershipBreakdownTitle.label}</h2>
+                    <div class="registration-table col2">
+                        <div class="hide-on-phone">
+                            <div class="row table-row" style="border-top: none; background: transparent !important;" if:true={membershipBenefitsFrontEndDataMap.totalNonGiftAmount.display}>
+                                <div><h4 class="text-amount-align">{membershipBenefitsFrontEndDataMap.totalNonGiftAmount.label}</h4></div>
+                                <div><h4 class="amount-align">${totalNonGiftAmount}</h4></div>
+                            </div>
+                            <div class="row table-row" style="border-top: none; background: transparent !important; padding: 0;" if:true={membershipBenefitsFrontEndDataMap.totalGiftAmount.display}>
+                                <div><h4 class="text-amount-align">{membershipBenefitsFrontEndDataMap.totalGiftAmount.label}</h4></div>
+                                <div><h4 class="amount-align">${totalGiftAmount}</h4></div>
+                            </div>
+                            <hr class="amount-line">
+                            <div class="row table-row" style="border-top: none; background: transparent !important;" if:true={membershipBenefitsFrontEndDataMap.totalAmountDue.display}>
+                                <div><h4 class="text-amount-align">{membershipBenefitsFrontEndDataMap.totalAmountDue.label}</h4></div>
+                                <div><h4 class="amount-align">${totalAmount}</h4></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

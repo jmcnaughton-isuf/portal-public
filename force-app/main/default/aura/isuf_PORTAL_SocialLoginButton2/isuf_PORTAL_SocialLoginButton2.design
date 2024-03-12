@@ -1,0 +1,5 @@
+<design:component label="ISUF Portal Social Button Google">
+    <design:attribute name="label" label="Label"/>
+    <design:attribute name="url" label="URL"/>
+    <design:attribute name="provider" label="Provider" datasource="Facebook,Google" />
+</design:component>

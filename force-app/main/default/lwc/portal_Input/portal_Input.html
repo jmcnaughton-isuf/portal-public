@@ -1,0 +1,27 @@
+<template>
+    <label class={_labelClass} if:true={label}>
+        <abbr class="slds-required" title="required" if:true={required} style="float: left;">* </abbr>{label}</label>
+    <input type={type} 
+        class={classes} 
+        name={inputName}
+        disabled={disabled}
+        required={required}
+        value={value} 
+        min={min}
+        max={max}
+        step={step}
+        checked={checked}
+        minlength={minLength}
+        maxlength={maxLength} 
+        onchange={handleChange} 
+        oninput={_handleInput}
+        onkeyup={handleKeyUp}
+        onfocus={handleFocus}
+        onblur={handleBlur}
+        data-index={index}
+        placeholder={placeholder}
+        autocomplete={autocomplete}
+        style={_inputStyle}/>
+    <a if:true={includeClearButton} class={_clearButtonStyle} role="button" onclick={handleClear} style={iconStyle}>Clear</a>
+    <a if:true={includeSearchIcon} class="input-icon search-icon" style={iconStyle}></a>
+</template>

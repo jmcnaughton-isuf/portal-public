@@ -1,0 +1,166 @@
+<template>
+    <!-- <footer style={footerStyling}>
+        <lightning-layout horizontal-align="center" vertical-align="center" multiple-rows="true">
+            <lightning-layout-item size="12"
+                                   small-device-size="12"
+                                   medium-device-size="2">
+                <a class="footer-logo slds-align_absolute-center" href="/s" role="button">
+                    <img src={logoUrl}>
+                </a>
+            </lightning-layout-item>
+            <lightning-layout-item class="social-media-links" 
+                                   size="12"
+                                   small-device-size="12"
+                                   medium-device-size="8">
+                <template if:true={_socialMediaLinks}>
+                    <div class="slds-align_absolute-center">
+                        <a class="social-media facebook" href={facebookLink} target="_blank" style="background: #000000 url(/resource/CFP_Resources/images/svgs/facebook-white.svg) no-repeat center center /35px auto" if:true={facebookLink}>
+                            <span>Facebook</span>
+                        </a>
+                        <a class="social-media linkedin" href={linkedInLink} target="_blank" style="background: #000000 url(/resource/CFP_Resources/images/svgs/linkedin-white.svg) no-repeat center center /35px auto" if:true={linkedInLink}>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a class="social-media twitter" href={twitterLink} target="_blank" style="background: #000000 url(/resource/CFP_Resources/images/svgs/twitter-white.svg) no-repeat center center /35px auto" if:true={twitterLink}>
+                            <span>Twitter</span>
+                        </a>
+                        <a class="social-media instagram" href={instagramLink} target="_blank" style="background: #000000 url(/resource/CFP_Resources/images/svgs/instagram-white.svg) no-repeat center center /35px auto" if:true={instagramLink}>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="12"
+                                   medium-device-size="1">
+                <div class="slds-align_absolute-center">
+                    <a class="slds-button slds-button_brand primary-button" href={buttonLink} if:true={buttonLink}>
+                        {buttonLabel}
+                    </a>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout horizontal-align="spread" multiple-rows="true" class="slds-p-bottom_medium">
+            <lightning-layout-item size="12"
+                                   medium-device-size="6">
+                <div class="copyright">
+                    <lightning-formatted-rich-text value={copyrightText}></lightning-formatted-rich-text>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12"
+                                   medium-device-size="6">
+                <div class="footer-links">
+                    <template for:each={_navigationLinks} for:item="navLink">
+                        <a key={navLink.label} href={navLink.link}>
+                            {navLink.label}
+                        </a>&nbsp;&nbsp;
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </footer> -->
+
+    <div data-ascend-portal>
+        <footer style={footerStyling}>
+            <div class="container large">
+                <lightning-layout vertical-align="center" multiple-rows="true">
+                    <lightning-layout-item size="12"
+                                        small-device-size="12"
+                                        medium-device-size="3">
+                        <a class="footer-logo slds-align_absolute-center" href={homeUrl} role="button">
+                            <img src={communityLogoUrl}>
+                        </a>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12"
+                                        medium-device-size="9">
+                        <div class="slds-align_absolute-center">
+                            <ul class="menu">
+                                <template for:each={_navigationLinks} for:item="navLink">
+                                    <li key={navLink.label}>
+                                        <a href={navLink.link}>
+                                            {navLink.label}
+                                        </a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout horizontal-align="spread" multiple-rows="true" class="slds-p-bottom_medium">
+                    <lightning-layout-item size="12"
+                                        medium-device-size="6">
+                        <div class="copyright">
+                            <lightning-formatted-rich-text value={copyrightText}></lightning-formatted-rich-text>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" 
+                                        medium-device-size="6" 
+                                        small-device-size="12">
+                        <div class="social-media-links">
+                            <div class="container">
+                                <a href={facebookLink} target="_blank" if:true={facebookLink}>
+                                    <img src={socialMediaImageLinkMap.facebook}>
+                                </a>
+                                <a href={linkedInLink} target="_blank" if:true={linkedInLink}>
+                                    <img src={socialMediaImageLinkMap.linkedIn}>
+                                </a>
+                                <a href={twitterLink} target="_blank" if:true={twitterLink}>
+                                    <img src={socialMediaImageLinkMap.twitter}>
+                                </a>
+                                <a href={instagramLink} target="_blank" if:true={instagramLink}>
+                                    <img src={socialMediaImageLinkMap.instagram}>
+                                </a>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <!-- <lightning-layout  class="slds-grid slds-grid_vertical-align-center slds-wrap" interop-layout_layout-host="">
+                    <slot interop-layout_layout="" class="slds-slot">
+                        <lightning-layout-item c-portal_footer_portal_footer="" class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_3-of-12">
+                            <slot>
+                                <a c-portal_footer_portal_footer="" href="/s" role="button" class="footer-logo slds-align_absolute-center">
+                                    <img src="../../assets/img/csite_NavLogoDark.png" alt="UC Innovation">
+                                </a>
+                            </slot>
+                        </lightning-layout-item>
+                        <lightning-layout-item class="slds-size_12-of-12 slds-medium-size_9-of-12">
+                            <slot>
+                                <div c-portal_footer_portal_footer="" class="slds-align_absolute-center">
+                                    <ul class="menu">
+                                            <li><a href="#">My Information</a></li>
+                                            <li><a href="#">Give</a></li>
+                                            <li><a href="#">Giving History</a></li>
+                                            <li><a href="#">My Membership</a></li>
+                                            <li><a href="#">Job Board</a></li>
+                                        </ul>
+                                    </div>
+                                
+                            </slot>
+                        </lightning-layout-item>
+                        
+                    </slot>
+                </lightning-layout>
+                <lightning-layout c-portal_footer_portal_footer="" class="slds-p-bottom_medium slds-grid slds-grid_align-spread slds-wrap" interop-layout_layout-host="">
+                    <slot interop-layout_layout="" class="slds-slot">
+                        <lightning-layout-item c-portal_footer_portal_footer="" class="slds-size_12-of-12 slds-medium-size_6-of-12">
+                            <slot>
+                                <div c-portal_footer_portal_footer="" class="copyright">
+                                    <lightning-formatted-rich-text c-portal_footer_portal_footer="" class="slds-rich-text-editor__output">
+                                        <span>© Copyright UC Innovation</span>
+                                    </lightning-formatted-rich-text>
+                                </div>
+                            </slot>
+                        </lightning-layout-item>
+                        <lightning-layout-item c-portal_footer_portal_footer="" class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12">
+                            <div class="social-media-links">
+                                <div class="container">
+                                    <a href="#"><img src="../../assets/img/facebook_icon.svg"></a>
+                                    <a href="#"><img src="../../assets/img/twitter_icon.svg"></a>
+                                    <a href="#"><img src="../../assets/img/instagram_icon.svg"></a>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </slot>
+                </lightning-layout> -->
+            </div>
+        </footer>
+    </div>
+</template>

@@ -1,0 +1,233 @@
+<apex:page controller="PORTAL_SpreedlyACHFormController" showHeader="false" sidebar="false"
+    lightningStyleSheets="true">
+    <html>
+
+    <style type="text/css">
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:300;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Light.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:700;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Bold.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:400;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Regular.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:100;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Thin.ttf')}");
+        }
+        @font-face {
+            font-family:'Lato';
+            font-style:normal;
+            font-weight:900;
+            src: url("{!URLFOR($Resource.PORTAL_Fonts, 'Lato/Lato-Black.ttf')}");
+        }
+        
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #2574A9;
+        }
+
+        input:focus[type=text] {
+            outline: none;
+        }
+
+        select {
+            width: 100%;
+            margin-bottom: 20px !important;
+            padding: 12px;
+            border: 1px solid #2574A9;
+        }
+
+        label {
+            display:block !important;
+        }
+
+        .formbody {
+            display:block;
+            text-align:center;
+            padding: 0 15px;
+        }
+
+        form {
+            margin: auto;
+            text-align:left;
+            display:inline-block;
+        }
+
+        form,
+        body,
+        label,
+        input {
+            font-family: 'Lato', sans-serif;
+        }
+
+        label {
+            font-weight: 800;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+            
+        .giving-card-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            bottom: 0;
+            box-sizing: border-box;
+            padding-bottom: 20px;
+        }
+    
+        .giving-card-buttons>button {
+            border: none;
+            background: #2574A9;
+            color: white;
+            font-size: 16px;
+            padding: 8px 25px;
+            border-radius: 5px;
+            transition: .25s all ease-in-out;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+        }
+    
+        .giving-card-buttons>button:hover {
+            background-color: #1C577F;
+            transition: .25s all ease-in-out;
+        }
+    </style>
+
+    <head>
+        <apex:slds />
+    </head>
+
+    <body class="slds-scope" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div class="formbody" style="margin-top: 20px;">
+            <form style="width: 100%">
+                <apex:panelGrid columns="1">
+                    <apex:panelGroup >
+                        <div>
+                            <label id="full_name_label" for="full_name">Name:</label>
+                            <input type="text" id="full_name" name="full_name"/>
+                        </div>
+                        <div>
+                            <label id="bank_routing_number_label" for="bank_routing_number">Bank Routing Number:</label>
+                            <input type="text" id="bank_routing_number" name="bank_routing_number"/>
+                        </div>
+                        <div>
+                            <label id="bank_account_number_label" for="bank_account_number">Bank Account Number:</label>
+                            <input type="text" id="bank_account_number" name="bank_account_number"/>
+                        </div>
+                        <div>
+                            <label for="bank_account_type">Account Type:</label>
+                            <select id="bank_account_type" name="bank_account_type">
+                                <option value="checking">Checking</option>
+                                <option value="savings">Savings</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="bank_account_holder_type">Account Holder:</label>
+                            <select id="bank_account_holder_type" name="bank_account_holder_type">
+                              <option value="personal">Personal</option>
+                              <option value="business">Business</option>
+                            </select>
+                        </div>
+                    </apex:panelGroup>
+                </apex:panelGrid>
+                <div class="giving-card-buttons">
+                    <button id="cancel-button" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 7px;">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Billing Details
+                    </button>
+                    <button id="submit-button" type="button">
+                        Give
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" style="margin-left: 7px;">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                    </button>
+                    <input type="hidden" id="flexresponse" name="flexresponse"></input>
+                </div>
+            </form>
+        </div>
+
+        <script type="application/javascript">
+            const lexOrigin = "{!lexOrigin}";
+
+            const cancelButton = document.getElementById("cancel-button");
+            cancelButton.addEventListener('click', () => {
+                window.parent.postMessage({type:"previous"}, lexOrigin);
+            });
+
+            const submitButton = document.getElementById("submit-button");
+            submitButton.addEventListener('click', () => {
+                var fullName = document.getElementById("full_name").value;
+                var bankRoutingNumber = document.getElementById("bank_routing_number").value;
+                var bankAccountNumber = document.getElementById("bank_account_number").value;
+                var bankAccountType = document.getElementById("bank_account_type").value;
+                var bankAccountHolderType = document.getElementById("bank_account_holder_type").value;
+                var paymentMethodType = "bank_account";
+                
+                const paymentFields = {fullName: fullName,
+                                        bankRoutingNumber: bankRoutingNumber,
+                                        bankAccountNumber: bankAccountNumber,
+                                        bankAccountType: bankAccountType,
+                                        bankAccountHolderType: bankAccountHolderType,
+                                        paymentMethodType: paymentMethodType};
+                window.parent.postMessage({
+                            type: "payment_method",
+                            token: "bank_account", //no token since it needs to be created in the backend for Spreedly ACH payments (unless spreedly adds ACH support to their IFrames in the future)
+                            additionalPaymentDataMap: paymentFields
+                        }, lexOrigin);
+            });
+
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                    var previousButton = document.querySelector('#cancel-button');
+                    if (previousButton) {
+                        previousButton.remove();
+                    }
+
+                    var submitButton = document.querySelector('#submit-button');
+                    if (submitButton) {
+                        submitButton.textContent = 'Update';
+                    }
+                }
+                else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                    const opts = eventData;
+
+                    const displayOptions = opts.displayOptions;
+                    if (displayOptions) {
+                        if (displayOptions.full_name) {
+                            document.getElementById("full_name").value = displayOptions.full_name;
+                        }
+                    }
+                }
+            });
+
+            window.parent.postMessage({ type: "readyACH" }, lexOrigin);
+        </script>
+    </body>
+
+    </html>
+</apex:page>

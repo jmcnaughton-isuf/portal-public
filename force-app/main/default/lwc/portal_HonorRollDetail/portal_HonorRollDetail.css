@@ -1,0 +1,53 @@
+.popover-container {
+    top: 35px;
+    position: absolute;
+    opacity: 100 !important;
+    transition: all 250ms;
+}
+
+.close-btn {
+    font-size: 2em;
+    position: absolute;
+    top: -1px;
+    right: 7px;
+    text-decoration: none;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-family: "Noah-Regular";
+    margin-bottom: .5em;
+}
+
+.content-header-bar {
+    margin-bottom: 0 !important;
+}
+
+.slds-popover__body {
+    max-height: 195px;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .slds-popover__body {
+        max-height: 155px;
+    }
+}
+
+@media (min-width: 992px) {
+    .slds-popover__body {
+        max-height: 175px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slds-popover__body {
+        max-height: 185px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .slds-popover__body {
+        max-height: 200px;
+    }
+}

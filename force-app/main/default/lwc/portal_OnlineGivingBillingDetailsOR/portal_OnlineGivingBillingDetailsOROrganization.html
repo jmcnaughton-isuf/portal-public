@@ -1,0 +1,251 @@
+<template>
+    <div data-ascend-portal>
+    <template if:true={isShowComponent}>
+
+        <div class="container large no-margin gift-container">
+            <div class="container small">
+                <div class="section-wrapper bottom-border">
+                    <!-- <h2 style={headerStyle}>{componentLabel}</h2> -->
+                    <div class="entry-form" if:true={_callbackDone}>
+                        <br>
+                        <h3 style="margin:0px">{organizationInformationLabel}</h3>
+                        <br>
+                        <div class="flex-grid-1">
+                            <div class="grid-item" style="padding-right: 0px;" if:true={informationMap.frontEndData.organizationName.display}>
+                            <!-- <lightning-input type="text" value={organizationName} label={informationMap.frontEndData.organizationName.label} data-id="organizationName" onchange={setRecordValue} required={informationMap.frontEndData.organizationName.isRequired}></lightning-input> -->
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationName.isRequired}>*</span>{informationMap.frontEndData.organizationName.label}</label>
+                                <input type="text" value={organizationName} name="organizationName" oninput={setRecordValue} required={informationMap.frontEndData.organizationName.isRequired}/>
+                            </div>
+                        </div>
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationEmail.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationEmail.isRequired}>*</span>{informationMap.frontEndData.organizationEmail.label}</label>
+                                <input type="email" value={emailAddress} name="organizationEmail" oninput={setRecordValue} required={informationMap.frontEndData.organizationEmail.isRequired}/>
+                            </div>
+                            <!-- <div class="grid-item" if:true={informationMap.frontEndData.organizationEmail.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationEmail.isRequired}>*</span>Confirm Email</label>
+                                <input type="email" value={_emailConfirmation} name="emailConfirm" oninput={setEmailValue} required={informationMap.frontEndData.organizationEmail.isRequired}/>
+                            </div> -->
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationEmailType.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationEmailType.isRequired}>*</span>{informationMap.frontEndData.organizationEmailType.label}</label>
+                                <c-portal_-select default-value={organizationEmailType}
+                                                  option-list={organizationEmailTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='organizationEmailType'
+                                                  required={informationMap.frontEndData.organizationEmailType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationCountry.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationCountry.isRequired}>*</span>{informationMap.frontEndData.organizationCountry.label}</label>
+                                <!-- <input type="text" value={organizationCountry} name="organizationCountry" oninput={setRecordValue} required={informationMap.frontEndData.organizationCountry.isRequired}> -->
+                                <c-portal_-select default-value={organizationCountry}
+                                                  option-list={countryOptions}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='organizationCountry'
+                                                  required={informationMap.frontEndData.organizationCountry.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationPhoneNumber.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationPhoneNumber.isRequired}>*</span>{informationMap.frontEndData.organizationPhoneNumber.label}</label>
+                                <input type="text" value={organizationPhoneNumber} name="organizationPhoneNumber" oninput={setRecordValue} required={informationMap.frontEndData.organizationPhoneNumber.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationPhoneType.display}>
+                                <i class="gg-chevron-down"></i>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationPhoneType.isRequired}>*</span>{informationMap.frontEndData.organizationPhoneType.label}</label>
+                                <c-portal_-select default-value={organizationPhoneType}
+                                                  option-list={organizationPhoneTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='organizationPhoneType'
+                                                  required={informationMap.frontEndData.organizationPhoneType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationAddressLine1.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationAddressLine1.isRequired}>*</span>{informationMap.frontEndData.organizationAddressLine1.label}</label>
+                                <input type="text" value={organizationAddressLine1} name="organizationAddressLine1" oninput={setRecordValue} required={informationMap.frontEndData.organizationAddressLine1.isRequired}>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationAddressLine2.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationAddressLine2.isRequired}>*</span> {informationMap.frontEndData.organizationAddressLine2.label}</label>
+                                <input type="text" value={organizationAddressLine2} name="organizationAddressLine2" oninput={setRecordValue} required={informationMap.frontEndData.organizationAddressLine2.isRequired}>
+                            </div>
+                        </div>
+                        <div class="flex-grid-3">
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationCity.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationCity.isRequired}>*</span>{informationMap.frontEndData.organizationCity.label}</label>
+                                <input type="text" value={organizationCity} name="organizationCity" oninput={setRecordValue} required={informationMap.frontEndData.organizationCity.isRequired}>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationState.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationState.isRequired}>*</span>{informationMap.frontEndData.organizationState.label}</label>
+                                <!-- <input type="text" value={organizationState} name="organizationState" oninput={setRecordValue} required={informationMap.frontEndData.organizationState.isRequired}> -->
+                                <div if:false={contactCountryInput}>
+                                    <input type="text" value={organizationState} name="addressState" oninput={setRecordValue} required={informationMap.frontEndData.organizationState.isRequired}>
+                                </div>
+                                <div if:true={contactCountryInput}>
+                                    <c-portal_-select default-value={organizationState}
+                                                      option-list={MainStates}
+                                                      handle-change={setRecordValue}
+                                                      classes=""
+                                                      input-name='organizationState'
+                                                      required={informationMap.frontEndData.organizationState.isRequired}>
+                                    </c-portal_-select>
+                                </div>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationPostalCode.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationPostalCode.isRequired}>*</span>{informationMap.frontEndData.organizationPostalCode.label}</label>
+                                <input type="text" value={organizationPostalCode} name="organizationPostalCode" oninput={setRecordValue} required={informationMap.frontEndData.organizationPostalCode.isRequired}>
+                            </div>
+                        </div>
+                        <div class="flex-grid-2">
+
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationAddressType.display}>
+                                <i class="gg-chevron-down"></i>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationAddressType.isRequired}>*</span>{informationMap.frontEndData.organizationAddressType.label}</label>
+                                <c-portal_-select default-value={organizationAddressType}
+                                                  option-list={organizationAddressTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='organizationAddressType'
+                                                  require={informationMap.frontEndData.organizationAddressType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+
+                        <br>
+                        <h3 style="margin:0px">{organizationalContactInformationLabel}</h3>
+                        <br>
+                        <div class="flex-grid-4">
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactFirstName.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactFirstName.isRequired}>*</span>{informationMap.frontEndData.organizationalContactFirstName.label}</label>
+                                <input type="text" value={organizationalContactFirstName} name="organizationalContactFirstName" oninput={setRecordValue} required={informationMap.frontEndData.organizationalContactFirstName.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactMiddleName.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactMiddleName.isRequired}>*</span>{informationMap.frontEndData.organizationalContactMiddleName.label}</label>
+                                <input type="text" value={organizationalContactMiddleName} name="organizationalContactMiddleName" oninput={setRecordValue} required={informationMap.frontEndData.organizationalContactMiddleName.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactLastName.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactLastName.isRequired}>*</span>{informationMap.frontEndData.organizationalContactLastName.label}</label>
+                                <input type="text" value={organizationalContactLastName} name="organizationalContactLastName" oninput={setRecordValue} required={informationMap.frontEndData.organizationalContactLastName.isRequired}/>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactTitle.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactTitle.isRequired}>*</span>{informationMap.frontEndData.organizationalContactTitle.label}</label>
+                                <input type="text" value={organizationalContactTitle} name="organizationalContactTitle" oninput={setRecordValue} required={informationMap.frontEndData.organizationalContactTitle.isRequired}/>
+                            </div>
+                        </div>
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactEmail.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactEmail.isRequired}>*</span>{informationMap.frontEndData.organizationalContactEmail.label}</label>
+                                <input type="email" value={organizationalContactEmail} name="organizationalContactEmail" oninput={setRecordValue} required={informationMap.frontEndData.organizationalContactEmail.isRequired}>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactEmailType.display}>
+                                <i class="gg-chevron-down"></i>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactEmailType.isRequired}>*</span>{informationMap.frontEndData.organizationalContactEmailType.label}</label>
+                                <c-portal_-select default-value={organizationalContactEmailType}
+                                                  option-list={organizationalContactEmailTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='organizationalContactEmailType'
+                                                  required={informationMap.frontEndData.organizationalContactEmailType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+                        <div class="flex-grid-2">
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactPhone.display}>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactPhone.isRequired}>*</span>{informationMap.frontEndData.organizationalContactPhone.label}</label>
+                                <input type="text" value={organizationalContactPhone} name="organizationalContactPhone" oninput={setRecordValue} required={informationMap.frontEndData.organizationalContactPhone.isRequired}>
+                            </div>
+                            <div class="grid-item" if:true={informationMap.frontEndData.organizationalContactPhoneType.display}>
+                                <i class="gg-chevron-down"></i>
+                                <label for=""><span class="required" if:true={informationMap.frontEndData.organizationalContactPhoneType.isRequired}>*</span>{informationMap.frontEndData.organizationalContactPhoneType.label}</label>
+                                <c-portal_-select default-value={organizationalContactPhoneType}
+                                                  option-list={organizationalContactPhoneTypePicklist}
+                                                  handle-change={setRecordValue}
+                                                  classes=""
+                                                  input-name='organizationalContactPhoneType'
+                                                  required={informationMap.frontEndData.organizationalContactPhoneType.isRequired}>
+                                </c-portal_-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <h2 style={headerStyle}>{componentLabel}</h2>
+        <h3 class="sub-header">{organizationInformationLabel}</h3>
+        <lightning-layout multiple-rows="true" if:true={_callbackDone}>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="4" medium-device-size="4" if:true={informationMap.frontEndData.organizationName.display}>
+                <lightning-input type="text" value={organizationName} label={informationMap.frontEndData.organizationName.label} data-id="organizationName" onchange={setRecordValue} required={informationMap.frontEndData.organizationName.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="8" medium-device-size="8" if:true={informationMap.frontEndData.organizationName.display}></lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="4" medium-device-size="4" if:true={informationMap.frontEndData.organizationEmail.display}>
+                <lightning-input type="text" value={emailAddress} label={informationMap.frontEndData.organizationEmail.label} data-id="organizationEmail" onchange={setRecordValue} required={informationMap.frontEndData.organizationEmail.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="4" medium-device-size="4" if:true={informationMap.frontEndData.organizationEmail.display}>
+                <lightning-input type="text" value={_emailConfirmation} label="Confirm E-mail" data-id="organizationConfirmEmail" onchange={setEmailValue} data-name="emailConfirm" required={informationMap.frontEndData.organizationEmail.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="4" medium-device-size="4" if:true={informationMap.frontEndData.organizationEmailType.display}>
+                <lightning-combobox options={informationMap.picklists.organizationEmailType} label={informationMap.frontEndData.organizationEmailType.label} data-id="organizationEmailType" onchange={setRecordValue} required={informationMap.frontEndData.organizationEmailType.isRequired}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="6" medium-device-size="6" if:true={informationMap.frontEndData.organizationPhoneNumber.display}>
+                <lightning-input type="text" value={organizationPhoneNumber} label={informationMap.frontEndData.organizationPhoneNumber.label} data-id="organizationPhoneNumber" onchange={setRecordValue} required={informationMap.frontEndData.organizationPhoneNumber.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="6" medium-device-size="6" if:true={informationMap.frontEndData.organizationPhoneType.display}>
+                <lightning-combobox options={informationMap.picklists.organizationPhoneType} label={informationMap.frontEndData.organizationPhoneType.label} data-id="organizationPhoneType" onchange={setRecordValue} required={informationMap.frontEndData.organizationPhoneType.isRequired}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" if:true={informationMap.frontEndData.organizationAddressLine1.display}>
+                <lightning-input type="text" value={organizationAddressLine1} label={informationMap.frontEndData.organizationAddressLine1.label} data-id="organizationAddressLine1" onchange={setRecordValue} required={informationMap.frontEndData.organizationAddressLine1.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" if:true={informationMap.frontEndData.organizationAddressLine2.display}> 
+                <lightning-input type="text" value={organizationAddressLine2} label={informationMap.frontEndData.organizationAddressLine2.label} data-id="organizationAddressLine2" onchange={setRecordValue} required={informationMap.frontEndData.organizationAddressLine2.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationCity.display}> 
+                <lightning-input type="text" value={organizationCity} label={informationMap.frontEndData.organizationCity.label} data-id="organizationCity" onchange={setRecordValue} required={informationMap.frontEndData.organizationCity.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationState.display}>
+                <lightning-input type="text" value={organizationState} label={informationMap.frontEndData.organizationState.label} data-id="organizationState" onchange={setRecordValue} required={informationMap.frontEndData.organizationState.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationPostalCode.display}>
+                <lightning-input type="text" value={organizationPostalCode} label={informationMap.frontEndData.organizationPostalCode.label} data-id="organizationPostalCode" onchange={setRecordValue} required={informationMap.frontEndData.organizationPostalCode.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationCountry.display}>
+                <lightning-input type="text" value={organizationCountry} label={informationMap.frontEndData.organizationCountry.label} data-id="organizationCountry" onchange={setRecordValue} required={informationMap.frontEndData.organizationCountry.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="4" medium-device-size="4" if:true={informationMap.frontEndData.organizationAddressType.display}>
+                <lightning-combobox options={informationMap.picklists.organizationAddressType} label={informationMap.frontEndData.organizationAddressType.label} data-id="organizationAddressType" onchange={setRecordValue} required={informationMap.frontEndData.organizationAddressType.isRequired}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="12" medium-device-size="12"></lightning-layout-item>
+        </lightning-layout>
+        <h3 class="sub-header">{organizationalContactInformationLabel}</h3>
+        <lightning-layout multiple-rows="true" if:true={_callbackDone}>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationalContactFirstName.display}> 
+                <lightning-input type="text" value={organizationalContactFirstName} label={informationMap.frontEndData.organizationalContactFirstName.label} data-id="organizationalContactFirstName" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactFirstName.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationalContactMiddleName.display}> 
+                <lightning-input type="text" value={organizationalContactMiddleName} label={informationMap.frontEndData.organizationalContactMiddleName.label} data-id="organizationalContactMiddleName" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactMiddleName.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationalContactLastName.display}> 
+                <lightning-input type="text" value={organizationalContactLastName} label={informationMap.frontEndData.organizationalContactLastName.label} data-id="organizationalContactLastName" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactLastName.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="3" medium-device-size="3" if:true={informationMap.frontEndData.organizationalContactTitle.display}> 
+                <lightning-input type="text" value={organizationalContactTitle} label={informationMap.frontEndData.organizationalContactTitle.label} data-id="organizationalContactTitle" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactTitle.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="6" medium-device-size="6" if:true={informationMap.frontEndData.organizationalContactEmail.display}> 
+                <lightning-input type="text" value={organizationalContactEmail} label={informationMap.frontEndData.organizationalContactEmail.label} data-id="organizationalContactEmail" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactEmail.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="6" medium-device-size="6" if:true={informationMap.frontEndData.organizationalContactEmailType.display}>
+                <lightning-combobox options={informationMap.picklists.organizationalContactEmailType} label={informationMap.frontEndData.organizationalContactEmailType.label} data-id="organizationalContactEmailType" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactEmailType.isRequired}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="6" medium-device-size="6" if:true={informationMap.frontEndData.organizationalContactPhone.display}> 
+                <lightning-input type="text" value={organizationalContactPhone} label={informationMap.frontEndData.organizationalContactPhone.label} data-id="organizationalContactPhone" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactPhone.isRequired}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" large-device-size="6" medium-device-size="6" if:true={informationMap.frontEndData.organizationalContactPhoneType.display}>
+                <lightning-combobox options={informationMap.picklists.organizationalContactPhoneType} label={informationMap.frontEndData.organizationalContactPhoneType.label} data-id="organizationalContactPhoneType" onchange={setRecordValue} required={informationMap.frontEndData.organizationalContactPhoneType.isRequired}></lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout> -->
+    </template>
+    </div>
+</template>

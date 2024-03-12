@@ -1,0 +1,103 @@
+/**
+ * Created by jmcnaughton on 4/17/2023.
+ */
+.site-footer__bottom-wrap{
+    background-color:#7c2529;
+    margin-left:-2.25rem;
+    margin-right:-2.25rem;
+    padding-bottom:1.25rem;
+}
+
+.site-footer{
+    background-color:#c8102e;
+    padding:2.25rem 2.25rem 0;
+    position:relative
+}
+
+.site-footer__flex-wrap{
+    display:-webkit-box;
+    display:flex;
+    flex-wrap:wrap;
+    -webkit-box-align:start;
+    align-items:flex-start;
+    -webkit-box-pack:justify;
+    justify-content:space-between
+}
+
+.site-footer__logo{
+    width:100%;
+    max-width:32.25rem;
+    height:100%;
+    display:block
+}
+
+
+
+.site-footer__social{
+    display:-webkit-box;
+    display:flex;
+    -webkit-box-pack:justify;
+    justify-content:space-between;
+    margin:1.6875rem 0;
+    padding-right: 1rem;
+}
+
+.visible-for-screen-readers {
+    border:0;
+    clip:rect(0 0 0 0);
+    height:1px;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    width:1px
+}
+
+.site-footer__utility-nav{
+    padding:1.25rem
+}
+
+.site-footer__copyright{
+    color:#fff;
+    font-family:Nimbus Sans,sans-serif;
+    font-size:.9375rem;
+    line-height:1.86667;
+    display: inline;
+    margin-right: 1rem;
+}
+
+.site-footer__section-label{
+    color: white;
+    font-size:1.125rem;
+    line-height:1.44444;
+    font-family:Merriweather,serif;
+    margin: 0px
+}
+
+.site-footer__departments-nav {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.site-footer__departments-nav ul li a.site-footer__section-email{
+    color: white;
+    text-decoration:none;
+    font-size:1.125rem;
+    line-height:1.44444;
+    font-family:Merriweather,serif;
+    margin: 0px
+}
+
+.site-footer__section-phone{
+    color: white;
+    text-decoration: underline;
+    font-size:1.125rem;
+    line-height:1.44444;
+    font-family:Merriweather,serif;
+    margin: 0px
+}
+
+.site-footer__departments-nav ul li a.site-footer__section-email:hover{
+    text-decoration:underline;
+    text-decoration-thickness:.0625rem;
+    text-underline-offset:.0625rem
+}

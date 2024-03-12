@@ -1,0 +1,515 @@
+<apex:page controller="PORTAL_CyberSourceFormController" showHeader="false" sidebar="false"
+    lightningStyleSheets="true">
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml" style="background-color: #f7f7f7;">
+
+    
+    <style type="text/css">
+        input[type=checkbox].radio {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            margin: 0 8px 0 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #fff;
+            float: left;
+        }
+
+        input[type=checkbox].radio:focus {
+            outline: none;
+        }
+
+        input[type=checkbox].radio:checked::after {
+            content: '';
+            background-color: #00c0f3;
+            position: absolute;
+            top: 3.5px;
+            left: 3.5px;
+            width: 70%;
+            height: 70%;
+            border-radius: 3px;
+            border: 1px solid #12aad3;
+        }
+
+        input[type=text] {
+            width: 90%%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            padding-right: 0px !important; 
+            padding-left: 0px !important;
+        }
+
+        label {
+            display:block !important;
+        }
+
+        .form {
+            background-color: #f7f7f7;
+            margin: auto;
+            text-align:left;
+            display:inline-block;
+            padding: 1rem;
+        }
+
+        @font-face {
+        font-family: 'Noah-Bold';
+        src: url({!URLFOR($Resource.PORTAL_Fonts, '/Noah/NoahBold/font.woff')}) format('woff');
+        }
+        /* line 883, src/sass/style.scss */
+        .button-list {
+        padding: .4rem 0;
+        margin: 1rem 0 0;
+        font-size: 1.1em; }
+        /* line 888, src/sass/style.scss */
+        .button-list img {
+            width: 19px; }
+            /* line 891, src/sass/style.scss */
+            .button-list img svg {
+            width: 100%; }
+        /* line 894, src/sass/style.scss */
+        .button-list.center {
+            width: 100%;
+            text-align: center;
+            justify-content: center; }
+            /* line 899, src/sass/style.scss */
+            .button-list.center .button {
+            margin-right: 0; }
+        /* line 902, src/sass/style.scss */
+        .button-list.text {
+            margin-top: 6px; }
+            /* line 905, src/sass/style.scss */
+            .button-list.text a {
+            display: flex;
+            align-items: center; }
+            /* line 906, src/sass/style.scss */
+            .button-list.text a:first-of-type {
+                margin-right: 10px; }
+        /* line 912, src/sass/style.scss */
+        .button-list .button {
+            margin-right: 8px; }
+            /* line 916, src/sass/style.scss */
+            .button-list .button.has-icon:hover {
+            background-color: white;
+            color: #005595; }
+            /* line 922, src/sass/style.scss */
+            .button-list .button.full-mobile {
+            margin-right: 0;
+            margin-bottom: .7rem; }
+            /* line 926, src/sass/style.scss */
+            .button-list .button.full-mobile:last-of-type {
+                margin-bottom: 0; }
+            /* line 931, src/sass/style.scss */
+            .button-list .button.disabled {
+            opacity: .5;
+            pointer-events: none; }
+        /* line 937, src/sass/style.scss */
+        .button-list.controls .button {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            flex: 1 1 100%;
+            text-align: center;
+            display: block; }
+
+        .button {
+            font-family: 'Noah-Bold' !important;
+            background-color: #005595 !important;
+            color: white !important;
+            padding: .5em 1.1em !important;
+            border-radius: 3px !important;
+            font-weight: bold !important;
+            font-size: 1.1em !important;
+            transition: background-color 300ms, color 300ms !important;
+            border: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            background-image: initial !important;
+            background-repeat: initial !important;
+            background-position: initial !important;
+            margin: 1px !important;
+        /*  img {
+                width: 18px;
+                height: 18px;
+                position: relative;
+                top: -2px;
+                left: -5px;
+            }
+        */ }
+        /* line 971, src/sass/style.scss */
+        .button.slds-button_icon {
+            padding: .5em !important; }
+        /* line 975, src/sass/style.scss */
+        .button.primary {
+            background-color: #005595;
+            color: white;
+            border: 1px solid #005595; }
+            /* line 980, src/sass/style.scss */
+            .button.primary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 985, src/sass/style.scss */
+            .button.primary:hover svg .outline {
+                fill: white; }
+            /* line 988, src/sass/style.scss */
+            .button.primary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -2px;
+            right: 0px; }
+            /* line 995, src/sass/style.scss */
+            .button.primary svg .outline {
+                fill: white; }
+        /* line 1001, src/sass/style.scss */
+        .button.secondary {
+            background-color: white;
+            border: 1px solid #cdcfd8;
+            color: #005595; }
+            /* line 1006, src/sass/style.scss */
+            .button.secondary:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+            /* line 1012, src/sass/style.scss */
+            .button.secondary:hover svg {
+                fill: white; }
+            /* line 1014, src/sass/style.scss */
+            .button.secondary:hover svg .outline {
+                fill: white; }
+            /* line 1017, src/sass/style.scss */
+            .button.secondary svg {
+            height: 17px;
+            width: 17px;
+            position: relative;
+            top: -1px;
+            right: 0px; }
+            /* line 1024, src/sass/style.scss */
+            .button.secondary svg .outline {
+                fill: #005595; }
+        /* line 1032, src/sass/style.scss */
+        .button.tertiary.light {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white; }
+            /* line 1037, src/sass/style.scss */
+            .button.tertiary.light:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1045, src/sass/style.scss */
+        .button.tertiary.dark {
+            background-color: transparent;
+            color: #005595;
+            border: 1px solid #005595; }
+            /* line 1050, src/sass/style.scss */
+            .button.tertiary.dark:hover {
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3;
+            color: white;
+            text-decoration: none; }
+        /* line 1058, src/sass/style.scss */
+        .button.tertiary.bare {
+            position: relative;
+            color: #005595;
+            padding: 0;
+            border: none;
+            background: transparent; }
+            /* line 1065, src/sass/style.scss */
+            .button.tertiary.bare:after {
+            content: '\003E';
+            position: absolute;
+            left: 110%;
+            top: 2px; }
+            /* line 1072, src/sass/style.scss */
+            .button.tertiary.bare:hover {
+            background-color: transparent;
+            border: none;
+            color: #00c0f3 !important;
+            text-decoration: none; }
+            /* line 1078, src/sass/style.scss */
+            .button.tertiary.bare:hover:after {
+                color: #00c0f3; }
+        /* line 1085, src/sass/style.scss */
+        .button.small {
+            font-size: .9rem;
+            padding: .5rem .7rem; }
+        /* line 1090, src/sass/style.scss */
+        .button.full-width {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            margin-bottom: .6em; }
+            /* line 1097, src/sass/style.scss */
+            .button.full-width:last-of-type {
+            margin-bottom: 0; }
+        /* line 1103, src/sass/style.scss */
+        .button.full-mobile {
+            width: 100%;
+            text-align: center; }
+        /* line 1108, src/sass/style.scss */
+        .button:active, .button:focus {
+            color: white !important;
+            text-decoration: none !important;
+            background-color: #00c0f3;
+            border: 1px solid #00c0f3; }
+    </style>
+
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Checkout</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+            <link rel="stylesheet" href="site.css" />
+        </head>
+
+        <div class="form" style="text-align: center; padding-left: 1em; padding-right: 1em; width: 100%;">
+            <h1>Checkout</h1>
+            <form style="margin-top: 20px">
+                <div class="form-group">
+                    <label for="full-name">Name</label>
+                    <div id="name-error" role="alert" style="color:red;"></div>
+                    <input id="full-name" class="form-control" name="full-name"></input>
+                </div>
+
+                <div class="form-group">
+                    <label id="bank-routing-number-label" for="bank-routing-number">Bank Routing Number</label>
+                    <div id="bank-routing-number-error" role="alert" style="color:red;"></div>
+                    <input id="bank-routing-number" class="form-control" name="bank-routing-number"/>
+                </div>
+                <div class="form-group">
+                    <label id="bank-account-number-label" for="bank-account-number">Bank Account Number</label>
+                    <div id="bank-account-number-error" role="alert" style="color:red;"></div>
+                    <input id="bank-account-number" class="form-control" name="bank-account-number"/>
+                </div>
+                <!-- This entire Account Type picklist is hidden OOB, remove style="display: none" to enable -->
+                <div id="bank-account-type-container" class="form-group col-md-6" style="display: none">
+                    <label for="bank-account-type">Account Type</label>
+                    <select id="bank-account-type" class="form-control" name="bank-account-type">
+                        <option value="C">Checking</option>
+                        <!-- Uncomment picklist values below if other account types are desired as payment methods -->
+                        <!-- <option value="S">Savings</option> -->
+                        <!-- <option value="X">Corporate Checking</option> -->
+                    </select>
+                </div>
+
+                <div class="form-group" style="text-align: left">
+                    <div id="authorization-text" style="font-size: 10px"></div>
+                    <div>
+                        <a href="http://www.firstdata.com/support/telecheck_returned_check/returned_check_fees.htm" target="_blank">
+                            View states' returned check fees
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{!termsAndConditionsUrl}" target="_blank">
+                            View terms and conditions
+                        </a>
+                    </div>
+                    <label style="margin: 10px 0">
+                        <input id="terms-checkbox" type="checkbox" class="radio"></input>
+                        I accept the terms and conditions
+                    </label>
+                </div>
+
+                <div id="errors-output" role="alert" style="color:red;"></div>
+                <div class="button-list">
+                    <button class="button secondary" id="cancel-button" type="button">Previous</button>
+                    <button class="button secondary" id="pay-button" type="button">Submit Payment</button>
+                    <input type="hidden" id="flexresponse" name="flexresponse"></input>
+                </div>
+            </form>
+        </div>
+
+        <script type="application/javascript">
+            const lexOrigin = "{!lexOrigin}";
+
+            function handleErrors(paymentFields) {
+                let nameError = document.querySelector('#name-error');
+                let routingError = document.querySelector('#bank-routing-number-error');
+                let accountError = document.querySelector('#bank-account-number-error');
+                let errorsOutput = document.querySelector('#errors-output');
+
+                let numberOfErrors = 0;
+                if (!paymentFields?.fullName) {
+                    nameError.textContent = 'Name must be populated';
+                    numberOfErrors += 1;
+                } else {
+                    nameError.textContent = '';
+                }
+
+                if (!paymentFields?.bankRoutingNumber) {
+                    routingError.textContent = 'Routing number must be populated';
+                    numberOfErrors += 1;
+                } else {
+                    routingError.textContent = '';
+                }
+
+                if (!paymentFields?.bankAccountNumber) {
+                    accountError.textContent = 'Account number must be populated';
+                    numberOfErrors += 1;
+                } else {
+                    accountError.textContent = '';
+                }
+
+                if (numberOfErrors === 0) {
+                    errorsOutput.textContent = '';
+                } else if (numberOfErrors === 1) {
+                    errorsOutput.textContent = '1 field has an error.';
+                } else {
+                    errorsOutput.textContent = numberOfErrors + ' fields have an error.';
+                }
+
+                // Reuse the general error message div for missing terms and conditions acknowledgment and prioritize this message
+                if (!paymentFields?.termsAndConditions) {
+                    errorsOutput.textContent = 'Please accept the terms and conditions.';
+                    numberOfErrors += 1; 
+                }
+
+                return numberOfErrors !== 0;
+            }
+
+            const cancelButton = document.getElementById("cancel-button");
+            cancelButton.addEventListener('click', () => {
+                window.parent.postMessage({type:"previous"}, lexOrigin);
+            });
+
+            window.addEventListener("message", (event) => {
+                let eventData = event.data;
+                if (event.origin === lexOrigin && typeof eventData === 'string') {
+                    eventData = JSON.parse(event.data);
+                }
+
+                if (event.origin === lexOrigin && eventData.type === "isUpdate" && eventData.value) {
+                    let titleHeader = document.querySelector('h1');
+                    if (titleHeader) {
+                        titleHeader.textContent = 'Update';
+                    }
+
+                    let previousButton = document.querySelector('#cancel-button');
+                    if (previousButton) {
+                        previousButton.remove();
+                    }
+
+                    let submitButton = document.querySelector('#pay-button');
+                    if (submitButton) {
+                        submitButton.textContent = 'Update';
+                    }
+                }
+                else if (event.origin === lexOrigin && eventData.type === "initialize") {
+                    const opts = eventData; 
+                    const displayOptions = opts.displayOptions;
+
+                    if (displayOptions) {
+                        // pre-populate name on form
+                        if (displayOptions.full_name) {
+                            document.getElementById("full-name").value = displayOptions.full_name;
+                        }
+                    }
+
+                    displayAuthorizationText(displayOptions?.giftType, displayOptions?.isSubscription, displayOptions?.full_name, '$' + displayOptions?.amount, displayOptions?.numberOfInstallments, displayOptions?.frequency?.toLowerCase(), 
+                                             displayOptions?.startDate ? (new Date(displayOptions.startDate + 'T00:00:00').toLocaleDateString('en-us', {day: "numeric", year: "numeric", month: "long"})) : undefined, 
+                                             displayOptions?.endDate ? (new Date(displayOptions.endDate + 'T00:00:00').toLocaleDateString('en-us', {day: "numeric", year: "numeric", month: "long"})) : undefined);
+
+                    let payButton = document.querySelector('#pay-button');
+                    payButton.addEventListener('click', function() {
+                        const paymentFields = {
+                            fullName: document.getElementById("full-name").value,
+                            bankRoutingNumber: document.getElementById("bank-routing-number").value,
+                            bankAccountNumber: document.getElementById("bank-account-number").value,
+                            bankAccountType: document.getElementById("bank-account-type")?.value || 'C', // default to Checking if for some reason the picklist is missing
+                            termsAndConditions: document.getElementById("terms-checkbox").checked,
+                            paymentMethodType: "ACH"
+                        };
+
+                        if (handleErrors(paymentFields)) {
+                            return;
+                        }
+                        
+                        window.parent.postMessage({
+                            type: "payment_method",
+                            token: "bank_account", // Payment/Cybersource backend require a non-null token, so this is easiest and matches the Spreedly VF page 
+                            additionalPaymentDataMap: paymentFields
+                        }, lexOrigin);                    
+                    });
+                }
+            });
+
+            /**
+             * giftType: string
+             * isSubscription: boolean
+             * name: string
+             * amount: string with currency symbol included
+             * numberOfInstallments: number, should be 0 if there are no installments
+             * frequency: string
+             * startDate: formatted string
+             * endDate: formatted string
+             */
+            function displayAuthorizationText(giftType, isSubscription, name, amount, numberOfInstallments, frequency, startDate, endDate) {
+                    let today = new Date().toLocaleDateString('en-us', {day: "numeric", year: "numeric", month: "long"});
+                    let nameText = name ? `, ${name},` : '';
+
+                    let accountTypePicklist = document.querySelector('#bank-account-type-container');
+                    let accountType = 'checking account';
+                    if (accountTypePicklist && accountTypePicklist.style.display !== 'none') {
+                        accountType = 'checking or savings account as indicated above';
+                    }
+
+                    let authorizationText = '';
+                    if (isSubscription) {
+                        paymentDescription = '';
+                        if (giftType === 'pledge') {
+                            paymentDescription = `${amount} divided into ${numberOfInstallments} ${frequency} payments beginning ${startDate}`;
+                        } else {
+                            paymentDescription = `my ${frequency} ${amount} payments beginning ${startDate}`;
+                            paymentDescription += (endDate ? ` and ending after ${endDate}` : '');
+                        }
+
+                        authorizationText = `Today, being ${today}, by entering my routing and account number above and clicking
+                        "Submit Payment," I${nameText} authorize ${paymentDescription} to be processed as electronic
+                        funds transfers (EFT) or drafts drawn from my ${accountType} 
+                        and, if necessary, electronic credits to my account to correct erroneous debits. I understand that
+                        my payment will process within 1-2 banking days. If any of my payments return unpaid, I authorize
+                        you or your service provider to collect the returned payment and my state's return item fee for
+                        each such payment by EFT(s) or draft(s) drawn from my account. Click the link below to view 
+                        states' returned item fees and, if applicable, costs. I understand that this authorization will
+                        remain in full force and effect until I notify you that I wish to revoke it and allowed you reasonable opportunity to act on my notice.
+                        PLEASE PRINT A COPY OF THIS PAGE FOR YOUR RECORDS. ALTERNATIVELY, CONTACT US TO LEARN HOW YOU CAN OBTAIN A COPY.`;
+                    } else {
+                        authorizationText = `Today, being ${today}, by entering my routing and account
+                        number above and clicking "Submit Payment," I${nameText} authorize my payment of ${amount} to
+                        be processed as an electronic funds transfer (EFT) or draft drawn from my ${accountType}
+                        and, if necessary, to have my account electronically credited to correct
+                        erroneous debits. I understand that my payment will be processed within 1-2 banking days. If the
+                        payment returns unpaid, I authorize you or your service provider to collect the payment and my
+                        state's return item fee and, if applicable, costs, by EFT(s) or draft(s) drawn from my account. Click
+                        the link below to view states' returned item fees and, if applicable, costs. I understand that this
+                        authorization will remain in full force and effect until I notify you that I wish to revoke it and allow you reasonable opportunity to act on my notice.
+                        PLEASE PRINT A COPY OF THIS PAGE FOR YOUR RECORDS. ALTERNATIVELY, CONTACT US TO LEARN HOW YOU CAN OBTAIN A COPY.`;
+                    }
+
+                    let authorizationDiv = document.querySelector('#authorization-text');
+                    if (authorizationDiv) {
+                        authorizationDiv.textContent = authorizationText;
+                    }
+            }
+
+            window.parent.postMessage({ type: "readyACH" }, lexOrigin);
+        </script>
+
+    </html>
+</apex:page>

@@ -1,0 +1,90 @@
+<template>
+    <div data-ascend-portal>
+        <template if:true={_showSpinner}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <div class="container medium">
+            <div class="container">
+                <h4>Username</h4>
+                <p>{_user.Username}</p>
+                <h4>Email</h4>
+                <p>{_user.Email}</p>
+                
+                <div class="button-list">
+                    <a class="button secondary small full-mobile" onclick={handleChangePassword}>Change Password</a>
+                    <a class="button secondary small full-mobile" onclick={handleChangeEmail}>Change Email</a>
+                    <a class="button secondary small full-mobile" onclick={handleChangeUsername}>Change Username</a>
+                </div>
+
+                <div class="line-break"></div>
+
+                <div class="event-list" if:true={_showChangePassword}>
+                    <div class="event">
+                        <h3 style="margin-bottom: .5em">Change Password</h3>
+                        <div class="entry-form bottom-border">
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <label for="">Old Password</label>
+                                    <input type="password" value={_oldPassword} oninput={setOldPassword}>
+                                </div>
+                            </div>
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <label for="">New Password</label>
+                                    <input type="password" value={_newPassword} oninput={setNewPassword}>
+                                </div>
+                            </div>
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <label for="">Confirm New Password</label>
+                                    <input data-name='verify' type="password" value={_verifyNewPassword} onchange={handleVerifyPassword}>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-list">
+                            <a class="button primary" onclick={changePassword}>Save</a>
+                            <a class="button secondary" onclick={handleCancel}>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-list" if:true={_showChangeEmail}>
+                    <div class="event">
+                        <h3 style="margin-bottom: .5em">Change Email</h3>
+                        <div class="entry-form bottom-border">
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <label for="">New Email</label>
+                                    <input type="text" value={_newEmail} oninput={setNewEmail}>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-list">
+                            <a class="button primary" onclick={changeEmail}>Save</a>
+                            <a class="button secondary" onclick={handleCancel}>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-list" if:true={_showChangeUsername}>
+                    <div class="event">
+                        <h3 style="margin-bottom: .5em">Change Username</h3>
+                        <div class="entry-form bottom-border">
+                            <div class="flex-grid">
+                                <div class="grid-item full-width">
+                                    <label for="">New Username</label>
+                                    <input type="text" value={_newUsername} oninput={setUsername}>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-list">
+                            <a class="button primary" onclick={changeUsername}>Save</a>
+                            <a class="button secondary" onclick={handleCancel}>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</template>
