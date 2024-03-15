@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Fund_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If populated, this will be used instead of Acknowledgement Description</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Fund Name to be used for Endowment Reports instead of Acknowledgement Description</inlineHelpText>
+    <label>Fund Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

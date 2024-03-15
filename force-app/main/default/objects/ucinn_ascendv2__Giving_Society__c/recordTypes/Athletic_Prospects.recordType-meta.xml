@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Athletic_Prospects</fullName>
+    <active>false</active>
+    <description>Used for ISUF Athletic Prospects</description>
+    <label>Athletic Prospects</label>
+    <picklistValues>
+        <picklist>Campus_Department__c</picklist>
+        <values>
+            <fullName>4-H Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4H Youth Development Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aerospace Engr %26 Engr Mech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag %26 Biosystems Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag Economics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag Education %26 Studies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag Entrepreneurship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag Placement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag Sociology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag Specials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ag and Natural Resources %28Extension%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agronomy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Force Aerospace Studies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animal Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Architecture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Art and Visual Culture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baker Council</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biochemistry %26 Biophysics1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biochemistry %26 Biophysics2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bioeconomy Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bioinformatics %26 Bio Statistic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biomedical Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brenton Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CALS Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CBER-Center for Building Energy Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CNDE--Center for Nondes%2E Eval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPCM--Center for Physical%2FComp%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carrie Chapman Catt Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Center for BioRenewable Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Center for Catalysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Center for Crop Utilization Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Center for Excellence in Arts %26 Humaniti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Center for Sustainable Rural Livelihoods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Center for Teaching Exellence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemical and Biological Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemistry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Civil Constr %26 Environ Engr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community %26 Regional Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community and Economic Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cont%2E Educ%2E and Professional Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Materials Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ctr for Industrial Res %26 Serv %28CIRAS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cyberinnovation Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Designing Foods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ecology%2C Evolution %26 Organismal Biol LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ecology%2C Evolution%2C and Organismal Biolo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electric %26 Computer Engineerin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Leadership Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Outreach Programs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Research Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Student Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Undergraduate Scholarships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entomology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faculty Senate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family %26 Consumer Sci Educ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Environment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Science%2FHuman Nutr %28Ag%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Science%2FHuman Nutr %28HS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genetics Development %26 Cell Biology AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genetics Development %26 Cell Biology LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geographical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geological and Atmospheric Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graphic Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenlee School of Journalism %26 Comm%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honors Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horticulture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel%2C Restaurant %26 Instit Mgm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Devel %26 Family Studies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Sciences Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Sciences Extension %26 Outreach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IITAP--Intl Inst of Theor %26 Ap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation -- Academic Projects</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation--Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation--Special Projec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation--Trusts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUAA Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUAA Building and Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUAA General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUAA Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUAA Programs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUAA Scholarships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial %26 Man%2E Systems Engr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Assurance Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Systems%2FBusiness Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institute for Social and Behavioral Rese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institute for Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruction Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa Small Business Developmen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa Soybean Research Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kinesiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landscape Architecture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lectures Programs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leopold Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liberal Arts %26 Sci Specials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liberal Arts and Sciences Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library Acquisitions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIC--Microanalytical Instr Cen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MRC Microelectronis Rsrch Cent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Major</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Materials Science %26 Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mathematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Military Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Music</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Natural Resource Ecology and Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Naval Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No department code%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutrition and Wellness Research Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Off-Campus%2FExternal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI - not in college 35</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pappajohn Entrepreneurial Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philosophy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plant Breeding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plant Pathology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Political Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poultry Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presidential Leadership Awards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Psychology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional %28Extension%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SVPP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Bound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seed Science Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sociology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Collections</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Populations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speech Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Statistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Innovation Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Study Abroad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Study Abroad Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Textiles %26 Clothing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VRAC--Virtual Reality Appl Cen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet%2E Diagnostic Prod%2E Animal Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet%2E Microbiology %26 Preventive Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Clinical Sciences Department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Medicine Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Medicine Specials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Pathology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Teaching Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Women in Sci %26 Engr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Women%27s Studies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>World Languages and Cultures</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>College__c</picklist>
+        <values>
+            <fullName>Academic Admin %26 Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Achievement Fund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ames Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletic Department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Balance Sheet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CFO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Counseling Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean of Students</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enrollment Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facilities Planning and Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Aid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Aid Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation Budget</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graduate College</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liberal Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memorial Union</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miscellaneous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multicultural Student Affairs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Original ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plant Science Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman Gardens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserved for system use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residence Halls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sorority and Fraternity Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V%2EP%2E for Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP Diversity and Inclusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP Economic Dev %26 Industry Rel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP Student Affairs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP University Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Women%27s Center</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__School__c</picklist>
+        <values>
+            <fullName>Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletic Department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Letters%2C Arts %26 Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cultural Relations and University Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office of the President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office of the Provost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School for Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Accounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Architecture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Art and Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Cinematic Arts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Dance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Dentistry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Dramatic Arts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Gerontology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Music</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Public Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School of Social Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Advancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Libraries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Radio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Relations</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Campaign__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If filled out the Designation Details has to have this campaign.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If filled out the Designation Details has to have this campaign.</inlineHelpText>
+    <label>Campaign</label>
+    <referenceTo>Campaign</referenceTo>
+    <relationshipLabel>Matching Challenge Requirements</relationshipLabel>
+    <relationshipName>Matching_Challenge_Requirements_Campaign</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

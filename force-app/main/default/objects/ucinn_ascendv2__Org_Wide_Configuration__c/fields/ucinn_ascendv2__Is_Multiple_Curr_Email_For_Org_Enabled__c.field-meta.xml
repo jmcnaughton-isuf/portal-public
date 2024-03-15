@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Multiple_Curr_Email_For_Org_Enabled__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Configure if organizations are allowed to have multiple current status emails of same type</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to enable, or uncheck it to disable.</inlineHelpText>
+    <label>Is Multiple Curr Email For Org Enabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

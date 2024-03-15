@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>College__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is a lookup field to Academic Organizations with a Fund Source = Degree College or Funding College</description>
+    <externalId>false</externalId>
+    <label>Constituency</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>ucinn_ascendv2__Academic_Organization__c.Fund_Source__c</field>
+            <operation>equals</operation>
+            <value>Funding College</value>
+        </filterItems>
+        <infoMessage>Begin typing the Degree College that should be applied and select from results.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ucinn_ascendv2__Academic_Organization__c</referenceTo>
+    <relationshipLabel>Contact Preferences</relationshipLabel>
+    <relationshipName>Contact_Preferences</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

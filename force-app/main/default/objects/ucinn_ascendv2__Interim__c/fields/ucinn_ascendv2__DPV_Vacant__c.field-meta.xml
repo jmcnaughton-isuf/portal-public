@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__DPV_Vacant__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates that a delivery point was active in the past but is currently vacant (in most cases, unoccupied over 90 days) and is not receiving deliveries. This status is often obtained when mail receptacles aren&apos;t being emptied and are filling up, so mail is held at the post office for a certain number of days before the delivery point is marked vacant.
+
+Y — Address is vacant.
+N — Address is not vacant.
+[blank] — Address was not submitted for vacancy verification.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates that a delivery point was active in the past but is currently vacant (in most cases, unoccupied over 90 days) and is not receiving deliveries. This status is often obtained when mail receptacles aren&apos;t being emptied and are filling up, so mail is held at the post office for a certain number of days before the delivery point is marked vacant.
+
+Y — Address is vacant.
+N — Address is not vacant.
+[blank] — Address was not submitted for vacancy verification.</inlineHelpText>
+    <label>DPV Vacant</label>
+    <length>1</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

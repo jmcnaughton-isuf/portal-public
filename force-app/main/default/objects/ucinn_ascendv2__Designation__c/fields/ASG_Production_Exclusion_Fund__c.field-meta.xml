@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ASG_Production_Exclusion_Fund__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Purpose: to record if a fund is used for ASG production purposes</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box to exclude this fund from ASG Production purposes</inlineHelpText>
+    <label>ASG Production Exclusion Fund</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

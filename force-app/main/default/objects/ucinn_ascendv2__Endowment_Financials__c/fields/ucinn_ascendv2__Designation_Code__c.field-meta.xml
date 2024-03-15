@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Designation_Code__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Designation Code</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>ucinn_ascendv2__Designation__c.ucinn_ascendv2__CASE_Type__c</field>
+            <operation>equals</operation>
+            <value>Endowment &amp; Similar</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ucinn_ascendv2__Designation__c</referenceTo>
+    <relationshipLabel>Endowment Financials</relationshipLabel>
+    <relationshipName>Endowment_Financials_Designation_Code</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

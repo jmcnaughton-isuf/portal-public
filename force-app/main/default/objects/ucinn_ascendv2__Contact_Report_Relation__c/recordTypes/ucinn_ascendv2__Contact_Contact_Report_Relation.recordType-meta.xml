@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact_Contact_Report_Relation</fullName>
+    <active>true</active>
+    <description>A report of contact made with a constituent.</description>
+    <label>Constituent Contact Report Relation</label>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Contact_Role__c</picklist>
+        <values>
+            <fullName>Constituent Advisor %28attorneys%2C financial advisors%2C etc%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Representative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization Representative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

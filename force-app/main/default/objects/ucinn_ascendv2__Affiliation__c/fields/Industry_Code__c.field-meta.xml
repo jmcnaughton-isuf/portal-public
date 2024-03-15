@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Code__c</fullName>
+    <description>Origin: summit.mstr.std_indst_cd3</description>
+    <externalId>false</externalId>
+    <label>Industry Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+                <label>Advertising</label>
+            </value>
+            <value>
+                <fullName>Aerospace Engr</fullName>
+                <default>false</default>
+                <label>Aerospace Engr</label>
+            </value>
+            <value>
+                <fullName>Ag Bus/Economics</fullName>
+                <default>false</default>
+                <label>Ag Bus/Economics</label>
+            </value>
+            <value>
+                <fullName>Agricultural Engr</fullName>
+                <default>false</default>
+                <label>Agricultural Engr</label>
+            </value>
+            <value>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+                <label>Agriculture</label>
+            </value>
+            <value>
+                <fullName>Agronomy</fullName>
+                <default>false</default>
+                <label>Agronomy</label>
+            </value>
+            <value>
+                <fullName>Animal Science</fullName>
+                <default>false</default>
+                <label>Animal Science</label>
+            </value>
+            <value>
+                <fullName>Architecture</fullName>
+                <default>false</default>
+                <label>Architecture</label>
+            </value>
+            <value>
+                <fullName>Art &amp; Design</fullName>
+                <default>false</default>
+                <label>Art &amp; Design</label>
+            </value>
+            <value>
+                <fullName>Banking &amp; Finance</fullName>
+                <default>false</default>
+                <label>Banking &amp; Finance</label>
+            </value>
+            <value>
+                <fullName>Biological Sciences</fullName>
+                <default>false</default>
+                <label>Biological Sciences</label>
+            </value>
+            <value>
+                <fullName>Bldg/Construction</fullName>
+                <default>false</default>
+                <label>Bldg/Construction</label>
+            </value>
+            <value>
+                <fullName>Broadcasting</fullName>
+                <default>false</default>
+                <label>Broadcasting</label>
+            </value>
+            <value>
+                <fullName>Business &amp; Commerce</fullName>
+                <default>false</default>
+                <label>Business &amp; Commerce</label>
+            </value>
+            <value>
+                <fullName>Chemical Engr</fullName>
+                <default>false</default>
+                <label>Chemical Engr</label>
+            </value>
+            <value>
+                <fullName>Chemistry</fullName>
+                <default>false</default>
+                <label>Chemistry</label>
+            </value>
+            <value>
+                <fullName>Civil Engr</fullName>
+                <default>false</default>
+                <label>Civil Engr</label>
+            </value>
+            <value>
+                <fullName>Clerical Office Work</fullName>
+                <default>false</default>
+                <label>Clerical Office Work</label>
+            </value>
+            <value>
+                <fullName>Comm/Reg Planning</fullName>
+                <default>false</default>
+                <label>Comm/Reg Planning</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Communications Tech</fullName>
+                <default>false</default>
+                <label>Communications Tech</label>
+            </value>
+            <value>
+                <fullName>Community Services</fullName>
+                <default>false</default>
+                <label>Community Services</label>
+            </value>
+            <value>
+                <fullName>Computer/Inf Analyst</fullName>
+                <default>false</default>
+                <label>Computer/Inf Analyst</label>
+            </value>
+            <value>
+                <fullName>Construction Engr</fullName>
+                <default>false</default>
+                <label>Construction Engr</label>
+            </value>
+            <value>
+                <fullName>Creative Writing</fullName>
+                <default>false</default>
+                <label>Creative Writing</label>
+            </value>
+            <value>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+                <label>Customer Service</label>
+            </value>
+            <value>
+                <fullName>Earth Sciences</fullName>
+                <default>false</default>
+                <label>Earth Sciences</label>
+            </value>
+            <value>
+                <fullName>Economics</fullName>
+                <default>false</default>
+                <label>Economics</label>
+            </value>
+            <value>
+                <fullName>Education, General</fullName>
+                <default>false</default>
+                <label>Education, General</label>
+            </value>
+            <value>
+                <fullName>Education Admin</fullName>
+                <default>false</default>
+                <label>Education Admin</label>
+            </value>
+            <value>
+                <fullName>Elec/Comp Engr</fullName>
+                <default>false</default>
+                <label>Elec/Comp Engr</label>
+            </value>
+            <value>
+                <fullName>Engineering, General</fullName>
+                <default>false</default>
+                <label>Engineering, General</label>
+            </value>
+            <value>
+                <fullName>English, Linguistics</fullName>
+                <default>false</default>
+                <label>English, Linguistics</label>
+            </value>
+            <value>
+                <fullName>Ethnic Studies</fullName>
+                <default>false</default>
+                <label>Ethnic Studies</label>
+            </value>
+            <value>
+                <fullName>Family Services</fullName>
+                <default>false</default>
+                <label>Family Services</label>
+            </value>
+            <value>
+                <fullName>Farm Management</fullName>
+                <default>false</default>
+                <label>Farm Management</label>
+            </value>
+            <value>
+                <fullName>FCS/Home Ec</fullName>
+                <default>false</default>
+                <label>FCS/Home Ec</label>
+            </value>
+            <value>
+                <fullName>Food/Nutrition</fullName>
+                <default>false</default>
+                <label>Food/Nutrition</label>
+            </value>
+            <value>
+                <fullName>Food Sci/Tech</fullName>
+                <default>false</default>
+                <label>Food Sci/Tech</label>
+            </value>
+            <value>
+                <fullName>Foreign Languages</fullName>
+                <default>false</default>
+                <label>Foreign Languages</label>
+            </value>
+            <value>
+                <fullName>Fundraising</fullName>
+                <default>false</default>
+                <label>Fundraising</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Health, General</fullName>
+                <default>false</default>
+                <label>Health, General</label>
+            </value>
+            <value>
+                <fullName>Homemaking</fullName>
+                <default>false</default>
+                <label>Homemaking</label>
+            </value>
+            <value>
+                <fullName>Horticulture</fullName>
+                <default>false</default>
+                <label>Horticulture</label>
+            </value>
+            <value>
+                <fullName>Hotel/Restaurant</fullName>
+                <default>false</default>
+                <label>Hotel/Restaurant</label>
+            </value>
+            <value>
+                <fullName>Human Resource Mgt</fullName>
+                <default>false</default>
+                <label>Human Resource Mgt</label>
+            </value>
+            <value>
+                <fullName>Industrial Engr</fullName>
+                <default>false</default>
+                <label>Industrial Engr</label>
+            </value>
+            <value>
+                <fullName>Industry, General</fullName>
+                <default>false</default>
+                <label>Industry, General</label>
+            </value>
+            <value>
+                <fullName>Institutional Mgmt</fullName>
+                <default>false</default>
+                <label>Institutional Mgmt</label>
+            </value>
+            <value>
+                <fullName>Insurance/Real Est</fullName>
+                <default>false</default>
+                <label>Insurance/Real Est</label>
+            </value>
+            <value>
+                <fullName>Int&apos;l Relations</fullName>
+                <default>false</default>
+                <label>Int&apos;l Relations</label>
+            </value>
+            <value>
+                <fullName>Interior Design</fullName>
+                <default>false</default>
+                <label>Interior Design</label>
+            </value>
+            <value>
+                <fullName>Journalism</fullName>
+                <default>false</default>
+                <label>Journalism</label>
+            </value>
+            <value>
+                <fullName>Landscape Architect</fullName>
+                <default>false</default>
+                <label>Landscape Architect</label>
+            </value>
+            <value>
+                <fullName>Law</fullName>
+                <default>false</default>
+                <label>Law</label>
+            </value>
+            <value>
+                <fullName>Library Sciences</fullName>
+                <default>false</default>
+                <label>Library Sciences</label>
+            </value>
+            <value>
+                <fullName>Literature</fullName>
+                <default>false</default>
+                <label>Literature</label>
+            </value>
+            <value>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+                <label>Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Mathematics</fullName>
+                <default>false</default>
+                <label>Mathematics</label>
+            </value>
+            <value>
+                <fullName>Mechanical Engr</fullName>
+                <default>false</default>
+                <label>Mechanical Engr</label>
+            </value>
+            <value>
+                <fullName>Mechanical Repair</fullName>
+                <default>false</default>
+                <label>Mechanical Repair</label>
+            </value>
+            <value>
+                <fullName>Medicine, Human</fullName>
+                <default>false</default>
+                <label>Medicine, Human</label>
+            </value>
+            <value>
+                <fullName>Medicine, Veterinary</fullName>
+                <default>false</default>
+                <label>Medicine, Veterinary</label>
+            </value>
+            <value>
+                <fullName>Military</fullName>
+                <default>false</default>
+                <label>Military</label>
+            </value>
+            <value>
+                <fullName>Natural Resources</fullName>
+                <default>false</default>
+                <label>Natural Resources</label>
+            </value>
+            <value>
+                <fullName>Nuclear Engr</fullName>
+                <default>false</default>
+                <label>Nuclear Engr</label>
+            </value>
+            <value>
+                <fullName>Nuclear Sciences</fullName>
+                <default>false</default>
+                <label>Nuclear Sciences</label>
+            </value>
+            <value>
+                <fullName>Performing Arts</fullName>
+                <default>false</default>
+                <label>Performing Arts</label>
+            </value>
+            <value>
+                <fullName>Physical Sciences</fullName>
+                <default>false</default>
+                <label>Physical Sciences</label>
+            </value>
+            <value>
+                <fullName>Physics</fullName>
+                <default>false</default>
+                <label>Physics</label>
+            </value>
+            <value>
+                <fullName>Political Sciences</fullName>
+                <default>false</default>
+                <label>Political Sciences</label>
+            </value>
+            <value>
+                <fullName>Precision Production</fullName>
+                <default>false</default>
+                <label>Precision Production</label>
+            </value>
+            <value>
+                <fullName>Professional Sports</fullName>
+                <default>false</default>
+                <label>Professional Sports</label>
+            </value>
+            <value>
+                <fullName>Protective Services</fullName>
+                <default>false</default>
+                <label>Protective Services</label>
+            </value>
+            <value>
+                <fullName>Psychology</fullName>
+                <default>false</default>
+                <label>Psychology</label>
+            </value>
+            <value>
+                <fullName>Public Affairs</fullName>
+                <default>false</default>
+                <label>Public Affairs</label>
+            </value>
+            <value>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+                <label>Public Relations</label>
+            </value>
+            <value>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+                <label>Recreation</label>
+            </value>
+            <value>
+                <fullName>Religion &amp; Theology</fullName>
+                <default>false</default>
+                <label>Religion &amp; Theology</label>
+            </value>
+            <value>
+                <fullName>Research and Devl</fullName>
+                <default>false</default>
+                <label>Research and Devl</label>
+            </value>
+            <value>
+                <fullName>Social Sciences</fullName>
+                <default>false</default>
+                <label>Social Sciences</label>
+            </value>
+            <value>
+                <fullName>Sociology</fullName>
+                <default>false</default>
+                <label>Sociology</label>
+            </value>
+            <value>
+                <fullName>Teaching Pre K/K-12</fullName>
+                <default>false</default>
+                <label>Teaching Pre K/K-12</label>
+            </value>
+            <value>
+                <fullName>Textiles/Clothing</fullName>
+                <default>false</default>
+                <label>Textiles/Clothing</label>
+            </value>
+            <value>
+                <fullName>Trans/Logistics</fullName>
+                <default>false</default>
+                <label>Trans/Logistics</label>
+            </value>
+            <value>
+                <fullName>University Research</fullName>
+                <default>false</default>
+                <label>University Research</label>
+            </value>
+            <value>
+                <fullName>University Teaching</fullName>
+                <default>false</default>
+                <label>University Teaching</label>
+            </value>
+            <value>
+                <fullName>Visual Arts</fullName>
+                <default>false</default>
+                <label>Visual Arts</label>
+            </value>
+            <value>
+                <fullName>Volunteers</fullName>
+                <default>false</default>
+                <label>Volunteers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

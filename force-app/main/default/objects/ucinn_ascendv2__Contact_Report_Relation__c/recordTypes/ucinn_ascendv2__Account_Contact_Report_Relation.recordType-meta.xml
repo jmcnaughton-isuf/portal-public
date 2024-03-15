@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Account_Contact_Report_Relation</fullName>
+    <active>true</active>
+    <description>A report of contact made with an organization or household.</description>
+    <label>Organization/Household Contact Report Relation</label>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Contact_Role__c</picklist>
+        <values>
+            <fullName>Additional Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Related Organization</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

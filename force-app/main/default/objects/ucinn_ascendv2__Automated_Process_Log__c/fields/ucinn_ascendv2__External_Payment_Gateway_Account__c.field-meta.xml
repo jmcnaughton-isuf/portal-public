@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__External_Payment_Gateway_Account__c</fullName>
+    <deprecated>false</deprecated>
+    <description>External payment gateway account that this log is linked to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>External payment gateway account that this log is linked to.</inlineHelpText>
+    <label>External Payment Gateway Account</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

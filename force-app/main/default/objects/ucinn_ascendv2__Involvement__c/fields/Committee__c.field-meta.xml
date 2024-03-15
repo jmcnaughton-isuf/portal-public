@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Committee__c</fullName>
+    <externalId>false</externalId>
+    <label>Committee</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+                <label>Agriculture</label>
+            </value>
+            <value>
+                <fullName>Alumni Association</fullName>
+                <default>false</default>
+                <label>Alumni Association</label>
+            </value>
+            <value>
+                <fullName>Athletics</fullName>
+                <default>false</default>
+                <label>Athletics</label>
+            </value>
+            <value>
+                <fullName>Broad Based</fullName>
+                <default>false</default>
+                <label>Broad Based</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Campaign Cabinet</fullName>
+                <default>false</default>
+                <label>Campaign Cabinet</label>
+            </value>
+            <value>
+                <fullName>Campus</fullName>
+                <default>false</default>
+                <label>Campus</label>
+            </value>
+            <value>
+                <fullName>Collegiate</fullName>
+                <default>false</default>
+                <label>Collegiate</label>
+            </value>
+            <value>
+                <fullName>Departmental</fullName>
+                <default>false</default>
+                <label>Departmental</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Executive Campaign</fullName>
+                <default>false</default>
+                <label>Executive Campaign</label>
+            </value>
+            <value>
+                <fullName>Extension</fullName>
+                <default>false</default>
+                <label>Extension</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>Human Sciences</fullName>
+                <default>false</default>
+                <label>Human Sciences</label>
+            </value>
+            <value>
+                <fullName>Liberal Arts &amp; Sci</fullName>
+                <default>false</default>
+                <label>Liberal Arts &amp; Sci</label>
+            </value>
+            <value>
+                <fullName>Open2</fullName>
+                <default>false</default>
+                <label>Open2</label>
+            </value>
+            <value>
+                <fullName>Regional</fullName>
+                <default>false</default>
+                <label>Regional</label>
+            </value>
+            <value>
+                <fullName>Student Organization</fullName>
+                <default>false</default>
+                <label>Student Organization</label>
+            </value>
+            <value>
+                <fullName>University</fullName>
+                <default>false</default>
+                <label>University</label>
+            </value>
+            <value>
+                <fullName>University Library</fullName>
+                <default>false</default>
+                <label>University Library</label>
+            </value>
+            <value>
+                <fullName>University Museums</fullName>
+                <default>false</default>
+                <label>University Museums</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

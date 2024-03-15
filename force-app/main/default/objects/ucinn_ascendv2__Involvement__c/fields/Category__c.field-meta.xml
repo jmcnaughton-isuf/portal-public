@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Annual Giving Response Codes</fullName>
+                <default>false</default>
+                <label>Annual Giving Response Codes</label>
+            </value>
+            <value>
+                <fullName>Athletic Participation</fullName>
+                <default>false</default>
+                <label>Athletic Participation</label>
+            </value>
+            <value>
+                <fullName>Awards</fullName>
+                <default>false</default>
+                <label>Awards</label>
+            </value>
+            <value>
+                <fullName>Click Throughs</fullName>
+                <default>false</default>
+                <label>Click Throughs</label>
+            </value>
+            <value>
+                <fullName>Constituent Type</fullName>
+                <default>false</default>
+                <label>Constituent Type</label>
+            </value>
+            <value>
+                <fullName>Information Requests</fullName>
+                <default>false</default>
+                <label>Information Requests</label>
+            </value>
+            <value>
+                <fullName>ISU Greek Membership</fullName>
+                <default>false</default>
+                <label>ISU Greek Membership</label>
+            </value>
+            <value>
+                <fullName>ISU Letterwinners</fullName>
+                <default>false</default>
+                <label>ISU Letterwinners</label>
+            </value>
+            <value>
+                <fullName>ISU Residence</fullName>
+                <default>false</default>
+                <label>ISU Residence</label>
+            </value>
+            <value>
+                <fullName>NCAA Sanctioned</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NCAA Sanctioned</label>
+            </value>
+            <value>
+                <fullName>Professional Advisors</fullName>
+                <default>false</default>
+                <label>Professional Advisors</label>
+            </value>
+            <value>
+                <fullName>Professional Practice Program</fullName>
+                <default>false</default>
+                <label>Professional Practice Program</label>
+            </value>
+            <value>
+                <fullName>Prospect Planned Giving</fullName>
+                <default>false</default>
+                <label>Prospect Planned Giving</label>
+            </value>
+            <value>
+                <fullName>Season Ticket Holders</fullName>
+                <default>false</default>
+                <label>Season Ticket Holders</label>
+            </value>
+            <value>
+                <fullName>Season Ticket Holders - Student</fullName>
+                <default>false</default>
+                <label>Season Ticket Holders - Student</label>
+            </value>
+            <value>
+                <fullName>Special Interest Societies</fullName>
+                <default>false</default>
+                <label>Special Interest Societies</label>
+            </value>
+            <value>
+                <fullName>Student Honors and Awards</fullName>
+                <default>false</default>
+                <label>Student Honors and Awards</label>
+            </value>
+            <value>
+                <fullName>Student Organizations</fullName>
+                <default>false</default>
+                <label>Student Organizations</label>
+            </value>
+            <value>
+                <fullName>Study Abroad</fullName>
+                <default>false</default>
+                <label>Study Abroad</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

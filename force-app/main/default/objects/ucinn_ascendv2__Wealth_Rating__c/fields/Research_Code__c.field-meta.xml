@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Research_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>Research Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Top Prospect</fullName>
+                <default>false</default>
+                <label>Top Prospect</label>
+            </value>
+            <value>
+                <fullName>Nothing to Lose Prospect</fullName>
+                <default>false</default>
+                <label>Nothing to Lose Prospect</label>
+            </value>
+            <value>
+                <fullName>Mid-Level Prospect</fullName>
+                <default>false</default>
+                <label>Mid-Level Prospect</label>
+            </value>
+            <value>
+                <fullName>Planned Gift Prospect</fullName>
+                <default>false</default>
+                <label>Planned Gift Prospect</label>
+            </value>
+            <value>
+                <fullName>Not a Prospect</fullName>
+                <default>false</default>
+                <label>Not a Prospect</label>
+            </value>
+            <value>
+                <fullName>Nothing to Lose</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nothing to Lose</label>
+            </value>
+            <value>
+                <fullName>Potential Future/Planned Gift Prospect</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Potential Future/Planned Gift Prospect</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

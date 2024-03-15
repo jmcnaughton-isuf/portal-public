@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Encounter_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Encounter Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Day Surgery</fullName>
+                <default>false</default>
+                <label>Day Surgery</label>
+            </value>
+            <value>
+                <fullName>Emergency</fullName>
+                <default>false</default>
+                <label>Emergency</label>
+            </value>
+            <value>
+                <fullName>Extended Recovery</fullName>
+                <default>false</default>
+                <label>Extended Recovery</label>
+            </value>
+            <value>
+                <fullName>Inpatient</fullName>
+                <default>false</default>
+                <label>Inpatient</label>
+            </value>
+            <value>
+                <fullName>Observation</fullName>
+                <default>false</default>
+                <label>Observation</label>
+            </value>
+            <value>
+                <fullName>Observation in a Bed</fullName>
+                <default>false</default>
+                <label>Observation in a Bed</label>
+            </value>
+            <value>
+                <fullName>Outpatient</fullName>
+                <default>false</default>
+                <label>Outpatient</label>
+            </value>
+            <value>
+                <fullName>PreAdmit</fullName>
+                <default>false</default>
+                <label>PreAdmit</label>
+            </value>
+            <value>
+                <fullName>PreReg</fullName>
+                <default>false</default>
+                <label>PreReg</label>
+            </value>
+            <value>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+                <label>Recurring</label>
+            </value>
+            <value>
+                <fullName>Telehealth</fullName>
+                <default>false</default>
+                <label>Telehealth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

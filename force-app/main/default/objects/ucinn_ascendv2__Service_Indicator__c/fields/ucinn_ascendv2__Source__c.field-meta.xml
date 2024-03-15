@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Source__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CAMPCALL</fullName>
+                <default>false</default>
+                <label>CAMPCALL</label>
+            </value>
+            <value>
+                <fullName>CONVERT</fullName>
+                <default>false</default>
+                <label>CONVERT</label>
+            </value>
+            <value>
+                <fullName>DNS</fullName>
+                <default>false</default>
+                <label>DNS</label>
+            </value>
+            <value>
+                <fullName>iModProc</fullName>
+                <default>false</default>
+                <label>iModProc</label>
+            </value>
+            <value>
+                <fullName>Annual &amp; Special Gifts</fullName>
+                <default>false</default>
+                <label>Annual &amp; Special Gifts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

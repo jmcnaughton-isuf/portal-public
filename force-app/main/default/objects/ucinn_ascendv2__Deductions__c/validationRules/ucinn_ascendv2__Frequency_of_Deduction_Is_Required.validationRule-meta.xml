@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Frequency_of_Deduction_Is_Required</fullName>
+    <active>false</active>
+    <description>Frequency of deduction is a required field.</description>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE ,
+ISPICKVAL( ucinn_ascendv2__Frequency_of_Deduction__c , &quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Frequency_of_Deduction__c</errorDisplayField>
+    <errorMessage>Select a frequency for the deduction.</errorMessage>
+</ValidationRule>

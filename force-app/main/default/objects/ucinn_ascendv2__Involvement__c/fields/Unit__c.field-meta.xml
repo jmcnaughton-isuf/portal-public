@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ag and Life Sciences</fullName>
+                <default>false</default>
+                <label>Ag and Life Sciences</label>
+            </value>
+            <value>
+                <fullName>Athletics</fullName>
+                <default>false</default>
+                <label>Athletics</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Extentsion</fullName>
+                <default>false</default>
+                <label>Extentsion</label>
+            </value>
+            <value>
+                <fullName>Graduate</fullName>
+                <default>false</default>
+                <label>Graduate</label>
+            </value>
+            <value>
+                <fullName>Human Sciences</fullName>
+                <default>false</default>
+                <label>Human Sciences</label>
+            </value>
+            <value>
+                <fullName>Interdisciplinary</fullName>
+                <default>false</default>
+                <label>Interdisciplinary</label>
+            </value>
+            <value>
+                <fullName>Liberal Arts and Sciences</fullName>
+                <default>false</default>
+                <label>Liberal Arts and Sciences</label>
+            </value>
+            <value>
+                <fullName>Memorial Union</fullName>
+                <default>false</default>
+                <label>Memorial Union</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine</label>
+            </value>
+            <value>
+                <fullName>Agriculture and Life Sciences</fullName>
+                <default>false</default>
+                <label>Agriculture and Life Sciences</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

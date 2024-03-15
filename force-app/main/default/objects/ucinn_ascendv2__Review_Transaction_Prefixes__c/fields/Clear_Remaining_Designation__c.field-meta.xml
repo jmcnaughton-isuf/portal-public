@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clear_Remaining_Designation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Clears the remaining designations on the review transactions that are not on the pledge/gift.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Clears the remaining designations on the review transactions that are not on the pledge/gift.</inlineHelpText>
+    <label>Clear Remaining Designation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

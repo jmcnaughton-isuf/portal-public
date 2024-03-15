@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Amount_Paid_To_Date_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Amount paid to date same Designation on the designation detail</description>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Designation_Detail__r.ucinn_ascendv2__Amt_Paid_to_Date_Same_Desig_Roll_Up__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Amount paid to date same Designation on the designation detail</inlineHelpText>
+    <label>Amount Paid To Date Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

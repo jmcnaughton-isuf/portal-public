@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__School_Degree_Information</fullName>
+    <active>true</active>
+    <description>Information about a degree which is from this university.</description>
+    <label>School Degree Information</label>
+    <picklistValues>
+        <picklist>Term_Picklist__c</picklist>
+        <values>
+            <fullName>Fall semester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First summer session</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NULL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second summer session</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring semester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter semester</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Attending%2FAttended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class preference %28PRF%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Degrees from other institutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doctor%2C Veterinary Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorary Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Masters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miscellaneous degrees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ph%2ED%2E %28doctorate%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Undergraduate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Degree__c</picklist>
+        <values>
+            <fullName>BA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MFA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PhD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Source__c</picklist>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Donation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Information System</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

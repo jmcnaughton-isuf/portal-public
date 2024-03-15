@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Concentration_Specialty__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Looks up to Specialty Codes</description>
+    <externalId>false</externalId>
+    <label>Concentration / Specialty</label>
+    <referenceTo>ucinn_ascendv2__Specialty__c</referenceTo>
+    <relationshipLabel>Degree Information</relationshipLabel>
+    <relationshipName>Degree_Info_Concentration_Specialty</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_a_gift</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Make a gift</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://securelb.imodules.com/s/1463/giving/interior.aspx?sid=1463&amp;gid=1&amp;pgid=1534&amp;cid=4916&amp;appealcode=200OLOL&amp;amount=500&amp;dids={!ucinn_ascendv2__Designation__c.Encompass_ID__c}</url>
+</WebLink>

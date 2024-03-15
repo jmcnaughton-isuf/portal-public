@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Length_of_Stay_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>If (ucinn_ascendv2__Discharge_Date__c = ucinn_ascendv2__Admit_Date_Formula__c,1,(ucinn_ascendv2__Discharge_Date__c - ucinn_ascendv2__Admit_Date_Formula__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Length of Stay</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Work_Plan_Percentage__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Work Plan Percentage</label>
+    <referenceTo>ucinn_ascendv2__Work_Plan_Percentage__c</referenceTo>
+    <relationshipName>Patient_Referral_Opps_v1_Work_Plan_Pct</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

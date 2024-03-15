@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Affected_External_Transaction_ID_List__c</fullName>
+    <deprecated>false</deprecated>
+    <description>List of External IDs or records that were affected by automated process failure.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List of External IDs of records that were affected by automated process failure.</inlineHelpText>
+    <label>Affected External Transaction ID List</label>
+    <length>20000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

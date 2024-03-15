@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pledge_Reminder_Audit</fullName>
+    <booleanFilter>1 AND 2 AND (3 AND 5) AND 4</booleanFilter>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>ucinn_ascendv2__Matching_Organization_Formula__c</columns>
+    <columns>Pledge_Reminder_Preference__c</columns>
+    <columns>Pledge_Reminder_Owner__c</columns>
+    <columns>Pledge_Reminder_Sent__c</columns>
+    <columns>Reminder_Sent_Date__c</columns>
+    <columns>Number_of_Reminder_Sent__c</columns>
+    <columns>ucinn_ascendv2__Expected_Date__c</columns>
+    <columns>ucinn_ascendv2__Amount__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>Fund_Name_formula__c</columns>
+    <columns>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Payment_Amount__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Send_Pledge_Reminder__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Expected_Date__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Reminder_Sent_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Expected_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>3/1/2021</value>
+    </filters>
+    <label>Pledge Reminder Audit</label>
+</ListView>

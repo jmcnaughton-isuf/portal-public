@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>2nd Ask Email</fullName>
+        <default>false</default>
+        <label>2nd Ask Email</label>
+    </customValue>
+    <customValue>
+        <fullName>2nd Ask Phone</fullName>
+        <default>false</default>
+        <label>2nd Ask Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Acquisition Direct Mail</fullName>
+        <default>false</default>
+        <label>Acquisition Direct Mail</label>
+    </customValue>
+    <customValue>
+        <fullName>Acquisition Mailing 2</fullName>
+        <default>false</default>
+        <label>Acquisition Mailing 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Alumni Assoc Membership</fullName>
+        <default>false</default>
+        <label>Alumni Assoc Membership</label>
+    </customValue>
+    <customValue>
+        <fullName>Clean Up Phone</fullName>
+        <default>false</default>
+        <label>Clean Up Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct Mail</fullName>
+        <default>false</default>
+        <label>Direct Mail</label>
+    </customValue>
+    <customValue>
+        <fullName>E-mail Solicitation</fullName>
+        <default>false</default>
+        <label>E-mail Solicitation</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty/Staff renewals</fullName>
+        <default>false</default>
+        <label>Faculty/Staff renewals</label>
+    </customValue>
+    <customValue>
+        <fullName>FR SWMY Phone</fullName>
+        <default>false</default>
+        <label>FR SWMY Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Matching Gift Reminder</fullName>
+        <default>false</default>
+        <label>Matching Gift Reminder</label>
+    </customValue>
+    <customValue>
+        <fullName>Newsletter</fullName>
+        <default>false</default>
+        <label>Newsletter</label>
+    </customValue>
+    <customValue>
+        <fullName>On-line Link</fullName>
+        <default>false</default>
+        <label>On-line Link</label>
+    </customValue>
+    <customValue>
+        <fullName>PDF Forms</fullName>
+        <default>false</default>
+        <label>PDF Forms</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Calls</fullName>
+        <default>false</default>
+        <label>Personal Calls</label>
+    </customValue>
+    <customValue>
+        <fullName>Pledges under $50</fullName>
+        <default>false</default>
+        <label>Pledges under $50</label>
+    </customValue>
+    <customValue>
+        <fullName>SWMY Phone</fullName>
+        <default>false</default>
+        <label>SWMY Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>SWMY Refusals</fullName>
+        <default>false</default>
+        <label>SWMY Refusals</label>
+    </customValue>
+    <customValue>
+        <fullName>SWMYs</fullName>
+        <default>false</default>
+        <label>SWMYs</label>
+    </customValue>
+    <customValue>
+        <fullName>Telemarketing</fullName>
+        <default>false</default>
+        <label>Telemarketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Thank You Calls</fullName>
+        <default>false</default>
+        <label>Thank You Calls</label>
+    </customValue>
+    <description>CA: 9/20/2019: Created Solicitation for use on Review Transaction and Opportunity</description>
+    <masterLabel>Solicitation</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

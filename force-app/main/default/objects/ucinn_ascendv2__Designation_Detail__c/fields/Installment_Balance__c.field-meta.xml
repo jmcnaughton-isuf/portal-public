@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installment_Balance__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Past due amount for pledge reminders includes past due amounts only for installments that are included in a reminder.</inlineHelpText>
+    <label>Installment Balance</label>
+    <summarizedField>ucinn_ascendv2__Installment__c.ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</summarizedField>
+    <summaryFilterItems>
+        <field>ucinn_ascendv2__Installment__c.ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>ucinn_ascendv2__Installment__c.Pledge_Reminder_Sent__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ucinn_ascendv2__Installment__c.ucinn_ascendv2__Designation_Detail__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Reactive_Research_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Reactive Research Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cultivation Profile</fullName>
+                <default>false</default>
+                <label>Cultivation Profile</label>
+            </value>
+            <value>
+                <fullName>Background Research</fullName>
+                <default>false</default>
+                <label>Background Research</label>
+            </value>
+            <value>
+                <fullName>Advancement Briefing</fullName>
+                <default>false</default>
+                <label>Advancement Briefing</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Salary</fullName>
+                <default>false</default>
+                <label>Salary</label>
+            </value>
+            <value>
+                <fullName>Stock</fullName>
+                <default>false</default>
+                <label>Stock</label>
+            </value>
+            <value>
+                <fullName>External Source</fullName>
+                <default>false</default>
+                <label>External Source</label>
+            </value>
+            <value>
+                <fullName>Indicators</fullName>
+                <default>false</default>
+                <label>Indicators</label>
+            </value>
+            <value>
+                <fullName>Wealth Indicators</fullName>
+                <default>false</default>
+                <label>Wealth Indicators</label>
+            </value>
+            <value>
+                <fullName>Historic Wealth Analysis</fullName>
+                <default>false</default>
+                <label>Historic Wealth Analysis</label>
+            </value>
+            <value>
+                <fullName>Wealth Analysis</fullName>
+                <default>false</default>
+                <label>Wealth Analysis</label>
+            </value>
+            <value>
+                <fullName>ERM Verification</fullName>
+                <default>false</default>
+                <label>ERM Verification</label>
+            </value>
+            <value>
+                <fullName>Corporate News</fullName>
+                <default>false</default>
+                <label>Corporate News</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

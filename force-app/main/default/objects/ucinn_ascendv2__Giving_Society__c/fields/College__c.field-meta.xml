@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>College__c</fullName>
+    <externalId>false</externalId>
+    <label>College</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Academic Admin &amp; Support</fullName>
+                <default>false</default>
+                <label>Academic Admin &amp; Support</label>
+            </value>
+            <value>
+                <fullName>Achievement Fund</fullName>
+                <default>false</default>
+                <label>Achievement Fund</label>
+            </value>
+            <value>
+                <fullName>Agriculture and Life Sciences</fullName>
+                <default>false</default>
+                <label>Agriculture and Life Sciences</label>
+            </value>
+            <value>
+                <fullName>Ames Lab</fullName>
+                <default>false</default>
+                <label>Ames Lab</label>
+            </value>
+            <value>
+                <fullName>Athletic Department</fullName>
+                <default>false</default>
+                <label>Athletic Department</label>
+            </value>
+            <value>
+                <fullName>Balance Sheet</fullName>
+                <default>false</default>
+                <label>Balance Sheet</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>CFO</fullName>
+                <default>false</default>
+                <label>CFO</label>
+            </value>
+            <value>
+                <fullName>Counseling Center</fullName>
+                <default>false</default>
+                <label>Counseling Center</label>
+            </value>
+            <value>
+                <fullName>Dean of Students</fullName>
+                <default>false</default>
+                <label>Dean of Students</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Enrollment Management</fullName>
+                <default>false</default>
+                <label>Enrollment Management</label>
+            </value>
+            <value>
+                <fullName>Extension</fullName>
+                <default>false</default>
+                <label>Extension</label>
+            </value>
+            <value>
+                <fullName>Facilities Planning and Management</fullName>
+                <default>false</default>
+                <label>Facilities Planning and Management</label>
+            </value>
+            <value>
+                <fullName>Financial Aid</fullName>
+                <default>false</default>
+                <label>Financial Aid</label>
+            </value>
+            <value>
+                <fullName>Financial Aid Loans</fullName>
+                <default>false</default>
+                <label>Financial Aid Loans</label>
+            </value>
+            <value>
+                <fullName>Foundation Budget</fullName>
+                <default>false</default>
+                <label>Foundation Budget</label>
+            </value>
+            <value>
+                <fullName>Graduate College</fullName>
+                <default>false</default>
+                <label>Graduate College</label>
+            </value>
+            <value>
+                <fullName>Health Center</fullName>
+                <default>false</default>
+                <label>Health Center</label>
+            </value>
+            <value>
+                <fullName>Human Sciences</fullName>
+                <default>false</default>
+                <label>Human Sciences</label>
+            </value>
+            <value>
+                <fullName>International Services</fullName>
+                <default>false</default>
+                <label>International Services</label>
+            </value>
+            <value>
+                <fullName>ISU Alumni Association</fullName>
+                <default>false</default>
+                <label>ISU Alumni Association</label>
+            </value>
+            <value>
+                <fullName>ISU Center</fullName>
+                <default>false</default>
+                <label>ISU Center</label>
+            </value>
+            <value>
+                <fullName>ISU Foundation</fullName>
+                <default>false</default>
+                <label>ISU Foundation</label>
+            </value>
+            <value>
+                <fullName>ISU President</fullName>
+                <default>false</default>
+                <label>ISU President</label>
+            </value>
+            <value>
+                <fullName>ITS</fullName>
+                <default>false</default>
+                <label>ITS</label>
+            </value>
+            <value>
+                <fullName>Liberal Arts and Sciences</fullName>
+                <default>false</default>
+                <label>Liberal Arts and Sciences</label>
+            </value>
+            <value>
+                <fullName>Memorial Union</fullName>
+                <default>false</default>
+                <label>Memorial Union</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+                <label>Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>Multicultural Student Affairs</fullName>
+                <default>false</default>
+                <label>Multicultural Student Affairs</label>
+            </value>
+            <value>
+                <fullName>Original ISU Foundation</fullName>
+                <default>false</default>
+                <label>Original ISU Foundation</label>
+            </value>
+            <value>
+                <fullName>Plant Science Institute</fullName>
+                <default>false</default>
+                <label>Plant Science Institute</label>
+            </value>
+            <value>
+                <fullName>Reiman Gardens</fullName>
+                <default>false</default>
+                <label>Reiman Gardens</label>
+            </value>
+            <value>
+                <fullName>Reserved for system use</fullName>
+                <default>false</default>
+                <label>Reserved for system use</label>
+            </value>
+            <value>
+                <fullName>Residence Halls</fullName>
+                <default>false</default>
+                <label>Residence Halls</label>
+            </value>
+            <value>
+                <fullName>Sorority and Fraternity Engagement</fullName>
+                <default>false</default>
+                <label>Sorority and Fraternity Engagement</label>
+            </value>
+            <value>
+                <fullName>University Library</fullName>
+                <default>false</default>
+                <label>University Library</label>
+            </value>
+            <value>
+                <fullName>University Museums</fullName>
+                <default>false</default>
+                <label>University Museums</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>V.P. for Research</fullName>
+                <default>false</default>
+                <label>V.P. for Research</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine</label>
+            </value>
+            <value>
+                <fullName>VP Diversity and Inclusion</fullName>
+                <default>false</default>
+                <label>VP Diversity and Inclusion</label>
+            </value>
+            <value>
+                <fullName>VP Economic Dev &amp; Industry Rel</fullName>
+                <default>false</default>
+                <label>VP Economic Dev &amp; Industry Rel</label>
+            </value>
+            <value>
+                <fullName>VP Student Affairs</fullName>
+                <default>false</default>
+                <label>VP Student Affairs</label>
+            </value>
+            <value>
+                <fullName>VP University Services</fullName>
+                <default>false</default>
+                <label>VP University Services</label>
+            </value>
+            <value>
+                <fullName>WOI</fullName>
+                <default>false</default>
+                <label>WOI</label>
+            </value>
+            <value>
+                <fullName>Women&apos;s Center</fullName>
+                <default>false</default>
+                <label>Women&apos;s Center</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

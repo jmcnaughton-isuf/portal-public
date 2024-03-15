@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSXXX_Check</fullName>
+    <columns>Donor_ID__c</columns>
+    <columns>ucinn_ascendv2__Service_Indicator_Value__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Solicitation__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Service_Indicator_Value__c</field>
+        <operation>contains</operation>
+        <value>DSXX</value>
+    </filters>
+    <filters>
+        <field>Solicitation__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>DSXXX Check</label>
+</ListView>

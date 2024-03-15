@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Designation__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Designation to which the deducted funds will be donated</description>
+    <externalId>false</externalId>
+    <label>Designation</label>
+    <referenceTo>ucinn_ascendv2__Designation__c</referenceTo>
+    <relationshipLabel>Deductions</relationshipLabel>
+    <relationshipName>Deductions_Designation</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

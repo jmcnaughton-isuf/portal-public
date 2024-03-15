@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Session__c</columns>
+    <columns>ucinn_ascendv2__Opportunity_Type__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Adjustment_Reason__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>ucinn_ascendv2__Designation_1__c</columns>
+    <columns>ucinn_ascendv2__Designation_External_ID_1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Manual Review</value>
+    </filters>
+    <label>Manual Review</label>
+</ListView>

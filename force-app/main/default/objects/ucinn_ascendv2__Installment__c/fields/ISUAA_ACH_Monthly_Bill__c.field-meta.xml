@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUAA_ACH_Monthly_Bill__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(ISPICKVAL(ucinn_ascendv2__Source_Contact__r.ISUAA_Auto_Bill__c, &quot;ACH&quot;),  MONTH(ucinn_ascendv2__Expected_Date__c) = MONTH( TODAY() ), YEAR(ucinn_ascendv2__Expected_Date__c) = YEAR( TODAY() ),  ISPICKVAL(ucinn_ascendv2__Opportunity__r.Type, &quot;Installment Based Membership&quot;),  ISBLANK(TEXT(ucinn_ascendv2__Opportunity__r.Payroll_Deduction__c)),  ucinn_ascendv2__Source_Contact__r.ucinn_ascendv2__Is_Deceased__c = FALSE  )</formula>
+    <label>ISUAA ACH Monthly Bill</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

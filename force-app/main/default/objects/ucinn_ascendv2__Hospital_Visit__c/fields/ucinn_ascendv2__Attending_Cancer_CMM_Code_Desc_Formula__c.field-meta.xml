@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Attending_Cancer_CMM_Code_Desc_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Attending_Physician__r.ucinn_ascendv2__Cancer_Center_Physician_CMM_Description__c</formula>
+    <label>Attending Cancer CMM Code Desc</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obituaries_Entered</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Description__c</columns>
+    <columns>ucinn_ascendv2__Contact_Report_Body__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>ucinn_ascendv2__Date__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>ucinn_ascendv2__Date_and_Time__c</columns>
+    <columns>OBJECT_ID</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER.ALIAS</field>
+        <operation>contains</operation>
+        <value>helmer</value>
+    </filters>
+    <label>Obituaries Entered</label>
+</ListView>

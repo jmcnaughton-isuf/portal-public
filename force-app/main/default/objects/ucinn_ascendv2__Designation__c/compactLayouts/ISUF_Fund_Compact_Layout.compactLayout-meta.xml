@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUF_Fund_Compact_Layout</fullName>
+    <fields>ucinn_ascendv2__G_L_Account__c</fields>
+    <fields>Name</fields>
+    <fields>ucinn_ascendv2__Status_Formula__c</fields>
+    <label>ISUF Fund Compact Layout</label>
+</CompactLayout>

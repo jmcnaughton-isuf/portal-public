@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_my_list_view</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>ucinn_ascendv2__Credit_Amount__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Credit_Type__c</columns>
+    <columns>IsAdjustment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Opportunity__c</field>
+        <operation>equals</operation>
+        <value>PN3792313AAA</value>
+    </filters>
+    <label>Hard credits with constituent filter</label>
+</ListView>

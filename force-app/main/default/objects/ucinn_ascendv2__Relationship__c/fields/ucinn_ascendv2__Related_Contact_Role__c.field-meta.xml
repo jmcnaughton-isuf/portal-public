@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Related_Contact_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Role of the related constituent</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the relationship role of the related constituent to the constituent</inlineHelpText>
+    <label>Related Constituent Role</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>*No Relationship Defined</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>*No Relationship Defined</label>
+            </value>
+            <value>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+                <label>Accountant</label>
+            </value>
+            <value>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Acquaintance</label>
+            </value>
+            <value>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+                <label>Assistant</label>
+            </value>
+            <value>
+                <fullName>Attorney</fullName>
+                <default>false</default>
+                <label>Attorney</label>
+            </value>
+            <value>
+                <fullName>Aunt/Uncle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Aunt/Uncle</label>
+            </value>
+            <value>
+                <fullName>Aunt or Uncle</fullName>
+                <default>false</default>
+                <label>Aunt or Uncle</label>
+            </value>
+            <value>
+                <fullName>Child</fullName>
+                <default>false</default>
+                <label>Child/Step Child</label>
+            </value>
+            <value>
+                <fullName>Classified</fullName>
+                <default>false</default>
+                <label>Classified</label>
+            </value>
+            <value>
+                <fullName>Client</fullName>
+                <default>false</default>
+                <label>Client</label>
+            </value>
+            <value>
+                <fullName>Client - Accountant</fullName>
+                <default>false</default>
+                <label>Client - Accountant</label>
+            </value>
+            <value>
+                <fullName>Client-Accountant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client-Accountant</label>
+            </value>
+            <value>
+                <fullName>Client - Attorney</fullName>
+                <default>false</default>
+                <label>Client - Attorney</label>
+            </value>
+            <value>
+                <fullName>Client-Attorney</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client-Attorney</label>
+            </value>
+            <value>
+                <fullName>Client - Financial Planner</fullName>
+                <default>false</default>
+                <label>Client - Financial Planner</label>
+            </value>
+            <value>
+                <fullName>Client-Financial Planner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client-Financial Planner</label>
+            </value>
+            <value>
+                <fullName>Client - Insurance Agent</fullName>
+                <default>false</default>
+                <label>Client - Insurance Agent</label>
+            </value>
+            <value>
+                <fullName>Client-Insurance Agent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client-Insurance Agent</label>
+            </value>
+            <value>
+                <fullName>Client - Other</fullName>
+                <default>false</default>
+                <label>Client - Other</label>
+            </value>
+            <value>
+                <fullName>Client - Trust Officer</fullName>
+                <default>false</default>
+                <label>Client - Trust Officer</label>
+            </value>
+            <value>
+                <fullName>Client-Trust Officer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client-Trust Officer</label>
+            </value>
+            <value>
+                <fullName>Companion</fullName>
+                <default>false</default>
+                <label>Companion</label>
+            </value>
+            <value>
+                <fullName>Contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contact</label>
+            </value>
+            <value>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+                <label>Cousin</label>
+            </value>
+            <value>
+                <fullName>Deceased Spouse or Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deceased Spouse or Partner</label>
+            </value>
+            <value>
+                <fullName>Deceased Spouse</fullName>
+                <default>false</default>
+                <label>Deceased Spouse or Partner</label>
+            </value>
+            <value>
+                <fullName>Donor Advisor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Donor Advisor</label>
+            </value>
+            <value>
+                <fullName>Employed by Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employed by Company</label>
+            </value>
+            <value>
+                <fullName>Ex-Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ex-Partner</label>
+            </value>
+            <value>
+                <fullName>Ex-Spouse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ex-Spouse</label>
+            </value>
+            <value>
+                <fullName>Financial Planner</fullName>
+                <default>false</default>
+                <label>Financial Planner</label>
+            </value>
+            <value>
+                <fullName>Former Assistant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Former Assistant</label>
+            </value>
+            <value>
+                <fullName>Former Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Former Manager</label>
+            </value>
+            <value>
+                <fullName>Former Spouse or Partner</fullName>
+                <default>false</default>
+                <label>Former Spouse or Partner</label>
+            </value>
+            <value>
+                <fullName>Friend</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Friend</label>
+            </value>
+            <value>
+                <fullName>Funds Held in Trust Donor</fullName>
+                <default>false</default>
+                <label>Funds Held in Trust Donor</label>
+            </value>
+            <value>
+                <fullName>Funds Held in Trust Income Recipient</fullName>
+                <default>false</default>
+                <label>Funds Held in Trust Income Recipient</label>
+            </value>
+            <value>
+                <fullName>Grandchild</fullName>
+                <default>false</default>
+                <label>Grandchild</label>
+            </value>
+            <value>
+                <fullName>Grand Child</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Grand Child</label>
+            </value>
+            <value>
+                <fullName>Grandparent</fullName>
+                <default>false</default>
+                <label>Grandparent</label>
+            </value>
+            <value>
+                <fullName>Grand Parent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Grand Parent</label>
+            </value>
+            <value>
+                <fullName>Great Aunt/Uncle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Great Aunt/Uncle</label>
+            </value>
+            <value>
+                <fullName>Great Grand Child</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Great Grand Child</label>
+            </value>
+            <value>
+                <fullName>Great Grand Parent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Great Grand Parent</label>
+            </value>
+            <value>
+                <fullName>Great Niece/Nephew</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Great Niece/Nephew</label>
+            </value>
+            <value>
+                <fullName>Influenced ISU Student/Peer</fullName>
+                <default>false</default>
+                <label>Influenced ISU Student/Peer</label>
+            </value>
+            <value>
+                <fullName>Influential ISU Professor/Staff</fullName>
+                <default>false</default>
+                <label>Influential ISU Professor/Staff</label>
+            </value>
+            <value>
+                <fullName>Insurance Agent</fullName>
+                <default>false</default>
+                <label>Insurance Agent</label>
+            </value>
+            <value>
+                <fullName>Legal Guardian</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Legal Guardian</label>
+            </value>
+            <value>
+                <fullName>Life Income Donor</fullName>
+                <default>false</default>
+                <label>Life Income Donor</label>
+            </value>
+            <value>
+                <fullName>Life Income Recipient</fullName>
+                <default>false</default>
+                <label>Life Income Recipient</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Member of Board of Directors (CO or FD)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Member of Board of Directors (CO or FD)</label>
+            </value>
+            <value>
+                <fullName>Mother/Father in Law</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mother/Father in Law</label>
+            </value>
+            <value>
+                <fullName>Neighbor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Neighbor</label>
+            </value>
+            <value>
+                <fullName>Niece/Nephew</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Niece/Nephew</label>
+            </value>
+            <value>
+                <fullName>Niece or Nephew</fullName>
+                <default>false</default>
+                <label>Niece or Nephew</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Family Member</fullName>
+                <default>false</default>
+                <label>Other Family Member</label>
+            </value>
+            <value>
+                <fullName>Other Relative</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Relative</label>
+            </value>
+            <value>
+                <fullName>Parent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parent</label>
+            </value>
+            <value>
+                <fullName>Parent/Step Parent</fullName>
+                <default>false</default>
+                <label>Parent/Step Parent</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Peer</fullName>
+                <default>false</default>
+                <label>Peer</label>
+            </value>
+            <value>
+                <fullName>Philanthropy Advisor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Philanthropy Advisor</label>
+            </value>
+            <value>
+                <fullName>Philanthropy Client</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Philanthropy Client</label>
+            </value>
+            <value>
+                <fullName>Power of Attorney Grantee</fullName>
+                <default>false</default>
+                <label>Power of Attorney Grantee</label>
+            </value>
+            <value>
+                <fullName>Power of Attorney Grantor</fullName>
+                <default>false</default>
+                <label>Power of Attorney Grantor</label>
+            </value>
+            <value>
+                <fullName>Scheduler</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Scheduler</label>
+            </value>
+            <value>
+                <fullName>Senator</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Senator</label>
+            </value>
+            <value>
+                <fullName>Sibling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sibling</label>
+            </value>
+            <value>
+                <fullName>Sibling/Step Sibling</fullName>
+                <default>false</default>
+                <label>Sibling/Step Sibling</label>
+            </value>
+            <value>
+                <fullName>Sister/Brother in Law</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sister/Brother in Law</label>
+            </value>
+            <value>
+                <fullName>Son/Daughter in Law</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Son/Daughter in Law</label>
+            </value>
+            <value>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+                <label>Spouse or Partner</label>
+            </value>
+            <value>
+                <fullName>Spouse or Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spouse or Partner</label>
+            </value>
+            <value>
+                <fullName>Step Brother/Sister</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Step Brother/Sister</label>
+            </value>
+            <value>
+                <fullName>Step Child</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Step Child</label>
+            </value>
+            <value>
+                <fullName>Step Mother/Father</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Step Mother/Father</label>
+            </value>
+            <value>
+                <fullName>Trust Officer</fullName>
+                <default>false</default>
+                <label>Trust Officer</label>
+            </value>
+            <value>
+                <fullName>Ward</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ward</label>
+            </value>
+            <value>
+                <fullName>Widow</fullName>
+                <default>false</default>
+                <label>Widowed Spouse or Partner</label>
+            </value>
+            <value>
+                <fullName>Widowed Spouse or Partner</fullName>
+                <default>false</default>
+                <label>Widowed Spouse or Partners</label>
+            </value>
+            <value>
+                <fullName>Widowed Spouse or Partners</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Widowed Spouse or Partners</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

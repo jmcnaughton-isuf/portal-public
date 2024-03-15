@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Interim_Rows</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__New_Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__External_System_ID__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__Middle_Name__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>ucinn_ascendv2__Email_1__c</columns>
+    <columns>ucinn_ascendv2__Phone_1_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.Parent</value>
+    </filters>
+    <label>Parent Interim Rows</label>
+</ListView>

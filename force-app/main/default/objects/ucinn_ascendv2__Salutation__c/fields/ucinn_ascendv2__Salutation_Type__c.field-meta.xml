@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Salutation_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Salutation Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alumni Mailings</fullName>
+                <default>false</default>
+                <label>Alumni Mailings</label>
+            </value>
+            <value>
+                <fullName>Endowments</fullName>
+                <default>false</default>
+                <label>Endowments</label>
+            </value>
+            <value>
+                <fullName>Formal Address</fullName>
+                <default>false</default>
+                <label>Formal Address</label>
+            </value>
+            <value>
+                <fullName>Formal Greeting</fullName>
+                <default>false</default>
+                <label>Formal Greeting</label>
+            </value>
+            <value>
+                <fullName>Informal Address</fullName>
+                <default>false</default>
+                <label>Informal Address</label>
+            </value>
+            <value>
+                <fullName>Informal Greeting</fullName>
+                <default>false</default>
+                <label>Informal Greeting</label>
+            </value>
+            <value>
+                <fullName>Nametags</fullName>
+                <default>false</default>
+                <label>Nametags</label>
+            </value>
+            <value>
+                <fullName>Receipts</fullName>
+                <default>false</default>
+                <label>Receipts</label>
+            </value>
+            <value>
+                <fullName>Stacked Names</fullName>
+                <default>false</default>
+                <label>Stacked Names</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

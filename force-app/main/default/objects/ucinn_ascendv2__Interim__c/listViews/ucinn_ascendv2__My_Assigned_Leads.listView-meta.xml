@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__My_Assigned_Leads</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Relationship_Type_Formula__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Master_Interim__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__Middle_Name__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Assigned</value>
+    </filters>
+    <label>My Assigned  Interims</label>
+    <language>en_US</language>
+</ListView>

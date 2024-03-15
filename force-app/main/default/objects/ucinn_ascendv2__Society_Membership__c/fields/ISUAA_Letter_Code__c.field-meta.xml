@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUAA_Letter_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND( TEXT( ucinn_ascendv2__Membership_Level_Product__r.Family) = &apos;Annual&apos;, TEXT( ISUAA_Renewal_Status__c) = &apos;New&apos;, TEXT( Multi__c) = &apos;Single&apos;), &apos;9&apos;,
+IF( AND( TEXT( ucinn_ascendv2__Membership_Level_Product__r.Family) = &apos;Annual&apos;, TEXT( ISUAA_Renewal_Status__c) = &apos;New&apos;, TEXT( Multi__c) = &apos;Joint&apos;), &apos;10&apos;,
+IF( AND( TEXT( ucinn_ascendv2__Membership_Level_Product__r.Family) = &apos;Annual&apos;, TEXT( ISUAA_Renewal_Status__c) = &apos;Renewal&apos;, TEXT( Multi__c) = &apos;Single&apos;), &apos;13&apos;,
+IF( AND( TEXT( ucinn_ascendv2__Membership_Level_Product__r.Family) = &apos;Annual&apos;, TEXT( ISUAA_Renewal_Status__c) = &apos;Renewal&apos;, TEXT( Multi__c) = &apos;Joint&apos;), &apos;14&apos;,
+IF( AND( OR( Product_Code__c = &apos;AA-LSS&apos;, Product_Code__c = &apos;AA-LSR&apos;), ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &gt; 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Payments_Roll_Up__c = 1), &apos;1&apos;,
+IF( AND( OR( Product_Code__c = &apos;AA-LJS&apos;, Product_Code__c = &apos;AA-LJR&apos;), ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &gt; 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Payments_Roll_Up__c = 1), &apos;2&apos;,
+IF( AND( OR( Product_Code__c = &apos;AA-LSS&apos;, Product_Code__c = &apos;AA-LSR&apos;), ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &lt;= 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Payments_Roll_Up__c = 1), &apos;3&apos;,
+IF( AND( OR( Product_Code__c = &apos;AA-LJS&apos;, Product_Code__c = &apos;AA-LJR&apos;), ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &lt;= 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Payments_Roll_Up__c = 1), &apos;4&apos;,
+IF( AND( OR( Product_Code__c = &apos;AA-LSS&apos;, Product_Code__c = &apos;AA-LSR&apos;), ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &lt;= 0), &apos;7&apos;,
+IF( AND( OR( Product_Code__c = &apos;AA-LJS&apos;, Product_Code__c = &apos;AA-LJR&apos;), ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &lt;= 0), &apos;8&apos;,
+NULL))))))))))</formula>
+    <label>ISUAA Letter Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

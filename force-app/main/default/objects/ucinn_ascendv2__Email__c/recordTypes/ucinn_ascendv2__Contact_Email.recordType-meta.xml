@@ -42,17 +42,9 @@
             <fullName>Reiman Gardens</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Ticketmaster_</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>ucinn_ascendv2__Data_Source__c</picklist>
-        <values>
-            <fullName>Accounts Receivable - ISU</fullName>
-            <default>false</default>
-        </values>
         <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
@@ -114,10 +106,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>County Assessor site</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -147,10 +135,6 @@
         </values>
         <values>
             <fullName>Gift Processing</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -340,7 +324,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Incorrect%2FDonor Request to Remove</fullName>
+            <fullName>Incorrect</fullName>
             <default>false</default>
         </values>
         <values>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Maximum_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Maximum Designation Detail amount in order to match. Blank if no max amount</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maximum Designation Detail amount in order to match. Blank if no max amount</inlineHelpText>
+    <label>Maximum Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

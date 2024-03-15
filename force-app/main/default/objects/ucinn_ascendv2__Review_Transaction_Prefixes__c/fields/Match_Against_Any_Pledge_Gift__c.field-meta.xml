@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Against_Any_Pledge_Gift__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Uncheck if we only want to pay against the donor&apos;s pledges/gifts.  Check means the donor can pay other people&apos;s pledges/gifts.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Uncheck if we only want to pay against the donor&apos;s pledges/gifts.  Check means the donor can pay other people&apos;s pledges/gifts.</inlineHelpText>
+    <label>Match Against Any Pledge/Gift</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

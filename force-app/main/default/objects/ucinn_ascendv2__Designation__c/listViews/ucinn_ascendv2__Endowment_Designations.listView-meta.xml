@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Endowment_Designations</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Fund_Name__c</columns>
+    <columns>ucinn_ascendv2__Fund_Purpose__c</columns>
+    <columns>ucinn_ascendv2__Fund_Type__c</columns>
+    <columns>ucinn_ascendv2__Designation_Name__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>Endowment Designations</label>
+</ListView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Peer_Screening_Time_Frame__c</fullName>
+    <externalId>false</externalId>
+    <label>Peer Screening Time Frame</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2013-current</fullName>
+                <default>false</default>
+                <label>2013-current</label>
+            </value>
+            <value>
+                <fullName>2006-2012</fullName>
+                <default>false</default>
+                <label>2006-2012</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Farmland_Asset_Entry</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Value__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Additional_Information__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Description__c</field>
+        <operation>equals</operation>
+        <value>Farmland</value>
+    </filters>
+    <label>Farmland Asset Entry</label>
+    <sharedTo>
+        <group>Prospect_Development</group>
+    </sharedTo>
+</ListView>

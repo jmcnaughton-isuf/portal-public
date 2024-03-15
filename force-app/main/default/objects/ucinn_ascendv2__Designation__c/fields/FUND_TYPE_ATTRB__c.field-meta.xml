@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FUND_TYPE_ATTRB__c</fullName>
+    <description>Code for type of trust (eg. restricted, none)</description>
+    <externalId>false</externalId>
+    <label>Trust Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unrestricted trust</fullName>
+                <default>false</default>
+                <label>Unrestricted trust</label>
+            </value>
+            <value>
+                <fullName>Temporarily restricted trust</fullName>
+                <default>false</default>
+                <label>Temporarily restricted trust</label>
+            </value>
+            <value>
+                <fullName>Permanently restricted trust</fullName>
+                <default>false</default>
+                <label>Permanently restricted trust</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

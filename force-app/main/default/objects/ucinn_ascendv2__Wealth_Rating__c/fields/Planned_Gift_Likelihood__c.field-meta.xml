@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Planned_Gift_Likelihood__c</fullName>
+    <externalId>false</externalId>
+    <label>Planned Gift Likelihood</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>900+</fullName>
+                <default>false</default>
+                <label>900+</label>
+            </value>
+            <value>
+                <fullName>800-899</fullName>
+                <default>false</default>
+                <label>800-899</label>
+            </value>
+            <value>
+                <fullName>700-799</fullName>
+                <default>false</default>
+                <label>700-799</label>
+            </value>
+            <value>
+                <fullName>600-699</fullName>
+                <default>false</default>
+                <label>600-699</label>
+            </value>
+            <value>
+                <fullName>500-599</fullName>
+                <default>false</default>
+                <label>500-599</label>
+            </value>
+            <value>
+                <fullName>400-499</fullName>
+                <default>false</default>
+                <label>400-499</label>
+            </value>
+            <value>
+                <fullName>300-399</fullName>
+                <default>false</default>
+                <label>300-399</label>
+            </value>
+            <value>
+                <fullName>200-299</fullName>
+                <default>false</default>
+                <label>200-299</label>
+            </value>
+            <value>
+                <fullName>100-199</fullName>
+                <default>false</default>
+                <label>100-199</label>
+            </value>
+            <value>
+                <fullName>100 - 199</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>100 - 199</label>
+            </value>
+            <value>
+                <fullName>200 - 299</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>200 - 299</label>
+            </value>
+            <value>
+                <fullName>300 - 399</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>300 - 399</label>
+            </value>
+            <value>
+                <fullName>400 - 499</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>400 - 499</label>
+            </value>
+            <value>
+                <fullName>500 - 599</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>500 - 599</label>
+            </value>
+            <value>
+                <fullName>600 - 699</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>600 - 699</label>
+            </value>
+            <value>
+                <fullName>700 - 799</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>700 - 799</label>
+            </value>
+            <value>
+                <fullName>800 - 899</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>800 - 899</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

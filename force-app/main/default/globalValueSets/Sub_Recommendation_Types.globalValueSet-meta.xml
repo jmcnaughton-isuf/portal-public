@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Apple Watch</fullName>
+        <default>false</default>
+        <label>Apple Watch</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce</fullName>
+        <default>false</default>
+        <label>Salesforce</label>
+    </customValue>
+    <masterLabel>Sub Recommendation Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

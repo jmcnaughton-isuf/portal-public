@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Account_Token__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Depending on the external payment provider: token representing a specific merchant account for this Transaction to target.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Depending on the external payment provider: token representing a specific merchant account for this Transaction to target.</inlineHelpText>
+    <label>Account Token</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

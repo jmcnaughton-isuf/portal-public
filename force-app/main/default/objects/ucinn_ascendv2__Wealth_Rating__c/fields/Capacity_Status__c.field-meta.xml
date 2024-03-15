@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Capacity_Status__c</fullName>
+    <description>Used for ISUF</description>
+    <externalId>false</externalId>
+    <label>Capacity Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Modeled</fullName>
+                <default>false</default>
+                <label>Modeled</label>
+            </value>
+            <value>
+                <fullName>Based on Assets</fullName>
+                <default>false</default>
+                <label>Based on Assets</label>
+            </value>
+            <value>
+                <fullName>Variable Assets</fullName>
+                <default>false</default>
+                <label>Variable Assets</label>
+            </value>
+            <value>
+                <fullName>Research Verified Assets</fullName>
+                <default>false</default>
+                <label>Research Verified Assets</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

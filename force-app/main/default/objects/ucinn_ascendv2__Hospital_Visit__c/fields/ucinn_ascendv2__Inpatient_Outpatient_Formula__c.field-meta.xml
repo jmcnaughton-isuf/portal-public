@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Inpatient_Outpatient_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>Case(ucinn_ascendv2__Encounter_Type__c,
+&apos;Extended Recovery&apos;,&apos;Inpatient&apos;,
+&apos;Observation&apos;,&apos;Inpatient&apos;,
+&apos;Inpatient&apos;,&apos;Inpatient&apos;,
+&apos;Preadmit&apos;,&apos;Inpatient&apos;,
+&apos;Day Surgery&apos;,&apos;Outpatient&apos;,
+&apos;PreReg&apos;,&apos;Outpatient&apos;,
+&apos;Outpatient&apos;,&apos;Outpatient&apos;,
+&apos;Recurring&apos;,&apos;Outpatient&apos;,
+&apos;Outpatient in a Bed&apos;, &apos;Outpatient&apos;,
+&apos;Non-Patient&apos;, &apos;Non-Patient&apos;,
+&apos;Outpatient Message&apos;, &apos;Non-Patient&apos;,
+(Case( ucinn_ascendv2__Encounter_Type_Class__c,
+&apos;Inpatient&apos;,&apos;Inpatient&apos;,
+&apos;Outpatient&apos;,&apos;Outpatient&apos;,
+&apos;Non Patient&apos;, &apos;Non-Patient&apos;,
+&apos;&apos;)))</formula>
+    <label>Inpatient/Outpatient</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

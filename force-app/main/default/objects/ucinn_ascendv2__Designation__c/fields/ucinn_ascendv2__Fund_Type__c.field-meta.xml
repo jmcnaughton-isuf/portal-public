@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Fund_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Fund Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Academic Programs</fullName>
+                <default>false</default>
+                <label>Academic Programs</label>
+            </value>
+            <value>
+                <fullName>Academic Research</fullName>
+                <default>false</default>
+                <label>Academic Research</label>
+            </value>
+            <value>
+                <fullName>Fellowship</fullName>
+                <default>false</default>
+                <label>Fellowship</label>
+            </value>
+            <value>
+                <fullName>Operations/Maintenance</fullName>
+                <default>false</default>
+                <label>Operations/Maintenance</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Professorship</fullName>
+                <default>false</default>
+                <label>Professorship</label>
+            </value>
+            <value>
+                <fullName>Scholarship</fullName>
+                <default>false</default>
+                <label>Scholarship</label>
+            </value>
+            <value>
+                <fullName>Student Support</fullName>
+                <default>false</default>
+                <label>Student Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spouse_No_Soft_Credit_Check</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Related_Contact_Role__c</columns>
+    <columns>ucinn_ascendv2__Related_Contact__c</columns>
+    <columns>ucinn_ascendv2__Apply_Soft_Credit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Apply_Soft_Credit__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Related_Contact_Role__c</field>
+        <operation>equals</operation>
+        <value>Spouse,Spouse or Partner</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>9/13/2021 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Spouse No Soft Credit Check</label>
+</ListView>

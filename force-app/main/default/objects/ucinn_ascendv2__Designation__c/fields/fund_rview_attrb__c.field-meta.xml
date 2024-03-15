@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fund_rview_attrb__c</fullName>
+    <description>Two letter code for fund review attribute  (eg. Scholarship - Full, Graduate Fellowship)</description>
+    <externalId>false</externalId>
+    <label>Fund_ Review Attribute</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chair</fullName>
+                <default>false</default>
+                <label>Chair</label>
+            </value>
+            <value>
+                <fullName>Faculty Fellowship</fullName>
+                <default>false</default>
+                <label>Faculty Fellowship</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Graduate Fellowship</fullName>
+                <default>false</default>
+                <label>Graduate Fellowship</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Faculty Support</fullName>
+                <default>false</default>
+                <label>Other Faculty Support</label>
+            </value>
+            <value>
+                <fullName>Professorship</fullName>
+                <default>false</default>
+                <label>Professorship</label>
+            </value>
+            <value>
+                <fullName>Scholarship - Full</fullName>
+                <default>false</default>
+                <label>Scholarship - Full</label>
+            </value>
+            <value>
+                <fullName>Scholarship - Partial</fullName>
+                <default>false</default>
+                <label>Scholarship - Partial</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

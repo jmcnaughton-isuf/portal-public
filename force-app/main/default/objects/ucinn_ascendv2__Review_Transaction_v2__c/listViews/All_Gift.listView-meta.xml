@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Gift</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Session__c</columns>
+    <columns>ucinn_ascendv2__Opportunity_Type__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Donor_External_ID__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Send_to_G_L__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Transaction_Type__c</field>
+        <operation>equals</operation>
+        <value>Gift</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__External_System_ID__c</field>
+        <operation>startsWith</operation>
+        <value>ISUF</value>
+    </filters>
+    <label>All Gift</label>
+</ListView>

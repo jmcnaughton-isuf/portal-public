@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Home_Department__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Home Department</label>
+    <referenceTo>ucinn_ascendv2__Home_Department__c</referenceTo>
+    <relationshipLabel>Home Department Histories</relationshipLabel>
+    <relationshipName>Home_Department_Histories_Home_Dept</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

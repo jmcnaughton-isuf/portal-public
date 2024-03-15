@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Matching_Gifts_Confirmed</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Source_Contact__c</columns>
+    <columns>ucinn_ascendv2__Matching_Organization_Formula__c</columns>
+    <columns>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Amount_to_be_Matched__c</columns>
+    <columns>ucinn_ascendv2__Matched_Percentage__c</columns>
+    <columns>ucinn_ascendv2__Amount__c</columns>
+    <columns>ucinn_ascendv2__Confirmation_Date_Formula__c</columns>
+    <columns>ucinn_ascendv2__Confirmation_Method_Formula__c</columns>
+    <columns>ucinn_ascendv2__Source_Payment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Payment_Status__c</field>
+        <operation>equals</operation>
+        <value>Matching</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Confirmation_Date_Formula__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <label>Matching Gifts Confirmed</label>
+</ListView>

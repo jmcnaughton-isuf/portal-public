@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Frequency_of_Deduction__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines the frequency at which the Deduction Amount or the Deduction percentage will be deducted from the constituent&apos;s paycheck</description>
+    <externalId>false</externalId>
+    <label>Frequency of Deduction</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+                <label>Monthly</label>
+            </value>
+            <value>
+                <fullName>University Bi-Weekly</fullName>
+                <default>false</default>
+                <label>University Bi-Weekly</label>
+            </value>
+            <value>
+                <fullName>Hospital Bi-Weekly</fullName>
+                <default>false</default>
+                <label>Hospital Bi-Weekly</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

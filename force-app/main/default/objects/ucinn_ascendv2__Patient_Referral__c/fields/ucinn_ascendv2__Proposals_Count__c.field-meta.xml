@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Proposals_Count__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Proposals Count</label>
+    <summaryForeignKey>ucinn_ascendv2__Patient_Referral_Opportunity__c.ucinn_ascendv2__Patient_Referral__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

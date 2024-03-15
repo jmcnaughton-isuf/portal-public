@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Organization_Social_Media</fullName>
+    <active>true</active>
+    <description>An organization&apos;s social media.</description>
+    <label>Organization Social Media</label>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Platform__c</picklist>
+        <values>
+            <fullName>Blog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flickr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instagram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skype</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SnapChat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twitter Handle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WeChat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WhatsApp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youtube</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

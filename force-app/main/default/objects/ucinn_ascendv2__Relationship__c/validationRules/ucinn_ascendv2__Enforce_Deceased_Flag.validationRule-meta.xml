@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Enforce_Deceased_Flag</fullName>
+    <active>true</active>
+    <description>This Validation rule enforces that the deceased flag is checked before being able to set the relationship to widowed or deceased spouse.</description>
+    <errorConditionFormula>AND (
+      $Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+       ucinn_ascendv2__Contact__r.ucinn_ascendv2__Is_Deceased__c == False,
+    ucinn_ascendv2__Related_Contact__r.ucinn_ascendv2__Is_Deceased__c == False,
+    OR (ISPICKVAL(ucinn_ascendv2__Related_Contact_Role__c, &apos;Deceased Spouse&apos;),
+        ISPICKVAL(ucinn_ascendv2__Related_Contact_Role__c, &apos;Widow&apos;)),
+    OR (ISPICKVAL(PRIORVALUE(ucinn_ascendv2__Related_Contact_Role__c), &apos;Spouse&apos;), ISPICKVAL(PRIORVALUE(ucinn_ascendv2__Related_Contact_Role__c),&apos;Partner&apos;))
+)</errorConditionFormula>
+    <errorMessage>Please set the Deceased flag on either the Constituent or Related Constituent.</errorMessage>
+</ValidationRule>

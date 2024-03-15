@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Student_Organizations__c</fullName>
+    <externalId>false</externalId>
+    <label>Student Organizations</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Air Force ROTC</fullName>
+                <default>false</default>
+                <label>Air Force ROTC</label>
+            </value>
+            <value>
+                <fullName>Army ROTC</fullName>
+                <default>false</default>
+                <label>Army ROTC</label>
+            </value>
+            <value>
+                <fullName>Barjche, orchesis or other dance</fullName>
+                <default>false</default>
+                <label>Barjche, orchesis or other dance</label>
+            </value>
+            <value>
+                <fullName>Black Student Alliance</fullName>
+                <default>false</default>
+                <label>Black Student Alliance</label>
+            </value>
+            <value>
+                <fullName>Business Council</fullName>
+                <default>false</default>
+                <label>Business Council</label>
+            </value>
+            <value>
+                <fullName>Carillon students</fullName>
+                <default>false</default>
+                <label>Carillon students</label>
+            </value>
+            <value>
+                <fullName>Choral Music</fullName>
+                <default>false</default>
+                <label>Choral Music</label>
+            </value>
+            <value>
+                <fullName>College councils</fullName>
+                <default>false</default>
+                <label>College councils</label>
+            </value>
+            <value>
+                <fullName>Concert, Symphonic, Wind Ensemble</fullName>
+                <default>false</default>
+                <label>Concert, Symphonic, Wind Ensemble</label>
+            </value>
+            <value>
+                <fullName>Crop Team</fullName>
+                <default>false</default>
+                <label>Crop Team</label>
+            </value>
+            <value>
+                <fullName>Cyclone Aide</fullName>
+                <default>false</default>
+                <label>Cyclone Aide</label>
+            </value>
+            <value>
+                <fullName>Dairy Cattle Judging Team</fullName>
+                <default>false</default>
+                <label>Dairy Cattle Judging Team</label>
+            </value>
+            <value>
+                <fullName>Dance Marathon Committee</fullName>
+                <default>false</default>
+                <label>Dance Marathon Committee</label>
+            </value>
+            <value>
+                <fullName>Dance Team</fullName>
+                <default>false</default>
+                <label>Dance Team</label>
+            </value>
+            <value>
+                <fullName>Debate Club</fullName>
+                <default>false</default>
+                <label>Debate Club</label>
+            </value>
+            <value>
+                <fullName>Department activities or clubs</fullName>
+                <default>false</default>
+                <label>Department activities or clubs</label>
+            </value>
+            <value>
+                <fullName>Engineers Without Borders</fullName>
+                <default>false</default>
+                <label>Engineers Without Borders</label>
+            </value>
+            <value>
+                <fullName>Forensics</fullName>
+                <default>false</default>
+                <label>Forensics</label>
+            </value>
+            <value>
+                <fullName>Fundraising Committees</fullName>
+                <default>false</default>
+                <label>Fundraising Committees</label>
+            </value>
+            <value>
+                <fullName>Government of the Student Body</fullName>
+                <default>false</default>
+                <label>Government of the Student Body</label>
+            </value>
+            <value>
+                <fullName>Graduate Student Senate</fullName>
+                <default>false</default>
+                <label>Graduate Student Senate</label>
+            </value>
+            <value>
+                <fullName>Greek Week committees</fullName>
+                <default>false</default>
+                <label>Greek Week committees</label>
+            </value>
+            <value>
+                <fullName>Homecoming Central Committee</fullName>
+                <default>false</default>
+                <label>Homecoming Central Committee</label>
+            </value>
+            <value>
+                <fullName>Homecoming committees</fullName>
+                <default>false</default>
+                <label>Homecoming committees</label>
+            </value>
+            <value>
+                <fullName>Int&apos;l/Intercultural clubs</fullName>
+                <default>false</default>
+                <label>Int&apos;l/Intercultural clubs</label>
+            </value>
+            <value>
+                <fullName>Iowa State Daily</fullName>
+                <default>false</default>
+                <label>Iowa State Daily</label>
+            </value>
+            <value>
+                <fullName>Iowa State Singers</fullName>
+                <default>false</default>
+                <label>Iowa State Singers</label>
+            </value>
+            <value>
+                <fullName>ISU couriers</fullName>
+                <default>false</default>
+                <label>ISU couriers</label>
+            </value>
+            <value>
+                <fullName>ISU Mascot (CY)</fullName>
+                <default>false</default>
+                <label>ISU Mascot (CY)</label>
+            </value>
+            <value>
+                <fullName>Jazz Band</fullName>
+                <default>false</default>
+                <label>Jazz Band</label>
+            </value>
+            <value>
+                <fullName>Library Student Employees</fullName>
+                <default>false</default>
+                <label>Library Student Employees</label>
+            </value>
+            <value>
+                <fullName>Livestock Judging Team</fullName>
+                <default>false</default>
+                <label>Livestock Judging Team</label>
+            </value>
+            <value>
+                <fullName>Madrigal Dinner</fullName>
+                <default>false</default>
+                <label>Madrigal Dinner</label>
+            </value>
+            <value>
+                <fullName>Marching Band</fullName>
+                <default>false</default>
+                <label>Marching Band</label>
+            </value>
+            <value>
+                <fullName>Marines ROTC</fullName>
+                <default>false</default>
+                <label>Marines ROTC</label>
+            </value>
+            <value>
+                <fullName>Meat Animal Evaluation Team</fullName>
+                <default>false</default>
+                <label>Meat Animal Evaluation Team</label>
+            </value>
+            <value>
+                <fullName>Meat Judging Team</fullName>
+                <default>false</default>
+                <label>Meat Judging Team</label>
+            </value>
+            <value>
+                <fullName>Misc. arts activities or organizations</fullName>
+                <default>false</default>
+                <label>Misc. arts activities or organizations</label>
+            </value>
+            <value>
+                <fullName>Museum Study</fullName>
+                <default>false</default>
+                <label>Museum Study</label>
+            </value>
+            <value>
+                <fullName>Navy ROTC</fullName>
+                <default>false</default>
+                <label>Navy ROTC</label>
+            </value>
+            <value>
+                <fullName>NCORE/ICORE</fullName>
+                <default>false</default>
+                <label>NCORE/ICORE</label>
+            </value>
+            <value>
+                <fullName>Officer for Govt. of the Student Body</fullName>
+                <default>false</default>
+                <label>Officer for Govt. of the Student Body</label>
+            </value>
+            <value>
+                <fullName>Orchestra</fullName>
+                <default>false</default>
+                <label>Orchestra</label>
+            </value>
+            <value>
+                <fullName>Other Music</fullName>
+                <default>false</default>
+                <label>Other Music</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Panhellenic or Interfraternity Council</fullName>
+                <default>false</default>
+                <label>Panhellenic or Interfraternity Council</label>
+            </value>
+            <value>
+                <fullName>Pep Band</fullName>
+                <default>false</default>
+                <label>Pep Band</label>
+            </value>
+            <value>
+                <fullName>Political Clubs</fullName>
+                <default>false</default>
+                <label>Political Clubs</label>
+            </value>
+            <value>
+                <fullName>Preparing Future Faculty</fullName>
+                <default>false</default>
+                <label>Preparing Future Faculty</label>
+            </value>
+            <value>
+                <fullName>Publications</fullName>
+                <default>false</default>
+                <label>Publications</label>
+            </value>
+            <value>
+                <fullName>Religious organizations</fullName>
+                <default>false</default>
+                <label>Religious organizations</label>
+            </value>
+            <value>
+                <fullName>Residence Association Government</fullName>
+                <default>false</default>
+                <label>Residence Association Government</label>
+            </value>
+            <value>
+                <fullName>Residence Hall Leadership</fullName>
+                <default>false</default>
+                <label>Residence Hall Leadership</label>
+            </value>
+            <value>
+                <fullName>Residence Hall Week committees</fullName>
+                <default>false</default>
+                <label>Residence Hall Week committees</label>
+            </value>
+            <value>
+                <fullName>Residence Waiters</fullName>
+                <default>false</default>
+                <label>Residence Waiters</label>
+            </value>
+            <value>
+                <fullName>Rodeo Club</fullName>
+                <default>false</default>
+                <label>Rodeo Club</label>
+            </value>
+            <value>
+                <fullName>Sketch Publication</fullName>
+                <default>false</default>
+                <label>Sketch Publication</label>
+            </value>
+            <value>
+                <fullName>Social Clubs</fullName>
+                <default>false</default>
+                <label>Social Clubs</label>
+            </value>
+            <value>
+                <fullName>Sports/Recreational Clubs</fullName>
+                <default>false</default>
+                <label>Sports/Recreational Clubs</label>
+            </value>
+            <value>
+                <fullName>Stars Over Veishea</fullName>
+                <default>false</default>
+                <label>Stars Over Veishea</label>
+            </value>
+            <value>
+                <fullName>Statesmen Choir</fullName>
+                <default>false</default>
+                <label>Statesmen Choir</label>
+            </value>
+            <value>
+                <fullName>Student Foundation Committee Member</fullName>
+                <default>false</default>
+                <label>Student Foundation Committee Member</label>
+            </value>
+            <value>
+                <fullName>Student Union Board</fullName>
+                <default>false</default>
+                <label>Student Union Board</label>
+            </value>
+            <value>
+                <fullName>Theater</fullName>
+                <default>false</default>
+                <label>Theater</label>
+            </value>
+            <value>
+                <fullName>Varieties</fullName>
+                <default>false</default>
+                <label>Varieties</label>
+            </value>
+            <value>
+                <fullName>VEISHEA Committee</fullName>
+                <default>false</default>
+                <label>VEISHEA Committee</label>
+            </value>
+            <value>
+                <fullName>VEISHEA Executive/Central Committee</fullName>
+                <default>false</default>
+                <label>VEISHEA Executive/Central Committee</label>
+            </value>
+            <value>
+                <fullName>Virtual Reality Involvement</fullName>
+                <default>false</default>
+                <label>Virtual Reality Involvement</label>
+            </value>
+            <value>
+                <fullName>Visual arts organizations</fullName>
+                <default>false</default>
+                <label>Visual arts organizations</label>
+            </value>
+            <value>
+                <fullName>Washington Center Intern</fullName>
+                <default>false</default>
+                <label>Washington Center Intern</label>
+            </value>
+            <value>
+                <fullName>Watson Graduate Fellowship</fullName>
+                <default>false</default>
+                <label>Watson Graduate Fellowship</label>
+            </value>
+            <value>
+                <fullName>President&apos;s Leadership  Class</fullName>
+                <default>false</default>
+                <label>President&apos;s Leadership  Class</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

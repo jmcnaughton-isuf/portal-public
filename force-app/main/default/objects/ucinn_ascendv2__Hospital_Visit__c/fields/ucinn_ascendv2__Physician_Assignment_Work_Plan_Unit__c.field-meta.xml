@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Physician_Assignment_Work_Plan_Unit__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Physician Assignment Work Plan Unit</label>
+    <length>10000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>6</visibleLines>
+</CustomField>

@@ -1,0 +1,1817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wealth_Rating_2017</fullName>
+    <active>true</active>
+    <label>Wealth Rating 2017</label>
+    <picklistValues>
+        <picklist>Annual_Target_Range_Code__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Annual_Target_Range__c</picklist>
+        <values>
+            <fullName>%241 - %2449</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241%2C000 - %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410%2C000 - %2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100 - %24249</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000 - %24249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 - %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000 - %2449%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250 - %24499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250%2C000 - %24499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000 - %249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450 - %2499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450%2C000 - %2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500 - %24999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500%2C000 - %24999%2C999</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Campaign_Gift_Estimate__c</picklist>
+        <values>
+            <fullName>%241 - %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241%2C000%2C000 - %244%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410%2C000 - %2414%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000 - %24249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2415%2C000 - %2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 - %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000 - %2449%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250%2C000 - %24499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000 - %249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450%2C000 - %2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500%2C000 - %24999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to rate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Campanile_Score__c</picklist>
+        <values>
+            <fullName>100 - 199</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200 - 299</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>300 - 399</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>400 - 499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>500 - 599</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>600 - 699</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>700 - 799</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>800 - 899</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>900%2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Capacity_Status__c</picklist>
+        <values>
+            <fullName>Based on Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modeled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Verified Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Variable Assets</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Capacity__c</picklist>
+        <values>
+            <fullName>01-%2425%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03-%2410%2C000%2C000 - %2424%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05-%245%2C000%2C000 - %249%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06-%242%2C500%2C000 - %244%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09-%241%2C000%2C000 - %242%2C499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11-%24250%2C000 - %24999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13-%24100%2C000 - %24249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14-%2450%2C000 - %2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16-%2425%2C000 - %2449%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18-%2410%2C000 - %2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20-%245%2C000 - %249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22-%242%2C500 - %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23-%241%2C000 - %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28-Less than %241%2C000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Source__c</picklist>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact report content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development officer referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutionally Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided by constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GGA_Annual_Gift_Score__c</picklist>
+        <values>
+            <fullName>%241%2C000 - %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100 - %24499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 - %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500 - %24999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under %24100</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GGA_Major_Gift_Score__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GGA_Planned_Gift_Score__c</picklist>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tertiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Level__c</picklist>
+        <values>
+            <fullName>%24100K - 500K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410K - %2425K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410M%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241M - 5M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425K - %2450K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242K - %2410K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500K - %241M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450K - %24100K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245M - %2410M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3C%242K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unrated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Major_Gift_Capacity_Final__c</picklist>
+        <values>
+            <fullName>%241%2C000 - %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241%2C000%2C000 - %242%2C499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410%2C000 - %2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000 - %24249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 - %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500%2C000 - %244%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000 - %2449%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250 - %24499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250%2C000 - %24499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000 - %249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450%2C000 - %2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500 - %24999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500%2C000 - %24999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Less than %24250</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Major_Gift_Score__c</picklist>
+        <values>
+            <fullName>100 - 199</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200 - 299</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>300 - 399</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>400 - 499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>500 - 599</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>600 - 699</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>700 - 799</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>800 - 899</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>900%2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Planned_Gift_Likelihood__c</picklist>
+        <values>
+            <fullName>100-199</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200-299</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>300-399</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>400-499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>500-599</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>600-699</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>700-799</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>800-899</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>900%2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Planned_Gift_Score__c</picklist>
+        <values>
+            <fullName>100 - 199</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>200 - 299</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>300 - 399</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>400 - 499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>500 - 599</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>600 - 699</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>700 - 799</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>800 - 899</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>900%2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Historical</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Research_Code__c</picklist>
+        <values>
+            <fullName>Mid-Level Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nothing to Lose Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned Gift Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Top Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source__c</picklist>
+        <values>
+            <fullName>Vendor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TA_Major_Gift_Cap__c</picklist>
+        <values>
+            <fullName>1-%2425%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-%2410%2C000%2C000 - %2424%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-%245%2C000%2C000 - %249%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-%242%2C500%2C000 - %244%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-%241%2C000%2C000 - %242%2C499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-%24250%2C000 - %24999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7-%24100%2C000 - %24249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8-%2450%2C000 - %2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9-%2425%2C000 - %2449%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A-%2410%2C000 - %2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B-%245%2C000 - %249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C-%242%2C500 - %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D-%241%2C000 - %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Less than %241%2C000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TA_Major_Gift_Capacity_Code__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor__c</picklist>
+        <values>
+            <fullName>Target Analytics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wealth_Code__c</picklist>
+        <values>
+            <fullName>Affluent Enigmas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blue Collar Masses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Devoted Humanitarians</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faithful Humanitarians</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financially Secure Philanthropists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Net Worth Philanthropists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marginal Casual Donors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Class Casual Donors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Starter Masses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sporadic Casual Donors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steady Humanitarians</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upwardly Mobile Philanthropists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Class Casual Donors</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wealth_Estimate__c</picklist>
+        <values>
+            <fullName>%241%2C000%2C000 - %244%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410%2C000%2C000 - %2424%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000 - %24499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000%2C000 - %249%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500%2C000 - %24999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No match in wealth database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth Indicators%2C but not Significant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Fundraiser_Tier_Donorscape_Affinity__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__MG_EVI__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>33</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>34</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>37</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>38</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>39</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>41</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>42</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>43</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>44</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>46</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>47</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>49</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>51</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>52</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>53</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>54</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>55</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>56</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>57</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>58</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>59</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>61</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>62</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>63</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>64</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>65</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>66</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>67</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>68</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>69</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>70</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>71</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>72</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>73</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>74</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>75</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>76</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>77</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>78</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>79</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>80</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>82</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>83</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>84</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>85</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>86</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>87</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>88</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>89</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>91</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>92</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>93</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>94</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>96</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>97</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>98</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>99</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__P2G_Score__c</picklist>
+        <values>
+            <fullName>1%7C0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%7C1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%7C2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%7C3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%7C4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%7C5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%7C6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%7C6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%7C6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%7C6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%7C6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%7C6</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Profile__c</picklist>
+        <values>
+            <fullName>Development Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development Officer - School of Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership Annual Giving Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presidential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMATS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Administrator</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Type__c</picklist>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth Rating 2017</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Wealth_Rating__c</picklist>
+        <values>
+            <fullName>%241%2C000%2C000-%242%2C499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241-%2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410%2C000%2C000-%2424%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000%2C000-%24249%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000-%24249%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500%2C000-%244%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000%2C000-%2449%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000-%2449%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250%2C000%2C000%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24250%2C000-%24499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000%2C000-%249%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450%2C000%2C000-%2474%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450%2C000-%2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500%2C000-%24999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2475%2C000%2C000-%2499%2C999%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Rate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

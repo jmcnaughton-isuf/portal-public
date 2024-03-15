@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferences__c</fullName>
+    <externalId>false</externalId>
+    <label>Preferences</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>4H</fullName>
+                <default>false</default>
+                <label>4H</label>
+            </value>
+            <value>
+                <fullName>Affinity Partners</fullName>
+                <default>false</default>
+                <label>Affinity Partners</label>
+            </value>
+            <value>
+                <fullName>Annual/Endowment Report</fullName>
+                <default>false</default>
+                <label>Annual/Endowment Report</label>
+            </value>
+            <value>
+                <fullName>Birthday</fullName>
+                <default>false</default>
+                <label>Birthday</label>
+            </value>
+            <value>
+                <fullName>Book Club</fullName>
+                <default>false</default>
+                <label>Book Club</label>
+            </value>
+            <value>
+                <fullName>Bug Guide</fullName>
+                <default>false</default>
+                <label>Bug Guide</label>
+            </value>
+            <value>
+                <fullName>Business Membership</fullName>
+                <default>false</default>
+                <label>Business Membership</label>
+            </value>
+            <value>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+                <label>Calendar</label>
+            </value>
+            <value>
+                <fullName>Campaign and Fundraising</fullName>
+                <default>false</default>
+                <label>Campaign and Fundraising</label>
+            </value>
+            <value>
+                <fullName>Career Information</fullName>
+                <default>false</default>
+                <label>Career Information</label>
+            </value>
+            <value>
+                <fullName>Club mailings</fullName>
+                <default>false</default>
+                <label>Club mailings</label>
+            </value>
+            <value>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+                <label>Credit Card</label>
+            </value>
+            <value>
+                <fullName>Cyclone Alley</fullName>
+                <default>false</default>
+                <label>Cyclone Alley</label>
+            </value>
+            <value>
+                <fullName>Cyclone Club</fullName>
+                <default>false</default>
+                <label>Cyclone Club</label>
+            </value>
+            <value>
+                <fullName>Cyclone Sports Complex</fullName>
+                <default>false</default>
+                <label>Cyclone Sports Complex</label>
+            </value>
+            <value>
+                <fullName>Directory</fullName>
+                <default>false</default>
+                <label>Directory</label>
+            </value>
+            <value>
+                <fullName>DOD Requested</fullName>
+                <default>false</default>
+                <label>DOD Requested</label>
+            </value>
+            <value>
+                <fullName>Donor Relations Updates</fullName>
+                <default>false</default>
+                <label>Donor Relations Updates</label>
+            </value>
+            <value>
+                <fullName>Email (GDPR)</fullName>
+                <default>false</default>
+                <label>Email (GDPR)</label>
+            </value>
+            <value>
+                <fullName>eNewsletter</fullName>
+                <default>false</default>
+                <label>eNewsletter</label>
+            </value>
+            <value>
+                <fullName>Events</fullName>
+                <default>false</default>
+                <label>Events</label>
+            </value>
+            <value>
+                <fullName>Events - Arizona</fullName>
+                <default>false</default>
+                <label>Events - Arizona</label>
+            </value>
+            <value>
+                <fullName>Events - Florida</fullName>
+                <default>false</default>
+                <label>Events - Florida</label>
+            </value>
+            <value>
+                <fullName>Faculty</fullName>
+                <default>false</default>
+                <label>Faculty</label>
+            </value>
+            <value>
+                <fullName>Financial Planners</fullName>
+                <default>false</default>
+                <label>Financial Planners</label>
+            </value>
+            <value>
+                <fullName>Football Invitations</fullName>
+                <default>false</default>
+                <label>Football Invitations</label>
+            </value>
+            <value>
+                <fullName>Football Training</fullName>
+                <default>false</default>
+                <label>Football Training</label>
+            </value>
+            <value>
+                <fullName>Gerdin Citizenship</fullName>
+                <default>false</default>
+                <label>Gerdin Citizenship</label>
+            </value>
+            <value>
+                <fullName>Gift Acknowledgement</fullName>
+                <default>false</default>
+                <label>Gift Acknowledgement</label>
+            </value>
+            <value>
+                <fullName>Gift Planning</fullName>
+                <default>false</default>
+                <label>Gift Planning</label>
+            </value>
+            <value>
+                <fullName>Governor</fullName>
+                <default>false</default>
+                <label>Governor</label>
+            </value>
+            <value>
+                <fullName>Hach Hall</fullName>
+                <default>false</default>
+                <label>Hach Hall</label>
+            </value>
+            <value>
+                <fullName>Hixson Program</fullName>
+                <default>false</default>
+                <label>Hixson Program</label>
+            </value>
+            <value>
+                <fullName>Holiday Card</fullName>
+                <default>false</default>
+                <label>Holiday Card</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Magazine</fullName>
+                <default>false</default>
+                <label>Magazine</label>
+            </value>
+            <value>
+                <fullName>Marching Band</fullName>
+                <default>false</default>
+                <label>Marching Band</label>
+            </value>
+            <value>
+                <fullName>Matching Gift Reminders</fullName>
+                <default>false</default>
+                <label>Matching Gift Reminders</label>
+            </value>
+            <value>
+                <fullName>MBA</fullName>
+                <default>false</default>
+                <label>MBA</label>
+            </value>
+            <value>
+                <fullName>Membership</fullName>
+                <default>false</default>
+                <label>Membership</label>
+            </value>
+            <value>
+                <fullName>Merchandise</fullName>
+                <default>false</default>
+                <label>Merchandise</label>
+            </value>
+            <value>
+                <fullName>Newsletters</fullName>
+                <default>false</default>
+                <label>Newsletters</label>
+            </value>
+            <value>
+                <fullName>No Address</fullName>
+                <default>false</default>
+                <label>No Address</label>
+            </value>
+            <value>
+                <fullName>No Business</fullName>
+                <default>false</default>
+                <label>No Business</label>
+            </value>
+            <value>
+                <fullName>Non-Membership</fullName>
+                <default>false</default>
+                <label>Non-Membership</label>
+            </value>
+            <value>
+                <fullName>No Phone</fullName>
+                <default>false</default>
+                <label>No Phone</label>
+            </value>
+            <value>
+                <fullName>OLLI</fullName>
+                <default>false</default>
+                <label>OLLI</label>
+            </value>
+            <value>
+                <fullName>OTK</fullName>
+                <default>false</default>
+                <label>OTK</label>
+            </value>
+            <value>
+                <fullName>OTK Invite</fullName>
+                <default>false</default>
+                <label>OTK Invite</label>
+            </value>
+            <value>
+                <fullName>Parent</fullName>
+                <default>false</default>
+                <label>Parent</label>
+            </value>
+            <value>
+                <fullName>PhD</fullName>
+                <default>false</default>
+                <label>PhD</label>
+            </value>
+            <value>
+                <fullName>Phone - Business</fullName>
+                <default>false</default>
+                <label>Phone - Business</label>
+            </value>
+            <value>
+                <fullName>Phone - Cell</fullName>
+                <default>false</default>
+                <label>Phone - Cell</label>
+            </value>
+            <value>
+                <fullName>Phone - Land-Line</fullName>
+                <default>false</default>
+                <label>Phone - Land-Line</label>
+            </value>
+            <value>
+                <fullName>Presidential Communication</fullName>
+                <default>false</default>
+                <label>Presidential Communication</label>
+            </value>
+            <value>
+                <fullName>Professional Advisor</fullName>
+                <default>false</default>
+                <label>Professional Advisor</label>
+            </value>
+            <value>
+                <fullName>Receipts</fullName>
+                <default>false</default>
+                <label>Receipts</label>
+            </value>
+            <value>
+                <fullName>Recruitment</fullName>
+                <default>false</default>
+                <label>Recruitment</label>
+            </value>
+            <value>
+                <fullName>Retiree</fullName>
+                <default>false</default>
+                <label>Retiree</label>
+            </value>
+            <value>
+                <fullName>Special Interest Society</fullName>
+                <default>false</default>
+                <label>Special Interest Society</label>
+            </value>
+            <value>
+                <fullName>Stephens</fullName>
+                <default>false</default>
+                <label>Stephens</label>
+            </value>
+            <value>
+                <fullName>Stewardship</fullName>
+                <default>false</default>
+                <label>Stewardship</label>
+            </value>
+            <value>
+                <fullName>Surveys</fullName>
+                <default>false</default>
+                <label>Surveys</label>
+            </value>
+            <value>
+                <fullName>Sustaining Life</fullName>
+                <default>false</default>
+                <label>Sustaining Life</label>
+            </value>
+            <value>
+                <fullName>Tau Beta Pi</fullName>
+                <default>false</default>
+                <label>Tau Beta Pi</label>
+            </value>
+            <value>
+                <fullName>Text/SMS</fullName>
+                <default>false</default>
+                <label>Text/SMS</label>
+            </value>
+            <value>
+                <fullName>Travel</fullName>
+                <default>false</default>
+                <label>Travel</label>
+            </value>
+            <value>
+                <fullName>W&amp;P</fullName>
+                <default>false</default>
+                <label>W&amp;P</label>
+            </value>
+            <value>
+                <fullName>W&amp;P Invites</fullName>
+                <default>false</default>
+                <label>W&amp;P Invites</label>
+            </value>
+            <value>
+                <fullName>WiSE</fullName>
+                <default>false</default>
+                <label>WiSE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

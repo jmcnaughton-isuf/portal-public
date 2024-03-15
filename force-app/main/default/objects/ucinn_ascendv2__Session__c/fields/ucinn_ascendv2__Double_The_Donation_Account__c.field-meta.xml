@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Double_The_Donation_Account__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Picklist that lists Double the Donation credential groupings in External API Credentials for custom metadata type and custom settings.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Double the Donation credentials to be applied to all payments in this session. If none is selected, default from custom metadata is selected.</inlineHelpText>
+    <label>Double The Donation Account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Test 100</fullName>
+                <default>false</default>
+                <label>Test 100</label>
+            </value>
+            <value>
+                <fullName>Test Association</fullName>
+                <default>false</default>
+                <label>Test Association</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

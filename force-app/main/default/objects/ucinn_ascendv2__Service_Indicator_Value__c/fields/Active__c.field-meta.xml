@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the Service Indicator is Active or Inactive.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether the Service Indicator is Active or Inactive.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

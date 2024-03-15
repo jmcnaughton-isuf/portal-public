@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Handling_Alert__c</fullName>
+    <description>Used to indicate that this service indicator is to be displayed on the alert panel.  Derived from the special handling flag on the Service Indicator Value record.</description>
+    <externalId>false</externalId>
+    <formula>If( ucinn_ascendv2__Service_Indicator_Value__r.Active__c == TRUE,
+ucinn_ascendv2__Service_Indicator_Value__r.Special_Handling_Alert__c,
+False
+)</formula>
+    <inlineHelpText>Used to indicate that this service indicator is to be displayed on the alert panel.</inlineHelpText>
+    <label>Special Handling Alert</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

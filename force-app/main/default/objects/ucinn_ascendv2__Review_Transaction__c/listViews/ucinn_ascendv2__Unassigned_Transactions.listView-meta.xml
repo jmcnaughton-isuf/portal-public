@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Unassigned_Transactions</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>ucinn_ascendv2__Exception_Reasons_Formula__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Remitter_Name_Formula__c</columns>
+    <columns>ucinn_ascendv2__Designation_1_Name__c</columns>
+    <columns>ucinn_ascendv2__Appeal_No_Source_Code__c</columns>
+    <columns>ucinn_ascendv2__Is_Correspondence__c</columns>
+    <columns>ucinn_ascendv2__Is_Handwriting_Present__c</columns>
+    <columns>ucinn_ascendv2__Is_Payment_Match__c</columns>
+    <columns>ucinn_ascendv2__Amount_1__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Session__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Unassigned</value>
+    </filters>
+    <label>Unassigned Transactions</label>
+</ListView>

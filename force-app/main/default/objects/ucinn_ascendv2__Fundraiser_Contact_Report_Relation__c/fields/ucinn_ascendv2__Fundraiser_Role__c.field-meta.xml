@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Fundraiser_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Fundraiser Role</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary Fundraiser</fullName>
+                <default>true</default>
+                <label>Contact Manager</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Secondary Fundraiser</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Secondary Fundraiser</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

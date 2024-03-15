@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bequest</fullName>
+        <default>false</default>
+        <label>Bequest</label>
+    </customValue>
+    <customValue>
+        <fullName>CGA Charitable Gift Annuity</fullName>
+        <default>false</default>
+        <label>CGA Charitable Gift Annuity</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Policy</fullName>
+        <default>false</default>
+        <label>Insurance Policy</label>
+    </customValue>
+    <customValue>
+        <fullName>Paid in full</fullName>
+        <default>false</default>
+        <label>Paid in full</label>
+    </customValue>
+    <customValue>
+        <fullName>CRAT Annuity Trust</fullName>
+        <default>false</default>
+        <label>CRAT Annuity Trust</label>
+    </customValue>
+    <customValue>
+        <fullName>CRUT Unitrust</fullName>
+        <default>false</default>
+        <label>CRUT Unitrust</label>
+    </customValue>
+    <customValue>
+        <fullName>Zero Coupon Bond</fullName>
+        <default>false</default>
+        <label>Zero Coupon Bond</label>
+    </customValue>
+    <customValue>
+        <fullName>Closely Held Stock</fullName>
+        <default>false</default>
+        <label>Closely Held Stock</label>
+    </customValue>
+    <customValue>
+        <fullName>Farm Property</fullName>
+        <default>false</default>
+        <label>Farm Property</label>
+    </customValue>
+    <customValue>
+        <fullName>Cash</fullName>
+        <default>false</default>
+        <label>Cash</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketable Securities</fullName>
+        <default>false</default>
+        <label>Marketable Securities</label>
+    </customValue>
+    <customValue>
+        <fullName>Real Estate, Non-Farm</fullName>
+        <default>false</default>
+        <label>Real Estate, Non-Farm</label>
+    </customValue>
+    <customValue>
+        <fullName>Gifts In Kind</fullName>
+        <default>false</default>
+        <label>Gifts In Kind</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <label>Equipment</label>
+    </customValue>
+    <masterLabel>Will Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

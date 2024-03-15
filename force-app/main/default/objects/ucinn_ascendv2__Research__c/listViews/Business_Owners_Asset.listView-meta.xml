@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Owners_Asset</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>Description__c</columns>
+    <columns>Name_of_Stock__c</columns>
+    <columns>Valuation__c</columns>
+    <columns>Ownership_Percentage__c</columns>
+    <columns>Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Reactive_Research_Type__c</field>
+        <operation>equals</operation>
+        <value>Business</value>
+    </filters>
+    <label>Business Owners Asset</label>
+</ListView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Michele_s_Weekly_Reminders_test</fullName>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>ucinn_ascendv2__Matching_Organization_Formula__c</columns>
+    <columns>Ignore__c</columns>
+    <columns>Pledge_Reminder_Preference__c</columns>
+    <columns>Pledge_Reminder_Sent__c</columns>
+    <columns>Reminder_Sent_Date__c</columns>
+    <columns>Number_of_Reminder_Sent__c</columns>
+    <columns>ucinn_ascendv2__Expected_Date__c</columns>
+    <columns>ucinn_ascendv2__Amount__c</columns>
+    <columns>ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Send_Pledge_Reminder__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Pledge_Reminder_Owner__c</field>
+        <operation>contains</operation>
+        <value>Stewardship</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Opportunity__c</field>
+        <operation>notContain</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5</value>
+    </filters>
+    <filters>
+        <field>Pledge_Stage_Formula__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Copy of Michele&apos;s Weekly Reminders-test</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Congressional_District__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The congressional district to which the address belongs. Output will be two digits from 01 - 53 or &quot;AL.&quot; &quot;AL&quot; means that the entire state (or territory) is covered by a single congressional district. These include Alaska, Delaware, Montana, North Dakota, South Dakota, Vermont, Wyoming, Washington DC, Virgin Islands, and other territories.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The congressional district to which the address belongs. Output will be two digits from 01 - 53 or &quot;AL.&quot; &quot;AL&quot; means that the entire state (or territory) is covered by a single congressional district. These include Alaska, Delaware, Montana, North Dakota, South Dakota, Vermont, Wyoming, Washington DC, Virgin Islands, and other territories.</inlineHelpText>
+    <label>Congressional District</label>
+    <length>2</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

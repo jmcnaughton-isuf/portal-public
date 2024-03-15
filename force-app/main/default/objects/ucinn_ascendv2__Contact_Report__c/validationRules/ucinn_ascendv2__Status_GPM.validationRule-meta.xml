@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Status_GPM</fullName>
+    <active>true</active>
+    <description>GPM cannot specify any status beyond submitted or resubmitted.</description>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE ,
+$Profile.Name = &quot;Gift Planning Manager&quot;&amp;&amp; (TEXT(ucinn_ascendv2__Status__c)
+=&quot;Approved&quot; ||TEXT(ucinn_ascendv2__Status__c)
+=&quot;Incomplete&quot;||TEXT(ucinn_ascendv2__Status__c)=&quot;Inactive&quot;
+))</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Status__c</errorDisplayField>
+    <errorMessage>Only the RMATS team can select a status of approved, incomplete, or inactive.</errorMessage>
+</ValidationRule>

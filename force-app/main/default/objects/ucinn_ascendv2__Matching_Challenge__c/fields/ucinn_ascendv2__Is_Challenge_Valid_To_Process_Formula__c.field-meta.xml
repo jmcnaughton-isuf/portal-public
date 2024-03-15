@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Challenge_Valid_To_Process_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Check to see if we can process the Challenge</description>
+    <externalId>false</externalId>
+    <formula>IF( AND(ucinn_ascendv2__Amount_Until_Goal_Met_Formula__c == 0, ISPICKVAL(ucinn_ascendv2__Status__c, &apos;Active&apos;)), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Check to see if we can process the Challenge</inlineHelpText>
+    <label>Is Challenge Valid To Process</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

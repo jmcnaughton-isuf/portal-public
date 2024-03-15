@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>A list of fields that, when checked, will pre-populate “Is Anonymous” flag in Gift Processing</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Fields To Trigger Anonymous Donation</label>
+    <visibility>Public</visibility>
+</CustomObject>

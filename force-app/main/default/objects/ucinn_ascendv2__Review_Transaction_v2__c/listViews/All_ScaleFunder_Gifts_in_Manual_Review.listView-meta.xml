@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_ScaleFunder_Gifts_in_Manual_Review</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Session__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>Confidential_Indicator__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Batch_Number__c</columns>
+    <columns>ucinn_ascendv2__Opportunity_Type__c</columns>
+    <columns>ucinn_ascendv2__Interim__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Review_Transaction_v2__c.Scale_Funder_Transaction</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Manual Review</value>
+    </filters>
+    <filters>
+        <field>Data_Source__c</field>
+        <operation>equals</operation>
+        <value>ScaleFunder</value>
+    </filters>
+    <label>All ScaleFunder Gifts in Manual Review</label>
+</ListView>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual</fullName>
+                <default>false</default>
+                <label>Annual</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Historied</fullName>
+                <default>false</default>
+                <label>Historied</label>
+            </value>
+            <value>
+                <fullName>Life</fullName>
+                <default>false</default>
+                <label>Life</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Student Life</fullName>
+                <default>false</default>
+                <label>Student Life</label>
+            </value>
+            <value>
+                <fullName>Cyclone Alley</fullName>
+                <default>false</default>
+                <label>Cyclone Alley</label>
+            </value>
+            <value>
+                <fullName>Complimentary</fullName>
+                <default>false</default>
+                <label>Complimentary</label>
+            </value>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Reinstated</fullName>
+                <default>false</default>
+                <label>Reinstated</label>
+            </value>
+            <value>
+                <fullName>Renewed</fullName>
+                <default>false</default>
+                <label>Renewed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

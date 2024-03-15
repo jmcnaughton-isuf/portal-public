@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Leads_No_Contactd</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Employee_ID__c</columns>
+    <columns>ucinn_ascendv2__School_ID__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Employer_Account__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>ucinn_ascendv2__Source_File__c</columns>
+    <columns>ucinn_ascendv2__Phone_1__c</columns>
+    <columns>ucinn_ascendv2__Email_1__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Contact__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,New</value>
+    </filters>
+    <label>All Interims with No Contact</label>
+    <language>en_US</language>
+</ListView>

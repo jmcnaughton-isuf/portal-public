@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Handling_Alert__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Show on alert panel for selected special handling for prospecting.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Show on alert panel for selected special handling for prospecting. Check to show on panel.</inlineHelpText>
+    <label>Special Handling Alert</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

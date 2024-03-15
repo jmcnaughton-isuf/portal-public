@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Involvement_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Involvement Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Award/Honor</fullName>
+                <default>false</default>
+                <label>Award/Honor</label>
+            </value>
+            <value>
+                <fullName>Board</fullName>
+                <default>false</default>
+                <label>Board</label>
+            </value>
+            <value>
+                <fullName>Interest</fullName>
+                <default>false</default>
+                <label>Interest</label>
+            </value>
+            <value>
+                <fullName>Activity</fullName>
+                <default>false</default>
+                <label>Activity</label>
+            </value>
+            <value>
+                <fullName>Alumni Club</fullName>
+                <default>false</default>
+                <label>Alumni Club</label>
+            </value>
+            <value>
+                <fullName>Club/Association</fullName>
+                <default>false</default>
+                <label>Club/Association</label>
+            </value>
+            <value>
+                <fullName>Affiliation</fullName>
+                <default>false</default>
+                <label>Affiliation</label>
+            </value>
+            <value>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+                <label>Volunteer</label>
+            </value>
+            <value>
+                <fullName>Fraternity/Sorority</fullName>
+                <default>false</default>
+                <label>Fraternity/Sorority</label>
+            </value>
+            <value>
+                <fullName>Student Experience</fullName>
+                <default>false</default>
+                <label>Student Experience</label>
+            </value>
+            <value>
+                <fullName>Athletic</fullName>
+                <default>false</default>
+                <label>Athletic</label>
+            </value>
+            <value>
+                <fullName>Recognition</fullName>
+                <default>false</default>
+                <label>Recognition</label>
+            </value>
+            <value>
+                <fullName>Membership</fullName>
+                <default>false</default>
+                <label>Membership</label>
+            </value>
+            <value>
+                <fullName>Medicine</fullName>
+                <default>false</default>
+                <label>Medicine</label>
+            </value>
+            <value>
+                <fullName>Presidential</fullName>
+                <default>false</default>
+                <label>Presidential</label>
+            </value>
+            <value>
+                <fullName>Government Officials</fullName>
+                <default>false</default>
+                <label>Government Officials</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

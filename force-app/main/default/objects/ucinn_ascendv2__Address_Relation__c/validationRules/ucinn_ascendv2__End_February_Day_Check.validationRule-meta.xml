@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__End_February_Day_Check</fullName>
+    <active>true</active>
+    <description>For non-leap year, cannot pick 29 / 30 / 31 for February.
+For leap year, cannot pick 30 / 31 for February.</description>
+    <errorConditionFormula>$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c &lt;&gt; TRUE &amp;&amp;
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Month__c, &apos;02&apos;) &amp;&amp;
+
+OR(
+
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Day__c, &apos;30&apos;),
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Day__c, &apos;31&apos;),
+
+IF(NOT(MOD(VALUE(ucinn_ascendv2__Seasonal_End_Year__c),4) == 0
+&amp;&amp; (MOD(VALUE(ucinn_ascendv2__Seasonal_End_Year__c),100) != 0 ||
+MOD(VALUE(ucinn_ascendv2__Seasonal_End_Year__c),400) == 0))
+&amp;&amp; ISPICKVAL(ucinn_ascendv2__Seasonal_End_Day__c, &apos;29&apos;), TRUE, FALSE)
+)
+
+&amp;&amp; OR(
+RecordType.DeveloperName = &apos;Organization_Address_Relation&apos;,
+RecordType.DeveloperName = &apos;Household_Address_Relation&apos;,
+RecordType.DeveloperName = &apos;Contact_Address_Relation&apos;
+) &amp;&amp;
+RecordType.NamespacePrefix = &apos;ucinn_ascendv2&apos;</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Seasonal_End_Day__c</errorDisplayField>
+    <errorMessage>Invalid entry. The day entered for the month of February is not valid.</errorMessage>
+</ValidationRule>

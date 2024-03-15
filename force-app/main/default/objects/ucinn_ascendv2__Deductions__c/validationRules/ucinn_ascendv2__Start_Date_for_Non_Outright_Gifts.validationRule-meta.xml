@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Start_Date_for_Non_Outright_Gifts</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+ISNULL( ucinn_ascendv2__Start_Date__c ) &amp;&amp; NOT((ISPICKVAL( ucinn_ascendv2__Source__c , &quot;Outright Gift&quot;))))</errorConditionFormula>
+    <errorMessage>Start date is required if source is not outright gift.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_for_Source_Object_Use__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicate if this matching key rule can be used at the source object in a matching rule.</description>
+    <externalId>false</externalId>
+    <label>Is for Source Object Use</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

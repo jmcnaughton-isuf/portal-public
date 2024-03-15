@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Profiles__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Profiles that have access to the specified record type. If empty, all profiles have access. Multiple profiles are separately with &apos;;&apos;.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Profiles that have access to the specified record type. If empty, all profiles have access. Multiple profiles are separately with &apos;;&apos;.</inlineHelpText>
+    <label>Profiles</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

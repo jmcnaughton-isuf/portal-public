@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Reiman_Garden_s_Memberships</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Amount_Paid__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>ucinn_ascendv2__Giving_Society__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Giving_Society__c</field>
+        <operation>contains</operation>
+        <value>Reiman</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pending</value>
+    </filters>
+    <label>Pending Reiman Garden&apos;s Memberships</label>
+</ListView>

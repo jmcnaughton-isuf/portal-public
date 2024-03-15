@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Summary_Rev_Trans_External_System_ID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>External Id of the Summary Review Transaction. If it does not exist it, create one with this external id.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>External Id of the Summary Review Transaction. If it does not exist it, create one with this external id.</inlineHelpText>
+    <label>Summary Rev Trans External System ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

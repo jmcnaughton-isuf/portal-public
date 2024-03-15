@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Status_Inactive_Rules</fullName>
+    <active>true</active>
+    <description>If a designation has the status of &quot;Inactive&quot; do not allow &quot;Is Publicly Visible&quot; to be checked.</description>
+    <errorConditionFormula>AND($Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c &lt;&gt; TRUE, ucinn_ascendv2__Status_Formula__c == &apos;Inactive&apos;, ucinn_ascendv2__Is_Publicly_Visible__c == TRUE)</errorConditionFormula>
+    <errorMessage>Is Publicly Visible cannot be checked when G / L Effective Date is in the future and when G / L Expiration Date is in the present or past.</errorMessage>
+</ValidationRule>

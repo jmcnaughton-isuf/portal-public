@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Division__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Division</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Division must be a work plan unit Type of Division</errorMessage>
+        <filterItems>
+            <field>ucinn_ascendv2__Work_Plan_Unit__c.ucinn_ascendv2__Type__c</field>
+            <operation>equals</operation>
+            <value>Division</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ucinn_ascendv2__Work_Plan_Unit__c</referenceTo>
+    <relationshipLabel>Designations (Division)</relationshipLabel>
+    <relationshipName>Designations_Division</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

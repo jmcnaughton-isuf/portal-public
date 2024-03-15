@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Account_Or_Contact_Missing</fullName>
+    <active>true</active>
+    <description>Sponsor has to have either Account or Contact</description>
+    <errorConditionFormula>IF(AND(ucinn_ascendv2__Contact__c = null, ucinn_ascendv2__Account__c = null), true, false)</errorConditionFormula>
+    <errorMessage>Sponsor has to have either Account or Contact</errorMessage>
+</ValidationRule>

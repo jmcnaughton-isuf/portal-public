@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact_Report_Relation_Auto_Number__c</fullName>
+    <deprecated>false</deprecated>
+    <displayFormat>CRR-{0000000}</displayFormat>
+    <externalId>false</externalId>
+    <label>Contact Report Relation Auto Number</label>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

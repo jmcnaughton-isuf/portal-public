@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Enter_Either_Amount_or_Percent</fullName>
+    <active>false</active>
+    <description>The user can enter either amount or percent but not both.</description>
+    <errorConditionFormula>AND(
+    $Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+    NOT(ISNULL(ucinn_ascendv2__Deduction_Amount__c)),
+    OR(NOT(ISNULL(ucinn_ascendv2__Deduction_Percentage__c)),
+       NOT(ISNULL(ucinn_ascendv2__Amount_Derived_From_Percentage__c ))))</errorConditionFormula>
+    <errorMessage>You can enter either deduction amount or deduction percentage and derived amount.  Entering both values is not allowed.</errorMessage>
+</ValidationRule>

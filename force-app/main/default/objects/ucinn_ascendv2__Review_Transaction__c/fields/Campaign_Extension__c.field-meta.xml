@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Extension__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CA: 9/20/2019: - Phase 1: To be mapped to Opportunity</description>
+    <externalId>false</externalId>
+    <label>Campaign Extension</label>
+    <referenceTo>Campaign</referenceTo>
+    <relationshipLabel>Review Transactions (Campaign Extension)</relationshipLabel>
+    <relationshipName>Review_Transactions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

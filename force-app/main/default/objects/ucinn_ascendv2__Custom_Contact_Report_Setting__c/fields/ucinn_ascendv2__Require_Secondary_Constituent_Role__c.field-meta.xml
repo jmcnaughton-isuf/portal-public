@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Require_Secondary_Constituent_Role__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check to require the Secondary Constituent Role field on the Contact Report.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to require the Secondary Constituent Role field on the Contact Report.</inlineHelpText>
+    <label>Require Secondary Constituent Role</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

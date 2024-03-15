@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Async_Errors_Last_Run__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Async Errors Last Run</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

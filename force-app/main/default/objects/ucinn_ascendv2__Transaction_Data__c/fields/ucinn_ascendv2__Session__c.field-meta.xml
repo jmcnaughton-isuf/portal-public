@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Session__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Session that the transaction is tied to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Session that the transaction is tied to.</inlineHelpText>
+    <label>Session</label>
+    <referenceTo>ucinn_ascendv2__Session__c</referenceTo>
+    <relationshipLabel>Transaction Data</relationshipLabel>
+    <relationshipName>Transaction_Data</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Type_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(  Asset_Type__c  ,   &apos;Art Work&apos;,&apos;A&apos;,
+			  &apos;Trust held by ISUF&apos;,&apos;B&apos;,
+			  &apos;Retirement Assets&apos;,&apos;C&apos;,
+			  &apos;Testamentary Trust&apos;,&apos;D&apos;,
+			  &apos;Equipment&apos;,&apos;E&apos;,
+			  &apos;Farm Property&apos;,&apos;F&apos;,
+			  &apos;Direct to University&apos;,&apos;G&apos;,
+			  &apos;Insurance Commitment&apos;,&apos;I&apos;,
+			  &apos;Insurance Bequest&apos;,&apos;J&apos;,
+			  &apos;Gifts in Kind&apos;,&apos;K&apos;,
+			  &apos;Marketable Securities&apos;,&apos;M&apos;,
+			  &apos;Other Non-Cash&apos;,&apos;N&apos;,
+			  &apos;Other&apos;,&apos;O&apos;,
+			  &apos;Pledge Commitment&apos;,&apos;P&apos;,
+			  &apos;Real Estate, Non-Farm&apos;,&apos;R&apos;,
+			  &apos;Closely Held Stock&apos;,&apos;S&apos;,
+			  &apos;Trust held by others&apos;,&apos;T&apos;,
+			  &apos;Unknown Gift Amount&apos;,&apos;U&apos;,
+			  &apos;IRA Rollover&apos;,&apos;V&apos;,
+			  &apos;Will Commitment&apos;,&apos;W&apos;,
+			  &apos;Contingent Commitment&apos;,&apos;X&apos;,
+			  &apos;Unknown Deceased Will Commitment&apos;,&apos;Z&apos;,
+                          &apos;Grain&apos;, &apos;N&apos;,
+                          &apos;Cash&apos;,&apos;H&apos;,
+                          &apos;&apos;,&apos;H&apos;,
+                          &apos;Unknown&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Asset Type Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

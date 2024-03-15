@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Business_Unit_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Leverages the Academic Org and Department for Daily Contribution report</description>
+    <externalId>false</externalId>
+    <formula>IF (ISBLANK(ucinn_ascendv2__X1_Academic_Org_Name_Formula__c), ucinn_ascendv2__X1_Department_Name_Formula__c, ucinn_ascendv2__X1_Academic_Org_Name_Formula__c)</formula>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

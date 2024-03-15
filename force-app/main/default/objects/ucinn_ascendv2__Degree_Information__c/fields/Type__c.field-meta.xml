@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>C Miscellaneous degrees
+D Doctor, Veterinary Medicine
+F Class preference (PRF)
+H Honorary Degree
+M Masters
+O Degrees from other institutions
+P Ph.D. (doctorate)
+R Professional degree
+U Undergraduate</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Miscellaneous degrees</fullName>
+                <default>false</default>
+                <label>Miscellaneous degrees</label>
+            </value>
+            <value>
+                <fullName>Doctor, Veterinary Medicine</fullName>
+                <default>false</default>
+                <label>Doctor, Veterinary Medicine</label>
+            </value>
+            <value>
+                <fullName>Class preference (PRF)</fullName>
+                <default>false</default>
+                <label>Class preference (PRF)</label>
+            </value>
+            <value>
+                <fullName>Honorary Degree</fullName>
+                <default>false</default>
+                <label>Honorary Degree</label>
+            </value>
+            <value>
+                <fullName>Masters</fullName>
+                <default>false</default>
+                <label>Masters</label>
+            </value>
+            <value>
+                <fullName>Degrees from other institutions</fullName>
+                <default>false</default>
+                <label>Degrees from other institutions</label>
+            </value>
+            <value>
+                <fullName>Ph.D. (doctorate)</fullName>
+                <default>false</default>
+                <label>Ph.D. (doctorate)</label>
+            </value>
+            <value>
+                <fullName>Professional degree</fullName>
+                <default>false</default>
+                <label>Professional degree</label>
+            </value>
+            <value>
+                <fullName>Undergraduate</fullName>
+                <default>false</default>
+                <label>Undergraduate</label>
+            </value>
+            <value>
+                <fullName>Attending/Attended</fullName>
+                <default>false</default>
+                <label>Attending/Attended</label>
+            </value>
+            <value>
+                <fullName>Certificate</fullName>
+                <default>false</default>
+                <label>Certificate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

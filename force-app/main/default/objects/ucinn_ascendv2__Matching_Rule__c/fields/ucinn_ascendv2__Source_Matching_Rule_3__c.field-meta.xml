@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Source_Matching_Rule_3__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The third source matching key rule user selected for this matching rule.</description>
+    <externalId>false</externalId>
+    <label>Source Matching Rule 3</label>
+    <referenceTo>ucinn_ascendv2__Matching_Key_Rule__c</referenceTo>
+    <relationshipLabel>Matching Rules (Source Matching Rule 3)</relationshipLabel>
+    <relationshipName>Matching_Rules_Source_Matching_Rule_3</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

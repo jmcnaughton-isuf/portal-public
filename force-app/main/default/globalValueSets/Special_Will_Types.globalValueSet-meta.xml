@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Achievement Fund Commitments</fullName>
+        <default>false</default>
+        <label>Achievement Fund Commitments</label>
+    </customValue>
+    <customValue>
+        <fullName>University Commitments</fullName>
+        <default>false</default>
+        <label>University Commitments</label>
+    </customValue>
+    <description>CA: 10/15/2019: Created for use on Review Transaction and Opportunity</description>
+    <masterLabel>Special Will Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

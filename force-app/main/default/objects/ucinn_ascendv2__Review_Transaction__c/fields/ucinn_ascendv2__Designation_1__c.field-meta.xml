@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Designation_1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The first Designation that appears on a transaction.  In some cases (or for future development), there could be multiple designations associated with a Review Transaction.</description>
+    <externalId>false</externalId>
+    <label>Designation 1</label>
+    <referenceTo>ucinn_ascendv2__Designation__c</referenceTo>
+    <relationshipLabel>Review Transactions (Designation 1)</relationshipLabel>
+    <relationshipName>Review_Transactions_Designation_1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

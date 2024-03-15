@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Report_Significant_Contact__c</fullName>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Contact_Report__r.ucinn_ascendv2__Is_Substantive_Contact__c</formula>
+    <label>Contact Report Significant Contact</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

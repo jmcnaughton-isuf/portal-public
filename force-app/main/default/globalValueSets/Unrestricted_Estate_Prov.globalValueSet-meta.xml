@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Unrestricted Foundation Estate Gifts</fullName>
+        <default>false</default>
+        <label>Unrestricted Foundation Estate Gifts</label>
+    </customValue>
+    <customValue>
+        <fullName>Unrestricted University Estate Gifts</fullName>
+        <default>false</default>
+        <label>Unrestricted University Estate Gifts</label>
+    </customValue>
+    <customValue>
+        <fullName>Unrestricted Fnd. Estate Prov.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Unrestricted Fnd. Estate Prov.</label>
+    </customValue>
+    <customValue>
+        <fullName>Unrestricted Univ. Estate Prov.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Unrestricted Univ. Estate Prov.</label>
+    </customValue>
+    <description>CA: 10/15/2019: Created for use on Review Transaction and Opportunity</description>
+    <masterLabel>Unrestricted Estate Prov</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

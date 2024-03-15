@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Foundation</fullName>
+        <default>false</default>
+        <label>Foundation</label>
+    </customValue>
+    <customValue>
+        <fullName>University</fullName>
+        <default>false</default>
+        <label>University</label>
+    </customValue>
+    <masterLabel>Payroll Deduction</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

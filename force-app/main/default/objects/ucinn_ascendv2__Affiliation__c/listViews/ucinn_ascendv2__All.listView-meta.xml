@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Constituent_Role__c</columns>
+    <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>Employer_Name__c</columns>
+    <columns>Occupation__c</columns>
+    <columns>ucinn_ascendv2__Job_Title__c</columns>
+    <columns>ucinn_ascendv2__Organization_Role__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>ucinn_ascendv2__Is_Donor_Control__c</columns>
+    <columns>ucinn_ascendv2__Is_Primary_Contact__c</columns>
+    <columns>ucinn_ascendv2__Is_Employer_Formula__c</columns>
+    <columns>ucinn_ascendv2__Is_Retiree__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Constituent_Role__c</field>
+        <operation>equals</operation>
+        <value>Employee</value>
+    </filters>
+    <filters>
+        <field>Employer_Name__c</field>
+        <operation>equals</operation>
+        <value>Vermeer</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managed_formula__c</fullName>
+    <description>Formula checks managers and related managers on linked constituent to provide a field to filter on for list views and reports, will be blank if no valid constituent lookup</description>
+    <externalId>false</externalId>
+    <formula>IF(   ISBLANK(ucinn_ascendv2__Contact__r.Managers_formula__c) &amp;&amp;  ISBLANK(ucinn_ascendv2__Contact__r.Related_Managers__c)  , FALSE, TRUE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Managed Formula</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Peer_Screening_Data</fullName>
+    <active>true</active>
+    <label>Peer Screening Data</label>
+    <picklistValues>
+        <picklist>Ability_to_Give__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Active_Historied__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>History</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Description__c</picklist>
+        <values>
+            <fullName>ASG No Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advancement Briefing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affiliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Background Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biographical Background</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleared - Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleared - No Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cultivation Profile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualification Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERM Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farmland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding Interest Reason</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Notes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greek Giving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Liquidity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Historic Wealth Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hobbies%2FExternal Interests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indicators</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inheritor of Wealth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxury Hobbies%2FGoods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager Update-Proactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Verified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patent Holder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patent Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philanthropic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Business Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Risk Identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salutation Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Medicine Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth Indicators</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_Strong_is_their_Affinity_to_ISU__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_Well_Known__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Indicator_Type__c</picklist>
+        <values>
+            <fullName>Art Collector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elite Philanthropist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equestrian Hobbyist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inheritor of Wealth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxury Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patent Holder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Business Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Company Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior Level Title</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interests_that_Align_with_ISU_s_Priorit__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Peer_Screening_Time_Frame__c</picklist>
+        <values>
+            <fullName>2006-2012</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2013-current</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Perceive_Person_to_be_Philanthropic__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prospect_Type__c</picklist>
+        <values>
+            <fullName>ASG No Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affiliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualification Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding Interest Reason</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Notes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greek Giving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager Update-Proactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patent Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philanthropic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salutation Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Medicine Payments</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Real_Estate_Type__c</picklist>
+        <values>
+            <fullName>Additional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farmland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Referred__c</picklist>
+        <values>
+            <fullName>N</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role_PS_Willing_to_Play__c</picklist>
+        <values>
+            <fullName>Okay with us using your name when trying to secure an appointment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will give information only%3B do not use your name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Willing to reach out and ask if the prospect is interested in meeting with a development Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Willing to reach out and explore the prospect%27s philanthropic interests on your own</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Current</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>History</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wealth_Indiator_Range__c</picklist>
+        <values>
+            <fullName>1-2%2E99M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-20M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-5M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%2BM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-10M</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

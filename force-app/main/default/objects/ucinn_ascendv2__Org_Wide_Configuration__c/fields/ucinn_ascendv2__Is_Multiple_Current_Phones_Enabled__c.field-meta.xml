@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Multiple_Current_Phones_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Configure if your school allows a constituent to have multiple current status phones of same type</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to enable, or uncheck it to disable.</inlineHelpText>
+    <label>Is Multiple Current Phones Enabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

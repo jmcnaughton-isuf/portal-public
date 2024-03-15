@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complimentary_Member__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISBLANK(ucinn_ascendv2__Purchaser__c)=TRUE, AND(ucinn_ascendv2__Purchaser__r.ucinn_ascendv2__Donor_ID__c !=  ucinn_ascendv2__Contact__r.ucinn_ascendv2__Donor_ID__c , ucinn_ascendv2__Purchaser__r.ucinn_ascendv2__Donor_ID__c !=   ucinn_ascendv2__Joint_Contact__r.ucinn_ascendv2__Donor_ID__c )), TRUE, FALSE)</formula>
+    <label>Complimentary Member</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

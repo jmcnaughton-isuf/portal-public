@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Non_Gift_Item_External_ID_2_1__c</fullName>
+    <deprecated>false</deprecated>
+    <description>External Id of the Product tied to designation 2 payment group 1</description>
+    <externalId>false</externalId>
+    <inlineHelpText>External Id of the Product tied to designation 2 payment group 1</inlineHelpText>
+    <label>Non-Gift Item External ID 2 1</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Namespace_Value__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the actual value of the namespace. This can be used in the aura URLs &quot;/c/DONATION..&quot;.
+
+If it is in the managed package, it will have to look like this: &quot;/ucinn_ascend/DONATION...&quot;.
+
+If the namespace is needed for a specific field as a prefix, use the other field, &quot;Namespace prefix&quot;</description>
+    <externalId>false</externalId>
+    <label>Namespace Value</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

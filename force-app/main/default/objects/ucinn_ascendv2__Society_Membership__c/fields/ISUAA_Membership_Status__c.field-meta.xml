@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUAA_Membership_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( RecordType.DeveloperName = &apos;ISU_Alumni_Association&apos;,
+IF ( ucinn_ascendv2__Contact__r.ucinn_ascendv2__Is_Deceased__c, &apos;Inactive&apos;,
+IF ( ucinn_ascendv2__Membership_Purchase__r.Needs_Writeoff__c, &apos;Historical&apos;,
+IF ( Most_Recent__c = TRUE,
+IF ( ISPICKVAL(ucinn_ascendv2__Membership_Purchase__r.StageName, &apos;Adjusted&apos;), &apos;Lapsed&apos;,
+IF ( ucinn_ascendv2__Expiration_Date__c &lt; TODAY(), &apos;Lapsed&apos;,
+IF ( ucinn_ascendv2__Expiration_Date__c = ucinn_ascendv2__Anniversary_Date__c, &apos;Lapsed&apos;,
+IF ( OR( AND( Product_Family__c = &apos;Life&apos;, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Payments_Roll_Up__c = 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &gt; 0, ucinn_ascendv2__Anniversary_Date__c &lt; (TODAY() - 365)), AND( Product_Family__c = &apos;Life&apos;, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &gt; 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Unpaid_Installment__c &gt; 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Last_Payment_Date_Roll_Up__c &lt; (TODAY() - 365))), &apos;Lapsed&apos;,
+IF ( ISNULL(ucinn_ascendv2__Expiration_Date__c), &apos;Active&apos;,
+&apos;Active&apos;))))), &apos;Lapsed&apos;))), ucinn_ascendv2__Membership_Status__c )</formula>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

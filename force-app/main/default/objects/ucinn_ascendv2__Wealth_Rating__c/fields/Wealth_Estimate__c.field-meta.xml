@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wealth_Estimate__c</fullName>
+    <externalId>false</externalId>
+    <label>Wealth Estimate</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>$1,000,000 - $4,999,999</fullName>
+                <default>false</default>
+                <label>$1,000,000 - $4,999,999</label>
+            </value>
+            <value>
+                <fullName>$10,000,000 - $24,999,999</fullName>
+                <default>false</default>
+                <label>$10,000,000 - $24,999,999</label>
+            </value>
+            <value>
+                <fullName>$100,000 - $499,999</fullName>
+                <default>false</default>
+                <label>$100,000 - $499,999</label>
+            </value>
+            <value>
+                <fullName>$25,000,000+</fullName>
+                <default>false</default>
+                <label>$25,000,000+</label>
+            </value>
+            <value>
+                <fullName>$5,000,000 - $9,999,999</fullName>
+                <default>false</default>
+                <label>$5,000,000 - $9,999,999</label>
+            </value>
+            <value>
+                <fullName>$500,000 - $999,999</fullName>
+                <default>false</default>
+                <label>$500,000 - $999,999</label>
+            </value>
+            <value>
+                <fullName>No match in wealth database</fullName>
+                <default>false</default>
+                <label>No match in wealth database</label>
+            </value>
+            <value>
+                <fullName>Wealth Indicators, but not Significant</fullName>
+                <default>false</default>
+                <label>Wealth Indicators, but not Significant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

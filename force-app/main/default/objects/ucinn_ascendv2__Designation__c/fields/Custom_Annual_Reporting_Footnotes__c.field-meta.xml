@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Annual_Reporting_Footnotes__c</fullName>
+    <description>This field allows DCS to add custom footnote text to the fund that gets combined with any scholarship award footnotes on the donor contact row for all donor contacts associated with this fund.  This can be overridden in the donor contact row using the annual reporting footnote field. Final data is displayed in the &quot;full footnote&quot; field.</description>
+    <externalId>false</externalId>
+    <label>Custom Annual Reporting Footnotes</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

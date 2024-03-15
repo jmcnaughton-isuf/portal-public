@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Enforce_Spouse_to_be_alive</fullName>
+    <active>true</active>
+    <description>If either constituent or related constituent is deceased, we cannot have a spouse relationship created</description>
+    <errorConditionFormula>AND (
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+OR(ucinn_ascendv2__Contact__r.ucinn_ascendv2__Is_Deceased__c == True,  ucinn_ascendv2__Related_Contact__r.ucinn_ascendv2__Is_Deceased__c == True),
+    OR (ISPICKVAL(ucinn_ascendv2__Related_Contact_Role__c, &apos;Spouse&apos;),
+        ISPICKVAL(ucinn_ascendv2__Related_Contact_Role__c, &apos;Partner&apos;))
+)</errorConditionFormula>
+    <errorMessage>Please ensure that neither the Constituent nor the Related Constituent is deceased before creating a Spousal relationship.</errorMessage>
+</ValidationRule>

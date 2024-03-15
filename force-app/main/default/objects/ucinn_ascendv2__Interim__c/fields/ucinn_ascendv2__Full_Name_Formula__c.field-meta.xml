@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Full_Name_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF ( ISBLANK(  ucinn_ascendv2__Salutation__c ), &apos;&apos;, ucinn_ascendv2__Salutation__c  &amp; &apos; &apos;) &amp;
+IF ( ISBLANK(  ucinn_ascendv2__First_Name__c ), &apos;&apos;, ucinn_ascendv2__First_Name__c &amp; &apos; &apos;) &amp;
+IF ( ISBLANK(  ucinn_ascendv2__Middle_Name__c ), &apos;&apos;, ucinn_ascendv2__Middle_Name__c &amp; &apos; &apos;) &amp;
+IF ( ISBLANK(  ucinn_ascendv2__Last_Name__c ), &apos;&apos;, ucinn_ascendv2__Last_Name__c  &amp; &apos; &apos;) &amp;
+IF ( ISBLANK(  ucinn_ascendv2__Suffix__c ), &apos;&apos;, ucinn_ascendv2__Suffix__c &amp; &apos; &apos;)</formula>
+    <label>Full Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

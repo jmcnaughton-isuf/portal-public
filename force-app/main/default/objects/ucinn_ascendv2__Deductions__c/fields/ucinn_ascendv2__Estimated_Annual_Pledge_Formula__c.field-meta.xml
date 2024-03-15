@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Estimated_Annual_Pledge_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Calculates the total amount pledged based on Deduction Amount (or Amount derived from percent) times frequency.</description>
+    <externalId>false</externalId>
+    <formula>IF (ISPICKVAL( ucinn_ascendv2__Source__c, &apos;Outright Gift&apos;),ucinn_ascendv2__Deduction_Amount__c,
+(IF(AND(ISPICKVAL(ucinn_ascendv2__Frequency_of_Deduction__c, &apos;Monthly&apos;), !ISBLANK( ucinn_ascendv2__Deduction_Amount__c )) ,  ucinn_ascendv2__Deduction_Amount__c  * 12,
+     IF(AND(OR(ISPICKVAL(ucinn_ascendv2__Frequency_of_Deduction__c, &apos;University Bi-Weekly&apos;),ISPICKVAL(ucinn_ascendv2__Frequency_of_Deduction__c, &apos;Hospital Bi-Weekly&apos;)),!ISBLANK(ucinn_ascendv2__Deduction_Amount__c)),
+           ucinn_ascendv2__Deduction_Amount__c  * 26,
+         IF(AND(ISPICKVAL(ucinn_ascendv2__Frequency_of_Deduction__c, &apos;Monthly&apos;), !ISBLANK(  ucinn_ascendv2__Amount_Derived_From_Percentage__c  )), ucinn_ascendv2__Amount_Derived_From_Percentage__c*12,
+             ucinn_ascendv2__Amount_Derived_From_Percentage__c*26
+          )
+     )
+ )
+))</formula>
+    <label>Estimated Annual Pledge</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

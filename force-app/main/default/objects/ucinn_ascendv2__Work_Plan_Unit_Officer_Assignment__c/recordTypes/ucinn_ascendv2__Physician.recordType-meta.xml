@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Physician</fullName>
+    <active>false</active>
+    <description>Used to link development officers and physicians</description>
+    <label>Physician</label>
+</RecordType>

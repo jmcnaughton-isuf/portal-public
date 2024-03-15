@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Matching_Challenge_Requirement__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Matching Challenge Requirement to link it to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Matching Challenge Requirement to link it to.</inlineHelpText>
+    <label>Matching Challenge Requirement</label>
+    <referenceTo>ucinn_ascendv2__Matching_Challenge_Requirement__c</referenceTo>
+    <relationshipLabel>Matching Challenge Relations</relationshipLabel>
+    <relationshipName>Match_Chal_Rel_Matching_Chal_Requirement</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

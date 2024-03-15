@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ASG_Ask_remove_Fund</fullName>
+    <active>false</active>
+    <description>In order to save data into the ASG_Ask_Replace_Fund user must also check the ASG_Ask_Remove_Fund box</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(ASG_Ask_Replace_Fund__r.Name)), ASG_Ask_Remove_Fund__c = False)</errorConditionFormula>
+    <errorMessage>You must check the ASG Ask Remove Fund field in order to save a fund in ASG Ask Replace Fund.</errorMessage>
+</ValidationRule>

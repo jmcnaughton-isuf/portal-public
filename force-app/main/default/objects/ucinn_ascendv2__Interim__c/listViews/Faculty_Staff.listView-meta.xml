@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Faculty_Staff</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason_Multiple_Line__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__Phone_1__c</columns>
+    <columns>ucinn_ascendv2__Middle_Name__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Email_1_is_Preferred__c</columns>
+    <columns>Phone_1_Is_Preferred__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.Faculty_Staff</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Faculty/Staff</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constituent_Has_Assignment__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Constituent linked to Affiliation record has a current Assignment type of Primary, Secondary, or Interested with no end date. This field is auto populated via a trigger on the object</description>
+    <externalId>false</externalId>
+    <label>Constituent Is Managed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

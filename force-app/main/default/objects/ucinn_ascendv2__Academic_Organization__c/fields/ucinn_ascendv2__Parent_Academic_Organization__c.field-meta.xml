@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Parent_Academic_Organization__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Parent Academic Organization of this record. Only applies if the type is Department.</description>
+    <externalId>false</externalId>
+    <label>Parent Academic Organization</label>
+    <referenceTo>ucinn_ascendv2__Academic_Organization__c</referenceTo>
+    <relationshipLabel>Academic Organizations</relationshipLabel>
+    <relationshipName>Academic_Organizations_Parent_Academic</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

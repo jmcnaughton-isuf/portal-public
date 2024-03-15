@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Object_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The name for the object this matching rule applied to.</description>
+    <externalId>false</externalId>
+    <label>Object Name</label>
+    <length>255</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

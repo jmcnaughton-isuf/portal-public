@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact_Briefing</fullName>
+    <active>true</active>
+    <description>A briefing for a constituent.</description>
+    <label>Contact Briefing</label>
+    <picklistValues>
+        <picklist>Audience_Multiselect__c</picklist>
+        <values>
+            <fullName>Dean Easterling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larissa Holtmyer Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>President Wintersteen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provost Wickert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robert Waggoner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Briefing_Purpose__c</picklist>
+        <values>
+            <fullName>Giving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaking</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

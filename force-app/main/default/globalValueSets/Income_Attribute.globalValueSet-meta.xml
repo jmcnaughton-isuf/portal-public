@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Expendable</fullName>
+        <default>false</default>
+        <label>Expendable</label>
+    </customValue>
+    <customValue>
+        <fullName>Endowed</fullName>
+        <default>false</default>
+        <label>Endowed</label>
+    </customValue>
+    <masterLabel>Income Attribute</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>(GMT–04:00) Eastern Daylight Time (America/Indiana/Indianapolis)</fullName>
+        <default>false</default>
+        <label>(GMT–04:00) Eastern Daylight Time (America/Indiana/Indianapolis)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–04:00) Eastern Daylight Time (America/New_York)</fullName>
+        <default>false</default>
+        <label>(GMT–04:00) Eastern Daylight Time (America/New_York)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–05:00) Central Daylight Time (America/Chicago)</fullName>
+        <default>false</default>
+        <label>(GMT–05:00) Central Daylight Time (America/Chicago)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–05:00) Central Daylight Time (America/Mexico_City)</fullName>
+        <default>false</default>
+        <label>(GMT–05:00) Central Daylight Time (America/Mexico_City)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–05:00) Eastern Standard Time (America/Panama)</fullName>
+        <default>false</default>
+        <label>(GMT–05:00) Eastern Standard Time (America/Panama)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–06:00) Mountain Standard Time (America/Mazatlan)</fullName>
+        <default>false</default>
+        <label>(GMT–06:00) Mountain Standard Time (America/Mazatlan)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–06:00) Central Standard Time (America/El_Salvador)</fullName>
+        <default>false</default>
+        <label>(GMT–06:00) Central Standard Time (America/El_Salvador)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–06:00) Mountain Daylight Time (America/Denver)</fullName>
+        <default>false</default>
+        <label>(GMT–06:00) Mountain Daylight Time (America/Denver)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–07:00) Pacific Daylight Time (America/Tijuana)</fullName>
+        <default>false</default>
+        <label>(GMT–07:00) Pacific Daylight Time (America/Tijuana)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–07:00) Mountain Standard Time (America/Phoenix)</fullName>
+        <default>false</default>
+        <label>(GMT–07:00) Mountain Standard Time (America/Phoenix)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–07:00) Pacific Daylight Time (America/Los_Angeles)</fullName>
+        <default>false</default>
+        <label>(GMT–07:00) Pacific Daylight Time (America/Los_Angeles)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–08:00) Pitcairn Standard Time (Pacific/Pitcairn)</fullName>
+        <default>false</default>
+        <label>(GMT–08:00) Pitcairn Standard Time (Pacific/Pitcairn)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–08:00) Alaska Daylight Time (America/Anchorage)</fullName>
+        <default>false</default>
+        <label>(GMT–08:00) Alaska Daylight Time (America/Anchorage)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–9:00) Hawaii-Aleutian Standard Time (America/Adak)</fullName>
+        <default>false</default>
+        <label>(GMT–9:00) Hawaii-Aleutian Standard Time (America/Adak)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–10:00) Hawaii-Aleutian Standard Time (Pacific/Honolulu)</fullName>
+        <default>false</default>
+        <label>(GMT–10:00) Hawaii-Aleutian Standard Time (Pacific/Honolulu)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+14:00) Line Is. Time (Pacific/Kiritimati)</fullName>
+        <default>false</default>
+        <label>(GMT+14:00) Line Is. Time (Pacific/Kiritimati)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+13:00) Phoenix Is.Time (Pacific/Enderbury)</fullName>
+        <default>false</default>
+        <label>(GMT+13:00) Phoenix Is.Time (Pacific/Enderbury)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+13:00) Tonga Time (Pacific/Tongatapu)</fullName>
+        <default>false</default>
+        <label>(GMT+13:00) Tonga Time (Pacific/Tongatapu)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+12:45)  Chatham Standard Time (Pacific/Chatham)</fullName>
+        <default>false</default>
+        <label>(GMT+12:45)  Chatham Standard Time (Pacific/Chatham)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+12:00) New Zealand Standard Time (Pacific/Auckland)</fullName>
+        <default>false</default>
+        <label>(GMT+12:00) New Zealand Standard Time (Pacific/Auckland)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+12:00) Fiji Time (Pacific/Fiji)</fullName>
+        <default>false</default>
+        <label>(GMT+12:00) Fiji Time (Pacific/Fiji)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+12:00) Petropavlovsk-Kamchatski Time (Asia/Kamchatka)</fullName>
+        <default>false</default>
+        <label>(GMT+12:00) Petropavlovsk-Kamchatski Time (Asia/Kamchatka)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+11:30) Norfolk Time (Pacific/Norfolk)</fullName>
+        <default>false</default>
+        <label>(GMT+11:30) Norfolk Time (Pacific/Norfolk)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+11:00) Lord Howe Standard Time (Australia/Lord_Howe)</fullName>
+        <default>false</default>
+        <label>(GMT+11:00) Lord Howe Standard Time (Australia/Lord_Howe)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+11:00) Solomon Is. Time (Pacific/Guadalcanal)</fullName>
+        <default>false</default>
+        <label>(GMT+11:00) Solomon Is. Time (Pacific/Guadalcanal)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+10:30) Australian Central Standard Time (South Australia) (Australia/Adelaide)</fullName>
+        <default>false</default>
+        <label>(GMT+10:30) Australian Central Standard Time (South Australia) (Australia/Adelaide)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+10:00) Australian Eastern Standard Time (New South Wales) (Australia/Sydney)</fullName>
+        <default>false</default>
+        <label>(GMT+10:00) Australian Eastern Standard Time (New South Wales) (Australia/Sydney)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+10:00) Australian Eastern Standard Time (Queensland) (Australia/Brisbane)</fullName>
+        <default>false</default>
+        <label>(GMT+10:00) Australian Eastern Standard Time (Queensland) (Australia/Brisbane)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+09:30) Australian Central Standard Time (Northern Territory) (Australia/Darwin)</fullName>
+        <default>false</default>
+        <label>(GMT+09:30) Australian Central Standard Time (Northern Territory) (Australia/Darwin)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+09:00) Korea Standard Time (Asia/Seoul)</fullName>
+        <default>false</default>
+        <label>(GMT+09:00) Korea Standard Time (Asia/Seoul)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+09:00) Japan Standard Time (Asia/Tokyo)</fullName>
+        <default>false</default>
+        <label>(GMT+09:00) Japan Standard Time (Asia/Tokyo)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) Hong Kong Time (Asia/Hong_Kong)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) Hong Kong Time (Asia/Hong_Kong)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) Malaysia Time (Asia/Kuala_Lumpur)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) Malaysia Time (Asia/Kuala_Lumpur)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) Philippines Time (Asia/Manila)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) Philippines Time (Asia/Manila)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) China Standard Time (Asia/Shanghai)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) China Standard Time (Asia/Shanghai)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) Singapore Time (Asia/Singapore)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) Singapore Time (Asia/Singapore)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) China Standard Time (Asia/Taipei)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) China Standard Time (Asia/Taipei)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+08:00) Australian Western Standard Time (Australia/Perth)</fullName>
+        <default>false</default>
+        <label>(GMT+08:00) Australian Western Standard Time (Australia/Perth)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+07:00) Indochina Time (Asia/Bangkok)</fullName>
+        <default>false</default>
+        <label>(GMT+07:00) Indochina Time (Asia/Bangkok)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+07:00) Indochina Time (Asia/Ho_Chi_Minh)</fullName>
+        <default>false</default>
+        <label>(GMT+07:00) Indochina Time (Asia/Ho_Chi_Minh)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+07:00) West Indonesia Time (Asia/Jakarta)</fullName>
+        <default>false</default>
+        <label>(GMT+07:00) West Indonesia Time (Asia/Jakarta)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+06:30) Myanmar Time (Asia/Rangoon)</fullName>
+        <default>false</default>
+        <label>(GMT+06:30) Myanmar Time (Asia/Rangoon)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+06:00) Bangladesh Time (Asia/Dhaka)</fullName>
+        <default>false</default>
+        <label>(GMT+06:00) Bangladesh Time (Asia/Dhaka)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+05:45) Nepal Time (Asia/Kathmandu)</fullName>
+        <default>false</default>
+        <label>(GMT+05:45) Nepal Time (Asia/Kathmandu)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+05:30) India Standard Time (Asia/Colombo)</fullName>
+        <default>false</default>
+        <label>(GMT+05:30) India Standard Time (Asia/Colombo)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+05:30) India Standard Time (Asia/Kolkata)</fullName>
+        <default>false</default>
+        <label>(GMT+05:30) India Standard Time (Asia/Kolkata)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+05:00) Pakistan Time (Asia/Karachi)</fullName>
+        <default>false</default>
+        <label>(GMT+05:00) Pakistan Time (Asia/Karachi)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+05:00) Uzbekistan Time (Asia/Tashkent)</fullName>
+        <default>false</default>
+        <label>(GMT+05:00) Uzbekistan Time (Asia/Tashkent)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+05:00) Yekaterinburg Time (Asia/Yekaterinburg)</fullName>
+        <default>false</default>
+        <label>(GMT+05:00) Yekaterinburg Time (Asia/Yekaterinburg)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+04:30) Afghanistan Time (Asia/Kabul)</fullName>
+        <default>false</default>
+        <label>(GMT+04:30) Afghanistan Time (Asia/Kabul)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+04:00) Azerbaijan Summer Time (Asia/Baku)</fullName>
+        <default>false</default>
+        <label>(GMT+04:00) Azerbaijan Summer Time (Asia/Baku)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+04:00) Gulf Standard Time (Asia/Dubai)</fullName>
+        <default>false</default>
+        <label>(GMT+04:00) Gulf Standard Time (Asia/Dubai)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+04:00) Georgia Time (Asia/Tbilisi)</fullName>
+        <default>false</default>
+        <label>(GMT+04:00) Georgia Time (Asia/Tbilisi)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+04:00) Armenia Time (Asia/Yerevan)</fullName>
+        <default>false</default>
+        <label>(GMT+04:00) Armenia Time (Asia/Yerevan)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:30) Iran Daylight Time (Asia/Tehran)</fullName>
+        <default>false</default>
+        <label>(GMT+03:30) Iran Daylight Time (Asia/Tehran)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) East African Time (Africa/Nairobi)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) East African Time (Africa/Nairobi)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Arabia Standard Time (Asia/Baghdad)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Arabia Standard Time (Asia/Baghdad)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Arabia Standard Time (Asia/Kuwait)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Arabia Standard Time (Asia/Kuwait)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Arabia Standard Time (Asia/Riyadh)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Arabia Standard Time (Asia/Riyadh)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Moscow Standard Time (Europe/Minsk)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Moscow Standard Time (Europe/Minsk)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Moscow Standard Time (Europe/Moscow)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Moscow Standard Time (Europe/Moscow)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Eastern European Summer Time (Africa/Cairo)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Eastern European Summer Time (Africa/Cairo)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Eastern European Summer Time (Asia/Beirut)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Eastern European Summer Time (Asia/Beirut)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Israel Daylight Time (Asia/Jerusalem)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Israel Daylight Time (Asia/Jerusalem)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Eastern European Summer Time (Europe/Athens)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Eastern European Summer Time (Europe/Athens)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Eastern European Summer Time (Europe/Bucharest)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Eastern European Summer Time (Europe/Bucharest)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Eastern European Summer Time (Europe/Helsinki)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Eastern European Summer Time (Europe/Helsinki)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+03:00) Eastern European Summer Time (Europe/Istanbul)</fullName>
+        <default>false</default>
+        <label>(GMT+03:00) Eastern European Summer Time (Europe/Istanbul)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) South Africa Standard Time (Africa/Johannesburg)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) South Africa Standard Time (Africa/Johannesburg)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) Central European Summer Time (Europe/Amsterdam)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) Central European Summer Time (Europe/Amsterdam)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) Central European Summer Time (Europe/Berlin)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) Central European Summer Time (Europe/Berlin)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) Central European Summer Time (Europe/Brussels)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) Central European Summer Time (Europe/Brussels)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) Central European Summer Time (Europe/Paris)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) Central European Summer Time (Europe/Paris)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) Central European Summer Time (Europe/Prague)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) Central European Summer Time (Europe/Prague)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+02:00) Central European Summer Time (Europe/Rome)</fullName>
+        <default>false</default>
+        <label>(GMT+02:00) Central European Summer Time (Europe/Rome)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+01:00) Western European Summer Time (Europe/Lisbon)</fullName>
+        <default>false</default>
+        <label>(GMT+01:00) Western European Summer Time (Europe/Lisbon)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+01:00) Central European Time (Africa/Algiers)</fullName>
+        <default>false</default>
+        <label>(GMT+01:00) Central European Time (Africa/Algiers)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+01:00) British Summer Time (Europe/London)</fullName>
+        <default>false</default>
+        <label>(GMT+01:00) British Summer Time (Europe/London)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–01:00) Cape Verde Time (Atlantic/Cape_Verde)</fullName>
+        <default>false</default>
+        <label>(GMT–01:00) Cape Verde Time (Atlantic/Cape_Verde)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+00:00) Western European Time (Africa/Casablanca)</fullName>
+        <default>false</default>
+        <label>(GMT+00:00) Western European Time (Africa/Casablanca)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+00:00) Irish Summer Time (Europe/Dublin)</fullName>
+        <default>false</default>
+        <label>(GMT+00:00) Irish Summer Time (Europe/Dublin)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+00:00) Greenwich Mean Time (GMT)</fullName>
+        <default>false</default>
+        <label>(GMT+00:00) Greenwich Mean Time (GMT)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–00:00) Eastern Greenland Summer Time (America/Scoresbysund)</fullName>
+        <default>false</default>
+        <label>(GMT–00:00) Eastern Greenland Summer Time (America/Scoresbysund)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–00:00) Azores Summer Time (Atlantic/Azores)</fullName>
+        <default>false</default>
+        <label>(GMT–00:00) Azores Summer Time (Atlantic/Azores)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–02:00) South Georgia Standard Time (Atlantic/South_Georgia)</fullName>
+        <default>false</default>
+        <label>(GMT–02:00) South Georgia Standard Time (Atlantic/South_Georgia)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–02:30) Newfoundland Daylight Time (America/St_Johns)</fullName>
+        <default>false</default>
+        <label>(GMT–02:30) Newfoundland Daylight Time (America/St_Johns)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–03:00) Brasilia Summer Time (America/Sao_Paulo)</fullName>
+        <default>false</default>
+        <label>(GMT–03:00) Brasilia Summer Time (America/Sao_Paulo)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–03:00) Argentina Time (America/Argentina/Buenos_Aires)</fullName>
+        <default>false</default>
+        <label>(GMT–03:00) Argentina Time (America/Argentina/Buenos_Aires)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–03:00) Chile Summer Time (America/Santiago)</fullName>
+        <default>false</default>
+        <label>(GMT–03:00) Chile Summer Time (America/Santiago)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–03:00) Atlantic Daylight Time (America/Halifax)</fullName>
+        <default>false</default>
+        <label>(GMT–03:00) Atlantic Daylight Time (America/Halifax)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–04:00) Atlantic Standard Time (America/Puerto_Rico)</fullName>
+        <default>false</default>
+        <label>(GMT–04:00) Atlantic Standard Time (America/Puerto_Rico)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–04:00) Atlantic Daylight Time (Atlantic/Bermuda)</fullName>
+        <default>false</default>
+        <label>(GMT–04:00) Atlantic Daylight Time (Atlantic/Bermuda)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–04:30) Venezuela Time (America/Caracas)</fullName>
+        <default>false</default>
+        <label>(GMT–04:30) Venezuela Time (America/Caracas)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–05:00) Colombia Time (America/Bogota)</fullName>
+        <default>false</default>
+        <label>(GMT–05:00) Colombia Time (America/Bogota)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–05:00) Peru Time (America/Lima)</fullName>
+        <default>false</default>
+        <label>(GMT–05:00) Peru Time (America/Lima)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–09:00) Gambier Time (Pacific/Gambier)</fullName>
+        <default>false</default>
+        <label>(GMT–09:00) Gambier Time (Pacific/Gambier)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–09:30) Marquesas Time (Pacific/Marquesas)</fullName>
+        <default>false</default>
+        <label>(GMT–09:30) Marquesas Time (Pacific/Marquesas)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–11:00) Niue Time (Pacific/Niue)</fullName>
+        <default>false</default>
+        <label>(GMT–11:00) Niue Time (Pacific/Niue)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT–11:00) Samoa Standard Time (Pacific/Pago_Pago)</fullName>
+        <default>false</default>
+        <label>(GMT–11:00) Samoa Standard Time (Pacific/Pago_Pago)</label>
+    </customValue>
+    <customValue>
+        <fullName>(GMT+10:30) Australian Central Standard Time ((South Australia) Australia/Adelaide)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>(GMT+10:30) Australian Central Standard Time ((South Australia) Australia/Adelaide)</label>
+    </customValue>
+    <masterLabel>Time Zones</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

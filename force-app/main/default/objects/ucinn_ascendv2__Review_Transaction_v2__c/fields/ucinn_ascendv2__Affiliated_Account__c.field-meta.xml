@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Affiliated_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Affiliated Organization</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Affiliated Organization</inlineHelpText>
+    <label>Affiliated Organization</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Review Transactions (v2) (Affiliated Organization)</relationshipLabel>
+    <relationshipName>Review_Transactions_v2_Affiliated_Acct</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

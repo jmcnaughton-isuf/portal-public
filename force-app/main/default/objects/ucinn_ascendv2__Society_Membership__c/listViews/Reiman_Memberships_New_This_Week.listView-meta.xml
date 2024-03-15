@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reiman_Memberships_New_This_Week</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Membership_Level_Product__c</columns>
+    <columns>Type__c</columns>
+    <columns>Other_Member_Name__c</columns>
+    <columns>Membership_Source__c</columns>
+    <columns>Payment_Type__c</columns>
+    <columns>Preferred_Communication__c</columns>
+    <columns>ISU_Discount_Applied__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Reiman_Gardens_Director_s_Circle__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_WEEK</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Giving_Society__c</field>
+        <operation>equals</operation>
+        <value>Reiman Gardens</value>
+    </filters>
+    <label>Reiman Memberships New This Week</label>
+</ListView>

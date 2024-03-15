@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact_Cannot_Match_Related_Contact</fullName>
+    <active>false</active>
+    <description>Contact and related contact cannot be the same value.</description>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+ucinn_ascendv2__Contact__c = ucinn_ascendv2__Related_Contact__c, ucinn_ascendv2__Contact__c != null)</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Contact__c</errorDisplayField>
+    <errorMessage>A constituent cannot be in a relationship with himself/herself.</errorMessage>
+</ValidationRule>

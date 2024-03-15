@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact_Report_Mobile_CL</fullName>
+    <fields>ucinn_ascendv2__Date__c</fields>
+    <fields>ucinn_ascendv2__Contact_Method__c</fields>
+    <fields>ucinn_ascendv2__Is_Confidential__c</fields>
+    <label>Contact Report Mobile CL</label>
+</CompactLayout>

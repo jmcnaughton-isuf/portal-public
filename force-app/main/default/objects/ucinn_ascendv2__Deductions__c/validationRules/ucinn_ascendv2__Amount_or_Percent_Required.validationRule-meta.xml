@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Amount_or_Percent_Required</fullName>
+    <active>false</active>
+    <description>Either deduction amount or percentage is required.  Both fields cannot be blank.</description>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+ISNULL( ucinn_ascendv2__Deduction_Amount__c )  &amp;&amp;  ISNULL( ucinn_ascendv2__Deduction_Percentage__c ))</errorConditionFormula>
+    <errorMessage>Either deduction amount or percentage is required.  Both fields cannot be blank.</errorMessage>
+</ValidationRule>

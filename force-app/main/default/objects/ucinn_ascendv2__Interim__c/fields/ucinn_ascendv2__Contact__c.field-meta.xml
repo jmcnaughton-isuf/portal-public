@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Contact ID that matches this Interim__C object</description>
+    <externalId>false</externalId>
+    <label>Constituent</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Interims</relationshipLabel>
+    <relationshipName>Interims_Contact</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

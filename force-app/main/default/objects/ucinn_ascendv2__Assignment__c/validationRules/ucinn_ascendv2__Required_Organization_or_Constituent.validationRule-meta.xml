@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Required_Organization_or_Constituent</fullName>
+    <active>true</active>
+    <description>This validation Rule requires that an Assignment must be associated with a Organization or Constituent</description>
+    <errorConditionFormula>$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c &lt;&gt; TRUE &amp;&amp; ISBLANK(ucinn_ascendv2__Contact__c) &amp;&amp; ISBLANK(ucinn_ascendv2__Account__c) &amp;&amp;
+OR(
+RecordType.DeveloperName = &quot;Account_Assignment&quot;,
+RecordType.DeveloperName = &quot;Contact_Assignment&quot;
+)&amp;&amp;
+RecordType.NamespacePrefix = &apos;ucinn_ascendv2&apos;</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>An Assignment must be associated with an Organization or Constituent</errorMessage>
+</ValidationRule>

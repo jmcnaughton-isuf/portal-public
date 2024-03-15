@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Role__c</fullName>
+    <deprecated>false</deprecated>
+    <description>CDO: Chief Development Officer
+CFR: Corporate and Foundation Relations
+LAGM: Leadership Annual Giving Manager
+MGO: Major Gift Officer</description>
+    <externalId>false</externalId>
+    <label>Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CDO</fullName>
+                <default>false</default>
+                <label>CDO</label>
+            </value>
+            <value>
+                <fullName>CFR</fullName>
+                <default>false</default>
+                <label>CFR</label>
+            </value>
+            <value>
+                <fullName>LAGM</fullName>
+                <default>false</default>
+                <label>LAGM</label>
+            </value>
+            <value>
+                <fullName>MGO</fullName>
+                <default>false</default>
+                <label>MGO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unposted_RT_rows_by_session</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Session__c</columns>
+    <columns>ucinn_ascendv2__Opportunity_Type__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Donor_External_ID__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Payment_Amount_1_1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Session__c</field>
+        <operation>equals</operation>
+        <value>S220803567124</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Posted</value>
+    </filters>
+    <label>Unposted RT rows by session</label>
+</ListView>

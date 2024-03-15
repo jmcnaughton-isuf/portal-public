@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Exception_Reasons_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+OR(
+NOT(ISBLANK(  ucinn_ascendv2__Contact__c )),
+NOT(ISBLANK( ucinn_ascendv2__Account__c ))
+),
+AND(ISBLANK(ucinn_ascendv2__Manual_Review_Reason__c), NOT(ISBLANK( ucinn_ascendv2__Designation_1__c ))),
+AND( OR(AND( NOT(ISBLANK( ucinn_ascendv2__Designation_2__c )), NOT(ISBLANK( ucinn_ascendv2__Designation_2_Name__c )) ), ISBLANK(ucinn_ascendv2__Designation_2_Name__c ))),
+AND( OR(AND( NOT(ISBLANK( ucinn_ascendv2__Designation_3__c )), NOT(ISBLANK( ucinn_ascendv2__Designation_3_Name__c )) ), ISBLANK(ucinn_ascendv2__Designation_3_Name__c ))),
+AND( OR(AND( NOT(ISBLANK( ucinn_ascendv2__Designation_4__c )), NOT(ISBLANK( ucinn_ascendv2__Designation_4_Name__c )) ), ISBLANK(ucinn_ascendv2__Designation_4_Name__c ))),
+AND( OR(AND( NOT(ISBLANK( ucinn_ascendv2__Designation_5__c )), NOT(ISBLANK( ucinn_ascendv2__Designation_5_Name__c )) ), ISBLANK(ucinn_ascendv2__Designation_5_Name__c ))),
+NOT(ISBLANK( ucinn_ascendv2__Appeal_Code__c )),
+NOT(ISBLANK( ucinn_ascendv2__Transaction_Date__c )),
+OR(
+AND(
+RecordType.DeveloperName == &apos;Bank_of_America_Transaction&apos;,
+NOT(ISBLANK( ucinn_ascendv2__MICR_Check_Number__c))
+),
+AND(
+RecordType.DeveloperName != &apos;Bank_of_America_Transaction&apos;,
+ISBLANK( ucinn_ascendv2__MICR_Check_Number__c)
+)
+)
+), &apos;No Exceptions&apos;, &apos;&apos;) &amp;
+IF(
+AND(
+ISBLANK(  ucinn_ascendv2__Contact__c ),
+ISBLANK( ucinn_ascendv2__Account__c )
+),
+&quot;Invalid Donor ID&quot; &amp; BR(), &quot;&quot;) &amp;
+IF(
+AND(
+OR(
+NOT (ISBLANK( ucinn_ascendv2__Soft_Credit_First_Name__c )),
+NOT (ISBLANK( ucinn_ascendv2__Soft_Credit_Last_Name__c )),
+NOT (ISBLANK( ucinn_ascendv2__Soft_Credit__c ))
+),
+ISBLANK ( ucinn_ascendv2__Soft_Credit_Contact__c )
+),
+&quot;Invalid Soft Credit&quot; &amp; BR(), &quot;&quot;) &amp;
+IF(
+OR(
+ISBLANK( ucinn_ascendv2__Designation_1__c ),
+AND(ISBLANK(ucinn_ascendv2__Designation_2__c), NOT(ISBLANK(ucinn_ascendv2__Designation_2_Name__c))),
+AND(ISBLANK(ucinn_ascendv2__Designation_3__c), NOT(ISBLANK(ucinn_ascendv2__Designation_3_Name__c))),
+AND(ISBLANK(ucinn_ascendv2__Designation_4__c), NOT(ISBLANK(ucinn_ascendv2__Designation_4_Name__c))),
+AND(ISBLANK(ucinn_ascendv2__Designation_5__c), NOT(ISBLANK(ucinn_ascendv2__Designation_5_Name__c)))
+)
+, &quot;Invalid Designation&quot; &amp; BR(), &quot;&quot;) &amp;
+IF(ISBLANK( ucinn_ascendv2__Appeal_Code__c ) , &quot;Invalid Appeal Code&quot; &amp; BR(), &quot;&quot;) &amp;
+IF(ISBLANK( ucinn_ascendv2__Transaction_Date__c ) , &quot;No Transaction Date&quot; &amp; BR(), &quot;&quot;) &amp;
+IF(
+AND(
+RecordType.DeveloperName == &apos;Bank_of_America_Transaction&apos;,
+ISBLANK( ucinn_ascendv2__MICR_Check_Number__c )
+), &quot;No Check Number&quot; &amp; BR(), &quot;&quot;)&amp;
+IF(NOT(ISBLANK(ucinn_ascendv2__Manual_Review_Reason__c)), ucinn_ascendv2__Manual_Review_Reason__c, &quot;&quot;)</formula>
+    <label>Exception Reasons</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

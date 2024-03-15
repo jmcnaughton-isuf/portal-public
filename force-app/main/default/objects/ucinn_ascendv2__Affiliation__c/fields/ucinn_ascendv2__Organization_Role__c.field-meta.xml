@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Organization_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Organization Role</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+                <label>Accountant</label>
+            </value>
+            <value>
+                <fullName>Attorney</fullName>
+                <default>false</default>
+                <label>Attorney</label>
+            </value>
+            <value>
+                <fullName>Board Affiliation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Board Affiliation</label>
+            </value>
+            <value>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+                <label>Board Member</label>
+            </value>
+            <value>
+                <fullName>Branch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Branch</label>
+            </value>
+            <value>
+                <fullName>Child</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Child</label>
+            </value>
+            <value>
+                <fullName>Client - Accountant</fullName>
+                <default>false</default>
+                <label>Client - Accountant</label>
+            </value>
+            <value>
+                <fullName>Client - Attorney</fullName>
+                <default>false</default>
+                <label>Client - Attorney</label>
+            </value>
+            <value>
+                <fullName>Client - Financial Planner</fullName>
+                <default>false</default>
+                <label>Client - Financial Planner</label>
+            </value>
+            <value>
+                <fullName>Community Foundation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Community Foundation</label>
+            </value>
+            <value>
+                <fullName>Community foundation contact</fullName>
+                <default>false</default>
+                <label>Community foundation contact</label>
+            </value>
+            <value>
+                <fullName>Company Contact</fullName>
+                <default>false</default>
+                <label>Company Contact</label>
+            </value>
+            <value>
+                <fullName>Company Divided</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company Divided</label>
+            </value>
+            <value>
+                <fullName>Company employs individual</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company employs individual</label>
+            </value>
+            <value>
+                <fullName>Company Founded by individual</fullName>
+                <default>false</default>
+                <label>Company Founded by individual</label>
+            </value>
+            <value>
+                <fullName>Company Owned by Individual</fullName>
+                <default>false</default>
+                <label>Company Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>Company Previously Owned by Individual</fullName>
+                <default>false</default>
+                <label>Company Previously Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>Company representative or designate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company representative or designate</label>
+            </value>
+            <value>
+                <fullName>Contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contact</label>
+            </value>
+            <value>
+                <fullName>Corporate Board</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Board</label>
+            </value>
+            <value>
+                <fullName>Corporate Foundation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Foundation</label>
+            </value>
+            <value>
+                <fullName>Corporate Matching Gift Program Record</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Matching Gift Program Record</label>
+            </value>
+            <value>
+                <fullName>Corporate Prospect Record</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Prospect Record</label>
+            </value>
+            <value>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporation</label>
+            </value>
+            <value>
+                <fullName>DAF Owned by Individual</fullName>
+                <default>false</default>
+                <label>DAF Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>Donor/Company Controlled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Donor/Company Controlled</label>
+            </value>
+            <value>
+                <fullName>Donor/Company Influenced</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Donor/Company Influenced</label>
+            </value>
+            <value>
+                <fullName>Donor Advised Fund/Owner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Donor Advised Fund/Owner</label>
+            </value>
+            <value>
+                <fullName>Employed by company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employed by company</label>
+            </value>
+            <value>
+                <fullName>Employee to Employer for MG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employee to Employer for MG</label>
+            </value>
+            <value>
+                <fullName>Employer</fullName>
+                <default>false</default>
+                <label>Employer</label>
+            </value>
+            <value>
+                <fullName>Employer non-matching</fullName>
+                <default>false</default>
+                <label>Employer non-matching</label>
+            </value>
+            <value>
+                <fullName>Employer - Second Business</fullName>
+                <default>false</default>
+                <label>Employer - Second Business</label>
+            </value>
+            <value>
+                <fullName>Employer to Employee for matching gift</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employer to Employee for matching gift</label>
+            </value>
+            <value>
+                <fullName>Employer to Employee for Matching Gifts</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employer to Employee for matching gifts</label>
+            </value>
+            <value>
+                <fullName>Employer to Employee for MG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employer to Employee for MG</label>
+            </value>
+            <value>
+                <fullName>Estate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Estate</label>
+            </value>
+            <value>
+                <fullName>Estate Gift</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Estate Gift</label>
+            </value>
+            <value>
+                <fullName>Estate of individual</fullName>
+                <default>false</default>
+                <label>Estate of individual</label>
+            </value>
+            <value>
+                <fullName>External Organization</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>External Organization</label>
+            </value>
+            <value>
+                <fullName>Financial Planner</fullName>
+                <default>false</default>
+                <label>Financial Planner</label>
+            </value>
+            <value>
+                <fullName>Former Employer matching</fullName>
+                <default>false</default>
+                <label>Former Employer matching</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>Foundation Manager</fullName>
+                <default>false</default>
+                <label>Foundation Manager</label>
+            </value>
+            <value>
+                <fullName>Foundation Owned by an Individual</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Foundation Owned by an Individual</label>
+            </value>
+            <value>
+                <fullName>Foundation owned by Corporation</fullName>
+                <default>false</default>
+                <label>Foundation owned by Corporation</label>
+            </value>
+            <value>
+                <fullName>Foundation owned by individual</fullName>
+                <default>false</default>
+                <label>Foundation owned by individual</label>
+            </value>
+            <value>
+                <fullName>Funds Held in Trust Donor</fullName>
+                <default>false</default>
+                <label>Funds Held in Trust Donor</label>
+            </value>
+            <value>
+                <fullName>Funds Held in Trust Income Recipient</fullName>
+                <default>false</default>
+                <label>Funds Held in Trust Income Recipient</label>
+            </value>
+            <value>
+                <fullName>Honorarium</fullName>
+                <default>false</default>
+                <label>Honorarium</label>
+            </value>
+            <value>
+                <fullName>Honorarium for</fullName>
+                <default>false</default>
+                <label>Honorarium for</label>
+            </value>
+            <value>
+                <fullName>ISU Corporate Engagement Team Member</fullName>
+                <default>false</default>
+                <label>ISU Corporate Engagement Team Member</label>
+            </value>
+            <value>
+                <fullName>ISU Corporate Engagement Team Org</fullName>
+                <default>false</default>
+                <label>ISU Corporate Engagement Team Org</label>
+            </value>
+            <value>
+                <fullName>Member of Board of Directors (CO or FD)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Member of Board of Directors (CO or FD)</label>
+            </value>
+            <value>
+                <fullName>Merged Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Merged Company</label>
+            </value>
+            <value>
+                <fullName>New Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Company</label>
+            </value>
+            <value>
+                <fullName>None Indicated</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>None Indicated</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other family member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other family member</label>
+            </value>
+            <value>
+                <fullName>Owner of company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Owner of company</label>
+            </value>
+            <value>
+                <fullName>Parent/Step Parent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parent/Step Parent</label>
+            </value>
+            <value>
+                <fullName>Parent Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parent Company</label>
+            </value>
+            <value>
+                <fullName>Previous Company Owner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Previous Company Owner</label>
+            </value>
+            <value>
+                <fullName>Primary Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Primary Company</label>
+            </value>
+            <value>
+                <fullName>Private Corporation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Private Corporation</label>
+            </value>
+            <value>
+                <fullName>Professional Corporation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Professional Corporation</label>
+            </value>
+            <value>
+                <fullName>Representative</fullName>
+                <default>false</default>
+                <label>Representative</label>
+            </value>
+            <value>
+                <fullName>Retiree Employer</fullName>
+                <default>false</default>
+                <label>Retiree Employer</label>
+            </value>
+            <value>
+                <fullName>School Contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>School Contact</label>
+            </value>
+            <value>
+                <fullName>Secondary Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Secondary Company</label>
+            </value>
+            <value>
+                <fullName>Sibling/Step Sibling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sibling/Step Sibling</label>
+            </value>
+            <value>
+                <fullName>Sole Proprietorship</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sole Proprietorship</label>
+            </value>
+            <value>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Trustee/Company Controlled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trustee/Company Controlled</label>
+            </value>
+            <value>
+                <fullName>Trust Managed by Trustee</fullName>
+                <default>false</default>
+                <label>Trust Managed by Trustee</label>
+            </value>
+            <value>
+                <fullName>Trust Owned by Individual</fullName>
+                <default>false</default>
+                <label>Trust Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>University Student</fullName>
+                <default>false</default>
+                <label>University Student</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

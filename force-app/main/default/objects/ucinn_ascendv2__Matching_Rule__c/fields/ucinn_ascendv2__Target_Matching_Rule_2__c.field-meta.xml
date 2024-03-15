@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Target_Matching_Rule_2__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Indicate the second target matching key rule user selected</description>
+    <externalId>false</externalId>
+    <label>Target Matching Rule 2</label>
+    <referenceTo>ucinn_ascendv2__Matching_Key_Rule__c</referenceTo>
+    <relationshipLabel>Matching Rules (Target Matching Rule 2)</relationshipLabel>
+    <relationshipName>Matching_Rules_Target_Matching_Rule_2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

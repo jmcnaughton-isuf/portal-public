@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Patient_Opted_Out_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Patient__r.ucinn_ascendv2__Is_Hospital_Dev_and_Fundraising_Opt_Out__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Patient Opted Out</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

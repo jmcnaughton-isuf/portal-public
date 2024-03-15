@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Applied_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The sum of the Matching Gift amounts currently applied to this Disbursement.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The sum of the Matching Gift amounts currently applied to this Disbursement.</inlineHelpText>
+    <label>Applied Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

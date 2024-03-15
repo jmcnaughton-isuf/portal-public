@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Award_Type_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>Award Type Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Alumni Association</fullName>
+                <default>false</default>
+                <label>Alumni Association</label>
+            </value>
+            <value>
+                <fullName>College/Unit</fullName>
+                <default>false</default>
+                <label>College/Unit</label>
+            </value>
+            <value>
+                <fullName>Departmental</fullName>
+                <default>false</default>
+                <label>Departmental</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Student Organization</fullName>
+                <default>false</default>
+                <label>Student Organization</label>
+            </value>
+            <value>
+                <fullName>University</fullName>
+                <default>false</default>
+                <label>University</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

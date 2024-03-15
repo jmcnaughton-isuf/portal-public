@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_NCOA</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.NCOA</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,New</value>
+    </filters>
+    <label>Training - NCOA</label>
+</ListView>

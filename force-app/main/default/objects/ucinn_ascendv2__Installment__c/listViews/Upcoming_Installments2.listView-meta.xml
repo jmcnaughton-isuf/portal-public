@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upcoming_Installments2</fullName>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>ucinn_ascendv2__Matching_Organization_Formula__c</columns>
+    <columns>ucinn_ascendv2__Expected_Date__c</columns>
+    <columns>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>Pledge_Reminder_Owner__c</columns>
+    <columns>Pledge_Reminder_Preference__c</columns>
+    <columns>Pledge_Reminder_Sent__c</columns>
+    <columns>Reminder_Sent_Date__c</columns>
+    <columns>Number_of_Reminder_Sent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Constituent__c</field>
+        <operation>contains</operation>
+        <value>Schmidt</value>
+    </filters>
+    <label>Upcoming Installments2</label>
+</ListView>

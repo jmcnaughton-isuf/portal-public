@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visible_to_Campus__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used for sharing settings so campus users don&apos;t view wrong service indicators. the type field that is already on service indicators cant be used because sharing rules cant be setup on formula fields therefore this field and its process builder and trigger are needed.</description>
+    <externalId>false</externalId>
+    <label>Visible to Campus</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

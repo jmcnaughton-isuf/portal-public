@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__DTD_Required</fullName>
+    <active>true</active>
+    <description>When &quot;Enable Double The Donation&quot; in Gift Processing Settings custom metadata type is TRUE, Select_Double_The_Donation_Account__c should be required.</description>
+    <errorConditionFormula>($CustomMetadata.ucinn_ascendv2__Gift_Processing_Setting__mdt.ucinn_ascendv2__Gift_Processing_Setting.ucinn_ascendv2__Enable_Double_the_Donation__c == TRUE &amp;&amp;  $CustomMetadata.ucinn_ascendv2__Gift_Processing_Setting__mdt.ucinn_ascendv2__Gift_Processing_Setting.ucinn_ascendv2__Enable_Multiple_DTD_Accounts__c == TRUE  &amp;&amp; ISBLANK(TEXT(ucinn_ascendv2__Double_The_Donation_Account__c )))</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Double_The_Donation_Account__c</errorDisplayField>
+    <errorMessage>Double the Donation is enabled. Please select a Double the Donation account.</errorMessage>
+</ValidationRule>

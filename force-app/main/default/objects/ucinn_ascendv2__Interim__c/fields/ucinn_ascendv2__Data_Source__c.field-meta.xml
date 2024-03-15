@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Data_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Data Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Payroll</fullName>
+                <default>false</default>
+                <label>Payroll</label>
+            </value>
+            <value>
+                <fullName>Self Reported</fullName>
+                <default>false</default>
+                <label>Self Reported</label>
+            </value>
+            <value>
+                <fullName>Interim Interface</fullName>
+                <default>false</default>
+                <label>Interim Interface</label>
+            </value>
+            <value>
+                <fullName>Google Place API</fullName>
+                <default>false</default>
+                <label>Google Place API</label>
+            </value>
+            <value>
+                <fullName>SIS</fullName>
+                <default>false</default>
+                <label>SIS</label>
+            </value>
+            <value>
+                <fullName>Hospital</fullName>
+                <default>false</default>
+                <label>Hospital</label>
+            </value>
+            <value>
+                <fullName>SmartyStreets API</fullName>
+                <default>false</default>
+                <label>SmartyStreets API</label>
+            </value>
+            <value>
+                <fullName>USPS API</fullName>
+                <default>false</default>
+                <label>USPS API</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

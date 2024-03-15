@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Patient_Referral_Opp_Count_Roll_Up__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Patient Referral Opportunities Count</label>
+    <summaryForeignKey>ucinn_ascendv2__Patient_Referral_Opportunity_v1__c.ucinn_ascendv2__Patient_Referral__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

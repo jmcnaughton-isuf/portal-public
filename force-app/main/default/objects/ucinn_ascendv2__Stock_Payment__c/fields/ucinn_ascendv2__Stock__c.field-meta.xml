@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Stock__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>A look-up field of stock which can link stock information.</description>
+    <externalId>false</externalId>
+    <label>Stock</label>
+    <referenceTo>ucinn_ascendv2__Stock__c</referenceTo>
+    <relationshipLabel>Stock Payments</relationshipLabel>
+    <relationshipName>Stock_Payments_Stock</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

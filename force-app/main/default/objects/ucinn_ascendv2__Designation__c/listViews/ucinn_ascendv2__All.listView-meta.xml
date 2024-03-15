@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All</fullName>
+    <columns>ucinn_ascendv2__Status_Formula__c</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Fund_Type__c</columns>
+    <columns>ucinn_ascendv2__Designation_Name__c</columns>
+    <columns>ucinn_ascendv2__G_L_Account__c</columns>
+    <columns>ucinn_ascendv2__Business_Unit_Formula__c</columns>
+    <columns>ucinn_ascendv2__X1_Academic_Org__c</columns>
+    <columns>ucinn_ascendv2__X1_Department__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Income_Attribute__c</columns>
+    <columns>ucinn_ascendv2__External_System_ID__c</columns>
+    <columns>ucinn_ascendv2__Department_Code_Formula__c</columns>
+    <columns>Fund_Purpose__c</columns>
+    <columns>Secondary_Goal__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status_Formula__c</field>
+        <operation>equals</operation>
+        <value>active</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Department_Formula__c</field>
+        <operation>contains</operation>
+        <value>clinical sciences</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Source__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Source</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Advantage</fullName>
+                <default>false</default>
+                <label>Advantage</label>
+            </value>
+            <value>
+                <fullName>Athletics</fullName>
+                <default>false</default>
+                <label>Athletics</label>
+            </value>
+            <value>
+                <fullName>Bank of America</fullName>
+                <default>false</default>
+                <label>Bank of America</label>
+            </value>
+            <value>
+                <fullName>Call Center</fullName>
+                <default>false</default>
+                <label>Call Center</label>
+            </value>
+            <value>
+                <fullName>iModules</fullName>
+                <default>false</default>
+                <label>iModules</label>
+            </value>
+            <value>
+                <fullName>ISU Alumni Association</fullName>
+                <default>false</default>
+                <label>ISU Alumni Association</label>
+            </value>
+            <value>
+                <fullName>ISUF Payroll Deduct</fullName>
+                <default>false</default>
+                <label>ISUF Payroll Deduct</label>
+            </value>
+            <value>
+                <fullName>ISU Payroll Deduct</fullName>
+                <default>false</default>
+                <label>ISU Payroll Deduct</label>
+            </value>
+            <value>
+                <fullName>Online Donations</fullName>
+                <default>false</default>
+                <label>Online Donations</label>
+            </value>
+            <value>
+                <fullName>Reiman Credit Cards</fullName>
+                <default>false</default>
+                <label>Reiman Credit Cards</label>
+            </value>
+            <value>
+                <fullName>Ruffalo Cody</fullName>
+                <default>false</default>
+                <label>Ruffalo Cody</label>
+            </value>
+            <value>
+                <fullName>Scalefunder/FundISU</fullName>
+                <default>false</default>
+                <label>Scalefunder/FundISU</label>
+            </value>
+            <value>
+                <fullName>Workday</fullName>
+                <default>false</default>
+                <label>Workday</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

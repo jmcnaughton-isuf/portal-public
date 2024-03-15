@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description__c</fullName>
+    <externalId>false</externalId>
+    <label>Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Verified</fullName>
+                <default>false</default>
+                <label>Not Verified</label>
+            </value>
+            <value>
+                <fullName>Cleared - No Reported</fullName>
+                <default>false</default>
+                <label>Cleared - No Reported</label>
+            </value>
+            <value>
+                <fullName>Cleared - Approved</fullName>
+                <default>false</default>
+                <label>Cleared - Approved</label>
+            </value>
+            <value>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+                <label>Under Review</label>
+            </value>
+            <value>
+                <fullName>Risk Identified</fullName>
+                <default>false</default>
+                <label>Risk Identified</label>
+            </value>
+            <value>
+                <fullName>Affiliation</fullName>
+                <default>false</default>
+                <label>Affiliation</label>
+            </value>
+            <value>
+                <fullName>Assets</fullName>
+                <default>false</default>
+                <label>Assets</label>
+            </value>
+            <value>
+                <fullName>General Notes</fullName>
+                <default>false</default>
+                <label>General Notes</label>
+            </value>
+            <value>
+                <fullName>Patent Info</fullName>
+                <default>false</default>
+                <label>Patent Info</label>
+            </value>
+            <value>
+                <fullName>Philanthropic</fullName>
+                <default>false</default>
+                <label>Philanthropic</label>
+            </value>
+            <value>
+                <fullName>Stock Information</fullName>
+                <default>false</default>
+                <label>Stock Information</label>
+            </value>
+            <value>
+                <fullName>ASG No Contact</fullName>
+                <default>false</default>
+                <label>ASG No Contact</label>
+            </value>
+            <value>
+                <fullName>Disqualification Review</fullName>
+                <default>false</default>
+                <label>Disqualification Review</label>
+            </value>
+            <value>
+                <fullName>Funding Interest Reason</fullName>
+                <default>false</default>
+                <label>Funding Interest Reason</label>
+            </value>
+            <value>
+                <fullName>Greek Giving</fullName>
+                <default>false</default>
+                <label>Greek Giving</label>
+            </value>
+            <value>
+                <fullName>Manager Update</fullName>
+                <default>false</default>
+                <label>Manager Update</label>
+            </value>
+            <value>
+                <fullName>Manager Update-Proactive</fullName>
+                <default>false</default>
+                <label>Manager Update-Proactive</label>
+            </value>
+            <value>
+                <fullName>Salutation Update</fullName>
+                <default>false</default>
+                <label>Salutation Update</label>
+            </value>
+            <value>
+                <fullName>Record Update</fullName>
+                <default>false</default>
+                <label>Record Update</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine Payments</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine Payments</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Stock</fullName>
+                <default>false</default>
+                <label>Stock</label>
+            </value>
+            <value>
+                <fullName>Salary</fullName>
+                <default>false</default>
+                <label>Salary</label>
+            </value>
+            <value>
+                <fullName>Constituent</fullName>
+                <default>false</default>
+                <label>Constituent</label>
+            </value>
+            <value>
+                <fullName>Vendor</fullName>
+                <default>false</default>
+                <label>Vendor</label>
+            </value>
+            <value>
+                <fullName>Primary</fullName>
+                <default>false</default>
+                <label>Primary</label>
+            </value>
+            <value>
+                <fullName>Additional</fullName>
+                <default>false</default>
+                <label>Additional</label>
+            </value>
+            <value>
+                <fullName>Farmland</fullName>
+                <default>false</default>
+                <label>Farmland</label>
+            </value>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
+            <value>
+                <fullName>Cultivation Profile</fullName>
+                <default>false</default>
+                <label>Cultivation Profile</label>
+            </value>
+            <value>
+                <fullName>Background Research</fullName>
+                <default>false</default>
+                <label>Background Research</label>
+            </value>
+            <value>
+                <fullName>Advancement Briefing</fullName>
+                <default>false</default>
+                <label>Advancement Briefing</label>
+            </value>
+            <value>
+                <fullName>External Source</fullName>
+                <default>false</default>
+                <label>External Source</label>
+            </value>
+            <value>
+                <fullName>Indicators</fullName>
+                <default>false</default>
+                <label>Indicators</label>
+            </value>
+            <value>
+                <fullName>Wealth Indicators</fullName>
+                <default>false</default>
+                <label>Wealth Indicators</label>
+            </value>
+            <value>
+                <fullName>Historic Wealth Analysis</fullName>
+                <default>false</default>
+                <label>Historic Wealth Analysis</label>
+            </value>
+            <value>
+                <fullName>Wealth Analysis</fullName>
+                <default>false</default>
+                <label>Wealth Analysis</label>
+            </value>
+            <value>
+                <fullName>ERM Verification</fullName>
+                <default>false</default>
+                <label>ERM Verification</label>
+            </value>
+            <value>
+                <fullName>International Property</fullName>
+                <default>false</default>
+                <label>International Property</label>
+            </value>
+            <value>
+                <fullName>Patent Holder</fullName>
+                <default>false</default>
+                <label>Patent Holder</label>
+            </value>
+            <value>
+                <fullName>Inheritor of Wealth</fullName>
+                <default>false</default>
+                <label>Inheritor of Wealth</label>
+            </value>
+            <value>
+                <fullName>High Liquidity</fullName>
+                <default>false</default>
+                <label>High Liquidity</label>
+            </value>
+            <value>
+                <fullName>Luxury Hobbies/Goods</fullName>
+                <default>false</default>
+                <label>Luxury Hobbies/Goods</label>
+            </value>
+            <value>
+                <fullName>Private Business Owner</fullName>
+                <default>false</default>
+                <label>Private Business Owner</label>
+            </value>
+            <value>
+                <fullName>Hobbies/External Interests</fullName>
+                <default>false</default>
+                <label>Hobbies/External Interests</label>
+            </value>
+            <value>
+                <fullName>Biographical Background</fullName>
+                <default>false</default>
+                <label>Biographical Background</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Is_Active__c</columns>
+    <columns>ucinn_ascendv2__Source_Matching_Rule_1__c</columns>
+    <columns>ucinn_ascendv2__Source_Matching_Rule_2__c</columns>
+    <columns>ucinn_ascendv2__Source_Matching_Rule_3__c</columns>
+    <columns>ucinn_ascendv2__Target_Matching_Rule_1__c</columns>
+    <columns>ucinn_ascendv2__Source_Object_Name__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Tribute_Type_2__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Tribute type for the second tribute information.</description>
+    <externalId>false</externalId>
+    <label>Tribute Type 2</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Honor Of</fullName>
+                <default>false</default>
+                <label>In Honor Of</label>
+            </value>
+            <value>
+                <fullName>In Memory Of</fullName>
+                <default>false</default>
+                <label>In Memory Of</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

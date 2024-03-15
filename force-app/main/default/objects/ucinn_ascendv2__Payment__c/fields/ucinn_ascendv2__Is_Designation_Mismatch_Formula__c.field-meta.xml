@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Designation_Mismatch_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This formula is true if the giving history Designation does not match the Designation Detail&apos;s Designation.  CS 341</description>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Designation__c  &lt;&gt;  ucinn_ascendv2__Designation_Detail__r.ucinn_ascendv2__Designation__c</formula>
+    <label>Is Designation Mismatch</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

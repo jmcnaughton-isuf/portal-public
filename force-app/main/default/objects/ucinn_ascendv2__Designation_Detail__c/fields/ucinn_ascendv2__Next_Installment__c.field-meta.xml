@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Next_Installment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Displays the record for the next unpaid installment. If all installments are fully paid, there should be no value here.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Displays the record for the next unpaid installment. If all installments are fully paid, there should be no value here.</inlineHelpText>
+    <label>Next Installment</label>
+    <referenceTo>ucinn_ascendv2__Installment__c</referenceTo>
+    <relationshipLabel>Designation Details</relationshipLabel>
+    <relationshipName>Designation_Details_Next_Installment</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

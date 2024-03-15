@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__New_Deductions</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Date_Received__c</columns>
+    <columns>ucinn_ascendv2__Source__c</columns>
+    <columns>ucinn_ascendv2__Deduction_Amount__c</columns>
+    <columns>ucinn_ascendv2__Deduction_Percentage__c</columns>
+    <columns>ucinn_ascendv2__Deduction_Status__c</columns>
+    <columns>ucinn_ascendv2__Payroll_Status__c</columns>
+    <columns>ucinn_ascendv2__Relationship__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Deduction_Status__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Relationship__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>New Deductions</label>
+</ListView>

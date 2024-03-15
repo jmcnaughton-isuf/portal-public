@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>To store Ascend financial stock history URL link</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Financial Stock URLs</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Annual</fullName>
+        <default>false</default>
+        <label>Annual</label>
+    </customValue>
+    <customValue>
+        <fullName>Business</fullName>
+        <default>false</default>
+        <label>Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Historied</fullName>
+        <default>false</default>
+        <label>Historied</label>
+    </customValue>
+    <customValue>
+        <fullName>Life</fullName>
+        <default>false</default>
+        <label>Life</label>
+    </customValue>
+    <customValue>
+        <fullName>Student</fullName>
+        <default>false</default>
+        <label>Student</label>
+    </customValue>
+    <customValue>
+        <fullName>Student Life</fullName>
+        <default>false</default>
+        <label>Student Life</label>
+    </customValue>
+    <customValue>
+        <fullName>Cyclone Alley</fullName>
+        <default>false</default>
+        <label>Cyclone Alley</label>
+    </customValue>
+    <customValue>
+        <fullName>Complimentary</fullName>
+        <default>false</default>
+        <label>Complimentary</label>
+    </customValue>
+    <customValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+    </customValue>
+    <customValue>
+        <fullName>Reinstated</fullName>
+        <default>false</default>
+        <label>Reinstated</label>
+    </customValue>
+    <customValue>
+        <fullName>Renewed</fullName>
+        <default>false</default>
+        <label>Renewed</label>
+    </customValue>
+    <masterLabel>Membership Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

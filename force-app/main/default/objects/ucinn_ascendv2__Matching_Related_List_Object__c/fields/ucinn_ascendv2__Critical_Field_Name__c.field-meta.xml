@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Critical_Field_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The name for the field that if this field has a specific value when any field of this related list object record got a match it will get a higher score based on the multiplier than the other record that doesn&apos;t have the specific value for this field.</description>
+    <externalId>false</externalId>
+    <label>Critical Field Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

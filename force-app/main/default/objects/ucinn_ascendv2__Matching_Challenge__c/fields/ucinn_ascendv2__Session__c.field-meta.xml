@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Session__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Session to create the challenge sponsor&apos;s pledges, cannot create pledges if session is closed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Session to create the challenge sponsor&apos;s pledges, cannot create pledges if session is closed</inlineHelpText>
+    <label>Session</label>
+    <referenceTo>ucinn_ascendv2__Session__c</referenceTo>
+    <relationshipLabel>Matching Challenges</relationshipLabel>
+    <relationshipName>Matching_Challenges_Session</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Completed_Date_On_or_After_Request_Date</fullName>
+    <active>true</active>
+    <description>Date completed must be on or after date requested.</description>
+    <errorConditionFormula>$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c &lt;&gt; TRUE &amp;&amp;
+ucinn_ascendv2__Date_Completed__c &lt; ucinn_ascendv2__Date_Requested__c &amp;&amp;
+OR (
+RecordType.DeveloperName = &quot;Contact_Research&quot;,
+RecordType.DeveloperName = &quot;Account_Research&quot;
+)&amp;&amp;
+RecordType.NamespacePrefix = &apos;ucinn_ascendv2&apos;</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Date_Completed__c</errorDisplayField>
+    <errorMessage>Date completed must be on or after date requested.</errorMessage>
+</ValidationRule>

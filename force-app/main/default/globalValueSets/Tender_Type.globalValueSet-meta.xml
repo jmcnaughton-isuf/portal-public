@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Testing</fullName>
+        <default>false</default>
+        <label>Testing</label>
+    </customValue>
+    <customValue>
+        <fullName>Cash</fullName>
+        <default>false</default>
+        <label>Cash</label>
+    </customValue>
+    <customValue>
+        <fullName>Check</fullName>
+        <default>false</default>
+        <label>Check</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Card</fullName>
+        <default>false</default>
+        <label>Credit Card</label>
+    </customValue>
+    <customValue>
+        <fullName>Wire</fullName>
+        <default>false</default>
+        <label>Wire</label>
+    </customValue>
+    <customValue>
+        <fullName>Art Work</fullName>
+        <default>false</default>
+        <label>Art Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Closely Held Stock</fullName>
+        <default>false</default>
+        <label>Closely Held Stock</label>
+    </customValue>
+    <customValue>
+        <fullName>Contingent Commitment</fullName>
+        <default>false</default>
+        <label>Contingent Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct to University</fullName>
+        <default>false</default>
+        <label>Direct to University</label>
+    </customValue>
+    <customValue>
+        <fullName>Discover</fullName>
+        <default>false</default>
+        <label>Discover</label>
+    </customValue>
+    <customValue>
+        <fullName>Discover Recurring</fullName>
+        <default>false</default>
+        <label>Discover Recurring</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <label>Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Farm Property</fullName>
+        <default>false</default>
+        <label>Farm Property</label>
+    </customValue>
+    <customValue>
+        <fullName>Gifts in Kind</fullName>
+        <default>false</default>
+        <label>Gifts in Kind</label>
+    </customValue>
+    <customValue>
+        <fullName>GIK (Gift-in-Kind)</fullName>
+        <default>false</default>
+        <label>GIK (Gift-in-Kind)</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Bequest</fullName>
+        <default>false</default>
+        <label>Insurance Bequest</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Commitment</fullName>
+        <default>false</default>
+        <label>Insurance Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>IRA Rollover</fullName>
+        <default>false</default>
+        <label>IRA Rollover</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketable Securities</fullName>
+        <default>false</default>
+        <label>Marketable Securities</label>
+    </customValue>
+    <customValue>
+        <fullName>MasterCard</fullName>
+        <default>false</default>
+        <label>MasterCard</label>
+    </customValue>
+    <customValue>
+        <fullName>MasterCard Recurring</fullName>
+        <default>false</default>
+        <label>MasterCard Recurring</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Non-Cash</fullName>
+        <default>false</default>
+        <label>Other Non-Cash</label>
+    </customValue>
+    <customValue>
+        <fullName>Payroll Deduction</fullName>
+        <default>false</default>
+        <label>Payroll Deduction</label>
+    </customValue>
+    <customValue>
+        <fullName>Pledge Writeoff</fullName>
+        <default>false</default>
+        <label>Pledge Writeoff</label>
+    </customValue>
+    <customValue>
+        <fullName>Property</fullName>
+        <default>false</default>
+        <label>Property</label>
+    </customValue>
+    <customValue>
+        <fullName>Real Estate, Non-Farm</fullName>
+        <default>false</default>
+        <label>Real Estate, Non-Farm</label>
+    </customValue>
+    <customValue>
+        <fullName>Retirement Assets</fullName>
+        <default>false</default>
+        <label>Retirement Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>Stock Gift</fullName>
+        <default>false</default>
+        <label>Stock Gift</label>
+    </customValue>
+    <customValue>
+        <fullName>Testamentary Trust</fullName>
+        <default>false</default>
+        <label>Testamentary Trust</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust held by ISUF</fullName>
+        <default>false</default>
+        <label>Trust held by ISUF</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust held by others</fullName>
+        <default>false</default>
+        <label>Trust held by others</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Deceased Will Commitment</fullName>
+        <default>false</default>
+        <label>Unknown Deceased Will Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Gift Amount</fullName>
+        <default>false</default>
+        <label>Unknown Gift Amount</label>
+    </customValue>
+    <customValue>
+        <fullName>Visa</fullName>
+        <default>false</default>
+        <label>Visa</label>
+    </customValue>
+    <customValue>
+        <fullName>Visa Recurring</fullName>
+        <default>false</default>
+        <label>Visa Recurring</label>
+    </customValue>
+    <customValue>
+        <fullName>Will Commitment</fullName>
+        <default>false</default>
+        <label>Will Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>University Bill</fullName>
+        <default>false</default>
+        <label>University Bill</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Card - Auto Pay</fullName>
+        <default>false</default>
+        <label>Credit Card - Auto Pay</label>
+    </customValue>
+    <masterLabel>Tender Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

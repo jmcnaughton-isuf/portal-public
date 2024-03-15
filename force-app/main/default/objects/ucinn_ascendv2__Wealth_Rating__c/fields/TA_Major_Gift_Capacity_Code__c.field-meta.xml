@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TA_Major_Gift_Capacity_Code__c</fullName>
+    <description>Dependent Picklist of TA Major Gift Capacity</description>
+    <externalId>false</externalId>
+    <label>TA Major Gift Capacity Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>TA_Major_Gift_Cap__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Major_Gift_Code</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>$25,000 - $49,999</controllingFieldValue>
+            <valueName>9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$10,000 - $24,999</controllingFieldValue>
+            <valueName>A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$5,000 - $9,999</controllingFieldValue>
+            <valueName>B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$2,500 - $4,999</controllingFieldValue>
+            <valueName>C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$1,000 - $2,499</controllingFieldValue>
+            <valueName>D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Less than $1,000</controllingFieldValue>
+            <valueName>E</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$25,000,000+</controllingFieldValue>
+            <valueName>1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$10,000,000 - $24,999,999</controllingFieldValue>
+            <valueName>2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$5,000,000 - $9,999,999</controllingFieldValue>
+            <valueName>3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$2,500,000 - $4,999,999</controllingFieldValue>
+            <valueName>4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$1,000,000 - $2,499,999</controllingFieldValue>
+            <valueName>5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$250,000 - $999,999</controllingFieldValue>
+            <valueName>6</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$100,000 - $249,999</controllingFieldValue>
+            <valueName>7</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>$50,000 - $99,999</controllingFieldValue>
+            <valueName>8</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

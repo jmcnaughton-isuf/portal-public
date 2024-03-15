@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Organization_Contact_Report__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>will be checked (by a flow) if the constituent field is blank. used for campus engage permission to access contact reports they create for individuals</description>
+    <externalId>false</externalId>
+    <label>Organization Contact Report</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

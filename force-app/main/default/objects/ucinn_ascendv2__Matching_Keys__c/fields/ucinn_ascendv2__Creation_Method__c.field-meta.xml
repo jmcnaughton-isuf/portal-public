@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Creation_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Method used for creating the matching key for each field</description>
+    <externalId>false</externalId>
+    <label>Creation Method</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>City(_, 6)</fullName>
+                <default>false</default>
+                <label>City(_, 6)</label>
+            </value>
+            <value>
+                <fullName>Company(2,6)</fullName>
+                <default>false</default>
+                <label>Company(2,6)</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>First 3 Characters</fullName>
+                <default>false</default>
+                <label>First 3 Characters</label>
+            </value>
+            <value>
+                <fullName>First 4 Characters</fullName>
+                <default>false</default>
+                <label>First 4 Characters</label>
+            </value>
+            <value>
+                <fullName>First 5 Characters</fullName>
+                <default>false</default>
+                <label>First 5 Characters</label>
+            </value>
+            <value>
+                <fullName>FirstName(1,1)</fullName>
+                <default>false</default>
+                <label>FirstName(1,1)</label>
+            </value>
+            <value>
+                <fullName>Last 3 Characters</fullName>
+                <default>false</default>
+                <label>Last 3 Characters</label>
+            </value>
+            <value>
+                <fullName>LastName(Double Metaphone)</fullName>
+                <default>false</default>
+                <label>LastName(Double Metaphone)</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Zip(1,3)</fullName>
+                <default>false</default>
+                <label>Zip(1,3)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

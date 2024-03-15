@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Michele_Test</fullName>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>ucinn_ascendv2__Matching_Organization_Formula__c</columns>
+    <columns>ucinn_ascendv2__Expected_Date__c</columns>
+    <columns>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>Send_Pledge_Reminder__c</columns>
+    <columns>Pledge_Reminder_Owner__c</columns>
+    <columns>Pledge_Reminder_Preference__c</columns>
+    <columns>Pledge_Reminder_Sent__c</columns>
+    <columns>Reminder_Sent_Date__c</columns>
+    <columns>Number_of_Reminder_Sent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Payment_Amount__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Expected_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>Send_Pledge_Reminder__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Donor_ID_Formula__c</field>
+        <operation>contains</operation>
+        <value>999254356,999158804,999019270,999003283,900557709,900422085,900419189,900235829,900185021,900103517,900085672,900085177,900062062,900052755,900051399,900003931,900022808,900023051,900035770,900042216,900047091,900047444</value>
+    </filters>
+    <label>Michele Test</label>
+</ListView>

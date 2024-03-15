@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAS_Majors_List</fullName>
+    <columns>Institution__c</columns>
+    <columns>Department__c</columns>
+    <columns>College__c</columns>
+    <columns>ucinn_ascendv2__Post_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Institution__c</field>
+        <operation>contains</operation>
+        <value>Iowa State Univ</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Post_Code__c</field>
+        <operation>contains</operation>
+        <value>Chemistry</value>
+    </filters>
+    <filters>
+        <field>Department__c</field>
+        <operation>contains</operation>
+        <value>Chemistry</value>
+    </filters>
+    <filters>
+        <field>College__c</field>
+        <operation>contains</operation>
+        <value>Liberal</value>
+    </filters>
+    <label>LAS Majors List</label>
+</ListView>

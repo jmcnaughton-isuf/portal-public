@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUF_Giving_Society_Total__c</fullName>
+    <description>Determines Total based on Giving Society</description>
+    <externalId>false</externalId>
+    <formula>If (ucinn_ascendv2__Giving_Society__r.Name = &apos;OTK Cumulative&apos;,   ucinn_ascendv2__Contact__r.ucinn_ascendv2__Lifetime_Fundraising__c ,  Club_Total__c)</formula>
+    <inlineHelpText>Campanile, Marston and Gentle Doctor&apos;s use Club Total, OTK uses Lifetime Production from Constituent.</inlineHelpText>
+    <label>Giving Society Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

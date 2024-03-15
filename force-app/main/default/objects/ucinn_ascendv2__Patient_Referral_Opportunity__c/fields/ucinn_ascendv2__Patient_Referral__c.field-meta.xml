@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Patient_Referral__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Patient Referral</label>
+    <referenceTo>ucinn_ascendv2__Patient_Referral__c</referenceTo>
+    <relationshipName>Patient_Referral_Opportunities</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

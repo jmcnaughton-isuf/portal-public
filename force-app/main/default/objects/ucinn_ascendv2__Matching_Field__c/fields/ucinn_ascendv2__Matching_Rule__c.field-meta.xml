@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Matching_Rule__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The matching rule this matching field belongs to.</description>
+    <externalId>false</externalId>
+    <label>Matching Rule</label>
+    <referenceTo>ucinn_ascendv2__Matching_Rule__c</referenceTo>
+    <relationshipLabel>Matching Fields</relationshipLabel>
+    <relationshipName>Matching_Fields_Matching_Rule</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

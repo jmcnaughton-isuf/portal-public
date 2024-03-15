@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_PS_Willing_to_Play__c</fullName>
+    <externalId>false</externalId>
+    <label>Role PS Willing to Play</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Will give information only; do not use your name</fullName>
+                <default>false</default>
+                <label>Will give information only; do not use your name</label>
+            </value>
+            <value>
+                <fullName>Okay with us using your name when trying to secure an appointment</fullName>
+                <default>false</default>
+                <label>Okay with us using your name when trying to secure an appointment</label>
+            </value>
+            <value>
+                <fullName>Willing to reach out and ask if the prospect is interested in meeting with a development Officer</fullName>
+                <default>false</default>
+                <label>Willing to reach out and ask if the prospect is interested in meeting with a development Officer</label>
+            </value>
+            <value>
+                <fullName>Willing to reach out and explore the prospect&apos;s philanthropic interests on your own</fullName>
+                <default>false</default>
+                <label>Willing to reach out and explore the prospect&apos;s philanthropic interests on your own</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

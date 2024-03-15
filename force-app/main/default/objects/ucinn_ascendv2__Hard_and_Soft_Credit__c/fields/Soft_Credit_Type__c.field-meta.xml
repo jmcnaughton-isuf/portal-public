@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Soft_Credit_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the soft credit type from the option below.</inlineHelpText>
+    <label>Soft Credit Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>A: Athletic GIKs</fullName>
+                <default>false</default>
+                <label>A: Athletic GIKs</label>
+            </value>
+            <value>
+                <fullName>M: Matching Gift</fullName>
+                <default>false</default>
+                <label>M: Matching Gift</label>
+            </value>
+            <value>
+                <fullName>P: Permanent</fullName>
+                <default>false</default>
+                <label>P: Permanent</label>
+            </value>
+            <value>
+                <fullName>R: Reiman Gardens</fullName>
+                <default>false</default>
+                <label>R: Reiman Gardens</label>
+            </value>
+            <value>
+                <fullName>V: Vet Med Preceptorship</fullName>
+                <default>false</default>
+                <label>V: Vet Med Preceptorship</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

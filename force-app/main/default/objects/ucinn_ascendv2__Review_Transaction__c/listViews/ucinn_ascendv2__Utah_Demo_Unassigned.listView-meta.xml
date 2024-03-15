@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Utah_Demo_Unassigned</fullName>
+    <columns>ucinn_ascendv2__Exception_Reasons_Formula__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Remitter_Name_Formula__c</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>2/12/2018 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Unassigned</value>
+    </filters>
+    <label>Utah Demo Unassigned</label>
+</ListView>

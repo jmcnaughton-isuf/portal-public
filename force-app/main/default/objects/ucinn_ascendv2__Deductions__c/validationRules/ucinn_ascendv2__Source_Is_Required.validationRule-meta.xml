@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Source_Is_Required</fullName>
+    <active>true</active>
+    <description>Source is a required field.</description>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE ,
+ISPICKVAL( ucinn_ascendv2__Source__c , &quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Source__c</errorDisplayField>
+    <errorMessage>Select a source for the deduction.</errorMessage>
+</ValidationRule>

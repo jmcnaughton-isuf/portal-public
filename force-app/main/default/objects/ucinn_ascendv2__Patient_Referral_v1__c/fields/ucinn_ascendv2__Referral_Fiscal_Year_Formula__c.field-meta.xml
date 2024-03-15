@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Referral_Fiscal_Year_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>If (Month(ucinn_ascendv2__Referral_Date__c)&gt;=7,TEXT(YEAR(ucinn_ascendv2__Referral_Date__c)+1),TEXT(YEAR(ucinn_ascendv2__Referral_Date__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Referral Fiscal Year</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

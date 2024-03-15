@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Athletics_Transaction</fullName>
+    <active>true</active>
+    <description>This is the record type for incoming Athletics Transactions.</description>
+    <label>Athletics Transaction</label>
+    <picklistValues>
+        <picklist>Asset_Type__c</picklist>
+        <values>
+            <fullName>Art Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closely Held Stock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contingent Commitment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct to University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farm Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gifts in Kind</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IRA Rollover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Bequest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Commitment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketable Securities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Non-Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pledge Commitment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate%2C Non-Farm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retirement Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testamentary Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust held by ISUF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust held by others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown Deceased Will Commitment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown Gift Amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will Commitment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidential_Indicator__c</picklist>
+        <values>
+            <fullName>Confidential Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confidential ISU</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Memorial_Gift__c</picklist>
+        <values>
+            <fullName>Memorial Gift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watch for</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Solicitation__c</picklist>
+        <values>
+            <fullName>2nd Ask Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Ask Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquisition Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquisition Mailing 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alumni Assoc Membership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clean Up Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-mail Solicitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR SWMY Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faculty%2FStaff renewals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matching Gift Reminder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newsletter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-line Link</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDF Forms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Calls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pledges under %2450</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWMY Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWMY Refusals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWMYs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thank You Calls</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Special_Will_Types__c</picklist>
+        <values>
+            <fullName>Achievement Fund Commitments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Commitments</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unrestricted_Estate_Prov__c</picklist>
+        <values>
+            <fullName>Unrestricted Fnd%2E Estate Prov%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unrestricted Univ%2E Estate Prov%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Category__c</picklist>
+        <values>
+            <fullName>Known Amount%2FDocumented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Undocumented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown Amount</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Notification__c</picklist>
+        <values>
+            <fullName>Attorney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development Staff Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Donor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executor%2FPersonal Representative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Advisor%2FPlanner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plan Administrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustee%2FTrust Officer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Progress__c</picklist>
+        <values>
+            <fullName>Final</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Probate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Publicize__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No publicity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C after deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C with permission</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Term__c</picklist>
+        <values>
+            <fullName>Actuarial Life</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life%2BTerm of Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Term of Years</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Will_Type__c</picklist>
+        <values>
+            <fullName>Bequest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CGA Charitable Gift Annuity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRAT Annuity Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRUT Unitrust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closely Held Stock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farm Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gifts In Kind</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketable Securities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid in full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate%2C Non-Farm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zero Coupon Bond</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Status__c</picklist>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unassigned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Tender_Type__c</picklist>
+        <values>
+            <fullName>Art Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll Deduction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Transaction_Type__c</picklist>
+        <values>
+            <fullName>Gift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matching Gift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pledge Payment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Funds Held in Trust</fullName>
+        <default>false</default>
+        <label>Funds Held in Trust</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Bequest</fullName>
+        <default>false</default>
+        <label>Insurance Bequest</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Cmmt</fullName>
+        <default>false</default>
+        <label>Insurance Cmmt</label>
+    </customValue>
+    <customValue>
+        <fullName>Retirement Assets</fullName>
+        <default>false</default>
+        <label>Retirement Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>Testamentary Trust</fullName>
+        <default>false</default>
+        <label>Testamentary Trust</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust Held by ISUF</fullName>
+        <default>false</default>
+        <label>Trust Held by ISUF</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Life Estate</fullName>
+        <default>false</default>
+        <label>Life Estate</label>
+    </customValue>
+    <customValue>
+        <fullName>Payable on Death</fullName>
+        <default>false</default>
+        <label>Payable on Death</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust Held by Others</fullName>
+        <default>false</default>
+        <label>Trust Held by Others</label>
+    </customValue>
+    <customValue>
+        <fullName>Will Commitment</fullName>
+        <default>false</default>
+        <label>Will Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Commitment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Insurance Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Gift Amount</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Unknown Gift Amount</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Deceased Will Commitment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Unknown Deceased Will Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Contingent Commitment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Contingent Commitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Will Cmmt</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Will Cmmt</label>
+    </customValue>
+    <masterLabel>Will Vehicle</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

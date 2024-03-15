@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spouses_missing_soft_credit</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Related_Contact_Role__c</columns>
+    <columns>ucinn_ascendv2__Related_Contact__c</columns>
+    <columns>ucinn_ascendv2__Apply_Soft_Credit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Apply_Soft_Credit__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Related_Contact_Role__c</field>
+        <operation>equals</operation>
+        <value>Spouse,Spouse or Partner</value>
+    </filters>
+    <label>Spouses missing soft credit</label>
+</ListView>

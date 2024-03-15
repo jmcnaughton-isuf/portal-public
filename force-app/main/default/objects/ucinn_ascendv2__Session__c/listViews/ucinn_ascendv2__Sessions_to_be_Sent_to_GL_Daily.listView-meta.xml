@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Sessions_to_be_Sent_to_GL_Daily</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Source__c</columns>
+    <columns>ucinn_ascendv2__Is_Sent_to_G_L__c</columns>
+    <columns>ucinn_ascendv2__Is_Ready_for_G_L__c</columns>
+    <columns>ucinn_ascendv2__Session_Description__c</columns>
+    <columns>ucinn_ascendv2__Session_Date__c</columns>
+    <columns>ucinn_ascendv2__Pledge_Amount_Posted__c</columns>
+    <columns>ucinn_ascendv2__Gift_Pledge_Payment_Amount_Posted__c</columns>
+    <columns>ucinn_ascendv2__Session_Operator_Assigned__c</columns>
+    <columns>ucinn_ascendv2__Non_Gift_Amount__c</columns>
+    <columns>ucinn_ascendv2__Session_Totals_Approved__c</columns>
+    <columns>ucinn_ascendv2__No_of_Transactions_Posted__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Is_Sent_to_G_L__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Session_Totals_Approved__c</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Session_Totals_Approved__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Sessions to be Sent to GL (Daily)</label>
+</ListView>

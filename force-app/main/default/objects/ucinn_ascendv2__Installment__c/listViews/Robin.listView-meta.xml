@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Robin</fullName>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>ucinn_ascendv2__Matching_Organization_Formula__c</columns>
+    <columns>ucinn_ascendv2__Expected_Date__c</columns>
+    <columns>ucinn_ascendv2__Total_Pledge_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Expected_Less_Payment_Amount_Formula__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>Pledge_Reminder_Owner__c</columns>
+    <columns>Pledge_Reminder_Preference__c</columns>
+    <columns>Pledge_Reminder_Sent__c</columns>
+    <columns>Reminder_Sent_Date__c</columns>
+    <columns>Number_of_Reminder_Sent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Payment_Amount__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Expected_Date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_MONTH</value>
+    </filters>
+    <filters>
+        <field>Pledge_Reminder_Owner__c</field>
+        <operation>equals</operation>
+        <value>ASG</value>
+    </filters>
+    <label>Robin</label>
+</ListView>

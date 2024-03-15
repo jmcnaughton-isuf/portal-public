@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Require_Supervisor_Comments</fullName>
+    <active>true</active>
+    <description>Requires supervisor comments when interim status is set to supervisor review.</description>
+    <errorConditionFormula>$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c &lt;&gt; TRUE &amp;&amp;
+ISPICKVAL(ucinn_ascendv2__Status__c, &quot;Supervisor Review&quot;) &amp;&amp; ISBLANK( ucinn_ascendv2__Comments_to_Supervisor__c ) &amp;&amp;
+OR(
+RecordType.DeveloperName = &quot;Advantage_Interface&quot;,
+RecordType.DeveloperName = &quot;Bank_Of_America_Interface&quot;,
+RecordType.DeveloperName = &quot;Hospital_Interface&quot;,
+RecordType.DeveloperName = &quot;Online_Donation_Interface&quot;,
+RecordType.DeveloperName = &quot;Ruffalo_Cody_Interface&quot;,
+RecordType.DeveloperName = &quot;School_Radio_Interface&quot;,
+RecordType.DeveloperName = &quot;SIS_Interface&quot;,
+RecordType.DeveloperName = &quot;Special_Request_Interface&quot;,
+RecordType.DeveloperName = &quot;Workday_Interface&quot;
+)&amp;&amp;
+RecordType.NamespacePrefix = &apos;ucinn_ascendv2&apos;</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Comments_to_Supervisor__c</errorDisplayField>
+    <errorMessage>Comments to supervisor is required when status is set to supervisor review.</errorMessage>
+</ValidationRule>

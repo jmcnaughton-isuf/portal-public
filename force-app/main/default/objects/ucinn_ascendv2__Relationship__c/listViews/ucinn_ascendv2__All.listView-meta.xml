@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Related_Contact_Role__c</columns>
+    <columns>ucinn_ascendv2__Related_Contact__c</columns>
+    <columns>ucinn_ascendv2__Reciprocal_Relationship__c</columns>
+    <columns>External_System_ID__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Marriage_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Related_Contact_Role__c</field>
+        <operation>equals</operation>
+        <value>Deceased Spouse or Partner</value>
+    </filters>
+    <label>All</label>
+</ListView>

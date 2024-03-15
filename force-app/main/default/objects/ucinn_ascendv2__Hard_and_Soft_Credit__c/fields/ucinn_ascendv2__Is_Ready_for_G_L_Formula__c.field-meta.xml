@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Ready_for_G_L_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Used to calculate FY giving to make sure session is closed and approved when considering hard/soft credits.</description>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Session__r.ucinn_ascendv2__Is_Ready_for_G_L__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Ready for G / L</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

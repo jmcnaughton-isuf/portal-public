@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( ucinn_ascendv2__Opportunity__r.Type , &apos;Matching&apos;,&apos;OG&apos;,
+                                            &apos;Outright Gift&apos;,&apos;OG&apos;,
+                                            &apos;Outright&apos;,&apos;OG&apos;,
+                                            &apos;Planned Gift&apos;, &apos;DP&apos;,
+                                            &apos;Discounted Planned Gift&apos;, &apos;DP&apos;,
+                                            &apos;Discounted Gift&apos;, &apos;G&apos;,
+                                            &apos;Deferred Liability&apos;, &apos;DC&apos;,
+                                            &apos;Pledge Commitment&apos;,&apos;PP&apos;,
+                                            &apos;Installment Based Membership&apos;,&apos;PP&apos;,
+                                            &apos;Auto Renewing Membership&apos;,&apos;OG&apos;,
+                                            &apos;One-Time Membership&apos;,&apos;OG&apos;,
+                                            &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Activity Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

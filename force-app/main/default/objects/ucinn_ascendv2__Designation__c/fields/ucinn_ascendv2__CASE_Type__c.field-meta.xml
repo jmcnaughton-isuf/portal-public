@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__CASE_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>CASE Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Current Unrestricted</fullName>
+                <default>false</default>
+                <label>Current Unrestricted</label>
+            </value>
+            <value>
+                <fullName>Endowment &amp; Similar</fullName>
+                <default>false</default>
+                <label>Endowment &amp; Similar</label>
+            </value>
+            <value>
+                <fullName>Loan Funds</fullName>
+                <default>false</default>
+                <label>Loan Funds</label>
+            </value>
+            <value>
+                <fullName>Plant Funds</fullName>
+                <default>false</default>
+                <label>Plant Funds</label>
+            </value>
+            <value>
+                <fullName>Current Restricted</fullName>
+                <default>false</default>
+                <label>Current Restricted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

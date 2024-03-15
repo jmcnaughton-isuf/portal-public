@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Account_Service_Indicator</fullName>
+    <active>true</active>
+    <description>A service indicator for a household or corporation/organization.</description>
+    <label>Account Service Indicator</label>
+    <picklistValues>
+        <picklist>Channel_Preference__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Source__c</picklist>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benevity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Vet Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ScaleFunder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Month_Preference__c</picklist>
+        <values>
+            <fullName>1-January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11-November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12-December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7-July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8-August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9-September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferences__c</picklist>
+        <values>
+            <fullName>4H</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affinity Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual%2FEndowment Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Birthday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Book Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bug Guide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Membership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calendar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign and Fundraising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Career Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Club mailings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cyclone Alley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cyclone Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cyclone Sports Complex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOD Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Donor Relations Updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email %28GDPR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events - Arizona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events - Florida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faculty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Planners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Football Invitations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Football Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gerdin Citizenship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Acknowledgement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hach Hall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hixson Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holiday Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Magazine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marching Band</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matching Gift Reminders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Membership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merchandise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newsletters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Membership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTK Invite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PhD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone - Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone - Cell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone - Land-Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presidential Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Advisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receipts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruitment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retiree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Interest Society</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surveys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustaining Life</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Beta Pi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Text%2FSMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W%26P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W%26P Invites</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WiSE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNewsletter</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Publications__c</picklist>
+        <values>
+            <fullName>Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advancing Iowa State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atanasoff Today</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compassionate Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connections</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Designotes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Destinations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discover Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forward</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gentle Doctor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glimpses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HS Matters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Retiree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inspire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa Stater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Math Matters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Membership 101</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Catalog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Our Iowa Magazine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospectus%2FIvy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Script and Score</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>True</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Varve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Women in Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Your Iowa State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eIowa Stater</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Source__c</picklist>
+        <values>
+            <fullName>Annual %26 Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAMPCALL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CONVERT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DNS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModProc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

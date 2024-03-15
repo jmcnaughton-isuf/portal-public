@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fund_Populated_Fields_Count__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( AdminFeeCash__c =0,0,1)+
+If( AdminFeePrincipal__c =0,0,1)+
+If( AdminFeeTotal__c =0,0,1)+
+If( AIClose__c =0,0,1)+
+If( AIEarnings__c =0,0,1)+
+If( AIOpen__c =0,0,1)+
+If( BegAIEnd__c =0,0,1)+
+If( BegCash__c =0,0,1)+
+If( BegFHIT__c =0,0,1)+
+If( BegPrincipal__c =0,0,1)+
+If( BegTotal__c =0,0,1)+
+If( CashCash__c =0,0,1)+
+If( CashLongTerm__c =0,0,1)+
+If( CashLTTotal__c =0,0,1)+
+If( CashPrincipal__c =0,0,1)+
+If( CashTotal__c =0,0,1)+
+If( ContrCash__c =0,0,1)+
+If( ContrPrincipal__c =0,0,1)+
+If( ContrTotal__c =0,0,1)+
+If( EarningsLongTerm__c =0,0,1)+
+If( EarningsPrincipal__c =0,0,1)+
+If( EarningsTotal__c =0,0,1)+
+If( EndAIEnd__c =0,0,1)+
+If( EndCash__c =0,0,1)+
+If( EndFHIT__c =0,0,1)+
+If( EndPrincipal__c =0,0,1)+
+If( EndTotal__c =0,0,1)+
+If( FHITBeg__c =0,0,1)+
+If( FHITEnd__c =0,0,1)+
+If( FHITEndGL__c =0,0,1)+
+If( FHITEndInc__c =0,0,1)+
+If( FHITExpGL__c =0,0,1)+
+If( FHITExpInc__c =0,0,1)+
+If( FHITTotInc__c =0,0,1)+
+If( OtherCash__c =0,0,1)+
+If( OtherLT__c =0,0,1)+
+If( OtherPool__c =0,0,1)+
+If( OtherPrincipal__c =0,0,1)+
+If( OtherTotal__c =0,0,1)+
+If( SpentCash__c =0,0,1)+
+If( SpentPrincipal__c =0,0,1)+
+If( SpentTotal__c =0,0,1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fund Populated Fields Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

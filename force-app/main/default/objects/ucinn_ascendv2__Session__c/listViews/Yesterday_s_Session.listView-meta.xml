@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yesterday_s_Session</fullName>
+    <columns>Batch_Number__c</columns>
+    <columns>ucinn_ascendv2__Source__c</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Session_Description__c</columns>
+    <columns>ucinn_ascendv2__Session_Date__c</columns>
+    <columns>ucinn_ascendv2__Session_Operator_Assigned__c</columns>
+    <columns>ucinn_ascendv2__Pledge_Amount__c</columns>
+    <columns>ucinn_ascendv2__Gift_Pledge_Payment_Amount__c</columns>
+    <columns>ucinn_ascendv2__Match_Amount__c</columns>
+    <columns>ucinn_ascendv2__Session_Started__c</columns>
+    <columns>ucinn_ascendv2__Session_Completed__c</columns>
+    <columns>ucinn_ascendv2__Is_Completed_by_Gift_Specialist__c</columns>
+    <columns>ucinn_ascendv2__Is_Ready_for_G_L__c</columns>
+    <columns>ucinn_ascendv2__Session_Totals_Approved__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <label>Yesterday&apos;s Sessions</label>
+</ListView>

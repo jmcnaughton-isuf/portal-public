@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Dedupe_Possible_Duplicate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The possible duplicate this duplicate found belong to.</description>
+    <externalId>false</externalId>
+    <label>Dedupe Possible Duplicate</label>
+    <referenceTo>ucinn_ascendv2__Dedupe_Possible_Duplicate__c</referenceTo>
+    <relationshipLabel>Dedupe Possible Duplicate Founds</relationshipLabel>
+    <relationshipName>Dedupe_Possible_Duplicate_Founds</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

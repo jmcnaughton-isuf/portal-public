@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not a Priority</fullName>
+        <default>false</default>
+        <label>Not a Priority</label>
+    </customValue>
+    <customValue>
+        <fullName>Low Priority</fullName>
+        <default>false</default>
+        <label>Low Priority</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle Priority</fullName>
+        <default>false</default>
+        <label>Middle Priority</label>
+    </customValue>
+    <customValue>
+        <fullName>High Priority</fullName>
+        <default>false</default>
+        <label>High Priority</label>
+    </customValue>
+    <masterLabel>Priority Scale</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

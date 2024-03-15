@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__External_Payment_Settings__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>External Payment Settings</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>ucinn_ascendv2__External_Payment_Gateway_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Placeholder Setting</fullName>
+                <default>false</default>
+                <label>Placeholder Setting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

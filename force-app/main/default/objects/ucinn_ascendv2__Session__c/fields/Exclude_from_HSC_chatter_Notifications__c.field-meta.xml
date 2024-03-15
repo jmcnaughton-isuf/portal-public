@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_from_HSC_chatter_Notifications__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check to exclude this session from allowing the HSC rows to be pulled into asc_BATCH_HSCNotifications() that generates chatter notifications on constituents and funds.</description>
+    <externalId>false</externalId>
+    <label>Exclude from HSC chatter Notifications</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

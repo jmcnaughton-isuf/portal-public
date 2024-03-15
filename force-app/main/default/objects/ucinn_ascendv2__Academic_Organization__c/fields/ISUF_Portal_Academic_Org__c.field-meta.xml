@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUF_Portal_Academic_Org__c</fullName>
+    <defaultValue>&quot;Other Areas of Support&quot;</defaultValue>
+    <description>Provides control field for changing the field by the same name on funds (designations) for use by portal giving page grouping.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides control field for changing the field by the same name on funds (designations) for use by portal giving page grouping.</inlineHelpText>
+    <label>Portal Academic Org</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alumni Association</fullName>
+                <default>false</default>
+                <label>Alumni Association</label>
+            </value>
+            <value>
+                <fullName>Athletics and Iowa State Center</fullName>
+                <default>false</default>
+                <label>Athletics and Iowa State Center</label>
+            </value>
+            <value>
+                <fullName>College of Agriculture and Life Sciences</fullName>
+                <default>false</default>
+                <label>College of Agriculture and Life Sciences</label>
+            </value>
+            <value>
+                <fullName>College of Design</fullName>
+                <default>false</default>
+                <label>College of Design</label>
+            </value>
+            <value>
+                <fullName>College of Engineering</fullName>
+                <default>false</default>
+                <label>College of Engineering</label>
+            </value>
+            <value>
+                <fullName>College of Human Sciences</fullName>
+                <default>false</default>
+                <label>College of Human Sciences</label>
+            </value>
+            <value>
+                <fullName>College of Liberal Arts and Sciences</fullName>
+                <default>false</default>
+                <label>College of Liberal Arts and Sciences</label>
+            </value>
+            <value>
+                <fullName>College of Veterinary Medicine</fullName>
+                <default>false</default>
+                <label>College of Veterinary Medicine</label>
+            </value>
+            <value>
+                <fullName>Extension and Outreach</fullName>
+                <default>false</default>
+                <label>Extension and Outreach</label>
+            </value>
+            <value>
+                <fullName>Graduate College</fullName>
+                <default>false</default>
+                <label>Graduate College</label>
+            </value>
+            <value>
+                <fullName>Ivy College of Business</fullName>
+                <default>false</default>
+                <label>Ivy College of Business</label>
+            </value>
+            <value>
+                <fullName>Other Areas of Support</fullName>
+                <default>false</default>
+                <label>Other Areas of Support</label>
+            </value>
+            <value>
+                <fullName>Reiman Gardens</fullName>
+                <default>false</default>
+                <label>Reiman Gardens</label>
+            </value>
+            <value>
+                <fullName>Student and Academic Affairs</fullName>
+                <default>false</default>
+                <label>Student and Academic Affairs</label>
+            </value>
+            <value>
+                <fullName>University Libraries</fullName>
+                <default>false</default>
+                <label>University Libraries</label>
+            </value>
+            <value>
+                <fullName>University Museums</fullName>
+                <default>false</default>
+                <label>University Museums</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

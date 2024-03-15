@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Alliance_Survey__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Alliance Survey</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Basic Research</fullName>
+                <default>false</default>
+                <label>Basic Research</label>
+            </value>
+            <value>
+                <fullName>Physical Sciences</fullName>
+                <default>false</default>
+                <label>Physical Sciences</label>
+            </value>
+            <value>
+                <fullName>Life Sciences</fullName>
+                <default>false</default>
+                <label>Life Sciences</label>
+            </value>
+            <value>
+                <fullName>Mathematics</fullName>
+                <default>false</default>
+                <label>Mathematics</label>
+            </value>
+            <value>
+                <fullName>Behavioral and Social Sciences</fullName>
+                <default>false</default>
+                <label>Behavioral and Social Sciences</label>
+            </value>
+            <value>
+                <fullName>Humanities and Arts</fullName>
+                <default>false</default>
+                <label>Humanities and Arts</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

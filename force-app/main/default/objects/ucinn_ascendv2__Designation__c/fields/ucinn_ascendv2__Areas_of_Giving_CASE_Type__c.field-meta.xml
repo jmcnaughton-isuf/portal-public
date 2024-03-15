@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Areas_of_Giving_CASE_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Areas of Giving (CASE Type)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CU - Current Unrestricted</fullName>
+                <default>false</default>
+                <label>CU - Current Unrestricted</label>
+            </value>
+            <value>
+                <fullName>CR - Current Restricted</fullName>
+                <default>false</default>
+                <label>CR - Current Restricted</label>
+            </value>
+            <value>
+                <fullName>EN - Endowment</fullName>
+                <default>false</default>
+                <label>EN - Endowment</label>
+            </value>
+            <value>
+                <fullName>PL - Plant</fullName>
+                <default>false</default>
+                <label>PL - Plant</label>
+            </value>
+            <value>
+                <fullName>LN - Loan</fullName>
+                <default>false</default>
+                <label>LN - Loan</label>
+            </value>
+            <value>
+                <fullName>NG - Non-Gift</fullName>
+                <default>false</default>
+                <label>NG - Non-Gift</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

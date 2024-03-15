@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Searching_for_Sue</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>Fund_Name__c</columns>
+    <columns>ucinn_ascendv2__Credit_Date__c</columns>
+    <columns>ucinn_ascendv2__Payment_Amount__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>ucinn_ascendv2__Tender_Type_Formula__c</columns>
+    <columns>Income_Attribute__c</columns>
+    <columns>Asset_Type__c</columns>
+    <columns>Asset_Subset__c</columns>
+    <columns>ucinn_ascendv2__Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Donor_ID_Formula__c</field>
+        <operation>contains</operation>
+        <value>900097966</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Opportunity__c</field>
+        <operation>notContain</operation>
+        <value>A</value>
+    </filters>
+    <label>Searching for Sue</label>
+</ListView>

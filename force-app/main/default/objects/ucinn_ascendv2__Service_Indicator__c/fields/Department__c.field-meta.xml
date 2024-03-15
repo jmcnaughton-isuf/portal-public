@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is a lookup to Academic organization where Fund Source = Degree Department</description>
+    <externalId>false</externalId>
+    <label>Department</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>ucinn_ascendv2__Academic_Organization__c.Fund_Source__c</field>
+            <operation>equals</operation>
+            <value>Funding Department</value>
+        </filterItems>
+        <infoMessage>Begin typing the Degree Department and select from List.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ucinn_ascendv2__Academic_Organization__c</referenceTo>
+    <relationshipLabel>Contact Preferences (Department)</relationshipLabel>
+    <relationshipName>Service_Indicators</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

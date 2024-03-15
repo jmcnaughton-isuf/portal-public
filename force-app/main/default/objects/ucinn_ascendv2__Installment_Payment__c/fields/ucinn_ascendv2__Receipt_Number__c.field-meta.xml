@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Receipt_Number__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A stable, non-changing field to track Payments.</description>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Payment__r.ucinn_ascendv2__Receipt_Number__c</formula>
+    <inlineHelpText>A stable, non-changing field to track Payments.</inlineHelpText>
+    <label>Receipt Number</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

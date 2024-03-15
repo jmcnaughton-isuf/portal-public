@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUAA_Billing_Letter_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND( OR( CONTAINS( Product_Code__c, &apos;F&apos;), CONTAINS( Product_Code__c, &apos;X&apos;), CONTAINS( Product_Code__c, &apos;Y&apos;)), TODAY() &lt; Early_Expiration_Date__c), &apos;68&apos;,
+IF( AND( OR( CONTAINS( Product_Code__c, &apos;F&apos;), CONTAINS( Product_Code__c, &apos;X&apos;), CONTAINS( Product_Code__c, &apos;Y&apos;)), TODAY() &gt;= Early_Expiration_Date__c), &apos;69&apos;,
+IF( AND( OR( ISBLANK( ucinn_ascendv2__Contact__r.First_ISU_Degree_Year__c ), VALUE( ucinn_ascendv2__Contact__r.First_ISU_Degree_Year__c ) &lt; (YEAR(TODAY()) - 5)),  Product_Family__c = &apos;Annual&apos;), &apos;50&apos;,
+IF( AND( Product_Family__c = &apos;Life&apos;,  ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &gt; 0, OR(  ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Number_of_Payments_Roll_Up__c = 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Last_Payment_Date_Roll_Up__c &gt;= (TODAY() - 275))), &apos;52&apos;,
+IF( AND( Product_Family__c = &apos;Life&apos;,  ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Remaining_Amount_Due_Formula__c &gt; 0, ucinn_ascendv2__Membership_Purchase__r.ucinn_ascendv2__Last_Payment_Date_Roll_Up__c &lt; (TODAY() - 275)), &apos;53&apos;, 
+IF( AND( VALUE( ucinn_ascendv2__Contact__r.First_ISU_Degree_Year__c ) &gt; (YEAR(TODAY()) - 5),  Product_Family__c = &apos;Annual&apos;, TODAY() &lt;  Early_Expiration_Date__c), &apos;56&apos;, 
+IF( AND( VALUE( ucinn_ascendv2__Contact__r.First_ISU_Degree_Year__c ) &gt; (YEAR(TODAY()) - 5),  Product_Family__c = &apos;Annual&apos;, TODAY() &gt;=  Early_Expiration_Date__c), &apos;57&apos;,
+IF( AND( Product_Family__c = &apos;Life&apos;, TODAY() &lt;  Early_Expiration_Date__c), &apos;58&apos;, 
+IF( AND( Product_Family__c = &apos;Life&apos;, TODAY() &gt;=  Early_Expiration_Date__c), &apos;59&apos;, 
+IF( AND( VALUE( ucinn_ascendv2__Contact__r.First_ISU_Degree_Year__c ) = (YEAR(TODAY()) - 5),  Product_Family__c = &apos;Annual&apos;, TODAY() &lt;  Early_Expiration_Date__c), &apos;60&apos;, 
+IF( AND( VALUE( ucinn_ascendv2__Contact__r.First_ISU_Degree_Year__c ) = (YEAR(TODAY()) - 5),  Product_Family__c = &apos;Annual&apos;, TODAY() &gt;=  Early_Expiration_Date__c), &apos;61&apos;,
+NULL)))))))))))</formula>
+    <label>ISUAA Billing Letter Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

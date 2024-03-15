@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fundraiser_is_User_Logged_In__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  OwnerId = $User.Id, TRUE, FALSE)</formula>
+    <label>Fundraiser is User Logged In</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

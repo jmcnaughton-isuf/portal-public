@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All_Leads_in_Progress</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__External_System_ID__c</columns>
+    <columns>NAME</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID__c</columns>
+    <columns>ucinn_ascendv2__Employee_ID__c</columns>
+    <columns>ucinn_ascendv2__School_ID__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Source_File__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <label>All Interims in Progress</label>
+    <language>en_US</language>
+</ListView>

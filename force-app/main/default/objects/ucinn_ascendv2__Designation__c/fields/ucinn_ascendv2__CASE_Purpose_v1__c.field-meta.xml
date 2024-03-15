@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__CASE_Purpose_v1__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>CASE Purpose</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+                <label>Unrestricted</label>
+            </value>
+            <value>
+                <fullName>Academic Divisions</fullName>
+                <default>false</default>
+                <label>Academic Divisions</label>
+            </value>
+            <value>
+                <fullName>Faculty and Staff Compensation</fullName>
+                <default>false</default>
+                <label>Faculty and Staff Compensation</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+            <value>
+                <fullName>Public Service</fullName>
+                <default>false</default>
+                <label>Public Service</label>
+            </value>
+            <value>
+                <fullName>Libraries</fullName>
+                <default>false</default>
+                <label>Libraries</label>
+            </value>
+            <value>
+                <fullName>Plant Operations and Maintenance</fullName>
+                <default>false</default>
+                <label>Plant Operations and Maintenance</label>
+            </value>
+            <value>
+                <fullName>Financial Aid</fullName>
+                <default>false</default>
+                <label>Financial Aid</label>
+            </value>
+            <value>
+                <fullName>Athletics</fullName>
+                <default>false</default>
+                <label>Athletics</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

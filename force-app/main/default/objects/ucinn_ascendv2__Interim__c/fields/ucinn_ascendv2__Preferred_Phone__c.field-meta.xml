@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Preferred_Phone__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Select which phone is the preferred phone</inlineHelpText>
+    <label>Preferred Phone</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phone 1</fullName>
+                <default>false</default>
+                <label>Phone 1</label>
+            </value>
+            <value>
+                <fullName>Phone 2</fullName>
+                <default>false</default>
+                <label>Phone 2</label>
+            </value>
+            <value>
+                <fullName>Phone 3</fullName>
+                <default>false</default>
+                <label>Phone 3</label>
+            </value>
+            <value>
+                <fullName>Phone 4</fullName>
+                <default>false</default>
+                <label>Phone 4</label>
+            </value>
+            <value>
+                <fullName>Phone 5</fullName>
+                <default>false</default>
+                <label>Phone 5</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

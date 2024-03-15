@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scalefunder</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason_Multiple_Line__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
+    <columns>Phone_1_Data_Source__c</columns>
+    <columns>Phone_1_Is_Preferred__c</columns>
+    <columns>Is_Preferred__c</columns>
+    <columns>ISU_Address_1_Data_Source__c</columns>
+    <columns>Email_1_is_Preferred__c</columns>
+    <columns>Email_1_Data_Source__c</columns>
+    <columns>ucinn_ascendv2__Address_1_Line_1__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RT_Data_Source__c</field>
+        <operation>equals</operation>
+        <value>ScaleFunder</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.iModules_Interface</value>
+    </filters>
+    <label>Scalefunder</label>
+</ListView>

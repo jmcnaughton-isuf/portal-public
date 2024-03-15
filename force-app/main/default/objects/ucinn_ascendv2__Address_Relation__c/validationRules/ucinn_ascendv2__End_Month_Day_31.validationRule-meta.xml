@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__End_Month_Day_31</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c &lt;&gt; TRUE &amp;&amp;
+OR(
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Month__c, &apos;04&apos;),
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Month__c, &apos;06&apos;),
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Month__c, &apos;09&apos;),
+ISPICKVAL(ucinn_ascendv2__Seasonal_End_Month__c, &apos;11&apos;)
+)&amp;&amp; ISPICKVAL(ucinn_ascendv2__Seasonal_End_Day__c, &apos;31&apos;)
+&amp;&amp; OR(
+RecordType.DeveloperName = &apos;Organization_Address_Relation&apos;,
+RecordType.DeveloperName = &apos;Household_Address_Relation&apos;,
+RecordType.DeveloperName = &apos;Contact_Address_Relation&apos;
+) &amp;&amp;
+RecordType.NamespacePrefix = &apos;ucinn_ascendv2&apos;</errorConditionFormula>
+    <errorDisplayField>ucinn_ascendv2__Seasonal_End_Day__c</errorDisplayField>
+    <errorMessage>Invalid entry. The entry “31” for Day is not valid for this month.</errorMessage>
+</ValidationRule>

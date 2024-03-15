@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iMods_with_No_Designation</fullName>
+    <columns>NAME</columns>
+    <columns>Data_Source__c</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>Batch_Number__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>ucinn_ascendv2__Designation_1__c</columns>
+    <columns>ucinn_ascendv2__Payment_Amount_1_1__c</columns>
+    <columns>ucinn_ascendv2__Designation_2__c</columns>
+    <columns>ucinn_ascendv2__Payment_Amount_1_2__c</columns>
+    <columns>ucinn_ascendv2__Designation_3__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Review_Transaction_v2__c.Imod_Transaction</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Session__c</field>
+        <operation>contains</operation>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>notEqual</operation>
+        <value>UC Innovation</value>
+    </filters>
+    <filters>
+        <field>Session_Completed_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Designation_1__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>iMods with No Designation</label>
+</ListView>

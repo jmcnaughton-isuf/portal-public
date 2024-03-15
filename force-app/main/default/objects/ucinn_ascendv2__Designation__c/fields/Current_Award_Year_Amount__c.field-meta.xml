@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Award_Year_Amount__c</fullName>
+    <externalId>false</externalId>
+    <label>Current Award Year Amount</label>
+    <summarizedField>Scholarship_Award__c.SCHLRSHP_AMT_AWARD__c</summarizedField>
+    <summaryFilterItems>
+        <field>Scholarship_Award__c.SCHLRSHP_SEM_CCYY__c</field>
+        <operation>equals</operation>
+        <value>2022</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Scholarship_Award__c.FUND_ACCT__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

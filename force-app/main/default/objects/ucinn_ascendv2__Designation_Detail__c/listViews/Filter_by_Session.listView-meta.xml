@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_by_Session</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Amount__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>Income_Attribute__c</columns>
+    <columns>Accounting_Amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Session__c</field>
+        <operation>equals</operation>
+        <value>S220110549416</value>
+    </filters>
+    <label>Filter by Session</label>
+</ListView>

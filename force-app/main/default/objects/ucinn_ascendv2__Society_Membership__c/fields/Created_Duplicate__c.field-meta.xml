@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Duplicate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field exists because Ascend automatically upgrades memberships at times rather then create new row. Used in processes to ensure other APEX, flow not running.</description>
+    <externalId>false</externalId>
+    <label>Created Duplicate</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

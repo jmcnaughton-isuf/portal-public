@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Goal__c</fullName>
+    <description>ea 6-27-2022
+Values from dbao11p.UHELP.SCNDRY_GOAL, this still masters the code to description translation for the FE to ascend integration. Values from that table dont have to be added here as &quot;restrict picklist to values&quot; is off but that is where the integration is getting the values from.</description>
+    <externalId>false</externalId>
+    <label>Secondary Goal</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LAS-Driving Discovery, Engagement&amp;Innov</fullName>
+                <default>false</default>
+                <label>LAS-Driving Discovery, Engagement&amp;Innov</label>
+            </value>
+            <value>
+                <fullName>Bus-General Faculty Support</fullName>
+                <default>false</default>
+                <label>Bus-General Faculty Support</label>
+            </value>
+            <value>
+                <fullName>SA-Student Support/Scholarships</fullName>
+                <default>false</default>
+                <label>SA-Student Support/Scholarships</label>
+            </value>
+            <value>
+                <fullName>Ag-Research &amp; Ext Faculty &amp; Program Supp</fullName>
+                <default>false</default>
+                <label>Ag-Research &amp; Ext Faculty &amp; Program Supp</label>
+            </value>
+            <value>
+                <fullName>Ag-Graduate Student Support</fullName>
+                <default>false</default>
+                <label>Ag-Graduate Student Support</label>
+            </value>
+            <value>
+                <fullName>HS-Transformative Research</fullName>
+                <default>false</default>
+                <label>HS-Transformative Research</label>
+            </value>
+            <value>
+                <fullName>HS-Student Initiatives</fullName>
+                <default>false</default>
+                <label>HS-Student Initiatives</label>
+            </value>
+            <value>
+                <fullName>Ag-Global Agriculture Program Support</fullName>
+                <default>false</default>
+                <label>Ag-Global Agriculture Program Support</label>
+            </value>
+            <value>
+                <fullName>Eng-Undergraduate Student Support</fullName>
+                <default>false</default>
+                <label>Eng-Undergraduate Student Support</label>
+            </value>
+            <value>
+                <fullName>HS-High-Impact Student Experience</fullName>
+                <default>false</default>
+                <label>HS-High-Impact Student Experience</label>
+            </value>
+            <value>
+                <fullName>Bus-General Scholarships</fullName>
+                <default>false</default>
+                <label>Bus-General Scholarships</label>
+            </value>
+            <value>
+                <fullName>LAS-Empowering our Educators and Leaders</fullName>
+                <default>false</default>
+                <label>LAS-Empowering our Educators and Leaders</label>
+            </value>
+            <value>
+                <fullName>Athletics-Capital Support</fullName>
+                <default>false</default>
+                <label>Athletics-Capital Support</label>
+            </value>
+            <value>
+                <fullName>LAS-Putting Students First</fullName>
+                <default>false</default>
+                <label>LAS-Putting Students First</label>
+            </value>
+            <value>
+                <fullName>Ag-Global Agriculture Student Support</fullName>
+                <default>false</default>
+                <label>Ag-Global Agriculture Student Support</label>
+            </value>
+            <value>
+                <fullName>SA-Student Affairs Program Support</fullName>
+                <default>false</default>
+                <label>SA-Student Affairs Program Support</label>
+            </value>
+            <value>
+                <fullName>Ag-Undergraduate Scholarship Support</fullName>
+                <default>false</default>
+                <label>Ag-Undergraduate Scholarship Support</label>
+            </value>
+            <value>
+                <fullName>Design-Student Excellence</fullName>
+                <default>false</default>
+                <label>Design-Student Excellence</label>
+            </value>
+            <value>
+                <fullName>Eng-Strategic Program Initiatives</fullName>
+                <default>false</default>
+                <label>Eng-Strategic Program Initiatives</label>
+            </value>
+            <value>
+                <fullName>Ag-General Support</fullName>
+                <default>false</default>
+                <label>Ag-General Support</label>
+            </value>
+            <value>
+                <fullName>Bus-General Business Support</fullName>
+                <default>false</default>
+                <label>Bus-General Business Support</label>
+            </value>
+            <value>
+                <fullName>VM-DVM Scholarships</fullName>
+                <default>false</default>
+                <label>VM-DVM Scholarships</label>
+            </value>
+            <value>
+                <fullName>VM-Dean&apos;s Strategic Funds</fullName>
+                <default>false</default>
+                <label>VM-Dean&apos;s Strategic Funds</label>
+            </value>
+            <value>
+                <fullName>Library - The Library Fund</fullName>
+                <default>false</default>
+                <label>Library - The Library Fund</label>
+            </value>
+            <value>
+                <fullName>Ag-BioSciences Capital Project</fullName>
+                <default>false</default>
+                <label>Ag-BioSciences Capital Project</label>
+            </value>
+            <value>
+                <fullName>VM-Lloyd Veterinary Medical Center Excel</fullName>
+                <default>false</default>
+                <label>VM-Lloyd Veterinary Medical Center Excel</label>
+            </value>
+            <value>
+                <fullName>Eng-Faculty Support Funds</fullName>
+                <default>false</default>
+                <label>Eng-Faculty Support Funds</label>
+            </value>
+            <value>
+                <fullName>Alumni Association Programs Endowment</fullName>
+                <default>false</default>
+                <label>Alumni Association Programs Endowment</label>
+            </value>
+            <value>
+                <fullName>ISUAA General</fullName>
+                <default>false</default>
+                <label>ISUAA General</label>
+            </value>
+            <value>
+                <fullName>VM-Chairs &amp; Professorships</fullName>
+                <default>false</default>
+                <label>VM-Chairs &amp; Professorships</label>
+            </value>
+            <value>
+                <fullName>Ag-Business Student Support</fullName>
+                <default>false</default>
+                <label>Ag-Business Student Support</label>
+            </value>
+            <value>
+                <fullName>Ag-Undergraduate Student Program Support</fullName>
+                <default>false</default>
+                <label>Ag-Undergraduate Student Program Support</label>
+            </value>
+            <value>
+                <fullName>Design-General Excellence</fullName>
+                <default>false</default>
+                <label>Design-General Excellence</label>
+            </value>
+            <value>
+                <fullName>Eng-Graduate Student Support</fullName>
+                <default>false</default>
+                <label>Eng-Graduate Student Support</label>
+            </value>
+            <value>
+                <fullName>Bus-Business Analytics / Big Data</fullName>
+                <default>false</default>
+                <label>Bus-Business Analytics / Big Data</label>
+            </value>
+            <value>
+                <fullName>Museums-Permanent Collection Storage&amp;Sec</fullName>
+                <default>false</default>
+                <label>Museums-Permanent Collection Storage&amp;Sec</label>
+            </value>
+            <value>
+                <fullName>Libr-Growing Library Collections</fullName>
+                <default>false</default>
+                <label>Libr-Growing Library Collections</label>
+            </value>
+            <value>
+                <fullName>LAS-Enriching Modern Learning Environmen</fullName>
+                <default>false</default>
+                <label>LAS-Enriching Modern Learning Environmen</label>
+            </value>
+            <value>
+                <fullName>Museums-Acquisition, Education &amp; Exhibit</fullName>
+                <default>false</default>
+                <label>Museums-Acquisition, Education &amp; Exhibit</label>
+            </value>
+            <value>
+                <fullName>Bus-Business Building Fund</fullName>
+                <default>false</default>
+                <label>Bus-Business Building Fund</label>
+            </value>
+            <value>
+                <fullName>Bus-Student Experience/Target Support</fullName>
+                <default>false</default>
+                <label>Bus-Student Experience/Target Support</label>
+            </value>
+            <value>
+                <fullName>Ag-Feed Mill</fullName>
+                <default>false</default>
+                <label>Ag-Feed Mill</label>
+            </value>
+            <value>
+                <fullName>SA-Student Affairs Facilities</fullName>
+                <default>false</default>
+                <label>SA-Student Affairs Facilities</label>
+            </value>
+            <value>
+                <fullName>Bus-Expanding Co-Curricular Initiatives</fullName>
+                <default>false</default>
+                <label>Bus-Expanding Co-Curricular Initiatives</label>
+            </value>
+            <value>
+                <fullName>VM-Graduate Fellowships</fullName>
+                <default>false</default>
+                <label>VM-Graduate Fellowships</label>
+            </value>
+            <value>
+                <fullName>VM-Veterinary Diagnostic Lab (VDL)</fullName>
+                <default>false</default>
+                <label>VM-Veterinary Diagnostic Lab (VDL)</label>
+            </value>
+            <value>
+                <fullName>Eng-Named Department</fullName>
+                <default>false</default>
+                <label>Eng-Named Department</label>
+            </value>
+            <value>
+                <fullName>Design-Programatic Excellence</fullName>
+                <default>false</default>
+                <label>Design-Programatic Excellence</label>
+            </value>
+            <value>
+                <fullName>Eng-Research Program Support</fullName>
+                <default>false</default>
+                <label>Eng-Research Program Support</label>
+            </value>
+            <value>
+                <fullName>Museums-Fund for Excellence</fullName>
+                <default>false</default>
+                <label>Museums-Fund for Excellence</label>
+            </value>
+            <value>
+                <fullName>Athletics-Program &amp; Scholarship Support</fullName>
+                <default>false</default>
+                <label>Athletics-Program &amp; Scholarship Support</label>
+            </value>
+            <value>
+                <fullName>Ag-Undergraduate Faculty Support</fullName>
+                <default>false</default>
+                <label>Ag-Undergraduate Faculty Support</label>
+            </value>
+            <value>
+                <fullName>Ag-Sustainabililty Project</fullName>
+                <default>false</default>
+                <label>Ag-Sustainabililty Project</label>
+            </value>
+            <value>
+                <fullName>Other Presidential Initiatives</fullName>
+                <default>false</default>
+                <label>Other Presidential Initiatives</label>
+            </value>
+            <value>
+                <fullName>HS-General/Programmatic Support</fullName>
+                <default>false</default>
+                <label>HS-General/Programmatic Support</label>
+            </value>
+            <value>
+                <fullName>Design-Faculty Excellence</fullName>
+                <default>false</default>
+                <label>Design-Faculty Excellence</label>
+            </value>
+            <value>
+                <fullName>Ag-Business Faculty Support</fullName>
+                <default>false</default>
+                <label>Ag-Business Faculty Support</label>
+            </value>
+            <value>
+                <fullName>HS-Enhanced Infrastructure</fullName>
+                <default>false</default>
+                <label>HS-Enhanced Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Ag-Entrepreneurship Program Support</fullName>
+                <default>false</default>
+                <label>Ag-Entrepreneurship Program Support</label>
+            </value>
+            <value>
+                <fullName>Museums-Student Employment &amp; Internships</fullName>
+                <default>false</default>
+                <label>Museums-Student Employment &amp; Internships</label>
+            </value>
+            <value>
+                <fullName>HS-Engaged Scholarship</fullName>
+                <default>false</default>
+                <label>HS-Engaged Scholarship</label>
+            </value>
+            <value>
+                <fullName>Libr-Library Services</fullName>
+                <default>false</default>
+                <label>Libr-Library Services</label>
+            </value>
+            <value>
+                <fullName>Eng-Academic Dept Facility Support</fullName>
+                <default>false</default>
+                <label>Eng-Academic Dept Facility Support</label>
+            </value>
+            <value>
+                <fullName>Bus-Entrepreneurship/Economic Developmen</fullName>
+                <default>false</default>
+                <label>Bus-Entrepreneurship/Economic Developmen</label>
+            </value>
+            <value>
+                <fullName>Campus Beautification</fullName>
+                <default>false</default>
+                <label>Campus Beautification</label>
+            </value>
+            <value>
+                <fullName>Student Innovation Center</fullName>
+                <default>false</default>
+                <label>Student Innovation Center</label>
+            </value>
+            <value>
+                <fullName>Athletics-Premium Support</fullName>
+                <default>false</default>
+                <label>Athletics-Premium Support</label>
+            </value>
+            <value>
+                <fullName>Ag-Poultry Teaching and Research Farm</fullName>
+                <default>false</default>
+                <label>Ag-Poultry Teaching and Research Farm</label>
+            </value>
+            <value>
+                <fullName>Libr-Student Study/Research Spaces</fullName>
+                <default>false</default>
+                <label>Libr-Student Study/Research Spaces</label>
+            </value>
+            <value>
+                <fullName>Alumni Center Expansion and Endowment</fullName>
+                <default>false</default>
+                <label>Alumni Center Expansion and Endowment</label>
+            </value>
+            <value>
+                <fullName>Eng-Named College</fullName>
+                <default>false</default>
+                <label>Eng-Named College</label>
+            </value>
+            <value>
+                <fullName>Libr-Expertise: Endow Positions &amp; Progrs</fullName>
+                <default>false</default>
+                <label>Libr-Expertise: Endow Positions &amp; Progrs</label>
+            </value>
+            <value>
+                <fullName>Eng-Endowed Department Chairs</fullName>
+                <default>false</default>
+                <label>Eng-Endowed Department Chairs</label>
+            </value>
+            <value>
+                <fullName>Ag-ABE Capital Project</fullName>
+                <default>false</default>
+                <label>Ag-ABE Capital Project</label>
+            </value>
+            <value>
+                <fullName>VM-Student Educational Space and Lab</fullName>
+                <default>false</default>
+                <label>VM-Student Educational Space and Lab</label>
+            </value>
+            <value>
+                <fullName>Ag-Undergraduate Diversity Student Supp</fullName>
+                <default>false</default>
+                <label>Ag-Undergraduate Diversity Student Supp</label>
+            </value>
+            <value>
+                <fullName>Ag-Curtiss Hall Renovation</fullName>
+                <default>false</default>
+                <label>Ag-Curtiss Hall Renovation</label>
+            </value>
+            <value>
+                <fullName>not in use</fullName>
+                <default>false</default>
+                <label>not in use</label>
+            </value>
+            <value>
+                <fullName>Bus-Supply Chain</fullName>
+                <default>false</default>
+                <label>Bus-Supply Chain</label>
+            </value>
+            <value>
+                <fullName>Eng-Marston Hall</fullName>
+                <default>false</default>
+                <label>Eng-Marston Hall</label>
+            </value>
+            <value>
+                <fullName>Ag-Swine Teaching and Research Farm</fullName>
+                <default>false</default>
+                <label>Ag-Swine Teaching and Research Farm</label>
+            </value>
+            <value>
+                <fullName>Bus-Ethics Programming</fullName>
+                <default>false</default>
+                <label>Bus-Ethics Programming</label>
+            </value>
+            <value>
+                <fullName>Design-Facilities</fullName>
+                <default>false</default>
+                <label>Design-Facilities</label>
+            </value>
+            <value>
+                <fullName>Athletics-Suites</fullName>
+                <default>false</default>
+                <label>Athletics-Suites</label>
+            </value>
+            <value>
+                <fullName>Design-old 3</fullName>
+                <default>false</default>
+                <label>Design-old 3</label>
+            </value>
+            <value>
+                <fullName>Bus-Ivy College of Business</fullName>
+                <default>false</default>
+                <label>Bus-Ivy College of Business</label>
+            </value>
+            <value>
+                <fullName>Transforming Liberal Arts and Sciences</fullName>
+                <default>false</default>
+                <label>Transforming Liberal Arts and Sciences</label>
+            </value>
+            <value>
+                <fullName>Ag-Student Success</fullName>
+                <default>false</default>
+                <label>Ag-Student Success</label>
+            </value>
+            <value>
+                <fullName>Design-old 2</fullName>
+                <default>false</default>
+                <label>Design-old 2</label>
+            </value>
+            <value>
+                <fullName>F-Foundation Funds</fullName>
+                <default>false</default>
+                <label>F-Foundation Funds</label>
+            </value>
+            <value>
+                <fullName>Ag-Hansen Ag Student Learning Center</fullName>
+                <default>false</default>
+                <label>Ag-Hansen Ag Student Learning Center</label>
+            </value>
+            <value>
+                <fullName>Athletics-Annual Support</fullName>
+                <default>false</default>
+                <label>Athletics-Annual Support</label>
+            </value>
+            <value>
+                <fullName>ISUAA President&apos;s Chair</fullName>
+                <default>false</default>
+                <label>ISUAA President&apos;s Chair</label>
+            </value>
+            <value>
+                <fullName>R-Bioeconomy Institute</fullName>
+                <default>false</default>
+                <label>R-Bioeconomy Institute</label>
+            </value>
+            <value>
+                <fullName>Ag-DEIB</fullName>
+                <default>false</default>
+                <label>Ag-DEIB</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

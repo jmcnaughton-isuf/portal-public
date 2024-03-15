@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUF_Salutation</fullName>
+    <active>true</active>
+    <description>For ISUF Use</description>
+    <label>ISUF Salutation</label>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Author_Initials__c</picklist>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Author_Title__c</picklist>
+        <values>
+            <fullName>Dean%2C Architecture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Cinematic Arts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Dramatic Arts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Gerontology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Libraries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean%2C Social Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SVP%2C University Advancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vice President for Advancement Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Salutation_Author__c</picklist>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_ascendv2__Salutation_Type__c</picklist>
+        <values>
+            <fullName>Alumni Mailings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endowments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formal Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formal Greeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informal Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informal Greeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nametags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receipts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stacked Names</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

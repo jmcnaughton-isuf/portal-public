@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Organization_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Organization Role</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Acquired Organization</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Acquired Organization</label>
+            </value>
+            <value>
+                <fullName>Acquiring Organization</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Acquiring Organization</label>
+            </value>
+            <value>
+                <fullName>Affiliated Organization</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Affiliated Organization</label>
+            </value>
+            <value>
+                <fullName>Business Unit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Unit</label>
+            </value>
+            <value>
+                <fullName>Company Owned by Individual</fullName>
+                <default>false</default>
+                <label>Company Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>Company Previously Owned by Individual</fullName>
+                <default>false</default>
+                <label>Company Previously Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>Company Representative or Designate</fullName>
+                <default>false</default>
+                <label>Company Representative or Designate</label>
+            </value>
+            <value>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+                <label>Corporation</label>
+            </value>
+            <value>
+                <fullName>Corporation that owns a DAF</fullName>
+                <default>false</default>
+                <label>Corporation that owns a DAF</label>
+            </value>
+            <value>
+                <fullName>Corporation that owns a trust</fullName>
+                <default>false</default>
+                <label>Corporation that owns a trust</label>
+            </value>
+            <value>
+                <fullName>DAF Owned by Corporation</fullName>
+                <default>false</default>
+                <label>DAF Owned by Corporation</label>
+            </value>
+            <value>
+                <fullName>DAF owned by individual</fullName>
+                <default>false</default>
+                <label>DAF owned by individual</label>
+            </value>
+            <value>
+                <fullName>Divestee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Divestee</label>
+            </value>
+            <value>
+                <fullName>Divestor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Divestor</label>
+            </value>
+            <value>
+                <fullName>Donor Advised Fund</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Donor Advised Fund</label>
+            </value>
+            <value>
+                <fullName>Employee to Employer for MG</fullName>
+                <default>false</default>
+                <label>Employee to Employer for MG</label>
+            </value>
+            <value>
+                <fullName>Employer to Employee for MG</fullName>
+                <default>false</default>
+                <label>Employer to Employee for MG</label>
+            </value>
+            <value>
+                <fullName>Estate Reference</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Estate Reference</label>
+            </value>
+            <value>
+                <fullName>Foundation Manager</fullName>
+                <default>false</default>
+                <label>Foundation Manager</label>
+            </value>
+            <value>
+                <fullName>Foundation Owned by an Individual</fullName>
+                <default>false</default>
+                <label>Foundation Owned by an Individual</label>
+            </value>
+            <value>
+                <fullName>Foundation owned by Corporation</fullName>
+                <default>false</default>
+                <label>Foundation owned by Corporation</label>
+            </value>
+            <value>
+                <fullName>Foundation Reference</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Foundation Reference</label>
+            </value>
+            <value>
+                <fullName>Founder/Co-Founder</fullName>
+                <default>false</default>
+                <label>Founder/Co-Founder</label>
+            </value>
+            <value>
+                <fullName>Joint Venture Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Joint Venture Partner</label>
+            </value>
+            <value>
+                <fullName>Manager of Foundation</fullName>
+                <default>false</default>
+                <label>Manager of Foundation</label>
+            </value>
+            <value>
+                <fullName>Merged Company</fullName>
+                <default>false</default>
+                <label>Merged Company</label>
+            </value>
+            <value>
+                <fullName>New Company</fullName>
+                <default>false</default>
+                <label>New Company</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Owner of DAF</fullName>
+                <default>false</default>
+                <label>Owner of DAF</label>
+            </value>
+            <value>
+                <fullName>Owner of Foundation</fullName>
+                <default>false</default>
+                <label>Owner of Foundation</label>
+            </value>
+            <value>
+                <fullName>Owner of Trust</fullName>
+                <default>false</default>
+                <label>Owner of Trust</label>
+            </value>
+            <value>
+                <fullName>Parent Company</fullName>
+                <default>false</default>
+                <label>Parent Company</label>
+            </value>
+            <value>
+                <fullName>Previous Company Owner</fullName>
+                <default>false</default>
+                <label>Previous Company Owner</label>
+            </value>
+            <value>
+                <fullName>Primary Company</fullName>
+                <default>false</default>
+                <label>Primary Company</label>
+            </value>
+            <value>
+                <fullName>Representative</fullName>
+                <default>false</default>
+                <label>Representative</label>
+            </value>
+            <value>
+                <fullName>Secondary Company</fullName>
+                <default>false</default>
+                <label>Secondary Company</label>
+            </value>
+            <value>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+                <label>Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Trust Owned by Corporation</fullName>
+                <default>false</default>
+                <label>Trust Owned by Corporation</label>
+            </value>
+            <value>
+                <fullName>Trust Owned by Individual</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trust Owned by Individual</label>
+            </value>
+            <value>
+                <fullName>Trust Reference</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trust Reference</label>
+            </value>
+            <value>
+                <fullName>Whole Subsidiary Owner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Whole Subsidiary Owner</label>
+            </value>
+            <value>
+                <fullName>Wholly Owned Subsidiary</fullName>
+                <default>false</default>
+                <label>Wholly Owned Subsidiary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

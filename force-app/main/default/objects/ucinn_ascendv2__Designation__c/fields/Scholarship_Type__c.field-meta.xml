@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scholarship_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Scholarship Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Athletic Scholarships</fullName>
+                <default>false</default>
+                <label>Athletic Scholarships</label>
+            </value>
+            <value>
+                <fullName>Chairs</fullName>
+                <default>false</default>
+                <label>Chairs</label>
+            </value>
+            <value>
+                <fullName>Completion and Emergency Grants</fullName>
+                <default>false</default>
+                <label>Completion and Emergency Grants</label>
+            </value>
+            <value>
+                <fullName>Completion Grants</fullName>
+                <default>false</default>
+                <label>Completion Grants</label>
+            </value>
+            <value>
+                <fullName>Emergency Grants</fullName>
+                <default>false</default>
+                <label>Emergency Grants</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>Extension &amp; Outreach</fullName>
+                <default>false</default>
+                <label>Extension &amp; Outreach</label>
+            </value>
+            <value>
+                <fullName>Fellowship scholarships</fullName>
+                <default>false</default>
+                <label>Fellowship scholarships</label>
+            </value>
+            <value>
+                <fullName>Foundation Accounts</fullName>
+                <default>false</default>
+                <label>Foundation Accounts</label>
+            </value>
+            <value>
+                <fullName>Foundation Budget Account</fullName>
+                <default>false</default>
+                <label>Foundation Budget Account</label>
+            </value>
+            <value>
+                <fullName>General Scholarships</fullName>
+                <default>false</default>
+                <label>General Scholarships</label>
+            </value>
+            <value>
+                <fullName>George Washington Carver Sch</fullName>
+                <default>false</default>
+                <label>George Washington Carver Sch</label>
+            </value>
+            <value>
+                <fullName>Hixson Opportunity Awards</fullName>
+                <default>false</default>
+                <label>Hixson Opportunity Awards</label>
+            </value>
+            <value>
+                <fullName>Innovation in Teaching, Research</fullName>
+                <default>false</default>
+                <label>Innovation in Teaching, Research</label>
+            </value>
+            <value>
+                <fullName>Innovation in Teaching - Research</fullName>
+                <default>false</default>
+                <label>Innovation in Teaching - Research</label>
+            </value>
+            <value>
+                <fullName>International Programs</fullName>
+                <default>false</default>
+                <label>International Programs</label>
+            </value>
+            <value>
+                <fullName>Iowa Egg Council Endowment Program</fullName>
+                <default>false</default>
+                <label>Iowa Egg Council Endowment Program</label>
+            </value>
+            <value>
+                <fullName>Ivy College of Business Funds</fullName>
+                <default>false</default>
+                <label>Ivy College of Business Funds</label>
+            </value>
+            <value>
+                <fullName>Legacy of Heroines Scholarship</fullName>
+                <default>false</default>
+                <label>Legacy of Heroines Scholarship</label>
+            </value>
+            <value>
+                <fullName>Minority Scholar. (non-Carver)</fullName>
+                <default>false</default>
+                <label>Minority Scholar. (non-Carver)</label>
+            </value>
+            <value>
+                <fullName>Named Undergraduate Scholarshi</fullName>
+                <default>false</default>
+                <label>Named Undergraduate Scholarshi</label>
+            </value>
+            <value>
+                <fullName>National Merit (non-president)</fullName>
+                <default>false</default>
+                <label>National Merit (non-president)</label>
+            </value>
+            <value>
+                <fullName>New and Enhanced Programs</fullName>
+                <default>false</default>
+                <label>New and Enhanced Programs</label>
+            </value>
+            <value>
+                <fullName>Other Buildings</fullName>
+                <default>false</default>
+                <label>Other Buildings</label>
+            </value>
+            <value>
+                <fullName>Other Endowments</fullName>
+                <default>false</default>
+                <label>Other Endowments</label>
+            </value>
+            <value>
+                <fullName>Pres. Leadership Initiative Aw</fullName>
+                <default>false</default>
+                <label>Pres. Leadership Initiative Aw</label>
+            </value>
+            <value>
+                <fullName>Presidential Scholar - Nat&apos;l M</fullName>
+                <default>false</default>
+                <label>Presidential Scholar - Nat&apos;l M</label>
+            </value>
+            <value>
+                <fullName>Pres Scholarship - Nat&apos;l Achie</fullName>
+                <default>false</default>
+                <label>Pres Scholarship - Nat&apos;l Achie</label>
+            </value>
+            <value>
+                <fullName>Professorships</fullName>
+                <default>false</default>
+                <label>Professorships</label>
+            </value>
+            <value>
+                <fullName>Recreation/Athletic Facility</fullName>
+                <default>false</default>
+                <label>Recreation/Athletic Facility</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+            <value>
+                <fullName>Scholarships for Excellence</fullName>
+                <default>false</default>
+                <label>Scholarships for Excellence</label>
+            </value>
+            <value>
+                <fullName>Student Fin Aid (non-endowed)</fullName>
+                <default>false</default>
+                <label>Student Fin Aid (non-endowed)</label>
+            </value>
+            <value>
+                <fullName>Tau Kappa Epsilon</fullName>
+                <default>false</default>
+                <label>Tau Kappa Epsilon</label>
+            </value>
+            <value>
+                <fullName>Transforming LAS Program</fullName>
+                <default>false</default>
+                <label>Transforming LAS Program</label>
+            </value>
+            <value>
+                <fullName>University Library Acquisition</fullName>
+                <default>false</default>
+                <label>University Library Acquisition</label>
+            </value>
+            <value>
+                <fullName>Visiting Faculty &amp; Exchange</fullName>
+                <default>false</default>
+                <label>Visiting Faculty &amp; Exchange</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

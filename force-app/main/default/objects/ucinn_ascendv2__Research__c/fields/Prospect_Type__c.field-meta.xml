@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect_Type__c</fullName>
+    <description>For ISUF use</description>
+    <externalId>false</externalId>
+    <label>Prospect Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Affiliation</fullName>
+                <default>false</default>
+                <label>Affiliation</label>
+            </value>
+            <value>
+                <fullName>Assets</fullName>
+                <default>false</default>
+                <label>Assets</label>
+            </value>
+            <value>
+                <fullName>General Notes</fullName>
+                <default>false</default>
+                <label>General Notes</label>
+            </value>
+            <value>
+                <fullName>Patent Info</fullName>
+                <default>false</default>
+                <label>Patent Info</label>
+            </value>
+            <value>
+                <fullName>Philanthropic</fullName>
+                <default>false</default>
+                <label>Philanthropic</label>
+            </value>
+            <value>
+                <fullName>Stock Information</fullName>
+                <default>false</default>
+                <label>Stock Information</label>
+            </value>
+            <value>
+                <fullName>ASG No Contact</fullName>
+                <default>false</default>
+                <label>ASG No Contact</label>
+            </value>
+            <value>
+                <fullName>Disqualification Review</fullName>
+                <default>false</default>
+                <label>Disqualification Review</label>
+            </value>
+            <value>
+                <fullName>Funding Interest Reason</fullName>
+                <default>false</default>
+                <label>Funding Interest Reason</label>
+            </value>
+            <value>
+                <fullName>Greek Giving</fullName>
+                <default>false</default>
+                <label>Greek Giving</label>
+            </value>
+            <value>
+                <fullName>Manager Update</fullName>
+                <default>false</default>
+                <label>Manager Update</label>
+            </value>
+            <value>
+                <fullName>Manager Update-Proactive</fullName>
+                <default>false</default>
+                <label>Manager Update-Proactive</label>
+            </value>
+            <value>
+                <fullName>Salutation Update</fullName>
+                <default>false</default>
+                <label>Salutation Update</label>
+            </value>
+            <value>
+                <fullName>Record Update</fullName>
+                <default>false</default>
+                <label>Record Update</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine Payments</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine Payments</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

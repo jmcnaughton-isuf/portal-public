@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Close_And_Approve_Session__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check if Session should auto close and approve. Uncheck to leave Session open.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if Session should auto close and approve. Uncheck to leave Session open.</inlineHelpText>
+    <label>Close And Approve Session</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

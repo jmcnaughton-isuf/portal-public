@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Hospital_Visit__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Hospital Visit</label>
+    <referenceTo>ucinn_ascendv2__Hospital_Visit_v2__c</referenceTo>
+    <relationshipLabel>Physician Care</relationshipLabel>
+    <relationshipName>Physician_Care_Hospital_Visit</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RT_Data_Source__c</fullName>
+    <description>Maintains the data source from the RT row that created this interim. if the interim row did not come from RT this will be blank.</description>
+    <externalId>false</externalId>
+    <label>RT Data Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>ucinn_ascendv2__Data_Source</valueSetName>
+    </valueSet>
+</CustomField>

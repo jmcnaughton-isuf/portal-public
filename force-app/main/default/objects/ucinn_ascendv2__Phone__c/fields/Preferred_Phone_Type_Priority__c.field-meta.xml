@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Phone_Type_Priority__c</fullName>
+    <description>Sets a sorting priority for phones to order the most likely to be preferred at the top</description>
+    <externalId>false</externalId>
+    <formula>IF(  ISPICKVAL(ucinn_ascendv2__Status__c, &apos;Current&apos;),        
+CASE( TEXT( ucinn_ascendv2__Type__c ), &apos;Home - Cell&apos;, 1, 
+                                       &apos;Home - Phone&apos;, 2,
+                                       &apos;Home - Landline&apos;,3,
+                                       &apos;Business - Cell&apos;,4,
+                                       &apos;Business - Phone&apos;,5,
+                                       &apos;Business - Landline&apos;,6,
+                                        NULL)
+, NULL)</formula>
+    <label>Preferred Phone Type Priority</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

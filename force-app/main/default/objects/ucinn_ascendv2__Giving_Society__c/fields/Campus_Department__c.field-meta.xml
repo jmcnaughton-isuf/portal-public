@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campus_Department__c</fullName>
+    <externalId>false</externalId>
+    <label>Campus Department</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>4-H Foundation</fullName>
+                <default>false</default>
+                <label>4-H Foundation</label>
+            </value>
+            <value>
+                <fullName>4H Youth Development Program</fullName>
+                <default>false</default>
+                <label>4H Youth Development Program</label>
+            </value>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Admissions</fullName>
+                <default>false</default>
+                <label>Admissions</label>
+            </value>
+            <value>
+                <fullName>Aerospace Engr &amp; Engr Mech</fullName>
+                <default>false</default>
+                <label>Aerospace Engr &amp; Engr Mech</label>
+            </value>
+            <value>
+                <fullName>Ag &amp; Biosystems Engineering</fullName>
+                <default>false</default>
+                <label>Ag &amp; Biosystems Engineering</label>
+            </value>
+            <value>
+                <fullName>Ag and Natural Resources (Extension)</fullName>
+                <default>false</default>
+                <label>Ag and Natural Resources (Extension)</label>
+            </value>
+            <value>
+                <fullName>Ag Economics</fullName>
+                <default>false</default>
+                <label>Ag Economics</label>
+            </value>
+            <value>
+                <fullName>Ag Education &amp; Studies</fullName>
+                <default>false</default>
+                <label>Ag Education &amp; Studies</label>
+            </value>
+            <value>
+                <fullName>Ag Entrepreneurship</fullName>
+                <default>false</default>
+                <label>Ag Entrepreneurship</label>
+            </value>
+            <value>
+                <fullName>Ag Placement</fullName>
+                <default>false</default>
+                <label>Ag Placement</label>
+            </value>
+            <value>
+                <fullName>Ag Sociology</fullName>
+                <default>false</default>
+                <label>Ag Sociology</label>
+            </value>
+            <value>
+                <fullName>Ag Specials</fullName>
+                <default>false</default>
+                <label>Ag Specials</label>
+            </value>
+            <value>
+                <fullName>Agronomy</fullName>
+                <default>false</default>
+                <label>Agronomy</label>
+            </value>
+            <value>
+                <fullName>Air Force Aerospace Studies</fullName>
+                <default>false</default>
+                <label>Air Force Aerospace Studies</label>
+            </value>
+            <value>
+                <fullName>Animal Science</fullName>
+                <default>false</default>
+                <label>Animal Science</label>
+            </value>
+            <value>
+                <fullName>Architecture</fullName>
+                <default>false</default>
+                <label>Architecture</label>
+            </value>
+            <value>
+                <fullName>Art and Visual Culture</fullName>
+                <default>false</default>
+                <label>Art and Visual Culture</label>
+            </value>
+            <value>
+                <fullName>Baker Council</fullName>
+                <default>false</default>
+                <label>Baker Council</label>
+            </value>
+            <value>
+                <fullName>Biochemistry &amp; Biophysics1</fullName>
+                <default>false</default>
+                <label>Biochemistry &amp; Biophysics1</label>
+            </value>
+            <value>
+                <fullName>Biochemistry &amp; Biophysics2</fullName>
+                <default>false</default>
+                <label>Biochemistry &amp; Biophysics2</label>
+            </value>
+            <value>
+                <fullName>Bioeconomy Institute</fullName>
+                <default>false</default>
+                <label>Bioeconomy Institute</label>
+            </value>
+            <value>
+                <fullName>Bioinformatics &amp; Bio Statistic</fullName>
+                <default>false</default>
+                <label>Bioinformatics &amp; Bio Statistic</label>
+            </value>
+            <value>
+                <fullName>Biology</fullName>
+                <default>false</default>
+                <label>Biology</label>
+            </value>
+            <value>
+                <fullName>Biomedical Sciences</fullName>
+                <default>false</default>
+                <label>Biomedical Sciences</label>
+            </value>
+            <value>
+                <fullName>Brenton Center</fullName>
+                <default>false</default>
+                <label>Brenton Center</label>
+            </value>
+            <value>
+                <fullName>Business Administration</fullName>
+                <default>false</default>
+                <label>Business Administration</label>
+            </value>
+            <value>
+                <fullName>CALS Administration</fullName>
+                <default>false</default>
+                <label>CALS Administration</label>
+            </value>
+            <value>
+                <fullName>Carrie Chapman Catt Center</fullName>
+                <default>false</default>
+                <label>Carrie Chapman Catt Center</label>
+            </value>
+            <value>
+                <fullName>CBER-Center for Building Energy Research</fullName>
+                <default>false</default>
+                <label>CBER-Center for Building Energy Research</label>
+            </value>
+            <value>
+                <fullName>Center for BioRenewable Chemicals</fullName>
+                <default>false</default>
+                <label>Center for BioRenewable Chemicals</label>
+            </value>
+            <value>
+                <fullName>Center for Catalysis</fullName>
+                <default>false</default>
+                <label>Center for Catalysis</label>
+            </value>
+            <value>
+                <fullName>Center for Crop Utilization Research</fullName>
+                <default>false</default>
+                <label>Center for Crop Utilization Research</label>
+            </value>
+            <value>
+                <fullName>Center for Excellence in Arts &amp; Humaniti</fullName>
+                <default>false</default>
+                <label>Center for Excellence in Arts &amp; Humaniti</label>
+            </value>
+            <value>
+                <fullName>Center for Sustainable Rural Livelihoods</fullName>
+                <default>false</default>
+                <label>Center for Sustainable Rural Livelihoods</label>
+            </value>
+            <value>
+                <fullName>Center for Teaching Exellence</fullName>
+                <default>false</default>
+                <label>Center for Teaching Exellence</label>
+            </value>
+            <value>
+                <fullName>Chemical and Biological Engineering</fullName>
+                <default>false</default>
+                <label>Chemical and Biological Engineering</label>
+            </value>
+            <value>
+                <fullName>Chemistry</fullName>
+                <default>false</default>
+                <label>Chemistry</label>
+            </value>
+            <value>
+                <fullName>Civil Constr &amp; Environ Engr</fullName>
+                <default>false</default>
+                <label>Civil Constr &amp; Environ Engr</label>
+            </value>
+            <value>
+                <fullName>CNDE--Center for Nondes. Eval</fullName>
+                <default>false</default>
+                <label>CNDE--Center for Nondes. Eval</label>
+            </value>
+            <value>
+                <fullName>Community &amp; Regional Planning</fullName>
+                <default>false</default>
+                <label>Community &amp; Regional Planning</label>
+            </value>
+            <value>
+                <fullName>Community and Economic Development</fullName>
+                <default>false</default>
+                <label>Community and Economic Development</label>
+            </value>
+            <value>
+                <fullName>Computer Science</fullName>
+                <default>false</default>
+                <label>Computer Science</label>
+            </value>
+            <value>
+                <fullName>Construction Engineering</fullName>
+                <default>false</default>
+                <label>Construction Engineering</label>
+            </value>
+            <value>
+                <fullName>Cont. Educ. and Professional Development</fullName>
+                <default>false</default>
+                <label>Cont. Educ. and Professional Development</label>
+            </value>
+            <value>
+                <fullName>CPCM--Center for Physical/Comp.</fullName>
+                <default>false</default>
+                <label>CPCM--Center for Physical/Comp.</label>
+            </value>
+            <value>
+                <fullName>Critical Materials Institute</fullName>
+                <default>false</default>
+                <label>Critical Materials Institute</label>
+            </value>
+            <value>
+                <fullName>Ctr for Industrial Res &amp; Serv (CIRAS)</fullName>
+                <default>false</default>
+                <label>Ctr for Industrial Res &amp; Serv (CIRAS)</label>
+            </value>
+            <value>
+                <fullName>Cyberinnovation Institute</fullName>
+                <default>false</default>
+                <label>Cyberinnovation Institute</label>
+            </value>
+            <value>
+                <fullName>Design Administration</fullName>
+                <default>false</default>
+                <label>Design Administration</label>
+            </value>
+            <value>
+                <fullName>Designing Foods</fullName>
+                <default>false</default>
+                <label>Designing Foods</label>
+            </value>
+            <value>
+                <fullName>Ecology, Evolution &amp; Organismal Biol LAS</fullName>
+                <default>false</default>
+                <label>Ecology, Evolution &amp; Organismal Biol LAS</label>
+            </value>
+            <value>
+                <fullName>Ecology, Evolution, and Organismal Biolo</fullName>
+                <default>false</default>
+                <label>Ecology, Evolution, and Organismal Biolo</label>
+            </value>
+            <value>
+                <fullName>Economics</fullName>
+                <default>false</default>
+                <label>Economics</label>
+            </value>
+            <value>
+                <fullName>Electric &amp; Computer Engineerin</fullName>
+                <default>false</default>
+                <label>Electric &amp; Computer Engineerin</label>
+            </value>
+            <value>
+                <fullName>Engineering Administration</fullName>
+                <default>false</default>
+                <label>Engineering Administration</label>
+            </value>
+            <value>
+                <fullName>Engineering Leadership Program</fullName>
+                <default>false</default>
+                <label>Engineering Leadership Program</label>
+            </value>
+            <value>
+                <fullName>Engineering Outreach Programs</fullName>
+                <default>false</default>
+                <label>Engineering Outreach Programs</label>
+            </value>
+            <value>
+                <fullName>Engineering Research Institute</fullName>
+                <default>false</default>
+                <label>Engineering Research Institute</label>
+            </value>
+            <value>
+                <fullName>Engineering Student Services</fullName>
+                <default>false</default>
+                <label>Engineering Student Services</label>
+            </value>
+            <value>
+                <fullName>Engineering Undergraduate Scholarships</fullName>
+                <default>false</default>
+                <label>Engineering Undergraduate Scholarships</label>
+            </value>
+            <value>
+                <fullName>English</fullName>
+                <default>false</default>
+                <label>English</label>
+            </value>
+            <value>
+                <fullName>Entomology</fullName>
+                <default>false</default>
+                <label>Entomology</label>
+            </value>
+            <value>
+                <fullName>Faculty Senate</fullName>
+                <default>false</default>
+                <label>Faculty Senate</label>
+            </value>
+            <value>
+                <fullName>Family &amp; Consumer Sci Educ</fullName>
+                <default>false</default>
+                <label>Family &amp; Consumer Sci Educ</label>
+            </value>
+            <value>
+                <fullName>Family Environment</fullName>
+                <default>false</default>
+                <label>Family Environment</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Food Science/Human Nutr (Ag)</fullName>
+                <default>false</default>
+                <label>Food Science/Human Nutr (Ag)</label>
+            </value>
+            <value>
+                <fullName>Food Science/Human Nutr (HS)</fullName>
+                <default>false</default>
+                <label>Food Science/Human Nutr (HS)</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Genetics Development &amp; Cell Biology AG</fullName>
+                <default>false</default>
+                <label>Genetics Development &amp; Cell Biology AG</label>
+            </value>
+            <value>
+                <fullName>Genetics Development &amp; Cell Biology LAS</fullName>
+                <default>false</default>
+                <label>Genetics Development &amp; Cell Biology LAS</label>
+            </value>
+            <value>
+                <fullName>Geographical</fullName>
+                <default>false</default>
+                <label>Geographical</label>
+            </value>
+            <value>
+                <fullName>Geological and Atmospheric Sciences</fullName>
+                <default>false</default>
+                <label>Geological and Atmospheric Sciences</label>
+            </value>
+            <value>
+                <fullName>Graphic Design</fullName>
+                <default>false</default>
+                <label>Graphic Design</label>
+            </value>
+            <value>
+                <fullName>Greenlee School of Journalism &amp; Comm.</fullName>
+                <default>false</default>
+                <label>Greenlee School of Journalism &amp; Comm.</label>
+            </value>
+            <value>
+                <fullName>History</fullName>
+                <default>false</default>
+                <label>History</label>
+            </value>
+            <value>
+                <fullName>Honors Program</fullName>
+                <default>false</default>
+                <label>Honors Program</label>
+            </value>
+            <value>
+                <fullName>Horticulture</fullName>
+                <default>false</default>
+                <label>Horticulture</label>
+            </value>
+            <value>
+                <fullName>Hotel, Restaurant &amp; Instit Mgm</fullName>
+                <default>false</default>
+                <label>Hotel, Restaurant &amp; Instit Mgm</label>
+            </value>
+            <value>
+                <fullName>Human Devel &amp; Family Studies</fullName>
+                <default>false</default>
+                <label>Human Devel &amp; Family Studies</label>
+            </value>
+            <value>
+                <fullName>Human Sciences Administration</fullName>
+                <default>false</default>
+                <label>Human Sciences Administration</label>
+            </value>
+            <value>
+                <fullName>Human Sciences Extension &amp; Outreach</fullName>
+                <default>false</default>
+                <label>Human Sciences Extension &amp; Outreach</label>
+            </value>
+            <value>
+                <fullName>IITAP--Intl Inst of Theor &amp; Ap</fullName>
+                <default>false</default>
+                <label>IITAP--Intl Inst of Theor &amp; Ap</label>
+            </value>
+            <value>
+                <fullName>Industrial &amp; Man. Systems Engr</fullName>
+                <default>false</default>
+                <label>Industrial &amp; Man. Systems Engr</label>
+            </value>
+            <value>
+                <fullName>Industrial Design</fullName>
+                <default>false</default>
+                <label>Industrial Design</label>
+            </value>
+            <value>
+                <fullName>Information Assurance Center</fullName>
+                <default>false</default>
+                <label>Information Assurance Center</label>
+            </value>
+            <value>
+                <fullName>Information Systems/Business Analytics</fullName>
+                <default>false</default>
+                <label>Information Systems/Business Analytics</label>
+            </value>
+            <value>
+                <fullName>Institute for Social and Behavioral Rese</fullName>
+                <default>false</default>
+                <label>Institute for Social and Behavioral Rese</label>
+            </value>
+            <value>
+                <fullName>Institute for Transportation</fullName>
+                <default>false</default>
+                <label>Institute for Transportation</label>
+            </value>
+            <value>
+                <fullName>Instruction Technology</fullName>
+                <default>false</default>
+                <label>Instruction Technology</label>
+            </value>
+            <value>
+                <fullName>Interior Design</fullName>
+                <default>false</default>
+                <label>Interior Design</label>
+            </value>
+            <value>
+                <fullName>International Services</fullName>
+                <default>false</default>
+                <label>International Services</label>
+            </value>
+            <value>
+                <fullName>Iowa Small Business Developmen</fullName>
+                <default>false</default>
+                <label>Iowa Small Business Developmen</label>
+            </value>
+            <value>
+                <fullName>Iowa Soybean Research Center</fullName>
+                <default>false</default>
+                <label>Iowa Soybean Research Center</label>
+            </value>
+            <value>
+                <fullName>ISU Foundation -- Academic Projects</fullName>
+                <default>false</default>
+                <label>ISU Foundation -- Academic Projects</label>
+            </value>
+            <value>
+                <fullName>ISU Foundation--Insurance</fullName>
+                <default>false</default>
+                <label>ISU Foundation--Insurance</label>
+            </value>
+            <value>
+                <fullName>ISU Foundation--Special Projec</fullName>
+                <default>false</default>
+                <label>ISU Foundation--Special Projec</label>
+            </value>
+            <value>
+                <fullName>ISU Foundation--Trusts</fullName>
+                <default>false</default>
+                <label>ISU Foundation--Trusts</label>
+            </value>
+            <value>
+                <fullName>ISUAA Administration</fullName>
+                <default>false</default>
+                <label>ISUAA Administration</label>
+            </value>
+            <value>
+                <fullName>ISUAA Building and Equipment</fullName>
+                <default>false</default>
+                <label>ISUAA Building and Equipment</label>
+            </value>
+            <value>
+                <fullName>ISUAA General</fullName>
+                <default>false</default>
+                <label>ISUAA General</label>
+            </value>
+            <value>
+                <fullName>ISUAA Other</fullName>
+                <default>false</default>
+                <label>ISUAA Other</label>
+            </value>
+            <value>
+                <fullName>ISUAA Programs</fullName>
+                <default>false</default>
+                <label>ISUAA Programs</label>
+            </value>
+            <value>
+                <fullName>ISUAA Scholarships</fullName>
+                <default>false</default>
+                <label>ISUAA Scholarships</label>
+            </value>
+            <value>
+                <fullName>Kinesiology</fullName>
+                <default>false</default>
+                <label>Kinesiology</label>
+            </value>
+            <value>
+                <fullName>Landscape Architecture</fullName>
+                <default>false</default>
+                <label>Landscape Architecture</label>
+            </value>
+            <value>
+                <fullName>Lectures Programs</fullName>
+                <default>false</default>
+                <label>Lectures Programs</label>
+            </value>
+            <value>
+                <fullName>Leopold Center</fullName>
+                <default>false</default>
+                <label>Leopold Center</label>
+            </value>
+            <value>
+                <fullName>Liberal Arts &amp; Sci Specials</fullName>
+                <default>false</default>
+                <label>Liberal Arts &amp; Sci Specials</label>
+            </value>
+            <value>
+                <fullName>Liberal Arts and Sciences Administration</fullName>
+                <default>false</default>
+                <label>Liberal Arts and Sciences Administration</label>
+            </value>
+            <value>
+                <fullName>Library Acquisitions</fullName>
+                <default>false</default>
+                <label>Library Acquisitions</label>
+            </value>
+            <value>
+                <fullName>Major</fullName>
+                <default>false</default>
+                <label>Major</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Materials Science &amp; Engineering</fullName>
+                <default>false</default>
+                <label>Materials Science &amp; Engineering</label>
+            </value>
+            <value>
+                <fullName>Mathematics</fullName>
+                <default>false</default>
+                <label>Mathematics</label>
+            </value>
+            <value>
+                <fullName>Mechanical Engineering</fullName>
+                <default>false</default>
+                <label>Mechanical Engineering</label>
+            </value>
+            <value>
+                <fullName>Merit</fullName>
+                <default>false</default>
+                <label>Merit</label>
+            </value>
+            <value>
+                <fullName>MIC--Microanalytical Instr Cen</fullName>
+                <default>false</default>
+                <label>MIC--Microanalytical Instr Cen</label>
+            </value>
+            <value>
+                <fullName>Military Science</fullName>
+                <default>false</default>
+                <label>Military Science</label>
+            </value>
+            <value>
+                <fullName>MRC Microelectronis Rsrch Cent</fullName>
+                <default>false</default>
+                <label>MRC Microelectronis Rsrch Cent</label>
+            </value>
+            <value>
+                <fullName>Music</fullName>
+                <default>false</default>
+                <label>Music</label>
+            </value>
+            <value>
+                <fullName>Natural Resource Ecology and Management</fullName>
+                <default>false</default>
+                <label>Natural Resource Ecology and Management</label>
+            </value>
+            <value>
+                <fullName>Naval Science</fullName>
+                <default>false</default>
+                <label>Naval Science</label>
+            </value>
+            <value>
+                <fullName>No department code.</fullName>
+                <default>false</default>
+                <label>No department code.</label>
+            </value>
+            <value>
+                <fullName>Nutrition and Wellness Research Center</fullName>
+                <default>false</default>
+                <label>Nutrition and Wellness Research Center</label>
+            </value>
+            <value>
+                <fullName>Off-Campus/External</fullName>
+                <default>false</default>
+                <label>Off-Campus/External</label>
+            </value>
+            <value>
+                <fullName>Pappajohn Entrepreneurial Center</fullName>
+                <default>false</default>
+                <label>Pappajohn Entrepreneurial Center</label>
+            </value>
+            <value>
+                <fullName>Philosophy</fullName>
+                <default>false</default>
+                <label>Philosophy</label>
+            </value>
+            <value>
+                <fullName>Physics</fullName>
+                <default>false</default>
+                <label>Physics</label>
+            </value>
+            <value>
+                <fullName>Plant Breeding</fullName>
+                <default>false</default>
+                <label>Plant Breeding</label>
+            </value>
+            <value>
+                <fullName>Plant Pathology</fullName>
+                <default>false</default>
+                <label>Plant Pathology</label>
+            </value>
+            <value>
+                <fullName>Political Science</fullName>
+                <default>false</default>
+                <label>Political Science</label>
+            </value>
+            <value>
+                <fullName>Poultry Science</fullName>
+                <default>false</default>
+                <label>Poultry Science</label>
+            </value>
+            <value>
+                <fullName>Presidential Leadership Awards</fullName>
+                <default>false</default>
+                <label>Presidential Leadership Awards</label>
+            </value>
+            <value>
+                <fullName>PSI - not in college 35</fullName>
+                <default>false</default>
+                <label>PSI - not in college 35</label>
+            </value>
+            <value>
+                <fullName>Psychology</fullName>
+                <default>false</default>
+                <label>Psychology</label>
+            </value>
+            <value>
+                <fullName>Regional (Extension)</fullName>
+                <default>false</default>
+                <label>Regional (Extension)</label>
+            </value>
+            <value>
+                <fullName>Registrar</fullName>
+                <default>false</default>
+                <label>Registrar</label>
+            </value>
+            <value>
+                <fullName>School of Education</fullName>
+                <default>false</default>
+                <label>School of Education</label>
+            </value>
+            <value>
+                <fullName>Science Bound</fullName>
+                <default>false</default>
+                <label>Science Bound</label>
+            </value>
+            <value>
+                <fullName>Seed Science Center</fullName>
+                <default>false</default>
+                <label>Seed Science Center</label>
+            </value>
+            <value>
+                <fullName>Sociology</fullName>
+                <default>false</default>
+                <label>Sociology</label>
+            </value>
+            <value>
+                <fullName>Special Collections</fullName>
+                <default>false</default>
+                <label>Special Collections</label>
+            </value>
+            <value>
+                <fullName>Special Populations</fullName>
+                <default>false</default>
+                <label>Special Populations</label>
+            </value>
+            <value>
+                <fullName>Speech Communications</fullName>
+                <default>false</default>
+                <label>Speech Communications</label>
+            </value>
+            <value>
+                <fullName>Statistics</fullName>
+                <default>false</default>
+                <label>Statistics</label>
+            </value>
+            <value>
+                <fullName>Student Innovation Center</fullName>
+                <default>false</default>
+                <label>Student Innovation Center</label>
+            </value>
+            <value>
+                <fullName>Study Abroad</fullName>
+                <default>false</default>
+                <label>Study Abroad</label>
+            </value>
+            <value>
+                <fullName>Study Abroad Center</fullName>
+                <default>false</default>
+                <label>Study Abroad Center</label>
+            </value>
+            <value>
+                <fullName>Supply Chain Management</fullName>
+                <default>false</default>
+                <label>Supply Chain Management</label>
+            </value>
+            <value>
+                <fullName>SVPP</fullName>
+                <default>false</default>
+                <label>SVPP</label>
+            </value>
+            <value>
+                <fullName>Textiles &amp; Clothing</fullName>
+                <default>false</default>
+                <label>Textiles &amp; Clothing</label>
+            </value>
+            <value>
+                <fullName>Theater</fullName>
+                <default>false</default>
+                <label>Theater</label>
+            </value>
+            <value>
+                <fullName>Vet. Diagnostic Prod. Animal Medicine</fullName>
+                <default>false</default>
+                <label>Vet. Diagnostic Prod. Animal Medicine</label>
+            </value>
+            <value>
+                <fullName>Vet. Microbiology &amp; Preventive Medicine</fullName>
+                <default>false</default>
+                <label>Vet. Microbiology &amp; Preventive Medicine</label>
+            </value>
+            <value>
+                <fullName>Veterinary Clinical Sciences Department</fullName>
+                <default>false</default>
+                <label>Veterinary Clinical Sciences Department</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine Administration</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine Administration</label>
+            </value>
+            <value>
+                <fullName>Veterinary Medicine Specials</fullName>
+                <default>false</default>
+                <label>Veterinary Medicine Specials</label>
+            </value>
+            <value>
+                <fullName>Veterinary Pathology</fullName>
+                <default>false</default>
+                <label>Veterinary Pathology</label>
+            </value>
+            <value>
+                <fullName>Veterinary Teaching Hospital</fullName>
+                <default>false</default>
+                <label>Veterinary Teaching Hospital</label>
+            </value>
+            <value>
+                <fullName>VRAC--Virtual Reality Appl Cen</fullName>
+                <default>false</default>
+                <label>VRAC--Virtual Reality Appl Cen</label>
+            </value>
+            <value>
+                <fullName>Women in Sci &amp; Engr</fullName>
+                <default>false</default>
+                <label>Women in Sci &amp; Engr</label>
+            </value>
+            <value>
+                <fullName>Women&apos;s Studies</fullName>
+                <default>false</default>
+                <label>Women&apos;s Studies</label>
+            </value>
+            <value>
+                <fullName>World Languages and Cultures</fullName>
+                <default>false</default>
+                <label>World Languages and Cultures</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

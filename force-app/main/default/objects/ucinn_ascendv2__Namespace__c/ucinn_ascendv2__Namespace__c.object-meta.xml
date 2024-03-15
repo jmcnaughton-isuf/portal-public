@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting is used for the Session buttons. Having the custom setting as a Hierarchy allows the values to be accessed in a formula.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Namespace</label>
+    <visibility>Public</visibility>
+</CustomObject>

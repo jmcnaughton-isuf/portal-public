@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Student_Org_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Student Org Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alumni Association</fullName>
+                <default>false</default>
+                <label>Alumni Association</label>
+            </value>
+            <value>
+                <fullName>Councils</fullName>
+                <default>false</default>
+                <label>Councils</label>
+            </value>
+            <value>
+                <fullName>Collegiate</fullName>
+                <default>false</default>
+                <label>Collegiate</label>
+            </value>
+            <value>
+                <fullName>Department</fullName>
+                <default>false</default>
+                <label>Department</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
+            </value>
+            <value>
+                <fullName>Extension Clubs</fullName>
+                <default>false</default>
+                <label>Extension Clubs</label>
+            </value>
+            <value>
+                <fullName>Greek</fullName>
+                <default>false</default>
+                <label>Greek</label>
+            </value>
+            <value>
+                <fullName>Music/Performing Arts</fullName>
+                <default>false</default>
+                <label>Music/Performing Arts</label>
+            </value>
+            <value>
+                <fullName>Military</fullName>
+                <default>false</default>
+                <label>Military</label>
+            </value>
+            <value>
+                <fullName>Media Production</fullName>
+                <default>false</default>
+                <label>Media Production</label>
+            </value>
+            <value>
+                <fullName>Multicultural</fullName>
+                <default>false</default>
+                <label>Multicultural</label>
+            </value>
+            <value>
+                <fullName>Political Activism</fullName>
+                <default>false</default>
+                <label>Political Activism</label>
+            </value>
+            <value>
+                <fullName>Programming</fullName>
+                <default>false</default>
+                <label>Programming</label>
+            </value>
+            <value>
+                <fullName>Residence</fullName>
+                <default>false</default>
+                <label>Residence</label>
+            </value>
+            <value>
+                <fullName>Religious/Spiritual</fullName>
+                <default>false</default>
+                <label>Religious/Spiritual</label>
+            </value>
+            <value>
+                <fullName>Student Affairs</fullName>
+                <default>false</default>
+                <label>Student Affairs</label>
+            </value>
+            <value>
+                <fullName>Special Interest</fullName>
+                <default>false</default>
+                <label>Special Interest</label>
+            </value>
+            <value>
+                <fullName>Sports/Recreation</fullName>
+                <default>false</default>
+                <label>Sports/Recreation</label>
+            </value>
+            <value>
+                <fullName>Service/Volunteerism</fullName>
+                <default>false</default>
+                <label>Service/Volunteerism</label>
+            </value>
+            <value>
+                <fullName>University</fullName>
+                <default>false</default>
+                <label>University</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

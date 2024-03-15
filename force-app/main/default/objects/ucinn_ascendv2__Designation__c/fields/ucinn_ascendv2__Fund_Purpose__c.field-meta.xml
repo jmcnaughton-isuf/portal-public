@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Fund_Purpose__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Endowment Report Use</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used Endowment Reports by Stewardship Team</inlineHelpText>
+    <label>Fund Purpose</label>
+    <length>1300</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

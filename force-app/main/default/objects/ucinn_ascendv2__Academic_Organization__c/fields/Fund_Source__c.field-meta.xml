@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fund_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Fund Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Funding College</fullName>
+                <default>false</default>
+                <label>Funding College</label>
+            </value>
+            <value>
+                <fullName>Funding Department</fullName>
+                <default>false</default>
+                <label>Funding Department</label>
+            </value>
+            <value>
+                <fullName>Degree College</fullName>
+                <default>false</default>
+                <label>Degree College</label>
+            </value>
+            <value>
+                <fullName>Degree Department</fullName>
+                <default>false</default>
+                <label>Degree Department</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_update_spouse_for_business_type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(ucinn_ascendv2__Type__c, &apos;Business&apos;), Update_Spouse_Address__c = True,  RecordType.Id = &apos;0122E000001AdG4QAK&apos;)</errorConditionFormula>
+    <errorMessage>Business type addresses do not allow copy to spouse functionality.</errorMessage>
+</ValidationRule>

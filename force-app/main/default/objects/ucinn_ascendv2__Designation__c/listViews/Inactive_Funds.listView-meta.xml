@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive_Funds</fullName>
+    <columns>ucinn_ascendv2__Status_Formula__c</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Designation_Name__c</columns>
+    <columns>FE_ProjectInactiveDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status_Formula__c</field>
+        <operation>equals</operation>
+        <value>Inactive</value>
+    </filters>
+    <label>Inactive Funds</label>
+</ListView>

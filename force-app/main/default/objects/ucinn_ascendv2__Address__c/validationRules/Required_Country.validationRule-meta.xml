@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Country</fullName>
+    <active>false</active>
+    <description>Country field on address object is managed and cannot be made required validation rule to not allow it to be blank.  w-7744</description>
+    <errorConditionFormula>isblank(ucinn_ascendv2__Country__c)</errorConditionFormula>
+    <errorMessage>Country is required via validation rule</errorMessage>
+</ValidationRule>

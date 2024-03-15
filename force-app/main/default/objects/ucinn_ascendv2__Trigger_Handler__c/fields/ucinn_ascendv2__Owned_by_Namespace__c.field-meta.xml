@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Owned_by_Namespace__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enter the namespace of the package or Org that will control this Trigger handler.</description>
+    <externalId>false</externalId>
+    <label>Owned by Namespace</label>
+    <length>15</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

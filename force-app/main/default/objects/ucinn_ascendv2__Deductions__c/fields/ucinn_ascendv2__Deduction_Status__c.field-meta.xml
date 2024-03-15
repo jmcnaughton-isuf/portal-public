@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Deduction_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Deduction Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Change in deduction</fullName>
+                <default>false</default>
+                <label>Change in deduction</label>
+            </value>
+            <value>
+                <fullName>Roll-over deduction</fullName>
+                <default>false</default>
+                <label>Roll-over deduction</label>
+            </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
+            <value>
+                <fullName>% Donor as per GNC Office</fullName>
+                <default>false</default>
+                <label>% Donor as per GNC Office</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

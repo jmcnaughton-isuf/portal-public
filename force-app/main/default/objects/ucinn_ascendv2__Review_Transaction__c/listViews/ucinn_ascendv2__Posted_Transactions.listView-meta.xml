@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Posted_Transactions</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Donor_ID_From_Source__c</columns>
+    <columns>ucinn_ascendv2__Remitter_Name_Formula__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Designation_1_Name__c</columns>
+    <columns>ucinn_ascendv2__Appeal_No_Source_Code__c</columns>
+    <columns>ucinn_ascendv2__Amount_1__c</columns>
+    <columns>ucinn_ascendv2__Is_Correspondence__c</columns>
+    <columns>ucinn_ascendv2__Is_Handwriting_Present__c</columns>
+    <columns>ucinn_ascendv2__Is_Payment_Match__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>ucinn_ascendv2__File_Creation_Date__c</columns>
+    <columns>ucinn_ascendv2__Sequence_Number__c</columns>
+    <columns>ucinn_ascendv2__Session__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Posted</value>
+    </filters>
+    <label>Posted Transactions</label>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Historied_Date_before_Source_Date</fullName>
+    <active>false</active>
+    <description>Historied Date must be before Source Date.</description>
+    <errorConditionFormula>NOT(ISNULL(Historied_Date__c))&amp;&amp;
+Historied_Date__c &gt; ucinn_ascendv2__Date_Requested__c</errorConditionFormula>
+    <errorMessage>Historied Date must be before Source Date.</errorMessage>
+</ValidationRule>

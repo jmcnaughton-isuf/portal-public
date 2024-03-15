@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Wealth_Rating_Type_Number_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is used in rollup fields to calculate a rating on the Contact record</description>
+    <externalId>false</externalId>
+    <formula>CASE(ucinn_ascendv2__Type__c , &quot;Fundraiser&quot;, 700, &quot;Development Research&quot;, 500, &quot;WealthEngine&quot;, 300, &quot;Donorscape&quot;, 100, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Wealth Rating Type Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

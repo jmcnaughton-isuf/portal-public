@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Capacity__c</fullName>
+    <externalId>false</externalId>
+    <label>Capacity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>01-$25,000,000+</fullName>
+                <default>false</default>
+                <label>01-$25,000,000+</label>
+            </value>
+            <value>
+                <fullName>02-$10,000,000+</fullName>
+                <default>false</default>
+                <label>02-$10,000,000+</label>
+            </value>
+            <value>
+                <fullName>03-$10,000,000 - $24,999,999</fullName>
+                <default>false</default>
+                <label>03-$10,000,000 - $24,999,999</label>
+            </value>
+            <value>
+                <fullName>04-$5,000,000+</fullName>
+                <default>false</default>
+                <label>04-$5,000,000+</label>
+            </value>
+            <value>
+                <fullName>05-$5,000,000 - $9,999,999</fullName>
+                <default>false</default>
+                <label>05-$5,000,000 - $9,999,999</label>
+            </value>
+            <value>
+                <fullName>06-$2,500,000 - $4,999,999</fullName>
+                <default>false</default>
+                <label>06-$2,500,000 - $4,999,999</label>
+            </value>
+            <value>
+                <fullName>07-$1,000,000 - $9,999,999</fullName>
+                <default>false</default>
+                <label>07-$1,000,000 - $9,999,999</label>
+            </value>
+            <value>
+                <fullName>08-$1,000,000 - $4,999,999</fullName>
+                <default>false</default>
+                <label>08-$1,000,000 - $4,999,999</label>
+            </value>
+            <value>
+                <fullName>09-$1,000,000 - $2,499,999</fullName>
+                <default>false</default>
+                <label>09-$1,000,000 - $2,499,999</label>
+            </value>
+            <value>
+                <fullName>10-$500,000 - $999,999</fullName>
+                <default>false</default>
+                <label>10-$500,000 - $999,999</label>
+            </value>
+            <value>
+                <fullName>11-$250,000 - $999,999</fullName>
+                <default>false</default>
+                <label>11-$250,000 - $999,999</label>
+            </value>
+            <value>
+                <fullName>12-$250,000 - $499,999</fullName>
+                <default>false</default>
+                <label>12-$250,000 - $499,999</label>
+            </value>
+            <value>
+                <fullName>13-$100,000 - $249,999</fullName>
+                <default>false</default>
+                <label>13-$100,000 - $249,999</label>
+            </value>
+            <value>
+                <fullName>14-$50,000 - $99,999</fullName>
+                <default>false</default>
+                <label>14-$50,000 - $99,999</label>
+            </value>
+            <value>
+                <fullName>15-$25,000 - $99,999</fullName>
+                <default>false</default>
+                <label>15-$25,000 - $99,999</label>
+            </value>
+            <value>
+                <fullName>16-$25,000 - $49,999</fullName>
+                <default>false</default>
+                <label>16-$25,000 - $49,999</label>
+            </value>
+            <value>
+                <fullName>17-$15,000 - $24,999</fullName>
+                <default>false</default>
+                <label>17-$15,000 - $24,999</label>
+            </value>
+            <value>
+                <fullName>18-$10,000 - $24,999</fullName>
+                <default>false</default>
+                <label>18-$10,000 - $24,999</label>
+            </value>
+            <value>
+                <fullName>19-$10,000 - $14,999</fullName>
+                <default>false</default>
+                <label>19-$10,000 - $14,999</label>
+            </value>
+            <value>
+                <fullName>20-$5,000 - $9,999</fullName>
+                <default>false</default>
+                <label>20-$5,000 - $9,999</label>
+            </value>
+            <value>
+                <fullName>21-$2,500 - $9,999</fullName>
+                <default>false</default>
+                <label>21-$2,500 - $9,999</label>
+            </value>
+            <value>
+                <fullName>22-$2,500 - $4,999</fullName>
+                <default>false</default>
+                <label>22-$2,500 - $4,999</label>
+            </value>
+            <value>
+                <fullName>23-$1,000 - $2,499</fullName>
+                <default>false</default>
+                <label>23-$1,000 - $2,499</label>
+            </value>
+            <value>
+                <fullName>24-$500 - $999</fullName>
+                <default>false</default>
+                <label>24-$500 - $999</label>
+            </value>
+            <value>
+                <fullName>25-$250 - $499</fullName>
+                <default>false</default>
+                <label>25-$250 - $499</label>
+            </value>
+            <value>
+                <fullName>26-$1 - $2,499</fullName>
+                <default>false</default>
+                <label>26-$1 - $2,499</label>
+            </value>
+            <value>
+                <fullName>27-Below $2,500</fullName>
+                <default>false</default>
+                <label>27-Below $2,500</label>
+            </value>
+            <value>
+                <fullName>28-Less than $1,000</fullName>
+                <default>false</default>
+                <label>28-Less than $1,000</label>
+            </value>
+            <value>
+                <fullName>29-Less than $250</fullName>
+                <default>false</default>
+                <label>29-Less than $250</label>
+            </value>
+            <value>
+                <fullName>30-Unable to Rate</fullName>
+                <default>false</default>
+                <label>30-Unable to Rate</label>
+            </value>
+            <value>
+                <fullName>31-Not Wealth Screened</fullName>
+                <default>false</default>
+                <label>31-Not Wealth Screened</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

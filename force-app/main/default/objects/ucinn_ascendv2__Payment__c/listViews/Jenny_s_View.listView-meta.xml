@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jenny_s_View</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Opportunity__c</columns>
+    <columns>ucinn_ascendv2__Designation_Detail__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Credit_Date__c</columns>
+    <columns>ucinn_ascendv2__Payment_Amount__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Amount_Paid_to_Date__c</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>ucinn_ascendv2__Tender_Type_for_Gifts__c</columns>
+    <columns>ucinn_ascendv2__Tender_Type_for_Pledges__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Income_Attribute__c</columns>
+    <columns>ucinn_ascendv2__Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Is_Anonymous__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Jenny&apos;s View</label>
+</ListView>

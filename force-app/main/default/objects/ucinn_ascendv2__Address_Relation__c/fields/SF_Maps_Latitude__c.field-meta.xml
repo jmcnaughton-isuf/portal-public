@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF_Maps_Latitude__c</fullName>
+    <description>Latitude geocoded by Salesforce Maps and used while mapping if &apos;Address Lat&apos; is blank</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Latitude geocoded by Salesforce Maps and used while mapping if &apos;Address Lat&apos; is blank</inlineHelpText>
+    <label>SF Maps Latitude</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>15</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NCOA</fullName>
+    <columns>Managed__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason_Multiple_Line__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__Address_1_Line_1__c</columns>
+    <columns>ucinn_ascendv2__Address_1_Line_2__c</columns>
+    <columns>ucinn_ascendv2__City_1__c</columns>
+    <columns>ucinn_ascendv2__State_1__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.NCOA</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_WEEK</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Contact__c</field>
+        <operation>contains</operation>
+        <value>Artz</value>
+    </filters>
+    <label>NCOA</label>
+</ListView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NCOA_Managed</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__Address_1_Line_1__c</columns>
+    <columns>ucinn_ascendv2__Address_1_Line_2__c</columns>
+    <columns>ucinn_ascendv2__City_1__c</columns>
+    <columns>ucinn_ascendv2__State_1__c</columns>
+    <columns>ucinn_ascendv2__Postal_Code_1__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,In Progress,Completed,New,Assigned,Manual Review,Supervisor Review,Deferred</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.NCOA</value>
+    </filters>
+    <filters>
+        <field>Managed_formula__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>NCOA-Managed</label>
+</ListView>

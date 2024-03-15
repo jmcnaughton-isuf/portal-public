@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Matching_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The matching method used to calculate matching score for each field.</description>
+    <externalId>false</externalId>
+    <label>Matching Method</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Exact</fullName>
+                <default>false</default>
+                <label>Exact</label>
+            </value>
+            <value>
+                <fullName>Exact Or Not</fullName>
+                <default>false</default>
+                <label>Exact Or Not</label>
+            </value>
+            <value>
+                <fullName>Contains</fullName>
+                <default>false</default>
+                <label>Contains</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: City</fullName>
+                <default>false</default>
+                <label>Fuzzy: City</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Company Name</fullName>
+                <default>false</default>
+                <label>Fuzzy: Company Name</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Default</fullName>
+                <default>false</default>
+                <label>Fuzzy: Default</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Email</fullName>
+                <default>false</default>
+                <label>Fuzzy: Email</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: First Name</fullName>
+                <default>false</default>
+                <label>Fuzzy: First Name</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Last Name</fullName>
+                <default>false</default>
+                <label>Fuzzy: Last Name</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Phone</fullName>
+                <default>false</default>
+                <label>Fuzzy: Phone</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Street</fullName>
+                <default>false</default>
+                <label>Fuzzy: Street</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: Title</fullName>
+                <default>false</default>
+                <label>Fuzzy: Title</label>
+            </value>
+            <value>
+                <fullName>Fuzzy: ZIP</fullName>
+                <default>false</default>
+                <label>Fuzzy: ZIP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

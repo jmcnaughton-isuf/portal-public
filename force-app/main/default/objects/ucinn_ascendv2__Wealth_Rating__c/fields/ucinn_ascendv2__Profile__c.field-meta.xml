@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Profile__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Profile</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+                <label>System Administrator</label>
+            </value>
+            <value>
+                <fullName>Gift Planning Officer</fullName>
+                <default>false</default>
+                <label>Gift Planning Officer</label>
+            </value>
+            <value>
+                <fullName>Leadership Annual Giving Manager</fullName>
+                <default>false</default>
+                <label>Leadership Annual Giving Manager</label>
+            </value>
+            <value>
+                <fullName>Presidential</fullName>
+                <default>false</default>
+                <label>Presidential</label>
+            </value>
+            <value>
+                <fullName>Gift Specialist</fullName>
+                <default>false</default>
+                <label>Gift Specialist</label>
+            </value>
+            <value>
+                <fullName>Gift Planning Manager</fullName>
+                <default>false</default>
+                <label>Gift Planning Manager</label>
+            </value>
+            <value>
+                <fullName>Gift Processor</fullName>
+                <default>false</default>
+                <label>Gift Processor</label>
+            </value>
+            <value>
+                <fullName>Development Officer</fullName>
+                <default>false</default>
+                <label>Development Officer</label>
+            </value>
+            <value>
+                <fullName>Development Research</fullName>
+                <default>false</default>
+                <label>Development Research</label>
+            </value>
+            <value>
+                <fullName>RMATS</fullName>
+                <default>false</default>
+                <label>RMATS</label>
+            </value>
+            <value>
+                <fullName>Stewardship Officer</fullName>
+                <default>false</default>
+                <label>Stewardship Officer</label>
+            </value>
+            <value>
+                <fullName>Development Officer - School of Medicine</fullName>
+                <default>false</default>
+                <label>Development Officer - School of Medicine</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

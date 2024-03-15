@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Pledge_Creation_Valid_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determine if we have all information we need to create the pledge from the sponsor record</description>
+    <externalId>false</externalId>
+    <formula>IF(OR( ucinn_ascendv2__Campaign__c != null, ucinn_ascendv2__Matching_Challenge_Campaign_Formula__c != null), IF(OR( ucinn_ascendv2__Designation__c != null, ucinn_ascendv2__Matching_Challenge_Designation_Formula__c != null), IF( AND(ucinn_ascendv2__Matching_Challenge__r.ucinn_ascendv2__Session__c != null,ucinn_ascendv2__Matching_Challenge__r.ucinn_ascendv2__Session__r.ucinn_ascendv2__Is_Ready_for_G_L__c == false), IF(ucinn_ascendv2__Match_Amount__c &gt; 0, true, false), false) , false) , false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Determine if we have all information we need to create the pledge from the sponsor record</inlineHelpText>
+    <label>Is Pledge Creation Valid</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

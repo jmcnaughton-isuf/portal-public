@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kristi_s_Managed_Interims</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__New_Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>RT_Data_Source__c</columns>
+    <columns>ucinn_ascendv2__Email_1__c</columns>
+    <columns>Email_1_is_Preferred__c</columns>
+    <columns>ucinn_ascendv2__Email_1_Type__c</columns>
+    <columns>ucinn_ascendv2__Email_2__c</columns>
+    <columns>Email_2_is_Preferred__c</columns>
+    <columns>ucinn_ascendv2__Email_2_Type__c</columns>
+    <columns>Email_3__c</columns>
+    <columns>Email_3_Is_Preferred__c</columns>
+    <columns>Email_3_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>Managed_formula__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Kristi&apos;s Managed Interims</label>
+</ListView>

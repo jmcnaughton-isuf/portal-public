@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Credit_Subtype__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Credit Subtype</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DCO</fullName>
+                <default>false</default>
+                <label>DCO</label>
+            </value>
+            <value>
+                <fullName>Board / Trustee</fullName>
+                <default>false</default>
+                <label>Board / Trustee</label>
+            </value>
+            <value>
+                <fullName>Fundraising</fullName>
+                <default>false</default>
+                <label>Fundraising</label>
+            </value>
+            <value>
+                <fullName>Recognition</fullName>
+                <default>false</default>
+                <label>Recognition</label>
+            </value>
+            <value>
+                <fullName>Spousal</fullName>
+                <default>false</default>
+                <label>Spousal</label>
+            </value>
+            <value>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+                <label>Volunteer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

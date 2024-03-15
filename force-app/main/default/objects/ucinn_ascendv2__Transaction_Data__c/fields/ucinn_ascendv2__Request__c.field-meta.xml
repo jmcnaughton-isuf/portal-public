@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Request__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Request that was sent to Cybersource</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Request that was sent to Cybersource</inlineHelpText>
+    <label>Request</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

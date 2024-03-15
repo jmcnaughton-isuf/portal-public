@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Amount_Derived_from_Percent_Required</fullName>
+    <active>false</active>
+    <description>User cannot enter a value in the amount derived from percentage field and save the record if the deduction percentage field is blank.</description>
+    <errorConditionFormula>AND(
+$Setup.ucinn_ascendv2__Bypass_Settings__c.ucinn_ascendv2__Bypass_Validation_Rules__c  &lt;&gt; TRUE,
+OR(AND(ISBLANK( ucinn_ascendv2__Deduction_Percentage__c ),(! ISBLANK( ucinn_ascendv2__Amount_Derived_From_Percentage__c ) )),
+AND(ISBLANK( ucinn_ascendv2__Amount_Derived_From_Percentage__c ),(! ISBLANK( ucinn_ascendv2__Deduction_Percentage__c ) ))))</errorConditionFormula>
+    <errorMessage>Deduction percentage field and amount derived from percent field are both required to complete this deduction information.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Author_Title__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Author Title</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>ucinn_ascendv2__Salutation_Author__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>President</fullName>
+                <default>false</default>
+                <label>President</label>
+            </value>
+            <value>
+                <fullName>SVP, University Advancement</fullName>
+                <default>false</default>
+                <label>SVP, University Advancement</label>
+            </value>
+            <value>
+                <fullName>Provost</fullName>
+                <default>false</default>
+                <label>Provost</label>
+            </value>
+            <value>
+                <fullName>Dean, Gerontology</fullName>
+                <default>false</default>
+                <label>Dean, Gerontology</label>
+            </value>
+            <value>
+                <fullName>Dean, Cinematic Arts</fullName>
+                <default>false</default>
+                <label>Dean, Cinematic Arts</label>
+            </value>
+            <value>
+                <fullName>Dean, Social Work</fullName>
+                <default>false</default>
+                <label>Dean, Social Work</label>
+            </value>
+            <value>
+                <fullName>Dean, Price</fullName>
+                <default>false</default>
+                <label>Dean, Price</label>
+            </value>
+            <value>
+                <fullName>Dean, Architecture</fullName>
+                <default>false</default>
+                <label>Dean, Architecture</label>
+            </value>
+            <value>
+                <fullName>Dean, Dramatic Arts</fullName>
+                <default>false</default>
+                <label>Dean, Dramatic Arts</label>
+            </value>
+            <value>
+                <fullName>Dean, Libraries</fullName>
+                <default>false</default>
+                <label>Dean, Libraries</label>
+            </value>
+            <value>
+                <fullName>Dean, Pharmacy</fullName>
+                <default>false</default>
+                <label>Dean, Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Vice President for Advancement Services</fullName>
+                <default>false</default>
+                <label>Vice President for Advancement Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wealth_Code__c</fullName>
+    <description>Used for ISUF</description>
+    <externalId>false</externalId>
+    <label>Wealth Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High Net Worth Philanthropists</fullName>
+                <default>false</default>
+                <label>High Net Worth Philanthropists</label>
+            </value>
+            <value>
+                <fullName>Financially Secure Philanthropists</fullName>
+                <default>false</default>
+                <label>Financially Secure Philanthropists</label>
+            </value>
+            <value>
+                <fullName>Upwardly Mobile Philanthropists</fullName>
+                <default>false</default>
+                <label>Upwardly Mobile Philanthropists</label>
+            </value>
+            <value>
+                <fullName>Steady Humanitarians</fullName>
+                <default>false</default>
+                <label>Steady Humanitarians</label>
+            </value>
+            <value>
+                <fullName>Devoted Humanitarians</fullName>
+                <default>false</default>
+                <label>Devoted Humanitarians</label>
+            </value>
+            <value>
+                <fullName>Faithful Humanitarians</fullName>
+                <default>false</default>
+                <label>Faithful Humanitarians</label>
+            </value>
+            <value>
+                <fullName>Middle Class Casual Donors</fullName>
+                <default>false</default>
+                <label>Middle Class Casual Donors</label>
+            </value>
+            <value>
+                <fullName>Working Class Casual Donors</fullName>
+                <default>false</default>
+                <label>Working Class Casual Donors</label>
+            </value>
+            <value>
+                <fullName>Marginal Casual Donors</fullName>
+                <default>false</default>
+                <label>Marginal Casual Donors</label>
+            </value>
+            <value>
+                <fullName>Sporadic Casual Donors</fullName>
+                <default>false</default>
+                <label>Sporadic Casual Donors</label>
+            </value>
+            <value>
+                <fullName>Affluent Enigmas</fullName>
+                <default>false</default>
+                <label>Affluent Enigmas</label>
+            </value>
+            <value>
+                <fullName>Blue Collar Masses</fullName>
+                <default>false</default>
+                <label>Blue Collar Masses</label>
+            </value>
+            <value>
+                <fullName>Non-Starter Masses</fullName>
+                <default>false</default>
+                <label>Non-Starter Masses</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

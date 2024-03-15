@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Memorial Gift</fullName>
+        <default>false</default>
+        <label>Memorial Gift</label>
+    </customValue>
+    <customValue>
+        <fullName>Watch for</fullName>
+        <default>false</default>
+        <label>Watch for</label>
+    </customValue>
+    <masterLabel>Memorial Gift</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Namespace_Prefix__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the namespace in a prefix form, meaning it has the underscores. This is different than the &quot;Namespace Value&quot; because there is no default value for a prefix. If the prefix is not necessary it will have no value whereas the &quot;Namespace Value&quot; will still be &quot;c&quot;
+
+This is in the case of the aura URLs &quot;/c/Donation_...&quot;</description>
+    <externalId>false</externalId>
+    <label>Namespace Prefix</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

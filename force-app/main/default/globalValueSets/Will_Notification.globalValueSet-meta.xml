@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Attorney</fullName>
+        <default>false</default>
+        <label>Attorney</label>
+    </customValue>
+    <customValue>
+        <fullName>Courts</fullName>
+        <default>false</default>
+        <label>Courts</label>
+    </customValue>
+    <customValue>
+        <fullName>Donor</fullName>
+        <default>false</default>
+        <label>Donor</label>
+    </customValue>
+    <customValue>
+        <fullName>Development Staff Member</fullName>
+        <default>false</default>
+        <label>Development Staff Member</label>
+    </customValue>
+    <customValue>
+        <fullName>Executor/Personal Representative</fullName>
+        <default>false</default>
+        <label>Executor/Personal Representative</label>
+    </customValue>
+    <customValue>
+        <fullName>Financial Advisor/Planner</fullName>
+        <default>false</default>
+        <label>Financial Advisor/Planner</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Agent</fullName>
+        <default>false</default>
+        <label>Insurance Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Company</fullName>
+        <default>false</default>
+        <label>Insurance Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Plan Administrator</fullName>
+        <default>false</default>
+        <label>Plan Administrator</label>
+    </customValue>
+    <customValue>
+        <fullName>Trustee/Trust Officer</fullName>
+        <default>false</default>
+        <label>Trustee/Trust Officer</label>
+    </customValue>
+    <description>CA: 10/15/2019: Created for use on Review Transaction and Opportunity</description>
+    <masterLabel>Will Notification</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

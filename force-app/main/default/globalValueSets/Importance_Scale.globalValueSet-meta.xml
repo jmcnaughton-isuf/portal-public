@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Don&apos;t Know/Not Sure</fullName>
+        <default>false</default>
+        <label>Don&apos;t Know/Not Sure</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Important</fullName>
+        <default>false</default>
+        <label>Not Important</label>
+    </customValue>
+    <customValue>
+        <fullName>Important</fullName>
+        <default>false</default>
+        <label>Important</label>
+    </customValue>
+    <customValue>
+        <fullName>Very Important</fullName>
+        <default>false</default>
+        <label>Very Important</label>
+    </customValue>
+    <masterLabel>Importance Scale</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

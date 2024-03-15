@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Same_Day_Appointment_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if(ucinn_ascendv2__Is_Cancelled_Appointment_Formula__c = false &amp;&amp; ucinn_ascendv2__Is_Walk_In__c = true , true, false)</formula>
+    <label>Is Same Day Appointment</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

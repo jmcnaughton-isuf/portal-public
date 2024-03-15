@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hire_Date_ISU__c</fullName>
+    <description>This is the hire date received from Iowa State about ISU Faculty/Staff</description>
+    <externalId>false</externalId>
+    <label>Hire Date (ISU)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

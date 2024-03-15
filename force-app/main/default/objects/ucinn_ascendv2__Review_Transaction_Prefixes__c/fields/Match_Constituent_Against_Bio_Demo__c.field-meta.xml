@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Constituent_Against_Bio_Demo__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Matching the constituent using the bio information on the review transaction.  Default is match against first name, last name and email.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Matching the constituent using the bio information on the review transaction.  Default is match against first name, last name and email.</inlineHelpText>
+    <label>Match Constituent Against Bio Info</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

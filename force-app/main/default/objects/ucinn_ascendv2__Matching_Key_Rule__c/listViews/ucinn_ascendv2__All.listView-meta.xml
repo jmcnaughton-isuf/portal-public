@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__All</fullName>
+    <columns>OBJECT_ID</columns>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Create_Matching_Keys__c</columns>
+    <columns>ucinn_ascendv2__Key_Value_Field_API_Name__c</columns>
+    <columns>ucinn_ascendv2__Key_Value_Set_Created__c</columns>
+    <columns>ucinn_ascendv2__Object_Name__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

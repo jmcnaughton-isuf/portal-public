@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Contact_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Constituent Role</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary Constituent</fullName>
+                <default>false</default>
+                <label>Primary Constituent</label>
+            </value>
+            <value>
+                <fullName>Primary Organization</fullName>
+                <default>false</default>
+                <label>Primary Organization</label>
+            </value>
+            <value>
+                <fullName>ISU Representative</fullName>
+                <default>false</default>
+                <label>ISU Representative</label>
+            </value>
+            <value>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+                <label>Volunteer</label>
+            </value>
+            <value>
+                <fullName>Constituent Advisor (attorneys, financial advisors, etc.)</fullName>
+                <default>false</default>
+                <label>Constituent Advisor (attorneys, financial advisors, etc.)</label>
+            </value>
+            <value>
+                <fullName>Additional Organization</fullName>
+                <default>false</default>
+                <label>Additional Organization</label>
+            </value>
+            <value>
+                <fullName>Related Organization</fullName>
+                <default>false</default>
+                <label>Related Organization</label>
+            </value>
+            <value>
+                <fullName>Organization Representative</fullName>
+                <default>false</default>
+                <label>Organization Representative</label>
+            </value>
+            <value>
+                <fullName>Constituent Participant (for other constituents involved)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Constituent Participant (for other constituents involved)</label>
+            </value>
+            <value>
+                <fullName>ISU Faculty/Staff</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ISU Faculty/Staff</label>
+            </value>
+            <value>
+                <fullName>Secondary Constituent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Secondary Constituent</label>
+            </value>
+            <value>
+                <fullName>Significant Contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Significant Contact</label>
+            </value>
+            <value>
+                <fullName>Solicitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Solicitor</label>
+            </value>
+            <value>
+                <fullName>volunteer manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Volunteer Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

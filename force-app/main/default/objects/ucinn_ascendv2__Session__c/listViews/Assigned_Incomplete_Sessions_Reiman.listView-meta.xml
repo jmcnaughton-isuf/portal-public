@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Incomplete_Sessions_Reiman</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Session_Description__c</columns>
+    <columns>ucinn_ascendv2__Session_Date__c</columns>
+    <columns>ucinn_ascendv2__Session_Operator_Assigned__c</columns>
+    <columns>ucinn_ascendv2__Pledge_Amount__c</columns>
+    <columns>ucinn_ascendv2__Gift_Pledge_Payment_Amount__c</columns>
+    <columns>ucinn_ascendv2__Non_Gift_Amount__c</columns>
+    <columns>ucinn_ascendv2__Match_Amount__c</columns>
+    <columns>ucinn_ascendv2__Session_Started__c</columns>
+    <columns>ucinn_ascendv2__Session_Completed__c</columns>
+    <columns>ucinn_ascendv2__Session_Totals_Approved__c</columns>
+    <columns>ucinn_ascendv2__No_of_Transactions_Posted__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Session_Operator_Assigned__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Session_Completed__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Batch_Number__c</field>
+        <operation>equals</operation>
+        <value>9950,9951,9952</value>
+    </filters>
+    <label>Reiman Assigned Incomplete Sessions</label>
+    <sharedTo>
+        <group>Gift_Administration</group>
+    </sharedTo>
+</ListView>

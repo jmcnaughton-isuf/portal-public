@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Award_Unit_College_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( ucinn_ascendv2__Involvement_Code__r.Award_Unit_College__c , &apos;Agriculture and Life Sciences&apos;, &apos;Agriculture and Life Sciences&apos;, &apos;Athletics&apos;, &apos;Athletics&apos;, &apos;Business&apos;, &apos;Business&apos;, &apos;Design&apos;, &apos;Design&apos;, &apos;Engineering&apos;, &apos;Engineering&apos;, &apos;Extension&apos;, &apos;Extension&apos;, &apos;Graduate&apos;, &apos;Graduate&apos;, &apos;Human Sciences&apos;, &apos;Human Sciences&apos;, &apos;Interdisciplinary&apos;, &apos;Interdisciplinary&apos;, &apos;Liberal Arts and Sciences&apos;, &apos;Liberal Arts and Sciences&apos;, &apos;Memorial Union&apos;, &apos;Memorial Union&apos;, &apos;Veterinary Medicine&apos;, &apos;Veterinary Medicine&apos;, NULL)</formula>
+    <inlineHelpText>This field dictates who is eligible to receive award. Interdisciplinary means not specific to a certain unit.</inlineHelpText>
+    <label>Award Unit College</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

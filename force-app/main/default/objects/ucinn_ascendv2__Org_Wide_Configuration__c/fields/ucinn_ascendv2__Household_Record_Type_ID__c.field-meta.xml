@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Household_Record_Type_ID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Allows for custom Recordtype to be used in place of Household.</description>
+    <externalId>false</externalId>
+    <label>Household Record Type ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wealth_Ratings_since_August</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Type__c</columns>
+    <columns>Vendor__c</columns>
+    <columns>ucinn_ascendv2__Wealth_Rating__c</columns>
+    <columns>ucinn_ascendv2__Wealth_Rating_Number_Formula__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Wealth Ratings since August</label>
+    <sharedTo>
+        <group>Prospect_Development</group>
+    </sharedTo>
+</ListView>

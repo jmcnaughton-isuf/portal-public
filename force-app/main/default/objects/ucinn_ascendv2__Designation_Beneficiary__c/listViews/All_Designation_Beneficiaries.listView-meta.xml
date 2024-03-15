@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Designation_Beneficiaries</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__G_L_Account_Formula__c</columns>
+    <columns>ucinn_ascendv2__Start_Date__c</columns>
+    <columns>ucinn_ascendv2__End_Date__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Designation Beneficiaries</label>
+</ListView>

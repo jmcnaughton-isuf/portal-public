@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Include_Constituent_Or_Org</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISBLANK( ucinn_ascendv2__Contact__c ), ISBLANK (  ucinn_ascendv2__Account__c ))</errorConditionFormula>
+    <errorMessage>You must enter a constituent or organization on a contact report.</errorMessage>
+</ValidationRule>

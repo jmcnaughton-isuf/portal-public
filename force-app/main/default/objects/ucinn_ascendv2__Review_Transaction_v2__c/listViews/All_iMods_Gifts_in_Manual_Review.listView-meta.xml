@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_iMods_Gifts_in_Manual_Review</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Session__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>Imod_Member_ID__c</columns>
+    <columns>Confidential_Indicator__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Opportunity_Type__c</columns>
+    <columns>ucinn_ascendv2__Interim__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>iMods_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Review_Transaction_v2__c.Imod_Transaction</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Manual Review</value>
+    </filters>
+    <label>All iMods Gifts in Manual Review</label>
+</ListView>

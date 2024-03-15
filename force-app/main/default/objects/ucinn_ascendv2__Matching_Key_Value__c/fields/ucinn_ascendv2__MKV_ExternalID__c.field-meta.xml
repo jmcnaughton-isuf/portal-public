@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__MKV_ExternalID__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Combine matching key rule ID with matching key value to be the external Id for target object using.</description>
+    <externalId>true</externalId>
+    <label>MKV ExternalID</label>
+    <length>255</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

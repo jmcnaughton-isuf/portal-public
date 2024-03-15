@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Assign_to_Gift_Specialist</fullName>
+    <availability>online</availability>
+    <description>Assigns to New Owner and Creates a Session.</description>
+    <displayType>massActionButton</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Assign to Gift Specialist</masterLabel>
+    <openType>sidebar</openType>
+    <page>ucinn_ascendv2__ReviewTransactionAssignSession</page>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+</WebLink>

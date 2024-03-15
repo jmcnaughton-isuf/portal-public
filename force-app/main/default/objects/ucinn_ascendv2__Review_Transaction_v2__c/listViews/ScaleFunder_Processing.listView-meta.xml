@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ScaleFunder_Processing</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Payment_Date_1_1__c</columns>
+    <columns>ucinn_ascendv2__Payment_Amount_1_1__c</columns>
+    <columns>ucinn_ascendv2__Transaction_Type__c</columns>
+    <columns>Designation_Names__c</columns>
+    <columns>ucinn_ascendv2__Campaign_External_ID__c</columns>
+    <columns>ucinn_ascendv2__Campaign__c</columns>
+    <columns>Payment_Receipt_Notes__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>ucinn_ascendv2__Interim__c</columns>
+    <columns>Created_Date_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Review_Transaction_v2__c.Scale_Funder_Transaction</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Session__c</field>
+        <operation>contains</operation>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>notEqual</operation>
+        <value>UC Innovation</value>
+    </filters>
+    <filters>
+        <field>Session_Completed_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Posted</value>
+    </filters>
+    <label>ScaleFunder Processing</label>
+</ListView>

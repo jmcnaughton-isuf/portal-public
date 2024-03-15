@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Volunteer</fullName>
+        <default>false</default>
+        <label>Volunteer</label>
+    </customValue>
+    <customValue>
+        <fullName>Member/Donor</fullName>
+        <default>false</default>
+        <label>Member/Donor</label>
+    </customValue>
+    <customValue>
+        <fullName>Volunteer &amp; Member/Donor</fullName>
+        <default>false</default>
+        <label>Volunteer &amp; Member/Donor</label>
+    </customValue>
+    <masterLabel>Constituant Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recent_Uploads_of_Service_Indicators</fullName>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Start_Date__c</columns>
+    <columns>ucinn_ascendv2__Service_Indicator_Value__c</columns>
+    <columns>Solicitation__c</columns>
+    <columns>ucinn_ascendv2__Is_Active__c</columns>
+    <columns>College__c</columns>
+    <columns>Data_Source__c</columns>
+    <columns>ucinn_ascendv2__Comments__c</columns>
+    <columns>ISUF_Comments__c</columns>
+    <columns>Department__c</columns>
+    <columns>Preferences__c</columns>
+    <columns>Publications__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Start_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>4/20/2022</value>
+    </filters>
+    <label>Recent Uploads of Service Indicators</label>
+</ListView>

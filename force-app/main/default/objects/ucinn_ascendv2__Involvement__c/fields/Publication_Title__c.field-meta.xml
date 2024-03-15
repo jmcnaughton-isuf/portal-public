@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Publication_Title__c</fullName>
+    <externalId>false</externalId>
+    <label>Publication Title</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access</fullName>
+                <default>false</default>
+                <label>Access</label>
+            </value>
+            <value>
+                <fullName>Endowment Report</fullName>
+                <default>false</default>
+                <label>Endowment Report</label>
+            </value>
+            <value>
+                <fullName>Stewardship Report</fullName>
+                <default>false</default>
+                <label>Stewardship Report</label>
+            </value>
+            <value>
+                <fullName>Visions</fullName>
+                <default>false</default>
+                <label>Visions</label>
+            </value>
+            <value>
+                <fullName>WMB Gift</fullName>
+                <default>false</default>
+                <label>WMB Gift</label>
+            </value>
+            <value>
+                <fullName>Access Mailing</fullName>
+                <default>false</default>
+                <label>Access Mailing</label>
+            </value>
+            <value>
+                <fullName>Forward Mailing</fullName>
+                <default>false</default>
+                <label>Forward Mailing</label>
+            </value>
+            <value>
+                <fullName>True Mailing</fullName>
+                <default>false</default>
+                <label>True Mailing</label>
+            </value>
+            <value>
+                <fullName>W&amp;P Mailing</fullName>
+                <default>false</default>
+                <label>W&amp;P Mailing</label>
+            </value>
+            <value>
+                <fullName>Your Iowa State</fullName>
+                <default>false</default>
+                <label>Your Iowa State</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

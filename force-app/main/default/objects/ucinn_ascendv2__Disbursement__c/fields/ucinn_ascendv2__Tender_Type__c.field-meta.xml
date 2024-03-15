@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Tender_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Tender type for all payments in disbursement. Defaults to Check if none is selected.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select tender type that will be applied to all payments processed in this disbursement. Defaults to Check if none is selected.</inlineHelpText>
+    <label>Tender Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cash</fullName>
+                <default>false</default>
+                <label>Cash</label>
+            </value>
+            <value>
+                <fullName>Check</fullName>
+                <default>false</default>
+                <label>Check</label>
+            </value>
+            <value>
+                <fullName>Visa</fullName>
+                <default>false</default>
+                <label>Visa</label>
+            </value>
+            <value>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+                <label>Credit Card</label>
+            </value>
+            <value>
+                <fullName>Stock Gift</fullName>
+                <default>false</default>
+                <label>Stock Gift</label>
+            </value>
+            <value>
+                <fullName>Wire</fullName>
+                <default>false</default>
+                <label>Wire</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

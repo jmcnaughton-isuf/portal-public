@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Date__c</fullName>
+    <description>Date of when the rating score was created or modified.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of when the rating score was created or modified.</inlineHelpText>
+    <label>Source Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

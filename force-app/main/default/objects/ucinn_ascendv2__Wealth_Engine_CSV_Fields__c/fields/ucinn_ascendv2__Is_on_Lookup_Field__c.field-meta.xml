@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_on_Lookup_Field__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Denotes whether the field is actually a field on a look up field.
+
+For example, Owner&apos;s City.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Denotes whether the field is actually a field on a look up field. 
+
+For example, Owner&apos;s City.</inlineHelpText>
+    <label>Is on Lookup Field</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

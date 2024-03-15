@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Yes, with permission</fullName>
+        <default>false</default>
+        <label>Yes, with permission</label>
+    </customValue>
+    <customValue>
+        <fullName>Yes, after deceased</fullName>
+        <default>false</default>
+        <label>Yes, after deceased</label>
+    </customValue>
+    <customValue>
+        <fullName>No publicity</fullName>
+        <default>false</default>
+        <label>No publicity</label>
+    </customValue>
+    <customValue>
+        <fullName>No</fullName>
+        <default>false</default>
+        <label>No</label>
+    </customValue>
+    <customValue>
+        <fullName>Yes</fullName>
+        <default>false</default>
+        <label>Yes</label>
+    </customValue>
+    <description>CA: 10/15/2019: Created for use on Review Transaction and Opportunity</description>
+    <masterLabel>Will Publicize</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

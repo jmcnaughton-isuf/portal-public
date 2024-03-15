@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iModules_Interim_FORMAT_UPDATE</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Last_Name__c</columns>
+    <columns>ucinn_ascendv2__First_Name__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
+    <columns>ISU_Address_1_Data_Source__c</columns>
+    <columns>ucinn_ascendv2__Address_1_Type__c</columns>
+    <columns>Is_Preferred__c</columns>
+    <columns>Phone_1_Data_Source__c</columns>
+    <columns>Phone_1_Is_Preferred__c</columns>
+    <columns>ucinn_ascendv2__Phone_1_Type__c</columns>
+    <columns>Email_1_Data_Source__c</columns>
+    <columns>Email_1_is_Preferred__c</columns>
+    <columns>ucinn_ascendv2__Email_1_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,In Progress,New,Assigned,Manual Review,Supervisor Review,Deferred,Current</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>12/1/2021 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Interim__c.iModules_Interface</value>
+    </filters>
+    <label>iModules Interim FORMAT UPDATE</label>
+</ListView>

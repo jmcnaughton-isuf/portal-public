@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wealth_Rating_2017</fullName>
+    <columns>NAME</columns>
+    <columns>Rating_Status__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>Research_Code__c</columns>
+    <columns>Capacity__c</columns>
+    <columns>Major_Gift_Score__c</columns>
+    <columns>Planned_Gift_Score__c</columns>
+    <columns>Wealth_Code__c</columns>
+    <columns>ucinn_ascendv2__Type__c</columns>
+    <columns>Capacity_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Wealth_Rating__c.ucinn_ascendv2__Account_Wealth_Rating,ucinn_ascendv2__Wealth_Rating__c.ucinn_ascendv2__Contact_Wealth_Rating,ucinn_ascendv2__Wealth_Rating__c.Wealth_Rating_2004,ucinn_ascendv2__Wealth_Rating__c.Wealth_Rating_2008,ucinn_ascendv2__Wealth_Rating__c.Wealth_Rating_2013,ucinn_ascendv2__Wealth_Rating__c.Wealth_Rating_2017</value>
+    </filters>
+    <filters>
+        <field>Rating_Status__c</field>
+        <operation>equals</operation>
+        <value>Active,Historical</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Type__c</field>
+        <operation>equals</operation>
+        <value>Wealth Rating 2004,Wealth Rating 2008,Wealth Rating 2013,Wealth Rating 2017,Development Officer,Research Strategies,Vendor</value>
+    </filters>
+    <filters>
+        <field>Capacity_Status__c</field>
+        <operation>equals</operation>
+        <value>Variable Assets</value>
+    </filters>
+    <label>Wealth Rating 2017</label>
+    <sharedTo>
+        <group>Prospect_Development</group>
+    </sharedTo>
+</ListView>

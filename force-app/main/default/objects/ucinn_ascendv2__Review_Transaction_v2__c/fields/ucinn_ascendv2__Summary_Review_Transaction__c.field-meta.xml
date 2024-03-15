@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Summary_Review_Transaction__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The summary review transaction</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The summary review transaction</inlineHelpText>
+    <label>Summary Review Transaction</label>
+    <referenceTo>ucinn_ascendv2__Review_Transaction_v2__c</referenceTo>
+    <relationshipLabel>Review Transactions (v2) (Summary Review Transaction)</relationshipLabel>
+    <relationshipName>Review_Transactions_v2_Summary_Rev_Trans</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

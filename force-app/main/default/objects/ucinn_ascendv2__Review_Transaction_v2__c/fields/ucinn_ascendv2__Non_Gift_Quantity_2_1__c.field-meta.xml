@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Non_Gift_Quantity_2_1__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Non gift quantity tied to designation 2 payment group 1</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Non gift quantity tied to designation 2 payment group 1</inlineHelpText>
+    <label>Non-Gift Quantity 2 1</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

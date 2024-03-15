@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Edit_for_Non_Owner_Campus_Users</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+$Profile.Name  = &quot;ISUF-Campus Pro&quot;, 
+$User.Id &lt;&gt;  OwnerId
+ 
+)</errorConditionFormula>
+    <errorMessage>Only Owners of Contact Reports can edit the contact report.</errorMessage>
+</ValidationRule>

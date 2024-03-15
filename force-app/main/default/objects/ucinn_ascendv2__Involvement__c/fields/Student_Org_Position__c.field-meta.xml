@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Student_Org_Position__c</fullName>
+    <externalId>false</externalId>
+    <label>Student Org Position</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Executive Director</fullName>
+                <default>false</default>
+                <label>Executive Director</label>
+            </value>
+            <value>
+                <fullName>Other - see notes</fullName>
+                <default>false</default>
+                <label>Other - see notes</label>
+            </value>
+            <value>
+                <fullName>President</fullName>
+                <default>false</default>
+                <label>President</label>
+            </value>
+            <value>
+                <fullName>Secretary</fullName>
+                <default>false</default>
+                <label>Secretary</label>
+            </value>
+            <value>
+                <fullName>Treasurer</fullName>
+                <default>false</default>
+                <label>Treasurer</label>
+            </value>
+            <value>
+                <fullName>Vice President</fullName>
+                <default>false</default>
+                <label>Vice President</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

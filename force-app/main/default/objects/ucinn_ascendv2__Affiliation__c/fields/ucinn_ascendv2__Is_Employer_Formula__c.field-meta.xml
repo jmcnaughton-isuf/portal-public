@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Employer_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(OR((TEXT(ucinn_ascendv2__Organization_Role__c) = &apos;Retiree Employer&apos;), (TEXT(ucinn_ascendv2__Organization_Role__c) = &apos;Employer&apos; &amp;&amp; TEXT(ucinn_ascendv2__Status__c) = &apos;Current&apos;)), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Employer</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

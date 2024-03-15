@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_only</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Full_Address_Formula__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>ISUF_External_System_ID__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Account__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Contact__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Org only</label>
+</ListView>

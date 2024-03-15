@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Primary_Constituents__c</fullName>
+    <externalId>false</externalId>
+    <label>Number of Primary Constituents</label>
+    <summaryFilterItems>
+        <field>ucinn_ascendv2__Contact_Report_Relation__c.ucinn_ascendv2__Contact_Role__c</field>
+        <operation>equals</operation>
+        <value>Primary Constituent</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ucinn_ascendv2__Contact_Report_Relation__c.ucinn_ascendv2__Contact_Report__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjusted_Total_Giving__c</fullName>
+    <description>Standardize total giving by different data sources.  Take only 5% of giving for WealthPoint OnTime.  Multiply by 5 for Modeled Target Gift Range.</description>
+    <externalId>false</externalId>
+    <formula>Case( Data_Source__c, 
+&quot;Blackbaud – WealthPoint OnTime&quot;, 0.05 * ucinn_ascendv2__Estimated_Total_Giving_Capacity__c ,
+&quot;Blackbaud – Modeled Target Gift Range&quot;, 5 * ucinn_ascendv2__Estimated_Total_Giving_Capacity__c,
+ucinn_ascendv2__Estimated_Total_Giving_Capacity__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Adjusted Total Giving</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

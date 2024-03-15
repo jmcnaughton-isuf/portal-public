@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <defaultValue>IF( $Profile.Name = &quot;ISUF-Standard User&quot;, &quot;Pending&quot;, &quot;Active&quot;)</defaultValue>
+    <externalId>false</externalId>
+    <label>ONE Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Historied</fullName>
+                <default>false</default>
+                <label>Historied</label>
+            </value>
+            <value>
+                <fullName>Lapsed</fullName>
+                <default>false</default>
+                <label>Lapsed</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Partial_Birthdate_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Using partial birthdate or full birthdate</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to enable, or uncheck it to disable.</inlineHelpText>
+    <label>Is Partial Birthdate Enabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

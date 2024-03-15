@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payout_Term__c</fullName>
+    <externalId>false</externalId>
+    <label>Payout Term</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Code</fullName>
+                <default>false</default>
+                <label>No Code</label>
+            </value>
+            <value>
+                <fullName>An - Annual</fullName>
+                <default>false</default>
+                <label>An - Annual</label>
+            </value>
+            <value>
+                <fullName>Mo - Monthly</fullName>
+                <default>false</default>
+                <label>Mo - Monthly</label>
+            </value>
+            <value>
+                <fullName>QT- Quarterly</fullName>
+                <default>false</default>
+                <label>QT- Quarterly</label>
+            </value>
+            <value>
+                <fullName>SA - Semi Annual</fullName>
+                <default>false</default>
+                <label>SA - Semi Annual</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

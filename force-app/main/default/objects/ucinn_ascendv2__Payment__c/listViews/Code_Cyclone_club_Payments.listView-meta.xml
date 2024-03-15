@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Code_Cyclone_club_Payments</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>Cyclone_Club__c</columns>
+    <columns>ucinn_ascendv2__Designation__c</columns>
+    <columns>ucinn_ascendv2__Designation_Detail__c</columns>
+    <columns>Fund_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Fund_Code__c</field>
+        <operation>equals</operation>
+        <value>1001442,1001441</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Session__c</field>
+        <operation>equals</operation>
+        <value>S230323574635</value>
+    </filters>
+    <label>Code Cyclone club Payments</label>
+</ListView>

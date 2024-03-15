@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Is_Giving_Details_Warning_Enabled__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check to show giving details warning on the giving details list.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to show giving details warning on the giving details list.</inlineHelpText>
+    <label>Is Giving Details Warning Enabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

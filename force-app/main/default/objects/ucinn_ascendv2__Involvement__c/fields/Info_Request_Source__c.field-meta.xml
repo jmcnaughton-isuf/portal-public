@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Info_Request_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Info Request Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CampusCall</fullName>
+                <default>false</default>
+                <label>CampusCall</label>
+            </value>
+            <value>
+                <fullName>eInsights</fullName>
+                <default>false</default>
+                <label>eInsights</label>
+            </value>
+            <value>
+                <fullName>Faculty/Staff Symposium</fullName>
+                <default>false</default>
+                <label>Faculty/Staff Symposium</label>
+            </value>
+            <value>
+                <fullName>Gift Law eNewsletter</fullName>
+                <default>false</default>
+                <label>Gift Law eNewsletter</label>
+            </value>
+            <value>
+                <fullName>Insights</fullName>
+                <default>false</default>
+                <label>Insights</label>
+            </value>
+            <value>
+                <fullName>Other Mailer</fullName>
+                <default>false</default>
+                <label>Other Mailer</label>
+            </value>
+            <value>
+                <fullName>Professional Advisor</fullName>
+                <default>false</default>
+                <label>Professional Advisor</label>
+            </value>
+            <value>
+                <fullName>Women &amp; Philanthropy</fullName>
+                <default>false</default>
+                <label>Women &amp; Philanthropy</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

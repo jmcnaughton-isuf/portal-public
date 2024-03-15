@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isuf_Current_FY_Production__c</fullName>
+    <description>Constituent&apos;s Current Fiscal Year Production</description>
+    <externalId>false</externalId>
+    <formula>IF (NOT(ISNULL(ucinn_ascendv2__Contact__c)), ucinn_ascendv2__Contact__r.Current_Fiscal_Year_Production__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Constituent&apos;s Current Fiscal Year Production</inlineHelpText>
+    <label>Current FY Production</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

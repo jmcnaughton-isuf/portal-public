@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fund_Purpose__c</fullName>
+    <externalId>false</externalId>
+    <label>Fund Purpose</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounting Report</fullName>
+                <default>false</default>
+                <label>Accounting Report</label>
+            </value>
+            <value>
+                <fullName>Alumni Association</fullName>
+                <default>false</default>
+                <label>Alumni Association</label>
+            </value>
+            <value>
+                <fullName>Captial Construction/Building</fullName>
+                <default>false</default>
+                <label>Captial Construction/Building</label>
+            </value>
+            <value>
+                <fullName>Construction/building Projects</fullName>
+                <default>false</default>
+                <label>Construction/building Projects</label>
+            </value>
+            <value>
+                <fullName>Dean&apos;s Chair</fullName>
+                <default>false</default>
+                <label>Dean&apos;s Chair</label>
+            </value>
+            <value>
+                <fullName>Department Head Chair</fullName>
+                <default>false</default>
+                <label>Department Head Chair</label>
+            </value>
+            <value>
+                <fullName>Endowed Staff</fullName>
+                <default>false</default>
+                <label>Endowed Staff</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>Faculty &amp; Staff Support</fullName>
+                <default>false</default>
+                <label>Faculty &amp; Staff Support</label>
+            </value>
+            <value>
+                <fullName>Faculty and Staff Award</fullName>
+                <default>false</default>
+                <label>Faculty and Staff Award</label>
+            </value>
+            <value>
+                <fullName>Faculty and Staff Fellowships</fullName>
+                <default>false</default>
+                <label>Faculty and Staff Fellowships</label>
+            </value>
+            <value>
+                <fullName>Faculty Chair</fullName>
+                <default>false</default>
+                <label>Faculty Chair</label>
+            </value>
+            <value>
+                <fullName>Faculty Professorships</fullName>
+                <default>false</default>
+                <label>Faculty Professorships</label>
+            </value>
+            <value>
+                <fullName>Faculty Visiting Professorships</fullName>
+                <default>false</default>
+                <label>Faculty Visiting Professorships</label>
+            </value>
+            <value>
+                <fullName>Foundation Operation</fullName>
+                <default>false</default>
+                <label>Foundation Operation</label>
+            </value>
+            <value>
+                <fullName>General Support</fullName>
+                <default>false</default>
+                <label>General Support</label>
+            </value>
+            <value>
+                <fullName>Graduate Fellowships</fullName>
+                <default>false</default>
+                <label>Graduate Fellowships</label>
+            </value>
+            <value>
+                <fullName>Graduate Scholarships</fullName>
+                <default>false</default>
+                <label>Graduate Scholarships</label>
+            </value>
+            <value>
+                <fullName>Lectureships and Seminars</fullName>
+                <default>false</default>
+                <label>Lectureships and Seminars</label>
+            </value>
+            <value>
+                <fullName>Library Materials</fullName>
+                <default>false</default>
+                <label>Library Materials</label>
+            </value>
+            <value>
+                <fullName>Museums Acquisitions</fullName>
+                <default>false</default>
+                <label>Museums Acquisitions</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Student Support</fullName>
+                <default>false</default>
+                <label>Other Student Support</label>
+            </value>
+            <value>
+                <fullName>Physical Plant</fullName>
+                <default>false</default>
+                <label>Physical Plant</label>
+            </value>
+            <value>
+                <fullName>Program Support</fullName>
+                <default>false</default>
+                <label>Program Support</label>
+            </value>
+            <value>
+                <fullName>Project Support</fullName>
+                <default>false</default>
+                <label>Project Support</label>
+            </value>
+            <value>
+                <fullName>Public Serv. &amp; Extension</fullName>
+                <default>false</default>
+                <label>Public Serv. &amp; Extension</label>
+            </value>
+            <value>
+                <fullName>Research - General</fullName>
+                <default>false</default>
+                <label>Research - General</label>
+            </value>
+            <value>
+                <fullName>Research - Organized</fullName>
+                <default>false</default>
+                <label>Research - Organized</label>
+            </value>
+            <value>
+                <fullName>Student Award</fullName>
+                <default>false</default>
+                <label>Student Award</label>
+            </value>
+            <value>
+                <fullName>Student Loan Funds</fullName>
+                <default>false</default>
+                <label>Student Loan Funds</label>
+            </value>
+            <value>
+                <fullName>Undergrad/Graduate Scholarships</fullName>
+                <default>false</default>
+                <label>Undergrad/Graduate Scholarships</label>
+            </value>
+            <value>
+                <fullName>Undergraduate Scholarships</fullName>
+                <default>false</default>
+                <label>Undergraduate Scholarships</label>
+            </value>
+            <value>
+                <fullName>Undesignated</fullName>
+                <default>false</default>
+                <label>Undesignated</label>
+            </value>
+            <value>
+                <fullName>Visiting Professorships</fullName>
+                <default>false</default>
+                <label>Visiting Professorships</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

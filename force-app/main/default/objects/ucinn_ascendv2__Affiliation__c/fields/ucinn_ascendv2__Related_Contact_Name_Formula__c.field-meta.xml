@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Related_Contact_Name_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISPICKVAL(ucinn_ascendv2__Contact__r.Salutation, &quot;&quot;)) , TEXT(ucinn_ascendv2__Contact__r.Salutation) &amp; &quot; &quot; &amp; ucinn_ascendv2__Contact__r.FirstName &amp; &quot; &quot; &amp; ucinn_ascendv2__Contact__r.LastName, ucinn_ascendv2__Contact__r.FirstName &amp; &quot; &quot; &amp; ucinn_ascendv2__Contact__r.LastName)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Related Constituent Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

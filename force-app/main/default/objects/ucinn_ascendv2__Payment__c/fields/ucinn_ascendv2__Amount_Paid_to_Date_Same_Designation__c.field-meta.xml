@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Amount_Paid_to_Date_Same_Designation__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Payment Amount or Face Value associated with this payment provided there is no designation mismatch between this payment and its parent Designation Detail record. Bascially it is Amount paid (or face value) for the same designation.</description>
+    <externalId>false</externalId>
+    <label>Amount Paid to Date (Same Designation)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

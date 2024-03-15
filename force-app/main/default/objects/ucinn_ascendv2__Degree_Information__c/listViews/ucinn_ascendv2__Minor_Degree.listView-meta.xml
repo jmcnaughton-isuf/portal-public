@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Minor_Degree</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Degree__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Minor_Code__c</columns>
+    <columns>ucinn_ascendv2__Minor_School_of_Study_Formula__c</columns>
+    <columns>ucinn_ascendv2__Degree_Code__c</columns>
+    <columns>ucinn_ascendv2__Degree_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ucinn_ascendv2__Minor_Code__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Minor Degree</label>
+</ListView>

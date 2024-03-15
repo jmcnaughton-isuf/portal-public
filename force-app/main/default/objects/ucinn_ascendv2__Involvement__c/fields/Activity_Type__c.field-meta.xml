@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Activity Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Academic Support</fullName>
+                <default>false</default>
+                <label>Academic Support</label>
+            </value>
+            <value>
+                <fullName>Instruction</fullName>
+                <default>false</default>
+                <label>Instruction</label>
+            </value>
+            <value>
+                <fullName>Institutional Support</fullName>
+                <default>false</default>
+                <label>Institutional Support</label>
+            </value>
+            <value>
+                <fullName>Public Service</fullName>
+                <default>false</default>
+                <label>Public Service</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+            <value>
+                <fullName>Student Financial Aid</fullName>
+                <default>false</default>
+                <label>Student Financial Aid</label>
+            </value>
+            <value>
+                <fullName>Scholarships &amp; Fellowships</fullName>
+                <default>false</default>
+                <label>Scholarships &amp; Fellowships</label>
+            </value>
+            <value>
+                <fullName>Student Services</fullName>
+                <default>false</default>
+                <label>Student Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

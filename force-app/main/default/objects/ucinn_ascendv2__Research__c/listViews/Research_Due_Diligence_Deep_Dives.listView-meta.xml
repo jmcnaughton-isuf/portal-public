@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Research_Due_Diligence_Deep_Dives</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Additional_Information__c</columns>
+    <columns>Description__c</columns>
+    <columns>Diligence_Deep_Dive__c</columns>
+    <columns>ucinn_ascendv2__Reactive_Research_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Diligence_Deep_Dive__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Acres__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Research Due Diligence Deep Dives</label>
+</ListView>

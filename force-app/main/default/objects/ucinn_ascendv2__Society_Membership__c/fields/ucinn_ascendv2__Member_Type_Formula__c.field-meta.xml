@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Member_Type_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Denotes if the member is an Organization or Constituent</description>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(ucinn_ascendv2__Contact__c) , &quot;Organization&quot; , &quot;Constituent&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Member Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

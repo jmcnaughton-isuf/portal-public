@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Insurance_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Insurance Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
+            <value>
+                <fullName>MGD PPO</fullName>
+                <default>false</default>
+                <label>MGD PPO</label>
+            </value>
+            <value>
+                <fullName>MGD HMO</fullName>
+                <default>false</default>
+                <label>MGD HMO</label>
+            </value>
+            <value>
+                <fullName>MCR MGD HMO SR</fullName>
+                <default>false</default>
+                <label>MCR MGD HMO SR</label>
+            </value>
+            <value>
+                <fullName>MCD MGD HBO</fullName>
+                <default>false</default>
+                <label>MCD MGD HBO</label>
+            </value>
+            <value>
+                <fullName>MGD OTHER</fullName>
+                <default>false</default>
+                <label>MGD OTHER</label>
+            </value>
+            <value>
+                <fullName>SELF PAY FLAT RATE</fullName>
+                <default>false</default>
+                <label>SELF PAY FLAT RATE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

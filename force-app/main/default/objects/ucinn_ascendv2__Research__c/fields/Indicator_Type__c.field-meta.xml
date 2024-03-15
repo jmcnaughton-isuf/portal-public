@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indicator_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Indicator Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Art Collector</fullName>
+                <default>false</default>
+                <label>Art Collector</label>
+            </value>
+            <value>
+                <fullName>Elite Philanthropist</fullName>
+                <default>false</default>
+                <label>Elite Philanthropist</label>
+            </value>
+            <value>
+                <fullName>Equestrian Hobbyist</fullName>
+                <default>false</default>
+                <label>Equestrian Hobbyist</label>
+            </value>
+            <value>
+                <fullName>High Liquidity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>High Liquidity</label>
+            </value>
+            <value>
+                <fullName>Inheritor of Wealth</fullName>
+                <default>false</default>
+                <label>Inheritor of Wealth</label>
+            </value>
+            <value>
+                <fullName>International Property</fullName>
+                <default>false</default>
+                <label>International Property</label>
+            </value>
+            <value>
+                <fullName>Luxury Hobbies/Goods</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Luxury Hobbies/Goods</label>
+            </value>
+            <value>
+                <fullName>Luxury Transportation</fullName>
+                <default>false</default>
+                <label>Luxury Transportation</label>
+            </value>
+            <value>
+                <fullName>Patent Holder</fullName>
+                <default>false</default>
+                <label>Patent Holder</label>
+            </value>
+            <value>
+                <fullName>Private Business Owner</fullName>
+                <default>false</default>
+                <label>Private Business Owner</label>
+            </value>
+            <value>
+                <fullName>Private Company Investor</fullName>
+                <default>false</default>
+                <label>Private Company Investor</label>
+            </value>
+            <value>
+                <fullName>Senior Level Title</fullName>
+                <default>false</default>
+                <label>Senior Level Title</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

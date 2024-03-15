@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__My_Sessions_Today</fullName>
+    <columns>Batch_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Pledge_Amount__c</columns>
+    <columns>ucinn_ascendv2__Gift_Pledge_Payment_Amount__c</columns>
+    <columns>ucinn_ascendv2__Session_Description__c</columns>
+    <columns>ucinn_ascendv2__New_Transaction_Formula__c</columns>
+    <columns>ucinn_ascendv2__Close_Session_Formula__c</columns>
+    <columns>ucinn_ascendv2__Pre_Balance_Report_Formula__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>My Sessions (Today)</label>
+</ListView>

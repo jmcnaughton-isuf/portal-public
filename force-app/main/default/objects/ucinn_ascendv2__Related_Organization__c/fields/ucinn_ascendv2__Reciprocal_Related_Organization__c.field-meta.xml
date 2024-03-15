@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Reciprocal_Related_Organization__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to reciprocal. Contains the opposite related org object with the roles switched.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Lookup to reciprocal. Contains the opposite related org object with the roles switched.</inlineHelpText>
+    <label>Reciprocal Related Organization</label>
+    <referenceTo>ucinn_ascendv2__Related_Organization__c</referenceTo>
+    <relationshipLabel>Related Organizations</relationshipLabel>
+    <relationshipName>Related_Orgs_Reciprocal_Related_Org</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
