@@ -5,6 +5,7 @@
     <label>ISU Connection</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>MultiselectPicklist</type>
     <valueSet>
@@ -80,6 +81,11 @@
                 <fullName>Ad Hoc Member</fullName>
                 <default>false</default>
                 <label>Ad Hoc Member</label>
+            </value>
+            <value>
+                <fullName>Company Contact</fullName>
+                <default>false</default>
+                <label>Company Contact</label>
             </value>
         </valueSetDefinition>
     </valueSet>

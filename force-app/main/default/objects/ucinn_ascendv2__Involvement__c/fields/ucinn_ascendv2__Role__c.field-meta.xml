@@ -112,6 +112,11 @@
                 <label>Member</label>
             </value>
             <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
                 <fullName>Permanent Medical</fullName>
                 <default>false</default>
                 <label>Permanent Medical</label>
@@ -130,6 +135,11 @@
                 <fullName>Secretary</fullName>
                 <default>false</default>
                 <label>Secretary</label>
+            </value>
+            <value>
+                <fullName>Small Group Leader</fullName>
+                <default>false</default>
+                <label>Small Group Leader</label>
             </value>
             <value>
                 <fullName>Subcommittee Member</fullName>

@@ -10,6 +10,14 @@
     <columns>ucinn_ascendv2__Suffix__c</columns>
     <columns>ucinn_ascendv2__Type__c</columns>
     <columns>LAST_UPDATE</columns>
+    <columns>Matching_Key_Value_1__c</columns>
+    <columns>Matching_Key_Value_2__c</columns>
+    <columns>Matching_Key_Value_3__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
     <label>All</label>
 </ListView>

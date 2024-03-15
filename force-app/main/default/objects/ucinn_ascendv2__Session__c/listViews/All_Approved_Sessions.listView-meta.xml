@@ -20,7 +20,7 @@
     <filters>
         <field>ucinn_ascendv2__Session_Operator_Assigned__c</field>
         <operation>notEqual</operation>
-        <value>UC Innovation</value>
+        <value>UC Innovation,Salesforce API</value>
     </filters>
     <filters>
         <field>ucinn_ascendv2__Session_Totals_Approved__c</field>

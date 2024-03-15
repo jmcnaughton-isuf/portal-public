@@ -10,7 +10,7 @@
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
-            <sorted>false</sorted>
+            <sorted>true</sorted>
             <value>
                 <fullName>Alumni Association Mailings</fullName>
                 <default>false</default>
@@ -32,14 +32,14 @@
                 <label>Governor Mailings</label>
             </value>
             <value>
-                <fullName>Professional Advisor</fullName>
-                <default>false</default>
-                <label>Professional Advisor</label>
-            </value>
-            <value>
                 <fullName>Pledge Reminders</fullName>
                 <default>false</default>
                 <label>Pledge Reminders</label>
+            </value>
+            <value>
+                <fullName>Professional Advisor</fullName>
+                <default>false</default>
+                <label>Professional Advisor</label>
             </value>
             <value>
                 <fullName>Prospectus Magazine</fullName>
@@ -55,6 +55,11 @@
                 <fullName>Reiman Gardens</fullName>
                 <default>false</default>
                 <label>Reiman Gardens</label>
+            </value>
+            <value>
+                <fullName>Ticketmaster_</fullName>
+                <default>false</default>
+                <label>Ticketmaster</label>
             </value>
         </valueSetDefinition>
     </valueSet>

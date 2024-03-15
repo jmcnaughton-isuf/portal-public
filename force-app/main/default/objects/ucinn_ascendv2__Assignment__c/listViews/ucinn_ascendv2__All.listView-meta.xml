@@ -16,11 +16,16 @@
     <filters>
         <field>ucinn_ascendv2__Assignment_Type__c</field>
         <operation>equals</operation>
-        <value>Primary Relationship Manager</value>
+        <value>Secondary Relationship Manager</value>
     </filters>
     <filters>
         <field>ucinn_ascendv2__Assignment_End_Date__c</field>
         <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Assigned_Relationship_Manager_User__c</field>
+        <operation>contains</operation>
+        <value>harms</value>
     </filters>
     <label>All</label>
 </ListView>

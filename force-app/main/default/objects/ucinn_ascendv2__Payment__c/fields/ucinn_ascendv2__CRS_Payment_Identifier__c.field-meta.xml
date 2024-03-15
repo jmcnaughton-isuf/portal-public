@@ -2,9 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ucinn_ascendv2__CRS_Payment_Identifier__c</fullName>
     <deprecated>false</deprecated>
+    <description>Network Transaction ID of the payment used for performing merchant-initiated transactions in the future.</description>
     <externalId>false</externalId>
-    <label>CRS Payment Identifier (DEPRECATED)</label>
-    <length>100</length>
+    <label>Payment Network Transaction ID</label>
+    <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

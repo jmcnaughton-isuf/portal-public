@@ -4,7 +4,7 @@
     <deprecated>false</deprecated>
     <description>Giving Society Member - Formula field to put Constituent or Organization Name</description>
     <externalId>false</externalId>
-    <formula>IF( ISBLANK( ucinn_ascendv2__Contact__r.ucinn_ascendv2__Full_Name_Formula__c ) ,   ucinn_ascendv2__Account__r.Name  ,  ucinn_ascendv2__Contact__r.ucinn_ascendv2__Full_Name_Formula__c )</formula>
+    <formula>IF( ISBLANK( ucinn_ascendv2__Contact__c ) ,   ucinn_ascendv2__Account__r.Name  ,  ucinn_ascendv2__Contact__r.ucinn_ascendv2__Full_Name_Formula__c )</formula>
     <label>Member</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

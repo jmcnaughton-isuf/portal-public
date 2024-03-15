@@ -18,23 +18,13 @@
     <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>RECORDTYPE</field>
-        <operation>equals</operation>
-        <value>ucinn_ascendv2__Service_Indicator__c.ucinn_ascendv2__Contact_Service_Indicator</value>
-    </filters>
-    <filters>
-        <field>ucinn_ascendv2__Service_Indicator_Value__c</field>
-        <operation>equals</operation>
-        <value>Include Contact</value>
-    </filters>
-    <filters>
         <field>College__c</field>
-        <operation>contains</operation>
-        <value>Alumni</value>
+        <operation>equals</operation>
     </filters>
     <filters>
-        <field>Preferences__c</field>
+        <field>Donor_ID__c</field>
         <operation>equals</operation>
+        <value>900481443,900083225,900104698,900281384,900342033,900354752,900500727,900511553</value>
     </filters>
     <label>All</label>
 </ListView>

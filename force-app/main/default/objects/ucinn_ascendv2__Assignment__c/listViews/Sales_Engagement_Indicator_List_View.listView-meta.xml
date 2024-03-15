@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Engagement_Indicator_List_View</fullName>
+    <columns>NAME</columns>
+    <columns>ucinn_ascendv2__Assigned_Relationship_Manager_User__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
+    <columns>ucinn_ascendv2__Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Assignment_Type__c</columns>
+    <columns>ucinn_ascendv2__Assignment_Start_Date__c</columns>
+    <columns>ISUF_Sales_Engagement_Cadence_Indicator__c</columns>
+    <columns>ucinn_ascendv2__PRM_Formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ucinn_ascendv2__Assignment__c.ucinn_ascendv2__Contact_Assignment</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Assigned_Relationship_Manager_User__c</field>
+        <operation>contains</operation>
+        <value>kyven</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Assignment_Type__c</field>
+        <operation>equals</operation>
+        <value>Primary Relationship Manager</value>
+    </filters>
+    <label>Sales Engagement Indicator List View</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Expedited_GPv2_Default_1__c</fullName>
+    <deprecated>false</deprecated>
+    <description>xGPv2 default template based on transaction type</description>
+    <externalId>false</externalId>
+    <inlineHelpText>xGPv2 default template based on transaction type</inlineHelpText>
+    <label>Expedited GPv2 Default 1</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

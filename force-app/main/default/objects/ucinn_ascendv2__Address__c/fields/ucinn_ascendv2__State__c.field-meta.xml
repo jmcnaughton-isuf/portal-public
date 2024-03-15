@@ -3,6 +3,7 @@
     <fullName>ucinn_ascendv2__State__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
+    <inlineHelpText>abbreviate the state</inlineHelpText>
     <label>State</label>
     <length>255</length>
     <required>false</required>

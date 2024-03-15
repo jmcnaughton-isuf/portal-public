@@ -3,10 +3,11 @@
     <fullName>Affiliation_Clean_Up</fullName>
     <columns>NAME</columns>
     <columns>ucinn_ascendv2__Contact__c</columns>
-    <columns>ucinn_ascendv2__Constituent_Role__c</columns>
     <columns>ucinn_ascendv2__Account__c</columns>
+    <columns>ucinn_ascendv2__Status__c</columns>
     <columns>ucinn_ascendv2__Account_Donor_ID_Formula__c</columns>
     <columns>Employer_Name__c</columns>
+    <columns>ucinn_ascendv2__Constituent_Role__c</columns>
     <columns>Occupation__c</columns>
     <columns>ucinn_ascendv2__Job_Title__c</columns>
     <columns>ucinn_ascendv2__Organization_Role__c</columns>
@@ -15,12 +16,11 @@
     <columns>ucinn_ascendv2__Is_Donor_Control__c</columns>
     <columns>ucinn_ascendv2__Is_Primary_Contact__c</columns>
     <columns>ucinn_ascendv2__Is_Employer_Formula__c</columns>
-    <columns>ucinn_ascendv2__Status__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>ucinn_ascendv2__Account_Donor_ID_Formula__c</field>
-        <operation>contains</operation>
-        <value>999159929,900373046</value>
+        <operation>equals</operation>
+        <value>920111048</value>
     </filters>
     <label>Affiliation Clean Up</label>
 </ListView>

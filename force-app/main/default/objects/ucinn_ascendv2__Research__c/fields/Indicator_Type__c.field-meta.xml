@@ -17,6 +17,18 @@
                 <label>Art Collector</label>
             </value>
             <value>
+                <fullName>Business Owner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Owner</label>
+            </value>
+            <value>
+                <fullName>Company Founder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company Founder</label>
+            </value>
+            <value>
                 <fullName>Elite Philanthropist</fullName>
                 <default>false</default>
                 <label>Elite Philanthropist</label>
@@ -56,11 +68,13 @@
             <value>
                 <fullName>Patent Holder</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Patent Holder</label>
             </value>
             <value>
                 <fullName>Private Business Owner</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Private Business Owner</label>
             </value>
             <value>
@@ -72,6 +86,11 @@
                 <fullName>Senior Level Title</fullName>
                 <default>false</default>
                 <label>Senior Level Title</label>
+            </value>
+            <value>
+                <fullName>Trust Association</fullName>
+                <default>false</default>
+                <label>Trust Association</label>
             </value>
         </valueSetDefinition>
     </valueSet>

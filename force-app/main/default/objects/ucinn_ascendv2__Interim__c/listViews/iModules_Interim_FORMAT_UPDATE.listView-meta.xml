@@ -32,5 +32,10 @@
         <operation>equals</operation>
         <value>ucinn_ascendv2__Interim__c.iModules_Interface</value>
     </filters>
+    <filters>
+        <field>RT_Data_Source__c</field>
+        <operation>notEqual</operation>
+        <value>ScaleFunder</value>
+    </filters>
     <label>iModules Interim FORMAT UPDATE</label>
 </ListView>

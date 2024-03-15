@@ -18,9 +18,14 @@
     <columns>ucinn_ascendv2__Is_Employer_Formula__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>ucinn_ascendv2__Account_Donor_ID_Formula__c</field>
-        <operation>contains</operation>
-        <value>999147850,999143466</value>
+        <field>ucinn_ascendv2__Account__c</field>
+        <operation>equals</operation>
+        <value>NON-ID company</value>
+    </filters>
+    <filters>
+        <field>Employer_Name__c</field>
+        <operation>equals</operation>
+        <value>Olsson Associates</value>
     </filters>
     <label>Amy Affiliation Clean Up</label>
 </ListView>

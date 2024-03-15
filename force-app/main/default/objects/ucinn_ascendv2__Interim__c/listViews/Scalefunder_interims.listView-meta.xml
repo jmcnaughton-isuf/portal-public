@@ -3,6 +3,7 @@
     <fullName>Scalefunder_interims</fullName>
     <columns>NAME</columns>
     <columns>ucinn_ascendv2__Status__c</columns>
+    <columns>ucinn_ascendv2__Contact__c</columns>
     <columns>Managed_formula__c</columns>
     <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
     <columns>ucinn_ascendv2__First_Name__c</columns>
@@ -11,11 +12,10 @@
     <columns>ucinn_ascendv2__Address_1_Line_2__c</columns>
     <columns>ucinn_ascendv2__City_1__c</columns>
     <columns>ucinn_ascendv2__State_1__c</columns>
-    <columns>ucinn_ascendv2__Postal_Code_1__c</columns>
     <columns>ucinn_ascendv2__Donor_ID__c</columns>
-    <columns>ucinn_ascendv2__Contact__c</columns>
     <columns>LAST_UPDATE</columns>
     <columns>CREATED_DATE</columns>
+    <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>
@@ -29,8 +29,8 @@
     </filters>
     <filters>
         <field>ucinn_ascendv2__Status__c</field>
-        <operation>equals</operation>
-        <value>New,Manual Review</value>
+        <operation>notEqual</operation>
+        <value>Completed</value>
     </filters>
     <label>Scalefunder interims</label>
 </ListView>

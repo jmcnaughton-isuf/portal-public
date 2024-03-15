@@ -24,9 +24,9 @@
                 <label>Blogger</label>
             </value>
             <value>
-                <fullName>Facebook Address</fullName>
+                <fullName>Facebook</fullName>
                 <default>false</default>
-                <label>Facebook Address</label>
+                <label>Facebook</label>
             </value>
             <value>
                 <fullName>Flickr</fullName>
@@ -34,9 +34,9 @@
                 <label>Flickr</label>
             </value>
             <value>
-                <fullName>Instagram</fullName>
+                <fullName>Instagram/Threads</fullName>
                 <default>false</default>
-                <label>Instagram</label>
+                <label>Instagram/Threads</label>
             </value>
             <value>
                 <fullName>Line</fullName>
@@ -45,9 +45,9 @@
                 <label>Line</label>
             </value>
             <value>
-                <fullName>LinkedIn Address</fullName>
+                <fullName>LinkedIn</fullName>
                 <default>false</default>
-                <label>LinkedIn Address</label>
+                <label>LinkedIn</label>
             </value>
             <value>
                 <fullName>Pinterest</fullName>
@@ -66,14 +66,19 @@
                 <label>SnapChat</label>
             </value>
             <value>
-                <fullName>Twitter Handle</fullName>
+                <fullName>Twitter</fullName>
                 <default>false</default>
-                <label>Twitter Handle</label>
+                <label>Twitter</label>
             </value>
             <value>
-                <fullName>Website</fullName>
+                <fullName>Twitter/X</fullName>
                 <default>false</default>
-                <label>Website</label>
+                <label>Twitter/X</label>
+            </value>
+            <value>
+                <fullName>Website/URL</fullName>
+                <default>false</default>
+                <label>Website/URL</label>
             </value>
             <value>
                 <fullName>WeChat</fullName>

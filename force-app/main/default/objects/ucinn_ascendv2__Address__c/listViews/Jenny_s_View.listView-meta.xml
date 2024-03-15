@@ -11,14 +11,9 @@
     <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>RECORDTYPE</field>
+        <field>ucinn_ascendv2__Country__c</field>
         <operation>equals</operation>
-        <value>ucinn_ascendv2__Address__c.Permanent</value>
-    </filters>
-    <filters>
-        <field>ucinn_ascendv2__Address_Line_1__c</field>
-        <operation>contains</operation>
-        <value>dc</value>
+        <value>Puerto Rico</value>
     </filters>
     <label>Jenny&apos;s View</label>
 </ListView>

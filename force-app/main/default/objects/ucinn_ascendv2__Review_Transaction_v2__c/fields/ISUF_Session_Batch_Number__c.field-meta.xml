@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUF_Session_Batch_Number__c</fullName>
+    <description>Pulls the batch number from the parent session down to the RT row, Intially added for RT rows that came from donor portal giving pages as they come in with a bank batch number and its set on the session itself instead.</description>
+    <externalId>false</externalId>
+    <formula>ucinn_ascendv2__Session__r.Batch_Number__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Session Batch Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

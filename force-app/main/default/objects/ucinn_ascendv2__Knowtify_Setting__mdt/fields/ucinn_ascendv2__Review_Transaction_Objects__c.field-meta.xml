@@ -6,7 +6,7 @@
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <inlineHelpText>JSON Map of objects to check for critical information as well as what fields to display.</inlineHelpText>
-    <label>Review Transaction Objects</label>
+    <label>Review Transaction (v2) Objects</label>
     <length>32768</length>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

@@ -4,7 +4,7 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>Foundation Funding Interest</label>
+    <label>Funding Interest Value</label>
     <referenceTo>ucinn_ascendv2__Foundation_Funding_Interests__c</referenceTo>
     <relationshipLabel>Funding Interests</relationshipLabel>
     <relationshipName>Funding_Interests_Fdn_Funding_Interest</relationshipName>

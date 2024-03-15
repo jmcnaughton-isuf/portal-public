@@ -3,6 +3,7 @@
     <fullName>ucinn_ascendv2__Country__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
+    <inlineHelpText>Spell it out, no abbreviations</inlineHelpText>
     <label>Country</label>
     <length>255</length>
     <required>false</required>

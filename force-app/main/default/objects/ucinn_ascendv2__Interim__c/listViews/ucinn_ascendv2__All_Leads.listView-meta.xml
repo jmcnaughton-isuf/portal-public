@@ -17,10 +17,5 @@
     <columns>CREATED_DATE</columns>
     <columns>ucinn_ascendv2__Business_Title__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>ucinn_ascendv2__Contact__c</field>
-        <operation>contains</operation>
-        <value>Sivac</value>
-    </filters>
     <label>All Interims</label>
 </ListView>

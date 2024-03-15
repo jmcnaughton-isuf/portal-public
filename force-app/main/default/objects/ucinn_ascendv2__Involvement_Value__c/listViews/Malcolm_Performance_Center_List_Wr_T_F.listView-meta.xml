@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Malcolm_Performance_Center_List_Wr_T_F</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>MTO,MTI,MCC,SPTRK,MWR,SPWRS,WTO,WTI,WCC</value>
+    </filters>
+    <label>Malcolm Performance Center List - Wr/T/F</label>
+</ListView>

@@ -309,6 +309,10 @@
     <picklistValues>
         <picklist>Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -345,6 +349,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -378,6 +386,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>

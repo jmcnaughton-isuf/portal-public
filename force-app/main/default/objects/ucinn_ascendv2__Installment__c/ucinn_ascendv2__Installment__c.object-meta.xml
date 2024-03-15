@@ -170,6 +170,8 @@
         <excludedStandardButtons>PrintableListView</excludedStandardButtons>
         <excludedStandardButtons>IsotopeSubscription</excludedStandardButtons>
         <listViewButtons>Pledge_Reminder_Report</listViewButtons>
+        <searchResultsAdditionalFields>ucinn_ascendv2__Designation_Detail__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ucinn_ascendv2__Opportunity__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>

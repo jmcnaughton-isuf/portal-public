@@ -36,5 +36,10 @@
         <field>ucinn_ascendv2__Session_Totals_Approved__c</field>
         <operation>equals</operation>
     </filters>
+    <filters>
+        <field>Batch_Number__c</field>
+        <operation>notEqual</operation>
+        <value>9950,9951,9952</value>
+    </filters>
     <label>Sessions Needing Approval</label>
 </ListView>

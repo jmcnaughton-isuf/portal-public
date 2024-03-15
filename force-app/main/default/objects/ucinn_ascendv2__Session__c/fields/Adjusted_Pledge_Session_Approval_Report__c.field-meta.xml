@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Adjusted_Pledge_Session_Approval_Report__c</fullName>
     <externalId>false</externalId>
-    <formula>HYPERLINK(&apos;https://isuf.lightning.force.com/lightning/r/Report/00O2E000009fGnkUAE/view?fv1=&apos;&amp; Id, &quot;Pledge Adjustment Batch Approval Report&quot;)</formula>
+    <formula>HYPERLINK(&apos;https://isuf.lightning.force.com/lightning/r/Report/00ONu000000Ns7lMAC/view?fv0=&apos;&amp; Id &amp; &apos;&amp;fv1=&apos; &amp; Id, &quot;Pledge Adjustment Batch Approval Report&quot;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Adjusted Pledge Session Approval Report</label>
     <required>false</required>

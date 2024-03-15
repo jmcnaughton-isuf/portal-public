@@ -7,16 +7,20 @@
     <formula>OR(
  OR(
    AND(
+     NOT(ISBLANK(ucinn_ascendv2__Contact__c)),
      ISBLANK(ucinn_ascendv2__Contact__r.ucinn_ascendv2__Giving_Summary_Last_Updated__c),
      ucinn_ascendv2__Session__r.ucinn_ascendv2__Is_Ready_for_G_L__c),
    AND(
+     NOT(ISBLANK(ucinn_ascendv2__Contact__c)),
      ucinn_ascendv2__Session__r.ucinn_ascendv2__Is_Ready_for_G_L__c,
      ucinn_ascendv2__Contact__r.ucinn_ascendv2__Giving_Summary_Last_Updated__c &lt; ucinn_ascendv2__Session__r.ucinn_ascendv2__Session_Completed__c)),
  OR(
    AND(
+     NOT(ISBLANK(ucinn_ascendv2__Account__c)),
      ISBLANK(ucinn_ascendv2__Account__r.ucinn_ascendv2__Giving_Summary_Last_Updated__c),
      ucinn_ascendv2__Session__r.ucinn_ascendv2__Is_Ready_for_G_L__c),
    AND(
+     NOT(ISBLANK(ucinn_ascendv2__Account__c)),
      ucinn_ascendv2__Session__r.ucinn_ascendv2__Is_Ready_for_G_L__c,
      ucinn_ascendv2__Account__r.ucinn_ascendv2__Giving_Summary_Last_Updated__c &lt; ucinn_ascendv2__Session__r.ucinn_ascendv2__Session_Completed__c)))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

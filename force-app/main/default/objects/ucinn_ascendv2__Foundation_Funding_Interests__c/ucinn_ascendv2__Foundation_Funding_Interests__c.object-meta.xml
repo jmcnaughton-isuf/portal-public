@@ -154,14 +154,14 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
-    <label>Foundation Funding Interest</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Funding Interest Value</label>
     <nameField>
-        <label>Foundation Funding Interest Name</label>
+        <label>Funding Interest Value Name</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Foundation Funding Interests</pluralLabel>
+    <pluralLabel>Funding Interest Values</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

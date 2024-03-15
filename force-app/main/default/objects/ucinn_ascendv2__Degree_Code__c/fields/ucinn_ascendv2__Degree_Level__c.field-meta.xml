@@ -47,6 +47,11 @@
                 <default>false</default>
                 <label>Miscellaneous</label>
             </value>
+            <value>
+                <fullName>Other Degree</fullName>
+                <default>false</default>
+                <label>Other Degree</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -8,7 +8,7 @@
     <label>Low Value On Date</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>6</scale>
     <trackTrending>false</trackTrending>
     <type>Currency</type>
 </CustomField>

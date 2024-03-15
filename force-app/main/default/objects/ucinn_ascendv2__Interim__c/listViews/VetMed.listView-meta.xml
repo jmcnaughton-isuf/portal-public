@@ -24,8 +24,8 @@
     </filters>
     <filters>
         <field>CREATED_DATE</field>
-        <operation>equals</operation>
-        <value>TODAY</value>
+        <operation>greaterThan</operation>
+        <value>10/9/2023 12:00 AM</value>
     </filters>
     <label>VetMed</label>
 </ListView>

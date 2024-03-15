@@ -22,10 +22,5 @@
         <operation>equals</operation>
         <value>active</value>
     </filters>
-    <filters>
-        <field>ucinn_ascendv2__Department_Formula__c</field>
-        <operation>contains</operation>
-        <value>clinical sciences</value>
-    </filters>
     <label>All</label>
 </ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Non_Gift_Amount_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF ( CONTAINS( ucinn_ascendv2__Gift_Type_Formula__c, &apos;Payment&apos;), ucinn_ascendv2__Payment__r.ucinn_ascendv2__Non_Gift_Amount__c,  ucinn_ascendv2__Opportunity__r.ucinn_ascendv2__Non_Gift_Amount_Roll_Up__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Non Gift Amount Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

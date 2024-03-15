@@ -3,7 +3,7 @@
     <fullName>Default_Annual_Reporting_Footnotes__c</fullName>
     <description>Default award notes for funds that have an award amount, used in the full footnotes field on donor and contacts and can also be overridden there if needed.  This is concatenated with fund.custom footnotes on the donor contact full foot notes field.</description>
     <externalId>false</externalId>
-    <formula>IF( OR(Current_Award_Year_Amount__c = 0, Remove_Annual_Reporting_Default_Footnote__c = TRUE), &apos;&apos; , &apos;As of 9/01/2022, $&apos; &amp; TEXT(Current_Award_Year_Amount__c) &amp; &apos; has been awarded for the 2022-2023 school year.&apos;)</formula>
+    <formula>IF( OR(Current_Award_Year_Amount__c = 0, Remove_Annual_Reporting_Default_Footnote__c = TRUE), &apos;&apos; , &apos;As of 9/01/2023, $&apos; &amp; TEXT(Current_Award_Year_Amount__c) &amp; &apos; has been awarded for the 2023-2024 school year.&apos;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Default Annual Reporting Footnotes</label>
     <required>false</required>

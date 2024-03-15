@@ -3,6 +3,7 @@
     <fullName>All_Membership_Levels</fullName>
     <columns>NAME</columns>
     <columns>Level_Code__c</columns>
+    <columns>ucinn_ascendv2__Giving_Society__c</columns>
     <filterScope>Everything</filterScope>
     <label>All Membership Levels</label>
 </ListView>

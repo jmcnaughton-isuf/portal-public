@@ -10,11 +10,18 @@
     <columns>ucinn_ascendv2__Contact__c</columns>
     <columns>ucinn_ascendv2__Account__c</columns>
     <columns>NAME</columns>
+    <columns>Two_Way_Exchange__c</columns>
+    <columns>ucinn_ascendv2__Is_Substantive_Contact__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Contact_Managers__c</field>
+        <field>ucinn_ascendv2__Date__c</field>
+        <operation>equals</operation>
+        <value>9/29/2023</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
         <operation>contains</operation>
-        <value>Baccam,Turnquist,Hepworth</value>
+        <value>laumer</value>
     </filters>
     <label>All</label>
 </ListView>

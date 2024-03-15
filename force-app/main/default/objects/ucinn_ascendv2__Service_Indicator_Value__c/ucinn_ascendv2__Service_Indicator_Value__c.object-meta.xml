@@ -168,6 +168,6 @@
         <lookupPhoneDialogsAdditionalFields>ucinn_ascendv2__Code__c</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ucinn_ascendv2__Code__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

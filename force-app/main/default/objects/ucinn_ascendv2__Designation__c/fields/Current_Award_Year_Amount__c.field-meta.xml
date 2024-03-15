@@ -7,7 +7,7 @@
     <summaryFilterItems>
         <field>Scholarship_Award__c.SCHLRSHP_SEM_CCYY__c</field>
         <operation>equals</operation>
-        <value>2022</value>
+        <value>2023</value>
     </summaryFilterItems>
     <summaryForeignKey>Scholarship_Award__c.FUND_ACCT__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>

@@ -137,6 +137,113 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>NTEE_Codes__c</picklist>
+        <values>
+            <fullName>A - Art%2C Culture%2C and Humanities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B - Education Institutions and Related Activities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C - Environmental Quality Protection and Beautification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D - Animal Related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E - Health General and Rehabilitative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F - Mental Health Crisis Intervention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G - Disease Disorders Medical Disciplines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H - Medical Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I - Crime Legal Related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>J - Employment Job Related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>K - Food Agriculture and Nutrition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L - Housing Shelter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M - Public Safety Disaster Preparedness and Relief</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N - Recreation Sports Leisure Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O - Youth Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P - Human Services Multipurpose and other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q - International Foreign Affairs and National Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R - Civil Rights Social Action Advocacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S - Community Improvement Capacity Building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T - Philanthropy Voluntarism and Grant making Foundations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U - Science and Technology Research Institutes Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V - Social Science Research Institutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W - Public Society Benefit Multipurpose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X - Religion Related Spiritual Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y - Mutual%2C Membership Benefit Organizations%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Z - Internal Use</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Peer_Screening_Time_Frame__c</picklist>
         <values>
             <fullName>2006-2012</fullName>
@@ -216,6 +323,29 @@
         </values>
         <values>
             <fullName>Y</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Regional_Focus__c</picklist>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State</fullName>
             <default>false</default>
         </values>
     </picklistValues>

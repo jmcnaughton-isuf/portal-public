@@ -22,10 +22,5 @@
         <operation>equals</operation>
         <value>ucinn_ascendv2__Interim__c.Campus_Call</value>
     </filters>
-    <filters>
-        <field>ucinn_ascendv2__Status__c</field>
-        <operation>notEqual</operation>
-        <value>Completed</value>
-    </filters>
     <label>Call Center Interims</label>
 </ListView>

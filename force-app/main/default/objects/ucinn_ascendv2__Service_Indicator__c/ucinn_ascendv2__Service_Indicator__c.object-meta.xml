@@ -151,7 +151,7 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
@@ -179,6 +179,6 @@
         <searchResultsAdditionalFields>ucinn_ascendv2__Start_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ucinn_ascendv2__End_Date__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

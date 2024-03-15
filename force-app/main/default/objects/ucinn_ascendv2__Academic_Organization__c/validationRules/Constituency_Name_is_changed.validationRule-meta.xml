@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constituency_Name_is_changed</fullName>
+    <active>true</active>
+    <description>This field should not be changed.</description>
+    <errorConditionFormula>ISCHANGED(Name) &amp;&amp;  $Profile.Name != &apos;System Administrator&apos;</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>You are trying to change the Name field. This should not be changed, please ensure it is reverted to its original Name.</errorMessage>
+</ValidationRule>

@@ -12,11 +12,14 @@
     <columns>ucinn_ascendv2__Status__c</columns>
     <columns>ISUF_Is_Preferred__c</columns>
     <columns>Occupation_Type__c</columns>
+    <columns>ucinn_ascendv2__Start_Date__c</columns>
+    <columns>ucinn_ascendv2__End_Date__c</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>ISU_Connection__c</field>
-        <operation>includes</operation>
-        <value>Sponsorship contact</value>
+        <field>ucinn_ascendv2__Constituent_Role__c</field>
+        <operation>equals</operation>
+        <value>Contact of Company</value>
     </filters>
     <label>For Jenny Review</label>
     <sharedTo>

@@ -991,5 +991,20 @@
             <fullName>Active</fullName>
             <default>true</default>
         </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_portal_Type__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lifetime</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
 </RecordType>

@@ -3,6 +3,7 @@
     <fullName>ucinn_ascendv2__Is_Installments_Paying_Splits_Enabled__c</fullName>
     <defaultValue>false</defaultValue>
     <deprecated>false</deprecated>
+    <description>When checked, if multiple installments have the same designation and expected dates, split the payment amount between those installments.</description>
     <externalId>false</externalId>
     <label>Is Installments Paying Splits Enabled</label>
     <trackTrending>false</trackTrending>

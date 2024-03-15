@@ -30,7 +30,7 @@
     <filters>
         <field>ucinn_ascendv2__Expected_Date__c</field>
         <operation>lessThan</operation>
-        <value>2/15/2023</value>
+        <value>10/31/2023</value>
     </filters>
     <filters>
         <field>ucinn_ascendv2__Opportunity__c</field>
@@ -55,7 +55,7 @@
     <filters>
         <field>Reminder_Sent_Date__c</field>
         <operation>notEqual</operation>
-        <value>3/10/2023</value>
+        <value>10/17/2023</value>
     </filters>
     <filters>
         <field>Ignore__c</field>

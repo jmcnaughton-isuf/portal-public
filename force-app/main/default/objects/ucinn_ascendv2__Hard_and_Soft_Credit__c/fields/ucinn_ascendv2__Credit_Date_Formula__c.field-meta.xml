@@ -3,7 +3,12 @@
     <fullName>ucinn_ascendv2__Credit_Date_Formula__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>IF( ISBLANK(ucinn_ascendv2__Payment__c) , ucinn_ascendv2__Opportunity__r.ucinn_ascendv2__Credit_Date__c, ucinn_ascendv2__Payment__r.ucinn_ascendv2__Credit_Date__c)</formula>
+    <formula>IF ((CONTAINS(ucinn_ascendv2__Gift_Type_Formula__c, &apos;Payment&apos;)),
+
+ucinn_ascendv2__Payment__r.ucinn_ascendv2__Credit_Date__c,
+
+ucinn_ascendv2__Opportunity__r.ucinn_ascendv2__Credit_Date__c
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Credit Date</label>
     <required>false</required>

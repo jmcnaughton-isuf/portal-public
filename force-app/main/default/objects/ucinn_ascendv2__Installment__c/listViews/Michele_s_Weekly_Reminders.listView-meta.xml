@@ -46,12 +46,12 @@
     <filters>
         <field>ucinn_ascendv2__Expected_Date__c</field>
         <operation>greaterOrEqual</operation>
-        <value>3/16/2023</value>
+        <value>11/1/2023</value>
     </filters>
     <filters>
         <field>ucinn_ascendv2__Expected_Date__c</field>
         <operation>lessOrEqual</operation>
-        <value>3/31/2023</value>
+        <value>11/15/2023</value>
     </filters>
     <label>Michele&apos;s Weekly Reminders</label>
 </ListView>

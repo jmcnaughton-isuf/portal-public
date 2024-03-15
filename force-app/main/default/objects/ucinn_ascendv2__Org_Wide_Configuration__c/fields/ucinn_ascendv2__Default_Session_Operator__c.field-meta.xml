@@ -3,7 +3,7 @@
     <fullName>ucinn_ascendv2__Default_Session_Operator__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>Default Session Operator</label>
+    <label>Default Session Operator (DEPR)</label>
     <length>255</length>
     <required>false</required>
     <trackTrending>false</trackTrending>

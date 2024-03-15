@@ -30,7 +30,7 @@
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
-        <value>ucinn_ascendv2__Interim__c.Campus_Call,ucinn_ascendv2__Interim__c.Faculty_Staff,ucinn_ascendv2__Interim__c.NCOA,ucinn_ascendv2__Interim__c.Parent,ucinn_ascendv2__Interim__c.Registrar,ucinn_ascendv2__Interim__c.VetMed,ucinn_ascendv2__Interim__c.iModules_Web_Updates</value>
+        <value>ucinn_ascendv2__Interim__c.Campus_Call,ucinn_ascendv2__Interim__c.Faculty_Staff,ucinn_ascendv2__Interim__c.NCOA,ucinn_ascendv2__Interim__c.Parent,ucinn_ascendv2__Interim__c.Registrar,ucinn_ascendv2__Interim__c.Student,ucinn_ascendv2__Interim__c.VetMed,ucinn_ascendv2__Interim__c.iModules_Web_Updates</value>
     </filters>
     <filters>
         <field>RT_Data_Source__c</field>

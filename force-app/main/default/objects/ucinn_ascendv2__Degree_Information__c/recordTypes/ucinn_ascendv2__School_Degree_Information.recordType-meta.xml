@@ -5,6 +5,321 @@
     <description>Information about a degree which is from this university.</description>
     <label>School Degree Information</label>
     <picklistValues>
+        <picklist>Data_Source__c</picklist>
+        <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benevity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Vet Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact report content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development officer referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front Desk%2FGift Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influential ISU Faculty%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutionally Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided by constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ScaleFunder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Term_Picklist__c</picklist>
         <values>
             <fullName>Fall semester</fullName>
@@ -81,11 +396,19 @@
     <picklistValues>
         <picklist>ucinn_ascendv2__Degree__c</picklist>
         <values>
+            <fullName>Asc</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>BA</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>BS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cert</fullName>
             <default>false</default>
         </values>
         <values>
@@ -110,6 +433,10 @@
         </values>
         <values>
             <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
             <default>false</default>
         </values>
         <values>
@@ -141,6 +468,17 @@
         </values>
         <values>
             <fullName>Student Information System</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ucinn_portal_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
             <default>false</default>
         </values>
     </picklistValues>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_to_Spouse_Checkbox</fullName>
+    <active>false</active>
+    <description>Warning to remind user to check the copy to spouse checkbox if the related constituent role is child or grandchild</description>
+    <errorConditionFormula>AND(
+ISUF_Copy_to_Spouse_Immediate_FamRela__c = FALSE,
+OR
+				(TEXT(ucinn_ascendv2__Related_Contact_Role__c) = &apos;Child&apos;,
+					TEXT(ucinn_ascendv2__Related_Contact_Role__c) = &apos;Grandchild&apos;)
+)</errorConditionFormula>
+    <errorMessage>You selected Child/Step Child or Grandchild as the Related Constituent Role but did not select the Copy to Spouse checkbox. Please check that box so that the relationship will be automatically created on the spouse as well.</errorMessage>
+</ValidationRule>

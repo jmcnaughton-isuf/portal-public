@@ -17,6 +17,11 @@
                 <label>Alumni Association</label>
             </value>
             <value>
+                <fullName>Athletics External</fullName>
+                <default>false</default>
+                <label>Athletics External</label>
+            </value>
+            <value>
                 <fullName>College/Unit</fullName>
                 <default>false</default>
                 <label>College/Unit</label>

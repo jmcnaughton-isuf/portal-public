@@ -3,10 +3,10 @@
     <fullName>ucinn_ascendv2__Gift_Processing_Tab__c</fullName>
     <defaultValue>false</defaultValue>
     <deprecated>false</deprecated>
-    <description>Enable/Disable knowtify in Gift Processing module.</description>
+    <description>Enable/Disable Gift Processing tab.</description>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <inlineHelpText>Enable/Disable knowtify in Gift Processing module.</inlineHelpText>
-    <label>Enable in Gift Processing</label>
+    <label>Enable Gift Processing Tab</label>
     <type>Checkbox</type>
 </CustomField>

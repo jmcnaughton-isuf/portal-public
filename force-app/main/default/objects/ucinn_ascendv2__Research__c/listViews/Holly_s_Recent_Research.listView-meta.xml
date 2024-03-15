@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Holly_s_Recent_Research</fullName>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
     <columns>NAME</columns>
     <columns>ucinn_ascendv2__Contact__c</columns>
     <columns>CREATEDBY_USER</columns>
@@ -13,14 +15,14 @@
     <columns>Additional_Information__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>CREATEDBY_USER</field>
-        <operation>contains</operation>
-        <value>Helmer</value>
-    </filters>
-    <filters>
-        <field>CREATED_DATE</field>
+        <field>LAST_UPDATE</field>
         <operation>greaterThan</operation>
         <value>LAST_MONTH</value>
+    </filters>
+    <filters>
+        <field>UPDATEDBY_USER</field>
+        <operation>contains</operation>
+        <value>Helmer</value>
     </filters>
     <label>Holly&apos;s Recent Research</label>
 </ListView>

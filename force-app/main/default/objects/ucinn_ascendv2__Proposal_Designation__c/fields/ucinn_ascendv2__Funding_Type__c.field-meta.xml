@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Funding_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Funding Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Current Operations Restricted</fullName>
+                <default>false</default>
+                <label>Current Operations Restricted</label>
+            </value>
+            <value>
+                <fullName>Current Restricted</fullName>
+                <default>false</default>
+                <label>Current Restricted</label>
+            </value>
+            <value>
+                <fullName>Current Unrestricted</fullName>
+                <default>false</default>
+                <label>Current Unrestricted</label>
+            </value>
+            <value>
+                <fullName>Endowment Restricted</fullName>
+                <default>false</default>
+                <label>Endowment Restricted</label>
+            </value>
+            <value>
+                <fullName>Endowment Unrestricted</fullName>
+                <default>false</default>
+                <label>Endowment Unrestricted</label>
+            </value>
+            <value>
+                <fullName>Loan Funds</fullName>
+                <default>false</default>
+                <label>Loan Funds</label>
+            </value>
+            <value>
+                <fullName>Plant Funds</fullName>
+                <default>false</default>
+                <label>Plant Funds</label>
+            </value>
+            <value>
+                <fullName>Property, Buildings, Equipment</fullName>
+                <default>false</default>
+                <label>Property, Buildings, Equipment</label>
+            </value>
+            <value>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+                <label>Unrestricted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

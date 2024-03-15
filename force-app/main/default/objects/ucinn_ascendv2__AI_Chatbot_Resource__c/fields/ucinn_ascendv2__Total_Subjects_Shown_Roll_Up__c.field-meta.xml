@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Total_Subjects_Shown_Roll_Up__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Total Subjects Shown Roll Up</label>
+    <summaryFilterItems>
+        <field>ucinn_ascendv2__AI_Chatbot_Subject__c.ucinn_ascendv2__Is_Show_On_Chatbot__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ucinn_ascendv2__AI_Chatbot_Subject__c.ucinn_ascendv2__AI_Chatbot_Resource__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

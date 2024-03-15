@@ -7,7 +7,7 @@
     <fieldManageability>SubscriberControlled</fieldManageability>
     <inlineHelpText>Configuration pertaining to fields on the transaction entry layout that handle events.</inlineHelpText>
     <label>Field Change Event Handler Mapping</label>
-    <length>65536</length>
+    <length>131072</length>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>
 </CustomField>

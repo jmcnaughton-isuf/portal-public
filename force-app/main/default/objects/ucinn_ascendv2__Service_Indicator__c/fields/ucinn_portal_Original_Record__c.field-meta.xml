@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_portal_Original_Record__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Original Record</label>
+    <referenceTo>ucinn_ascendv2__Service_Indicator__c</referenceTo>
+    <relationshipLabel>Service Indicators</relationshipLabel>
+    <relationshipName>ucinn_portal_Service_Indicators</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

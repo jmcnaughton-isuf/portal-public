@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(ISPICKVAL(ucinn_ascendv2__Contact_Method__c, &quot;&quot;), ISNULL( ucinn_ascendv2__Date__c ), ISBLANK( Purpose__c ), ISNULL(  ucinn_ascendv2__Description__c ))</errorConditionFormula>
+    <errorMessage>Contact Method cannot be blank.</errorMessage>
+</ValidationRule>

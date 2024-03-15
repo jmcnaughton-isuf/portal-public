@@ -56,6 +56,17 @@
                 <default>false</default>
                 <label>Reiman Gardens</label>
             </value>
+            <value>
+                <fullName>Headquarters</fullName>
+                <default>false</default>
+                <label>Headquarters</label>
+            </value>
+            <value>
+                <fullName>address Type of Headquarters</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>address Type of Headquarters</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
     <visibleLines>4</visibleLines>

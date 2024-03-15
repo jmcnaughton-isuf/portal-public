@@ -3,7 +3,11 @@
     <fullName>ucinn_ascendv2__Tender_Type_Formula__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>TEXT(ucinn_ascendv2__Tender_Type_for_Pledges__c) &amp; TEXT(ucinn_ascendv2__Tender_Type_for_Gifts__c)</formula>
+    <formula>IF (NOT (ISBLANK (TEXT(ucinn_ascendv2__Tender_Type_for_Pledges__c))) ,
+  TEXT(ucinn_ascendv2__Tender_Type_for_Pledges__c)  ,
+    IF (NOT (ISBLANK (TEXT(ucinn_ascendv2__Tender_Type_for_Gifts__c))),
+      TEXT(ucinn_ascendv2__Tender_Type_for_Gifts__c) ,
+        NULL))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Tender Type</label>
     <required>false</required>

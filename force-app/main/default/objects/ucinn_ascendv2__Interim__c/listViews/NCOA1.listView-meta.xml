@@ -17,19 +17,14 @@
     <columns>Is_Preferred__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>CREATED_DATE</field>
-        <operation>equals</operation>
-        <value>3/17/2023 12:00 AM</value>
-    </filters>
-    <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
         <value>ucinn_ascendv2__Interim__c.NCOA</value>
     </filters>
     <filters>
-        <field>ucinn_ascendv2__New_Donor_ID_Formula__c</field>
+        <field>CREATED_DATE</field>
         <operation>equals</operation>
-        <value>999099182</value>
+        <value>TODAY</value>
     </filters>
     <label>NCOA</label>
 </ListView>

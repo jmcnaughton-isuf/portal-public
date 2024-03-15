@@ -26,6 +26,11 @@
                 <label>Atanasoff Today</label>
             </value>
             <value>
+                <fullName>CGA</fullName>
+                <default>false</default>
+                <label>CGA</label>
+            </value>
+            <value>
                 <fullName>Compassionate Client</fullName>
                 <default>false</default>
                 <label>Compassionate Client</label>
@@ -94,6 +99,11 @@
                 <fullName>Iowa Stater</fullName>
                 <default>false</default>
                 <label>Iowa Stater</label>
+            </value>
+            <value>
+                <fullName>IRA</fullName>
+                <default>false</default>
+                <label>IRA</label>
             </value>
             <value>
                 <fullName>ISU Retiree</fullName>

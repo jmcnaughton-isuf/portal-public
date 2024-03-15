@@ -14,7 +14,6 @@
     <filters>
         <field>Designation_Name__c</field>
         <operation>contains</operation>
-        <value>Coffman</value>
     </filters>
     <label>Faculty Positions</label>
 </ListView>

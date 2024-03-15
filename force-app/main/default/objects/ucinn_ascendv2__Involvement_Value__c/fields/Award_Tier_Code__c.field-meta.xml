@@ -42,8 +42,14 @@
                 <label>6-External Award</label>
             </value>
             <value>
+                <fullName>7-Undetermined</fullName>
+                <default>false</default>
+                <label>7-Undetermined</label>
+            </value>
+            <value>
                 <fullName>7-Misc ISU Awards</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>7-Misc ISU Awards</label>
             </value>
         </valueSetDefinition>

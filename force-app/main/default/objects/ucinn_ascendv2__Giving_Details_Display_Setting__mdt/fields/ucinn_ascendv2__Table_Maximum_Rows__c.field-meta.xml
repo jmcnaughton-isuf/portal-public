@@ -6,7 +6,7 @@
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <inlineHelpText>Limits the number of rows displayed in the associated pledge/gift table. Assign this a lower value if you see CPU timeout errors.</inlineHelpText>
-    <label>Table Maximum Rows</label>
+    <label>Table Maximum Rows (DEPRECATED)</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

@@ -154,7 +154,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Assignment</label>
     <nameField>
         <label>Assignment Name</label>
@@ -165,6 +165,7 @@
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <searchLayouts>
         <customTabListAdditionalFields>ucinn_ascendv2__Donor_ID_Formula__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <searchResultsAdditionalFields>ucinn_ascendv2__Contact__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ucinn_ascendv2__Donor_ID_Formula__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ucinn_ascendv2__Assigned_Relationship_Manager_User__c</searchResultsAdditionalFields>

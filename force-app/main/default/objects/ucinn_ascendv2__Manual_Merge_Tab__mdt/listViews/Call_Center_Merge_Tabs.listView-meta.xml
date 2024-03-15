@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Center_Merge_Tabs</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>ucinn_ascendv2__Order__c</columns>
+    <columns>ucinn_ascendv2__Source_Lookup_API_Name__c</columns>
+    <columns>ucinn_ascendv2__Source_SObject_Name__c</columns>
+    <columns>ucinn_ascendv2__Source_Type__c</columns>
+    <columns>ucinn_ascendv2__Target_Lookup_API_Name__c</columns>
+    <columns>ucinn_ascendv2__Target_SObject_Name__c</columns>
+    <columns>ucinn_ascendv2__Target_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DeveloperName</field>
+        <operation>contains</operation>
+        <value>Call_Center</value>
+    </filters>
+    <label>Call Center Merge Tabs</label>
+    <language>en_US</language>
+</ListView>

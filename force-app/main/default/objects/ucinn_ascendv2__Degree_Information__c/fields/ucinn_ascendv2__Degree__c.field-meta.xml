@@ -76,6 +76,21 @@
                 <default>false</default>
                 <label>LLB</label>
             </value>
+            <value>
+                <fullName>Asc</fullName>
+                <default>false</default>
+                <label>Asc</label>
+            </value>
+            <value>
+                <fullName>Cert</fullName>
+                <default>false</default>
+                <label>Cert</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

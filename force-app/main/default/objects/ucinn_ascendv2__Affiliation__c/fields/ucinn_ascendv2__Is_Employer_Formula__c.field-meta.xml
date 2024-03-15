@@ -6,6 +6,7 @@
     <formula>IF(OR((TEXT(ucinn_ascendv2__Organization_Role__c) = &apos;Retiree Employer&apos;), (TEXT(ucinn_ascendv2__Organization_Role__c) = &apos;Employer&apos; &amp;&amp; TEXT(ucinn_ascendv2__Status__c) = &apos;Current&apos;)), true, false)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Is Employer</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

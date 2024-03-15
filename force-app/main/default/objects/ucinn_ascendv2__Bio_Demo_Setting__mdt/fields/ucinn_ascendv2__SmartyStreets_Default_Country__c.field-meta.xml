@@ -6,7 +6,7 @@
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
     <inlineHelpText>Default country value for SmartyStreets international autocomplete.</inlineHelpText>
-    <label>SmartyStreets Default Country</label>
+    <label>SmartyStreets Default Country (DEPR)</label>
     <length>255</length>
     <required>false</required>
     <type>Text</type>

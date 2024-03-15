@@ -4,7 +4,7 @@
     <defaultValue>false</defaultValue>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <inlineHelpText>Check this box to indicate that the contact moved the relationship forward through qualification, solicitation, or the closing of a gift.</inlineHelpText>
+    <inlineHelpText>Check this box to indicate that this contact moved the relationship forward from the donor’s perspective. Does the donor feel like a relationship has been established, reestablished, or strengthened?</inlineHelpText>
     <label>Is Substantive Contact</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

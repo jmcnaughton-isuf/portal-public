@@ -10,19 +10,14 @@
     <columns>RECORDTYPE</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>CREATED_DATE</field>
-        <operation>equals</operation>
-        <value>THIS_WEEK</value>
-    </filters>
-    <filters>
-        <field>CREATEDBY_USER</field>
-        <operation>contains</operation>
-        <value>Jodi</value>
-    </filters>
-    <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
-        <value>ucinn_ascendv2__Assignment__c.Case_Assignment</value>
+        <value>ucinn_ascendv2__Assignment__c.ucinn_ascendv2__Contact_Assignment</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Assigned_Relationship_Manager_User__c</field>
+        <operation>contains</operation>
+        <value>arono</value>
     </filters>
     <label>Jodi&apos;s View</label>
 </ListView>

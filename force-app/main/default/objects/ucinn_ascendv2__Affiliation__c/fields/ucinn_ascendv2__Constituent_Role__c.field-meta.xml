@@ -3,14 +3,23 @@
     <fullName>ucinn_ascendv2__Constituent_Role__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
+    <inlineHelpText>These Role types will add matching gift expectancies:
+Employer
+Retiree Employer
+Former Employer Matching
+Company Founded by Individual
+Company owned by Individual
+Employer – Second Business
+Member of Board</inlineHelpText>
     <label>Constituent Role</label>
     <required>false</required>
     <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <valueSetDefinition>
-            <sorted>true</sorted>
+            <sorted>false</sorted>
             <value>
                 <fullName>Accountant</fullName>
                 <default>false</default>
@@ -40,11 +49,6 @@
                 <fullName>Community foundation contact</fullName>
                 <default>false</default>
                 <label>Community foundation contact</label>
-            </value>
-            <value>
-                <fullName>Contact of Company</fullName>
-                <default>false</default>
-                <label>Contact of Company</label>
             </value>
             <value>
                 <fullName>Employee</fullName>
@@ -147,24 +151,19 @@
                 <label>Previous Company Owner</label>
             </value>
             <value>
-                <fullName>Representative</fullName>
-                <default>false</default>
-                <label>Representative</label>
-            </value>
-            <value>
                 <fullName>Retired Employee</fullName>
                 <default>false</default>
                 <label>Retired Employee</label>
             </value>
             <value>
-                <fullName>Student</fullName>
-                <default>false</default>
-                <label>Student</label>
-            </value>
-            <value>
                 <fullName>Trustee/Officer</fullName>
                 <default>false</default>
                 <label>Trustee/Officer</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
             </value>
         </valueSetDefinition>
     </valueSet>

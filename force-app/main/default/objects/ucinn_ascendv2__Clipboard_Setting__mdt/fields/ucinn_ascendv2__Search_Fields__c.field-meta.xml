@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ucinn_ascendv2__Search_Fields__c</fullName>
     <deprecated>false</deprecated>
-    <description>A JSON string that configures how this SObject should appear in Clipboard&apos;s search UI.</description>
+    <description>A JSON string that configures how this SObject should appear in Clippify&apos;s search UI.</description>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <inlineHelpText>A JSON string that configures how this SObject&apos;s datatable should appear in Clipboard&apos;s search UI.

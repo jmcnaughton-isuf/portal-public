@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NTEE_Codes__c</fullName>
+    <externalId>false</externalId>
+    <label>NTEE Codes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A - Art, Culture, and Humanities</fullName>
+                <default>false</default>
+                <label>A - Art, Culture, and Humanities</label>
+            </value>
+            <value>
+                <fullName>B - Education Institutions and Related Activities</fullName>
+                <default>false</default>
+                <label>B - Education Institutions and Related Activities</label>
+            </value>
+            <value>
+                <fullName>C - Environmental Quality Protection and Beautification</fullName>
+                <default>false</default>
+                <label>C - Environmental Quality Protection and Beautification</label>
+            </value>
+            <value>
+                <fullName>D - Animal Related</fullName>
+                <default>false</default>
+                <label>D - Animal Related</label>
+            </value>
+            <value>
+                <fullName>E - Health General and Rehabilitative</fullName>
+                <default>false</default>
+                <label>E - Health General and Rehabilitative</label>
+            </value>
+            <value>
+                <fullName>F - Mental Health Crisis Intervention</fullName>
+                <default>false</default>
+                <label>F - Mental Health Crisis Intervention</label>
+            </value>
+            <value>
+                <fullName>G - Disease Disorders Medical Disciplines</fullName>
+                <default>false</default>
+                <label>G - Disease Disorders Medical Disciplines</label>
+            </value>
+            <value>
+                <fullName>H - Medical Research</fullName>
+                <default>false</default>
+                <label>H - Medical Research</label>
+            </value>
+            <value>
+                <fullName>I - Crime Legal Related</fullName>
+                <default>false</default>
+                <label>I - Crime Legal Related</label>
+            </value>
+            <value>
+                <fullName>J - Employment Job Related</fullName>
+                <default>false</default>
+                <label>J - Employment Job Related</label>
+            </value>
+            <value>
+                <fullName>K - Food Agriculture and Nutrition</fullName>
+                <default>false</default>
+                <label>K - Food Agriculture and Nutrition</label>
+            </value>
+            <value>
+                <fullName>L - Housing Shelter</fullName>
+                <default>false</default>
+                <label>L - Housing Shelter</label>
+            </value>
+            <value>
+                <fullName>M - Public Safety Disaster Preparedness and Relief</fullName>
+                <default>false</default>
+                <label>M - Public Safety Disaster Preparedness and Relief</label>
+            </value>
+            <value>
+                <fullName>N - Recreation Sports Leisure Athletics</fullName>
+                <default>false</default>
+                <label>N - Recreation Sports Leisure Athletics</label>
+            </value>
+            <value>
+                <fullName>O - Youth Development</fullName>
+                <default>false</default>
+                <label>O - Youth Development</label>
+            </value>
+            <value>
+                <fullName>P - Human Services Multipurpose and other</fullName>
+                <default>false</default>
+                <label>P - Human Services Multipurpose and other</label>
+            </value>
+            <value>
+                <fullName>Q - International Foreign Affairs and National Security</fullName>
+                <default>false</default>
+                <label>Q - International Foreign Affairs and National Security</label>
+            </value>
+            <value>
+                <fullName>R - Civil Rights Social Action Advocacy</fullName>
+                <default>false</default>
+                <label>R - Civil Rights Social Action Advocacy</label>
+            </value>
+            <value>
+                <fullName>S - Community Improvement Capacity Building</fullName>
+                <default>false</default>
+                <label>S - Community Improvement Capacity Building</label>
+            </value>
+            <value>
+                <fullName>T - Philanthropy Voluntarism and Grant making Foundations</fullName>
+                <default>false</default>
+                <label>T - Philanthropy Voluntarism and Grant making Foundations</label>
+            </value>
+            <value>
+                <fullName>U - Science and Technology Research Institutes Services</fullName>
+                <default>false</default>
+                <label>U - Science and Technology Research Institutes Services</label>
+            </value>
+            <value>
+                <fullName>V - Social Science Research Institutes</fullName>
+                <default>false</default>
+                <label>V - Social Science Research Institutes</label>
+            </value>
+            <value>
+                <fullName>W - Public Society Benefit Multipurpose</fullName>
+                <default>false</default>
+                <label>W - Public Society Benefit Multipurpose</label>
+            </value>
+            <value>
+                <fullName>X - Religion Related Spiritual Development</fullName>
+                <default>false</default>
+                <label>X - Religion Related Spiritual Development</label>
+            </value>
+            <value>
+                <fullName>Y - Mutual, Membership Benefit Organizations, Other</fullName>
+                <default>false</default>
+                <label>Y - Mutual, Membership Benefit Organizations, Other</label>
+            </value>
+            <value>
+                <fullName>Z - Internal Use</fullName>
+                <default>false</default>
+                <label>Z - Internal Use</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

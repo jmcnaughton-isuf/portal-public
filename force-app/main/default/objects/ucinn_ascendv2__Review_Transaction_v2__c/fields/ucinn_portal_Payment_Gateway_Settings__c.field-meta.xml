@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_portal_Payment_Gateway_Settings__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used for external gateway settings i.e. selecting which gateway Spreedly is using from custom metadata</inlineHelpText>
+    <label>Payment Gateway Settings</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Placeholder Setting</fullName>
+                <default>false</default>
+                <label>Placeholder Setting</label>
+            </value>
+            <value>
+                <fullName>test</fullName>
+                <default>false</default>
+                <label>test</label>
+            </value>
+            <value>
+                <fullName>SpreedlyTest</fullName>
+                <default>false</default>
+                <label>SpreedlyTest</label>
+            </value>
+            <value>
+                <fullName>Spreedly Gateway Setting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spreedly Gateway Setting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

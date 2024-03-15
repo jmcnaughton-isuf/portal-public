@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_ascendv2__Funding_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Funding Method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Cash</fullName>
+                <default>false</default>
+                <label>Cash</label>
+            </value>
+            <value>
+                <fullName>Donor Advised Fund</fullName>
+                <default>false</default>
+                <label>Donor Advised Fund</label>
+            </value>
+            <value>
+                <fullName>Gift In Kind</fullName>
+                <default>false</default>
+                <label>Gift In Kind</label>
+            </value>
+            <value>
+                <fullName>PG-Bequest Intention</fullName>
+                <default>false</default>
+                <label>PG-Bequest Intention</label>
+            </value>
+            <value>
+                <fullName>PG-Charitable Gift Annuity</fullName>
+                <default>false</default>
+                <label>PG-Charitable Gift Annuity</label>
+            </value>
+            <value>
+                <fullName>PG-Charitable Lead Trust</fullName>
+                <default>false</default>
+                <label>PG-Charitable Lead Trust</label>
+            </value>
+            <value>
+                <fullName>PG-Charitable Remainder Trust</fullName>
+                <default>false</default>
+                <label>PG-Charitable Remainder Trust</label>
+            </value>
+            <value>
+                <fullName>PG-Estate Gift</fullName>
+                <default>false</default>
+                <label>PG-Estate Gift</label>
+            </value>
+            <value>
+                <fullName>PG-Life Estate Gift</fullName>
+                <default>false</default>
+                <label>PG-Life Estate Gift</label>
+            </value>
+            <value>
+                <fullName>PG-Life Insurance</fullName>
+                <default>false</default>
+                <label>PG-Life Insurance</label>
+            </value>
+            <value>
+                <fullName>PG-Pooled Income Fund</fullName>
+                <default>false</default>
+                <label>PG-Pooled Income Fund</label>
+            </value>
+            <value>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+                <label>Pledge</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Retirement Account</fullName>
+                <default>false</default>
+                <label>Retirement Account</label>
+            </value>
+            <value>
+                <fullName>Securities</fullName>
+                <default>false</default>
+                <label>Securities</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -279,9 +279,39 @@
                 <label>Additional Expedited Bio Partial Payment POS</label>
             </value>
             <value>
+                <fullName>Expedited Session Matching Gift</fullName>
+                <default>false</default>
+                <label>Expedited Session Matching Gift</label>
+            </value>
+            <value>
+                <fullName>Expedited Wizard Pledge Payment</fullName>
+                <default>false</default>
+                <label>Expedited Wizard Pledge Payment</label>
+            </value>
+            <value>
                 <fullName>Expedited Matching Gift</fullName>
                 <default>false</default>
                 <label>Expedited Matching Gift</label>
+            </value>
+            <value>
+                <fullName>Expedited Bio Matching Gift</fullName>
+                <default>false</default>
+                <label>Expedited Bio Matching Gift</label>
+            </value>
+            <value>
+                <fullName>Pledge Information</fullName>
+                <default>false</default>
+                <label>Pledge Information</label>
+            </value>
+            <value>
+                <fullName>Expedited Gift To Pledge</fullName>
+                <default>false</default>
+                <label>Expedited Gift To Pledge</label>
+            </value>
+            <value>
+                <fullName>Expedited Pledge to Pledge</fullName>
+                <default>false</default>
+                <label>Expedited Pledge to Pledge</label>
             </value>
         </valueSetDefinition>
     </valueSet>

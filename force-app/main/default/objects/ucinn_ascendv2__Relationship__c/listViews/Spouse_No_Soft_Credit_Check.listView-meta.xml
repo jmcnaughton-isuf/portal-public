@@ -10,6 +10,7 @@
     <columns>CREATED_DATE</columns>
     <columns>UPDATEDBY_USER</columns>
     <columns>LAST_UPDATE</columns>
+    <columns>ucinn_ascendv2__Notes__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>ucinn_ascendv2__Apply_Soft_Credit__c</field>
@@ -23,12 +24,8 @@
     </filters>
     <filters>
         <field>CREATED_DATE</field>
-        <operation>greaterThan</operation>
+        <operation>lessThan</operation>
         <value>9/13/2021 12:00 AM</value>
-    </filters>
-    <filters>
-        <field>End_Date__c</field>
-        <operation>equals</operation>
     </filters>
     <label>Spouse No Soft Credit Check</label>
 </ListView>

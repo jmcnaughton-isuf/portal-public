@@ -8,7 +8,7 @@
     <inlineHelpText>Manual: Manually invoke modal
 Disruptive: Always shows at the opening of a page
 Pop-Up: Small notification to optionally open modal</inlineHelpText>
-    <label>Review Transaction Appearance</label>
+    <label>Review Transaction (v2) Appearance</label>
     <required>false</required>
     <type>Picklist</type>
     <valueSet>

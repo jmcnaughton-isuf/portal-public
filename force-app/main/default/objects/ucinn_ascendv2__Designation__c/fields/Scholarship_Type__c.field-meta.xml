@@ -33,6 +33,11 @@
                 <label>Completion Grants</label>
             </value>
             <value>
+                <fullName>DEI Criteria</fullName>
+                <default>false</default>
+                <label>DEI Criteria</label>
+            </value>
+            <value>
                 <fullName>Emergency Grants</fullName>
                 <default>false</default>
                 <label>Emergency Grants</label>

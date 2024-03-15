@@ -5,44 +5,19 @@
     <columns>ucinn_ascendv2__End_Date__c</columns>
     <columns>NAME</columns>
     <columns>Donor_ID__c</columns>
-    <columns>ucinn_ascendv2__Contact__c</columns>
     <columns>ucinn_ascendv2__Service_Indicator_Value__c</columns>
     <columns>College__c</columns>
     <columns>Department__c</columns>
     <columns>Publications__c</columns>
     <columns>Preferences__c</columns>
-    <columns>ucinn_ascendv2__Source__c</columns>
     <columns>Solicitation__c</columns>
     <columns>LAST_UPDATE</columns>
+    <columns>Data_Source__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>ucinn_ascendv2__Is_Active__c</field>
-        <operation>equals</operation>
-        <value>1</value>
-    </filters>
     <filters>
         <field>ucinn_ascendv2__Service_Indicator_Value__c</field>
         <operation>contains</operation>
-        <value>Exclude</value>
-    </filters>
-    <filters>
-        <field>College__c</field>
-        <operation>equals</operation>
-        <value>Design</value>
-    </filters>
-    <filters>
-        <field>RECORDTYPE</field>
-        <operation>equals</operation>
-    </filters>
-    <filters>
-        <field>Publications__c</field>
-        <operation>equals</operation>
-        <value>Designotes</value>
-    </filters>
-    <filters>
-        <field>Preferences__c</field>
-        <operation>equals</operation>
-        <value>eNewsletter</value>
+        <value>Do Not Use - Duplicate Record</value>
     </filters>
     <label>Amy Service indicator List</label>
 </ListView>

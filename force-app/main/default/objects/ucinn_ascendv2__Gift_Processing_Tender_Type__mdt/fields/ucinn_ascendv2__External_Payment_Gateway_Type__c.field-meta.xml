@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>Stripe</label>
             </value>
+            <value>
+                <fullName>TouchNet</fullName>
+                <default>false</default>
+                <label>TouchNet</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

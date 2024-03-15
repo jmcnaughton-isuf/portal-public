@@ -7,6 +7,8 @@
     <columns>ucinn_ascendv2__Contact_Role__c</columns>
     <columns>Contact_Managers_Formula__c</columns>
     <columns>RECORDTYPE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>
@@ -14,9 +16,19 @@
         <value>ucinn_ascendv2__Contact_Report_Relation__c.ucinn_ascendv2__Contact_Contact_Report_Relation</value>
     </filters>
     <filters>
-        <field>ucinn_ascendv2__Contact__c</field>
+        <field>Contact_Managers_Formula__c</field>
         <operation>contains</operation>
-        <value>ryan mcguire</value>
+        <value>Jana Staudt</value>
+    </filters>
+    <filters>
+        <field>UPDATEDBY_USER</field>
+        <operation>contains</operation>
+        <value>staudt</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>equals</operation>
+        <value>7/5/2023 12:00 AM</value>
     </filters>
     <label>All</label>
 </ListView>

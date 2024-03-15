@@ -17,6 +17,7 @@
     <filters>
         <field>Designation_Name__c</field>
         <operation>contains</operation>
+        <value>Artz</value>
     </filters>
     <label>All Named Faculty Positions</label>
 </ListView>

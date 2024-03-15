@@ -7,6 +7,10 @@
     <picklistValues>
         <picklist>Address_2_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -71,6 +75,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -112,6 +120,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -319,57 +331,130 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Affiliation_Occupation_Industry__c</picklist>
+        <picklist>Affiliation_Constituent_Role_Picklist__c</picklist>
         <values>
-            <fullName>Agriculture</fullName>
+            <fullName>Accountant</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Architecture</fullName>
+            <fullName>Attorney</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Banking and Finance</fullName>
+            <fullName>Client - Accountant</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Education %28PreK-12 only%29</fullName>
+            <fullName>Client - Attorney</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Engineering</fullName>
+            <fullName>Client - Financial Planner</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>No Code</fullName>
+            <fullName>Community foundation contact</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Unknown</fullName>
+            <fullName>Employee</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Veterinarian</fullName>
+            <fullName>Employee - Second Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee non-matching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estate Gift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Employee matching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Founder%2FCo-Founder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Held in Trust Donor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Held in Trust Income Recipient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorarium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorarium for</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Corporate Engagement Team Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Corporate Engagement Team Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager of Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member of Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner of Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner of DAF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner of Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner of trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Previous Company Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retired Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustee%2FOfficer</fullName>
             <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Affiliation_Status__c</picklist>
+        <picklist>Affiliation_Data_Source_Interim__c</picklist>
         <values>
-            <fullName>Current</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Former</fullName>
+            <fullName>Accounts Receivable - ISU</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Retired</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Email_1_Data_Source__c</picklist>
         <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
@@ -435,6 +520,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -476,6 +565,1124 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influential ISU Faculty%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutionally Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided by constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ScaleFunder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Affiliation_Occupation_Industry__c</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Architecture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking and Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education %28PreK-12 only%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinarian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Affiliation_Organization_Role_Picklist__c</picklist>
+        <values>
+            <fullName>Accountant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attorney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Board Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Accountant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Attorney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Financial Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community foundation contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company Founded by individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company Owned by Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company Previously Owned by Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAF Owned by Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employer - Second Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estate of individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Employer matching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation owned by Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation owned by individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Held in Trust Donor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Held in Trust Income Recipient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorarium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorarium for</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Corporate Engagement Team Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Corporate Engagement Team Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retiree Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust Managed by Trustee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust Owned by Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Student</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Affiliation_Status__c</picklist>
+        <values>
+            <fullName>Current</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Constituent_Name_Data_Source__c</picklist>
+        <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benevity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Vet Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact report content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development officer referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front Desk%2FGift Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influential ISU Faculty%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutionally Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided by constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ScaleFunder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Degree_Data_Source__c</picklist>
+        <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benevity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Vet Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact report content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development officer referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front Desk%2FGift Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influential ISU Faculty%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutionally Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided by constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ScaleFunder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_1_Data_Source__c</picklist>
+        <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benevity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Vet Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact report content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development officer referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front Desk%2FGift Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -681,6 +1888,10 @@
     <picklistValues>
         <picklist>Email_2_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -745,6 +1956,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -786,6 +2001,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1120,6 +2339,10 @@
     <picklistValues>
         <picklist>ISU_Address_1_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -1184,6 +2407,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -1225,6 +2452,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1428,7 +2659,128 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Name_1_Type__c</picklist>
+        <values>
+            <fullName>Birth Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graduation Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nickname</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential%09Potential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used to Delete a name</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name_2_Type__c</picklist>
+        <values>
+            <fullName>Birth Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graduation Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nickname</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential%09Potential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used to Delete a name</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name_3_Type__c</picklist>
+        <values>
+            <fullName>Birth Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graduation Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nickname</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential%09Potential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used to Delete a name</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Phone_1_Data_Source__c</picklist>
+        <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
         <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
@@ -1494,6 +2846,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -1535,6 +2891,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1740,6 +3100,10 @@
     <picklistValues>
         <picklist>Phone_2_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -1804,6 +3168,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -1845,6 +3213,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2050,6 +3422,10 @@
     <picklistValues>
         <picklist>Phone_3_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -2114,6 +3490,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -2155,6 +3535,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2360,6 +3744,10 @@
     <picklistValues>
         <picklist>Phone_4_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -2424,6 +3812,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -2465,6 +3857,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2670,6 +4066,10 @@
     <picklistValues>
         <picklist>Phone_5_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -2734,6 +4134,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -2775,6 +4179,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2980,6 +4388,10 @@
     <picklistValues>
         <picklist>RT_Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -3044,6 +4456,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -3085,6 +4501,10 @@
         </values>
         <values>
             <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -3273,6 +4693,1535 @@
         </values>
         <values>
             <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Social_Media_Data_Soure__c</picklist>
+        <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alumni Finder Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AlumniFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual and Special Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athletics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benevity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampusCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Agriculture and Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Human Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College of Vet Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact report content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate and Foundation Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CyBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development officer referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External source</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front Desk%2FGift Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Place API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Business Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP E-mail Append</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEP Phone Appends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Alumni Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISU Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISUF Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influential ISU Faculty%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutionally Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa State University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LexisNexis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Library</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Manual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAlumni %28Linked In Data%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NCOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsBank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal and Leadership Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided by constituent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registrar Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ScaleFunder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Reported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartyStreets API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stewardship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tau Kappa Epsilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University Museums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Pages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iModules</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>isuf_Portal_Country__c</picklist>
+        <values>
+            <fullName>AD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>isuf_Portal_State__c</picklist>
+        <values>
+            <fullName>AK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WY</fullName>
             <default>false</default>
         </values>
     </picklistValues>

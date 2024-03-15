@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>Spreedly</label>
             </value>
+            <value>
+                <fullName>TouchNet</fullName>
+                <default>false</default>
+                <label>TouchNet</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Cannot_Be_in_Future</fullName>
+    <active>true</active>
+    <errorConditionFormula>ucinn_ascendv2__Date__c &gt;  TODAY()</errorConditionFormula>
+    <errorMessage>Contact Report dates cannot be in the future.</errorMessage>
+</ValidationRule>

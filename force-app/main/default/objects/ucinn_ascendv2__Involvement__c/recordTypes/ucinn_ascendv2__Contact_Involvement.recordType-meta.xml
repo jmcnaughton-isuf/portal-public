@@ -2650,6 +2650,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Small Group Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Subcommittee Member</fullName>
             <default>false</default>
         </values>

@@ -17,15 +17,5 @@
     <columns>ucinn_ascendv2__Is_Retiree__c</columns>
     <columns>ucinn_ascendv2__Status__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>ucinn_ascendv2__Constituent_Role__c</field>
-        <operation>equals</operation>
-        <value>Employee</value>
-    </filters>
-    <filters>
-        <field>Employer_Name__c</field>
-        <operation>equals</operation>
-        <value>Vermeer</value>
-    </filters>
     <label>All</label>
 </ListView>

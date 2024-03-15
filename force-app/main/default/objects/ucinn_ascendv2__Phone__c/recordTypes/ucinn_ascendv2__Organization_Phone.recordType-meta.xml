@@ -58,6 +58,10 @@
     <picklistValues>
         <picklist>ucinn_ascendv2__Data_Source__c</picklist>
         <values>
+            <fullName>Accounts Receivable - ISU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Alumni Finder Vendor</fullName>
             <default>false</default>
         </values>
@@ -118,6 +122,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>County Assessor site</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>CyBox</fullName>
             <default>false</default>
         </values>
@@ -147,6 +155,10 @@
         </values>
         <values>
             <fullName>Gift Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
             <default>false</default>
         </values>
         <values>
@@ -371,10 +383,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Business</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Business - Assistant</fullName>
             <default>false</default>
         </values>
@@ -407,6 +415,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Business - Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Business - Phone</fullName>
             <default>false</default>
         </values>
@@ -428,10 +440,6 @@
         </values>
         <values>
             <fullName>Fourth Home - Phone</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Home</fullName>
             <default>false</default>
         </values>
         <values>
@@ -479,10 +487,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Mobile</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Organization - Assistant</fullName>
             <default>false</default>
         </values>
@@ -515,7 +519,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Personal</fullName>
+            <fullName>Personal - Landline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal - Mobile</fullName>
             <default>false</default>
         </values>
         <values>

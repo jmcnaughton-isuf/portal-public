@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ucinn_portal_Is_Always_Display_On_MyInfo__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Is Always Display On My Info</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

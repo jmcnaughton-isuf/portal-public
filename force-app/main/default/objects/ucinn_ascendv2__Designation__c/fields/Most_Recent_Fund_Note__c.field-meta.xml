@@ -3,8 +3,8 @@
     <fullName>Most_Recent_Fund_Note__c</fullName>
     <externalId>false</externalId>
     <label>Most Recent Fund Note</label>
-    <summarizedField>Fund_Notes__c.Review_Date__c</summarizedField>
-    <summaryForeignKey>Fund_Notes__c.Fund__c</summaryForeignKey>
+    <summarizedField>ISUF_Fund_Notes__c.Review_Date__c</summarizedField>
+    <summaryForeignKey>ISUF_Fund_Notes__c.Fund__c</summaryForeignKey>
     <summaryOperation>max</summaryOperation>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

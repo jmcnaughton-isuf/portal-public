@@ -3,7 +3,7 @@
     <fullName>ucinn_ascendv2__Company_Name__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>Company Name</label>
+    <label>Company / Fund Name</label>
     <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>

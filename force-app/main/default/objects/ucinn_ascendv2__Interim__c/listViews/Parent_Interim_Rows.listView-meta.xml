@@ -5,21 +5,26 @@
     <columns>RECORDTYPE</columns>
     <columns>ucinn_ascendv2__Contact__c</columns>
     <columns>ucinn_ascendv2__New_Donor_ID_Formula__c</columns>
+    <columns>ucinn_ascendv2__Phone_1_Type__c</columns>
     <columns>ucinn_ascendv2__External_System_ID__c</columns>
     <columns>ucinn_ascendv2__First_Name__c</columns>
     <columns>ucinn_ascendv2__Last_Name__c</columns>
     <columns>ucinn_ascendv2__Middle_Name__c</columns>
     <columns>ucinn_ascendv2__Status__c</columns>
-    <columns>ucinn_ascendv2__Manual_Review_Reason__c</columns>
+    <columns>ucinn_ascendv2__Manual_Review_Reason_Multiple_Line__c</columns>
     <columns>ucinn_ascendv2__Possible_Duplicate_Checked__c</columns>
     <columns>LAST_UPDATE</columns>
     <columns>ucinn_ascendv2__Email_1__c</columns>
-    <columns>ucinn_ascendv2__Phone_1_Type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
         <value>ucinn_ascendv2__Interim__c.Parent</value>
+    </filters>
+    <filters>
+        <field>ucinn_ascendv2__Contact__c</field>
+        <operation>contains</operation>
+        <value>Kohl</value>
     </filters>
     <label>Parent Interim Rows</label>
 </ListView>

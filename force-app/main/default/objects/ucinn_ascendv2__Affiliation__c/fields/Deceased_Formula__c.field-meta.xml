@@ -5,6 +5,7 @@
     <formula>ucinn_ascendv2__Contact__r.Deceased_Formula__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Deceased</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>
