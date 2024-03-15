@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounts Receivable - ISU</fullName>
+        <default>false</default>
+        <label>Accounts Receivable - ISU</label>
+    </customValue>
+    <customValue>
+        <fullName>AlumniFinder</fullName>
+        <default>false</default>
+        <label>AlumniFinder</label>
+    </customValue>
+    <customValue>
+        <fullName>Alumni Finder Vendor</fullName>
+        <default>false</default>
+        <label>Alumni Finder Vendor</label>
+    </customValue>
+    <customValue>
+        <fullName>Annual and Special Gifts</fullName>
+        <default>false</default>
+        <label>Annual and Special Gifts</label>
+    </customValue>
+    <customValue>
+        <fullName>Athletics</fullName>
+        <default>false</default>
+        <label>Athletics</label>
+    </customValue>
+    <customValue>
+        <fullName>Benevity</fullName>
+        <default>false</default>
+        <label>Benevity</label>
+    </customValue>
+    <customValue>
+        <fullName>CampusCall</fullName>
+        <default>false</default>
+        <label>CampusCall</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Agriculture and Life Sciences</fullName>
+        <default>false</default>
+        <label>College of Agriculture and Life Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Business</fullName>
+        <default>false</default>
+        <label>College of Business</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Design</fullName>
+        <default>false</default>
+        <label>College of Design</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Engineering</fullName>
+        <default>false</default>
+        <label>College of Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Human Sciences</fullName>
+        <default>false</default>
+        <label>College of Human Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>College of LAS</fullName>
+        <default>false</default>
+        <label>College of LAS</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Vet Med</fullName>
+        <default>false</default>
+        <label>College of Vet Med</label>
+    </customValue>
+    <customValue>
+        <fullName>Contact report content</fullName>
+        <default>false</default>
+        <label>Contact report content</label>
+    </customValue>
+    <customValue>
+        <fullName>Corporate and Foundation Relations</fullName>
+        <default>false</default>
+        <label>Corporate and Foundation Relations</label>
+    </customValue>
+    <customValue>
+        <fullName>Correspondence</fullName>
+        <default>false</default>
+        <label>Correspondence</label>
+    </customValue>
+    <customValue>
+        <fullName>CyBox</fullName>
+        <default>false</default>
+        <label>CyBox</label>
+    </customValue>
+    <customValue>
+        <fullName>Data Migration</fullName>
+        <default>false</default>
+        <label>Data Migration</label>
+    </customValue>
+    <customValue>
+        <fullName>Development officer referral</fullName>
+        <default>false</default>
+        <label>Development officer referral</label>
+    </customValue>
+    <customValue>
+        <fullName>Events</fullName>
+        <default>false</default>
+        <label>Events</label>
+    </customValue>
+    <customValue>
+        <fullName>External source</fullName>
+        <default>false</default>
+        <label>External source</label>
+    </customValue>
+    <customValue>
+        <fullName>Family Member</fullName>
+        <default>false</default>
+        <label>Family Member</label>
+    </customValue>
+    <customValue>
+        <fullName>Friend</fullName>
+        <default>false</default>
+        <label>Friend</label>
+    </customValue>
+    <customValue>
+        <fullName>Front Desk/Gift Shop</fullName>
+        <default>false</default>
+        <label>Front Desk/Gift Shop</label>
+    </customValue>
+    <customValue>
+        <fullName>Gift Planning</fullName>
+        <default>false</default>
+        <label>Gift Planning</label>
+    </customValue>
+    <customValue>
+        <fullName>Gift Processing</fullName>
+        <default>false</default>
+        <label>Gift Processing</label>
+    </customValue>
+    <customValue>
+        <fullName>Google Place API</fullName>
+        <default>false</default>
+        <label>Google Place API</label>
+    </customValue>
+    <customValue>
+        <fullName>Governance</fullName>
+        <default>false</default>
+        <label>Governance</label>
+    </customValue>
+    <customValue>
+        <fullName>HEP Business Upload</fullName>
+        <default>false</default>
+        <label>HEP Business Upload</label>
+    </customValue>
+    <customValue>
+        <fullName>HEP E-mail Append</fullName>
+        <default>false</default>
+        <label>HEP E-mail Append</label>
+    </customValue>
+    <customValue>
+        <fullName>HEP Phone Appends</fullName>
+        <default>false</default>
+        <label>HEP Phone Appends</label>
+    </customValue>
+    <customValue>
+        <fullName>iModules</fullName>
+        <default>false</default>
+        <label>iModules</label>
+    </customValue>
+    <customValue>
+        <fullName>Influential ISU Faculty/Staff</fullName>
+        <default>false</default>
+        <label>Influential ISU Faculty/Staff</label>
+    </customValue>
+    <customValue>
+        <fullName>Institutionally Applied</fullName>
+        <default>false</default>
+        <label>Institutionally Applied</label>
+    </customValue>
+    <customValue>
+        <fullName>Interim Interface</fullName>
+        <default>false</default>
+        <label>Interim Interface</label>
+    </customValue>
+    <customValue>
+        <fullName>International Team</fullName>
+        <default>false</default>
+        <label>International Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Internet</fullName>
+        <default>false</default>
+        <label>Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Iowa State University</fullName>
+        <default>false</default>
+        <label>Iowa State University</label>
+    </customValue>
+    <customValue>
+        <fullName>ISU Alumni Association</fullName>
+        <default>false</default>
+        <label>ISU Alumni Association</label>
+    </customValue>
+    <customValue>
+        <fullName>ISUF Human Resources</fullName>
+        <default>false</default>
+        <label>ISUF Human Resources</label>
+    </customValue>
+    <customValue>
+        <fullName>ISU Foundation</fullName>
+        <default>false</default>
+        <label>ISU Foundation</label>
+    </customValue>
+    <customValue>
+        <fullName>ISU Human Resources</fullName>
+        <default>false</default>
+        <label>ISU Human Resources</label>
+    </customValue>
+    <customValue>
+        <fullName>LexisNexis</fullName>
+        <default>false</default>
+        <label>LexisNexis</label>
+    </customValue>
+    <customValue>
+        <fullName>Library</fullName>
+        <default>false</default>
+        <label>Library</label>
+    </customValue>
+    <customValue>
+        <fullName>LinkedIn Manual</fullName>
+        <default>false</default>
+        <label>LinkedIn Manual</label>
+    </customValue>
+    <customValue>
+        <fullName>LiveAlumni (Linked In Data)</fullName>
+        <default>false</default>
+        <label>LiveAlumni (Linked In Data)</label>
+    </customValue>
+    <customValue>
+        <fullName>Lockbox</fullName>
+        <default>false</default>
+        <label>Lockbox</label>
+    </customValue>
+    <customValue>
+        <fullName>Mail</fullName>
+        <default>false</default>
+        <label>Mail</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Cloud</fullName>
+        <default>false</default>
+        <label>Marketing Cloud</label>
+    </customValue>
+    <customValue>
+        <fullName>NCOA</fullName>
+        <default>false</default>
+        <label>NCOA</label>
+    </customValue>
+    <customValue>
+        <fullName>NewsBank</fullName>
+        <default>false</default>
+        <label>NewsBank</label>
+    </customValue>
+    <customValue>
+        <fullName>Online</fullName>
+        <default>false</default>
+        <label>Online</label>
+    </customValue>
+    <customValue>
+        <fullName>Payroll</fullName>
+        <default>false</default>
+        <label>Payroll</label>
+    </customValue>
+    <customValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Phone Center</fullName>
+        <default>false</default>
+        <label>Phone Center</label>
+    </customValue>
+    <customValue>
+        <fullName>Portal</fullName>
+        <default>false</default>
+        <label>Portal</label>
+    </customValue>
+    <customValue>
+        <fullName>Principal and Leadership Gifts</fullName>
+        <default>false</default>
+        <label>Principal and Leadership Gifts</label>
+    </customValue>
+    <customValue>
+        <fullName>Prospect Management</fullName>
+        <default>false</default>
+        <label>Prospect Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Provided by constituent</fullName>
+        <default>false</default>
+        <label>Provided by constituent</label>
+    </customValue>
+    <customValue>
+        <fullName>Registrar</fullName>
+        <default>false</default>
+        <label>Registrar</label>
+    </customValue>
+    <customValue>
+        <fullName>Registrar Transfer</fullName>
+        <default>false</default>
+        <label>Registrar Transfer</label>
+    </customValue>
+    <customValue>
+        <fullName>Reiman</fullName>
+        <default>false</default>
+        <label>Reiman</label>
+    </customValue>
+    <customValue>
+        <fullName>Research Strategies</fullName>
+        <default>false</default>
+        <label>Research Strategies</label>
+    </customValue>
+    <customValue>
+        <fullName>ScaleFunder</fullName>
+        <default>false</default>
+        <label>ScaleFunder</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Reported</fullName>
+        <default>false</default>
+        <label>Self Reported</label>
+    </customValue>
+    <customValue>
+        <fullName>SIS</fullName>
+        <default>false</default>
+        <label>SIS</label>
+    </customValue>
+    <customValue>
+        <fullName>SmartyStreets API</fullName>
+        <default>false</default>
+        <label>SmartyStreets API</label>
+    </customValue>
+    <customValue>
+        <fullName>Spouse</fullName>
+        <default>false</default>
+        <label>Spouse</label>
+    </customValue>
+    <customValue>
+        <fullName>Stay Connected</fullName>
+        <default>false</default>
+        <label>Stay Connected</label>
+    </customValue>
+    <customValue>
+        <fullName>Stephens</fullName>
+        <default>false</default>
+        <label>Stephens</label>
+    </customValue>
+    <customValue>
+        <fullName>Stewardship</fullName>
+        <default>false</default>
+        <label>Stewardship</label>
+    </customValue>
+    <customValue>
+        <fullName>Tau Kappa Epsilon</fullName>
+        <default>false</default>
+        <label>Tau Kappa Epsilon</label>
+    </customValue>
+    <customValue>
+        <fullName>University Museums</fullName>
+        <default>false</default>
+        <label>University Museums</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown</fullName>
+        <default>false</default>
+        <label>Unknown</label>
+    </customValue>
+    <customValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </customValue>
+    <customValue>
+        <fullName>White Pages</fullName>
+        <default>false</default>
+        <label>White Pages</label>
+    </customValue>
+    <customValue>
+        <fullName>County Assessor site</fullName>
+        <default>false</default>
+        <label>County Assessor site</label>
+    </customValue>
+    <customValue>
+        <fullName>ASG Young Alum Mailing 12/2015</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ASG Young Alum Mailing 12/2015</label>
+    </customValue>
+    <customValue>
+        <fullName>Research Department</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Research Department</label>
+    </customValue>
+    <customValue>
+        <fullName>Governance2</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Governance2</label>
+    </customValue>
+    <customValue>
+        <fullName>Governance (Deprecate)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Governance (Deprecate)</label>
+    </customValue>
+    <customValue>
+        <fullName>ScalesFunder</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ScalesFunder</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Ag &amp; Life Sciences</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>College of Ag &amp; Life Sciences</label>
+    </customValue>
+    <masterLabel>Data Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

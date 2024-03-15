@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Chair</fullName>
+        <default>false</default>
+        <label>Chair</label>
+    </customValue>
+    <customValue>
+        <fullName>Deans Chair</fullName>
+        <default>false</default>
+        <label>Deans Chair</label>
+    </customValue>
+    <customValue>
+        <fullName>Departmental Chair</fullName>
+        <default>false</default>
+        <label>Departmental Chair</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty/Staff Award</fullName>
+        <default>false</default>
+        <label>Faculty/Staff Award</label>
+    </customValue>
+    <customValue>
+        <fullName>Faculty Fellowship</fullName>
+        <default>false</default>
+        <label>Faculty Fellowship</label>
+    </customValue>
+    <customValue>
+        <fullName>Professorship</fullName>
+        <default>false</default>
+        <label>Professorship</label>
+    </customValue>
+    <customValue>
+        <fullName>Fellowship</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Fellowship</label>
+    </customValue>
+    <customValue>
+        <fullName>Scholarship</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Scholarship</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other</label>
+    </customValue>
+    <description>Used for Designation Beneficiary object.</description>
+    <masterLabel>Beneficiary Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

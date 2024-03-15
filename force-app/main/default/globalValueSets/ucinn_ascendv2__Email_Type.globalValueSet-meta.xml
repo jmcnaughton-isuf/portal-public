@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Alumni Association Membership</fullName>
+        <default>false</default>
+        <label>Alumni Association Membership</label>
+    </customValue>
+    <customValue>
+        <fullName>Assistant/Contact</fullName>
+        <default>false</default>
+        <label>Assistant/Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Business</fullName>
+        <default>false</default>
+        <label>Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Campus</fullName>
+        <default>false</default>
+        <label>Campus</label>
+    </customValue>
+    <customValue>
+        <fullName>Endowment Reporting</fullName>
+        <default>false</default>
+        <label>Endowment Reporting</label>
+    </customValue>
+    <customValue>
+        <fullName>Home</fullName>
+        <default>false</default>
+        <label>Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Incorrect/Donor Request to Remove</fullName>
+        <default>false</default>
+        <label>Incorrect/Donor Request to Remove</label>
+    </customValue>
+    <customValue>
+        <fullName>Organization</fullName>
+        <default>false</default>
+        <label>Organization</label>
+    </customValue>
+    <customValue>
+        <fullName>Other 1</fullName>
+        <default>false</default>
+        <label>Other 1</label>
+    </customValue>
+    <customValue>
+        <fullName>Other 2</fullName>
+        <default>false</default>
+        <label>Other 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Other 3</fullName>
+        <default>false</default>
+        <label>Other 3</label>
+    </customValue>
+    <customValue>
+        <fullName>Pledge Reminder</fullName>
+        <default>false</default>
+        <label>Pledge Reminder</label>
+    </customValue>
+    <customValue>
+        <fullName>Potential</fullName>
+        <default>false</default>
+        <label>Potential</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Advisor</fullName>
+        <default>false</default>
+        <label>Professional Advisor</label>
+    </customValue>
+    <customValue>
+        <fullName>Removed Per Request</fullName>
+        <default>false</default>
+        <label>Removed Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Secondary E-mail</fullName>
+        <default>false</default>
+        <label>Secondary E-mail</label>
+    </customValue>
+    <customValue>
+        <fullName>Second Business</fullName>
+        <default>false</default>
+        <label>Second Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal</fullName>
+        <default>false</default>
+        <label>Personal</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Second Home</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Second Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Third Home</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Third Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Fourth Home</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Fourth Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Alternate Address</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Alternate Address</label>
+    </customValue>
+    <masterLabel>Email Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

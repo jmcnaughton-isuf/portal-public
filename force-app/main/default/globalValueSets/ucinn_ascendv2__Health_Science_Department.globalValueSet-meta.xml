@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Cardiovascular Medicine</fullName>
+        <default>false</default>
+        <label>Cardiovascular Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Anesthesiology</fullName>
+        <default>false</default>
+        <label>Department of Anesthesiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Dermatology</fullName>
+        <default>false</default>
+        <label>Department of Dermatology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Emergency Medicine</fullName>
+        <default>false</default>
+        <label>Department of Emergency Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Family Medicine</fullName>
+        <default>false</default>
+        <label>Department of Family Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Medicine</fullName>
+        <default>false</default>
+        <label>Department of Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Neurological Surgery</fullName>
+        <default>false</default>
+        <label>Department of Neurological Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Neurology</fullName>
+        <default>false</default>
+        <label>Department of Neurology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Obstetrics &amp; Gynecology</fullName>
+        <default>false</default>
+        <label>Department of Obstetrics &amp; Gynecology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Ophthalmology</fullName>
+        <default>false</default>
+        <label>Department of Ophthalmology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Orthopaedic Surgery</fullName>
+        <default>false</default>
+        <label>Department of Orthopaedic Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Otolaryngology</fullName>
+        <default>false</default>
+        <label>Department of Otolaryngology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Pathology</fullName>
+        <default>false</default>
+        <label>Department of Pathology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Pediatrics</fullName>
+        <default>false</default>
+        <label>Department of Pediatrics</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Psychiatry &amp; Behavioral Sciences</fullName>
+        <default>false</default>
+        <label>Department of Psychiatry &amp; Behavioral Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Radiation Oncology</fullName>
+        <default>false</default>
+        <label>Department of Radiation Oncology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Radiology</fullName>
+        <default>false</default>
+        <label>Department of Radiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Surgery</fullName>
+        <default>false</default>
+        <label>Department of Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Department of Urology</fullName>
+        <default>false</default>
+        <label>Department of Urology</label>
+    </customValue>
+    <customValue>
+        <fullName>Endocrinology &amp; Diabetes</fullName>
+        <default>false</default>
+        <label>Endocrinology &amp; Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Gastrointestinal &amp; Liver Diseases</fullName>
+        <default>false</default>
+        <label>Gastrointestinal &amp; Liver Diseases</label>
+    </customValue>
+    <customValue>
+        <fullName>Geriatric, Hospital, Palliative &amp; General Internal Medicine</fullName>
+        <default>false</default>
+        <label>Geriatric, Hospital, Palliative &amp; General Internal Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Hematology</fullName>
+        <default>false</default>
+        <label>Hematology</label>
+    </customValue>
+    <customValue>
+        <fullName>Infectious Diseases</fullName>
+        <default>false</default>
+        <label>Infectious Diseases</label>
+    </customValue>
+    <customValue>
+        <fullName>Nephrology &amp; Hypertension</fullName>
+        <default>false</default>
+        <label>Nephrology &amp; Hypertension</label>
+    </customValue>
+    <customValue>
+        <fullName>Occupational Therapy</fullName>
+        <default>false</default>
+        <label>Occupational Therapy</label>
+    </customValue>
+    <customValue>
+        <fullName>Oncology</fullName>
+        <default>false</default>
+        <label>Oncology</label>
+    </customValue>
+    <customValue>
+        <fullName>Physicial Therapy</fullName>
+        <default>false</default>
+        <label>Physicial Therapy</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulmonary, Critical Care &amp; Sleep Medicine</fullName>
+        <default>false</default>
+        <label>Pulmonary, Critical Care &amp; Sleep Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Review to Assign Department</fullName>
+        <default>false</default>
+        <label>Review to Assign Department</label>
+    </customValue>
+    <customValue>
+        <fullName>Rheumatology</fullName>
+        <default>false</default>
+        <label>Rheumatology</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Dentistry</fullName>
+        <default>false</default>
+        <label>School of Dentistry</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Pharmacy</fullName>
+        <default>false</default>
+        <label>School of Pharmacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Spine Center</fullName>
+        <default>false</default>
+        <label>Spine Center</label>
+    </customValue>
+    <customValue>
+        <fullName>Transplant Institute</fullName>
+        <default>false</default>
+        <label>Transplant Institute</label>
+    </customValue>
+    <description>Used for Med Service Override - should match Physician Department</description>
+    <masterLabel>Health Science Department</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

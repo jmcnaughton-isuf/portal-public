@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Alumni Association</fullName>
+        <default>false</default>
+        <label>Alumni Association</label>
+    </customValue>
+    <customValue>
+        <fullName>Athletic Department</fullName>
+        <default>false</default>
+        <label>Athletic Department</label>
+    </customValue>
+    <customValue>
+        <fullName>College of Letters, Arts &amp; Sciences</fullName>
+        <default>false</default>
+        <label>College of Letters, Arts &amp; Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Cultural Relations and University Events</fullName>
+        <default>false</default>
+        <label>Cultural Relations and University Events</label>
+    </customValue>
+    <customValue>
+        <fullName>Office of the President</fullName>
+        <default>false</default>
+        <label>Office of the President</label>
+    </customValue>
+    <customValue>
+        <fullName>Office of the Provost</fullName>
+        <default>false</default>
+        <label>Office of the Provost</label>
+    </customValue>
+    <customValue>
+        <fullName>School for Communications</fullName>
+        <default>false</default>
+        <label>School for Communications</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Accounting</fullName>
+        <default>false</default>
+        <label>School of Accounting</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Architecture</fullName>
+        <default>false</default>
+        <label>School of Architecture</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Art and Design</fullName>
+        <default>false</default>
+        <label>School of Art and Design</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Business</fullName>
+        <default>false</default>
+        <label>School of Business</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Cinematic Arts</fullName>
+        <default>false</default>
+        <label>School of Cinematic Arts</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Dance</fullName>
+        <default>false</default>
+        <label>School of Dance</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Dentistry</fullName>
+        <default>false</default>
+        <label>School of Dentistry</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Dramatic Arts</fullName>
+        <default>false</default>
+        <label>School of Dramatic Arts</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Education</fullName>
+        <default>false</default>
+        <label>School of Education</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Engineering</fullName>
+        <default>false</default>
+        <label>School of Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Gerontology</fullName>
+        <default>false</default>
+        <label>School of Gerontology</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Law</fullName>
+        <default>false</default>
+        <label>School of Law</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Medicine</fullName>
+        <default>false</default>
+        <label>School of Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Music</fullName>
+        <default>false</default>
+        <label>School of Music</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Pharmacy</fullName>
+        <default>false</default>
+        <label>School of Pharmacy</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Public Policy</fullName>
+        <default>false</default>
+        <label>School of Public Policy</label>
+    </customValue>
+    <customValue>
+        <fullName>School of Social Work</fullName>
+        <default>false</default>
+        <label>School of Social Work</label>
+    </customValue>
+    <customValue>
+        <fullName>University Advancement</fullName>
+        <default>false</default>
+        <label>University Advancement</label>
+    </customValue>
+    <customValue>
+        <fullName>University Hospital</fullName>
+        <default>false</default>
+        <label>University Hospital</label>
+    </customValue>
+    <customValue>
+        <fullName>University Libraries</fullName>
+        <default>false</default>
+        <label>University Libraries</label>
+    </customValue>
+    <customValue>
+        <fullName>University Radio</fullName>
+        <default>false</default>
+        <label>University Radio</label>
+    </customValue>
+    <customValue>
+        <fullName>University Relations</fullName>
+        <default>false</default>
+        <label>University Relations</label>
+    </customValue>
+    <description>List of units/departments of a university</description>
+    <masterLabel>Unit</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
