@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_with_an_aware_amount</fullName>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>Spouse__c</columns>
+    <columns>Annual_Report_Type__c</columns>
+    <columns>Organization__c</columns>
+    <columns>Deceased__c</columns>
+    <columns>Fund_Account__c</columns>
+    <columns>Fund_Name__c</columns>
+    <columns>Annual_Financial_Report_Status__c</columns>
+    <columns>Annual_Financial_Report_Test__c</columns>
+    <columns>Exclude_Spouse__c</columns>
+    <columns>Remove_Deferred__c</columns>
+    <columns>Annual_Reporting_Footnotes__c</columns>
+    <columns>Full_Footnote__c</columns>
+    <columns>In_House_Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Report_Type__c</field>
+        <operation>includes</operation>
+        <value>Annual Financial Report</value>
+    </filters>
+    <filters>
+        <field>Award_Year_Amount__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Contacts with an award amount</label>
+</ListView>

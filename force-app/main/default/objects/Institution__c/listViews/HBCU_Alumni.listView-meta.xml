@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HBCU_Alumni</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Institution_Type__c</columns>
+    <columns>OBJECT_ID</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Institution_Type__c</field>
+        <operation>equals</operation>
+        <value>Historically Black Colleges and Universities (HBCU)</value>
+    </filters>
+    <label>HBCU Alumni</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Active_Status_Emeritus_FY</fullName>
+    <active>false</active>
+    <description>There should never be an Emeritus Fiscal Year on an Active record.</description>
+    <errorConditionFormula>AND(  ISPICKVAL(Emeritus_Status__c, &quot;Active&quot;), 
+ NOT(ISBLANK(FY_Emeritus__c))
+)</errorConditionFormula>
+    <errorDisplayField>FY_Emeritus__c</errorDisplayField>
+    <errorMessage>There should never be an emeritus fiscal year on an active record.</errorMessage>
+</ValidationRule>

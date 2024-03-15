@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accumulated Cash</fullName>
+                <default>false</default>
+                <label>Accumulated Cash</label>
+            </value>
+            <value>
+                <fullName>Difficult to Admin Under Current Agreemt</fullName>
+                <default>false</default>
+                <label>Difficult to Admin Under Current Agreemt</label>
+            </value>
+            <value>
+                <fullName>Gifting Issue</fullName>
+                <default>false</default>
+                <label>Gifting Issue</label>
+            </value>
+            <value>
+                <fullName>Low Balance</fullName>
+                <default>false</default>
+                <label>Low Balance</label>
+            </value>
+            <value>
+                <fullName>Low or No Spending</fullName>
+                <default>false</default>
+                <label>Low or No Spending</label>
+            </value>
+            <value>
+                <fullName>Low Priority Program</fullName>
+                <default>false</default>
+                <label>Low Priority Program</label>
+            </value>
+            <value>
+                <fullName>Needs Gift Agreement</fullName>
+                <default>false</default>
+                <label>Needs Gift Agreement</label>
+            </value>
+            <value>
+                <fullName>Newly Established/No agreement</fullName>
+                <default>false</default>
+                <label>Newly Established/No agreement</label>
+            </value>
+            <value>
+                <fullName>No Issues Found</fullName>
+                <default>false</default>
+                <label>No Issues Found</label>
+            </value>
+            <value>
+                <fullName>No Qualified Applicants</fullName>
+                <default>false</default>
+                <label>No Qualified Applicants</label>
+            </value>
+            <value>
+                <fullName>Not Yet Funded</fullName>
+                <default>false</default>
+                <label>Not Yet Funded</label>
+            </value>
+            <value>
+                <fullName>OLD:Newly Established/NotYetFunded/NoGA</fullName>
+                <default>false</default>
+                <label>OLD:Newly Established/NotYetFunded/NoGA</label>
+            </value>
+            <value>
+                <fullName>Overspent</fullName>
+                <default>false</default>
+                <label>Overspent</label>
+            </value>
+            <value>
+                <fullName>Program No Longer Active</fullName>
+                <default>false</default>
+                <label>Program No Longer Active</label>
+            </value>
+            <value>
+                <fullName>Scholarship criteria is not matched</fullName>
+                <default>false</default>
+                <label>Scholarship criteria is not matched</label>
+            </value>
+            <value>
+                <fullName>Use of Funds</fullName>
+                <default>false</default>
+                <label>Use of Funds</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

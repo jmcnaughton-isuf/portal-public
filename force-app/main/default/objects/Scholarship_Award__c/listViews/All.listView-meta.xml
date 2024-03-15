@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>SCHLRSHP_SEM_CCYY__c</columns>
+    <columns>FUND_ACCT__c</columns>
+    <columns>RCPNT_ID__c</columns>
+    <columns>SCHLRSHP_SEM_CD__c</columns>
+    <columns>SCHLRSHP_NUM__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

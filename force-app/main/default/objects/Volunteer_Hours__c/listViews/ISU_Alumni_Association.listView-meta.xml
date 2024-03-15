@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISU_Alumni_Association</fullName>
+    <columns>NAME</columns>
+    <columns>Full_Name__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Active_Historied__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Volunteer_Shift__c</columns>
+    <columns>Role__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Volunteer_Job__c</field>
+        <operation>contains</operation>
+        <value>Alumni</value>
+    </filters>
+    <label>ISU Alumni Association</label>
+</ListView>

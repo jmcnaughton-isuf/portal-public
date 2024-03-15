@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjustment_Reason_Exclusions__c</fullName>
+    <description>Adjustment Reasons to exclude from generating GL Feeders</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>[&quot;Example Reason 1&quot;, &quot;Example Reason 2&quot;]</inlineHelpText>
+    <label>Adjustment Reason Exclusions</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

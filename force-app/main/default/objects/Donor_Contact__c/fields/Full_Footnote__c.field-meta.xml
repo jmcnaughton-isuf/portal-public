@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Footnote__c</fullName>
+    <description>Final footnote field that pulls the other fields together and then allows DCS to override if needed.  The override field is on the donor contact row. Annual reporting footnotes.  If its blank then the foot note fields from the fund are concatenated together and used as the full foot note.  If the donor contact field has data in it that is used instead.</description>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK( Annual_Reporting_Footnotes__c),  Fund_Account__r.Custom_Annual_Reporting_Footnotes__c &amp; &apos; &apos; &amp; Fund_Account__r.Default_Annual_Reporting_Footnotes__c , Annual_Reporting_Footnotes__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Full Footnote</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

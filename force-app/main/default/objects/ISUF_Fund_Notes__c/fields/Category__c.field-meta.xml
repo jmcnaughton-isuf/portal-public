@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Category used for Annual Reporting Watch Fors</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Additional Copies</fullName>
+                <default>false</default>
+                <label>Additional Copies</label>
+            </value>
+            <value>
+                <fullName>Athletics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Athletics</label>
+            </value>
+            <value>
+                <fullName>Coding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coding</label>
+            </value>
+            <value>
+                <fullName>Electronic</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Electronic</label>
+            </value>
+            <value>
+                <fullName>FHIT/AI</fullName>
+                <default>false</default>
+                <label>FHIT/AI</label>
+            </value>
+            <value>
+                <fullName>Footnote</fullName>
+                <default>false</default>
+                <label>Footnote</label>
+            </value>
+            <value>
+                <fullName>Manual correction/check</fullName>
+                <default>false</default>
+                <label>Manual correction/check</label>
+            </value>
+            <value>
+                <fullName>Manual Financial Report</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manual Financial Report</label>
+            </value>
+            <value>
+                <fullName>No spouse</fullName>
+                <default>false</default>
+                <label>No spouse</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other report in-house</fullName>
+                <default>false</default>
+                <label>Other report in-house</label>
+            </value>
+            <value>
+                <fullName>Special Handling</fullName>
+                <default>false</default>
+                <label>Special Handling</label>
+            </value>
+            <value>
+                <fullName>Special Impact</fullName>
+                <default>false</default>
+                <label>Special Impact</label>
+            </value>
+            <value>
+                <fullName>Special Impact/Custom Report</fullName>
+                <default>false</default>
+                <label>Special Impact/Custom Report</label>
+            </value>
+            <value>
+                <fullName>Spending</fullName>
+                <default>false</default>
+                <label>Spending</label>
+            </value>
+            <value>
+                <fullName>Term Endowment</fullName>
+                <default>false</default>
+                <label>Term Endowment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

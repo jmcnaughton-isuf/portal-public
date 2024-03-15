@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OtherPrincipal__c</fullName>
+    <description>field was discussed by Caitlin, mike, Cameron and if this on 8/12/2022 if this obviously wrong field causes no issues with annual reporting delete it later.</description>
+    <externalId>false</externalId>
+    <formula>EndOther__c + EndOtherEarnings__c -  FHITEndIncome__c -  FHITendgainloss__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Other Principal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinic__c</fullName>
+    <externalId>false</externalId>
+    <label>Clinic</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Small Animal</fullName>
+                <default>false</default>
+                <label>Small Animal</label>
+            </value>
+            <value>
+                <fullName>Large Animal</fullName>
+                <default>false</default>
+                <label>Large Animal</label>
+            </value>
+            <value>
+                <fullName>Equine</fullName>
+                <default>false</default>
+                <label>Equine</label>
+            </value>
+            <value>
+                <fullName>Food Animal</fullName>
+                <default>false</default>
+                <label>Food Animal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

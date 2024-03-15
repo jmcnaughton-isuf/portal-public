@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUF_Fund_Notes_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>ISUF_Assigned_To__c</fields>
+    <fields>Review_Type__c</fields>
+    <fields>Status__c</fields>
+    <fields>Fund__c</fields>
+    <label>ISUF Fund Notes Compact Layout</label>
+</CompactLayout>

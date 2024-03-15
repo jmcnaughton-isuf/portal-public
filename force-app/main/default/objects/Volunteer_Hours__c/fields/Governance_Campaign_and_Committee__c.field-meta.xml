@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Governance_Campaign_and_Committee__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( RecordType.Name = &apos;ISU Foundation Governors&apos;, Volunteer_Job__r.Name +  &apos; &apos; +  CASE(Status__c, &apos;Emeritus&apos;, &apos;Emeritus&apos;, &apos;Active&apos;), IF( RecordType.Name = &apos;ISU Foundation Board of Directors&apos;, Volunteer_Job__r.Name, Volunteer_Shift__r.Name + &apos; - &apos; + Volunteer_Job__r.Name))</formula>
+    <label>Governance Campaign and Committee</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

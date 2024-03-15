@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_a_Gift_to_Iowa_State_Joint_gift_las__c</fullName>
+    <externalId>false</externalId>
+    <label>Make_a_Gift_to_Iowa_State_Joint_gift_las</label>
+    <length>50</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Report Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Financial Report</fullName>
+                <default>false</default>
+                <label>Annual Financial Report</label>
+            </value>
+            <value>
+                <fullName>Student Thank-you Notes</fullName>
+                <default>false</default>
+                <label>Student Thank-you Notes</label>
+            </value>
+            <value>
+                <fullName>Impact Reporting</fullName>
+                <default>false</default>
+                <label>Impact Reporting</label>
+            </value>
+            <value>
+                <fullName>Corporate Reporting</fullName>
+                <default>false</default>
+                <label>Corporate Reporting</label>
+            </value>
+            <value>
+                <fullName>Foundation Reporting</fullName>
+                <default>false</default>
+                <label>Foundation Reporting</label>
+            </value>
+            <value>
+                <fullName>PDR</fullName>
+                <default>false</default>
+                <label>PDR</label>
+            </value>
+            <value>
+                <fullName>CDR</fullName>
+                <default>false</default>
+                <label>CDR</label>
+            </value>
+            <value>
+                <fullName>Annual Reporting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Annual Reporting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

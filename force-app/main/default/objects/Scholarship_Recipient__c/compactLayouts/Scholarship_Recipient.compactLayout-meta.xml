@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scholarship_Recipient</fullName>
+    <fields>Name</fields>
+    <fields>RCPNT_ID__c</fields>
+    <fields>Classification__c</fields>
+    <label>Scholarship Recipient</label>
+</CompactLayout>

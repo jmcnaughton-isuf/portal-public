@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Row_Detected</fullName>
+    <active>true</active>
+    <description>Used in flow &quot;ISUF - PII one row per contact and type&quot; to enforces one row per constituent per PII type.  Prevents the rollup having to decide which values of the same type should be rolled up as only one row is allowed.</description>
+    <errorConditionFormula>Invalid_save__c</errorConditionFormula>
+    <errorMessage>A PII record for this constituent with the same type already exists.</errorMessage>
+</ValidationRule>

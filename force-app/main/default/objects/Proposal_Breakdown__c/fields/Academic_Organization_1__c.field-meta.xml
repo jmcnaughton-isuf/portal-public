@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Academic_Organization_1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Funding Constituency</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>ucinn_ascendv2__Academic_Organization__c.Fund_Source__c</field>
+            <operation>equals</operation>
+            <value>Funding College</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ucinn_ascendv2__Academic_Organization__c</referenceTo>
+    <relationshipLabel>Funding Opportunity Breakdown (Academic Organization 1)</relationshipLabel>
+    <relationshipName>Funding_Opportunity_Breakdown1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

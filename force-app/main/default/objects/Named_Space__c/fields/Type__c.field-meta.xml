@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Atrium</fullName>
+                <default>false</default>
+                <label>Atrium</label>
+            </value>
+            <value>
+                <fullName>Auditorium</fullName>
+                <default>false</default>
+                <label>Auditorium</label>
+            </value>
+            <value>
+                <fullName>Building</fullName>
+                <default>false</default>
+                <label>Building</label>
+            </value>
+            <value>
+                <fullName>Classroom</fullName>
+                <default>false</default>
+                <label>Classroom</label>
+            </value>
+            <value>
+                <fullName>Commons</fullName>
+                <default>false</default>
+                <label>Commons</label>
+            </value>
+            <value>
+                <fullName>Computer Lab</fullName>
+                <default>false</default>
+                <label>Computer Lab</label>
+            </value>
+            <value>
+                <fullName>Conference Room</fullName>
+                <default>false</default>
+                <label>Conference Room</label>
+            </value>
+            <value>
+                <fullName>Floor</fullName>
+                <default>false</default>
+                <label>Floor</label>
+            </value>
+            <value>
+                <fullName>Graduate Offices</fullName>
+                <default>false</default>
+                <label>Graduate Offices</label>
+            </value>
+            <value>
+                <fullName>Graduate Workspace</fullName>
+                <default>false</default>
+                <label>Graduate Workspace</label>
+            </value>
+            <value>
+                <fullName>Interaction</fullName>
+                <default>false</default>
+                <label>Interaction</label>
+            </value>
+            <value>
+                <fullName>Laboratory</fullName>
+                <default>false</default>
+                <label>Laboratory</label>
+            </value>
+            <value>
+                <fullName>Lounge</fullName>
+                <default>false</default>
+                <label>Lounge</label>
+            </value>
+            <value>
+                <fullName>Meeting Room</fullName>
+                <default>false</default>
+                <label>Meeting Room</label>
+            </value>
+            <value>
+                <fullName>Office</fullName>
+                <default>false</default>
+                <label>Office</label>
+            </value>
+            <value>
+                <fullName>Room</fullName>
+                <default>false</default>
+                <label>Room</label>
+            </value>
+            <value>
+                <fullName>Seminar Room</fullName>
+                <default>false</default>
+                <label>Seminar Room</label>
+            </value>
+            <value>
+                <fullName>Suite</fullName>
+                <default>false</default>
+                <label>Suite</label>
+            </value>
+            <value>
+                <fullName>Team Lab</fullName>
+                <default>false</default>
+                <label>Team Lab</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>Welcome Center</fullName>
+                <default>false</default>
+                <label>Welcome Center</label>
+            </value>
+            <value>
+                <fullName>Wing</fullName>
+                <default>false</default>
+                <label>Wing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

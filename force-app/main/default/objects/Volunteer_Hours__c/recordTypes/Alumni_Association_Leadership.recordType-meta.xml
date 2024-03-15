@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alumni_Association_Leadership</fullName>
+    <active>true</active>
+    <label>Alumni Association Leadership</label>
+    <picklistValues>
+        <picklist>Active_Historied__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Historied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Class__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Leadership_Type__c</picklist>
+        <values>
+            <fullName>Collegiate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Departmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Leadership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>University</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Party_Affilitation__c</picklist>
+        <values>
+            <fullName>Constitution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Democrat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Libertarian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Natural Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Republican</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Socialist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role__c</picklist>
+        <values>
+            <fullName>Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Co-Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emeritus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ex-Officio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gamewatch Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorary Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorary Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immediate Past President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Co- President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Ambassador Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Ambassador Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Board Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Board Chair Elect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Board Past Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Board Secretary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Curriculum Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Curriculum Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Evaluation Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Evaluation Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Finance Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Finance Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Instructor%2FPresenter %E2%80%93 Fall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Instructor%2FPresenter %E2%80%93 Spring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Instructor%2FPresenter %E2%80%93 Winter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Long-Range Planning Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Long-Range Planning Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Marketing Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Marketing Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Nominating Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Nominating Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Technology Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Technology Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Volunteer Committee Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OLLI Volunteer %E2%80%93 Volunteer Committee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Past President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>President</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scholarship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secretary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subcommittee Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treasurer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vice-Chair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vice-President</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nominated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

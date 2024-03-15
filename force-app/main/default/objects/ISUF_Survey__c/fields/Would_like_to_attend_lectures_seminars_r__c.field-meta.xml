@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Would_like_to_attend_lectures_seminars_r__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Would like to attend lectures/seminars relevant to my career</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Would like to attend lectures/seminars relevant to my career</inlineHelpText>
+    <label>Would like to attend lectures/seminars r</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

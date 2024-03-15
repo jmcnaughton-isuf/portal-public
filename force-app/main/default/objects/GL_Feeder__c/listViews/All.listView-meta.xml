@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Session__c</columns>
+    <columns>ACTG_AMT__c</columns>
+    <columns>APPR_DATEDB__c</columns>
+    <columns>Payment__c</columns>
+    <columns>Debit_Credit__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>ACTVY_CD__c</columns>
+    <columns>ASSET_TYPE__c</columns>
+    <columns>ID__c</columns>
+    <columns>TRAN_BTCH__c</columns>
+    <columns>Contact__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Is_Catch_Up__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

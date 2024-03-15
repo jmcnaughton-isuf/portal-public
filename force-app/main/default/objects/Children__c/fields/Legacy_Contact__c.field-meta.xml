@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legacy_Contact__c</fullName>
+    <externalId>false</externalId>
+    <label>Legacy Contact</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gift to new baby</fullName>
+                <default>false</default>
+                <label>Gift to new baby</label>
+            </value>
+            <value>
+                <fullName>Gift to 5 year olds</fullName>
+                <default>false</default>
+                <label>Gift to 5 year olds</label>
+            </value>
+            <value>
+                <fullName>Gift to 10 year olds</fullName>
+                <default>false</default>
+                <label>Gift to 10 year olds</label>
+            </value>
+            <value>
+                <fullName>Legacy Migration</fullName>
+                <default>false</default>
+                <label>Legacy Migration</label>
+            </value>
+            <value>
+                <fullName>President&apos;s Invitation to Apply</fullName>
+                <default>false</default>
+                <label>President&apos;s Invitation to Apply</label>
+            </value>
+            <value>
+                <fullName>Returned baby gift</fullName>
+                <default>false</default>
+                <label>Returned baby gift</label>
+            </value>
+            <value>
+                <fullName>Returned 5 year old gift</fullName>
+                <default>false</default>
+                <label>Returned 5 year old gift</label>
+            </value>
+            <value>
+                <fullName>Returned 10 year old gift</fullName>
+                <default>false</default>
+                <label>Returned 10 year old gift</label>
+            </value>
+            <value>
+                <fullName>Gift to 16 year olds</fullName>
+                <default>false</default>
+                <label>Gift to 16 year olds</label>
+            </value>
+            <value>
+                <fullName>Invalid child first name</fullName>
+                <default>false</default>
+                <label>Invalid child first name</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

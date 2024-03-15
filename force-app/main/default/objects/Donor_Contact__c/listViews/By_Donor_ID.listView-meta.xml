@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Donor_ID</fullName>
+    <columns>NAME</columns>
+    <columns>Constituent__c</columns>
+    <columns>Spouse__c</columns>
+    <columns>Report_Type__c</columns>
+    <columns>Annual_Report_Type__c</columns>
+    <columns>Deceased__c</columns>
+    <columns>Fund_Account__c</columns>
+    <columns>Fund_Name__c</columns>
+    <columns>Annual_Financial_Report_Status__c</columns>
+    <columns>Annual_Financial_Report_Test__c</columns>
+    <columns>Exclude_Spouse__c</columns>
+    <columns>Remove_Deferred__c</columns>
+    <columns>Annual_Reporting_Footnotes__c</columns>
+    <columns>Full_Footnote__c</columns>
+    <columns>In_House_Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Report_Type__c</field>
+        <operation>includes</operation>
+        <value>Annual Financial Report</value>
+    </filters>
+    <filters>
+        <field>Donor_ID__c</field>
+        <operation>contains</operation>
+        <value>900140074,900140188</value>
+    </filters>
+    <label>By Donor ID</label>
+</ListView>

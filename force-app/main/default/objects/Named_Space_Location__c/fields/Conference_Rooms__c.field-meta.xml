@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conference_Rooms__c</fullName>
+    <externalId>false</externalId>
+    <label>Conference Rooms</label>
+    <summaryFilterItems>
+        <field>Named_Space__c.Type__c</field>
+        <operation>equals</operation>
+        <value>Conference Room</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Named_Space__c.Named_Space_Location__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

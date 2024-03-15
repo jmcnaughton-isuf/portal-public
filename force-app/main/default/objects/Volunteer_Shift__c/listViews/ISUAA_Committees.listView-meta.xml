@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISUAA_Committees</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Volunteer_Job__c</field>
+        <operation>contains</operation>
+        <value>Alumni</value>
+    </filters>
+    <label>ISUAA Committees</label>
+</ListView>

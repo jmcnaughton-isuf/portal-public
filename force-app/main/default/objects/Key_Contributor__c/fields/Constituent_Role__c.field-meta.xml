@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constituent_Role__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Role the Contributor is playing in this Engagement Plan/Case</inlineHelpText>
+    <label>Constituent Role</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary Constituent</fullName>
+                <default>false</default>
+                <label>Primary Constituent</label>
+            </value>
+            <value>
+                <fullName>Primary Organization</fullName>
+                <default>false</default>
+                <label>Primary Organization</label>
+            </value>
+            <value>
+                <fullName>ISU Representative</fullName>
+                <default>false</default>
+                <label>ISU Representative</label>
+            </value>
+            <value>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+                <label>Volunteer</label>
+            </value>
+            <value>
+                <fullName>Constituent Advisor (attorneys, financial advisors, etc.)</fullName>
+                <default>false</default>
+                <label>Constituent Advisor (attorneys, financial advisors, etc.)</label>
+            </value>
+            <value>
+                <fullName>Additional Organization</fullName>
+                <default>false</default>
+                <label>Additional Organization</label>
+            </value>
+            <value>
+                <fullName>Related Organization</fullName>
+                <default>false</default>
+                <label>Related Organization</label>
+            </value>
+            <value>
+                <fullName>Organization Representative</fullName>
+                <default>false</default>
+                <label>Organization Representative</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

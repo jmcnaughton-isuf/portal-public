@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RCPNT_COLL__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>College</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>ucinn_ascendv2__Academic_Organization__c.ucinn_ascendv2__Type__c</field>
+            <operation>equals</operation>
+            <value>Academic Org</value>
+        </filterItems>
+        <filterItems>
+            <field>ucinn_ascendv2__Academic_Organization__c.Fund_Source__c</field>
+            <operation>equals</operation>
+            <value>Degree College</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ucinn_ascendv2__Academic_Organization__c</referenceTo>
+    <relationshipLabel>Scholarship Recipients</relationshipLabel>
+    <relationshipName>Scholarship_Recipients</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

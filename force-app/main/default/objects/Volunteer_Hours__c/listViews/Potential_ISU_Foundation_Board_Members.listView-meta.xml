@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_ISU_Foundation_Board_Members</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Volunteer_Shift__c</columns>
+    <columns>Status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Volunteer_Shift__c</field>
+        <operation>equals</operation>
+        <value>Potential/Future Governor</value>
+    </filters>
+    <label>Potential ISU Foundation Board Members</label>
+</ListView>

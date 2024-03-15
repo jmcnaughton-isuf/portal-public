@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Award_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Award Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CONT</fullName>
+                <default>false</default>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>GRNT</fullName>
+                <default>false</default>
+                <label>Grant</label>
+            </value>
+            <value>
+                <fullName>SFA</fullName>
+                <default>false</default>
+                <label>SFA Scholarship</label>
+            </value>
+            <value>
+                <fullName>COOP</fullName>
+                <default>false</default>
+                <label>Cooperative Agreement</label>
+            </value>
+            <value>
+                <fullName>IPA</fullName>
+                <default>false</default>
+                <label>IPA</label>
+            </value>
+            <value>
+                <fullName>OTHR</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

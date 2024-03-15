@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_College_Entry__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Birthday_Month__c &lt;= 7,
+DATE( YEAR( Birth_Date__c ) + 18 ,9,1), DATE( YEAR( Birth_Date__c ) + 19 ,9,1))</formula>
+    <label>Expected College Entry</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LegaCY_Error__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  AND( LegaCY_Member_Formula__c = TRUE, OR( ISBLANK( First_Name__c ), ISBLANK( Last_Name__c ), Deceased__c = TRUE, ISNULL( Birth_Date__c ),  Age__c &gt; 18)), TRUE, FALSE)</formula>
+    <label>LegaCY Error</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

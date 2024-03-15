@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ExpSpentonFees__c</columns>
+    <columns>EndSpentonFees__c</columns>
+    <columns>AlEndEnd__c</columns>
+    <columns>AllnvGainLoss__c</columns>
+    <columns>ExpOpenBalance__c</columns>
+    <columns>AdminInvestBuildingPool__c</columns>
+    <columns>ExpMadeAvailSpend__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Project__c</columns>
+    <columns>FiscalYear__c</columns>
+    <columns>Quarter__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Financial_Report_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If this status is In-house it was updated via a Fund that this Constituent receives an Annual Financial Report for. To ensure all appropriate DCs for a constituent get updated please update the Fund Annual Financial Report Status field on the Fund or Endowed Corrections Card.</inlineHelpText>
+    <label>Annual Financial Report Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Exclude</fullName>
+                <default>false</default>
+                <label>Exclude</label>
+            </value>
+            <value>
+                <fullName>In-house</fullName>
+                <default>false</default>
+                <label>In-house</label>
+            </value>
+            <value>
+                <fullName>In-house Post Online</fullName>
+                <default>false</default>
+                <label>In-house Post Online</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

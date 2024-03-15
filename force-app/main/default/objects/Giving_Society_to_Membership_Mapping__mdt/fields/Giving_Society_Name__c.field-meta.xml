@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Giving_Society_Name__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>The full name of the giving society
+Example: ISU Alumni Association</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The full name of the giving society
+Example: ISU Alumni Association</inlineHelpText>
+    <label>Giving Society Name</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

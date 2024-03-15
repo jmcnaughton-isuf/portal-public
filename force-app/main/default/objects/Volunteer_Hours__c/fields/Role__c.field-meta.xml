@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Role</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Chair</fullName>
+                <default>false</default>
+                <label>Chair</label>
+            </value>
+            <value>
+                <fullName>Co-Chair</fullName>
+                <default>false</default>
+                <label>Co-Chair</label>
+            </value>
+            <value>
+                <fullName>Contact</fullName>
+                <default>false</default>
+                <label>Contact</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Emeritus</fullName>
+                <default>false</default>
+                <label>Emeritus</label>
+            </value>
+            <value>
+                <fullName>Events</fullName>
+                <default>false</default>
+                <label>Events</label>
+            </value>
+            <value>
+                <fullName>Ex-Officio</fullName>
+                <default>false</default>
+                <label>Ex-Officio</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>Gamewatch Coordinator</fullName>
+                <default>false</default>
+                <label>Gamewatch Coordinator</label>
+            </value>
+            <value>
+                <fullName>Guest</fullName>
+                <default>false</default>
+                <label>Guest</label>
+            </value>
+            <value>
+                <fullName>Honorary Chair</fullName>
+                <default>false</default>
+                <label>Honorary Chair</label>
+            </value>
+            <value>
+                <fullName>Honorary Member</fullName>
+                <default>false</default>
+                <label>Honorary Member</label>
+            </value>
+            <value>
+                <fullName>Immediate Past President</fullName>
+                <default>false</default>
+                <label>Immediate Past President</label>
+            </value>
+            <value>
+                <fullName>Innovator In Residence</fullName>
+                <default>false</default>
+                <label>Innovator In Residence</label>
+            </value>
+            <value>
+                <fullName>Interim Chair</fullName>
+                <default>false</default>
+                <label>Interim Chair</label>
+            </value>
+            <value>
+                <fullName>Interim Co- President</fullName>
+                <default>false</default>
+                <label>Interim Co- President</label>
+            </value>
+            <value>
+                <fullName>Member</fullName>
+                <default>false</default>
+                <label>Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Ambassador Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Ambassador Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Ambassador Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Ambassador Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Board Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Board Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Board Chair Elect</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Board Chair Elect</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Board Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Board Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Board Past Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Board Past Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Board Secretary</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Board Secretary</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Board Vice Chair</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Board Vice Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Class</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Class</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Curriculum Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Curriculum Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Curriculum Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Curriculum Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Curriculum Governance Chair</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Curriculum Governance Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Curriculum Governance Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Curriculum Governance Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Evaluation Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Evaluation Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Evaluation Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Evaluation Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Event</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Event</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Finance Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Finance Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Finance Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Finance Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Instructor/Presenter – Fall</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Instructor/Presenter – Fall</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Instructor/Presenter – Spring</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Instructor/Presenter – Spring</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Instructor/Presenter – Winter</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Instructor/Presenter – Winter</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – ISU Rep</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – ISU Rep</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Long-Range Planning Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Long-Range Planning Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Long-Range Planning Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Long-Range Planning Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Marketing Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Marketing Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Marketing Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Marketing Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Memorial Day Committee Chair</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Memorial Day Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Memorial Day Committee Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Memorial Day Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Newsletter Editor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Newsletter Editor</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Nominating Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Nominating Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Nominating Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Nominating Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Office</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Office</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – OLLI at ISU Rep</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – OLLI at ISU Rep</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Program Committee Chair</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Program Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Program Committee Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Program Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Rock On Committee Chair</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Rock On Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Rock On Committee Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Rock On Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Social Committee Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OLLI Volunteer – Social Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Technology Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Technology Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Technology Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Technology Committee Member</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Volunteer Committee Chair</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Volunteer Committee Chair</label>
+            </value>
+            <value>
+                <fullName>OLLI Volunteer – Volunteer Committee Member</fullName>
+                <default>false</default>
+                <label>OLLI Volunteer – Volunteer Committee Member</label>
+            </value>
+            <value>
+                <fullName>Past President</fullName>
+                <default>false</default>
+                <label>Past President</label>
+            </value>
+            <value>
+                <fullName>President</fullName>
+                <default>false</default>
+                <label>President</label>
+            </value>
+            <value>
+                <fullName>Scholarship</fullName>
+                <default>false</default>
+                <label>Scholarship</label>
+            </value>
+            <value>
+                <fullName>Secretary</fullName>
+                <default>false</default>
+                <label>Secretary</label>
+            </value>
+            <value>
+                <fullName>Subcommittee Member</fullName>
+                <default>false</default>
+                <label>Subcommittee Member</label>
+            </value>
+            <value>
+                <fullName>Treasurer</fullName>
+                <default>false</default>
+                <label>Treasurer</label>
+            </value>
+            <value>
+                <fullName>University Presidential Appointment</fullName>
+                <default>false</default>
+                <label>University Presidential Appointment</label>
+            </value>
+            <value>
+                <fullName>Vice Chair</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vice Chair</label>
+            </value>
+            <value>
+                <fullName>Vice-Chair</fullName>
+                <default>false</default>
+                <label>Vice-Chair</label>
+            </value>
+            <value>
+                <fullName>Vice-President</fullName>
+                <default>false</default>
+                <label>Vice-President</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

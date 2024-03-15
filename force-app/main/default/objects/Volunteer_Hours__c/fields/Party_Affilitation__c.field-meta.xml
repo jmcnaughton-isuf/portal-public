@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Party_Affilitation__c</fullName>
+    <externalId>false</externalId>
+    <label>Party Affilitation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Constitution</fullName>
+                <default>false</default>
+                <label>Constitution</label>
+            </value>
+            <value>
+                <fullName>Democrat</fullName>
+                <default>false</default>
+                <label>Democrat</label>
+            </value>
+            <value>
+                <fullName>Green Party</fullName>
+                <default>false</default>
+                <label>Green Party</label>
+            </value>
+            <value>
+                <fullName>Independent</fullName>
+                <default>false</default>
+                <label>Independent</label>
+            </value>
+            <value>
+                <fullName>Libertarian</fullName>
+                <default>false</default>
+                <label>Libertarian</label>
+            </value>
+            <value>
+                <fullName>Natural Law</fullName>
+                <default>false</default>
+                <label>Natural Law</label>
+            </value>
+            <value>
+                <fullName>Reform</fullName>
+                <default>false</default>
+                <label>Reform</label>
+            </value>
+            <value>
+                <fullName>Republican</fullName>
+                <default>false</default>
+                <label>Republican</label>
+            </value>
+            <value>
+                <fullName>Socialist</fullName>
+                <default>false</default>
+                <label>Socialist</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

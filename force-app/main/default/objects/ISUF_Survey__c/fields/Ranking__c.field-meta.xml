@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ranking__c</fullName>
+    <externalId>false</externalId>
+    <label>Ranking</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not on my philanthropic list</fullName>
+                <default>false</default>
+                <label>Not on my philanthropic list</label>
+            </value>
+            <value>
+                <fullName>Among bottom third</fullName>
+                <default>false</default>
+                <label>Among bottom third</label>
+            </value>
+            <value>
+                <fullName>Among middle third</fullName>
+                <default>false</default>
+                <label>Among middle third</label>
+            </value>
+            <value>
+                <fullName>Among top third</fullName>
+                <default>false</default>
+                <label>Among top third</label>
+            </value>
+            <value>
+                <fullName>Highest</fullName>
+                <default>false</default>
+                <label>Highest</label>
+            </value>
+            <value>
+                <fullName>Prefer not to share this information</fullName>
+                <default>false</default>
+                <label>Prefer not to share this information</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

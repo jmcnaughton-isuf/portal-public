@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constituency_and_Fund_Academic_Org_match</fullName>
+    <active>false</active>
+    <description>Checks the Constituency against the Fund&apos;s Academic Org</description>
+    <errorConditionFormula>Designation__c  &lt;&gt;  Fund__r.ucinn_ascendv2__X1_Academic_Org__c</errorConditionFormula>
+    <errorDisplayField>Fund__c</errorDisplayField>
+    <errorMessage>Constituency and Fund Academic Org must match.</errorMessage>
+</ValidationRule>

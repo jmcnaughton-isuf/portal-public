@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gift_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Gift Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>Gift</fullName>
+                <default>false</default>
+                <label>Gift</label>
+            </value>
+            <value>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+                <label>Pledge</label>
+            </value>
+            <value>
+                <fullName>Bequest/Beneficiary Designation</fullName>
+                <default>false</default>
+                <label>Bequest/Beneficiary Designation</label>
+            </value>
+            <value>
+                <fullName>Life Income Gift</fullName>
+                <default>false</default>
+                <label>Life Income Gift</label>
+            </value>
+            <value>
+                <fullName>Gift-in-Kind</fullName>
+                <default>false</default>
+                <label>Gift-in-Kind</label>
+            </value>
+            <value>
+                <fullName>Stocks/Marketable Securities</fullName>
+                <default>false</default>
+                <label>Stocks/Marketable Securities</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Direct to University</fullName>
+                <default>false</default>
+                <label>Direct to University</label>
+            </value>
+            <value>
+                <fullName>Cash</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cash</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

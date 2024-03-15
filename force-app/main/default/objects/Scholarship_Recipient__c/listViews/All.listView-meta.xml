@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>SCHL_ADDR_1__c</columns>
+    <columns>SCHL_CITY__c</columns>
+    <columns>Classification__c</columns>
+    <columns>RCPNT_COLL__c</columns>
+    <columns>ACTV_ADDR__c</columns>
+    <columns>CUR_YR_NUM_AWARD__c</columns>
+    <columns>RCPNT_CURR__c</columns>
+    <columns>RCPNT_DEPT_CD__c</columns>
+    <columns>RCPNT_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RCPNT_ID__c</field>
+        <operation>equals</operation>
+        <value>J.L.</value>
+    </filters>
+    <label>All</label>
+</ListView>

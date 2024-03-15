@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RCPNT_ID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Workday Scholarship Recipient</label>
+    <referenceTo>WD_Scholarship_Recipient__c</referenceTo>
+    <relationshipLabel>Workday Scholarship Awards</relationshipLabel>
+    <relationshipName>Workday_Scholarship_Awards_Recipient</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

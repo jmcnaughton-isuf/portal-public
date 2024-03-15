@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_by_Fund</fullName>
+    <columns>NAME</columns>
+    <columns>FRML_SCHLRSHP_Name__c</columns>
+    <columns>schlrshp_num__c</columns>
+    <columns>Fund_Acct__c</columns>
+    <columns>SCHLRSHP_PRGM__c</columns>
+    <columns>no_contact_needed__c</columns>
+    <columns>FNCL_AID_ACCT_CD__c</columns>
+    <columns>SCHLRSHP_CRTRIA__c</columns>
+    <columns>Current_Year_Allocation__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FNCL_AID_ACCT_CD__c</field>
+        <operation>equals</operation>
+        <value>7835</value>
+    </filters>
+    <label>Filter by Fund</label>
+</ListView>

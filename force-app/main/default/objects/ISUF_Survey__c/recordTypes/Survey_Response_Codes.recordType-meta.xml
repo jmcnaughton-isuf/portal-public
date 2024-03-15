@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Survey_Response_Codes</fullName>
+    <active>true</active>
+    <label>Survey Response Codes</label>
+    <picklistValues>
+        <picklist>Alumni_Reputation__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excellent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Appealing_Campus_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Appealing_Campus__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Arts__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Athletics_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Athletics__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Beautifying_Campus__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Broaden_Diversity__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Capital_Improvements__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Community_Social_Services__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Attitude__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Positive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Positive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Diverse_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Diversity__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Economic_Development_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Economic_Development__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Education__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enhance_Student_Leadership__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Entrepreneurial_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Entrepreneurial_Priorities__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Entrepreneurial__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Environment_Animal__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Faculty_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Health_Medicine__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Higher_Education__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hobby_Sports_Recreation__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_Informed__c</picklist>
+        <values>
+            <fullName>Not Informed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat Informed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Well Informed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Importance_Scale__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>International_Study_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>International_Study__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Internships_Research_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Internships_Research__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Iowa_Reputation__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excellent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Libraries_Museums__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Philanthropic_Gift__c</picklist>
+        <values>
+            <fullName>%241%2C000-%244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410%2C000-%2424%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100%2C000 or more</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100-%24499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425%2C000-%2499%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500-%24999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to share this information</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Politics__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preserve_Traditions__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Professional_Org__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Promote_International_Study__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ranking__c</picklist>
+        <values>
+            <fullName>Among bottom third</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Among middle third</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Among top third</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not on my philanthropic list</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to share this information</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reduce_Student_Debt__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Religion__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Retain_Faculty__c</picklist>
+        <values>
+            <fullName>High Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Right_Direction__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Strong_financial_aid__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Teaching_Facilities_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Teaching_Facilities__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Traditions_Importance__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Important</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Important</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Traditions__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neither Agree Nor Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strongly Disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>USA_Reputation__c</picklist>
+        <values>
+            <fullName>Don%27t Know%2FNot Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excellent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Youth_Services__c</picklist>
+        <values>
+            <fullName>Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer %26 Member%2FDonor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

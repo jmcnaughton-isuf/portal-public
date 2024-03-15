@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leadership_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Leadership Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Collegiate</fullName>
+                <default>false</default>
+                <label>Collegiate</label>
+            </value>
+            <value>
+                <fullName>Departmental</fullName>
+                <default>false</default>
+                <label>Departmental</label>
+            </value>
+            <value>
+                <fullName>University</fullName>
+                <default>false</default>
+                <label>University</label>
+            </value>
+            <value>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+                <label>Foundation</label>
+            </value>
+            <value>
+                <fullName>General Leadership</fullName>
+                <default>false</default>
+                <label>General Leadership</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Elected Official</fullName>
+                <default>false</default>
+                <label>Elected Official</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Metric__c</columns>
+    <columns>Marketplace__c</columns>
+    <columns>Goal_Amount__c</columns>
+    <columns>Household_Count__c</columns>
+    <columns>Percent_Through_FY__c</columns>
+    <columns>Percent_to_Goal__c</columns>
+    <columns>Production_Amount__c</columns>
+    <columns>Production_Goal__c</columns>
+    <columns>Receipt_Amount__c</columns>
+    <columns>Reporting_Unit__c</columns>
+    <columns>Total_Fundraising_Goal__c</columns>
+    <columns>Total_ISUF_Production_Amount__c</columns>
+    <columns>Total_ISUF_Receipt_Amount__c</columns>
+    <columns>YTD_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Denotes the type off PII the value field hold. If a rollup is needed the picklist value will be used in the rollup filter to determine what field on the contact to roll the PII data into.</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Race/Ethnicity</fullName>
+                <default>false</default>
+                <label>Race/Ethnicity</label>
+            </value>
+            <value>
+                <fullName>Citizenship</fullName>
+                <default>false</default>
+                <label>Citizenship</label>
+            </value>
+            <value>
+                <fullName>Ethnicity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ethnicity</label>
+            </value>
+            <value>
+                <fullName>International Student</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>International Student</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donor_Stewardship</fullName>
+    <active>true</active>
+    <label>Donor Stewardship</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>ASG Special Notes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accountant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attorney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aunt or Uncle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Awards %26 Honors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Child</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Accountant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Attorney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Financial Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Insurance Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Trust Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Companion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cousin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deceased Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deceased Spouse or Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Degrees from other Universities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Spouse or Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation%2FBoards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Held in Trust Donor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Held in Trust Income Recipient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandchild</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandparent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influenced ISU Student%2FPeer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influential ISU Professor%2FStaff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information_Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life Income Donor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life Income Recipient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Major Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Major Professor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matching Employer Special Terms%2C Line 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matching Employer Special Terms%2C Line 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matching Gift special notes on corporations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minor Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misc%2E Relatives that are Alumni</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miscellaneous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Niece or Nephew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent%2FStep Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parents Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Information%2FClubs%2FOrganizations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power of Attorney Grantee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power of Attorney Grantor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect_Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sibling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sibling%2FStep Sibling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse Degree Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Honors %26 Activities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widowed Spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widowed Spouse or Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Historied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

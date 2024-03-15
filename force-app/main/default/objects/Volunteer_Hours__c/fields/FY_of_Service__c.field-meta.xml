@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FY_of_Service__c</fullName>
+    <description>Calculates FY based on Start Date.</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+  MONTH( Start_Date__c)  &lt;= 7 , 
+    TEXT(YEAR(Start_Date__c))  , 
+    TEXT(YEAR(Start_Date__c)+1)
+)</formula>
+    <inlineHelpText>Calculates FY based on Start Date.</inlineHelpText>
+    <label>FY of Service</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

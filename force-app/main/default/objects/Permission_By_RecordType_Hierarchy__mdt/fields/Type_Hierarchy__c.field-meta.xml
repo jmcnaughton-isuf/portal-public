@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Hierarchy__c</fullName>
+    <description>Comma separated, accepts value like this:
+Profile,User,PermissionSet
+First value is considered first</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Comma separated, accepts value like this:
+Profile,User,PermissionSet
+First value is considered first</inlineHelpText>
+    <label>Type Hierarchy</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
