@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Request new Listing Detail data</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Whether the request is from the Header, Body, or Footer</description>
+        <fieldName>requester</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ListingDetails</masterLabel>
+</LightningMessageChannel>

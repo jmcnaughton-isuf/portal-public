@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Messaging Channel for Volunteers</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>The current data from the firing component</description>
+        <fieldName>eventData</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Volunteer Channel</masterLabel>
+</LightningMessageChannel>

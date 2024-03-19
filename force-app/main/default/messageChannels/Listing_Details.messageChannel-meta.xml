@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message Channel to pass Listing Details</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Whether the data is for the Header, Body, or Footer</description>
+        <fieldName>type</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The Listing&apos;s data</description>
+        <fieldName>listing</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Associated content module data</description>
+        <fieldName>contentModuleList</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ListingDetails</masterLabel>
+</LightningMessageChannel>
